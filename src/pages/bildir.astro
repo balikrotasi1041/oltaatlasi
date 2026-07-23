@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const mera = "";
+const contactEmail = "balikrotasi1041@gmail.com";
+---
+<BaseLayout title="Saha Bildirimi Hazırla" description="Olta Atlası için mera güncellemesi hazırlama formu.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="kicker">Katkı</span>
+      <h1>Saha bildirimi hazırla</h1>
+      <p class="lead">Bu ilk sürüm bildirimini cihazında metne dönüştürür. Kopyalayıp editöre gönderebilirsin; veri otomatik yayımlanmaz.</p>
+    </div>
+  </section>
+  <section class="container section">
+    <form class="report-form" id="report-form">
+      <label><span>Mera adı</span><input name="mera" required value={mera} placeholder="Örn. Ketenciler Göleti" /></label>
+      <label><span>Ziyaret tarihi</span><input name="date" type="date" required /></label>
+      <label><span>Su / kıyı durumu</span><textarea name="shore" rows="3" placeholder="Su seviyesi, çamur, dalga, kalabalık…"></textarea></label>
+      <label><span>Balık ve yöntem</span><textarea name="catch" rows="3" placeholder="Tür, yaklaşık boy, kullanılan yem ve takım…"></textarea></label>
+      <label><span>İmkânlar</span><textarea name="amenities" rows="3" placeholder="Araç, market, tuvalet, kamp, telefon çekimi…"></textarea></label>
+      <label><span>Güvenlik / çevre notu</span><textarea name="safety" rows="3" placeholder="Çöp, ateş, özel mülkiyet, kaygan zemin…"></textarea></label>
+      <label class="toggle-label"><input name="consent" type="checkbox" required /><span>Paylaştığım bilginin editör incelemesine alınmasını kabul ediyorum.</span></label>
+      <button class="button" type="submit">Bildirimi oluştur</button>
+    </form>
+    <div class="report-output" id="report-output" hidden>
+      <h2>Hazır bildirim</h2>
+      <pre id="report-text"></pre>
+      <div class="contact-actions"><a class="button button-small" id="send-report" href={`mailto:${contactEmail}`}>E-postayla gönder</a><button class="button button-ghost button-small" id="copy-report" type="button">Metni kopyala</button></div>
+    </div>
+  </section>
+  <script is:inline define:vars={{contactEmail}}>
+    const form = document.querySelector("#report-form");
+    const meraInput = form?.querySelector('input[name="mera"]');
+    const requestedMera = new URLSearchParams(window.location.search).get("mera");
+    if (meraInput && requestedMera) meraInput.value = requestedMera.replaceAll("-", " ");
+    const output = document.querySelector("#report-output");
+    const text = document.querySelector("#report-text");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      text.textContent = [
+        "OLTA ATLASI SAHA BİLDİRİMİ",
+        `Mera: ${data.get("mera")}`,
+        `Tarih: ${data.get("date")}`,
+        `Su / kıyı: ${data.get("shore") || "-"}`,
+        `Balık ve yöntem: ${data.get("catch") || "-"}`,
+        `İmkânlar: ${data.get("amenities") || "-"}`,
+        `Güvenlik / çevre: ${data.get("safety") || "-"}`
+      ].join("\n");
+      const subject = `Olta Atlası saha bildirimi: ${data.get("mera")}`;
+      document.querySelector("#send-report").href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text.textContent)}`;
+      output.hidden = false;
+      output.scrollIntoView({ behavior: "smooth" });
+    });
+    document.querySelector("#copy-report").addEventListener("click", async (event) => {
+      await navigator.clipboard.writeText(text.textContent);
+      event.currentTarget.textContent = "Kopyalandı ✓";
+    });
+  </script>
+</BaseLayout>

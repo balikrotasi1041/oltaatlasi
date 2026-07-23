@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const contactEmail = "balikrotasi1041@gmail.com";
+---
+<BaseLayout
+  title="İletişim ve Hata Bildirimi"
+  description="Olta Atlası içeriklerindeki hata, eksik veya güncel olmayan bilgileri editöre bildir."
+>
+  <section class="page-hero contact-hero">
+    <div class="container contact-hero-inner">
+      <div>
+        <span class="kicker">İletişim</span>
+        <h1>Bir hata mı gördün?</h1>
+        <p class="lead">Mera, tür, yöntem, konum veya mevzuat bilgisindeki sorunu açıkça tarif et. Bildirim taslağı <strong>{contactEmail}</strong> adresine hazırlanır.</p>
+      </div>
+      <a class="contact-email-chip" href={`mailto:${contactEmail}`}>
+        <span>Doğrudan e-posta</span>
+        <strong>{contactEmail}</strong>
+      </a>
+    </div>
+  </section>
+
+  <section class="container section contact-grid">
+    <div>
+      <div class="mobile-contact-shortcut">
+        <span>Formu kullanmak istemiyor musun?</span>
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+      </div>
+
+      <form class="report-form contact-form" id="contact-form">
+        <label>
+          <span>Bildirim türü</span>
+          <select name="type" required>
+            <option value="İçerik hatası">İçerik hatası</option>
+            <option value="Konum / navigasyon hatası">Konum / navigasyon hatası</option>
+            <option value="Balık türü bilgisi">Balık türü bilgisi</option>
+            <option value="Yasak / mevzuat güncellemesi">Yasak / mevzuat güncellemesi</option>
+            <option value="Görsel sorunu">Görsel sorunu</option>
+            <option value="Teknik sorun">Teknik sorun</option>
+            <option value="Diğer">Diğer</option>
+          </select>
+        </label>
+
+        <div class="form-row">
+          <label>
+            <span>İlgili sayfa</span>
+            <input name="page" placeholder="Örn. Ketenciler Göleti" />
+          </label>
+          <label>
+            <span>Sayfa bağlantısı</span>
+            <input name="url" type="url" placeholder="https://…" />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Adın veya rumuzun <small>(isteğe bağlı)</small></span>
+            <input name="name" autocomplete="name" />
+          </label>
+          <label>
+            <span>Geri dönüş adresin <small>(isteğe bağlı)</small></span>
+            <input name="reply" type="email" autocomplete="email" />
+          </label>
+        </div>
+
+        <label>
+          <span>Hata veya öneri</span>
+          <textarea name="message" rows="7" required placeholder="Neyin yanlış olduğunu, doğru bilginin ne olabileceğini ve mümkünse kaynağını yaz."></textarea>
+        </label>
+
+        <div class="form-submit-row">
+          <button class="button" type="submit">E-posta taslağını oluştur</button>
+          <p class="form-submit-note">Gönderim, cihazındaki e-posta uygulamasından tamamlanır.</p>
+        </div>
+      </form>
+
+      <div class="report-output" id="mail-preview" hidden aria-live="polite">
+        <h2>Taslak hazırlandı</h2>
+        <p class="mail-fallback-note">E-posta uygulaması açılmadıysa aşağıdaki metni kopyalayıp <strong>{contactEmail}</strong> adresine gönderebilirsin.</p>
+        <pre id="mail-text"></pre>
+        <div class="contact-actions">
+          <a class="button button-small" id="mail-link" href={`mailto:${contactEmail}`}>E-posta uygulamasını aç</a>
+          <button class="button button-ghost button-small" id="copy-mail" type="button">Metni kopyala</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="content-aside">
+      <div class="aside-card">
+        <h2>Doğrudan e-posta</h2>
+        <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+        <button class="button button-ghost button-small" type="button" id="copy-email">Adresi kopyala</button>
+      </div>
+      <div class="aside-card">
+        <h2>Form nasıl çalışıyor?</h2>
+        <p>Olta Atlası statik bir sitedir. Form bilgileri sunucuda tutulmaz; düğme cihazındaki e-posta uygulamasında gönderime hazır bir taslak oluşturur.</p>
+      </div>
+      <div class="aside-card">
+        <h2>İyi bir bildirim</h2>
+        <p>Sayfa bağlantısını, gözlem tarihini, yanlış görünen bilgiyi ve varsa güvenilir kaynağı içerir. Tam av koordinatı veya kişisel veri paylaşma.</p>
+      </div>
+    </aside>
+  </section>
+
+  <script is:inline define:vars={{ contactEmail }}>
+    const form = document.querySelector("#contact-form");
+    const pageInput = form?.querySelector('[name="page"]');
+    const urlInput = form?.querySelector('[name="url"]');
+    const params = new URLSearchParams(window.location.search);
+
+    if (pageInput && params.get("sayfa")) pageInput.value = params.get("sayfa");
+    if (urlInput && params.get("url")) {
+      const incoming = params.get("url");
+      urlInput.value = incoming.startsWith("/") ? `${window.location.origin}${incoming}` : incoming;
+    }
+
+    const preview = document.querySelector("#mail-preview");
+    const mailText = document.querySelector("#mail-text");
+    const mailLink = document.querySelector("#mail-link");
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const subject = `Olta Atlası hata bildirimi: ${data.get("type")}`;
+      const body = [
+        "OLTA ATLASI HATA / İÇERİK BİLDİRİMİ",
+        "",
+        `Bildirim türü: ${data.get("type")}`,
+        `İlgili sayfa: ${data.get("page") || "-"}`,
+        `Sayfa bağlantısı: ${data.get("url") || window.location.href}`,
+        `Ad / rumuz: ${data.get("name") || "-"}`,
+        `Geri dönüş adresi: ${data.get("reply") || "-"}`,
+        "",
+        "Açıklama:",
+        data.get("message"),
+      ].join("\n");
+
+      if (mailText) mailText.textContent = body;
+      if (mailLink) mailLink.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (preview) {
+        preview.hidden = false;
+        preview.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+      mailLink?.click();
+    });
+
+    document.querySelector("#copy-mail")?.addEventListener("click", async (event) => {
+      if (!mailText?.textContent) return;
+      await navigator.clipboard.writeText(mailText.textContent);
+      event.currentTarget.textContent = "Kopyalandı ✓";
+    });
+
+    document.querySelector("#copy-email")?.addEventListener("click", async (event) => {
+      await navigator.clipboard.writeText(contactEmail);
+      event.currentTarget.textContent = "Kopyalandı ✓";
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,9 @@
+---
+import { meralar } from "../data/meralar";
+const mapData = meralar.map(({slug,name,province,district,zone,lat,lng,waterType,fish,confidence})=>({slug,name,province,district,zone,lat,lng,waterType,fish,confidence}));
+---
+<section class="map-shell" aria-labelledby="map-title"><div class="section-heading compact"><div><span class="kicker">Türkiye rota haritası</span><h2 id="map-title">Kocaeli ve İstanbul mera noktaları</h2></div><p>İşaretler hassas veya yoğun alanlarda tam av noktası değil, genel kamusal erişim bölgesidir.</p></div><div id="map" class="map" aria-label="Olta Atlası mera haritası"></div></section>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<script is:inline define:vars={{mapData}}>
+const startMap=()=>{if(!window.L)return;const map=L.map("map",{scrollWheelZoom:false}).setView([41.02,29.15],8);L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);const markers={};mapData.forEach((item)=>{const marker=L.marker([item.lat,item.lng]).addTo(map);marker.bindPopup(`<strong>${item.name}</strong><br>${item.province} · ${item.district} · ${item.zone}<br><small>${item.fish.slice(0,3).join(", ")} · Güven ${item.confidence}</small><br><a href="/meralar/${item.slug}/">Mera dosyasını aç</a>`);markers[item.slug]=marker;});document.addEventListener("oltaatlasi:focus-map",(event)=>{const marker=markers[event.detail];if(marker){map.setView(marker.getLatLng(),13);marker.openPopup();document.getElementById("map")?.scrollIntoView({behavior:"smooth",block:"center"});}});};if(window.L)startMap();else{const script=document.createElement("script");script.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";script.crossOrigin="";script.onload=startMap;document.head.appendChild(script);}
+</script>

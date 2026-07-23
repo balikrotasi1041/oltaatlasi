@@ -1,0 +1,44 @@
+---
+const { title, contentKey, path } = Astro.props as { title: string; contentKey: string; path: string };
+const reportUrl = `/iletisim/?sayfa=${encodeURIComponent(title)}&url=${encodeURIComponent(path)}`;
+---
+<section class="feedback-panel" data-feedback data-feedback-key={contentKey}>
+  <div>
+    <span class="kicker">Okur geri bildirimi</span>
+    <h2>Bu içerik işine yaradı mı?</h2>
+    <p>Seçimin bu cihazda saklanır. Yanlış, eksik veya güncelliğini yitirmiş bilgi gördüysen ayrıntılı bildirim gönderebilirsin.</p>
+  </div>
+  <div class="feedback-actions" role="group" aria-label="İçerik geri bildirimi">
+    <button class="feedback-button" type="button" data-vote="like" aria-pressed="false"><span aria-hidden="true">👍</span> Beğendim</button>
+    <button class="feedback-button" type="button" data-vote="dislike" aria-pressed="false"><span aria-hidden="true">👎</span> Beğenmedim</button>
+    <a class="button button-ghost button-small" href={reportUrl}>Hata bildir</a>
+  </div>
+  <p class="feedback-status" data-feedback-status aria-live="polite"></p>
+</section>
+<script is:inline>
+  document.querySelectorAll("[data-feedback]").forEach((panel) => {
+    const key = `oltaatlasi-oy:${panel.dataset.feedbackKey}`;
+    const legacyKey = `balikrotasi-oy:${panel.dataset.feedbackKey}`;
+    if (!localStorage.getItem(key) && localStorage.getItem(legacyKey)) localStorage.setItem(key, localStorage.getItem(legacyKey));
+    const buttons = [...panel.querySelectorAll("[data-vote]")];
+    const status = panel.querySelector("[data-feedback-status]");
+    const paint = (vote) => {
+      buttons.forEach((button) => {
+        const active = button.dataset.vote === vote;
+        button.classList.toggle("is-selected", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+      if (!vote) status.textContent = "";
+      else if (vote === "like") status.textContent = "Teşekkürler. Bu cihazdaki geri bildirimin kaydedildi.";
+      else status.textContent = "Geri bildirimin kaydedildi. Eksikliği anlatmak için Hata bildir bağlantısını kullanabilirsin.";
+    };
+    paint(localStorage.getItem(key));
+    buttons.forEach((button) => button.addEventListener("click", () => {
+      const vote = button.dataset.vote;
+      const current = localStorage.getItem(key);
+      if (current === vote) localStorage.removeItem(key);
+      else localStorage.setItem(key, vote);
+      paint(localStorage.getItem(key));
+    }));
+  });
+</script>

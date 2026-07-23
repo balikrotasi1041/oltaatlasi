@@ -1,0 +1,8 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { meralar, provinces } from "../../data/meralar";
+import { slugifyTr } from "../../utils/slug";
+const provinceCards=provinces.map((province)=>{const items=meralar.filter((m)=>m.province===province);return {province,count:items.length,districts:[...new Set(items.map((m)=>m.district))],fish:[...new Set(items.flatMap((m)=>m.fish))].slice(0,8)};});
+---
+<BaseLayout title="İllere Göre Balık Tutulacak Yerler" description="İstanbul ve Kocaeli başta olmak üzere il ve ilçelere göre balıkçılık rota dosyaları, navigasyon ve saha notları."><section class="page-hero"><div class="container"><Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"İller"}]}/><span class="kicker">Yerel rota merkezi</span><h1>İllere göre balık tutulacak yerler</h1><p class="lead">Mera dosyalarını il ve ilçe düzeyinde bir araya getiriyor; kıyı karakteri, ulaşım, raporlanan türler ve doğrulama durumunu tek merkezden gösteriyoruz.</p></div></section><section class="container section"><div class="province-grid">{provinceCards.map((card)=><article class="province-card"><span class="kicker">{card.count} rota · {card.districts.length} ilçe</span><h2><a href={`/iller/${slugifyTr(card.province)}/`}>{card.province}</a></h2><p>{card.districts.join(", ")} ilçelerinde yayımlanan rota dosyalarını incele.</p><div class="tag-row">{card.fish.map((fish)=><span>{fish}</span>)}</div><a class="button button-small" href={`/iller/${slugifyTr(card.province)}/`}>{card.province} rehberini aç</a></article>)}</div></section></BaseLayout>
