@@ -1,0 +1,39 @@
+OLTA ATLASI MIGRASYON RAPORU
+Tarih: 23.07.2026
+
+HAZIRLANAN KAYNAK
+- Marka: Olta Atlası
+- Birincil alan adı: https://oltaatlasi.com
+- Google Analytics 4: G-K3ZLC335GP
+- Search Console doğrulama dosyası: google971680255e7e73d7.html
+- Standart sitemap: sitemap-index.xml ve sitemap-0.xml
+- Görsel sitemap: sitemap-images.xml
+- Teknik Cloudflare Worker adı: balik-rotasi (mevcut projeye deploy edebilmek için korundu)
+
+ALAN ADI GEÇİŞİ
+- www.oltaatlasi.com -> https://oltaatlasi.com (301)
+- balik-rotasi.balikrotasi1041.workers.dev -> https://oltaatlasi.com (301)
+- URL yolları ve sorgu parametreleri korunur.
+- Yönlendirmeler worker/index.js içindedir.
+
+MARKA VE SEO
+- Sayfa başlıkları, canonical URL'ler, Open Graph, Twitter kartları ve JSON-LD şemaları Olta Atlası olarak güncellendi.
+- 26 sosyal paylaşım WebP görselindeki Balık Rotası yazısı Olta Atlası olarak değiştirildi.
+- Balık ve mera SVG dosyalarındaki marka metinleri güncellendi.
+- robots.txt ve görsel sitemap oltaatlasi.com alan adına geçirildi.
+
+KULLANICI VERİLERİ
+- Eski cihaz içi favori ve geri bildirim anahtarları yeni Olta Atlası anahtarlarına taşınacak şekilde geriye uyumluluk eklendi.
+- Sunucuda kullanıcı verisi tutulmaz.
+
+STATİK ÇIKTI DOĞRULAMASI
+- Ana içerik HTML sayfası: 101
+- Google Analytics etiketi bulunan sayfa: 101
+- oltaatlasi.com canonical/URL bilgisi bulunan sayfa: 101
+- Eski marka metni kalan dosya: 0
+- Eski alan adı kalan statik çıktı: 0
+- 26 sosyal paylaşım görseli güncellendi.
+- Search Console HTML dosyası pakette mevcut.
+
+NOT
+Kaynak projenin yeniden npm derlemesi çalışma ortamındaki geçici npm registry 503 hatası nedeniyle bu oturumda tamamlanamadı. Kaynak yapı, daha önce başarıyla derlenmiş v4.1 tabanı üzerinde yalnızca marka, alan adı, yönlendirme ve yapılandırma değişiklikleriyle hazırlandı. Yayına hazır paket, daha önce derlenmiş 101 sayfalık çıktı üzerinde ayrıca statik olarak doğrulandı.
