@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Olta Atlası">
+  <rect width="64" height="64" rx="14" fill="#0a3340"/>
+  <path d="M15 34c7-10 17-15 29-10l8-6-1 10 1 10-8-6c-12 5-22 0-29-10 3 4 3 8 0 12Z" fill="#f6b44a"/>
+  <circle cx="40" cy="25" r="2" fill="#0a3340"/>
+  <path d="M15 34c6 1 10 4 13 9" fill="none" stroke="#eaf3ef" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 48c6-3 13-3 19 0" fill="none" stroke="#eaf3ef" stroke-width="3" stroke-linecap="round"/>
+</svg>
