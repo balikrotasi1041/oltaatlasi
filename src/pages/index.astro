@@ -4,7 +4,7 @@ import MeraCard from "../components/MeraCard.astro";
 import Map from "../components/Map.astro";
 import { meralar } from "../data/meralar";
 import { baliklar } from "../data/baliklar";
-import { rehberler } from "../data/rehberler";
+import { rehberler } from "../data/rehber-katalogu";
 import { dunyaBalikcilikYazilari } from "../data/dunya-balikcilik";
 const totalPosts = meralar.length + baliklar.length + rehberler.length + dunyaBalikcilikYazilari.length;
 const istanbulCount=meralar.filter((m)=>m.province==="İstanbul").length;
