@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FeedbackButtons from "../../components/FeedbackButtons.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { rehberler } from "../../data/rehberler";
+import { rehberler } from "../../data/rehber-katalogu";
 export function getStaticPaths(){return rehberler.map((rehber)=>({params:{slug:rehber.slug},props:{rehber}}));}
 const {rehber}=Astro.props;
 const pagePath=`/rehberler/${rehber.slug}/`;
