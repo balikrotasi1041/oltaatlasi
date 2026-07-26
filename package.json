@@ -1,14 +1,15 @@
 {
   "name": "olta-atlasi",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate:robots && astro check && astro build",
+    "build": "npm run generate:robots && astro check && astro build && npm run generate:image-sitemap",
     "preview": "astro preview",
     "check": "astro check",
     "generate:robots": "node scripts/generate-robots.mjs",
+    "generate:image-sitemap": "node scripts/generate-image-sitemap.mjs",
     "deploy": "wrangler deploy",
     "deploy:dry": "wrangler deploy --dry-run"
   },
@@ -18,7 +19,7 @@
     "astro": "^7.1.1",
     "typescript": "^5.7.2"
   },
-  "description": "Olta Atlası: İstanbul ve Kocaeli balıkçılık rotaları, tür rehberleri ve saha bilgileri.",
+  "description": "Olta Atlası: avlak haritası, balık türleri, görselli yöntem rehberleri ve kaynaklı dünya balıkçılık günlüğü.",
   "devDependencies": {
     "wrangler": "^4.112.0"
   },
