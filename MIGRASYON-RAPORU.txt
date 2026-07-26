@@ -1,5 +1,5 @@
 OLTA ATLASI MIGRASYON RAPORU
-Tarih: 23.07.2026
+Tarih: 26.07.2026
 
 HAZIRLANAN KAYNAK
 - Marka: Olta Atlası
@@ -8,7 +8,7 @@ HAZIRLANAN KAYNAK
 - Search Console doğrulama dosyası: google971680255e7e73d7.html
 - Standart sitemap: sitemap-index.xml ve sitemap-0.xml
 - Görsel sitemap: sitemap-images.xml
-- Teknik Cloudflare Worker adı: balik-rotasi (mevcut projeye deploy edebilmek için korundu)
+- Teknik Cloudflare Worker adı: oltaatlasi
 
 ALAN ADI GEÇİŞİ
 - www.oltaatlasi.com -> https://oltaatlasi.com (301)
@@ -34,6 +34,14 @@ STATİK ÇIKTI DOĞRULAMASI
 - Eski alan adı kalan statik çıktı: 0
 - 26 sosyal paylaşım görseli güncellendi.
 - Search Console HTML dosyası pakette mevcut.
+
+YAYIN DURUMU
+- Cloudflare Worker: oltaatlasi
+- Production branch: main
+- Build command: npm run build
+- Deploy command: npx wrangler deploy
+- Build variable: PUBLIC_SITE_URL=https://oltaatlasi.com
+- Otomatik yayın tetikleme commit'i: 26.07.2026
 
 NOT
 Kaynak projenin yeniden npm derlemesi çalışma ortamındaki geçici npm registry 503 hatası nedeniyle bu oturumda tamamlanamadı. Kaynak yapı, daha önce başarıyla derlenmiş v4.1 tabanı üzerinde yalnızca marka, alan adı, yönlendirme ve yapılandırma değişiklikleriyle hazırlandı. Yayına hazır paket, daha önce derlenmiş 101 sayfalık çıktı üzerinde ayrıca statik olarak doğrulandı.
