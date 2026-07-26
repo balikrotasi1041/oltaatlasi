@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { meralar } from "../../data/meralar";
 import { baliklar } from "../../data/baliklar";
-import { rehberler } from "../../data/rehberler";
+import { rehberler } from "../../data/rehber-katalogu";
 import { dunyaBalikcilikYazilari } from "../../data/dunya-balikcilik";
 const posts=[...meralar.map((m)=>({type:"Mera",title:m.name,summary:m.summary,url:`/meralar/${m.slug}/`,image:m.image,icon:null,meta:`${m.province} · ${m.district}`,date:m.publishedAt})),...baliklar.map((b)=>({type:"Balık",title:b.name,summary:b.habitat,url:`/baliklar/${b.slug}/`,image:b.image,icon:null,meta:b.water,date:"2026-07-18"})),...rehberler.map((r)=>({type:"Rehber",title:r.title,summary:r.summary,url:`/rehberler/${r.slug}/`,image:r.cover||null,meta:`${r.category} · ${r.difficulty}`,icon:r.icon,date:r.publishedAt})),...dunyaBalikcilikYazilari.map((p)=>({type:"Dünya",title:p.title,summary:p.summary,url:`/dunyada-balikcilik/${p.slug}/`,image:p.cover,meta:`${p.country} · ${p.species}`,icon:null,date:p.publishedAt}))].sort((a,b)=>b.date.localeCompare(a.date));
 ---
