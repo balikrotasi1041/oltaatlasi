@@ -20,14 +20,11 @@ const currentPath = Astro.url.pathname;
 const homeUrl = new URL("/", Astro.site).href;
 
 const navigation = [
-  { href: "/#meralar", label: "Meralar", match: "/meralar/" },
-  { href: "/iller/", label: "İller", match: "/iller/" },
+  { href: "/meralar/", label: "Meralar", match: "/meralar/" },
   { href: "/baliklar/", label: "Balıklar", match: "/baliklar/" },
-  { href: "/dunyada-balikcilik/", label: "Dünyada Balıkçılık", match: "/dunyada-balikcilik/" },
   { href: "/rehberler/", label: "Rehberler", match: "/rehberler/" },
-  { href: "/yazilar/", label: "Tüm yazılar", match: "/yazilar/" },
-  { href: "/hakkinda/", label: "Yöntem", match: "/hakkinda/" },
-  { href: "/iletisim/", label: "İletişim", match: "/iletisim/" },
+  { href: "/dunyada-balikcilik/", label: "Dünya", match: "/dunyada-balikcilik/" },
+  { href: "/hakkinda/", label: "Hakkımızda", match: "/hakkinda/" },
 ];
 const isActive = (match: string) => currentPath.startsWith(match);
 
@@ -37,7 +34,7 @@ const organizationSchema = {
   "@id": `${homeUrl}#organization`,
   name: "Olta Atlası",
   url: homeUrl,
-  logo: new URL("/favicon.svg", Astro.site).href,
+  logo: new URL("/logo-mark.svg", Astro.site).href,
   email: "mailto:balikrotasi1041@gmail.com",
   description: "Türkiye'deki kıyı ve iç su rotalarını balık türleri, ulaşım, saha güvenliği ve doğrulama notlarıyla açıklayan bağımsız bilgi rehberi.",
 };
@@ -57,21 +54,15 @@ const websiteSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0a3340" />
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-K3ZLC335GP"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-K3ZLC335GP');
-    </script>
     <meta name="application-name" content="Olta Atlası" />
     <meta name="description" content={description} />
     <meta name="author" content="Olta Atlası Editörlüğü" />
     <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
     <link rel="canonical" href={pageUrl} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo-mark.svg" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin="anonymous" />
     <meta property="og:locale" content="tr_TR" />
     <meta property="og:type" content={type === "article" ? "article" : "website"} />
     <meta property="og:site_name" content="Olta Atlası" />
@@ -95,7 +86,7 @@ const websiteSchema = {
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="Olta Atlası ana sayfa">
-          <span class="brand-mark" aria-hidden="true">🧭</span>
+          <img class="brand-mark" src="/logo-mark.svg" alt="" width="48" height="48" />
           <span><strong>Olta Atlası</strong><small>Mera, tür ve saha rehberi</small></span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Ana menüyü aç">
@@ -113,10 +104,11 @@ const websiteSchema = {
       <div class="container footer-grid">
         <div><strong>Olta Atlası</strong><p>Mera, tür, yöntem, navigasyon ve saha güvenliğini aynı rotada buluşturan bağımsız balıkçılık rehberi.</p></div>
         <div><strong>Editörlük ilkesi</strong><p>Bilgiler kaynak, son kontrol tarihi ve güven seviyesiyle sunulur. Raporlanan türler av garantisi değildir.</p></div>
-        <div><strong>Bağlantılar</strong><p><a href="/iller/">İl rehberleri</a><br /><a href="/dunyada-balikcilik/">Dünyada Balıkçılık</a><br /><a href="/hakkinda/">İçerik yöntemi</a><br /><a href="/gorsel-kaynaklari/">Görsel kaynakları</a><br /><a href="/iletisim/">Hata bildir / İletişim</a></p></div>
+        <div><strong>Bağlantılar</strong><p><a href="/iller/">İl rehberleri</a><br /><a href="/yazilar/">Tüm yazılar</a><br /><a href="/gizlilik/">Gizlilik ve çerezler</a><br /><a href="/gorsel-kaynaklari/">Görsel kaynakları</a><br /><a href="/iletisim/">Hata bildir / İletişim</a></p></div>
       </div>
       <div class="container footer-bottom">© {new Date().getFullYear()} Olta Atlası · Doğayı bulduğundan temiz bırak.</div>
     </footer>
+    <aside class="consent-banner" id="consent-banner" hidden aria-label="Analitik tercihleri" aria-live="polite"><div><strong>Analitik tercihi</strong><p>Siteyi geliştirmek için Google Analytics kullanıyoruz. İzin vermeden analitik etiketi yüklenmez. Harita açıldığında OpenStreetMap karo sunucularına bağlantı kurulur.</p><a href="/gizlilik/">Ayrıntıları oku</a></div><div class="consent-actions"><button class="button button-small" id="consent-accept" type="button">Analitiğe izin ver</button><button class="button button-small button-ghost consent-reject" id="consent-reject" type="button">Yalnızca gerekli</button></div></aside>
     <script is:inline>
       const toggle = document.querySelector(".menu-toggle");
       const navigation = document.querySelector("#main-navigation");
@@ -125,6 +117,15 @@ const websiteSchema = {
       navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
       document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
       document.addEventListener("click", (event) => { if (!toggle || !navigation || navigation.dataset.open !== "true") return; const target = event.target; if (target instanceof Node && !navigation.contains(target) && !toggle.contains(target)) closeMenu(); });
+
+      const consentKey="oltaatlasi-analytics-consent";
+      const consentBanner=document.querySelector("#consent-banner");
+      let analyticsLoaded=false;
+      const loadAnalytics=()=>{if(analyticsLoaded)return;analyticsLoaded=true;const script=document.createElement("script");script.async=true;script.src="https://www.googletagmanager.com/gtag/js?id=G-K3ZLC335GP";document.head.appendChild(script);window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};window.gtag("js",new Date());window.gtag("config","G-K3ZLC335GP",{anonymize_ip:true});};
+      const savedConsent=localStorage.getItem(consentKey);
+      if(savedConsent==="granted")loadAnalytics();else if(!savedConsent)consentBanner.hidden=false;
+      document.querySelector("#consent-accept")?.addEventListener("click",()=>{localStorage.setItem(consentKey,"granted");consentBanner.hidden=true;loadAnalytics();});
+      document.querySelector("#consent-reject")?.addEventListener("click",()=>{localStorage.setItem(consentKey,"denied");consentBanner.hidden=true;});
     </script>
   </body>
 </html>
