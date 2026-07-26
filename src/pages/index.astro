@@ -5,7 +5,8 @@ import Map from "../components/Map.astro";
 import { meralar, provinces, districtsByProvince, fishOptions, zonesByProvince } from "../data/meralar";
 import { baliklar } from "../data/baliklar";
 import { rehberler } from "../data/rehberler";
-const totalPosts = meralar.length + baliklar.length + rehberler.length;
+import { dunyaBalikcilikYazilari } from "../data/dunya-balikcilik";
+const totalPosts = meralar.length + baliklar.length + rehberler.length + dunyaBalikcilikYazilari.length;
 const istanbulCount=meralar.filter((m)=>m.province==="İstanbul").length;
 const kocaeliCount=meralar.filter((m)=>m.province==="Kocaeli").length;
 ---
