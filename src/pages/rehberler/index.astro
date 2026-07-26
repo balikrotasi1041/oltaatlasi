@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { rehberler, rehberKategorileri } from "../../data/rehberler";
+import { rehberler, rehberKategorileri } from "../../data/rehber-katalogu";
 const ordered=[...rehberler].sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt));
 ---
 <BaseLayout title="Balıkçılık Rehberleri" description="Düğüm, takım, yem, güvenlik, kamp, hava ve mera doğrulama için görselli, uygulanabilir balıkçılık yazıları.">
