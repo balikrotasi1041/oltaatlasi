@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { meralar, provinces } from "../../data/meralar";
+import { meralar, provinces } from "../../data/meralar-tumu";
 import { slugifyTr } from "../../utils/slug";
 const provinceCards=provinces.map((province)=>{const items=meralar.filter((m)=>m.province===province);return {province,count:items.length,districts:[...new Set(items.map((m)=>m.district))],fish:[...new Set(items.flatMap((m)=>m.fish))].slice(0,8)};});
 ---
