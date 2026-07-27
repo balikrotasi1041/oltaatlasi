@@ -1,5 +1,5 @@
 ---
-import { meralar } from "../data/meralar";
+import { meralar } from "../data/meralar-tumu";
 const mapData = meralar.map(({slug,name,province,district,zone,lat,lng,waterType,fish,confidence})=>({slug,name,province,district,zone,lat,lng,waterType,fish,confidence}));
 ---
 <section class="map-shell" aria-labelledby="map-title"><div class="section-heading compact"><div><span class="kicker">Marmara rota haritası</span><h2 id="map-title">İstanbul, Kocaeli ve yakın çevredeki avlaklar</h2></div><p>İşaretler hassas veya yoğun alanlarda tam av noktası değil, genel kamusal erişim bölgesidir. Yakın işaretler performans için kümelenir.</p></div><div id="map" class="map" aria-label="Olta Atlası avlak haritası"></div><div class="map-footer"><span>{mapData.length} avlak işareti</span><a href="/meralar/">Arama ve ayrıntılı filtreleri aç →</a></div></section>
