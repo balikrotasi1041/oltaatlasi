@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run generate:robots && astro check && astro build && npm run generate:image-sitemap",
+    "validate:data": "node scripts/validate-route-data.mjs",
+    "build": "npm run validate:data && npm run generate:robots && astro check && astro build && npm run generate:image-sitemap",
     "preview": "astro preview",
     "check": "astro check",
     "generate:robots": "node scripts/generate-robots.mjs",
