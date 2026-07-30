@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 
-const files = ["src/data/meralar.ts", "src/data/meralar-gunluk.ts", "src/data/meralar-ulusal.ts"];
+const files = ["src/data/meralar.ts", "src/data/meralar-gunluk.ts", "src/data/meralar-ulusal.js"];
 const sources = files.map((path) => ({ path, text: readFileSync(path, "utf8") }));
 const combined = sources.map(({ text }) => text).join("\n");
-const nationalText = sources.find(({ path }) => path.endsWith("meralar-ulusal.ts"))?.text || "";
+const nationalText = sources.find(({ path }) => path.endsWith("meralar-ulusal.js"))?.text || "";
 
 const collect = (pattern) => [...combined.matchAll(pattern)].map((match) => match[1]);
 const duplicates = (values) => [...new Set(values.filter((value, index) => values.indexOf(value) !== index))];
@@ -20,7 +20,7 @@ const slugifyTr = (value) => value
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-+|-+$/g, "");
 
-const nationalMatch = nationalText.match(/const rawRoutes = String\.raw`([\s\S]*?)`;/);
+const nationalMatch = nationalText.match(/const\s+rawRoutes\s*=\s*String\.raw`([\s\S]*?)`;/);
 const nationalRows = nationalMatch ? nationalMatch[1].trim().split("\n").filter(Boolean) : [];
 const nationalEntries = nationalRows.flatMap((line) => {
   const [province, zone, namesText] = line.split("|");
