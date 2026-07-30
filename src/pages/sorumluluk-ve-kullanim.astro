@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+---
+<BaseLayout
+  title="Sorumluluk ve Kullanım Açıklaması"
+  description="Olta Atlası rota, avlak, tür ve yöntem bilgilerinin kaynak kullanımı, sınırları ve kullanıcı sorumluluğu hakkında açıklama."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Ana sayfa", href: "/" }, { label: "Sorumluluk ve kullanım" }]} />
+      <span class="kicker">Kaynak, kapsam ve sorumluluk</span>
+      <h1>Sorumluluk ve Kullanım Açıklaması</h1>
+      <p class="lead">Olta Atlası, açık kaynaklardan derlenen bilgileri planlama desteği ve tavsiye niteliğinde sunar; sahaya ilişkin kesinlik veya avlanma hakkı garanti etmez.</p>
+    </div>
+  </section>
+
+  <section class="container section detail-content">
+    <article class="content-main article-prose">
+      <section class="warning-box">
+        <h2>Temel bilgilendirme</h2>
+        <p>Olta Atlası'nda yer alan avlak, rota, balık türü, yöntem, ulaşım ve çevre bilgileri kamuya açık kaynaklardan derlenir. Bu veriler bilgilendirme ve tavsiye niteliğindedir. Bir konumun sitede yer alması; o alana girişin serbest, fiziki erişimin güvenli, avlanmanın hukuken mümkün veya belirli bir balığın bulunmasının kesin olduğu anlamına gelmez.</p>
+      </section>
+
+      <section class="info-block">
+        <span class="kicker">Kaynak yöntemi</span>
+        <h2>Bilgiler nasıl hazırlanır?</h2>
+        <p>İçerikler resmî kurum sayfaları, belediye ve valilik duyuruları, akademik çalışmalar, harita verileri, kamuya açık saha kayıtları ve güvenilir yayınlardan yararlanılarak hazırlanır. Kaynakların yayın tarihi, kapsamı ve güncelliği değişebilir. Saha doğrulaması yapılmayan kayıtlar güven seviyesi ve doğrulama notuyla belirtilir.</p>
+        <p>Kaynak gösterilmiş olması, kaynağın her koşulda güncel kaldığı veya belirli bir noktada avlanmaya izin verdiği anlamına gelmez. Kullanıcı, yola çıkmadan önce güncel resmî düzenlemeleri ayrıca kontrol etmelidir.</p>
+      </section>
+
+      <section class="info-block">
+        <span class="kicker">Değişken koşullar</span>
+        <h2>Hangi hususlar ayrıca araştırılmalıdır?</h2>
+        <p>Fiziki koşullar, yol ve kıyı erişimi, hava ve su durumu, akıntı, su seviyesi, heyelan ve yangın riski, özel mülkiyet sınırları, güvenlik bölgeleri, koruma alanları, içme suyu havzaları, geçici kapatmalar, tesis veya liman operasyonları ile yerel idari kararlar kısa sürede değişebilir.</p>
+        <p>Kullanıcı; güncel tabela ve bariyerleri, görevli talimatlarını, alanın mülkiyet ve kullanım durumunu, av yasağı dönemlerini, tür-boy-adet sınırlarını ve özel bölge kurallarını resmî kaynaklardan ve yerinde kontrol etmelidir.</p>
+      </section>
+
+      <section class="info-block">
+        <span class="kicker">Kullanıcı kararı</span>
+        <h2>Konuma gitme ve avlanma sorumluluğu</h2>
+        <p>Belirtilen konuma gitmek, güzergâh seçmek, alana giriş yapmak, ekipman kullanmak ve avlanmak kullanıcının kendi değerlendirmesi ve sorumluluğundadır. Olta Atlası; yolun açık olduğunu, alanın kamuya ait bulunduğunu, giriş izni verildiğini, avlanmanın serbest olduğunu, fiziki koşulların güvenli kaldığını veya av başarısını garanti etmez.</p>
+        <p>Kullanıcı, kendi sağlık durumu, deneyimi, ekipmanı, hava koşulları ve yanında bulunan çocuklar veya diğer kişiler bakımından ayrıca risk değerlendirmesi yapmalıdır. Tehlikeli veya belirsiz görülen bir alana girilmemeli; resmî uyarı ve kısıtlamalara uyulmalıdır.</p>
+      </section>
+
+      <section class="info-block">
+        <span class="kicker">Güncel mevzuat</span>
+        <h2>Hukuki kurallar nasıl kontrol edilmelidir?</h2>
+        <p>Amatör su ürünleri avcılığına ilişkin dönemsel tebliğler, il ve ilçe bazlı kararlar, koruma alanı hükümleri ve geçici yasaklar zaman içinde değişebilir. Sitedeki özetler güncel resmî metnin yerine geçmez. Av öncesinde Tarım ve Orman Bakanlığı ile ilgili valilik, kaymakamlık, belediye, milli park veya su idaresi duyuruları kontrol edilmelidir.</p>
+      </section>
+
+      <section class="info-block">
+        <span class="kicker">Düzeltme ve katkı</span>
+        <h2>Hatalı veya güncelliğini yitirmiş bilgi</h2>
+        <p>Bir rota kapatılmış, erişim değişmiş, yasak getirilmiş veya kaynak bağlantısı güncelliğini yitirmiş olabilir. Böyle bir durum fark edildiğinde ilgili sayfadaki hata bildirim bağlantısı veya iletişim sayfası üzerinden bildirim yapılabilir. Bildirimler kaynaklarla karşılaştırılarak incelenir ve gerekli düzeltmeler yayımlanır.</p>
+        <p><a class="button button-small" href="/iletisim/">Hata veya güncelleme bildir</a></p>
+      </section>
+    </article>
+
+    <aside class="content-aside">
+      <div class="aside-card sticky-card">
+        <h2>Kısa özet</h2>
+        <ul>
+          <li>Veriler açık kaynaklardan derlenir.</li>
+          <li>İçerikler tavsiye niteliğindedir.</li>
+          <li>Saha ve hukuk koşulları ayrıca kontrol edilmelidir.</li>
+          <li>Konuma gitmek ve avlanmak kullanıcının sorumluluğundadır.</li>
+          <li>Av ve erişim garantisi verilmez.</li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h2>Resmî kurallar</h2>
+        <a href="https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi" target="_blank" rel="noreferrer">Tarım ve Orman Bakanlığı avcılık sayfası</a>
+      </div>
+    </aside>
+  </section>
+</BaseLayout>
