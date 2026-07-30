@@ -11,11 +11,13 @@ export function getStaticPaths(){
 }
 
 const {mera}=Astro.props;
+const preliminary=mera.confidence==="D";
 const hasCoordinates=Number.isFinite(mera.lat)&&Number.isFinite(mera.lng);
-const googleMaps=hasCoordinates?`https://www.google.com/maps/dir/?api=1&destination=${mera.lat},${mera.lng}&travelmode=driving`:"";
-const appleMaps=hasCoordinates?`https://maps.apple.com/?daddr=${mera.lat},${mera.lng}&dirflg=d`:"";
-const yandexMaps=hasCoordinates?`https://yandex.com/maps/?rtext=~${mera.lat},${mera.lng}&rtt=auto`:"";
-const osmMaps=hasCoordinates?`https://www.openstreetmap.org/?mlat=${mera.lat}&mlon=${mera.lng}#map=14/${mera.lat}/${mera.lng}`:"";
+const googleDirections=hasCoordinates&&!preliminary?`https://www.google.com/maps/dir/?api=1&destination=${mera.lat},${mera.lng}&travelmode=driving`:"";
+const googlePoint=hasCoordinates?`https://www.google.com/maps/search/?api=1&query=${mera.lat},${mera.lng}`:"";
+const appleMaps=hasCoordinates&&!preliminary?`https://maps.apple.com/?daddr=${mera.lat},${mera.lng}&dirflg=d`:"";
+const yandexMaps=hasCoordinates&&!preliminary?`https://yandex.com/maps/?rtext=~${mera.lat},${mera.lng}&rtt=auto`:"";
+const osmMaps=hasCoordinates?`https://www.openstreetmap.org/?mlat=${mera.lat}&mlon=${mera.lng}#map=13/${mera.lat}/${mera.lng}`:"";
 const osmSearch=`https://www.openstreetmap.org/search?query=${encodeURIComponent(`${mera.name}, ${mera.province}, Türkiye`)}`;
 const relatedFish=baliklar.filter((b)=>mera.fish.includes(b.name));
 const provinceUrl=`/iller/${slugifyTr(mera.province)}/`;
@@ -23,8 +25,8 @@ const districtCount=districtRouteCounts[`${mera.province}|${mera.district}`] || 
 const districtUrl=districtCount>=2 ? `/iller/${slugifyTr(mera.province)}/${slugifyTr(mera.district)}/` : `/iller/${slugifyTr(mera.province)}/#${slugifyTr(mera.district)}`;
 const pagePath=`/meralar/${mera.slug}/`;
 const pageUrl=new URL(pagePath,Astro.site).href;
-const preliminary=mera.confidence==="D";
 const pageHeading=preliminary?`${mera.name} Ön Değerlendirme Rota Dosyası`:`${mera.name} Balık Avı Rehberi`;
+const accessDisplay=preliminary?"Kontrol edilmeli":mera.vehicleAccess;
 const spatialCoverage=hasCoordinates
   ? {"@type":"Place",name:`${mera.district}, ${mera.province}`,geo:{"@type":"GeoCoordinates",latitude:mera.lat,longitude:mera.lng}}
   : {"@type":"Place",name:`${mera.province}, Türkiye`};
@@ -58,7 +60,7 @@ const articleSchema={
         </div>
         <h1>{pageHeading}</h1>
         <p class="lead">{mera.summary}</p>
-        {preliminary && <div class="warning-box"><strong>Ön değerlendirme kaydı:</strong> Bu dosya bir su varlığını araştırma başlangıcı olarak gösterir; belirli kıyının kamusal, güvenli veya avlanmaya açık olduğunu doğrulamaz.</div>}
+        {preliminary && <div class="warning-box"><strong>Ön değerlendirme kaydı:</strong> Harita pini eşleşen su varlığının genel coğrafi konumunu gösterir. Kamusal kıyı girişi, güvenli yaklaşım, yol tarifi veya avlanma izni değildir.</div>}
         <div class="article-byline">
           <span>Olta Atlası Editörlüğü</span>
           <span>İlk yayın: {new Date(mera.publishedAt).toLocaleDateString("tr-TR")}</span>
@@ -66,7 +68,9 @@ const articleSchema={
         </div>
         <div class="detail-actions">
           {hasCoordinates
-            ? <a class="button" href={googleMaps} target="_blank" rel="noreferrer">Google Maps yol tarifi</a>
+            ? preliminary
+              ? <a class="button" href={osmMaps} target="_blank" rel="noreferrer">Genel su konumunu aç</a>
+              : <a class="button" href={googleDirections} target="_blank" rel="noreferrer">Google Maps yol tarifi</a>
             : <a class="button" href={osmSearch} target="_blank" rel="noreferrer">Açık haritada adı ara</a>}
           <button class="button button-ghost" id="copy-link" type="button">Bağlantıyı kopyala</button>
         </div>
@@ -77,7 +81,7 @@ const articleSchema={
           <div><dt>Doğrulama</dt><dd>{mera.verification}</dd></div>
           <div><dt>Konum</dt><dd>{mera.locationPrecision}</dd></div>
           <div><dt>Su</dt><dd>{mera.region}</dd></div>
-          <div><dt>Araç erişimi</dt><dd>{mera.vehicleAccess}</dd></div>
+          <div><dt>Araç erişimi</dt><dd>{accessDisplay}</dd></div>
         </dl>
       </aside>
     </div>
@@ -107,12 +111,21 @@ const articleSchema={
         <h2>Rotaya nasıl gidilir?</h2>
         <p>{mera.transport}</p>
         <p>{mera.navigationNote}</p>
-        {hasCoordinates ? (
+        {hasCoordinates && !preliminary ? (
           <div class="navigation-grid">
-            <a href={googleMaps} target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Mevcut konumdan araç rotası</span></a>
+            <a href={googleDirections} target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Mevcut konumdan araç rotası</span></a>
             <a href={appleMaps} target="_blank" rel="noreferrer"><strong>Apple Maps</strong><span>Apple cihazlarında yol tarifi</span></a>
             <a href={yandexMaps} target="_blank" rel="noreferrer"><strong>Yandex Maps</strong><span>Koordinata araç rotası</span></a>
             <a href={osmMaps} target="_blank" rel="noreferrer"><strong>OpenStreetMap</strong><span>Açık haritada konumu gör</span></a>
+          </div>
+        ) : hasCoordinates && preliminary ? (
+          <div class="warning-box">
+            <h3>Pin erişim noktası değildir</h3>
+            <p>Bu koordinat su varlığının haritadaki genel merkezidir. Araçla rota oluşturmak, baraj gövdesine, özel mülke, güvenlik alanına veya kıyıya ulaşılamayan bir noktaya yöneltebilir.</p>
+            <div class="navigation-grid">
+              <a href={osmMaps} target="_blank" rel="noreferrer"><strong>OpenStreetMap</strong><span>Genel su konumunu incele</span></a>
+              <a href={googlePoint} target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Yol tarifi vermeden genel noktayı aç</span></a>
+            </div>
           </div>
         ) : (
           <div class="warning-box">
@@ -152,7 +165,7 @@ const articleSchema={
         </section>
         <section class="info-card">
           <span>🚗</span><h2>Kullanım bilgisi</h2>
-          <ul><li>Araç erişimi: {mera.vehicleAccess}</li><li>Kamp: {mera.camping}</li><li>Konum hassasiyeti: {mera.locationPrecision}</li></ul>
+          <ul><li>Araç erişimi: {accessDisplay}</li><li>Kamp: {mera.camping}</li><li>Konum hassasiyeti: {mera.locationPrecision}</li></ul>
         </section>
         <section class="info-card">
           <span>🏕️</span><h2>Yakın imkânlar</h2>

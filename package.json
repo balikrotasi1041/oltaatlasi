@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "validate:data": "node scripts/validate-route-data.mjs",
+    "geocode:national": "node scripts/geocode-national-routes.mjs",
     "build": "npm run validate:data && npm run generate:robots && astro check && astro build && npm run generate:image-sitemap",
     "preview": "astro preview",
     "check": "astro check",
