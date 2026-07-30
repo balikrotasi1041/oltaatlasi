@@ -1,3 +1,4 @@
+import type { Mera } from "./meralar";
 import { meralar as temelMeralar } from "./meralar";
 import { gunlukMeralar } from "./meralar-gunluk";
 import { ulusalMeralar } from "./meralar-ulusal";
@@ -11,15 +12,15 @@ type NationalCoordinate = {
   matchScore:number; matchedAt:string;
 };
 
-type ResearchSource = { label:string; url:string; note:string };
-type FishEvidence = {
+export type ResearchSource = { label:string; url:string; note:string };
+export type FishEvidence = {
   name:string; scientificName?:string|null; evidenceLevel:string; sourceLabel:string;
   sourceUrl:string; note:string; recordCount?:number|null; distanceKm?:number|null;
 };
-type AccommodationOption = {
+export type AccommodationOption = {
   name:string; type:string; distanceKm:number|null; sourceUrl:string; note:string;
 };
-type AccessEvidence = {
+export type AccessEvidence = {
   label:string; value:string; sourceUrl:string; note:string;
 };
 type NationalResearch = {
@@ -32,15 +33,28 @@ type NationalResearch = {
   sources?:ResearchSource[];
 };
 
+export type EnrichedMera = Mera & {
+  researchStatus?:string;
+  researchSummary?:string;
+  researchedAt?:string;
+  fishEvidence?:FishEvidence[];
+  accommodationOptions?:AccommodationOption[];
+  accessEvidence?:AccessEvidence[];
+};
+
 const coordinateIndex=ulusalKoordinatlar as Record<string,NationalCoordinate>;
 const automaticResearch=ulusalOtomatikArastirma as Record<string,NationalResearch>;
 const manualResearch=ulusalManuelArastirma as Record<string,NationalResearch>;
 
-const uniqueStrings=(values:string[]=[])=
-  [...new Set(values.map((value)=>String(value).trim()).filter(Boolean))];
+const uniqueStrings=(values:string[]=[]):string[] =>
+  [...new Set(values.map((value:string)=>String(value).trim()).filter(Boolean))];
 
-const uniqueSources=(values:ResearchSource[]=[])=
-  [...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
+const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[] =>
+  [...new Map<string,ResearchSource>(
+    values
+      .filter((source:ResearchSource)=>Boolean(source?.url&&source?.label))
+      .map((source:ResearchSource)=>[source.url,source])
+  ).values()];
 
 const mergeResearch=(automatic?:NationalResearch,manual?:NationalResearch):NationalResearch|undefined=>{
   if(!automatic&&!manual)return undefined;
@@ -61,10 +75,10 @@ const mergeResearch=(automatic?:NationalResearch,manual?:NationalResearch):Natio
   };
 };
 
-const koordinatliUlusalMeralar=ulusalMeralar.map((mera)=>{
+const koordinatliUlusalMeralar:EnrichedMera[]=ulusalMeralar.map((mera):EnrichedMera=>{
   const coordinate=coordinateIndex[mera.slug];
   const research=mergeResearch(automaticResearch[mera.slug],manualResearch[mera.slug]);
-  const coordinateSource=coordinate?{
+  const coordinateSource:ResearchSource|null=coordinate?{
     label:`OpenStreetMap – ${coordinate.displayName}`,
     url:coordinate.sourceUrl,
     note:`Nominatim eşleştirmesiyle bulunan genel su varlığı konumudur (eşleşme puanı ${coordinate.matchScore}). Pin, kamusal kıyı erişimi veya avlanma noktası değildir.`,
@@ -128,7 +142,11 @@ export const nationalResearchStats={
   generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,
   manualRouteCount:Object.keys(manualResearch).length,
 };
-export const meralar = [...temelMeralar, ...gunlukMeralar, ...koordinatliUlusalMeralar];
+export const meralar:EnrichedMera[] = [
+  ...(temelMeralar as EnrichedMera[]),
+  ...(gunlukMeralar as EnrichedMera[]),
+  ...koordinatliUlusalMeralar,
+];
 export const provinces = [...new Set(meralar.map((mera) => mera.province))].sort((a,b)=>a.localeCompare(b,"tr"));
 export const districtsByProvince = Object.fromEntries(provinces.map((province) => [province, [...new Set(meralar.filter((m)=>m.province===province).map((m)=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const fishOptions = [...new Set(meralar.flatMap((mera) => mera.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
