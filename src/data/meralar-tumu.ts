@@ -37,9 +37,9 @@ export type EnrichedMera = Mera & {
   researchStatus?:string;
   researchSummary?:string;
   researchedAt?:string;
-  fishEvidence?:FishEvidence[];
-  accommodationOptions?:AccommodationOption[];
-  accessEvidence?:AccessEvidence[];
+  fishEvidence:FishEvidence[];
+  accommodationOptions:AccommodationOption[];
+  accessEvidence:AccessEvidence[];
 };
 
 const coordinateIndex=ulusalKoordinatlar as Record<string,NationalCoordinate>;
@@ -55,6 +55,13 @@ const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[] =>
       .filter((source:ResearchSource)=>Boolean(source?.url&&source?.label))
       .map((source:ResearchSource)=>[source.url,source])
   ).values()];
+
+const withResearchDefaults=(mera:Mera):EnrichedMera=>({
+  ...mera,
+  fishEvidence:[],
+  accommodationOptions:[],
+  accessEvidence:[],
+});
 
 const mergeResearch=(automatic?:NationalResearch,manual?:NationalResearch):NationalResearch|undefined=>{
   if(!automatic&&!manual)return undefined;
@@ -122,10 +129,10 @@ const koordinatliUlusalMeralar:EnrichedMera[]=ulusalMeralar.map((mera):EnrichedM
       researchStatus:research.researchStatus,
       researchSummary:research.researchSummary,
       researchedAt:research.researchedAt,
-      fishEvidence:research.fishEvidence||[],
-      accommodationOptions:research.accommodationOptions||[],
-      accessEvidence:research.accessEvidence||[],
     }:{}),
+    fishEvidence:research?.fishEvidence||[],
+    accommodationOptions:research?.accommodationOptions||[],
+    accessEvidence:research?.accessEvidence||[],
     sources,
   };
 });
@@ -143,8 +150,8 @@ export const nationalResearchStats={
   manualRouteCount:Object.keys(manualResearch).length,
 };
 export const meralar:EnrichedMera[] = [
-  ...(temelMeralar as EnrichedMera[]),
-  ...(gunlukMeralar as EnrichedMera[]),
+  ...temelMeralar.map(withResearchDefaults),
+  ...gunlukMeralar.map(withResearchDefaults),
   ...koordinatliUlusalMeralar,
 ];
 export const provinces = [...new Set(meralar.map((mera) => mera.province))].sort((a,b)=>a.localeCompare(b,"tr"));
