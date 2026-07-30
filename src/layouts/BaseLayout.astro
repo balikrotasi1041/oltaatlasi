@@ -18,6 +18,7 @@ const imageUrl = new URL(image, Astro.site).href;
 const fullTitle = title === "Olta Atlası" ? title : `${title} | Olta Atlası`;
 const currentPath = Astro.url.pathname;
 const homeUrl = new URL("/", Astro.site).href;
+const isMeraDetail = /^\/meralar\/[^/]+\/?$/.test(currentPath);
 
 const navigation = [
   { href: "/meralar/", label: "Meralar", match: "/meralar/" },
@@ -99,14 +100,23 @@ const websiteSchema = {
         </nav>
       </div>
     </header>
+    {isMeraDetail && (
+      <aside aria-label="Bilgilendirme ve sorumluluk" style="background:#fff5ed;border-bottom:1px solid #f0cfb8;">
+        <div class="container" style="padding-block:18px;">
+          <strong>Bilgilendirme ve sorumluluk:</strong>
+          <span> Bu rota bilgileri kamuya açık kaynaklardan derlenmiş, tavsiye niteliğinde bilgilerdir. Fiziki koşullar, coğrafi kısıtlar, özel mülkiyet, koruma alanları, geçici kapatmalar ve hukuki yasaklar değişebilir. Yola çıkmadan önce güncel resmî kaynakları ve saha koşullarını ayrıca kontrol edin. Belirtilen konuma gitme, alana giriş ve avlanma kararı kullanıcının kendi değerlendirmesi ve sorumluluğundadır. Olta Atlası erişim veya av yapılabilirliği garanti etmez. </span>
+          <a href="/sorumluluk-ve-kullanim/" style="font-weight:800;">Ayrıntılı açıklama</a>
+        </div>
+      </aside>
+    )}
     <main id="icerik"><slot /></main>
     <footer class="site-footer">
       <div class="container footer-grid">
         <div><strong>Olta Atlası</strong><p>Mera, tür, yöntem, navigasyon ve saha güvenliğini aynı rotada buluşturan bağımsız balıkçılık rehberi.</p></div>
-        <div><strong>Editörlük ilkesi</strong><p>Bilgiler kaynak, son kontrol tarihi ve güven seviyesiyle sunulur. Raporlanan türler av garantisi değildir.</p></div>
-        <div><strong>Bağlantılar</strong><p><a href="/iller/">İl rehberleri</a><br /><a href="/yazilar/">Tüm yazılar</a><br /><a href="/gizlilik/">Gizlilik ve çerezler</a><br /><a href="/gorsel-kaynaklari/">Görsel kaynakları</a><br /><a href="/iletisim/">Hata bildir / İletişim</a></p></div>
+        <div><strong>Editörlük ilkesi</strong><p>Bilgiler açık kaynaklardan derlenerek kaynak, son kontrol tarihi ve güven seviyesiyle tavsiye niteliğinde sunulur. Fiziki ve hukuki koşullar ayrıca doğrulanmalıdır; raporlanan türler av garantisi değildir.</p></div>
+        <div><strong>Bağlantılar</strong><p><a href="/iller/">İl rehberleri</a><br /><a href="/yazilar/">Tüm yazılar</a><br /><a href="/sorumluluk-ve-kullanim/">Sorumluluk ve kullanım</a><br /><a href="/gizlilik/">Gizlilik ve çerezler</a><br /><a href="/gorsel-kaynaklari/">Görsel kaynakları</a><br /><a href="/iletisim/">Hata bildir / İletişim</a></p></div>
       </div>
-      <div class="container footer-bottom">© {new Date().getFullYear()} Olta Atlası · Doğayı bulduğundan temiz bırak.</div>
+      <div class="container footer-bottom">© {new Date().getFullYear()} Olta Atlası · Rota seçimi, alana giriş ve avlanma kullanıcının kendi sorumluluğundadır · Doğayı bulduğundan temiz bırak.</div>
     </footer>
     <aside class="consent-banner" id="consent-banner" hidden aria-label="Analitik tercihleri" aria-live="polite"><div><strong>Analitik tercihi</strong><p>Siteyi geliştirmek için Google Analytics kullanıyoruz. İzin vermeden analitik etiketi yüklenmez. Harita açıldığında OpenStreetMap karo sunucularına bağlantı kurulur.</p><a href="/gizlilik/">Ayrıntıları oku</a></div><div class="consent-actions"><button class="button button-small" id="consent-accept" type="button">Analitiğe izin ver</button><button class="button button-small button-ghost consent-reject" id="consent-reject" type="button">Yalnızca gerekli</button></div></aside>
     <script is:inline>
