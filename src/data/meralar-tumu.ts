@@ -58,6 +58,9 @@ const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[] =>
 
 const withResearchDefaults=(mera:Mera):EnrichedMera=>({
   ...mera,
+  fish:uniqueStrings(mera.fish),
+  methods:uniqueStrings(mera.methods),
+  baits:uniqueStrings(mera.baits),
   fishEvidence:[],
   accommodationOptions:[],
   accessEvidence:[],
@@ -91,9 +94,9 @@ const koordinatliUlusalMeralar:EnrichedMera[]=ulusalMeralar.map((mera):EnrichedM
     note:`Nominatim eşleştirmesiyle bulunan genel su varlığı konumudur (eşleşme puanı ${coordinate.matchScore}). Pin, kamusal kıyı erişimi veya avlanma noktası değildir.`,
   }:null;
   const researched=Boolean(research?.researchStatus);
-  const fish=research?.fish?.length?uniqueStrings(research.fish):mera.fish;
-  const methods=research?.methods?.length?uniqueStrings(research.methods):mera.methods;
-  const baits=research?.baits?.length?uniqueStrings(research.baits):mera.baits;
+  const fish=research?.fish?.length?uniqueStrings(research.fish):uniqueStrings(mera.fish);
+  const methods=research?.methods?.length?uniqueStrings(research.methods):uniqueStrings(mera.methods);
+  const baits=research?.baits?.length?uniqueStrings(research.baits):uniqueStrings(mera.baits);
   const sources=uniqueSources([
     ...(research?.sources||[]),
     ...(coordinateSource?[coordinateSource]:[]),
@@ -130,6 +133,9 @@ const koordinatliUlusalMeralar:EnrichedMera[]=ulusalMeralar.map((mera):EnrichedM
       researchSummary:research.researchSummary,
       researchedAt:research.researchedAt,
     }:{}),
+    fish,
+    methods,
+    baits,
     fishEvidence:research?.fishEvidence||[],
     accommodationOptions:research?.accommodationOptions||[],
     accessEvidence:research?.accessEvidence||[],
@@ -154,9 +160,24 @@ export const meralar:EnrichedMera[] = [
   ...gunlukMeralar.map(withResearchDefaults),
   ...koordinatliUlusalMeralar,
 ];
+
+const routesWithoutFish=meralar.filter((mera)=>!Array.isArray(mera.fish)||mera.fish.length===0);
+if(routesWithoutFish.length){
+  throw new Error(`Balık türü bilgisi olmayan ${routesWithoutFish.length} avlak sayfası var: ${routesWithoutFish.slice(0,20).map((mera)=>mera.slug).join(", ")}${routesWithoutFish.length>20?" …":""}`);
+}
+const routesWithInvalidFish=meralar.filter((mera)=>mera.fish.some((fish)=>typeof fish!=="string"||!fish.trim()));
+if(routesWithInvalidFish.length){
+  throw new Error(`Geçersiz balık türü alanı bulunan avlaklar: ${routesWithInvalidFish.map((mera)=>mera.slug).join(", ")}`);
+}
+
 export const provinces = [...new Set(meralar.map((mera) => mera.province))].sort((a,b)=>a.localeCompare(b,"tr"));
 export const districtsByProvince = Object.fromEntries(provinces.map((province) => [province, [...new Set(meralar.filter((m)=>m.province===province).map((m)=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const fishOptions = [...new Set(meralar.flatMap((mera) => mera.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
+export const fishCoverageStats={
+  routeCount:meralar.length,
+  routesWithFish:meralar.length-routesWithoutFish.length,
+  fishTypeCount:fishOptions.length,
+};
 export const zonesByProvince = Object.fromEntries(provinces.map((province) => [province, [...new Set(meralar.filter((m)=>m.province===province).map((m)=>m.zone))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const districtRouteCounts = Object.fromEntries(
   provinces.flatMap((province) => (districtsByProvince[province] || []).map((district: string) => [
