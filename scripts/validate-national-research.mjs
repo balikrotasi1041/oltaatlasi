@@ -11,6 +11,12 @@ const warnings=[];
 const validUrl=(value)=>{
   try{return new URL(value).protocol==="https:";}catch{return false;}
 };
+const normalize=(value="")=>String(value)
+  .toLocaleLowerCase("tr-TR")
+  .replaceAll("ç","c").replaceAll("ğ","g").replaceAll("ı","i")
+  .replaceAll("ö","o").replaceAll("ş","s").replaceAll("ü","u")
+  .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+  .replace(/[^a-z0-9]+/g," ").trim();
 const merged=(slug)=>{
   const generated=automatic[slug]||{};
   const curated=manual[slug]||{};
@@ -37,6 +43,7 @@ for(const slug of Object.keys(manual))if(!expectedSlugs.has(slug))errors.push(`M
 
 let directEvidenceRoutes=0;
 let candidateOnlyRoutes=0;
+const filterFishNames=new Set();
 for(const route of ulusalMeralar){
   const data=merged(route.slug);
   const prefix=`${route.province} / ${route.name}`;
@@ -52,12 +59,26 @@ for(const route of ulusalMeralar){
   if(!Array.isArray(data.amenities)||data.amenities.length<1)errors.push(`${prefix}: yakın imkân bilgisi eksik.`);
   if(!Array.isArray(data.sources)||data.sources.length<3)errors.push(`${prefix}: en az 3 kaynak gerekli.`);
 
+  const normalizedFish=(data.fish||[]).map((fish)=>normalize(fish));
+  const validFishNames=(data.fish||[]).filter((fish)=>typeof fish==="string"&&normalize(fish).length>1);
+  if(validFishNames.length!==(data.fish||[]).length)errors.push(`${prefix}: boş veya geçersiz balık türü adı bulundu.`);
+  if(new Set(normalizedFish).size!==normalizedFish.length)errors.push(`${prefix}: yinelenen balık türü adı bulundu.`);
+  for(const fish of validFishNames){
+    if(/bilinmiyor|doğrulanmayı bekliyor|balık türü/i.test(fish))errors.push(`${prefix}: filtrede kullanılamayacak genel tür ifadesi bulundu: ${fish}`);
+    filterFishNames.add(fish.trim());
+  }
+
   const evidenceLevels=new Set();
+  const evidenceNames=new Set();
   for(const evidence of data.fishEvidence||[]){
     if(!evidence?.name||!evidence?.evidenceLevel||!evidence?.note)errors.push(`${prefix}: eksik tür kanıt alanı.`);
     if(!validUrl(evidence?.sourceUrl))errors.push(`${prefix}: geçersiz tür kanıt URL'si: ${evidence?.sourceUrl||"boş"}`);
     evidenceLevels.add(evidence?.evidenceLevel||"");
+    if(evidence?.name)evidenceNames.add(normalize(evidence.name));
   }
+  const unsupportedFish=normalizedFish.filter((fish)=>!evidenceNames.has(fish));
+  if(unsupportedFish.length)errors.push(`${prefix}: tür listesinde olup kanıt kaydı bulunmayan balıklar var: ${unsupportedFish.join(", ")}`);
+
   const hasDirect=[...evidenceLevels].some((level)=>
     /akademik|resmî|resmi|yakın çevre biyolojik|kamu kurumu/i.test(level)
   );
@@ -87,9 +108,10 @@ for(const route of ulusalMeralar){
 }
 
 if(directEvidenceRoutes<1)errors.push("Hiçbir rotada doğrudan veya yakın çevre tür kanıtı bulunamadı.");
+if(filterFishNames.size<3)errors.push(`Harita balık filtresi için yalnızca ${filterFishNames.size} kullanılabilir tür üretildi.`);
 if(candidateOnlyRoutes>warnings.length)warnings.push(`${candidateOnlyRoutes} rota yalnızca bölgesel araştırma adayı türlerle yayımlanacak; bunlar sayfada açıkça bu düzeyde gösterilmelidir.`);
 
-console.log(`Ulusal araştırma denetimi: 405 rota, ${directEvidenceRoutes} doğrudan/yakın tür kanıtlı, ${candidateOnlyRoutes} aday tür düzeyinde.`);
+console.log(`Ulusal araştırma denetimi: 405 rota, ${directEvidenceRoutes} doğrudan/yakın tür kanıtlı, ${candidateOnlyRoutes} aday tür düzeyinde, ${filterFishNames.size} filtrelenebilir balık türü.`);
 for(const warning of warnings)console.warn(`UYARI: ${warning}`);
 if(errors.length){
   for(const error of errors.slice(0,250))console.error(`HATA: ${error}`);
