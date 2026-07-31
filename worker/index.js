@@ -30,9 +30,7 @@ const timingSafeEqual = (left, right) => {
   const b = encoder.encode(String(right));
   const length = Math.max(a.length, b.length, 1);
   let difference = a.length ^ b.length;
-  for (let index = 0; index < length; index += 1) {
-    difference |= (a[index] || 0) ^ (b[index] || 0);
-  }
+  for (let index = 0; index < length; index += 1) difference |= (a[index] || 0) ^ (b[index] || 0);
   return difference === 0;
 };
 
@@ -53,7 +51,8 @@ const adminAuthConfigured = (env) => Boolean(env.ADMIN_USERNAME && env.ADMIN_PAS
 const adminAuthorized = (request, env) => {
   const credentials = readBasicCredentials(request);
   if (!credentials) return false;
-  return timingSafeEqual(credentials.username, env.ADMIN_USERNAME) && timingSafeEqual(credentials.password, env.ADMIN_PASSWORD);
+  return timingSafeEqual(credentials.username, env.ADMIN_USERNAME)
+    && timingSafeEqual(credentials.password, env.ADMIN_PASSWORD);
 };
 
 const unauthorizedResponse = () => withSecurityHeaders(
@@ -125,12 +124,7 @@ const createGoogleJwt = async ({ email, privateKey }) => {
   return `${unsigned}.${base64Url(new Uint8Array(signature))}`;
 };
 
-const getGoogleAccessToken = async (env) => {
-  const assertion = await createGoogleJwt(getServiceAccount(env));
-  const body = new URLSearchParams({
-    grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-    assertion,
-  });
+const requestToken = async (body) => {
   const response = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },
@@ -141,6 +135,45 @@ const getGoogleAccessToken = async (env) => {
     throw new Error(payload.error_description || payload.error || "Google erişim belirteci alınamadı.");
   }
   return payload.access_token;
+};
+
+const getOAuthAccessToken = async (env) => {
+  const body = new URLSearchParams({
+    client_id: env.GSC_OAUTH_CLIENT_ID,
+    client_secret: env.GSC_OAUTH_CLIENT_SECRET,
+    refresh_token: env.GSC_OAUTH_REFRESH_TOKEN,
+    grant_type: "refresh_token",
+  });
+  return requestToken(body);
+};
+
+const getServiceAccountAccessToken = async (env) => {
+  const assertion = await createGoogleJwt(getServiceAccount(env));
+  return requestToken(new URLSearchParams({
+    grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    assertion,
+  }));
+};
+
+const getGoogleAccess = async (env) => {
+  const oauthValues = [env.GSC_OAUTH_CLIENT_ID, env.GSC_OAUTH_CLIENT_SECRET, env.GSC_OAUTH_REFRESH_TOKEN];
+  const oauthConfiguredCount = oauthValues.filter(Boolean).length;
+  if (oauthConfiguredCount > 0 && oauthConfiguredCount < oauthValues.length) {
+    throw new Error("Search Console OAuth ayarları eksik: client ID, client secret ve refresh token birlikte tanımlanmalıdır.");
+  }
+  if (oauthConfiguredCount === oauthValues.length) {
+    return { accessToken: await getOAuthAccessToken(env), authMode: "oauth-refresh-token" };
+  }
+
+  const serviceAccount = getServiceAccount(env);
+  if (serviceAccount.email || serviceAccount.privateKey) {
+    if (!serviceAccount.email || !serviceAccount.privateKey) {
+      throw new Error("Search Console servis hesabı e-posta veya özel anahtar bilgisi eksik.");
+    }
+    return { accessToken: await getServiceAccountAccessToken(env), authMode: "service-account" };
+  }
+
+  throw new Error("Search Console kimlik bilgileri tanımlı değil. OAuth istemcisi veya servis hesabı yapılandırılmalıdır.");
 };
 
 const isoDate = (date) => date.toISOString().slice(0, 10);
@@ -155,10 +188,7 @@ const searchConsoleQuery = async ({ accessToken, siteUrl, body }) => {
     body: JSON.stringify(body),
   });
   const payload = await response.json();
-  if (!response.ok) {
-    const message = payload?.error?.message || "Search Console sorgusu başarısız oldu.";
-    throw new Error(message);
-  }
+  if (!response.ok) throw new Error(payload?.error?.message || "Search Console sorgusu başarısız oldu.");
   return payload.rows || [];
 };
 
@@ -175,7 +205,7 @@ const handleSearchConsole = async (request, env) => {
     const startDate = isoDate(start);
     const endDate = isoDate(end);
     const siteUrl = env.GSC_SITE_URL || "https://oltaatlasi.com/";
-    const accessToken = await getGoogleAccessToken(env);
+    const { accessToken, authMode } = await getGoogleAccess(env);
     const common = { startDate, endDate, searchType: "web", dataState: "all" };
     const [summaryRows, dailyRows, queryRows, pageRows] = await Promise.all([
       searchConsoleQuery({ accessToken, siteUrl, body: { ...common, rowLimit: 1 } }),
@@ -193,6 +223,7 @@ const handleSearchConsole = async (request, env) => {
     }));
     return jsonResponse({
       connected: true,
+      authMode,
       siteUrl,
       range: { days, startDate, endDate },
       totals: {
@@ -207,7 +238,10 @@ const handleSearchConsole = async (request, env) => {
       fetchedAt: new Date().toISOString(),
     });
   } catch (error) {
-    return jsonResponse({ connected: false, error: error instanceof Error ? error.message : "Bilinmeyen Search Console hatası." }, 502);
+    return jsonResponse({
+      connected: false,
+      error: error instanceof Error ? error.message : "Bilinmeyen Search Console hatası.",
+    }, 502);
   }
 };
 
