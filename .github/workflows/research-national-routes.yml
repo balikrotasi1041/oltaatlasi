@@ -1,0 +1,105 @@
+name: Research national routes
+
+on:
+  push:
+    branches: [main, "quality/research-all-routes"]
+    paths:
+      - "scripts/enrich-national-routes.mjs"
+      - "scripts/validate-national-research.mjs"
+      - "src/data/meralar-ulusal.js"
+      - "src/data/meralar-ulusal-koordinatlar.js"
+      - "src/data/meralar-ulusal-manuel-arastirma.js"
+      - "src/data/meralar-ulusal-otomatik-arastirma.js"
+      - ".github/workflows/research-national-routes.yml"
+      - "package.json"
+  pull_request:
+    branches: [main]
+    paths:
+      - "scripts/enrich-national-routes.mjs"
+      - "scripts/validate-national-research.mjs"
+      - "src/data/meralar-ulusal.js"
+      - "src/data/meralar-ulusal-koordinatlar.js"
+      - "src/data/meralar-ulusal-manuel-arastirma.js"
+      - "src/data/meralar-ulusal-otomatik-arastirma.js"
+      - ".github/workflows/research-national-routes.yml"
+      - "package.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: national-route-research-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  TARGET_BRANCH: ${{ github.event.pull_request.head.ref || github.ref_name }}
+
+jobs:
+  research-and-cache:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Research 405 national routes
+        env:
+          RESEARCH_CONTACT: balikrotasi1041@gmail.com
+          RESEARCH_USER_AGENT: "OltaAtlasi/1.0 (+https://oltaatlasi.com/sorumluluk-ve-kullanim/)"
+        run: npm run research:national
+
+      - name: Validate research completeness
+        run: npm run validate:research
+
+      - name: Validate route data
+        run: npm run validate:data
+
+      - name: Build researched site
+        env:
+          PUBLIC_SITE_URL: https://oltaatlasi.com
+        run: npm run build
+
+      - name: Commit research cache
+        id: cache
+        run: |
+          if git diff --quiet -- src/data/meralar-ulusal-otomatik-arastirma.js; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Araştırma önbelleğinde değişiklik yok."
+            exit 0
+          fi
+          git config user.name "oltaatlasi-research-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/meralar-ulusal-otomatik-arastirma.js
+          git commit -m "data: cache researched fish access and accommodation evidence"
+          git push origin "HEAD:${TARGET_BRANCH}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy researched main build
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -n "$CLOUDFLARE_DEPLOY_HOOK" ]; then
+            curl --fail --show-error --silent --request POST "$CLOUDFLARE_DEPLOY_HOOK"
+            echo "Cloudflare deploy hook tetiklendi."
+          elif [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            npx wrangler deploy
+          else
+            echo "Cloudflare Git entegrasyonunun main dalı push'unu yayımlaması bekleniyor."
+          fi

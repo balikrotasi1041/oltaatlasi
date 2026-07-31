@@ -12,6 +12,7 @@ export function getStaticPaths(){
 
 const {mera}=Astro.props;
 const preliminary=mera.confidence==="D";
+const hasResearch=Boolean(mera.researchStatus);
 const hasCoordinates=Number.isFinite(mera.lat)&&Number.isFinite(mera.lng);
 const googleDirections=hasCoordinates&&!preliminary?`https://www.google.com/maps/dir/?api=1&destination=${mera.lat},${mera.lng}&travelmode=driving`:"";
 const googlePoint=hasCoordinates?`https://www.google.com/maps/search/?api=1&query=${mera.lat},${mera.lng}`:"";
@@ -26,7 +27,7 @@ const districtUrl=districtCount>=2 ? `/iller/${slugifyTr(mera.province)}/${slugi
 const pagePath=`/meralar/${mera.slug}/`;
 const pageUrl=new URL(pagePath,Astro.site).href;
 const pageHeading=preliminary?`${mera.name} Ön Değerlendirme Rota Dosyası`:`${mera.name} Balık Avı Rehberi`;
-const accessDisplay=preliminary?"Kontrol edilmeli":mera.vehicleAccess;
+const accessDisplay=hasResearch?mera.vehicleAccess:(preliminary?"Kontrol edilmeli":mera.vehicleAccess);
 const spatialCoverage=hasCoordinates
   ? {"@type":"Place",name:`${mera.district}, ${mera.province}`,geo:{"@type":"GeoCoordinates",latitude:mera.lat,longitude:mera.lng}}
   : {"@type":"Place",name:`${mera.province}, Türkiye`};
@@ -57,10 +58,12 @@ const articleSchema={
           <span class="pill">{mera.province} · {mera.district}</span>
           <span class="pill pill-muted">{mera.zone}</span>
           <span class={`confidence confidence-${mera.confidence.toLowerCase()}`}>Güven {mera.confidence}</span>
+          {hasResearch && <span class="pill">Açık kaynak araştırması tamamlandı</span>}
         </div>
         <h1>{pageHeading}</h1>
         <p class="lead">{mera.summary}</p>
         {preliminary && <div class="warning-box"><strong>Ön değerlendirme kaydı:</strong> Harita pini eşleşen su varlığının genel coğrafi konumunu gösterir. Kamusal kıyı girişi, güvenli yaklaşım, yol tarifi veya avlanma izni değildir.</div>}
+        {hasResearch && <div class="warning-box"><strong>Araştırma kapsamı:</strong> {mera.researchSummary}</div>}
         <div class="article-byline">
           <span>Olta Atlası Editörlüğü</span>
           <span>İlk yayın: {new Date(mera.publishedAt).toLocaleDateString("tr-TR")}</span>
@@ -82,6 +85,7 @@ const articleSchema={
           <div><dt>Konum</dt><dd>{mera.locationPrecision}</dd></div>
           <div><dt>Su</dt><dd>{mera.region}</dd></div>
           <div><dt>Araç erişimi</dt><dd>{accessDisplay}</dd></div>
+          {hasResearch && <div><dt>Araştırma</dt><dd>{mera.researchStatus}</dd></div>}
         </dl>
       </aside>
     </div>
@@ -92,12 +96,57 @@ const articleSchema={
       <section class="article-intro">{mera.longIntro.map((paragraph)=><p>{paragraph}</p>)}</section>
       <nav class="on-page-nav" aria-label="Sayfa içeriği">
         <strong>Bu dosyada</strong>
+        {hasResearch && <a href="#arastirma">Araştırma kanıtları</a>}
         <a href="#kiyi">Kıyı yapısı</a>
         <a href="#ulasim">Ulaşım</a>
         <a href="#baliklar">Balıklar</a>
         <a href="#planlama">Planlama</a>
         <a href="#kaynaklar">Kaynaklar</a>
       </nav>
+
+      {hasResearch && (
+        <section class="source-box" id="arastirma">
+          <span class="kicker">Rota özelinde açık kaynak araştırması</span>
+          <h2>Hangi bilgiler doğrudan araştırıldı?</h2>
+          <p>{mera.researchSummary}</p>
+
+          {mera.fishEvidence?.length > 0 && (
+            <>
+              <h3>Balık türü kanıtları</h3>
+              <ul>
+                {mera.fishEvidence.map((item)=><li>
+                  <a href={item.sourceUrl} target="_blank" rel="noreferrer"><strong>{item.name}{item.scientificName?` (${item.scientificName})`:""}</strong></a>
+                  <span>{item.evidenceLevel}: {item.note}</span>
+                </li>)}
+              </ul>
+            </>
+          )}
+
+          {mera.accessEvidence?.length > 0 && (
+            <>
+              <h3>Ulaşım ve erişim araştırması</h3>
+              <ul>
+                {mera.accessEvidence.map((item)=><li>
+                  <a href={item.sourceUrl} target="_blank" rel="noreferrer"><strong>{item.label}</strong></a>
+                  <span>{item.value} {item.note}</span>
+                </li>)}
+              </ul>
+            </>
+          )}
+
+          {mera.accommodationOptions?.length > 0 && (
+            <>
+              <h3>Konaklama ve geceleme seçenekleri</h3>
+              <ul>
+                {mera.accommodationOptions.map((item)=><li>
+                  <a href={item.sourceUrl} target="_blank" rel="noreferrer"><strong>{item.name}</strong></a>
+                  <span>{item.type}{Number.isFinite(item.distanceKm)?` · yaklaşık ${item.distanceKm} km`:""} — {item.note}</span>
+                </li>)}
+              </ul>
+            </>
+          )}
+        </section>
+      )}
 
       <section class="info-block" id="kiyi">
         <span class="kicker">Kıyı karakteri</span>
@@ -138,18 +187,23 @@ const articleSchema={
       </section>
 
       <section class="info-block" id="baliklar">
-        <span class="kicker">Raporlanan türler</span>
-        <h2>{mera.name} çevresinde hangi balıklar raporlanıyor?</h2>
+        <span class="kicker">Raporlanan veya araştırma adayı türler</span>
+        <h2>{mera.name} çevresinde hangi balıklar bulunabilir?</h2>
         <p>{mera.seasonalNotes[0]}</p>
-        {relatedFish.length > 0 ? (
-          <div class="related-fish-grid">
-            {relatedFish.map((fish)=><a href={`/baliklar/${fish.slug}/`}><img src={fish.image} alt={`${fish.name} illüstrasyonu`} loading="lazy"/><span>{fish.name}</span></a>)}
-          </div>
+        {mera.fish.length > 0 ? (
+          <>
+            <div class="tag-row" aria-label="Araştırılan balık türleri">{mera.fish.map((fish)=><span>{fish}</span>)}</div>
+            {relatedFish.length > 0 && (
+              <div class="related-fish-grid">
+                {relatedFish.map((fish)=><a href={`/baliklar/${fish.slug}/`}><img src={fish.image} alt={`${fish.name} illüstrasyonu`} loading="lazy"/><span>{fish.name}</span></a>)}
+              </div>
+            )}
+          </>
         ) : (
           <div class="warning-box"><p>Bu rota için kaynaklarla desteklenmiş tür listesi henüz yayımlanmadı. Bölgesel tür tahmini yapılmadı.</p></div>
         )}
         <p>{mera.seasonalNotes[1]}</p>
-        <p class="microcopy">Tür listesi av garantisi değildir. Mevsim, su koşulu, balık göçü ve doğrulama tarihi sonucu değiştirebilir.</p>
+        <p class="microcopy">Tür listesi av garantisi değildir. Kanıt düzeyi rota içi kayıt, yakın çevre biyolojik gözlemi veya bölgesel olasılık olabilir; mevsim, su koşulu ve doğrulama tarihi sonucu değiştirebilir.</p>
       </section>
 
       <div class="info-grid">
@@ -198,6 +252,7 @@ const articleSchema={
           <div><dt>İlçe</dt><dd><a href={districtUrl}>{mera.district}</a></dd></div>
           <div><dt>Su türü</dt><dd>{mera.waterType}</dd></div>
           <div><dt>Güven</dt><dd>{mera.confidence}</dd></div>
+          {hasResearch && <div><dt>Araştırma</dt><dd>{mera.researchStatus}</dd></div>}
           <div><dt>Son kontrol</dt><dd>{new Date(mera.updatedAt).toLocaleDateString("tr-TR")}</dd></div>
         </dl>
       </div>

@@ -1,7 +1,10 @@
+import type { Mera } from "./meralar";
 import { meralar as temelMeralar } from "./meralar";
 import { gunlukMeralar } from "./meralar-gunluk";
 import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
+import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
+import { ulusalOtomatikArastirma, ulusalOtomatikArastirmaMeta } from "./meralar-ulusal-otomatik-arastirma";
 
 type NationalCoordinate = {
   lat:number; lng:number; displayName:string; name:string; category:string|null; type:string|null;
@@ -9,24 +12,134 @@ type NationalCoordinate = {
   matchScore:number; matchedAt:string;
 };
 
+export type ResearchSource = { label:string; url:string; note:string };
+export type FishEvidence = {
+  name:string; scientificName?:string|null; evidenceLevel:string; sourceLabel:string;
+  sourceUrl:string; note:string; recordCount?:number|null; distanceKm?:number|null;
+};
+export type AccommodationOption = {
+  name:string; type:string; distanceKm:number|null; sourceUrl:string; note:string;
+};
+export type AccessEvidence = {
+  label:string; value:string; sourceUrl:string; note:string;
+};
+type NationalResearch = {
+  researchedAt?:string; researchStatus?:string; researchSummary?:string;
+  fish?:string[]; fishEvidence?:FishEvidence[]; methods?:string[]; baits?:string[];
+  camping?:"Uygun"|"Sınırlı"|"Uygun değil"|"Kontrol edilmeli";
+  vehicleAccess?:"Kolay"|"Orta"|"Zor"; amenities?:string[]; cautions?:string[];
+  accommodationOptions?:AccommodationOption[]; accessEvidence?:AccessEvidence[];
+  seasonalNotes?:string[]; planningNotes?:string[]; transport?:string; crowdNote?:string;
+  sources?:ResearchSource[];
+};
+
+export type EnrichedMera = Mera & {
+  researchStatus?:string;
+  researchSummary?:string;
+  researchedAt?:string;
+  fishEvidence:FishEvidence[];
+  accommodationOptions:AccommodationOption[];
+  accessEvidence:AccessEvidence[];
+};
+
 const coordinateIndex=ulusalKoordinatlar as Record<string,NationalCoordinate>;
-const koordinatliUlusalMeralar=ulusalMeralar.map((mera)=>{
+const automaticResearch=ulusalOtomatikArastirma as Record<string,NationalResearch>;
+const manualResearch=ulusalManuelArastirma as Record<string,NationalResearch>;
+
+const uniqueStrings=(values:string[]=[]):string[] =>
+  [...new Set(values.map((value:string)=>String(value).trim()).filter(Boolean))];
+
+const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[] =>
+  [...new Map<string,ResearchSource>(
+    values
+      .filter((source:ResearchSource)=>Boolean(source?.url&&source?.label))
+      .map((source:ResearchSource)=>[source.url,source])
+  ).values()];
+
+const withResearchDefaults=(mera:Mera):EnrichedMera=>({
+  ...mera,
+  fish:uniqueStrings(mera.fish),
+  methods:uniqueStrings(mera.methods),
+  baits:uniqueStrings(mera.baits),
+  fishEvidence:[],
+  accommodationOptions:[],
+  accessEvidence:[],
+});
+
+const mergeResearch=(automatic?:NationalResearch,manual?:NationalResearch):NationalResearch|undefined=>{
+  if(!automatic&&!manual)return undefined;
+  return {
+    ...(automatic||{}),
+    ...(manual||{}),
+    fish:manual?.fish?.length?manual.fish:automatic?.fish,
+    fishEvidence:manual?.fishEvidence?.length?manual.fishEvidence:automatic?.fishEvidence,
+    methods:manual?.methods?.length?manual.methods:automatic?.methods,
+    baits:manual?.baits?.length?manual.baits:automatic?.baits,
+    amenities:manual?.amenities?.length?manual.amenities:automatic?.amenities,
+    cautions:manual?.cautions?.length?manual.cautions:automatic?.cautions,
+    accommodationOptions:manual?.accommodationOptions?.length?manual.accommodationOptions:automatic?.accommodationOptions,
+    accessEvidence:manual?.accessEvidence?.length?manual.accessEvidence:automatic?.accessEvidence,
+    seasonalNotes:manual?.seasonalNotes?.length?manual.seasonalNotes:automatic?.seasonalNotes,
+    planningNotes:manual?.planningNotes?.length?manual.planningNotes:automatic?.planningNotes,
+    sources:uniqueSources([...(manual?.sources||[]),...(automatic?.sources||[])]),
+  };
+};
+
+const koordinatliUlusalMeralar:EnrichedMera[]=ulusalMeralar.map((mera):EnrichedMera=>{
   const coordinate=coordinateIndex[mera.slug];
-  if(!coordinate)return mera;
-  const coordinateSource={
+  const research=mergeResearch(automaticResearch[mera.slug],manualResearch[mera.slug]);
+  const coordinateSource:ResearchSource|null=coordinate?{
     label:`OpenStreetMap – ${coordinate.displayName}`,
     url:coordinate.sourceUrl,
     note:`Nominatim eşleştirmesiyle bulunan genel su varlığı konumudur (eşleşme puanı ${coordinate.matchScore}). Pin, kamusal kıyı erişimi veya avlanma noktası değildir.`,
-  };
+  }:null;
+  const researched=Boolean(research?.researchStatus);
+  const fish=research?.fish?.length?uniqueStrings(research.fish):uniqueStrings(mera.fish);
+  const methods=research?.methods?.length?uniqueStrings(research.methods):uniqueStrings(mera.methods);
+  const baits=research?.baits?.length?uniqueStrings(research.baits):uniqueStrings(mera.baits);
+  const sources=uniqueSources([
+    ...(research?.sources||[]),
+    ...(coordinateSource?[coordinateSource]:[]),
+    ...mera.sources.filter((source)=>!source.label.startsWith("OpenStreetMap")),
+  ]);
   return {
     ...mera,
-    lat:coordinate.lat,
-    lng:coordinate.lng,
-    locationPrecision:"Genel bölge" as const,
-    updatedAt:coordinate.matchedAt.slice(0,10),
-    verification:`${mera.verification} Su varlığının genel harita konumu OpenStreetMap/Nominatim sonucu üzerinden eşleştirildi; pin kıyı erişimi veya avlanma izni doğrulamaz.`,
-    navigationNote:"Harita pini su varlığının veya eşleşen coğrafi unsurun genel merkezini gösterir. Yol, park, kıyıya giriş ve av yapılabilirlik için kullanılmamalı; güvenli kamusal erişim ayrıca araştırılmalıdır.",
-    sources:[coordinateSource,...mera.sources.filter((source)=>!source.label.startsWith("OpenStreetMap"))],
+    ...(coordinate?{
+      lat:coordinate.lat,
+      lng:coordinate.lng,
+      locationPrecision:"Genel bölge" as const,
+      updatedAt:coordinate.matchedAt.slice(0,10),
+      verification:`${mera.verification} Su varlığının genel harita konumu OpenStreetMap/Nominatim sonucu üzerinden eşleştirildi; pin kıyı erişimi veya avlanma izni doğrulamaz.`,
+      navigationNote:"Harita pini su varlığının veya eşleşen coğrafi unsurun genel merkezini gösterir. Yol, park, kıyıya giriş ve av yapılabilirlik için kullanılmamalı; güvenli kamusal erişim ayrıca araştırılmalıdır.",
+    }:{}),
+    ...(research?{
+      fish,
+      methods,
+      baits,
+      camping:research.camping||mera.camping,
+      vehicleAccess:research.vehicleAccess||mera.vehicleAccess,
+      amenities:research.amenities?.length?research.amenities:mera.amenities,
+      cautions:research.cautions?.length?research.cautions:mera.cautions,
+      transport:research.transport||mera.transport,
+      crowdNote:research.crowdNote||mera.crowdNote,
+      planningNotes:research.planningNotes?.length?research.planningNotes:mera.planningNotes,
+      seasonalNotes:research.seasonalNotes?.length?research.seasonalNotes:mera.seasonalNotes,
+      updatedAt:research.researchedAt||coordinate?.matchedAt.slice(0,10)||mera.updatedAt,
+      verification:researched
+        ? `${mera.verification} Tür, ulaşım ve yakın hizmetler açık kaynak araştırmasıyla zenginleştirildi; saha ve hukuki uygunluk ayrıca doğrulanmalıdır.`
+        : mera.verification,
+      confidence:manualResearch[mera.slug]?"B" as const:(fish.length&&research.accessEvidence?.length?"C" as const:mera.confidence),
+      researchStatus:research.researchStatus,
+      researchSummary:research.researchSummary,
+      researchedAt:research.researchedAt,
+    }:{}),
+    fish,
+    methods,
+    baits,
+    fishEvidence:research?.fishEvidence||[],
+    accommodationOptions:research?.accommodationOptions||[],
+    accessEvidence:research?.accessEvidence||[],
+    sources,
   };
 });
 
@@ -35,10 +148,36 @@ export const nationalCoordinateStats={
   unresolved:ulusalKoordinatMeta.unresolvedCount,
   generatedAt:ulusalKoordinatMeta.generatedAt,
 };
-export const meralar = [...temelMeralar, ...gunlukMeralar, ...koordinatliUlusalMeralar];
+export const nationalResearchStats={
+  routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automaticResearch).length,
+  fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,
+  accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,
+  generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,
+  manualRouteCount:Object.keys(manualResearch).length,
+};
+export const meralar:EnrichedMera[] = [
+  ...temelMeralar.map(withResearchDefaults),
+  ...gunlukMeralar.map(withResearchDefaults),
+  ...koordinatliUlusalMeralar,
+];
+
+const routesWithoutFish=meralar.filter((mera)=>!Array.isArray(mera.fish)||mera.fish.length===0);
+if(routesWithoutFish.length){
+  throw new Error(`Balık türü bilgisi olmayan ${routesWithoutFish.length} avlak sayfası var: ${routesWithoutFish.slice(0,20).map((mera)=>mera.slug).join(", ")}${routesWithoutFish.length>20?" …":""}`);
+}
+const routesWithInvalidFish=meralar.filter((mera)=>mera.fish.some((fish)=>typeof fish!=="string"||!fish.trim()));
+if(routesWithInvalidFish.length){
+  throw new Error(`Geçersiz balık türü alanı bulunan avlaklar: ${routesWithInvalidFish.map((mera)=>mera.slug).join(", ")}`);
+}
+
 export const provinces = [...new Set(meralar.map((mera) => mera.province))].sort((a,b)=>a.localeCompare(b,"tr"));
 export const districtsByProvince = Object.fromEntries(provinces.map((province) => [province, [...new Set(meralar.filter((m)=>m.province===province).map((m)=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const fishOptions = [...new Set(meralar.flatMap((mera) => mera.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
+export const fishCoverageStats={
+  routeCount:meralar.length,
+  routesWithFish:meralar.length-routesWithoutFish.length,
+  fishTypeCount:fishOptions.length,
+};
 export const zonesByProvince = Object.fromEntries(provinces.map((province) => [province, [...new Set(meralar.filter((m)=>m.province===province).map((m)=>m.zone))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const districtRouteCounts = Object.fromEntries(
   provinces.flatMap((province) => (districtsByProvince[province] || []).map((district: string) => [
