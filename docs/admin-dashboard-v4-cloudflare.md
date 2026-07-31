@@ -2,7 +2,7 @@
 
 Dashboard yolu: `/admin/dashboard/`
 
-Yeni API yolu: `/admin/api/cloudflare?days=7`
+API yolu: `/admin/api/cloudflare?days=7`
 
 ## Gerekli Worker değişkenleri
 
@@ -17,15 +17,23 @@ Tokenı Secret olarak, Zone ID değerini Secret veya normal değişken olarak ek
 
 Cloudflare profilinde **API Tokens → Create Token → Create Custom Token** yolunu açın.
 
-Önerilen izin:
+Gerekli izin:
 
-- Account → Account Analytics → Read
+- Zone → Analytics → Read
 
-Kaynak kapsamını yalnızca Olta Atlası hesabı ve `oltaatlasi.com` zone'u ile sınırlayın. Düzenleme yetkisi vermeyin.
+Zone kaynak kapsamı:
+
+- Include → Specific zone → `oltaatlasi.com`
+
+Düzenleme yetkisi vermeyin.
 
 ## Zone ID bulma
 
 Cloudflare ana sayfasında `oltaatlasi.com` alan adını açın. Overview sayfasındaki API bölümünde **Zone ID** değerini kopyalayın.
+
+## Plan sınırı ve günlük parçalama
+
+Cloudflare GraphQL Analytics veri kümelerinin sorgu süresi plan ve zone ayarına göre değişebilir. Bu zone tek sorguda en fazla 1 günlük süre kabul ettiği için Worker, 7 ve 28 günlük raporları 24 saatlik parçalara böler ve sonuçları birleştirir. Sonuçlar API kotasını korumak için 5 dakika önbelleğe alınır.
 
 ## Test
 
@@ -39,5 +47,5 @@ Başarılı yanıt `"connected": true` ile başlar. Dashboard; HTTP istekleri, z
 
 - API tokenını GitHub'a yazmayın.
 - Tokena Edit yetkisi vermeyin.
-- Tokenı yalnızca gerekli hesap/zone ile sınırlayın.
+- Tokenı yalnızca gerekli zone ile sınırlayın.
 - `/admin/*` yolları mevcut Basic Auth koruması ve `private, no-store` başlıkları altında kalır.
