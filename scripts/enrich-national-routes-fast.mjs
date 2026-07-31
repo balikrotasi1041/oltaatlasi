@@ -45,13 +45,21 @@ let optimized=source
   .replace('{kind:"overpass",gap:1700,attempts:2}','{kind:"overpass",gap:1100,attempts:1}')
   .replace(
     'const response=await fetch(url,{...options,headers:{"User-Agent":userAgent,"Accept":"application/json",...(options.headers||{})}});',
-    'const response=await fetch(url,{...options,signal:AbortSignal.timeout(policy.kind==="overpass"?45000:25000),headers:{"User-Agent":userAgent,"Accept":"application/json",...(options.headers||{})}});'
+    'const response=await fetch(url,{...options,signal:options.signal||AbortSignal.timeout(policy.kind==="overpass"?35000:25000),headers:{"User-Agent":userAgent,"Accept":"application/json",...(options.headers||{})}});'
   )
+  .replace('url.searchParams.set("taxon_key",String(fishClassKey));','url.searchParams.set("taxonKey",String(fishClassKey));')
+  .replace('url.searchParams.set("geo_distance",`${radius}km,${point.lat},${point.lng}`);','url.searchParams.set("geoDistance",`${point.lat},${point.lng},${radius}km`);')
+  .replace('url.searchParams.set("has_coordinate","true");','url.searchParams.set("hasCoordinate","true");')
+  .replace('url.searchParams.set("has_geospatial_issue","false");','url.searchParams.set("hasGeospatialIssue","false");')
+  .replace('url.searchParams.set("occurrence_status","PRESENT");','url.searchParams.set("occurrenceStatus","PRESENT");')
+  .replace('url.searchParams.delete("geo_distance");','url.searchParams.delete("geoDistance");')
   .replace(sequentialOverpass,concurrentOverpass);
 
-if(optimized===source)throw new Error("Araştırma betiğinde hızlandırılacak bölüm bulunamadı.");
+if(optimized===source)throw new Error("Araştırma betiğinde hızlandırılacak veya düzeltilecek bölüm bulunamadı.");
 if(!optimized.includes("groupEntries=[...groups.entries()]"))throw new Error("Overpass paralelleştirme dönüşümü uygulanamadı.");
 if(!optimized.includes("AbortSignal.timeout"))throw new Error("HTTP zaman aşımı dönüşümü uygulanamadı.");
+if(!optimized.includes('url.searchParams.set("geoDistance",`${point.lat},${point.lng},${radius}km`);'))throw new Error("GBIF geoDistance dönüşümü uygulanamadı.");
+if(!optimized.includes('url.searchParams.set("taxonKey",String(fishClassKey));'))throw new Error("GBIF taxonKey dönüşümü uygulanamadı.");
 await writeFile(temporaryFile,optimized,"utf8");
 try{
   await import(`${pathToFileURL(temporaryFile).href}?run=${Date.now()}`);
