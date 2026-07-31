@@ -1,6 +1,8 @@
 import dashboardWorker from "./router.js";
 
 const AUDIT_PATH = "/admin/api/audit-export";
+const SITE_GA4_MEASUREMENT_ID = "G-K3ZLC335GP";
+const CLOUDFLARE_EXPORT_DAYS = 7;
 
 const secureJson = (payload, status = 200, download = false) => {
   const headers = {
@@ -53,10 +55,13 @@ const readDashboardSummary = async (request, env, ctx) => {
   const html = await response.text();
   const extract = (label) => {
     const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const match = html.match(new RegExp(`<span>${escaped}<\\/span>\\s*<strong>([^<]+)<\\/strong>`, "i"));
-    return match ? match[1].trim() : null;
+    const pattern = new RegExp(
+      `<span[^>]*>\\s*${escaped}\\s*<\\/span>\\s*<strong[^>]*>([^<]+)<\\/strong>`,
+      "i",
+    );
+    return html.match(pattern)?.[1]?.trim() || null;
   };
-  const score = html.match(/<div class="score">[\s\S]*?<strong>([^<]+)<\/strong>/i)?.[1]?.trim() || null;
+  const score = html.match(/<div[^>]*class="[^"]*score[^"]*"[^>]*>[\s\S]*?<strong[^>]*>([^<]+)<\/strong>/i)?.[1]?.trim() || null;
 
   return {
     ok: true,
@@ -71,13 +76,24 @@ const readDashboardSummary = async (request, env, ctx) => {
   };
 };
 
+const ga4HasNoData = (ga4) => {
+  if (!ga4.ok) return false;
+  const totals = ga4.payload?.totals || {};
+  return [
+    totals.activeUsers,
+    totals.sessions,
+    totals.views,
+    totals.organicSessions,
+    totals.realtimeActiveUsers,
+  ].every((value) => Number(value || 0) === 0);
+};
+
 const handleAuditExport = async (request, env, ctx) => {
   if (request.method !== "GET") return secureJson({ error: "Yalnızca GET desteklenir." }, 405);
 
   const requestUrl = new URL(request.url);
   const requestedDays = Number.parseInt(requestUrl.searchParams.get("days") || "28", 10);
   const days = [7, 28, 90].includes(requestedDays) ? requestedDays : 28;
-  const cloudflareDays = days >= 28 ? 28 : 7;
 
   const authCheck = await readDashboardSummary(request, env, ctx);
   if (!authCheck.ok) {
@@ -93,8 +109,10 @@ const handleAuditExport = async (request, env, ctx) => {
   const [ga4, searchConsole, cloudflare] = await Promise.all([
     requestThroughWorker(request, env, ctx, "/admin/api/ga4", days),
     requestThroughWorker(request, env, ctx, "/admin/api/search-console", days),
-    requestThroughWorker(request, env, ctx, "/admin/api/cloudflare", cloudflareDays),
+    requestThroughWorker(request, env, ctx, "/admin/api/cloudflare", CLOUDFLARE_EXPORT_DAYS),
   ]);
+
+  const zeroGa4 = ga4HasNoData(ga4);
 
   return secureJson({
     report: "Olta Atlası güvenli yönetim paneli denetim dışa aktarımı",
@@ -102,6 +120,20 @@ const handleAuditExport = async (request, env, ctx) => {
     requestedPeriodDays: days,
     containsSecrets: false,
     note: "Bu dosya parola, API tokenı, OAuth yenileme belirteci veya özel anahtar içermez.",
+    diagnostics: {
+      ga4: zeroGa4
+        ? {
+          status: "no-data",
+          siteMeasurementId: SITE_GA4_MEASUREMENT_ID,
+          message: "GA4 API bağlantısı başarılı ancak seçilen dönemde kullanıcı, oturum ve görüntüleme verisi sıfır. Ölçüm kimliğinin doğru veri akışına ait olduğu, analitik izninin kabul edildiği ve verinin işlenmesi için yeterli süre geçtiği kontrol edilmelidir.",
+        }
+        : { status: ga4.ok ? "ok" : "error", siteMeasurementId: SITE_GA4_MEASUREMENT_ID },
+      cloudflare: {
+        requestedDays: days,
+        exportedDays: CLOUDFLARE_EXPORT_DAYS,
+        message: "Cloudflare zone veri saklama sınırı nedeniyle dışa aktarım son 7 günle sınırlıdır; Search Console ve GA4 seçilen dönemi kullanır.",
+      },
+    },
     content: authCheck,
     ga4,
     searchConsole,
