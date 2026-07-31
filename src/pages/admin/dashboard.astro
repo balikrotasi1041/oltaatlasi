@@ -42,37 +42,24 @@ const queue = meralar
   .sort((a, b) => b.issues.length - a.issues.length)
   .slice(0, 24);
 ---
-<BaseLayout title="Yönetim Paneli" description="Olta Atlası içerik, SEO ve gerçek kullanıcı trafiği kontrol merkezi." noindex={true}>
+<BaseLayout title="Yönetim Paneli" description="Olta Atlası içerik, SEO, gerçek kullanıcı ve altyapı trafiği kontrol merkezi." noindex={true}>
   <section class="dash">
     <div class="container wrap">
       <header class="hero">
         <div>
-          <p class="eyebrow">Olta Atlası · Dashboard v3</p>
-          <h1>SEO, trafik ve içerik kontrol merkezi</h1>
-          <p>Search Console, Google Analytics ve aktif avlak veri katmanını tek ekranda birleştirir.</p>
+          <p class="eyebrow">Olta Atlası · Dashboard v4</p>
+          <h1>SEO, kullanıcı, altyapı ve içerik merkezi</h1>
+          <p>Search Console, GA4, Cloudflare ve aktif avlak veri katmanını tek ekranda birleştirir.</p>
         </div>
         <div class="score"><span>İçerik kalite puanı</span><strong>{qualityScore}</strong><small>100 üzerinden</small></div>
       </header>
 
-      <section class="panel analytics-panel" aria-labelledby="ga4-title">
+      <section class="panel" aria-labelledby="ga4-title">
         <div class="panel-head">
-          <div>
-            <p class="eyebrow dark">Google Analytics 4</p>
-            <h2 id="ga4-title">Gerçek kullanıcı trafiği</h2>
-            <p id="ga4-status">Veriler yükleniyor…</p>
-          </div>
-          <div class="actions">
-            <label for="ga4-period">Dönem</label>
-            <select id="ga4-period">
-              <option value="7">Son 7 gün</option>
-              <option value="28" selected>Son 28 gün</option>
-              <option value="90">Son 90 gün</option>
-            </select>
-            <button id="ga4-refresh" type="button">Yenile</button>
-          </div>
+          <div><p class="eyebrow dark">Google Analytics 4</p><h2 id="ga4-title">Gerçek kullanıcı trafiği</h2><p id="ga4-status">Veriler yükleniyor…</p></div>
+          <div class="actions"><label for="ga4-period">Dönem</label><select id="ga4-period"><option value="7">Son 7 gün</option><option value="28" selected>Son 28 gün</option><option value="90">Son 90 gün</option></select><button id="ga4-refresh" type="button">Yenile</button></div>
         </div>
-
-        <div class="metric-cards ga4-cards" aria-live="polite">
+        <div class="metric-cards six" aria-live="polite">
           <article><span>Aktif kullanıcı</span><strong id="ga4-users">—</strong></article>
           <article><span>Oturum</span><strong id="ga4-sessions">—</strong></article>
           <article><span>Sayfa görüntüleme</span><strong id="ga4-views">—</strong></article>
@@ -80,7 +67,6 @@ const queue = meralar
           <article><span>Organik oturum</span><strong id="ga4-organic">—</strong><small id="ga4-organic-share">—</small></article>
           <article class="realtime"><span>Şu an aktif</span><strong id="ga4-realtime">—</strong><small>son 30 dakika</small></article>
         </div>
-
         <div id="ga4-error" class="notice error" hidden></div>
         <div class="analytics-grid">
           <section class="subpanel"><h3>Trafik kanalları</h3><div id="ga4-channels" class="data-list"><p class="muted">Yükleniyor…</p></div></section>
@@ -90,31 +76,39 @@ const queue = meralar
         </div>
       </section>
 
-      <section class="panel gsc-panel" aria-labelledby="gsc-title">
+      <section class="panel" aria-labelledby="cf-title">
         <div class="panel-head">
-          <div>
-            <p class="eyebrow dark">Google Search Console</p>
-            <h2 id="gsc-title">Organik arama performansı</h2>
-            <p id="gsc-status">Veriler yükleniyor…</p>
-          </div>
-          <div class="actions">
-            <label for="gsc-period">Dönem</label>
-            <select id="gsc-period">
-              <option value="7">Son 7 gün</option>
-              <option value="28" selected>Son 28 gün</option>
-              <option value="90">Son 90 gün</option>
-            </select>
-            <button id="gsc-refresh" type="button">Yenile</button>
-          </div>
+          <div><p class="eyebrow dark">Cloudflare Analytics</p><h2 id="cf-title">Altyapı ve istek trafiği</h2><p id="cf-status">Veriler yükleniyor…</p></div>
+          <div class="actions"><label for="cf-period">Dönem</label><select id="cf-period"><option value="1">Son 24 saat</option><option value="7" selected>Son 7 gün</option><option value="28">Son 28 gün</option></select><button id="cf-refresh" type="button">Yenile</button></div>
         </div>
+        <div class="metric-cards six" aria-live="polite">
+          <article><span>HTTP isteği</span><strong id="cf-requests">—</strong></article>
+          <article><span>Ziyaret</span><strong id="cf-visits">—</strong></article>
+          <article><span>Veri aktarımı</span><strong id="cf-bytes">—</strong></article>
+          <article><span>Cache hit</span><strong id="cf-cache-rate">—</strong><small id="cf-cache-count">—</small></article>
+          <article class="warning"><span>4xx</span><strong id="cf-4xx">—</strong></article>
+          <article class="danger"><span>5xx</span><strong id="cf-5xx">—</strong></article>
+        </div>
+        <div id="cf-error" class="notice error" hidden></div>
+        <div class="analytics-grid">
+          <section class="subpanel"><h3>Cache durumları</h3><div id="cf-cache" class="data-list"><p class="muted">Yükleniyor…</p></div></section>
+          <section class="subpanel"><h3>HTTP durum kodları</h3><div id="cf-statuses" class="data-list"><p class="muted">Yükleniyor…</p></div></section>
+          <section class="subpanel"><h3>En yoğun ülkeler</h3><div id="cf-countries" class="data-list"><p class="muted">Yükleniyor…</p></div></section>
+          <section class="subpanel"><h3>En çok istek alan yollar</h3><div id="cf-paths" class="data-list"><p class="muted">Yükleniyor…</p></div></section>
+        </div>
+      </section>
 
+      <section class="panel" aria-labelledby="gsc-title">
+        <div class="panel-head">
+          <div><p class="eyebrow dark">Google Search Console</p><h2 id="gsc-title">Organik arama performansı</h2><p id="gsc-status">Veriler yükleniyor…</p></div>
+          <div class="actions"><label for="gsc-period">Dönem</label><select id="gsc-period"><option value="7">Son 7 gün</option><option value="28" selected>Son 28 gün</option><option value="90">Son 90 gün</option></select><button id="gsc-refresh" type="button">Yenile</button></div>
+        </div>
         <div class="metric-cards" aria-live="polite">
           <article><span>Tıklama</span><strong id="gsc-clicks">—</strong></article>
           <article><span>Gösterim</span><strong id="gsc-impressions">—</strong></article>
           <article><span>CTR</span><strong id="gsc-ctr">—</strong></article>
           <article><span>Ort. konum</span><strong id="gsc-position">—</strong></article>
         </div>
-
         <div id="gsc-error" class="notice error" hidden></div>
         <div class="grid data-grid">
           <section class="subpanel"><h3>En çok gösterilen sorgular</h3><div id="gsc-queries" class="data-list"><p class="muted">Yükleniyor…</p></div></section>
@@ -130,60 +124,18 @@ const queue = meralar
       </div>
 
       <div class="grid">
-        <section class="panel">
-          <h2>Öncelikli eksikler</h2>
-          {issues.map((item) => (
-            <div class="row"><span>{item.label}</span><b>{item.count}</b></div>
-          ))}
-        </section>
-        <section class="panel">
-          <h2>Güven seviyesi</h2>
-          {byConfidence.map((item) => (
-            <div class="confidence">
-              <span><b>{item.level}</b> · {item.count} kayıt</span>
-              <i><em style={`width: ${item.ratio}%`}></em></i>
-              <strong>{item.ratio}%</strong>
-            </div>
-          ))}
-        </section>
+        <section class="panel"><h2>Öncelikli eksikler</h2>{issues.map((item) => (<div class="row"><span>{item.label}</span><b>{item.count}</b></div>))}</section>
+        <section class="panel"><h2>Güven seviyesi</h2>{byConfidence.map((item) => (<div class="confidence"><span><b>{item.level}</b> · {item.count} kayıt</span><i><em style={`width: ${item.ratio}%`}></em></i><strong>{item.ratio}%</strong></div>))}</section>
       </div>
 
       <div class="grid">
-        <section class="panel">
-          <h2>En yoğun iller</h2>
-          {provinceCounts.map((item, index) => (
-            <div class="row"><span>{index + 1}. {item.province}</span><b>{item.count}</b></div>
-          ))}
-        </section>
-        <section class="panel">
-          <h2>Son güncellenenler</h2>
-          {latest.map((m) => (
-            <a class="latest" href={`/meralar/${m.slug}/`}>
-              <span><b>{m.name}</b><small>{m.province} · {m.district} · Güven {m.confidence}</small></span>
-              <time>{m.updatedAt}</time>
-            </a>
-          ))}
-        </section>
+        <section class="panel"><h2>En yoğun iller</h2>{provinceCounts.map((item, index) => (<div class="row"><span>{index + 1}. {item.province}</span><b>{item.count}</b></div>))}</section>
+        <section class="panel"><h2>Son güncellenenler</h2>{latest.map((m) => (<a class="latest" href={`/meralar/${m.slug}/`}><span><b>{m.name}</b><small>{m.province} · {m.district} · Güven {m.confidence}</small></span><time>{m.updatedAt}</time></a>))}</section>
       </div>
 
       <section class="panel table-panel">
         <div class="heading"><h2>İyileştirme kuyruğu</h2><span>İlk 24 kayıt</span></div>
-        <div class="scroll">
-          <table>
-            <thead><tr><th>Avlak</th><th>İl / İlçe</th><th>Güven</th><th>Eksikler</th><th></th></tr></thead>
-            <tbody>
-              {queue.map(({ m, issues: rowIssues }) => (
-                <tr>
-                  <td><b>{m.name}</b><small>{m.slug}</small></td>
-                  <td>{m.province} / {m.district}</td>
-                  <td><span class={`badge b-${m.confidence.toLowerCase()}`}>{m.confidence}</span></td>
-                  <td><div class="tags">{rowIssues.map((issue) => <span>{issue}</span>)}</div></td>
-                  <td><a href={`/meralar/${m.slug}/`}>Aç</a></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <div class="scroll"><table><thead><tr><th>Avlak</th><th>İl / İlçe</th><th>Güven</th><th>Eksikler</th><th></th></tr></thead><tbody>{queue.map(({ m, issues: rowIssues }) => (<tr><td><b>{m.name}</b><small>{m.slug}</small></td><td>{m.province} / {m.district}</td><td><span class={`badge b-${m.confidence.toLowerCase()}`}>{m.confidence}</span></td><td><div class="tags">{rowIssues.map((issue) => <span>{issue}</span>)}</div></td><td><a href={`/meralar/${m.slug}/`}>Aç</a></td></tr>))}</tbody></table></div>
       </section>
     </div>
   </section>
@@ -191,52 +143,29 @@ const queue = meralar
   <script is:inline>
     const numberFormatter = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 });
     const decimalFormatter = new Intl.NumberFormat("tr-TR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    const setText = (selector, value) => {
-      const node = document.querySelector(selector);
-      if (node) node.textContent = value;
-    };
-    const clearError = (node) => {
-      if (!node) return;
-      node.hidden = true;
-      node.textContent = "";
-    };
-    const showError = (node, error) => {
-      if (!node) return;
-      node.hidden = false;
-      node.textContent = error instanceof Error ? error.message : "Bilinmeyen bağlantı hatası.";
-    };
-    const shortPage = (value) => {
-      try {
-        const url = new URL(value);
-        return url.pathname || "/";
-      } catch {
-        return value || "/";
-      }
+    const setText = (selector, value) => { const node = document.querySelector(selector); if (node) node.textContent = value; };
+    const clearError = (node) => { if (!node) return; node.hidden = true; node.textContent = ""; };
+    const showError = (node, error) => { if (!node) return; node.hidden = false; node.textContent = error instanceof Error ? error.message : "Bilinmeyen bağlantı hatası."; };
+    const shortPage = (value) => { try { const url = new URL(value); return url.pathname || "/"; } catch { return value || "/"; } };
+    const formatBytes = (value) => {
+      const bytes = Number(value || 0);
+      if (bytes < 1024) return `${numberFormatter.format(bytes)} B`;
+      const units = ["KB", "MB", "GB", "TB"];
+      let amount = bytes / 1024;
+      let unit = units[0];
+      for (let index = 1; index < units.length && amount >= 1024; index += 1) { amount /= 1024; unit = units[index]; }
+      return `${decimalFormatter.format(amount)} ${unit}`;
     };
     const renderRows = (selector, rows, labelBuilder, detailBuilder, valueBuilder) => {
       const container = document.querySelector(selector);
       if (!container) return;
       container.replaceChildren();
-      if (!rows.length) {
-        const empty = document.createElement("p");
-        empty.className = "muted";
-        empty.textContent = "Bu dönem için veri bulunamadı.";
-        container.appendChild(empty);
-        return;
-      }
+      if (!rows.length) { const empty = document.createElement("p"); empty.className = "muted"; empty.textContent = "Bu dönem için veri bulunamadı."; container.appendChild(empty); return; }
       rows.forEach((row) => {
-        const item = document.createElement("div");
-        item.className = "data-row";
-        const label = document.createElement("span");
-        const title = document.createElement("b");
-        title.textContent = labelBuilder(row);
-        const detail = document.createElement("small");
-        detail.textContent = detailBuilder(row);
-        label.append(title, detail);
-        const value = document.createElement("strong");
-        value.textContent = valueBuilder(row);
-        item.append(label, value);
-        container.appendChild(item);
+        const item = document.createElement("div"); item.className = "data-row";
+        const label = document.createElement("span"); const title = document.createElement("b"); title.textContent = labelBuilder(row);
+        const detail = document.createElement("small"); detail.textContent = detailBuilder(row); label.append(title, detail);
+        const value = document.createElement("strong"); value.textContent = valueBuilder(row); item.append(label, value); container.appendChild(item);
       });
     };
 
@@ -245,24 +174,11 @@ const queue = meralar
     const ga4Status = document.querySelector("#ga4-status");
     const ga4Error = document.querySelector("#ga4-error");
     const loadGa4 = async () => {
-      const days = ga4Period?.value || "28";
-      if (ga4Refresh) ga4Refresh.disabled = true;
-      if (ga4Status) ga4Status.textContent = "Google Analytics verileri yükleniyor…";
-      clearError(ga4Error);
+      const days = ga4Period?.value || "28"; if (ga4Refresh) ga4Refresh.disabled = true; if (ga4Status) ga4Status.textContent = "Google Analytics verileri yükleniyor…"; clearError(ga4Error);
       try {
-        const response = await fetch(`/admin/api/ga4?days=${encodeURIComponent(days)}`, {
-          credentials: "same-origin",
-          headers: { Accept: "application/json" },
-        });
-        const payload = await response.json();
-        if (!response.ok || !payload.connected) throw new Error(payload.error || "Google Analytics bağlantısı kurulamadı.");
-        setText("#ga4-users", numberFormatter.format(payload.totals.activeUsers));
-        setText("#ga4-sessions", numberFormatter.format(payload.totals.sessions));
-        setText("#ga4-views", numberFormatter.format(payload.totals.views));
-        setText("#ga4-engagement", `${decimalFormatter.format(payload.totals.engagementRate * 100)}%`);
-        setText("#ga4-organic", numberFormatter.format(payload.totals.organicSessions));
-        setText("#ga4-organic-share", `${decimalFormatter.format(payload.totals.organicShare * 100)}% toplam oturum`);
-        setText("#ga4-realtime", numberFormatter.format(payload.totals.realtimeActiveUsers));
+        const response = await fetch(`/admin/api/ga4?days=${encodeURIComponent(days)}`, { credentials: "same-origin", headers: { Accept: "application/json" } });
+        const payload = await response.json(); if (!response.ok || !payload.connected) throw new Error(payload.error || "Google Analytics bağlantısı kurulamadı.");
+        setText("#ga4-users", numberFormatter.format(payload.totals.activeUsers)); setText("#ga4-sessions", numberFormatter.format(payload.totals.sessions)); setText("#ga4-views", numberFormatter.format(payload.totals.views)); setText("#ga4-engagement", `${decimalFormatter.format(payload.totals.engagementRate * 100)}%`); setText("#ga4-organic", numberFormatter.format(payload.totals.organicSessions)); setText("#ga4-organic-share", `${decimalFormatter.format(payload.totals.organicShare * 100)}% toplam oturum`); setText("#ga4-realtime", numberFormatter.format(payload.totals.realtimeActiveUsers));
         renderRows("#ga4-channels", payload.channels || [], (row) => row.channel || "Tanımsız", (row) => `${numberFormatter.format(row.activeUsers)} kullanıcı · ${numberFormatter.format(row.views)} görüntüleme`, (row) => numberFormatter.format(row.sessions));
         renderRows("#ga4-devices", payload.devices || [], (row) => row.device || "Tanımsız", (row) => `${numberFormatter.format(row.sessions)} oturum`, (row) => numberFormatter.format(row.activeUsers));
         renderRows("#ga4-cities", payload.cities || [], (row) => `${row.city || "Tanımsız"}${row.country ? ` · ${row.country}` : ""}`, (row) => `${numberFormatter.format(row.sessions)} oturum`, (row) => numberFormatter.format(row.activeUsers));
@@ -270,15 +186,29 @@ const queue = meralar
         if (ga4Status) ga4Status.textContent = `Son ${payload.range.days} gün · GA4 mülkü ${payload.propertyId}`;
       } catch (error) {
         ["#ga4-users", "#ga4-sessions", "#ga4-views", "#ga4-engagement", "#ga4-organic", "#ga4-organic-share", "#ga4-realtime"].forEach((selector) => setText(selector, "—"));
-        renderRows("#ga4-channels", [], () => "", () => "", () => "");
-        renderRows("#ga4-devices", [], () => "", () => "", () => "");
-        renderRows("#ga4-cities", [], () => "", () => "", () => "");
-        renderRows("#ga4-pages", [], () => "", () => "", () => "");
-        if (ga4Status) ga4Status.textContent = "Google Analytics bağlantısı bekleniyor.";
-        showError(ga4Error, error);
-      } finally {
-        if (ga4Refresh) ga4Refresh.disabled = false;
-      }
+        ["#ga4-channels", "#ga4-devices", "#ga4-cities", "#ga4-pages"].forEach((selector) => renderRows(selector, [], () => "", () => "", () => "")); if (ga4Status) ga4Status.textContent = "Google Analytics bağlantısı bekleniyor."; showError(ga4Error, error);
+      } finally { if (ga4Refresh) ga4Refresh.disabled = false; }
+    };
+
+    const cfPeriod = document.querySelector("#cf-period");
+    const cfRefresh = document.querySelector("#cf-refresh");
+    const cfStatus = document.querySelector("#cf-status");
+    const cfError = document.querySelector("#cf-error");
+    const loadCloudflare = async () => {
+      const days = cfPeriod?.value || "7"; if (cfRefresh) cfRefresh.disabled = true; if (cfStatus) cfStatus.textContent = "Cloudflare verileri yükleniyor…"; clearError(cfError);
+      try {
+        const response = await fetch(`/admin/api/cloudflare?days=${encodeURIComponent(days)}`, { credentials: "same-origin", headers: { Accept: "application/json" } });
+        const payload = await response.json(); if (!response.ok || !payload.connected) throw new Error(payload.error || "Cloudflare bağlantısı kurulamadı.");
+        setText("#cf-requests", numberFormatter.format(payload.totals.requests)); setText("#cf-visits", numberFormatter.format(payload.totals.visits)); setText("#cf-bytes", formatBytes(payload.totals.bytes)); setText("#cf-cache-rate", `${decimalFormatter.format(payload.totals.cacheHitRate * 100)}%`); setText("#cf-cache-count", `${numberFormatter.format(payload.totals.cachedRequests)} istek`); setText("#cf-4xx", numberFormatter.format(payload.totals.status4xx)); setText("#cf-5xx", numberFormatter.format(payload.totals.status5xx));
+        renderRows("#cf-cache", payload.cache || [], (row) => row.status || "unknown", () => "Cache sonucu", (row) => numberFormatter.format(row.requests));
+        renderRows("#cf-statuses", (payload.statuses || []).slice(0, 12), (row) => String(row.status || "Tanımsız"), (row) => `${Math.floor(Number(row.status || 0) / 100)}xx sınıfı`, (row) => numberFormatter.format(row.requests));
+        renderRows("#cf-countries", payload.countries || [], (row) => row.country || "Unknown", () => "HTTP isteği", (row) => numberFormatter.format(row.requests));
+        renderRows("#cf-paths", payload.paths || [], (row) => row.path || "/", () => "HTTP isteği", (row) => numberFormatter.format(row.requests));
+        if (cfStatus) cfStatus.textContent = `Son ${payload.range.days === 1 ? "24 saat" : `${payload.range.days} gün`} · ${payload.sampled ? "örneklenmiş tahmin" : "tam veri"}`;
+      } catch (error) {
+        ["#cf-requests", "#cf-visits", "#cf-bytes", "#cf-cache-rate", "#cf-cache-count", "#cf-4xx", "#cf-5xx"].forEach((selector) => setText(selector, "—"));
+        ["#cf-cache", "#cf-statuses", "#cf-countries", "#cf-paths"].forEach((selector) => renderRows(selector, [], () => "", () => "", () => "")); if (cfStatus) cfStatus.textContent = "Cloudflare bağlantısı bekleniyor."; showError(cfError, error);
+      } finally { if (cfRefresh) cfRefresh.disabled = false; }
     };
 
     const gscPeriod = document.querySelector("#gsc-period");
@@ -286,44 +216,26 @@ const queue = meralar
     const gscStatus = document.querySelector("#gsc-status");
     const gscError = document.querySelector("#gsc-error");
     const loadSearchConsole = async () => {
-      const days = gscPeriod?.value || "28";
-      if (gscRefresh) gscRefresh.disabled = true;
-      if (gscStatus) gscStatus.textContent = "Search Console verileri yükleniyor…";
-      clearError(gscError);
+      const days = gscPeriod?.value || "28"; if (gscRefresh) gscRefresh.disabled = true; if (gscStatus) gscStatus.textContent = "Search Console verileri yükleniyor…"; clearError(gscError);
       try {
-        const response = await fetch(`/admin/api/search-console?days=${encodeURIComponent(days)}`, {
-          credentials: "same-origin",
-          headers: { Accept: "application/json" },
-        });
-        const payload = await response.json();
-        if (!response.ok || !payload.connected) throw new Error(payload.error || "Search Console bağlantısı kurulamadı.");
-        setText("#gsc-clicks", numberFormatter.format(payload.totals.clicks));
-        setText("#gsc-impressions", numberFormatter.format(payload.totals.impressions));
-        setText("#gsc-ctr", `${decimalFormatter.format(payload.totals.ctr * 100)}%`);
-        setText("#gsc-position", decimalFormatter.format(payload.totals.position));
+        const response = await fetch(`/admin/api/search-console?days=${encodeURIComponent(days)}`, { credentials: "same-origin", headers: { Accept: "application/json" } });
+        const payload = await response.json(); if (!response.ok || !payload.connected) throw new Error(payload.error || "Search Console bağlantısı kurulamadı.");
+        setText("#gsc-clicks", numberFormatter.format(payload.totals.clicks)); setText("#gsc-impressions", numberFormatter.format(payload.totals.impressions)); setText("#gsc-ctr", `${decimalFormatter.format(payload.totals.ctr * 100)}%`); setText("#gsc-position", decimalFormatter.format(payload.totals.position));
         renderRows("#gsc-queries", payload.queries || [], (row) => row.query, (row) => `${numberFormatter.format(row.clicks)} tıklama · ${decimalFormatter.format(row.position)} sıra`, (row) => numberFormatter.format(row.impressions));
         renderRows("#gsc-pages", payload.pages || [], (row) => shortPage(row.page), (row) => `${numberFormatter.format(row.clicks)} tıklama · ${decimalFormatter.format(row.position)} sıra`, (row) => numberFormatter.format(row.impressions));
         if (gscStatus) gscStatus.textContent = `${payload.range.startDate} – ${payload.range.endDate} · ${payload.siteUrl}`;
       } catch (error) {
-        ["#gsc-clicks", "#gsc-impressions", "#gsc-ctr", "#gsc-position"].forEach((selector) => setText(selector, "—"));
-        renderRows("#gsc-queries", [], () => "", () => "", () => "");
-        renderRows("#gsc-pages", [], () => "", () => "", () => "");
-        if (gscStatus) gscStatus.textContent = "Search Console bağlantısı bekleniyor.";
-        showError(gscError, error);
-      } finally {
-        if (gscRefresh) gscRefresh.disabled = false;
-      }
+        ["#gsc-clicks", "#gsc-impressions", "#gsc-ctr", "#gsc-position"].forEach((selector) => setText(selector, "—")); ["#gsc-queries", "#gsc-pages"].forEach((selector) => renderRows(selector, [], () => "", () => "", () => "")); if (gscStatus) gscStatus.textContent = "Search Console bağlantısı bekleniyor."; showError(gscError, error);
+      } finally { if (gscRefresh) gscRefresh.disabled = false; }
     };
 
-    ga4Period?.addEventListener("change", loadGa4);
-    ga4Refresh?.addEventListener("click", loadGa4);
-    gscPeriod?.addEventListener("change", loadSearchConsole);
-    gscRefresh?.addEventListener("click", loadSearchConsole);
-    loadGa4();
-    loadSearchConsole();
+    ga4Period?.addEventListener("change", loadGa4); ga4Refresh?.addEventListener("click", loadGa4);
+    cfPeriod?.addEventListener("change", loadCloudflare); cfRefresh?.addEventListener("click", loadCloudflare);
+    gscPeriod?.addEventListener("change", loadSearchConsole); gscRefresh?.addEventListener("click", loadSearchConsole);
+    loadGa4(); loadCloudflare(); loadSearchConsole();
   </script>
 
   <style>
-    .dash{background:#f3f7f7;min-height:70vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero{display:flex;justify-content:space-between;gap:28px;background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:32px;border-radius:24px}.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1;margin:.2rem 0 .7rem}.hero p{max-width:760px;color:#d8ecef;margin:0}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.75rem;color:#8edbe4}.eyebrow.dark{color:#287685;margin:0 0 5px}.score{min-width:190px;border:1px solid #ffffff38;background:#ffffff12;border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:center}.score strong{font-size:4rem;line-height:1}.score span,.score small{color:#d8ecef}.cards,.metric-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.ga4-cards{grid-template-columns:repeat(6,1fr)}.cards article,.metric-cards article,.panel{background:#fff;border:1px solid #dce8e8;border-radius:18px;box-shadow:0 10px 24px #1439410f}.cards article,.metric-cards article{padding:20px}.cards span,.metric-cards span{color:#637a7e}.cards strong,.metric-cards strong{display:block;font-size:2.25rem;color:#0a3340;margin-top:4px}.metric-cards small{display:block;color:#74888b;margin-top:4px}.metric-cards .realtime{border-color:#a9d5c0;background:#f2fbf6}.metric-cards .realtime strong{color:#24734a}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.analytics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}.panel{padding:22px}.panel h2{margin:0 0 14px;color:#143d46}.panel-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.panel-head h2{margin:0 0 4px}.panel-head p{margin:0;color:#6c8084}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.actions label{font-size:.82rem;font-weight:800;color:#526a6e}.actions select,.actions button{border:1px solid #cadada;border-radius:10px;background:#fff;padding:9px 11px;font:inherit}.actions button{background:#0b5967;color:#fff;border-color:#0b5967;font-weight:800;cursor:pointer}.actions button:disabled{opacity:.55;cursor:wait}.data-grid{margin-top:18px}.subpanel{border:1px solid #e1ecec;border-radius:14px;padding:16px}.subpanel h3{margin:0 0 8px;color:#244e56;font-size:1rem}.data-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #edf2f2}.data-row:last-child{border-bottom:0}.data-row span,.data-row small{display:block}.data-row b{overflow-wrap:anywhere}.data-row small{color:#75878a;margin-top:3px}.data-row strong{color:#176774;white-space:nowrap}.notice{padding:12px 14px;border-radius:12px;margin-top:14px}.notice.error{background:#fff0ea;color:#8b351d;border:1px solid #f0c8ba}.muted{color:#7a8b8e}.row{display:flex;justify-content:space-between;border-bottom:1px solid #edf2f2;padding:11px 0}.row:last-child{border-bottom:0}.row b{color:#a44923}.confidence{display:grid;grid-template-columns:135px 1fr 45px;gap:12px;align-items:center;padding:9px 0}.confidence i{height:10px;background:#edf2f2;border-radius:999px;overflow:hidden}.confidence em{display:block;height:100%;background:#198096}.latest{display:flex;justify-content:space-between;gap:12px;text-decoration:none;color:#163d46;border-bottom:1px solid #edf2f2;padding:9px 0}.latest span,.latest small{display:block}.latest small,.latest time{color:#718387;font-size:.8rem}.table-panel{padding:0;overflow:hidden}.heading{display:flex;justify-content:space-between;align-items:center;padding:22px 22px 8px}.heading span{background:#e9f5f6;color:#176774;padding:6px 10px;border-radius:999px;font-weight:800;font-size:.8rem}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:left;padding:13px 16px;border-top:1px solid #edf2f2}th{background:#f8fbfb;color:#6b7f82;font-size:.77rem;text-transform:uppercase}td small{display:block;color:#7a8c8f}.badge,.tags span{display:inline-flex;border-radius:999px;padding:5px 9px;font-weight:800;font-size:.74rem}.b-a,.b-b{background:#e3f5e9;color:#236d3a}.b-c{background:#fff2cf;color:#8a6300}.b-d{background:#fde7df;color:#9b3c20}.tags{display:flex;flex-wrap:wrap;gap:5px}.tags span{background:#eef4f4;color:#4d666a}td>a{font-weight:800;color:#126b7a}@media(max-width:1180px){.ga4-cards{grid-template-columns:repeat(3,1fr)}}@media(max-width:900px){.hero,.panel-head{flex-direction:column}.score{min-width:0}.cards,.metric-cards{grid-template-columns:repeat(2,1fr)}.grid,.analytics-grid{grid-template-columns:1fr}}@media(max-width:560px){.cards,.metric-cards{grid-template-columns:1fr}.hero{padding:23px}.panel{padding:17px}}
+    .dash{background:#f3f7f7;min-height:70vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero{display:flex;justify-content:space-between;gap:28px;background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:32px;border-radius:24px}.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1;margin:.2rem 0 .7rem}.hero p{max-width:800px;color:#d8ecef;margin:0}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.75rem;color:#8edbe4}.eyebrow.dark{color:#287685;margin:0 0 5px}.score{min-width:190px;border:1px solid #ffffff38;background:#ffffff12;border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:center}.score strong{font-size:4rem;line-height:1}.score span,.score small{color:#d8ecef}.cards,.metric-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric-cards.six{grid-template-columns:repeat(6,1fr)}.cards article,.metric-cards article,.panel{background:#fff;border:1px solid #dce8e8;border-radius:18px;box-shadow:0 10px 24px #1439410f}.cards article,.metric-cards article{padding:20px}.cards span,.metric-cards span{color:#637a7e}.cards strong,.metric-cards strong{display:block;font-size:2.25rem;color:#0a3340;margin-top:4px}.metric-cards small{display:block;color:#74888b;margin-top:4px}.metric-cards .realtime{border-color:#a9d5c0;background:#f2fbf6}.metric-cards .realtime strong{color:#24734a}.metric-cards .warning{border-color:#eed7a0;background:#fffaf0}.metric-cards .warning strong{color:#956900}.metric-cards .danger{border-color:#efc7bb;background:#fff5f1}.metric-cards .danger strong{color:#a33f22}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.analytics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}.panel{padding:22px}.panel h2{margin:0 0 14px;color:#143d46}.panel-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.panel-head h2{margin:0 0 4px}.panel-head p{margin:0;color:#6c8084}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.actions label{font-size:.82rem;font-weight:800;color:#526a6e}.actions select,.actions button{border:1px solid #cadada;border-radius:10px;background:#fff;padding:9px 11px;font:inherit}.actions button{background:#0b5967;color:#fff;border-color:#0b5967;font-weight:800;cursor:pointer}.actions button:disabled{opacity:.55;cursor:wait}.data-grid{margin-top:18px}.subpanel{border:1px solid #e1ecec;border-radius:14px;padding:16px}.subpanel h3{margin:0 0 8px;color:#244e56;font-size:1rem}.data-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #edf2f2}.data-row:last-child{border-bottom:0}.data-row span,.data-row small{display:block}.data-row b{overflow-wrap:anywhere}.data-row small{color:#75878a;margin-top:3px}.data-row strong{color:#176774;white-space:nowrap}.notice{padding:12px 14px;border-radius:12px;margin-top:14px}.notice.error{background:#fff0ea;color:#8b351d;border:1px solid #f0c8ba}.muted{color:#7a8b8e}.row{display:flex;justify-content:space-between;border-bottom:1px solid #edf2f2;padding:11px 0}.row:last-child{border-bottom:0}.row b{color:#a44923}.confidence{display:grid;grid-template-columns:135px 1fr 45px;gap:12px;align-items:center;padding:9px 0}.confidence i{height:10px;background:#edf2f2;border-radius:999px;overflow:hidden}.confidence em{display:block;height:100%;background:#198096}.latest{display:flex;justify-content:space-between;gap:12px;text-decoration:none;color:#163d46;border-bottom:1px solid #edf2f2;padding:9px 0}.latest span,.latest small{display:block}.latest small,.latest time{color:#718387;font-size:.8rem}.table-panel{padding:0;overflow:hidden}.heading{display:flex;justify-content:space-between;align-items:center;padding:22px 22px 8px}.heading span{background:#e9f5f6;color:#176774;padding:6px 10px;border-radius:999px;font-weight:800;font-size:.8rem}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:left;padding:13px 16px;border-top:1px solid #edf2f2}th{background:#f8fbfb;color:#6b7f82;font-size:.77rem;text-transform:uppercase}td small{display:block;color:#7a8c8f}.badge,.tags span{display:inline-flex;border-radius:999px;padding:5px 9px;font-weight:800;font-size:.74rem}.b-a,.b-b{background:#e3f5e9;color:#236d3a}.b-c{background:#fff2cf;color:#8a6300}.b-d{background:#fde7df;color:#9b3c20}.tags{display:flex;flex-wrap:wrap;gap:5px}.tags span{background:#eef4f4;color:#4d666a}td>a{font-weight:800;color:#126b7a}@media(max-width:1180px){.metric-cards.six{grid-template-columns:repeat(3,1fr)}}@media(max-width:900px){.hero,.panel-head{flex-direction:column}.score{min-width:0}.cards,.metric-cards{grid-template-columns:repeat(2,1fr)}.grid,.analytics-grid{grid-template-columns:1fr}}@media(max-width:560px){.cards,.metric-cards,.metric-cards.six{grid-template-columns:1fr}.hero{padding:23px}.panel{padding:17px}}
   </style>
 </BaseLayout>
