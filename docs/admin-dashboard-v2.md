@@ -13,17 +13,56 @@ npx wrangler secret put ADMIN_PASSWORD
 
 Sırlar tanımlı değilse `/admin/*` yolları güvenli biçimde `503` döndürür. Tanımlandıktan sonra tarayıcı HTTP Basic Auth penceresi gösterir.
 
-## 2. Search Console servis hesabı
+## 2. Önerilen Search Console bağlantısı: OAuth
 
-Google Cloud Console'da Search Console API etkinleştirilmiş bir servis hesabı oluşturun ve JSON anahtarını indirin. Servis hesabının `client_email` adresini Search Console'da `https://oltaatlasi.com/` mülküne okuma yetkisiyle kullanıcı olarak ekleyin.
+Servis hesabı anahtarı üretimi organizasyon politikasıyla engelleniyorsa politika gevşetilmeden OAuth yenileme belirteci kullanılabilir.
 
-JSON dosyasının tamamını tek secret olarak tanımlayın:
+### Google Cloud
+
+1. Search Console API'yi etkinleştirin.
+2. Google Auth Platform / OAuth consent screen bölümünde uygulamayı yapılandırın.
+3. Kendi Google hesabınızı test kullanıcısı olarak ekleyin.
+4. OAuth Client ID oluşturun; uygulama türü `Web application` olsun.
+5. Authorized redirect URI alanına `https://developers.google.com/oauthplayground` ekleyin.
+
+### OAuth Playground
+
+1. `https://developers.google.com/oauthplayground` adresini açın.
+2. Sağ üstteki ayarlardan `Use your own OAuth credentials` seçeneğini açın.
+3. OAuth Client ID ve Client Secret değerlerini girin.
+4. Şu kapsamı yetkilendirin:
+
+```text
+https://www.googleapis.com/auth/webmasters.readonly
+```
+
+5. Yetkilendirme kodunu tokenlarla değiştirin ve `refresh_token` değerini kopyalayın.
+
+### Cloudflare sırları
+
+Aşağıdaki üç değeri Worker secrets olarak ekleyin:
+
+```bash
+npx wrangler secret put GSC_OAUTH_CLIENT_ID
+npx wrangler secret put GSC_OAUTH_CLIENT_SECRET
+npx wrangler secret put GSC_OAUTH_REFRESH_TOKEN
+```
+
+Cloudflare paneli kullanılıyorsa Workers & Pages > balik-rotasi > Settings > Variables and Secrets bölümünde her birini `Secret` türünde ayrı ayrı ekleyin.
+
+OAuth uygulaması `External` ve `Testing` durumunda kalırsa Search Console kapsamıyla alınan refresh token yedi gün sonra sona erebilir. Kalıcı kullanım için uygulama yayın durumunu uygun şekilde production'a taşıyın veya Workspace organizasyonunda internal uygulama kullanın.
+
+## 3. Alternatif: servis hesabı
+
+Organizasyon politikası izin veriyorsa servis hesabının `client_email` adresini Search Console mülküne okuma yetkisiyle ekleyin ve JSON anahtarının tamamını secret olarak tanımlayın:
 
 ```bash
 npx wrangler secret put GSC_SERVICE_ACCOUNT_JSON
 ```
 
-Komut değer istediğinde JSON dosyasının tam içeriğini yapıştırın.
+Servis hesabı yöntemi zorunlu değildir; Worker önce OAuth sırlarını, bunlar yoksa servis hesabını kullanır.
+
+## 4. Search Console mülkü
 
 URL-prefix yerine domain property kullanılıyorsa aşağıdaki değişkeni de tanımlayın:
 
@@ -38,7 +77,7 @@ npx wrangler secret put GSC_SITE_URL
 
 `GSC_SITE_URL` tanımlanmazsa sistem `https://oltaatlasi.com/` değerini kullanır.
 
-## 3. Test
+## 5. Test ve dağıtım
 
 Sırlar tanımlandıktan sonra yeniden deploy edin:
 
@@ -53,6 +92,7 @@ Dashboard üzerinde 7, 28 ve 90 günlük tıklama, gösterim, CTR, ortalama konu
 
 ## Güvenlik notu
 
+- OAuth client secret ve refresh token değerlerini GitHub'a commit etmeyin.
 - Servis hesabı JSON anahtarını GitHub'a commit etmeyin.
 - Yönetim parolasını kaynak dosyalarına yazmayın.
 - `/admin/*` yanıtları `private, no-store` olarak işaretlenir.
