@@ -42,17 +42,55 @@ const queue = meralar
   .sort((a, b) => b.issues.length - a.issues.length)
   .slice(0, 24);
 ---
-<BaseLayout title="Yönetim Paneli" description="Olta Atlası içerik ve veri kalitesi kontrol merkezi." noindex={true}>
+<BaseLayout title="Yönetim Paneli" description="Olta Atlası içerik, SEO ve veri kalitesi kontrol merkezi." noindex={true}>
   <section class="dash">
     <div class="container wrap">
       <header class="hero">
         <div>
-          <p class="eyebrow">Olta Atlası · Dashboard v1</p>
-          <h1>İçerik ve veri kalite merkezi</h1>
-          <p>Panel, aktif avlak veri katmanını analiz eder. Search Console, GA4 ve Cloudflare bağlantıları sonraki aşamada eklenecek.</p>
+          <p class="eyebrow">Olta Atlası · Dashboard v2</p>
+          <h1>SEO ve içerik kontrol merkezi</h1>
+          <p>Aktif avlak verisi ile Google Search Console performansını tek ekranda birleştirir.</p>
         </div>
-        <div class="score"><span>Kalite puanı</span><strong>{qualityScore}</strong><small>100 üzerinden</small></div>
+        <div class="score"><span>İçerik kalite puanı</span><strong>{qualityScore}</strong><small>100 üzerinden</small></div>
       </header>
+
+      <section class="panel gsc-panel" aria-labelledby="gsc-title">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow dark">Google Search Console</p>
+            <h2 id="gsc-title">Organik arama performansı</h2>
+            <p id="gsc-status">Veriler yükleniyor…</p>
+          </div>
+          <div class="gsc-actions">
+            <label for="gsc-period">Dönem</label>
+            <select id="gsc-period">
+              <option value="7">Son 7 gün</option>
+              <option value="28" selected>Son 28 gün</option>
+              <option value="90">Son 90 gün</option>
+            </select>
+            <button id="gsc-refresh" type="button">Yenile</button>
+          </div>
+        </div>
+
+        <div class="gsc-cards" aria-live="polite">
+          <article><span>Tıklama</span><strong id="gsc-clicks">—</strong></article>
+          <article><span>Gösterim</span><strong id="gsc-impressions">—</strong></article>
+          <article><span>CTR</span><strong id="gsc-ctr">—</strong></article>
+          <article><span>Ort. konum</span><strong id="gsc-position">—</strong></article>
+        </div>
+
+        <div id="gsc-error" class="notice error" hidden></div>
+        <div class="grid gsc-grid">
+          <section class="subpanel">
+            <h3>En çok gösterilen sorgular</h3>
+            <div id="gsc-queries" class="gsc-list"><p class="muted">Yükleniyor…</p></div>
+          </section>
+          <section class="subpanel">
+            <h3>En çok gösterilen sayfalar</h3>
+            <div id="gsc-pages" class="gsc-list"><p class="muted">Yükleniyor…</p></div>
+          </section>
+        </div>
+      </section>
 
       <div class="cards">
         <article><span>Toplam avlak</span><strong>{meralar.length}</strong></article>
@@ -120,7 +158,101 @@ const queue = meralar
     </div>
   </section>
 
+  <script is:inline>
+    const periodSelect = document.querySelector("#gsc-period");
+    const refreshButton = document.querySelector("#gsc-refresh");
+    const statusNode = document.querySelector("#gsc-status");
+    const errorNode = document.querySelector("#gsc-error");
+    const numberFormatter = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 });
+    const decimalFormatter = new Intl.NumberFormat("tr-TR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+    const setText = (selector, value) => {
+      const node = document.querySelector(selector);
+      if (node) node.textContent = value;
+    };
+
+    const shortPage = (value) => {
+      try {
+        const url = new URL(value);
+        return url.pathname || "/";
+      } catch {
+        return value;
+      }
+    };
+
+    const renderList = (selector, rows, keyName) => {
+      const container = document.querySelector(selector);
+      if (!container) return;
+      container.replaceChildren();
+      if (!rows.length) {
+        const empty = document.createElement("p");
+        empty.className = "muted";
+        empty.textContent = "Bu dönem için veri bulunamadı.";
+        container.appendChild(empty);
+        return;
+      }
+      rows.forEach((row) => {
+        const item = document.createElement("div");
+        item.className = "gsc-row";
+        const label = document.createElement("span");
+        const title = document.createElement("b");
+        title.textContent = keyName === "page" ? shortPage(row[keyName]) : row[keyName];
+        const detail = document.createElement("small");
+        detail.textContent = `${numberFormatter.format(row.clicks)} tıklama · ${decimalFormatter.format(row.position)} sıra`;
+        label.append(title, detail);
+        const impressions = document.createElement("strong");
+        impressions.textContent = numberFormatter.format(row.impressions);
+        impressions.title = "Gösterim";
+        item.append(label, impressions);
+        container.appendChild(item);
+      });
+    };
+
+    const loadSearchConsole = async () => {
+      const days = periodSelect?.value || "28";
+      if (refreshButton) refreshButton.disabled = true;
+      if (statusNode) statusNode.textContent = "Search Console verileri yükleniyor…";
+      if (errorNode) {
+        errorNode.hidden = true;
+        errorNode.textContent = "";
+      }
+      try {
+        const response = await fetch(`/admin/api/search-console?days=${encodeURIComponent(days)}`, {
+          credentials: "same-origin",
+          headers: { Accept: "application/json" },
+        });
+        const payload = await response.json();
+        if (!response.ok || !payload.connected) throw new Error(payload.error || "Search Console bağlantısı kurulamadı.");
+        setText("#gsc-clicks", numberFormatter.format(payload.totals.clicks));
+        setText("#gsc-impressions", numberFormatter.format(payload.totals.impressions));
+        setText("#gsc-ctr", `${decimalFormatter.format(payload.totals.ctr * 100)}%`);
+        setText("#gsc-position", decimalFormatter.format(payload.totals.position));
+        renderList("#gsc-queries", payload.queries || [], "query");
+        renderList("#gsc-pages", payload.pages || [], "page");
+        if (statusNode) statusNode.textContent = `${payload.range.startDate} – ${payload.range.endDate} · ${payload.siteUrl}`;
+      } catch (error) {
+        setText("#gsc-clicks", "—");
+        setText("#gsc-impressions", "—");
+        setText("#gsc-ctr", "—");
+        setText("#gsc-position", "—");
+        renderList("#gsc-queries", [], "query");
+        renderList("#gsc-pages", [], "page");
+        if (statusNode) statusNode.textContent = "Search Console bağlantısı bekleniyor.";
+        if (errorNode) {
+          errorNode.hidden = false;
+          errorNode.textContent = error instanceof Error ? error.message : "Bilinmeyen bağlantı hatası.";
+        }
+      } finally {
+        if (refreshButton) refreshButton.disabled = false;
+      }
+    };
+
+    periodSelect?.addEventListener("change", loadSearchConsole);
+    refreshButton?.addEventListener("click", loadSearchConsole);
+    loadSearchConsole();
+  </script>
+
   <style>
-    .dash{background:#f3f7f7;min-height:70vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero{display:flex;justify-content:space-between;gap:28px;background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:32px;border-radius:24px}.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1;margin:.2rem 0 .7rem}.hero p{max-width:760px;color:#d8ecef;margin:0}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.75rem;color:#8edbe4}.score{min-width:190px;border:1px solid #ffffff38;background:#ffffff12;border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:center}.score strong{font-size:4rem;line-height:1}.score span,.score small{color:#d8ecef}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cards article,.panel{background:#fff;border:1px solid #dce8e8;border-radius:18px;box-shadow:0 10px 24px #1439410f}.cards article{padding:20px}.cards span{color:#637a7e}.cards strong{display:block;font-size:2.25rem;color:#0a3340;margin-top:4px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{padding:22px}.panel h2{margin:0 0 14px;color:#143d46}.row{display:flex;justify-content:space-between;border-bottom:1px solid #edf2f2;padding:11px 0}.row:last-child{border-bottom:0}.row b{color:#a44923}.confidence{display:grid;grid-template-columns:135px 1fr 45px;gap:12px;align-items:center;padding:9px 0}.confidence i{height:10px;background:#edf2f2;border-radius:999px;overflow:hidden}.confidence em{display:block;height:100%;background:#198096}.latest{display:flex;justify-content:space-between;gap:12px;text-decoration:none;color:#163d46;border-bottom:1px solid #edf2f2;padding:9px 0}.latest span,.latest small{display:block}.latest small,.latest time{color:#718387;font-size:.8rem}.table-panel{padding:0;overflow:hidden}.heading{display:flex;justify-content:space-between;align-items:center;padding:22px 22px 8px}.heading span{background:#e9f5f6;color:#176774;padding:6px 10px;border-radius:999px;font-weight:800;font-size:.8rem}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:left;padding:13px 16px;border-top:1px solid #edf2f2}th{background:#f8fbfb;color:#6b7f82;font-size:.77rem;text-transform:uppercase}td small{display:block;color:#7a8c8f}.badge,.tags span{display:inline-flex;border-radius:999px;padding:5px 9px;font-weight:800;font-size:.74rem}.b-a,.b-b{background:#e3f5e9;color:#236d3a}.b-c{background:#fff2cf;color:#8a6300}.b-d{background:#fde7df;color:#9b3c20}.tags{display:flex;flex-wrap:wrap;gap:5px}.tags span{background:#eef4f4;color:#4d666a}td>a{font-weight:800;color:#126b7a}@media(max-width:900px){.hero{flex-direction:column}.score{min-width:0}.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}@media(max-width:560px){.cards{grid-template-columns:1fr}.hero{padding:23px}.panel{padding:17px}}
+    .dash{background:#f3f7f7;min-height:70vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero{display:flex;justify-content:space-between;gap:28px;background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:32px;border-radius:24px}.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1;margin:.2rem 0 .7rem}.hero p{max-width:760px;color:#d8ecef;margin:0}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.75rem;color:#8edbe4}.eyebrow.dark{color:#287685;margin:0 0 5px}.score{min-width:190px;border:1px solid #ffffff38;background:#ffffff12;border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:center}.score strong{font-size:4rem;line-height:1}.score span,.score small{color:#d8ecef}.cards,.gsc-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cards article,.gsc-cards article,.panel{background:#fff;border:1px solid #dce8e8;border-radius:18px;box-shadow:0 10px 24px #1439410f}.cards article,.gsc-cards article{padding:20px}.cards span,.gsc-cards span{color:#637a7e}.cards strong,.gsc-cards strong{display:block;font-size:2.25rem;color:#0a3340;margin-top:4px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{padding:22px}.panel h2{margin:0 0 14px;color:#143d46}.panel-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.panel-head h2{margin:0 0 4px}.panel-head p{margin:0;color:#6c8084}.gsc-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.gsc-actions label{font-size:.82rem;font-weight:800;color:#526a6e}.gsc-actions select,.gsc-actions button{border:1px solid #cadada;border-radius:10px;background:#fff;padding:9px 11px;font:inherit}.gsc-actions button{background:#0b5967;color:#fff;border-color:#0b5967;font-weight:800;cursor:pointer}.gsc-actions button:disabled{opacity:.55;cursor:wait}.gsc-grid{margin-top:18px}.subpanel{border:1px solid #e1ecec;border-radius:14px;padding:16px}.subpanel h3{margin:0 0 8px;color:#244e56;font-size:1rem}.gsc-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #edf2f2}.gsc-row:last-child{border-bottom:0}.gsc-row span,.gsc-row small{display:block}.gsc-row b{overflow-wrap:anywhere}.gsc-row small{color:#75878a;margin-top:3px}.gsc-row strong{color:#176774}.notice{padding:12px 14px;border-radius:12px;margin-top:14px}.notice.error{background:#fff0ea;color:#8b351d;border:1px solid #f0c8ba}.muted{color:#7a8b8e}.row{display:flex;justify-content:space-between;border-bottom:1px solid #edf2f2;padding:11px 0}.row:last-child{border-bottom:0}.row b{color:#a44923}.confidence{display:grid;grid-template-columns:135px 1fr 45px;gap:12px;align-items:center;padding:9px 0}.confidence i{height:10px;background:#edf2f2;border-radius:999px;overflow:hidden}.confidence em{display:block;height:100%;background:#198096}.latest{display:flex;justify-content:space-between;gap:12px;text-decoration:none;color:#163d46;border-bottom:1px solid #edf2f2;padding:9px 0}.latest span,.latest small{display:block}.latest small,.latest time{color:#718387;font-size:.8rem}.table-panel{padding:0;overflow:hidden}.heading{display:flex;justify-content:space-between;align-items:center;padding:22px 22px 8px}.heading span{background:#e9f5f6;color:#176774;padding:6px 10px;border-radius:999px;font-weight:800;font-size:.8rem}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{text-align:left;padding:13px 16px;border-top:1px solid #edf2f2}th{background:#f8fbfb;color:#6b7f82;font-size:.77rem;text-transform:uppercase}td small{display:block;color:#7a8c8f}.badge,.tags span{display:inline-flex;border-radius:999px;padding:5px 9px;font-weight:800;font-size:.74rem}.b-a,.b-b{background:#e3f5e9;color:#236d3a}.b-c{background:#fff2cf;color:#8a6300}.b-d{background:#fde7df;color:#9b3c20}.tags{display:flex;flex-wrap:wrap;gap:5px}.tags span{background:#eef4f4;color:#4d666a}td>a{font-weight:800;color:#126b7a}@media(max-width:900px){.hero,.panel-head{flex-direction:column}.score{min-width:0}.cards,.gsc-cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}@media(max-width:560px){.cards,.gsc-cards{grid-template-columns:1fr}.hero{padding:23px}.panel{padding:17px}}
   </style>
 </BaseLayout>
