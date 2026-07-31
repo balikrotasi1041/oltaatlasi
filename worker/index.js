@@ -102,12 +102,15 @@ const getServiceAccount = (env) => {
 };
 
 const createGoogleJwt = async ({ email, privateKey }) => {
-  if (!email || !privateKey) throw new Error("Search Console servis hesabı bilgileri eksik.");
+  if (!email || !privateKey) throw new Error("Google servis hesabı bilgileri eksik.");
   const now = Math.floor(Date.now() / 1000);
   const header = base64Url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
   const claims = base64Url(JSON.stringify({
     iss: email,
-    scope: "https://www.googleapis.com/auth/webmasters.readonly",
+    scope: [
+      "https://www.googleapis.com/auth/webmasters.readonly",
+      "https://www.googleapis.com/auth/analytics.readonly",
+    ].join(" "),
     aud: "https://oauth2.googleapis.com/token",
     iat: now,
     exp: now + 3600,
@@ -137,15 +140,12 @@ const requestToken = async (body) => {
   return payload.access_token;
 };
 
-const getOAuthAccessToken = async (env) => {
-  const body = new URLSearchParams({
-    client_id: env.GSC_OAUTH_CLIENT_ID,
-    client_secret: env.GSC_OAUTH_CLIENT_SECRET,
-    refresh_token: env.GSC_OAUTH_REFRESH_TOKEN,
-    grant_type: "refresh_token",
-  });
-  return requestToken(body);
-};
+const getOAuthAccessToken = async (env, refreshToken) => requestToken(new URLSearchParams({
+  client_id: env.GSC_OAUTH_CLIENT_ID,
+  client_secret: env.GSC_OAUTH_CLIENT_SECRET,
+  refresh_token: refreshToken,
+  grant_type: "refresh_token",
+}));
 
 const getServiceAccountAccessToken = async (env) => {
   const assertion = await createGoogleJwt(getServiceAccount(env));
@@ -155,28 +155,37 @@ const getServiceAccountAccessToken = async (env) => {
   }));
 };
 
-const getGoogleAccess = async (env) => {
-  const oauthValues = [env.GSC_OAUTH_CLIENT_ID, env.GSC_OAUTH_CLIENT_SECRET, env.GSC_OAUTH_REFRESH_TOKEN];
+const getGoogleAccess = async (env, feature = "Search Console") => {
+  const refreshToken = feature === "GA4"
+    ? (env.GA4_OAUTH_REFRESH_TOKEN || env.GSC_OAUTH_REFRESH_TOKEN)
+    : env.GSC_OAUTH_REFRESH_TOKEN;
+  const oauthValues = [env.GSC_OAUTH_CLIENT_ID, env.GSC_OAUTH_CLIENT_SECRET, refreshToken];
   const oauthConfiguredCount = oauthValues.filter(Boolean).length;
   if (oauthConfiguredCount > 0 && oauthConfiguredCount < oauthValues.length) {
-    throw new Error("Search Console OAuth ayarları eksik: client ID, client secret ve refresh token birlikte tanımlanmalıdır.");
+    throw new Error(`${feature} OAuth ayarları eksik: client ID, client secret ve refresh token birlikte tanımlanmalıdır.`);
   }
   if (oauthConfiguredCount === oauthValues.length) {
-    return { accessToken: await getOAuthAccessToken(env), authMode: "oauth-refresh-token" };
+    return {
+      accessToken: await getOAuthAccessToken(env, refreshToken),
+      authMode: feature === "GA4" && env.GA4_OAUTH_REFRESH_TOKEN
+        ? "oauth-ga4-refresh-token"
+        : "oauth-refresh-token",
+    };
   }
 
   const serviceAccount = getServiceAccount(env);
   if (serviceAccount.email || serviceAccount.privateKey) {
     if (!serviceAccount.email || !serviceAccount.privateKey) {
-      throw new Error("Search Console servis hesabı e-posta veya özel anahtar bilgisi eksik.");
+      throw new Error(`${feature} servis hesabı e-posta veya özel anahtar bilgisi eksik.`);
     }
     return { accessToken: await getServiceAccountAccessToken(env), authMode: "service-account" };
   }
 
-  throw new Error("Search Console kimlik bilgileri tanımlı değil. OAuth istemcisi veya servis hesabı yapılandırılmalıdır.");
+  throw new Error(`${feature} kimlik bilgileri tanımlı değil.`);
 };
 
 const isoDate = (date) => date.toISOString().slice(0, 10);
+
 const searchConsoleQuery = async ({ accessToken, siteUrl, body }) => {
   const endpoint = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`;
   const response = await fetch(endpoint, {
@@ -205,7 +214,7 @@ const handleSearchConsole = async (request, env) => {
     const startDate = isoDate(start);
     const endDate = isoDate(end);
     const siteUrl = env.GSC_SITE_URL || "https://oltaatlasi.com/";
-    const { accessToken, authMode } = await getGoogleAccess(env);
+    const { accessToken, authMode } = await getGoogleAccess(env, "Search Console");
     const common = { startDate, endDate, searchType: "web", dataState: "all" };
     const [summaryRows, dailyRows, queryRows, pageRows] = await Promise.all([
       searchConsoleQuery({ accessToken, siteUrl, body: { ...common, rowLimit: 1 } }),
@@ -245,6 +254,171 @@ const handleSearchConsole = async (request, env) => {
   }
 };
 
+const normalizePropertyId = (value) => String(value || "").trim().replace(/^properties\//, "");
+
+const analyticsRequest = async ({ accessToken, propertyId, method, body }) => {
+  const endpoint = `https://analyticsdata.googleapis.com/v1beta/properties/${encodeURIComponent(propertyId)}:${method}`;
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  const payload = await response.json();
+  if (!response.ok) throw new Error(payload?.error?.message || "Google Analytics sorgusu başarısız oldu.");
+  return payload;
+};
+
+const metricValue = (row, index) => Number(row?.metricValues?.[index]?.value || 0);
+const dimensionValue = (row, index) => row?.dimensionValues?.[index]?.value || "";
+
+const handleGa4 = async (request, env) => {
+  if (request.method !== "GET") return jsonResponse({ error: "Yalnızca GET desteklenir." }, 405);
+  try {
+    const propertyId = normalizePropertyId(env.GA4_PROPERTY_ID);
+    if (!propertyId) throw new Error("GA4_PROPERTY_ID tanımlı değil.");
+
+    const requestUrl = new URL(request.url);
+    const requestedDays = Number.parseInt(requestUrl.searchParams.get("days") || "28", 10);
+    const days = [7, 28, 90].includes(requestedDays) ? requestedDays : 28;
+    const dateRanges = [{ startDate: `${days}daysAgo`, endDate: "yesterday" }];
+    const { accessToken, authMode } = await getGoogleAccess(env, "GA4");
+
+    const [summary, channels, devices, cities, pages, realtime] = await Promise.all([
+      analyticsRequest({
+        accessToken,
+        propertyId,
+        method: "runReport",
+        body: {
+          dateRanges,
+          metrics: [
+            { name: "activeUsers" },
+            { name: "sessions" },
+            { name: "screenPageViews" },
+            { name: "engagementRate" },
+          ],
+        },
+      }),
+      analyticsRequest({
+        accessToken,
+        propertyId,
+        method: "runReport",
+        body: {
+          dateRanges,
+          dimensions: [{ name: "sessionDefaultChannelGroup" }],
+          metrics: [
+            { name: "sessions" },
+            { name: "activeUsers" },
+            { name: "screenPageViews" },
+          ],
+          orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
+          limit: "10",
+        },
+      }),
+      analyticsRequest({
+        accessToken,
+        propertyId,
+        method: "runReport",
+        body: {
+          dateRanges,
+          dimensions: [{ name: "deviceCategory" }],
+          metrics: [{ name: "activeUsers" }, { name: "sessions" }],
+          orderBys: [{ metric: { metricName: "activeUsers" }, desc: true }],
+          limit: "10",
+        },
+      }),
+      analyticsRequest({
+        accessToken,
+        propertyId,
+        method: "runReport",
+        body: {
+          dateRanges,
+          dimensions: [{ name: "city" }, { name: "country" }],
+          metrics: [{ name: "activeUsers" }, { name: "sessions" }],
+          orderBys: [{ metric: { metricName: "activeUsers" }, desc: true }],
+          limit: "10",
+        },
+      }),
+      analyticsRequest({
+        accessToken,
+        propertyId,
+        method: "runReport",
+        body: {
+          dateRanges,
+          dimensions: [{ name: "pagePathPlusQueryString" }],
+          metrics: [
+            { name: "screenPageViews" },
+            { name: "activeUsers" },
+            { name: "engagementRate" },
+          ],
+          orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
+          limit: "10",
+        },
+      }),
+      analyticsRequest({
+        accessToken,
+        propertyId,
+        method: "runRealtimeReport",
+        body: { metrics: [{ name: "activeUsers" }] },
+      }),
+    ]);
+
+    const summaryRow = summary.rows?.[0];
+    const channelRows = (channels.rows || []).map((row) => ({
+      channel: dimensionValue(row, 0),
+      sessions: metricValue(row, 0),
+      activeUsers: metricValue(row, 1),
+      views: metricValue(row, 2),
+    }));
+    const organicSessions = channelRows
+      .filter((row) => row.channel === "Organic Search")
+      .reduce((sum, row) => sum + row.sessions, 0);
+    const totalSessions = metricValue(summaryRow, 1);
+
+    return jsonResponse({
+      connected: true,
+      authMode,
+      propertyId,
+      range: { days, startDate: `${days}daysAgo`, endDate: "yesterday" },
+      totals: {
+        activeUsers: metricValue(summaryRow, 0),
+        sessions: totalSessions,
+        views: metricValue(summaryRow, 2),
+        engagementRate: metricValue(summaryRow, 3),
+        organicSessions,
+        organicShare: totalSessions ? organicSessions / totalSessions : 0,
+        realtimeActiveUsers: metricValue(realtime.rows?.[0], 0),
+      },
+      channels: channelRows,
+      devices: (devices.rows || []).map((row) => ({
+        device: dimensionValue(row, 0),
+        activeUsers: metricValue(row, 0),
+        sessions: metricValue(row, 1),
+      })),
+      cities: (cities.rows || []).map((row) => ({
+        city: dimensionValue(row, 0),
+        country: dimensionValue(row, 1),
+        activeUsers: metricValue(row, 0),
+        sessions: metricValue(row, 1),
+      })),
+      pages: (pages.rows || []).map((row) => ({
+        page: dimensionValue(row, 0),
+        views: metricValue(row, 0),
+        activeUsers: metricValue(row, 1),
+        engagementRate: metricValue(row, 2),
+      })),
+      fetchedAt: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse({
+      connected: false,
+      error: error instanceof Error ? error.message : "Bilinmeyen GA4 hatası.",
+    }, 502);
+  }
+};
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -260,6 +434,7 @@ export default {
       if (!adminAuthConfigured(env)) return adminNotConfiguredResponse();
       if (!adminAuthorized(request, env)) return unauthorizedResponse();
       if (url.pathname === "/admin/api/search-console") return handleSearchConsole(request, env);
+      if (url.pathname === "/admin/api/ga4") return handleGa4(request, env);
     }
 
     const assetResponse = await env.ASSETS.fetch(request);
