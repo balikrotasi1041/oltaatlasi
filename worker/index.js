@@ -50,8 +50,8 @@ const readBasicCredentials = (request) => {
 const adminAuthConfigured = (env) => Boolean(env.ADMIN_USERNAME && env.ADMIN_PASSWORD);
 const adminAuthorized = (request, env) => {
   const credentials = readBasicCredentials(request);
-  if (!credentials) return false;
-  return timingSafeEqual(credentials.username, env.ADMIN_USERNAME)
+  return Boolean(credentials)
+    && timingSafeEqual(credentials.username, env.ADMIN_USERNAME)
     && timingSafeEqual(credentials.password, env.ADMIN_PASSWORD);
 };
 
@@ -127,7 +127,7 @@ const createGoogleJwt = async ({ email, privateKey }) => {
   return `${unsigned}.${base64Url(new Uint8Array(signature))}`;
 };
 
-const requestToken = async (body) => {
+const requestGoogleToken = async (body) => {
   const response = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },
@@ -140,7 +140,7 @@ const requestToken = async (body) => {
   return payload.access_token;
 };
 
-const getOAuthAccessToken = async (env, refreshToken) => requestToken(new URLSearchParams({
+const getOAuthAccessToken = (env, refreshToken) => requestGoogleToken(new URLSearchParams({
   client_id: env.GSC_OAUTH_CLIENT_ID,
   client_secret: env.GSC_OAUTH_CLIENT_SECRET,
   refresh_token: refreshToken,
@@ -149,7 +149,7 @@ const getOAuthAccessToken = async (env, refreshToken) => requestToken(new URLSea
 
 const getServiceAccountAccessToken = async (env) => {
   const assertion = await createGoogleJwt(getServiceAccount(env));
-  return requestToken(new URLSearchParams({
+  return requestGoogleToken(new URLSearchParams({
     grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
     assertion,
   }));
@@ -160,11 +160,11 @@ const getGoogleAccess = async (env, feature = "Search Console") => {
     ? (env.GA4_OAUTH_REFRESH_TOKEN || env.GSC_OAUTH_REFRESH_TOKEN)
     : env.GSC_OAUTH_REFRESH_TOKEN;
   const oauthValues = [env.GSC_OAUTH_CLIENT_ID, env.GSC_OAUTH_CLIENT_SECRET, refreshToken];
-  const oauthConfiguredCount = oauthValues.filter(Boolean).length;
-  if (oauthConfiguredCount > 0 && oauthConfiguredCount < oauthValues.length) {
+  const configuredCount = oauthValues.filter(Boolean).length;
+  if (configuredCount > 0 && configuredCount < oauthValues.length) {
     throw new Error(`${feature} OAuth ayarları eksik: client ID, client secret ve refresh token birlikte tanımlanmalıdır.`);
   }
-  if (oauthConfiguredCount === oauthValues.length) {
+  if (configuredCount === oauthValues.length) {
     return {
       accessToken: await getOAuthAccessToken(env, refreshToken),
       authMode: feature === "GA4" && env.GA4_OAUTH_REFRESH_TOKEN
@@ -180,7 +180,6 @@ const getGoogleAccess = async (env, feature = "Search Console") => {
     }
     return { accessToken: await getServiceAccountAccessToken(env), authMode: "service-account" };
   }
-
   throw new Error(`${feature} kimlik bilgileri tanımlı değil.`);
 };
 
@@ -190,10 +189,7 @@ const searchConsoleQuery = async ({ accessToken, siteUrl, body }) => {
   const endpoint = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`;
   const response = await fetch(endpoint, {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      "content-type": "application/json",
-    },
+    headers: { Authorization: `Bearer ${accessToken}`, "content-type": "application/json" },
     body: JSON.stringify(body),
   });
   const payload = await response.json();
@@ -247,10 +243,7 @@ const handleSearchConsole = async (request, env) => {
       fetchedAt: new Date().toISOString(),
     });
   } catch (error) {
-    return jsonResponse({
-      connected: false,
-      error: error instanceof Error ? error.message : "Bilinmeyen Search Console hatası.",
-    }, 502);
+    return jsonResponse({ connected: false, error: error instanceof Error ? error.message : "Bilinmeyen Search Console hatası." }, 502);
   }
 };
 
@@ -260,10 +253,7 @@ const analyticsRequest = async ({ accessToken, propertyId, method, body }) => {
   const endpoint = `https://analyticsdata.googleapis.com/v1beta/properties/${encodeURIComponent(propertyId)}:${method}`;
   const response = await fetch(endpoint, {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      "content-type": "application/json",
-    },
+    headers: { Authorization: `Bearer ${accessToken}`, "content-type": "application/json" },
     body: JSON.stringify(body),
   });
   const payload = await response.json();
@@ -279,7 +269,6 @@ const handleGa4 = async (request, env) => {
   try {
     const propertyId = normalizePropertyId(env.GA4_PROPERTY_ID);
     if (!propertyId) throw new Error("GA4_PROPERTY_ID tanımlı değil.");
-
     const requestUrl = new URL(request.url);
     const requestedDays = Number.parseInt(requestUrl.searchParams.get("days") || "28", 10);
     const days = [7, 28, 90].includes(requestedDays) ? requestedDays : 28;
@@ -287,82 +276,39 @@ const handleGa4 = async (request, env) => {
     const { accessToken, authMode } = await getGoogleAccess(env, "GA4");
 
     const [summary, channels, devices, cities, pages, realtime] = await Promise.all([
-      analyticsRequest({
-        accessToken,
-        propertyId,
-        method: "runReport",
-        body: {
-          dateRanges,
-          metrics: [
-            { name: "activeUsers" },
-            { name: "sessions" },
-            { name: "screenPageViews" },
-            { name: "engagementRate" },
-          ],
-        },
-      }),
-      analyticsRequest({
-        accessToken,
-        propertyId,
-        method: "runReport",
-        body: {
-          dateRanges,
-          dimensions: [{ name: "sessionDefaultChannelGroup" }],
-          metrics: [
-            { name: "sessions" },
-            { name: "activeUsers" },
-            { name: "screenPageViews" },
-          ],
-          orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
-          limit: "10",
-        },
-      }),
-      analyticsRequest({
-        accessToken,
-        propertyId,
-        method: "runReport",
-        body: {
-          dateRanges,
-          dimensions: [{ name: "deviceCategory" }],
-          metrics: [{ name: "activeUsers" }, { name: "sessions" }],
-          orderBys: [{ metric: { metricName: "activeUsers" }, desc: true }],
-          limit: "10",
-        },
-      }),
-      analyticsRequest({
-        accessToken,
-        propertyId,
-        method: "runReport",
-        body: {
-          dateRanges,
-          dimensions: [{ name: "city" }, { name: "country" }],
-          metrics: [{ name: "activeUsers" }, { name: "sessions" }],
-          orderBys: [{ metric: { metricName: "activeUsers" }, desc: true }],
-          limit: "10",
-        },
-      }),
-      analyticsRequest({
-        accessToken,
-        propertyId,
-        method: "runReport",
-        body: {
-          dateRanges,
-          dimensions: [{ name: "pagePathPlusQueryString" }],
-          metrics: [
-            { name: "screenPageViews" },
-            { name: "activeUsers" },
-            { name: "engagementRate" },
-          ],
-          orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
-          limit: "10",
-        },
-      }),
-      analyticsRequest({
-        accessToken,
-        propertyId,
-        method: "runRealtimeReport",
-        body: { metrics: [{ name: "activeUsers" }] },
-      }),
+      analyticsRequest({ accessToken, propertyId, method: "runReport", body: {
+        dateRanges,
+        metrics: [{ name: "activeUsers" }, { name: "sessions" }, { name: "screenPageViews" }, { name: "engagementRate" }],
+      } }),
+      analyticsRequest({ accessToken, propertyId, method: "runReport", body: {
+        dateRanges,
+        dimensions: [{ name: "sessionDefaultChannelGroup" }],
+        metrics: [{ name: "sessions" }, { name: "activeUsers" }, { name: "screenPageViews" }],
+        orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
+        limit: "10",
+      } }),
+      analyticsRequest({ accessToken, propertyId, method: "runReport", body: {
+        dateRanges,
+        dimensions: [{ name: "deviceCategory" }],
+        metrics: [{ name: "activeUsers" }, { name: "sessions" }],
+        orderBys: [{ metric: { metricName: "activeUsers" }, desc: true }],
+        limit: "10",
+      } }),
+      analyticsRequest({ accessToken, propertyId, method: "runReport", body: {
+        dateRanges,
+        dimensions: [{ name: "city" }, { name: "country" }],
+        metrics: [{ name: "activeUsers" }, { name: "sessions" }],
+        orderBys: [{ metric: { metricName: "activeUsers" }, desc: true }],
+        limit: "10",
+      } }),
+      analyticsRequest({ accessToken, propertyId, method: "runReport", body: {
+        dateRanges,
+        dimensions: [{ name: "pagePathPlusQueryString" }],
+        metrics: [{ name: "screenPageViews" }, { name: "activeUsers" }, { name: "engagementRate" }],
+        orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
+        limit: "10",
+      } }),
+      analyticsRequest({ accessToken, propertyId, method: "runRealtimeReport", body: { metrics: [{ name: "activeUsers" }] } }),
     ]);
 
     const summaryRow = summary.rows?.[0];
@@ -392,30 +338,148 @@ const handleGa4 = async (request, env) => {
         realtimeActiveUsers: metricValue(realtime.rows?.[0], 0),
       },
       channels: channelRows,
-      devices: (devices.rows || []).map((row) => ({
-        device: dimensionValue(row, 0),
-        activeUsers: metricValue(row, 0),
-        sessions: metricValue(row, 1),
-      })),
-      cities: (cities.rows || []).map((row) => ({
-        city: dimensionValue(row, 0),
-        country: dimensionValue(row, 1),
-        activeUsers: metricValue(row, 0),
-        sessions: metricValue(row, 1),
-      })),
-      pages: (pages.rows || []).map((row) => ({
-        page: dimensionValue(row, 0),
-        views: metricValue(row, 0),
-        activeUsers: metricValue(row, 1),
-        engagementRate: metricValue(row, 2),
-      })),
+      devices: (devices.rows || []).map((row) => ({ device: dimensionValue(row, 0), activeUsers: metricValue(row, 0), sessions: metricValue(row, 1) })),
+      cities: (cities.rows || []).map((row) => ({ city: dimensionValue(row, 0), country: dimensionValue(row, 1), activeUsers: metricValue(row, 0), sessions: metricValue(row, 1) })),
+      pages: (pages.rows || []).map((row) => ({ page: dimensionValue(row, 0), views: metricValue(row, 0), activeUsers: metricValue(row, 1), engagementRate: metricValue(row, 2) })),
       fetchedAt: new Date().toISOString(),
     });
   } catch (error) {
+    return jsonResponse({ connected: false, error: error instanceof Error ? error.message : "Bilinmeyen GA4 hatası." }, 502);
+  }
+};
+
+const sampledCount = (row) => Math.round(Number(row?.count || 0) * Math.max(1, Number(row?.avg?.sampleInterval || 1)));
+
+const cloudflareGraphql = async ({ token, zoneId, start, end }) => {
+  const query = `query Dashboard($zoneTag: string, $start: Time, $end: Time) {
+    viewer {
+      zones(filter: { zoneTag: $zoneTag }) {
+        totals: httpRequestsAdaptiveGroups(
+          limit: 1
+          filter: { datetime_geq: $start, datetime_lt: $end, requestSource: "eyeball" }
+        ) {
+          count
+          avg { sampleInterval }
+          sum { visits edgeResponseBytes }
+        }
+        cache: httpRequestsAdaptiveGroups(
+          limit: 20
+          orderBy: [count_DESC]
+          filter: { datetime_geq: $start, datetime_lt: $end, requestSource: "eyeball" }
+        ) {
+          count
+          avg { sampleInterval }
+          dimensions { cacheStatus }
+        }
+        statuses: httpRequestsAdaptiveGroups(
+          limit: 100
+          orderBy: [count_DESC]
+          filter: { datetime_geq: $start, datetime_lt: $end, requestSource: "eyeball" }
+        ) {
+          count
+          avg { sampleInterval }
+          dimensions { edgeResponseStatus }
+        }
+        countries: httpRequestsAdaptiveGroups(
+          limit: 10
+          orderBy: [count_DESC]
+          filter: { datetime_geq: $start, datetime_lt: $end, requestSource: "eyeball" }
+        ) {
+          count
+          avg { sampleInterval }
+          dimensions { clientCountryName }
+        }
+        paths: httpRequestsAdaptiveGroups(
+          limit: 10
+          orderBy: [count_DESC]
+          filter: { datetime_geq: $start, datetime_lt: $end, requestSource: "eyeball" }
+        ) {
+          count
+          avg { sampleInterval }
+          dimensions { clientRequestPath }
+        }
+      }
+    }
+  }`;
+  const response = await fetch("https://api.cloudflare.com/client/v4/graphql", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({ query, variables: { zoneTag: zoneId, start, end } }),
+  });
+  const payload = await response.json();
+  if (!response.ok || payload.errors?.length) {
+    const message = payload.errors?.map((item) => item.message).join(" · ") || payload?.error || "Cloudflare Analytics sorgusu başarısız oldu.";
+    throw new Error(message);
+  }
+  const zone = payload?.data?.viewer?.zones?.[0];
+  if (!zone) throw new Error("Cloudflare zone verisi bulunamadı. Zone ID ve token erişimini kontrol edin.");
+  return zone;
+};
+
+const handleCloudflare = async (request, env) => {
+  if (request.method !== "GET") return jsonResponse({ error: "Yalnızca GET desteklenir." }, 405);
+  try {
+    const token = String(env.CLOUDFLARE_ANALYTICS_TOKEN || "").trim();
+    const zoneId = String(env.CLOUDFLARE_ZONE_ID || "").trim();
+    if (!token || !zoneId) throw new Error("CLOUDFLARE_ANALYTICS_TOKEN ve CLOUDFLARE_ZONE_ID tanımlanmalıdır.");
+
+    const requestUrl = new URL(request.url);
+    const requestedDays = Number.parseInt(requestUrl.searchParams.get("days") || "7", 10);
+    const days = [1, 7, 28].includes(requestedDays) ? requestedDays : 7;
+    const end = new Date();
+    const start = new Date(end);
+    start.setUTCDate(start.getUTCDate() - days);
+    const startIso = start.toISOString();
+    const endIso = end.toISOString();
+    const zone = await cloudflareGraphql({ token, zoneId, start: startIso, end: endIso });
+
+    const totalRow = zone.totals?.[0] || {};
+    const requests = sampledCount(totalRow);
+    const cacheRows = (zone.cache || []).map((row) => ({
+      status: row.dimensions?.cacheStatus || "unknown",
+      requests: sampledCount(row),
+    }));
+    const hitStatuses = new Set(["hit", "stale", "updating", "revalidated"]);
+    const cachedRequests = cacheRows
+      .filter((row) => hitStatuses.has(String(row.status).toLowerCase()))
+      .reduce((total, row) => total + row.requests, 0);
+
+    const statusRows = (zone.statuses || []).map((row) => ({
+      status: Number(row.dimensions?.edgeResponseStatus || 0),
+      requests: sampledCount(row),
+    }));
+    const statusClass = (startCode, endCode) => statusRows
+      .filter((row) => row.status >= startCode && row.status <= endCode)
+      .reduce((total, row) => total + row.requests, 0);
+
     return jsonResponse({
-      connected: false,
-      error: error instanceof Error ? error.message : "Bilinmeyen GA4 hatası.",
-    }, 502);
+      connected: true,
+      zoneId,
+      range: { days, start: startIso, end: endIso },
+      totals: {
+        requests,
+        visits: Math.round(Number(totalRow?.sum?.visits || 0)),
+        bytes: Math.round(Number(totalRow?.sum?.edgeResponseBytes || 0)),
+        cachedRequests,
+        cacheHitRate: requests ? cachedRequests / requests : 0,
+        status2xx: statusClass(200, 299),
+        status3xx: statusClass(300, 399),
+        status4xx: statusClass(400, 499),
+        status5xx: statusClass(500, 599),
+      },
+      cache: cacheRows,
+      statuses: statusRows,
+      countries: (zone.countries || []).map((row) => ({ country: row.dimensions?.clientCountryName || "Unknown", requests: sampledCount(row) })),
+      paths: (zone.paths || []).map((row) => ({ path: row.dimensions?.clientRequestPath || "/", requests: sampledCount(row) })),
+      sampled: Number(totalRow?.avg?.sampleInterval || 1) > 1,
+      fetchedAt: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse({ connected: false, error: error instanceof Error ? error.message : "Bilinmeyen Cloudflare Analytics hatası." }, 502);
   }
 };
 
@@ -435,6 +499,7 @@ export default {
       if (!adminAuthorized(request, env)) return unauthorizedResponse();
       if (url.pathname === "/admin/api/search-console") return handleSearchConsole(request, env);
       if (url.pathname === "/admin/api/ga4") return handleGa4(request, env);
+      if (url.pathname === "/admin/api/cloudflare") return handleCloudflare(request, env);
     }
 
     const assetResponse = await env.ASSETS.fetch(request);
