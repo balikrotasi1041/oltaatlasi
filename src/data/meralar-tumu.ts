@@ -6,6 +6,7 @@ import { kocaeliIyilestirmeler, kocaeliIyilestirmeMeta } from "./meralar-kocaeli
 import { istanbulIyilestirmeler } from "./meralar-istanbul-iyilestirmeler";
 import { gunlukIyilestirmeler20260801 } from "./meralar-gunluk-iyilestirme-2026-08-01";
 import { gunlukIyilestirmeler20260802, gunlukIyilestirmeMeta20260802 } from "./meralar-gunluk-iyilestirme-2026-08-02";
+import { kaliteIyilestirmeleri20260803, retiredRouteSlugs20260803 } from "./meralar-kalite-iyilestirme-2026-08-03";
 import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
 import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
@@ -43,16 +44,18 @@ const kocaeliSlugs=new Set(kocaeliIyilestirmeler.map(m=>m.slug));
 const istanbulSlugs=new Set(istanbulIyilestirmeler.map(m=>m.slug));
 const gunlukIyilestirmeSlugs20260801=new Set(gunlukIyilestirmeler20260801.map(m=>m.slug));
 const gunlukIyilestirmeSlugs20260802=new Set(gunlukIyilestirmeler20260802.map(m=>m.slug));
-const overridden=(slug:string)=>beykozSlugs.has(slug)||kocaeliSlugs.has(slug)||istanbulSlugs.has(slug)||gunlukIyilestirmeSlugs20260801.has(slug)||gunlukIyilestirmeSlugs20260802.has(slug);
+const kaliteIyilestirmeSlugs20260803=new Set(kaliteIyilestirmeleri20260803.map(m=>m.slug));
+const overridden=(slug:string)=>beykozSlugs.has(slug)||kocaeliSlugs.has(slug)||istanbulSlugs.has(slug)||gunlukIyilestirmeSlugs20260801.has(slug)||gunlukIyilestirmeSlugs20260802.has(slug)||kaliteIyilestirmeSlugs20260803.has(slug);
 export const meralar:EnrichedMera[]=[
-  ...temelMeralar.filter(m=>!overridden(m.slug)).map(baseDefaults),
-  ...gunlukMeralar.filter(m=>!overridden(m.slug)).map(baseDefaults),
-  ...beykozMeralar.filter(m=>!istanbulSlugs.has(m.slug)).filter(m=>!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
-  ...kocaeliIyilestirmeler.filter(m=>!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(m=>withResearch(m,kocaeliMeta[m.slug])),
-  ...istanbulIyilestirmeler.filter(m=>!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
-  ...gunlukIyilestirmeler20260801.filter(m=>!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
-  ...gunlukIyilestirmeler20260802.map(m=>withResearch(m,gunlukMeta20260802[m.slug])),
-  ...national.filter(m=>!overridden(m.slug)),
+  ...temelMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)).map(baseDefaults),
+  ...gunlukMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)).map(baseDefaults),
+  ...beykozMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!istanbulSlugs.has(m.slug)).filter(m=>!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
+  ...kocaeliIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(m=>withResearch(m,kocaeliMeta[m.slug])),
+  ...istanbulIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
+  ...gunlukIyilestirmeler20260801.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
+  ...gunlukIyilestirmeler20260802.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(m=>withResearch(m,gunlukMeta20260802[m.slug])),
+  ...kaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(baseDefaults),
+  ...national.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)),
 ];
 
 export const nationalCoordinateStats={resolved:ulusalKoordinatMeta.resolvedCount,unresolved:ulusalKoordinatMeta.unresolvedCount,generatedAt:ulusalKoordinatMeta.generatedAt};
