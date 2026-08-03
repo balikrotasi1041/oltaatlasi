@@ -50,3 +50,54 @@ jobs:
             echo "::error::CLOUDFLARE_API_TOKEN veya CLOUDFLARE_DEPLOY_HOOK GitHub secret olarak tanımlı değil."
             exit 1
           fi
+
+      - name: Verify Cloudflare RUM after deploy
+        shell: bash
+        run: |
+          set -euo pipefail
+          url="https://oltaatlasi.com/?rum-deploy-check=${GITHUB_SHA}"
+          beacon_ok=0
+
+          for attempt in 1 2 3 4 5; do
+            curl --fail --show-error --silent --location \
+              -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
+              -H 'Accept: text/html,application/xhtml+xml' \
+              -D /tmp/rum-headers.txt "$url" -o /tmp/rum-home.html
+
+            if grep -q 'static.cloudflareinsights.com/beacon.min.js' /tmp/rum-home.html; then
+              beacon_ok=1
+              break
+            fi
+
+            echo "RUM beacon henüz görünmüyor (deneme ${attempt}/5); Cloudflare yayılımı bekleniyor."
+            sleep 6
+          done
+
+          if [ "$beacon_ok" -ne 1 ]; then
+            echo "::error::Canlı HTML içinde Cloudflare Web Analytics RUM beacon bulunamadı."
+            exit 1
+          fi
+
+          if grep -Eiq '^cache-control:.*no-transform' /tmp/rum-headers.txt; then
+            echo "::error::Cache-Control no-transform Cloudflare'ın otomatik RUM enjeksiyonunu engelleyebilir."
+            exit 1
+          fi
+
+          beacon_status=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+            'https://static.cloudflareinsights.com/beacon.min.js')
+          if [ "$beacon_status" -lt 200 ] || [ "$beacon_status" -ge 400 ]; then
+            echo "::error::Cloudflare beacon betiğine ulaşılamadı; HTTP ${beacon_status}."
+            exit 1
+          fi
+
+          rum_status=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+            'https://oltaatlasi.com/cdn-cgi/rum')
+          case "$rum_status" in
+            404|5??)
+              echo "::error::Cloudflare RUM toplama endpoint'i sağlıklı görünmüyor; HTTP ${rum_status}."
+              exit 1
+              ;;
+            *)
+              echo "Cloudflare RUM doğrulandı: beacon enjekte edildi, betik erişilebilir, endpoint HTTP ${rum_status}."
+              ;;
+          esac
