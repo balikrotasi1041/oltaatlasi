@@ -18,3 +18,55 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run deploy:dry
+
+      - name: Diagnose live Cloudflare RUM injection
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL="https://oltaatlasi.com/?rum-pr-diagnostic=$(date +%s)"
+          curl --fail --show-error --silent --location \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
+            -H 'Accept: text/html,application/xhtml+xml' \
+            -D /tmp/headers.txt "$URL" -o /tmp/home.html
+          echo '--- relevant headers ---'
+          grep -Ei '^(cache-control|content-security-policy|server|cf-ray|content-type):' /tmp/headers.txt || true
+          if grep -q 'static.cloudflareinsights.com/beacon.min.js' /tmp/home.html; then
+            echo 'RUM_BEACON_PRESENT=yes'
+          else
+            echo 'RUM_BEACON_PRESENT=no'
+          fi
+          code=$(curl --silent --output /tmp/rum-get.txt --write-out '%{http_code}' 'https://oltaatlasi.com/cdn-cgi/rum')
+          echo "RUM_GET_STATUS=$code"
+
+      - name: Diagnose Cloudflare Web Analytics account config
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          response=$(curl --silent --show-error \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/rum/site_info/list" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H 'Accept: application/json')
+          success=$(jq -r '.success // false' <<<"$response")
+          echo "RUM_CONFIG_API_SUCCESS=$success"
+          if [ "$success" != "true" ]; then
+            jq -r '.errors[]? | "RUM_CONFIG_API_ERROR=\(.code): \(.message)"' <<<"$response"
+            exit 0
+          fi
+          match=$(jq -c '[.result[]? | select((.ruleset.zone_name // "") == "oltaatlasi.com" or (.host // "") == "oltaatlasi.com")][0] // empty' <<<"$response")
+          if [ -z "$match" ]; then
+            echo 'RUM_SITE_FOUND=no'
+            exit 0
+          fi
+          echo 'RUM_SITE_FOUND=yes'
+          jq -r '
+            "RUM_SITE_TAG=" + (.site_tag // "unknown"),
+            "RUM_AUTO_INSTALL=" + ((.auto_install // false)|tostring),
+            "RUM_RULESET_ENABLED=" + ((.ruleset.enabled // false)|tostring),
+            "RUM_ZONE_NAME=" + (.ruleset.zone_name // "unknown"),
+            "RUM_ZONE_TAG=" + (.ruleset.zone_tag // "unknown"),
+            "RUM_RULES=" + ((.rules // []) | map({host,paths,inclusive,is_paused,priority}) | tostring)
+          ' <<<"$match"
