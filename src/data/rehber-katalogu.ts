@@ -95,5 +95,33 @@ export const kiyiAkintiOkumaRehberi:Rehber={
   ]
 };
 
-export const rehberler:Rehber[]=[kiyiAkintiOkumaRehberi,palomarRehberi,...eskiRehberler.map(normalizeLegacy)];
+export const yildirimGuvenligiRehberi:Rehber={
+  slug:"yildirim-firtinasinda-balikci-guvenligi",
+  title:"Yıldırım Fırtınasında Balıkçı Güvenliği",
+  category:"Güvenlik",
+  summary:"Gök gürültüsünü duyduğun anda avı bırakmaktan güvenli sığınağı seçmeye, 30 dakikalık dönüş kuralından acil yardım planına kadar uygulanabilir yıldırım güvenliği akışı.",
+  icon:"⚡",
+  publishedAt:"2026-08-03",
+  updatedAt:"2026-08-03",
+  readingTime:8,
+  author:"Olta Atlası Editörlüğü",
+  difficulty:"Başlangıç",
+  targetSpecies:["Genel kullanım"],
+  cover:"/images/rehberler/yildirim-firtinasinda-balikci-guvenligi-kapak.svg",
+  sections:[
+    {title:"Atıştan önce sığınağı ve dönüş süresini belirle",intro:"Yıldırım güvenliği fırtına başladığında değil, kıyıya varmadan kurulur. Güvenli binaya veya kapalı araca kaç dakikada ulaşacağını bilmek, gök gürültüsü başladığında ekipmanı toplamakla zaman kaybetmeni önler.",items:["Hava tahmininde gök gürültülü sağanak olasılığı varsa avı kısalt, ertele veya güvenli sığınağa çok yakın bir rota seç.","Kıyıya vardığında sağlam kapalı bina ya da camları kapanan metal tavanlı araç gibi gerçek bir sığınak belirle; açık kamelyayı, tente altını ve çadırı güvenli kabul etme.","Sığınağa yürüyüş süresini hesaba kat. Oltayı kurmadan önce geri dönüş yolunda kilitli kapı, geçici bariyer veya su basabilecek bölüm olup olmadığını gör.","Grup halinde avlanıyorsan hava takibini tek kişinin zihnine bırakma; herkesin ‘gök gürültüsü duyulursa av biter’ kuralını önceden bilmesini sağla."]},
+    {title:"Gök gürültüsünü duyunca avı hemen bitir",intro:"Resmî yıldırım güvenliği rehberlerinin ortak mesajı nettir: Gök gürültüsünü duyabiliyorsan yıldırım tehdidi yeterince yakındır ve dışarıda güvenli bir yer yoktur. Yağmurun başlamasını, şimşeğin yaklaşmasını veya son atışı beklemek gereksiz risk yaratır.",items:["İlk gök gürültüsünde atışı kes ve güvenli sığınağa yönel; ‘birkaç dakika daha’ avı sürdürme.","Takımın takılıysa onu kurtarmak için suya, kayalığa veya açık kıyı çizgisine ilerleme. Ekipman kaybı, yıldırım riskinden daha önemsizdir.","Kıyıda dağınık malzeme bıraktıysan yalnızca geçiş yolundaki tehlikeli parçaları güvenli biçimde al; uzun uzun takım toplama işlemi yapma.","Tekne veya küçük açık deniz aracındaysan fırtına yaklaşmadan önce karaya ve güvenli kapalı sığınağa dönme planını devreye sok; açık suda beklemeyi güvenli çözüm sayma."]},
+    {title:"Doğru sığınağı yanlış sığınaktan ayır",intro:"Her çatının altı yıldırım sığınağı değildir. Güvenli seçim, yağmurdan korunmaktan farklıdır; amaç yıldırım akımının insan üzerinden geçme olasılığını azaltan kapalı bir yapıya ulaşmaktır.",items:["Elektrik veya su tesisatı bulunan sağlam kapalı bina öncelikli seçenektir.","Uygun bina yoksa camları kapalı, metal tavanlı tam kapalı araç iyi bir alternatiftir; araç içindeyken metal yüzeylere gereksiz temas etme.","Tek başına ağaç altı, açık piknik barınağı, sahil gölgeliği, çadır ve üstü açık araç güvenli sığınak değildir.","Kaya çıkıntısını, yüksek mendireği veya açık iskeleyi ‘yağmurdan koruyor’ diye yıldırım sığınağı sanma; mümkün olan en kısa yoldan gerçek sığınağa geç."]},
+    {title:"Son gök gürültüsünden sonra en az 30 dakika bekle",intro:"Fırtınanın yağmuru azalırken yıldırım tehlikesi bitmiş görünse de bulut çevresinde hâlâ tehlikeli elektriksel boşalmalar oluşabilir. Bu nedenle yalnızca gökyüzünün açılmasına bakarak erken dönmek güvenli değildir.",items:["Son duyduğun gök gürültüsünün saatini not et ve en az 30 dakika boyunca güvenli sığınakta kal.","Bu bekleme sırasında yeniden gök gürültüsü duyarsan süreyi son sesten itibaren yeniden başlat.","Yağmurun kesilmesi veya rüzgârın düşmesi 30 dakikalık kuralın yerine geçmez.","Geri döndüğünde kıyıyı yeniden değerlendir; dalga, su seviyesi, taşkın, çamur veya yıldırım sonrası oluşan yeni riskler varsa avı tamamen iptal et."]},
+    {title:"Yıldırım çarpmasında yardım çağır ve temastan korkma",intro:"Yıldırım mağduru elektrik yükü taşımaz; ona dokunmak yardım eden kişiyi elektrikle yüklemez. Asıl öncelik, yardım eden kişinin de yıldırım tehdidi altında kalmaması ve acil sağlık desteğinin hızla çağrılmasıdır.",items:["Önce kendini ve grubu mümkün olan en güvenli konuma al; ardından Türkiye’de tek acil çağrı numarası olan 112’yi ara ve konumu açık biçimde bildir.","Mağdurun bilinç ve solunum durumunu kontrol et. Solunum yoksa ve eğitimliysen temel yaşam desteği/CPR uygula; varsa AED talimatlarını izle.","Yardım çağrısını geciktirme. Telefonla görüşebiliyorsan 112 görevlisinin yönlendirmelerine uy.","Olaydan sonra avı sürdürme; diğer grup üyelerinde yaralanma, düşme, yanık veya şok belirtisi olup olmadığını kontrol et ve profesyonel değerlendirme bekle."]}
+  ],
+  sources:[
+    {label:"AFAD — Yıldırım Tehlikesine Karşı Neler Yapılmalı?",url:"https://www.afad.gov.tr/yildirim-tehlikesine-karsi-neler-yapilmali",note:"Açık alan, araç ve bina için yıldırım riskini azaltma önerileri; özellikle balık oltası gibi iletken cisimlerden uzaklaşma ve kapalı araç seçimi için Türkiye'deki resmî afet kaynağı."},
+    {label:"NOAA — Lightning Safety",url:"https://prod-01-alb-www-noaa.woc.noaa.gov/jetstream/lightning/lightning-safety",note:"Gök gürültüsü duyulduğunda güvenli sığınağa geçme ve son gök gürültüsünden sonra en az 30 dakika bekleme ilkesini açıklayan resmî NOAA eğitim kaynağı."},
+    {label:"National Weather Service — Lightning Tips",url:"https://www.weather.gov/safety/lightning-tips",note:"Dışarıda hiçbir yerin fırtına yakınında tamamen güvenli olmadığını; sağlam bina veya metal tavanlı kapalı aracın tercih edilmesi gerektiğini açıklar."},
+    {label:"112 Acil Çağrı Merkezi — Acil durumlarda tek numara 112",url:"https://www.112.gov.tr/kilis/acil-durumlarda-tek-numara-112",note:"Türkiye'de sağlık, itfaiye, polis, jandarma, sahil güvenlik ve diğer acil yardım ihtiyaçlarının 112 üzerinden koordine edildiğini doğrular."}
+  ]
+};
+
+export const rehberler:Rehber[]=[yildirimGuvenligiRehberi,kiyiAkintiOkumaRehberi,palomarRehberi,...eskiRehberler.map(normalizeLegacy)];
 export const rehberKategorileri=[...new Set(rehberler.map((rehber)=>rehber.category))].sort((a,b)=>a.localeCompare(b,"tr"));
