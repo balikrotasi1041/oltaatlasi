@@ -1,0 +1,61 @@
+---
+type LinkItem={href:string;label:string;note:string};
+type Opportunity={eyebrow:string;title:string;body:string;points:string[];links:LinkItem[]};
+const {path}=Astro.props as {path:string};
+const normalizedPath=path.endsWith("/")?path:`${path}/`;
+const opportunities:Record<string,Opportunity>={
+  "/meralar/galata-koprusu/":{
+    eyebrow:"İstanbul yerel av planı",
+    title:"Galata Köprüsü rotasını hangi içeriklerle birlikte okumalı?",
+    body:"Galata Köprüsü yoğun yaya kullanımı, diğer oltacılar ve deniz trafiği nedeniyle yalnızca hedef balığa göre değil, güvenli atış koridoruna göre planlanmalıdır. Köprüdeki koşullar uygun değilse aynı ilçe ve şehir içindeki alternatif rota dosyalarını karşılaştır.",
+    points:[
+      "İlk keşfi gündüz yap; atış öncesinde arka ve yan koridorun tamamen boş olduğundan emin ol.",
+      "Çapariyi köprü üstünde savurmadan önce kurşun ağırlığını, takım uzunluğunu ve çevredeki misina hatlarını birlikte değerlendir.",
+      "İskele, tekne manevrası, bakım veya güvenlik şeridi görülen bölümü av alanı kabul etme."
+    ],
+    links:[
+      {href:"/iller/istanbul/fatih/",label:"Fatih'te balık tutulacak yerler",note:"Galata Köprüsü dışındaki ilçe rotalarını karşılaştır."},
+      {href:"/iller/istanbul/",label:"İstanbul'da balık tutulacak yerler",note:"Boğaz, Haliç, Marmara ve Karadeniz rotalarını incele."},
+      {href:"/rehberler/kiyidan-capari-baslangic/",label:"Kıyıdan çapariye başlangıç",note:"Takım, atış ve toplama düzenini gözden geçir."},
+      {href:"/baliklar/istavrit/",label:"İstavrit dosyası",note:"Yöntem, yem ve ilişkili avlak bağlantılarını gör."}
+    ]
+  },
+  "/meralar/izmit-korfezi-sahil-bandi/":{
+    eyebrow:"Kocaeli yerel av planı",
+    title:"İzmit Körfezi sahil bandında rota nasıl daraltılır?",
+    body:"Bu dosya tek bir iskeleyi değil, İzmit Marina ile 1 Mart Vapur İskelesi çevresindeki genel kent sahilini anlatır. Güvenli bölüm; vapur operasyonu, yaya-bisiklet yoğunluğu, rüzgâr ve kıyı düzenlemesine göre ziyaret günü yeniden seçilmelidir.",
+    points:[
+      "Marina, vapur iskelesi, Balıkhan ve kapalı güvenlik bölümlerini av rotasının dışında tut.",
+      "İş çıkışı ve gün batımı yoğunluğunda çapari veya ağır kurşun kullanmadan önce arka atış alanını yeniden kontrol et.",
+      "Lodos ve vapur geçişlerinin oluşturabileceği kısa dalga hareketini kıyıya yaklaşmadan önce gözle."
+    ],
+    links:[
+      {href:"/iller/kocaeli/izmit/",label:"İzmit'te balık tutulacak yerler",note:"Aynı ilçedeki diğer kıyı ve iç su dosyalarını karşılaştır."},
+      {href:"/iller/kocaeli/",label:"Kocaeli'de balık tutulacak yerler",note:"Körfez, Karadeniz ve iç su seçeneklerini birlikte incele."},
+      {href:"/rehberler/kiyidan-capari-baslangic/",label:"Kıyıdan çapariye başlangıç",note:"Kalabalık kent kıyısında takım ve atış disiplinini gözden geçir."},
+      {href:"/baliklar/istavrit/",label:"İstavrit dosyası",note:"Çapari, yem ve mevsim bağlamını incele."}
+    ]
+  },
+  "/rehberler/sazan-icin-misir-hazirlama/":{
+    eyebrow:"Hızlı uygulama özeti",
+    title:"Sazan için mısır hazırlarken üç temel kontrol",
+    body:"Mısırın amacı yalnızca iğnede durmak değildir; tane kıvamı, iğne açıklığı ve saklama koşulu birlikte doğru olmalıdır. Konserve ile kuru mısırı aynı hazırlık sürecine sokmak yerine, her birini kendi yapısına göre kontrol et.",
+    points:[
+      "Konserve mısırı süz; çatlamamış ve iğneye takılırken dağılmayan taneleri ayır.",
+      "Kuru mısırı önce suyla yumuşat, ardından kontrollü biçimde haşla; sert çekirdek bırakma fakat taneleri hamur hâline getirme.",
+      "Tekli veya çoklu sunumda iğne ucunu kapatma; kullanmadığın yemi güneşte bekletme ve bozulmuş yemi suya dökme."
+    ],
+    links:[
+      {href:"/baliklar/sazan/",label:"Sazan balığı dosyası",note:"Habitat, yöntem, yem ve ilişkili avlakları incele."},
+      {href:"/rehberler/dip-oltasi-baslangic/",label:"Dip oltasına başlangıç",note:"Kurşun, beden ve köstek dengesini kontrol et."},
+      {href:"/rehberler/samandirali-takim-kurma/",label:"Şamandıralı takım kurma",note:"Derinlik ve yem sunumunu birlikte planla."},
+      {href:"/meralar/",label:"Sazan rotalarını araştır",note:"Avlak arşivinde hedef balık filtresinden Sazan'ı seç."}
+    ]
+  }
+};
+const opportunity=opportunities[normalizedPath];
+---
+{opportunity&&<section class="seo-opportunity" aria-labelledby="seo-opportunity-title"><div class="container"><div class="seo-opportunity-copy"><span>{opportunity.eyebrow}</span><h2 id="seo-opportunity-title">{opportunity.title}</h2><p>{opportunity.body}</p><ul>{opportunity.points.map((point)=><li>{point}</li>)}</ul></div><nav class="seo-opportunity-links" aria-label="İlgili Olta Atlası içerikleri">{opportunity.links.map((link)=><a href={link.href}><strong>{link.label}</strong><small>{link.note}</small></a>)}</nav></div></section>}
+<style>
+.seo-opportunity{background:#f0f7f7;border-top:1px solid #d7e7e8;border-bottom:1px solid #d7e7e8;padding:34px 0}.seo-opportunity>.container{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:26px;align-items:start}.seo-opportunity-copy>span{display:block;color:#237381;font-size:.76rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.seo-opportunity h2{color:#123e47;margin:.35rem 0 .7rem;font-size:clamp(1.5rem,3vw,2.15rem)}.seo-opportunity p{color:#49656a;line-height:1.7}.seo-opportunity ul{margin:18px 0 0;padding-left:20px}.seo-opportunity li{margin:9px 0;color:#294f56;line-height:1.55}.seo-opportunity-links{display:grid;gap:10px}.seo-opportunity-links a{display:block;background:#fff;border:1px solid #cfe0e2;border-radius:14px;padding:14px 16px;text-decoration:none;box-shadow:0 8px 18px #1439410a}.seo-opportunity-links strong,.seo-opportunity-links small{display:block}.seo-opportunity-links strong{color:#0b6574}.seo-opportunity-links small{color:#647d81;margin-top:4px;line-height:1.4}.seo-opportunity-links a:hover{border-color:#76abb3;transform:translateY(-1px)}@media(max-width:800px){.seo-opportunity>.container{grid-template-columns:1fr}.seo-opportunity{padding:26px 0}}
+</style>
