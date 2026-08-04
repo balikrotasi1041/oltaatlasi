@@ -96,3 +96,6 @@ if(dashboardIssueTotal){
 export const provinces=[...new Set(meralar.map(m=>m.province))].sort((a,b)=>a.localeCompare(b,"tr"));
 export const districtsByProvince=Object.fromEntries(provinces.map(p=>[p,[...new Set(meralar.filter(m=>m.province===p).map(m=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const fishOptions=[...new Set(meralar.flatMap(m=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
+export const fishCoverageStats={routeCount:meralar.length,routesWithFish:meralar.length-routesWithoutFish.length,fishTypeCount:fishOptions.length};
+export const zonesByProvince=Object.fromEntries(provinces.map(p=>[p,[...new Set(meralar.filter(m=>m.province===p).map(m=>m.zone))].sort((a,b)=>a.localeCompare(b,"tr"))]));
+export const districtRouteCounts=Object.fromEntries(provinces.flatMap(p=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter(m=>m.province===p&&m.district===d).length])));
