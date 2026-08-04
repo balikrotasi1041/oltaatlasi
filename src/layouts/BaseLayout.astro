@@ -19,6 +19,7 @@ const fullTitle = title === "Olta Atlası" ? title : `${title} | Olta Atlası`;
 const currentPath = Astro.url.pathname;
 const homeUrl = new URL("/", Astro.site).href;
 const isMeraDetail = /^\/meralar\/[^/]+\/?$/.test(currentPath);
+const isAdmin = currentPath.startsWith("/admin/");
 
 const navigation = [
   { href: "/meralar/", label: "Meralar", match: "/meralar/" },
@@ -26,6 +27,10 @@ const navigation = [
   { href: "/rehberler/", label: "Rehberler", match: "/rehberler/" },
   { href: "/dunyada-balikcilik/", label: "Dünya", match: "/dunyada-balikcilik/" },
   { href: "/hakkinda/", label: "Hakkımızda", match: "/hakkinda/" },
+];
+const adminNavigation = [
+  { href: "/admin/dashboard/", label: "Dashboard", match: "/admin/dashboard/" },
+  { href: "/admin/seo-radar/", label: "SEO Fırsat Radarı", match: "/admin/seo-radar/" },
 ];
 const isActive = (match: string) => currentPath.startsWith(match);
 
@@ -100,6 +105,22 @@ const websiteSchema = {
         </nav>
       </div>
     </header>
+    {isAdmin && (
+      <nav aria-label="Yönetim araçları" style="background:#eef6f7;border-bottom:1px solid #cfe0e2;">
+        <div class="container" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-block:12px;">
+          <strong style="color:#0a3340;margin-right:4px;">Yönetim</strong>
+          {adminNavigation.map((item) => (
+            <a
+              href={item.href}
+              aria-current={isActive(item.match) ? "page" : undefined}
+              style={`display:inline-flex;align-items:center;min-height:38px;padding:8px 13px;border-radius:10px;border:1px solid #b9d2d6;text-decoration:none;font-weight:800;${isActive(item.match) ? "background:#0b5967;color:#fff;border-color:#0b5967;" : "background:#fff;color:#0b5967;"}`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+    )}
     {isMeraDetail && (
       <aside aria-label="Bilgilendirme ve sorumluluk" style="background:#fff5ed;border-bottom:1px solid #f0cfb8;">
         <div class="container" style="padding-block:18px;">
