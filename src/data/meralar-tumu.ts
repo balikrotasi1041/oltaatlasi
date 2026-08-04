@@ -8,6 +8,7 @@ import { gunlukIyilestirmeler20260801 } from "./meralar-gunluk-iyilestirme-2026-
 import { gunlukIyilestirmeler20260802, gunlukIyilestirmeMeta20260802 } from "./meralar-gunluk-iyilestirme-2026-08-02";
 import { kaliteIyilestirmeleri20260803, retiredRouteSlugs20260803 } from "./meralar-kalite-iyilestirme-2026-08-03";
 import { gunlukKaliteIyilestirmeleri20260803 } from "./meralar-gunluk-kalite-2026-08-03";
+import { seriMeralar20260804 } from "./meralar-seri-2026-08-04";
 import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
 import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
@@ -47,7 +48,8 @@ const gunlukIyilestirmeSlugs20260801=new Set(gunlukIyilestirmeler20260801.map(m=
 const gunlukIyilestirmeSlugs20260802=new Set(gunlukIyilestirmeler20260802.map(m=>m.slug));
 const kaliteIyilestirmeSlugs20260803=new Set(kaliteIyilestirmeleri20260803.map(m=>m.slug));
 const gunlukKaliteSlugs20260803=new Set(gunlukKaliteIyilestirmeleri20260803.map(m=>m.slug));
-const overridden=(slug:string)=>beykozSlugs.has(slug)||kocaeliSlugs.has(slug)||istanbulSlugs.has(slug)||gunlukIyilestirmeSlugs20260801.has(slug)||gunlukIyilestirmeSlugs20260802.has(slug)||kaliteIyilestirmeSlugs20260803.has(slug)||gunlukKaliteSlugs20260803.has(slug);
+const seriSlugs20260804=new Set(seriMeralar20260804.map(m=>m.slug));
+const overridden=(slug:string)=>beykozSlugs.has(slug)||kocaeliSlugs.has(slug)||istanbulSlugs.has(slug)||gunlukIyilestirmeSlugs20260801.has(slug)||gunlukIyilestirmeSlugs20260802.has(slug)||kaliteIyilestirmeSlugs20260803.has(slug)||gunlukKaliteSlugs20260803.has(slug)||seriSlugs20260804.has(slug);
 export const meralar:EnrichedMera[]=[
   ...temelMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)).map(baseDefaults),
   ...gunlukMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)).map(baseDefaults),
@@ -58,11 +60,12 @@ export const meralar:EnrichedMera[]=[
   ...gunlukIyilestirmeler20260802.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(m=>withResearch(m,gunlukMeta20260802[m.slug])),
   ...kaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(baseDefaults),
   ...gunlukKaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(baseDefaults),
+  ...seriMeralar20260804.map(baseDefaults),
   ...national.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)),
 ];
 
 export const nationalCoordinateStats={resolved:ulusalKoordinatMeta.resolvedCount,unresolved:ulusalKoordinatMeta.unresolvedCount,generatedAt:ulusalKoordinatMeta.generatedAt};
-export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length};
+export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length+seriMeralar20260804.length};
 const routesWithoutFish=meralar.filter(m=>!Array.isArray(m.fish)||m.fish.length===0);
 if(routesWithoutFish.length)throw new Error(`Balık türü bilgisi olmayan ${routesWithoutFish.length} avlak sayfası var: ${routesWithoutFish.slice(0,20).map(m=>m.slug).join(", ")}`);
 const invalidFish=meralar.filter(m=>m.fish.some(f=>typeof f!=="string"||!f.trim()));
