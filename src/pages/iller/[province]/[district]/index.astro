@@ -4,7 +4,109 @@ import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
 import MeraCard from "../../../../components/MeraCard.astro";
 import { meralar } from "../../../../data/meralar-tumu";
 import { slugifyTr } from "../../../../utils/slug";
-export function getStaticPaths(){const groups=[...new Map(meralar.map((m)=>[`${m.province}|${m.district}`,{province:m.province,district:m.district}])).values()].filter((g)=>meralar.filter((m)=>m.province===g.province&&m.district===g.district).length>=2);return groups.map((g)=>({params:{province:slugifyTr(g.province),district:slugifyTr(g.district)},props:g}));}
-const {province,district}=Astro.props;const items=meralar.filter((m)=>m.province===province&&m.district===district);const fish=[...new Set(items.flatMap((m)=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));const methods=[...new Set(items.flatMap((m)=>m.methods))].sort((a,b)=>a.localeCompare(b,"tr"));const provinceUrl=`/iller/${slugifyTr(province)}/`;const pageUrl=new URL(`${provinceUrl}${slugifyTr(district)}/`,Astro.site).href;const schema={"@context":"https://schema.org","@type":"CollectionPage","@id":pageUrl,name:`${district} Balıkçılık Rotaları`,description:`${district}, ${province} içindeki balıkçılık rotaları ve saha kontrol notları.`,mainEntity:{"@type":"ItemList",itemListElement:items.map((m,index)=>({"@type":"ListItem",position:index+1,url:new URL(`/meralar/${m.slug}/`,Astro.site).href,name:m.name}))}};
+
+export function getStaticPaths(){
+  const groups=[...new Map(meralar.map((m)=>[`${m.province}|${m.district}`,{province:m.province,district:m.district}])).values()]
+    .filter((g)=>meralar.filter((m)=>m.province===g.province&&m.district===g.district).length>=2);
+  return groups.map((g)=>({params:{province:slugifyTr(g.province),district:slugifyTr(g.district)},props:g}));
+}
+
+const {province,district}=Astro.props;
+const items=meralar.filter((m)=>m.province===province&&m.district===district);
+const fish=[...new Set(items.flatMap((m)=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
+const methods=[...new Set(items.flatMap((m)=>m.methods))].sort((a,b)=>a.localeCompare(b,"tr"));
+const waterTypes=[...new Set(items.map((m)=>m.waterType))].sort((a,b)=>a.localeCompare(b,"tr"));
+const provinceUrl=`/iller/${slugifyTr(province)}/`;
+const pageUrl=new URL(`${provinceUrl}${slugifyTr(district)}/`,Astro.site).href;
+
+const locative=(name:string)=>{
+  const lower=name.toLocaleLowerCase("tr-TR");
+  const vowels=[...lower].filter((letter)=>"aeıioöuü".includes(letter));
+  const lastVowel=vowels.at(-1) || "e";
+  const back="aıou".includes(lastVowel);
+  const lastLetter=lower.at(-1) || "";
+  const hard="fstkçşhp".includes(lastLetter);
+  return `${name}'${hard?(back?"ta":"te"):(back?"da":"de")}`;
+};
+
+const districtLocative=locative(district);
+const seoTitle=`${districtLocative} Balık Tutulacak Yerler ve Avlaklar`;
+const seoDescription=`${districtLocative} balık tutulacak yerleri karşılaştır: ${items.length} rota, raporlanan balık türleri, kıyı yapısı, ulaşım, yöntem ve saha güvenliği notları.`;
+const previewRoutes=items.slice(0,5);
+const previewFish=fish.slice(0,8);
+const schema={
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "@id":pageUrl,
+  name:seoTitle,
+  description:seoDescription,
+  about:[
+    {"@type":"Place",name:`${district}, ${province}`},
+    ...previewFish.map((name)=>({"@type":"Thing",name}))
+  ],
+  mainEntity:{
+    "@type":"ItemList",
+    itemListElement:items.map((m,index)=>({
+      "@type":"ListItem",
+      position:index+1,
+      url:new URL(`/meralar/${m.slug}/`,Astro.site).href,
+      name:m.name
+    }))
+  }
+};
 ---
-<BaseLayout title={`${district} Balıkçılık Rotaları`} description={`${district}, ${province} çevresindeki rota, ön değerlendirme, ulaşım ve güvenlik notları.`}><script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/><section class="page-hero"><div class="container"><Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"İller",href:"/iller/"},{label:province,href:provinceUrl},{label:district}]}/><span class="kicker">{items.length} rota dosyası</span><h1>{district} balıkçılık rotaları</h1><p class="lead">{district}, {province} için yayımlanan dosyaları kaynak düzeyi, su karakteri, erişim durumu ve saha riskleriyle karşılaştır.</p></div></section><section class="container section article-prose"><section class="article-intro"><p>Bu merkez sayfa, aynı il veya ilçe içindeki farklı su varlıklarını tek bir kesin av noktası gibi göstermemek için oluşturuldu. Güven D kayıtları yalnızca açık kaynak araştırma başlangıcıdır; kamusal erişim veya avlanma izni değildir.</p><p>Rota dosyasına geçmeden önce güncel hava ve su koşullarını, ulaşımı, özel mülkiyeti, koruma statüsünü, yerel yasakları ve kıyı kullanım durumunu resmî kaynaklardan doğrula.</p></section><div class="info-grid"><section class="info-card"><span>🐟</span><h2>Doğrulanmış balıklar</h2>{fish.length?<ul>{fish.map((f)=><li>{f}</li>)}</ul>:<p>Bu grupta rota bazında doğrulanmış tür bilgisi henüz bulunmuyor.</p>}</section><section class="info-card"><span>🎣</span><h2>Doğrulanmış yöntemler</h2>{methods.length?<ul>{methods.map((m)=><li>{m}</li>)}</ul>:<p>Bu grupta rota bazında doğrulanmış yöntem bilgisi henüz bulunmuyor.</p>}</section></div></section><section class="container section"><div class="card-grid">{items.map((m)=><MeraCard mera={m}/>)}</div></section></BaseLayout>
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
+
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"İller",href:"/iller/"},{label:province,href:provinceUrl},{label:district}]}/>
+      <span class="kicker">{items.length} araştırılmış rota</span>
+      <h1>{districtLocative} balık tutulacak yerler</h1>
+      <p class="lead">{districtLocative} balık tutmak için araştırabileceğin rota dosyalarını; raporlanan türler, kıyı karakteri, ulaşım ve saha notlarıyla tek yerde karşılaştır.</p>
+      <div class="detail-actions">
+        <a class="button" href="#rotalar">Rotaları karşılaştır</a>
+        {fish.length>0&&<a class="button button-ghost" href="#baliklar">Balık türlerini gör</a>}
+      </div>
+    </div>
+  </section>
+
+  <section class="container section article-prose">
+    <section class="article-intro">
+      <h2>{districtLocative} nerede balık tutulur?</h2>
+      <p>{district} için şu anda {items.length} rota dosyası bulunuyor. {waterTypes.length>0?`Katalogda ${waterTypes.join(", ")} karakterindeki sular yer alıyor. `:""}Aşağıdaki kartlardan kıyı yapısı, ulaşım, raporlanan balıklar ve doğrulama düzeyi sana uygun olan rotaları karşılaştırabilirsin.</p>
+      {previewRoutes.length>0&&<p>Öne çıkan dosyalardan bazıları: {previewRoutes.map((route)=>route.name).join(", ")}. Bu liste av garantisi değil; araştırmaya nereden başlayacağını gösteren bir rota indeksidir.</p>}
+    </section>
+
+    <div class="info-grid">
+      <section class="info-card" id="baliklar">
+        <span>🐟</span>
+        <h2>Hangi balıklar raporlanıyor?</h2>
+        {fish.length?<><p>{district} rota dosyalarında öne çıkan türler:</p><ul>{fish.map((f)=><li>{f}</li>)}</ul></>:<p>Bu grupta rota bazında kaynakla desteklenmiş tür bilgisi henüz bulunmuyor.</p>}
+      </section>
+      <section class="info-card">
+        <span>🎣</span>
+        <h2>Hangi yöntemler öne çıkıyor?</h2>
+        {methods.length?<ul>{methods.map((m)=><li>{m}</li>)}</ul>:<p>Bu grupta rota bazında doğrulanmış yöntem bilgisi henüz bulunmuyor.</p>}
+      </section>
+    </div>
+
+    <section class="info-block">
+      <span class="kicker">Önce saha koşulu</span>
+      <h2>Rota bilgisini nasıl kullanmalı?</h2>
+      <p>Olta Atlası bir noktaya giriş veya avlanma izni vermez. Rota dosyaları açık kaynak araştırmasını düzenler; özel mülkiyet, koruma statüsü, geçici kapatma, kıyı erişimi, hava ve güncel mevzuat yola çıkmadan önce ayrıca kontrol edilmelidir.</p>
+      <p>Güven D kayıtları yalnızca araştırma başlangıcıdır. Harita pini bulunan bir dosyada bile koordinat, kamusal kıyı girişi veya güvenli araç yaklaşımı anlamına gelmez.</p>
+    </section>
+  </section>
+
+  <section class="container section" id="rotalar">
+    <div class="section-heading">
+      <div>
+        <span class="kicker">Rota listesi</span>
+        <h2>{districtLocative} araştırılan balıkçılık rotaları</h2>
+      </div>
+      <p>{items.length} dosyayı karşılaştır; her rota kendi kaynak, doğrulama ve saha notlarını taşır.</p>
+    </div>
+    <div class="card-grid">{items.map((m)=><MeraCard mera={m}/>)}</div>
+  </section>
+</BaseLayout>
