@@ -1,4 +1,5 @@
 import type { Mera } from "./meralar";
+import { gun1EkMeralar20260804 } from "./meralar-gun1-ek-2026-08-04";
 
 export const gun1Meralar20260804: Mera[] = [
   {
@@ -69,5 +70,6 @@ export const gun1Meralar20260804: Mera[] = [
         note: "16 Nisan 2025'te yürürlüğe giren 2025/12 değişikliğinin güncel mevzuat kontrolüne dahil edilmesi için resmî kaynak."
       }
     ]
-  }
+  },
+  ...gun1EkMeralar20260804
 ];
