@@ -8,6 +8,7 @@ import { gunlukIyilestirmeler20260801 } from "./meralar-gunluk-iyilestirme-2026-
 import { gunlukIyilestirmeler20260802, gunlukIyilestirmeMeta20260802 } from "./meralar-gunluk-iyilestirme-2026-08-02";
 import { kaliteIyilestirmeleri20260803, retiredRouteSlugs20260803 } from "./meralar-kalite-iyilestirme-2026-08-03";
 import { gunlukKaliteIyilestirmeleri20260803 } from "./meralar-gunluk-kalite-2026-08-03";
+import { gun1Meralar20260804 } from "./meralar-gun1-2026-08-04";
 import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
 import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
@@ -58,6 +59,7 @@ export const meralar:EnrichedMera[]=[
   ...gunlukIyilestirmeler20260802.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(m=>withResearch(m,gunlukMeta20260802[m.slug])),
   ...kaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(baseDefaults),
   ...gunlukKaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(baseDefaults),
+  ...gun1Meralar20260804.map(baseDefaults),
   ...national.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)),
 ];
 
