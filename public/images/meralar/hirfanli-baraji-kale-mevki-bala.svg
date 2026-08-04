@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Hirfanlı Barajı Kale Mevki rota görseli</title>
+  <desc id="desc">Bala tarafındaki kırsal baraj kıyısını, su hattını ve güvenli genel erişim fikrini gösteren özgün Olta Atlası çizimi.</desc>
+  <rect width="1200" height="630" fill="#eef4f1"/>
+  <path d="M0 420 C180 360 310 470 470 410 C650 340 790 420 960 360 C1070 320 1140 330 1200 310 L1200 630 L0 630 Z" fill="#9fc8d5"/>
+  <path d="M0 330 C170 270 310 300 430 260 C570 215 710 240 840 205 C1000 160 1090 180 1200 150 L1200 310 C1080 335 1005 325 930 365 C760 450 650 350 475 414 C315 472 170 365 0 421 Z" fill="#d7c69a"/>
+  <path d="M90 330 C230 300 350 320 465 290" fill="none" stroke="#6c7b67" stroke-width="16" stroke-linecap="round"/>
+  <path d="M475 288 C600 255 720 278 820 245" fill="none" stroke="#6c7b67" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="545" cy="318" r="24" fill="#c4513d"/>
+  <path d="M545 293 C528 293 514 307 514 324 C514 349 545 380 545 380 C545 380 576 349 576 324 C576 307 562 293 545 293 Z" fill="#c4513d"/>
+  <circle cx="545" cy="323" r="9" fill="#fff"/>
+  <path d="M870 255 q85 -85 150 0" fill="none" stroke="#3f5f66" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1017 255 q20 55 -6 101" fill="none" stroke="#3f5f66" stroke-width="4"/>
+  <circle cx="1007" cy="360" r="7" fill="#3f5f66"/>
+  <text x="78" y="105" font-family="system-ui, sans-serif" font-size="48" font-weight="700" fill="#27444a">Hirfanlı Barajı</text>
+  <text x="78" y="158" font-family="system-ui, sans-serif" font-size="31" font-weight="600" fill="#4a6267">Kale Mevki · Bala · Ankara</text>
+  <text x="78" y="205" font-family="system-ui, sans-serif" font-size="24" fill="#5f6d6f">Resmî amatör balıkçılık sınırları esas alınır</text>
+  <rect x="78" y="520" width="402" height="58" rx="29" fill="#27444a"/>
+  <text x="112" y="558" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#fff">OLTA ATLASI · DOĞRULANMIŞ ROTA</text>
+</svg>
