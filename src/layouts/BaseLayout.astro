@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "../styles/world.css";
+import SeoOpportunityPanel from "../components/SeoOpportunityPanel.astro";
 
 const {
   title = "Olta Atlası",
@@ -13,10 +14,28 @@ const {
   noindex = false,
 } = Astro.props;
 
+const currentPath = Astro.url.pathname;
+const normalizedPath = currentPath.endsWith("/") ? currentPath : `${currentPath}/`;
+const seoOverrides:Record<string,{title:string;description:string}>={
+  "/meralar/galata-koprusu/":{
+    title:"Galata Köprüsü'nde Balık Tutma Rehberi",
+    description:"Galata Köprüsü'nde balık tutma planı: raporlanan türler, çapari ve şamandıra yöntemleri, ulaşım, kalabalık, deniz trafiği ve güvenlik notları."
+  },
+  "/meralar/izmit-korfezi-sahil-bandi/":{
+    title:"İzmit Körfezi'nde Balık Tutma: Sahil Bandı Rehberi",
+    description:"İzmit Körfezi sahil bandında balık tutma planı: Marina–1 Mart Vapur İskelesi çevresi, raporlanan türler, yöntemler, ulaşım ve güvenlik notları."
+  },
+  "/rehberler/sazan-icin-misir-hazirlama/":{
+    title:"Sazan İçin Mısır Hazırlama: Haşlama ve İğneye Takma",
+    description:"Sazan için konserve ve kuru mısır hazırlama; tane kıvamı, kontrollü haşlama, iğne açıklığı, saçlı takım ve güvenli saklama adımları."
+  }
+};
+const seoOverride=seoOverrides[normalizedPath];
+const effectiveTitle=seoOverride?.title||title;
+const effectiveDescription=seoOverride?.description||description;
 const pageUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 const imageUrl = new URL(image, Astro.site).href;
-const fullTitle = title === "Olta Atlası" ? title : `${title} | Olta Atlası`;
-const currentPath = Astro.url.pathname;
+const fullTitle = effectiveTitle === "Olta Atlası" ? effectiveTitle : `${effectiveTitle} | Olta Atlası`;
 const homeUrl = new URL("/", Astro.site).href;
 const isMeraDetail = /^\/meralar\/[^/]+\/?$/.test(currentPath);
 const isAdmin = currentPath.startsWith("/admin/");
@@ -61,7 +80,7 @@ const websiteSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0a3340" />
     <meta name="application-name" content="Olta Atlası" />
-    <meta name="description" content={description} />
+    <meta name="description" content={effectiveDescription} />
     <meta name="author" content="Olta Atlası Editörlüğü" />
     <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
     <link rel="canonical" href={pageUrl} />
@@ -73,15 +92,15 @@ const websiteSchema = {
     <meta property="og:type" content={type === "article" ? "article" : "website"} />
     <meta property="og:site_name" content="Olta Atlası" />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={effectiveDescription} />
     <meta property="og:url" content={pageUrl} />
     <meta property="og:image" content={imageUrl} />
-    <meta property="og:image:alt" content={`${title} için Olta Atlası görseli`} />
+    <meta property="og:image:alt" content={`${effectiveTitle} için Olta Atlası görseli`} />
     {publishedAt && <meta property="article:published_time" content={publishedAt} />}
     {modifiedAt && <meta property="article:modified_time" content={modifiedAt} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={effectiveDescription} />
     <meta name="twitter:image" content={imageUrl} />
     <title>{fullTitle}</title>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
@@ -131,6 +150,7 @@ const websiteSchema = {
       </aside>
     )}
     <main id="icerik"><slot /></main>
+    <SeoOpportunityPanel path={currentPath}/>
     <footer class="site-footer">
       <div class="container footer-grid">
         <div><strong>Olta Atlası</strong><p>Mera, tür, yöntem, navigasyon ve saha güvenliğini aynı rotada buluşturan bağımsız balıkçılık rehberi.</p></div>
