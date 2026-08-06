@@ -1,0 +1,13 @@
+import type { APIRoute } from "astro";
+
+const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Olta Atlası logosu"><defs><linearGradient id="sea" x1="18" y1="12" x2="110" y2="118" gradientUnits="userSpaceOnUse"><stop stop-color="#0f6576"/><stop offset="1" stop-color="#071f27"/></linearGradient></defs><rect x="4" y="4" width="120" height="120" rx="34" fill="url(#sea)"/><circle cx="64" cy="62" r="39" fill="none" stroke="#eaf3ef" stroke-width="6" opacity=".95"/><path d="M64 24l9 27-9 8-9-8 9-27z" fill="#f6b44a"/><path d="M64 100l-8-24 8-8 8 8-8 24z" fill="#eaf3ef" opacity=".75"/><path d="M27 76c13-10 24-10 37 0s24 10 37 0" fill="none" stroke="#f6b44a" stroke-width="7" stroke-linecap="round"/><path d="M82 43c17 8 23 27 14 41-6 10-18 12-25 5-6-6-5-16 2-20 6-4 13-1 15 5" fill="none" stroke="#eaf3ef" stroke-width="6" stroke-linecap="round"/><circle cx="64" cy="62" r="5" fill="#f6b44a"/></svg>`;
+
+export const GET: APIRoute = () =>
+  new Response(favicon, {
+    status: 200,
+    headers: {
+      "Content-Type": "image/svg+xml; charset=utf-8",
+      "Cache-Control": "public, max-age=604800, immutable",
+      "X-Content-Type-Options": "nosniff",
+    },
+  });
