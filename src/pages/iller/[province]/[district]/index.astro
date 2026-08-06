@@ -29,7 +29,11 @@ const locative=(name:string)=>{
   return `${name}'${hard?(back?"ta":"te"):(back?"da":"de")}`;
 };
 
-const districtLocative=locative(district);
+const indexedLegacyProvinceWidePages=new Set(["Adana","Adıyaman"]);
+const isProvinceWide=district==="İl geneli";
+const preserveIndexedLegacyTitle=isProvinceWide&&indexedLegacyProvinceWidePages.has(province);
+const seoLocationName=isProvinceWide&&!preserveIndexedLegacyTitle?province:district;
+const districtLocative=locative(seoLocationName);
 const seoTitle=`${districtLocative} Balık Tutulacak Yerler ve Avlaklar`;
 const seoDescription=`${districtLocative} balık tutulacak yerleri karşılaştır: ${items.length} rota, raporlanan balık türleri, kıyı yapısı, ulaşım, yöntem ve saha güvenliği notları.`;
 const previewRoutes=items.slice(0,5);
