@@ -15,9 +15,10 @@ const { title = "Olta Atlası", url = "" } = Astro.props;
   document.querySelectorAll("[data-share-toolbar]").forEach((toolbar) => {
     if (!(toolbar instanceof HTMLElement) || toolbar.dataset.ready === "true") return;
     toolbar.dataset.ready = "true";
-    const title = toolbar.dataset.shareTitle || document.title || "Olta Atlası";
+    const fallbackTitle = toolbar.dataset.shareTitle || "Olta Atlası";
+    const pageTitle = (document.title || fallbackTitle).replace(/\s*\|\s*Olta Atlası\s*$/i, "").trim() || fallbackTitle;
     const url = toolbar.dataset.shareUrl || window.location.href;
-    const message = `${title} — Olta Atlası`;
+    const message = `${pageTitle} | Olta Atlası`;
     const status = toolbar.querySelector("[data-share-status]");
     const nativeButton = toolbar.querySelector("[data-share-native]");
     const copyButton = toolbar.querySelector("[data-share-copy]");
@@ -33,7 +34,7 @@ const { title = "Olta Atlası", url = "" } = Astro.props;
       if (typeof window.gtag === "function") window.gtag("event", "share", { method: label, content_type: "mera", item_id: window.location.pathname });
     };
     nativeButton?.addEventListener("click", async () => {
-      try { await navigator.share({ title, text: message, url }); mark("Cihaz paylaşımı açıldı"); } catch (error) { if (error?.name !== "AbortError") mark("Paylaşım açılamadı"); }
+      try { await navigator.share({ title: pageTitle, text: message, url }); mark("Cihaz paylaşımı açıldı"); } catch (error) { if (error?.name !== "AbortError") mark("Paylaşım açılamadı"); }
     });
     copyButton?.addEventListener("click", async () => {
       try {
