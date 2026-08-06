@@ -1,0 +1,56 @@
+---
+const { title = "Olta Atlası", url = "" } = Astro.props;
+---
+<div class="share-toolbar" data-share-toolbar data-share-title={title} data-share-url={url} aria-label="Bu avlak sayfasını paylaş">
+  <strong class="share-label">Paylaş</strong>
+  <button class="share-button share-native" type="button" data-share-native>Paylaş</button>
+  <a class="share-button" data-share-whatsapp href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile paylaş">WhatsApp</a>
+  <a class="share-button" data-share-x href="#" target="_blank" rel="noopener noreferrer" aria-label="X üzerinde paylaş">X</a>
+  <a class="share-button" data-share-facebook href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook üzerinde paylaş">Facebook</a>
+  <button class="share-button" type="button" data-share-copy>Bağlantıyı kopyala</button>
+  <span class="share-status" data-share-status aria-live="polite"></span>
+</div>
+
+<script is:inline>
+  document.querySelectorAll("[data-share-toolbar]").forEach((toolbar) => {
+    if (!(toolbar instanceof HTMLElement) || toolbar.dataset.ready === "true") return;
+    toolbar.dataset.ready = "true";
+    const title = toolbar.dataset.shareTitle || document.title || "Olta Atlası";
+    const url = toolbar.dataset.shareUrl || window.location.href;
+    const message = `${title} — Olta Atlası`;
+    const status = toolbar.querySelector("[data-share-status]");
+    const nativeButton = toolbar.querySelector("[data-share-native]");
+    const copyButton = toolbar.querySelector("[data-share-copy]");
+    const whatsapp = toolbar.querySelector("[data-share-whatsapp]");
+    const x = toolbar.querySelector("[data-share-x]");
+    const facebook = toolbar.querySelector("[data-share-facebook]");
+    if (whatsapp instanceof HTMLAnchorElement) whatsapp.href = `https://wa.me/?text=${encodeURIComponent(`${message}\n${url}`)}`;
+    if (x instanceof HTMLAnchorElement) x.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&url=${encodeURIComponent(url)}`;
+    if (facebook instanceof HTMLAnchorElement) facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    if (!("share" in navigator) && nativeButton instanceof HTMLElement) nativeButton.hidden = true;
+    const mark = (label) => {
+      if (status) status.textContent = label;
+      if (typeof window.gtag === "function") window.gtag("event", "share", { method: label, content_type: "mera", item_id: window.location.pathname });
+    };
+    nativeButton?.addEventListener("click", async () => {
+      try { await navigator.share({ title, text: message, url }); mark("Cihaz paylaşımı açıldı"); } catch (error) { if (error?.name !== "AbortError") mark("Paylaşım açılamadı"); }
+    });
+    copyButton?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        mark("Bağlantı kopyalandı");
+        const original = copyButton.textContent;
+        copyButton.textContent = "Kopyalandı";
+        window.setTimeout(() => { copyButton.textContent = original; if (status) status.textContent = ""; }, 1800);
+      } catch {
+        const input = document.createElement("textarea"); input.value = url; input.setAttribute("readonly", ""); input.style.position = "fixed"; input.style.opacity = "0"; document.body.appendChild(input); input.select();
+        const copied = document.execCommand("copy"); input.remove(); mark(copied ? "Bağlantı kopyalandı" : "Kopyalama başarısız");
+      }
+    });
+    [whatsapp, x, facebook].forEach((link) => link?.addEventListener("click", () => mark(link.textContent?.trim() || "Sosyal paylaşım")));
+  });
+</script>
+
+<style>
+  .share-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 14px;border:1px solid #d7e5e6;border-radius:14px;background:#fff;box-shadow:0 8px 20px #1439410d}.share-label{color:#0a3340;margin-right:2px}.share-button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 12px;border:1px solid #bfd3d6;border-radius:10px;background:#f7fbfb;color:#0b5967;text-decoration:none;font:inherit;font-weight:800;cursor:pointer}.share-button:hover,.share-button:focus-visible{background:#e9f5f6;border-color:#8ebac0}.share-native{background:#0b5967;color:#fff;border-color:#0b5967}.share-status{font-size:.8rem;color:#547074;min-height:1em}@media(max-width:620px){.share-toolbar{align-items:stretch}.share-label{width:100%}.share-button{flex:1 1 calc(50% - 8px)}}
+</style>
