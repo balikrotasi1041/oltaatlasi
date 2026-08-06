@@ -1,8 +1,11 @@
 ---
+import ShareToolbar from "./ShareToolbar.astro";
 type LinkItem={href:string;label:string;note:string};
 type Opportunity={eyebrow:string;title:string;body:string;points:string[];links:LinkItem[]};
 const {path}=Astro.props as {path:string};
 const normalizedPath=path.endsWith("/")?path:`${path}/`;
+const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
+const shareUrl=isMeraDetail?new URL(normalizedPath,Astro.site).href:"";
 const opportunities:Record<string,Opportunity>={
   "/meralar/galata-koprusu/":{
     eyebrow:"İstanbul yerel av planı",
@@ -55,7 +58,8 @@ const opportunities:Record<string,Opportunity>={
 };
 const opportunity=opportunities[normalizedPath];
 ---
+{isMeraDetail&&<section class="share-shell" aria-label="Avlak paylaşım araçları"><div class="container"><ShareToolbar title="Bu avlak sayfası" url={shareUrl}/></div></section>}
 {opportunity&&<section class="seo-opportunity" aria-labelledby="seo-opportunity-title"><div class="container"><div class="seo-opportunity-copy"><span>{opportunity.eyebrow}</span><h2 id="seo-opportunity-title">{opportunity.title}</h2><p>{opportunity.body}</p><ul>{opportunity.points.map((point)=><li>{point}</li>)}</ul></div><nav class="seo-opportunity-links" aria-label="İlgili Olta Atlası içerikleri">{opportunity.links.map((link)=><a href={link.href}><strong>{link.label}</strong><small>{link.note}</small></a>)}</nav></div></section>}
 <style>
-.seo-opportunity{background:#f0f7f7;border-top:1px solid #d7e7e8;border-bottom:1px solid #d7e7e8;padding:34px 0}.seo-opportunity>.container{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:26px;align-items:start}.seo-opportunity-copy>span{display:block;color:#237381;font-size:.76rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.seo-opportunity h2{color:#123e47;margin:.35rem 0 .7rem;font-size:clamp(1.5rem,3vw,2.15rem)}.seo-opportunity p{color:#49656a;line-height:1.7}.seo-opportunity ul{margin:18px 0 0;padding-left:20px}.seo-opportunity li{margin:9px 0;color:#294f56;line-height:1.55}.seo-opportunity-links{display:grid;gap:10px}.seo-opportunity-links a{display:block;background:#fff;border:1px solid #cfe0e2;border-radius:14px;padding:14px 16px;text-decoration:none;box-shadow:0 8px 18px #1439410a}.seo-opportunity-links strong,.seo-opportunity-links small{display:block}.seo-opportunity-links strong{color:#0b6574}.seo-opportunity-links small{color:#647d81;margin-top:4px;line-height:1.4}.seo-opportunity-links a:hover{border-color:#76abb3;transform:translateY(-1px)}@media(max-width:800px){.seo-opportunity>.container{grid-template-columns:1fr}.seo-opportunity{padding:26px 0}}
+.share-shell{padding:24px 0;background:#f7fbfb;border-top:1px solid #dce8e8}.seo-opportunity{background:#f0f7f7;border-top:1px solid #d7e7e8;border-bottom:1px solid #d7e7e8;padding:34px 0}.seo-opportunity>.container{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:26px;align-items:start}.seo-opportunity-copy>span{display:block;color:#237381;font-size:.76rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.seo-opportunity h2{color:#123e47;margin:.35rem 0 .7rem;font-size:clamp(1.5rem,3vw,2.15rem)}.seo-opportunity p{color:#49656a;line-height:1.7}.seo-opportunity ul{margin:18px 0 0;padding-left:20px}.seo-opportunity li{margin:9px 0;color:#294f56;line-height:1.55}.seo-opportunity-links{display:grid;gap:10px}.seo-opportunity-links a{display:block;background:#fff;border:1px solid #cfe0e2;border-radius:14px;padding:14px 16px;text-decoration:none;box-shadow:0 8px 18px #1439410a}.seo-opportunity-links strong,.seo-opportunity-links small{display:block}.seo-opportunity-links strong{color:#0b6574}.seo-opportunity-links small{color:#647d81;margin-top:4px;line-height:1.4}.seo-opportunity-links a:hover{border-color:#76abb3;transform:translateY(-1px)}@media(max-width:800px){.seo-opportunity>.container{grid-template-columns:1fr}.seo-opportunity{padding:26px 0}.share-shell{padding:18px 0}}
 </style>
