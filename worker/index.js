@@ -3,6 +3,12 @@ const PERMANENT_REDIRECT_HOSTS = new Set([
   "www.oltaatlasi.com",
   "balik-rotasi.balikrotasi1041.workers.dev",
 ]);
+const PERMANENT_PATH_REDIRECTS = new Map([
+  ["/meralar/cubuklu-beykoz-sahili", "/meralar/cubuklu-sahili/"],
+  ["/meralar/maltepe-sahili", "/meralar/maltepe-orhangazi-sehir-parki-kiyisi/"],
+  ["/meralar/pendik-sahili", "/meralar/pendik-sahil-parki-kamusal-kiyi/"],
+  ["/meralar/basiskele-sahili", "/meralar/basiskele-kamusal-sahil-hatti/"],
+]);
 const ADMIN_PREFIX = "/admin";
 const encoder = new TextEncoder();
 
@@ -486,13 +492,22 @@ const handleCloudflare = async (request, env) => {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    let shouldRedirect = false;
 
     if (PERMANENT_REDIRECT_HOSTS.has(url.hostname)) {
       url.protocol = "https:";
       url.hostname = PRIMARY_HOST;
       url.port = "";
-      return Response.redirect(url.toString(), 301);
+      shouldRedirect = true;
     }
+
+    const normalizedPath = url.pathname === "/" ? "/" : url.pathname.replace(/\/+$/, "");
+    const redirectPath = PERMANENT_PATH_REDIRECTS.get(normalizedPath);
+    if (redirectPath) {
+      url.pathname = redirectPath;
+      shouldRedirect = true;
+    }
+    if (shouldRedirect) return Response.redirect(url.toString(), 301);
 
     if (isAdminPath(url.pathname)) {
       if (!adminAuthConfigured(env)) return adminNotConfiguredResponse();

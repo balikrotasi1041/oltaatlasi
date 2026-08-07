@@ -34,8 +34,14 @@ const isProvinceWide=district==="İl geneli";
 const preserveIndexedLegacyTitle=isProvinceWide&&indexedLegacyProvinceWidePages.has(province);
 const seoLocationName=isProvinceWide&&!preserveIndexedLegacyTitle?province:district;
 const districtLocative=locative(seoLocationName);
-const seoTitle=`${districtLocative} Balık Tutulacak Yerler ve Avlaklar`;
-const seoDescription=`${districtLocative} balık tutulacak yerleri karşılaştır: ${items.length} rota, raporlanan balık türleri, kıyı yapısı, ulaşım, yöntem ve saha güvenliği notları.`;
+const isBeykoz=province==="İstanbul"&&district==="Beykoz";
+const beykozHighlights=isBeykoz
+  ? ["Paşabahçe","Kanlıca","Çubuklu","Küçüksu"].map((keyword)=>items.find((route)=>route.name.includes(keyword))).filter((route):route is typeof items[number]=>Boolean(route))
+  : [];
+const seoTitle=isBeykoz?`${items.length} Rota: Beykoz’da Balık Tutulacak Yerler`:`${districtLocative} Balık Tutulacak Yerler ve Avlaklar`;
+const seoDescription=isBeykoz
+  ? `Beykoz’da ${items.length} gerçek rota dosyasını karşılaştır: ${beykozHighlights.map((route)=>route.name).join(", ")}. Ulaşım, kıyı yapısı ve güncel saha uyarıları.`
+  : `${districtLocative} balık tutulacak yerleri karşılaştır: ${items.length} rota, raporlanan balık türleri, kıyı yapısı, ulaşım, yöntem ve saha güvenliği notları.`;
 const previewRoutes=items.slice(0,5);
 const previewFish=fish.slice(0,8);
 const schema={
@@ -82,6 +88,24 @@ const schema={
       {previewRoutes.length>0&&<p>Öne çıkan dosyalardan bazıları: {previewRoutes.map((route)=>route.name).join(", ")}. Bu liste av garantisi değil; araştırmaya nereden başlayacağını gösteren bir rota indeksidir.</p>}
     </section>
 
+    {isBeykoz&&beykozHighlights.length>0&&<section class="quick-compare" aria-labelledby="beykoz-hizli-karsilastirma">
+      <div class="section-heading">
+        <div><span class="kicker">Mobil hızlı karşılaştırma</span><h2 id="beykoz-hizli-karsilastirma">Beykoz’un öne çıkan kıyı rotaları</h2></div>
+        <p>Ulaşım ve risk özeti; ayrıntı için rota dosyasını aç.</p>
+      </div>
+      <div class="quick-compare-grid">
+        {beykozHighlights.map((route)=><article>
+          <div><strong><a href={`/meralar/${route.slug}/`}>{route.name}</a></strong><span>{route.waterType} · Güven {route.confidence}</span></div>
+          <dl>
+            <div><dt>Araç</dt><dd>{route.confidence==="D"?"Kontrol edilmeli":route.vehicleAccess}</dd></div>
+            <div><dt>Son yaklaşım</dt><dd>{route.transport}</dd></div>
+            <div><dt>Öne çıkan uyarı</dt><dd>{route.cautions[0]}</dd></div>
+          </dl>
+          <a class="quick-link" href={`/meralar/${route.slug}/`}>Rota ayrıntısını aç →</a>
+        </article>)}
+      </div>
+    </section>}
+
     <div class="info-grid">
       <section class="info-card" id="baliklar">
         <span>🐟</span>
@@ -114,3 +138,8 @@ const schema={
     <div class="card-grid">{items.map((m)=><MeraCard mera={m}/>)}</div>
   </section>
 </BaseLayout>
+
+<style>
+  .quick-compare{margin:2.5rem 0}.quick-compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.quick-compare article{display:flex;flex-direction:column;gap:14px;padding:20px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(10,51,64,.05)}.quick-compare article>div:first-child{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.quick-compare article>div:first-child span{color:var(--muted);font-size:.82rem;white-space:nowrap}.quick-compare strong a{color:var(--ink);text-decoration:none}.quick-compare dl{display:grid;gap:10px;margin:0}.quick-compare dl>div{display:grid;grid-template-columns:105px minmax(0,1fr);gap:12px;padding-top:10px;border-top:1px solid var(--line)}.quick-compare dt{color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase}.quick-compare dd{margin:0;color:var(--ink);font-size:.92rem}.quick-link{margin-top:auto;font-weight:850}
+  @media(max-width:760px){.quick-compare-grid{grid-template-columns:1fr}.quick-compare article{padding:17px}.quick-compare article>div:first-child{flex-direction:column;gap:4px}.quick-compare dl>div{grid-template-columns:1fr;gap:4px}.quick-compare article>div:first-child span{white-space:normal}}
+</style>

@@ -21,7 +21,7 @@ export type FishEvidence={name:string;scientificName?:string|null;evidenceLevel:
 export type AccommodationOption={name:string;type:string;distanceKm:number|null;sourceUrl:string;note:string};
 export type AccessEvidence={label:string;value:string;sourceUrl:string;note:string};
 type NationalCoordinate={lat:number;lng:number;displayName:string;sourceUrl:string;matchScore:number;matchedAt:string};
-type NationalResearch={researchedAt?:string;researchStatus?:string;researchSummary?:string;fish?:string[];fishEvidence?:FishEvidence[];methods?:string[];baits?:string[];camping?:Mera["camping"];vehicleAccess?:Mera["vehicleAccess"];amenities?:string[];cautions?:string[];accommodationOptions?:AccommodationOption[];accessEvidence?:AccessEvidence[];seasonalNotes?:string[];planningNotes?:string[];transport?:string;crowdNote?:string;sources?:ResearchSource[]};
+type NationalResearch={researchedAt?:string;researchStatus?:string;researchSummary?:string;fish?:string[];fishEvidence?:FishEvidence[];methods?:string[];baits?:string[];camping?:Mera["camping"];vehicleAccess?:Mera["vehicleAccess"];amenities?:string[];cautions?:string[];accommodationOptions?:AccommodationOption[];accessEvidence?:AccessEvidence[];seasonalNotes?:string[];planningNotes?:string[];transport?:string;crowdNote?:string;sources?:ResearchSource[];fieldVerification?:boolean;strongOfficialSource?:boolean;officialAmateurFishingUseEvidence?:boolean};
 export type EnrichedMera=Mera&{researchStatus?:string;researchSummary?:string;researchedAt?:string;fishEvidence:FishEvidence[];accommodationOptions:AccommodationOption[];accessEvidence:AccessEvidence[]};
 
 const coordinateIndex=ulusalKoordinatlar as Record<string,NationalCoordinate>;
@@ -34,29 +34,56 @@ const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(v
 const baseDefaults=(m:Mera):EnrichedMera=>({...m,fish:unique(m.fish),methods:unique(m.methods),baits:unique(m.baits),fishEvidence:[],accommodationOptions:[],accessEvidence:[]});
 const withResearch=(m:Mera,r?:NationalResearch):EnrichedMera=>({...baseDefaults(m),researchStatus:r?.researchStatus,researchSummary:r?.researchSummary,researchedAt:r?.researchedAt,fishEvidence:r?.fishEvidence||[],accommodationOptions:r?.accommodationOptions||[],accessEvidence:r?.accessEvidence||[]});
 const mergedResearch=(slug:string):NationalResearch|undefined=>{const a=automatic[slug],m=manual[slug];if(!a&&!m)return undefined;return{...(a||{}),...(m||{}),fish:m?.fish?.length?m.fish:a?.fish,fishEvidence:m?.fishEvidence?.length?m.fishEvidence:a?.fishEvidence,methods:m?.methods?.length?m.methods:a?.methods,baits:m?.baits?.length?m.baits:a?.baits,amenities:m?.amenities?.length?m.amenities:a?.amenities,cautions:m?.cautions?.length?m.cautions:a?.cautions,accommodationOptions:m?.accommodationOptions?.length?m.accommodationOptions:a?.accommodationOptions,accessEvidence:m?.accessEvidence?.length?m.accessEvidence:a?.accessEvidence,seasonalNotes:m?.seasonalNotes?.length?m.seasonalNotes:a?.seasonalNotes,planningNotes:m?.planningNotes?.length?m.planningNotes:a?.planningNotes,sources:uniqueSources([...(m?.sources||[]),...(a?.sources||[])])};};
-const nationalShoreProfile=(m:Mera,r?:NationalResearch)=>{const base=String(m.shoreProfile||"").trim().replace(/\s+/g," ");const access=(r?.accessEvidence||[]).slice(0,2).map((item)=>`${item.label}: ${item.value}. ${item.note}`).join(" ");const research=String(r?.researchSummary||"").trim();const evidence=access||research||"Masa başı kaynak taramasında kıyıya giriş, yol ve kamusal kullanım için noktasal saha teyidi bulunmadığından yaklaşım koşulları yerinde ayrıca doğrulanmalıdır.";return `${m.name}, ${m.province} için ${base.charAt(0).toLocaleLowerCase("tr-TR")}${base.slice(1)} ${evidence} Bu kıyı profili, belirli bir erişim cebinin kamusal olduğu veya amatör avcılığa açık bulunduğu anlamına gelmez.`;};
-const national:EnrichedMera[]=ulusalMeralar.map((m):EnrichedMera=>{const c=coordinateIndex[m.slug],r=mergedResearch(m.slug);const fish=r?.fish?.length?unique(r.fish):unique(m.fish);const sources=uniqueSources([...(r?.sources||[]),...(c?[{label:`OpenStreetMap – ${c.displayName}`,url:c.sourceUrl,note:`Genel su varlığı eşleşmesi; pin kamusal kıyı erişimi veya av izni doğrulamaz (puan ${c.matchScore}).`}]:[]),...m.sources.filter(s=>!s.label.startsWith("OpenStreetMap"))]);return{...m,...(c?{lat:c.lat,lng:c.lng,locationPrecision:"Genel bölge" as const,updatedAt:c.matchedAt.slice(0,10),navigationNote:"Harita pini genel su varlığı merkezini gösterir; yol, park, kıyıya giriş ve av yapılabilirlik ayrıca araştırılmalıdır.",verification:`${m.verification} Genel konum OpenStreetMap/Nominatim ile eşleştirildi; erişim ve izin doğrulanmış sayılmaz.`}:{}),...(r?{fish,methods:r.methods?.length?unique(r.methods):unique(m.methods),baits:r.baits?.length?unique(r.baits):unique(m.baits),camping:r.camping||m.camping,vehicleAccess:r.vehicleAccess||m.vehicleAccess,amenities:r.amenities?.length?r.amenities:m.amenities,cautions:r.cautions?.length?r.cautions:m.cautions,transport:r.transport||m.transport,crowdNote:r.crowdNote||m.crowdNote,planningNotes:r.planningNotes?.length?r.planningNotes:m.planningNotes,seasonalNotes:r.seasonalNotes?.length?r.seasonalNotes:m.seasonalNotes,updatedAt:r.researchedAt||c?.matchedAt.slice(0,10)||m.updatedAt,verification:r.researchStatus?`${m.verification} Tür, ulaşım ve yakın hizmetler açık kaynak araştırmasıyla zenginleştirildi; saha ve hukuki uygunluk ayrıca doğrulanmalıdır.`:m.verification,confidence:manual[m.slug]?"B" as const:(fish.length&&r.accessEvidence?.length?"C" as const:m.confidence),researchStatus:r.researchStatus,researchSummary:r.researchSummary,researchedAt:r.researchedAt}:{}),fish,methods:r?.methods?.length?unique(r.methods):unique(m.methods),baits:r?.baits?.length?unique(r.baits):unique(m.baits),fishEvidence:r?.fishEvidence||[],accommodationOptions:r?.accommodationOptions||[],accessEvidence:r?.accessEvidence||[],shoreProfile:nationalShoreProfile(m,r),sources};});
+export const nationalConfidence=(r?:NationalResearch):Mera["confidence"]=>{
+  if(!r)return "D";
+  const hasStrongOfficialEvidence=Boolean(r.strongOfficialSource)&&Boolean(r.sources?.some((source)=>/\.gov\.tr\b|\.bel\.tr\b|tarimorman\.gov\.tr\b/i.test(source.url)));
+  if(r.fieldVerification&&hasStrongOfficialEvidence)return "A";
+  if(r.officialAmateurFishingUseEvidence&&hasStrongOfficialEvidence)return "B";
+  const hasStrongDeskResearch=/rota özelinde/i.test(r.researchStatus||"")&&Boolean((r.sources?.length||0)>=2||(r.fishEvidence?.length&&r.accessEvidence?.length));
+  return hasStrongDeskResearch?"C":"D";
+};
+const nationalShoreProfile=(m:Mera,r?:NationalResearch)=>{
+  const base=String(m.shoreProfile||"").trim().replace(/\s+/g," ");
+  const access=(r?.accessEvidence||[]).slice(0,2).map((item)=>`${item.label}: ${item.value}. ${item.note}`).join(" ");
+  const research=String(r?.researchSummary||"").trim();
+  const evidence=access||research||"Masa başı kaynak taramasında kıyıya giriş, yol ve kamusal kullanım için noktasal saha teyidi bulunmadığından yaklaşım koşulları yerinde ayrıca doğrulanmalıdır.";
+  return `${m.name}, ${m.province} için ${base.charAt(0).toLocaleLowerCase("tr-TR")}${base.slice(1)} ${evidence} Bu kıyı profili, belirli bir erişim cebinin kamusal olduğu veya amatör avcılığa açık bulunduğu anlamına gelmez.`;
+};
+const national:EnrichedMera[]=ulusalMeralar.map((m):EnrichedMera=>{const c=coordinateIndex[m.slug],r=mergedResearch(m.slug);const fish=r?.fish?.length?unique(r.fish):unique(m.fish);const sources=uniqueSources([...(r?.sources||[]),...(c?[{label:`OpenStreetMap – ${c.displayName}`,url:c.sourceUrl,note:`Genel su varlığı eşleşmesi; pin kamusal kıyı erişimi veya av izni doğrulamaz (puan ${c.matchScore}).`}]:[]),...m.sources.filter(s=>!s.label.startsWith("OpenStreetMap"))]);return{...m,...(c?{lat:c.lat,lng:c.lng,locationPrecision:"Genel bölge" as const,updatedAt:c.matchedAt.slice(0,10),navigationNote:"Harita pini genel su varlığı merkezini gösterir; yol, park, kıyıya giriş ve av yapılabilirlik ayrıca araştırılmalıdır.",verification:`${m.verification} Genel konum OpenStreetMap/Nominatim ile eşleştirildi; erişim ve izin doğrulanmış sayılmaz.`}:{}),...(r?{fish,methods:r.methods?.length?unique(r.methods):unique(m.methods),baits:r.baits?.length?unique(r.baits):unique(m.baits),camping:r.camping||m.camping,vehicleAccess:r.vehicleAccess||m.vehicleAccess,amenities:r.amenities?.length?r.amenities:m.amenities,cautions:r.cautions?.length?r.cautions:m.cautions,transport:r.transport||m.transport,crowdNote:r.crowdNote||m.crowdNote,planningNotes:r.planningNotes?.length?r.planningNotes:m.planningNotes,seasonalNotes:r.seasonalNotes?.length?r.seasonalNotes:m.seasonalNotes,updatedAt:r.researchedAt||c?.matchedAt.slice(0,10)||m.updatedAt,verification:r.researchStatus?`${m.verification} Tür, ulaşım ve yakın hizmetler açık kaynak araştırmasıyla zenginleştirildi; saha ve hukuki uygunluk ayrıca doğrulanmalıdır.`:m.verification,confidence:c?nationalConfidence(r):"D",researchStatus:r.researchStatus,researchSummary:r.researchSummary,researchedAt:r.researchedAt}:{}),fish,methods:r?.methods?.length?unique(r.methods):unique(m.methods),baits:r?.baits?.length?unique(r.baits):unique(m.baits),fishEvidence:r?.fishEvidence||[],accommodationOptions:r?.accommodationOptions||[],accessEvidence:r?.accessEvidence||[],shoreProfile:nationalShoreProfile(m,r),sources};});
 
-const gunlukKaliteSlugs20260807=new Set(gunlukKaliteIyilestirmeleri20260807.map(m=>m.slug));
-const gun2Slugs20260807=new Set(gun2Meralar20260807.map(m=>m.slug));
-const superseded20260807=(slug:string)=>gunlukKaliteSlugs20260807.has(slug)||gun2Slugs20260807.has(slug);
-const candidates:EnrichedMera[]=[
-  ...temelMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(baseDefaults),
-  ...gunlukMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(baseDefaults),
-  ...beykozMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(baseDefaults),
-  ...kocaeliIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(m=>withResearch(m,kocaeliMeta[m.slug])),
-  ...istanbulIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(baseDefaults),
-  ...gunlukIyilestirmeler20260801.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(baseDefaults),
-  ...gunlukIyilestirmeler20260802.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(m=>withResearch(m,gunlukMeta20260802[m.slug])),
-  ...kaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(baseDefaults),
-  ...gunlukKaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)).map(baseDefaults),
-  ...gun1Meralar20260804.filter(m=>!superseded20260807(m.slug)).map(baseDefaults),
-  ...national.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!superseded20260807(m.slug)),
+export const retiredRouteSlugs=new Set<string>([
+  ...retiredRouteSlugs20260803,
+  "cubuklu-beykoz-sahili",
+  "maltepe-sahili",
+  "pendik-sahili",
+  "basiskele-sahili",
+]);
+
+// Katmanlar eskiden yeniye sıralıdır. Aynı slug'ın en yeni sürümü kazanır.
+// Bu tek geçişli birleştirme hem yinelenen canlı sayfaları hem de katmanlar arası kaçakları önler.
+const localLayers:EnrichedMera[]=[
+  ...temelMeralar.map(baseDefaults),
+  ...gunlukMeralar.map(baseDefaults),
+  ...beykozMeralar.map(baseDefaults),
+  ...kocaeliIyilestirmeler.map((m)=>withResearch(m,kocaeliMeta[m.slug])),
+  ...istanbulIyilestirmeler.map(baseDefaults),
+  ...gunlukIyilestirmeler20260801.map(baseDefaults),
+  ...gunlukIyilestirmeler20260802.map((m)=>withResearch(m,gunlukMeta20260802[m.slug])),
+  ...kaliteIyilestirmeleri20260803.map(baseDefaults),
+  ...gunlukKaliteIyilestirmeleri20260803.map(baseDefaults),
+  ...gun1Meralar20260804.map(baseDefaults),
   ...gunlukKaliteIyilestirmeleri20260807.map(baseDefaults),
   ...gun2Meralar20260807.map(baseDefaults),
+].filter((m)=>!retiredRouteSlugs.has(m.slug));
+const localBySlug=new Map<string,EnrichedMera>();
+for(const route of localLayers)localBySlug.set(route.slug,route);
+export const meralar:EnrichedMera[]=[
+  ...localBySlug.values(),
+  ...national.filter((m)=>!retiredRouteSlugs.has(m.slug)&&!localBySlug.has(m.slug)),
 ];
-// Tarihsel iyileştirme katmanlarında aynı slug birden fazla kez bulunabiliyor. En son katman canlı kaydı belirler.
-export const meralar:EnrichedMera[]=[...new Map(candidates.map(m=>[m.slug,m])).values()];
+
+const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
+if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
 
 export const nationalCoordinateStats={resolved:ulusalKoordinatMeta.resolvedCount,unresolved:ulusalKoordinatMeta.unresolvedCount,generatedAt:ulusalKoordinatMeta.generatedAt};
 export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length+gunlukKaliteIyilestirmeleri20260807.length+gun2Meralar20260807.length};

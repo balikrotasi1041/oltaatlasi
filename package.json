@@ -5,14 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "validate:data": "node scripts/validate-route-data.mjs",
+    "validate:routes": "node scripts/validate-route-data.mjs",
+    "validate:duplicates": "tsx scripts/detect-route-duplicates.mjs",
+    "validate:maintenance": "tsx scripts/audit-route-maintenance.mjs && node scripts/validate-worker-redirects.mjs",
+    "validate:data": "npm run validate:routes && npm run validate:duplicates && npm run validate:maintenance",
+    "audit:sources": "tsx scripts/audit-source-health.mjs",
     "validate:research": "node scripts/run-with-node-data-imports.mjs scripts/validate-national-research.mjs",
     "geocode:national": "node scripts/geocode-national-routes.mjs",
     "research:national": "node scripts/run-with-node-data-imports.mjs scripts/enrich-national-routes-fast.mjs",
     "build": "npm run validate:data && npm run generate:robots && astro check && astro build && npm run generate:image-sitemap",
     "preview": "astro preview",
     "check": "astro check",
-    "generate:robots": "node scripts/generate-robots.mjs",
+    "generate:robots": "tsx scripts/generate-robots.mjs",
     "generate:image-sitemap": "node scripts/generate-image-sitemap.mjs",
     "deploy": "wrangler deploy",
     "deploy:dry": "wrangler deploy --dry-run"
@@ -25,6 +29,7 @@
   },
   "description": "Olta Atlası: avlak haritası, balık türleri, görselli yöntem rehberleri ve kaynaklı dünya balıkçılık günlüğü.",
   "devDependencies": {
+    "tsx": "^4.23.11",
     "wrangler": "^4.112.0"
   },
   "engines": {

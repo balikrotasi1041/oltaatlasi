@@ -46,6 +46,51 @@ const normalizeLegacy=(rehber:EskiRehber):Rehber=>({
   sources:[officialSource]
 });
 
+export const sazanMisirRehberi:Rehber={
+  slug:"sazan-icin-misir-hazirlama",
+  title:"Sazan İçin Mısır Hazırlama: Haşlama ve Takma",
+  category:"Yem",
+  summary:"Kuru ve konserve mısırı tane yapısını bozmadan hazırlama; haşlama işaretleri, saklama, iğne ve saçlı takım sunumu.",
+  icon:"🌽",
+  publishedAt:"2026-07-18",
+  updatedAt:"2026-08-07",
+  readingTime:9,
+  author:"Olta Atlası Editörlüğü",
+  difficulty:"Başlangıç",
+  targetSpecies:["Sazan"],
+  sections:[
+    {
+      title:"Kuru mısırı beklet ve kontrollü haşla",
+      intro:"Kuru mısırın amacı ham taneyi yalnızca ısıtmak değil, içini iğne veya saçlı takımda kullanılabilecek kadar eşit yumuşatmaktır. Tane yaşı ve kuruluğu süreyi değiştirdiği için saate değil, kıvam kontrolüne göre bitir.",
+      items:["Taneleri ayıkla ve temiz suyla yıka; küflü, böceklenmiş veya kötü kokulu mısırı kullanma.","Mısırı bol temiz suda 12–24 saat beklet. Suyu emen taneler belirgin şişer; sıcak ortamda bekletiyorsan suyu yenile.","Bekletme suyunu dök, taze su ekle ve hafif kaynamada yaklaşık 45–90 dakika kontrollü haşla. Su azaldıkça sıcak su ekle; kuru tencere bırakma.","Bir taneyi soğutup ikiye kes: tebeşirimsi-sert merkez kalmıyor, tane ezildiğinde içi yumuşuyor ama kabuğu dağılmadan duruyorsa kullanım kıvamına yaklaşmıştır.","Haşlanan mısırı kapalı sıcak kapta kendi hâline bırakma; sığ bir kaba alıp hızla soğut ve kullanacağın miktarı ayır."],
+    },
+    {
+      title:"Konserve mısırı ezmeden hazırla",
+      intro:"Konserve mısır önceden pişmiş olduğu için yeniden uzun süre haşlanmaya ihtiyaç duymaz. Buradaki asıl seçim, kancaya takılırken dağılmayan sağlam taneleri ayırmaktır.",
+      items:["Kutunun ve ürünün son kullanım koşullarını kontrol et; şişmiş, sızdıran veya hasarlı ambalajı kullanma.","Gereken küçük porsiyonu süz. Taneleri bastırarak kurutma; yüzey suyunu temiz bir süzgeçte bırakman yeterlidir.","Kabuk bütünlüğü olan, parmak arasında hafif basınca direnen taneleri seç; ezilmiş taneleri iğne yemi yerine kontrollü yemleme karışımında az miktarda değerlendir veya at.","Bütün kutuyu kıyıya taşımak yerine tek avlık küçük, kapalı bir kaba ayır; güneş altında açık kapta bekletme."],
+    },
+    {
+      title:"İğneye ve saçlı takıma doğru tak",
+      intro:"Mısırın kancada kalması kadar iğnenin işini yapabilmesi de önemlidir. İğne ucunu ve açıklığını tanelerle kapatmak, sunumu büyütürken kancalama payını azaltabilir.",
+      items:["Doğrudan iğnede taneyi kabuğun daha sağlam yanından geçir; iğne ucu ile ağız açıklığını görünür ve serbest bırak.","Tek taneyle başla. İğne boyu ve hedef balık uygun değilse art arda çok tane sıkıştırma.","Saçlı takımda bir ila üç sağlam taneyi yem iğnesiyle saça geçirip stoperle sabitle; ana iğne mısırın dışında tamamen serbest kalsın.","Atıştan önce takımı su dolu bir kapta ve ardından hafif çekişle dene. Tane kolay sıyrılıyorsa daha sağlam tane seç veya saç/stoper boyunu düzelt.","Küçük balık baskısında yalnızca tane sayısını artırmak yerine daha sağlam tane, daha kısa bekleme veya farklı sunum dene."],
+    },
+    {
+      title:"Küçük porsiyonla soğut, sakla ve taşı",
+      intro:"Hazırlanmış mısırı av yemi olarak kullanacak olsan da temiz mutfak ve soğuk saklama disiplini uygula. Bozulmuş yem hem ekipmanı kirletir hem de kıyıda gereksiz atık oluşturur.",
+      items:["Haşlanmış mısırı sığ, temiz bir kapta hızla soğut; iki saat içinde kapalı biçimde 4°C veya daha soğuk buzdolabına al.","Bir-iki avda kullanacağın küçük porsiyonlar hazırla. En geç iki gün içinde kullanmayacağın kısmı tek avlık porsiyonlarla dondur; çözünen porsiyonu tekrar tekrar dondurma.","Kıyıya yalıtımlı soğuk çantada taşı; güneşte, araç içinde veya sıcak kapta saatlerce bırakma.","Küf, sümüksü yüzey, gazlanma veya olağandışı kötü/ekşi koku varsa tadına bakmadan at. Bu kap ve gereçleri insan yiyeceği için kullanmadan önce iyice temizle."],
+    },
+    {
+      title:"Güvenli ve ölçülü kullan",
+      intro:"Mısır hazırlama süreci kontrollü yem sunumudur; kapalı kapta gelişigüzel fermantasyon deneyi veya suya büyük miktarda yem boşaltma uygulaması değildir.",
+      items:["Sıcak mısırı ağzı sıkı kapalı bir kapta bekletme; basınç, dökülme ve yanık riski yaratacak hazırlıklardan kaçın.","İğne, yem iğnesi ve saç stoperlerini çocuklardan ve evcil hayvanlardan uzak tut; hazırlık bittikten sonra tüm keskin parçaları sayıp kapalı kutuya kaldır.","Yalnızca kullanacağın kadar yem götür. Artanı suya veya kıyıya dökme; kapalı biçimde geri götür ve yerel atık sistemine ver.","Yoğun yemleme, yem türü veya alan kullanımı için yerel kural ve güncel amatör avcılık mevzuatını kontrol et; izin belirsizse yemleme yapma.","Mısır bir av garantisi değildir. Sunumu su sıcaklığı, küçük balık baskısı, takım ve mevzuata göre değiştir."],
+    },
+  ],
+  sources:[
+    officialSource,
+    {label:"Tarım ve Orman Bakanlığı — Güvenilir gıda için soğutma",url:"https://guvenilirgida.tarimorman.gov.tr/Haber/Detay/15501",note:"Pişmiş gıdayı iki saat içinde soğutma, 4°C veya altında saklama ve sığ kapta hızlı soğutma için resmî hijyen ilkeleri; rehberde yem hazırlığına ihtiyatlı biçimde uygulanmıştır."},
+  ],
+};
+
 export const palomarRehberi:Rehber={
   slug:"palomar-dugumu",
   title:"Palomar Düğümü: Fırdöndü ve İğne Bağlantısı",
@@ -123,5 +168,5 @@ export const yildirimGuvenligiRehberi:Rehber={
   ]
 };
 
-export const rehberler:Rehber[]=[yildirimGuvenligiRehberi,kiyiAkintiOkumaRehberi,palomarRehberi,...eskiRehberler.map(normalizeLegacy)];
+export const rehberler:Rehber[]=[yildirimGuvenligiRehberi,kiyiAkintiOkumaRehberi,palomarRehberi,sazanMisirRehberi,...eskiRehberler.filter((rehber)=>rehber.slug!==sazanMisirRehberi.slug).map(normalizeLegacy)];
 export const rehberKategorileri=[...new Set(rehberler.map((rehber)=>rehber.category))].sort((a,b)=>a.localeCompare(b,"tr"));

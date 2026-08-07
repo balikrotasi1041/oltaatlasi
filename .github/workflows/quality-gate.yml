@@ -57,7 +57,7 @@ jobs:
         if: steps.guard.outputs.needs_check == 'true'
         run: npm ci
 
-      - name: Validate route data
+      - name: Validate route data, duplicate radar and maintenance audit
         if: steps.guard.outputs.needs_check == 'true'
         run: npm run validate:data
 
