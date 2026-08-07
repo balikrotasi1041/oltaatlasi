@@ -10,7 +10,7 @@
 - İl ve ilçe merkez sayfaları
 - Navigasyon bağlantıları, kaynak notları ve güven seviyeleri
 - Görsel site haritası ve standart XML site haritaları
-- Google Analytics 4: `G-K3ZLC335GP`
+- Google Analytics 4: `G-VRTYGZD66T`
 
 ## Yerel geliştirme
 

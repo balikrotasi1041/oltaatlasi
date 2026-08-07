@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import worker from "../worker/index.js";
 
 const originalFetch = globalThis.fetch;
@@ -60,6 +61,16 @@ const callAdminApi = async (path, env = baseEnv) => {
 };
 
 try {
+  const measurementId = "G-VRTYGZD66T";
+  const [layoutSource, auditSource] = await Promise.all([
+    readFile(new URL("../src/layouts/BaseLayout.astro", import.meta.url), "utf8"),
+    readFile(new URL("../worker/audit-router.js", import.meta.url), "utf8"),
+  ]);
+  assert.match(layoutSource, new RegExp(measurementId));
+  assert.match(auditSource, new RegExp(measurementId));
+  assert.doesNotMatch(layoutSource, /G-K3ZLC335GP/);
+  assert.doesNotMatch(auditSource, /G-K3ZLC335GP/);
+
   const searchConsole = await callAdminApi("/admin/api/search-console?days=28");
   assert.equal(searchConsole.response.status, 200);
   assert.equal(searchConsole.payload.connected, true);

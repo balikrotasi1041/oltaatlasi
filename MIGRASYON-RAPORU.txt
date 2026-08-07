@@ -4,7 +4,7 @@ Tarih: 26.07.2026
 HAZIRLANAN KAYNAK
 - Marka: Olta Atlası
 - Birincil alan adı: https://oltaatlasi.com
-- Google Analytics 4: G-K3ZLC335GP
+- Google Analytics 4: G-VRTYGZD66T
 - Search Console doğrulama dosyası: google971680255e7e73d7.html
 - Standart sitemap: sitemap-index.xml ve sitemap-0.xml
 - Görsel sitemap: sitemap-images.xml

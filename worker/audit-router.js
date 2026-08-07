@@ -1,7 +1,7 @@
 import dashboardWorker from "./router.js";
 
 const AUDIT_PATH = "/admin/api/audit-export";
-const SITE_GA4_MEASUREMENT_ID = "G-K3ZLC335GP";
+const SITE_GA4_MEASUREMENT_ID = "G-VRTYGZD66T";
 const CLOUDFLARE_EXPORT_DAYS = 7;
 
 const secureJson = (payload, status = 200, download = false) => {

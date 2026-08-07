@@ -172,7 +172,7 @@ const websiteSchema = {
       const consentKey="oltaatlasi-analytics-consent";
       const consentBanner=document.querySelector("#consent-banner");
       let analyticsLoaded=false;
-      const loadAnalytics=()=>{if(analyticsLoaded)return;analyticsLoaded=true;const script=document.createElement("script");script.async=true;script.src="https://www.googletagmanager.com/gtag/js?id=G-K3ZLC335GP";document.head.appendChild(script);window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};window.gtag("js",new Date());window.gtag("config","G-K3ZLC335GP",{anonymize_ip:true});};
+      const loadAnalytics=()=>{if(analyticsLoaded)return;analyticsLoaded=true;const script=document.createElement("script");script.async=true;script.src="https://www.googletagmanager.com/gtag/js?id=G-VRTYGZD66T";document.head.appendChild(script);window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};window.gtag("js",new Date());window.gtag("config","G-VRTYGZD66T",{anonymize_ip:true});};
       const savedConsent=localStorage.getItem(consentKey);
       if(savedConsent==="granted")loadAnalytics();else if(!savedConsent)consentBanner.hidden=false;
       document.querySelector("#consent-accept")?.addEventListener("click",()=>{localStorage.setItem(consentKey,"granted");consentBanner.hidden=true;loadAnalytics();});
