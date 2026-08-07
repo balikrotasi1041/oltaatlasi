@@ -168,5 +168,33 @@ export const yildirimGuvenligiRehberi:Rehber={
   ]
 };
 
-export const rehberler:Rehber[]=[yildirimGuvenligiRehberi,kiyiAkintiOkumaRehberi,palomarRehberi,sazanMisirRehberi,...eskiRehberler.filter((rehber)=>rehber.slug!==sazanMisirRehberi.slug).map(normalizeLegacy)];
+export const kiyiAlanPaylasimiEtikRehberi:Rehber={
+  slug:"kiyida-alan-paylasimi-ve-atis-etigi",
+  title:"Kıyıda Alan Paylaşımı ve Atış Etiği",
+  category:"Etik",
+  summary:"Ortak kullanılan kıyıda atış koridorunu, geçiş yolunu ve diğer su kullanıcılarını hesaba katarak daha güvenli ve saygılı avlanma düzeni kur.",
+  icon:"🤝",
+  publishedAt:"2026-08-07",
+  updatedAt:"2026-08-07",
+  readingTime:8,
+  author:"Olta Atlası Editörlüğü",
+  difficulty:"Başlangıç",
+  targetSpecies:["Genel kullanım"],
+  cover:"/images/rehberler/kiyida-alan-paylasimi-ve-atis-etigi-kapak.svg",
+  sections:[
+    {title:"Yer seçmeden önce ortak alanı oku",intro:"Boş görünen bir kıyı parçası yalnızca balıkçıya ait değildir. Yaya yolu, yüzme hattı, tekne yanaşması, bisiklet geçişi veya başka balıkçıların takımları aynı alanı paylaşabilir; etik yer seçimi önce bu hareketleri görmeyi gerektirir.",items:["Kamışı açmadan önce birkaç dakika çevreyi izle; insanların hangi hattan yürüdüğünü, teknelerin nereden yaklaşıp ayrıldığını ve diğer oltaların hangi yöne çalıştığını belirle.","Başka bir balıkçıya yakın yerleşeceksen sessizce selam verip hangi yöne attığını sor; yalnızca metre hesabına değil, iki takımın gerçek çalışma alanına göre mesafe bırak.","Yüzücü, çocuk, evcil hayvan veya yoğun yaya trafiği atış hattına giriyorsa daha kısa atışa geçmek yerine mümkünse başka bir nokta seç.","Yerel tabela, işletme kuralı, erişim sınırı veya geçici güvenlik uyarısı varsa kişisel alışkanlığını değil sahadaki kuralı esas al."]},
+    {title:"Atış koridorunu her atışta yeniden kontrol et",intro:"İlk atışın güvenli olması sonraki atışların da güvenli olduğu anlamına gelmez. Kıyıdaki insan ve tekne hareketi dakikalar içinde değişebilir; bu nedenle atış koridoru sabit bir hak değil, her seferinde yeniden doğrulanan geçici bir boşluktur.",items:["Kurşunu veya sahteni geriye almadan önce omuz üzerinden arkanı ve iki yanını kontrol et; yakınında insan varsa atışı ertele.","Kalabalık bölgede geniş yan savurma yerine kontrollü, daha kısa ve öngörülebilir hareket kullan; güvenli atış biçimini sağlayamıyorsan atma.","Yanındaki balıkçının misinası akıntıyla senin önüne taşındıysa üzerinden atmaya çalışma; iki takımın ayrılması için bekle veya açını değiştir.","Atış yapacağını sesli biçimde haber vermek özellikle dar iskele ve gece avında faydalıdır; fakat uyarı vermek güvenli alan kontrolünün yerine geçmez."]},
+    {title:"Geçiş yolunu ekipman deposuna çevirmeme",intro:"Kamış ayağı, açık takım çantası ve yerde uzanan misina, sahibine düzenli görünse bile yürüyen biri için takılma tehlikesidir. Ortak alan etiği, kendi ekipmanını başkalarının hareket alanından çekmeyi gerektirir.",items:["Kova, çanta ve kamışlıkları ana geçiş hattının dışına topla; özellikle merdiven, rampa, iskele babası ve tekne bağlama noktalarını boş bırak.","Yedek takımları çıplak iğnelerle yerde bırakma; iğneleri koruyucuya, köpüğe veya kapalı takım kutusuna sabitle.","Uzun saplı kepçeyi geçiş yoluna çapraz uzatma; kullanmadığın zaman kıyıya paralel ve devrilmeyecek biçimde konumlandır.","Tekne yanaşması veya acil geçiş gerektiğinde ‘önce takımımı toplayayım’ diye alanı tutma; hızla ve güvenli biçimde yol ver."]},
+    {title:"Karışan takımı tartışmaya değil çözüme çevir",intro:"Akıntı, rüzgâr ve kalabalık kıyıda iki misinanın karışması bazen kaçınılmazdır. Etik sınav, karışmanın hiç yaşanmaması değil; balık, ekipman ve insan güvenliğini öne alarak sorunu büyütmeden çözmektir.",items:["Takımlar karıştığında iki taraf da sarımı durdursun; önce hangi misinanın üstte olduğunu ve iğnelerin nerede bulunduğunu görünür hâle getir.","Balık bağlıysa boş takımın sahibi mümkün olduğunca gevşeklik versin; balığı kıyıya alma süreci bittikten sonra düğümü çözmeye çalış.","Kesmek gerekiyorsa kimin hatalı olduğunu tartışmadan önce kesilen misina ve iğne parçalarının tamamını topla; suya veya taş arasına bırakma.","Aynı açı sürekli karışma yaratıyorsa yalnızca birbirinden daha uzağa atmak yerine atış yönünü, kurşun ağırlığını veya kıyıdaki yerleşimi değiştir."]},
+    {title:"Yaban hayatı ve kıyı düzeni için geri çekilmeyi bil",intro:"Etik avcılık bazen iyi görünen bir noktadan vazgeçmektir. Kuşların, kıyı bitkilerinin, yuvalama alanlarının veya diğer kullanıcıların baskı altında olduğu yerde birkaç metre geri çekilmek, av veriminden daha değerli olabilir.",items:["Kuşların kıyıya yaklaşmaktan vazgeçtiğini, alarm davranışı gösterdiğini veya yuva çevresinde huzursuzlaştığını görürsen alanı sessizce terk et.","Bitki örtüsünü keserek yeni patika açma; mevcut kamusal geçişleri ve çıplak zemini kullan.","Misina, iğne, yem ambalajı ve kopmuş takım parçalarını geri götür; mümkünse başkasının bıraktığı tehlikeli misinayı da güvenli biçimde topla.","Kalabalık, tekne trafiği veya yaya hareketi güvenli atışı artık mümkün kılmıyorsa ‘yerimi aldım’ düşüncesine tutunma; avı bitir veya daha uygun bir noktaya geç.","Tür, boy, adet, dönem ve alan kurallarını avdan önce güncel resmî kaynaklardan kontrol et; etik tercih hiçbir zaman mevzuata aykırı uygulamayı meşrulaştırmaz."]}
+  ],
+  sources:[
+    officialSource,
+    {label:"U.S. Fish & Wildlife Service — A Guide to Fishing for the First Time",url:"https://www.fws.gov/story/guide-fishing-first-time",note:"Atıştan önce çevreyi kontrol etme, insanların yakınında atış yapmama ve misina atığını yaban hayatından uzak tutma gibi temel güvenlik ve sorumlu balıkçılık ilkeleri."},
+    {label:"Natural Resources Wales — The Angling Code",url:"https://www.cyfoethnaturiolcymru.gov.uk/days-out/the-countryside-codes/the-angling-code/?lang=en",note:"Diğer balıkçılara uygun mesafe bırakma, diğer su kullanıcılarının geçişine saygı gösterme, hassas kıyı habitatlarını ve yaban hayatını rahatsız etmeme ilkelerini açıklar."},
+    {label:"Broads Authority — Angling",url:"https://www.broads-authority.gov.uk/looking-after/managing-land-and-water/recreation-and-tourism/angling",note:"Ortak kullanılan kıyı ve bağlama alanlarında teknelere yol verme, geçiş yolunu takımla kapatmama, tabela ve yerel kurallara uyma için uygulamalı örnekler sunar."}
+  ]
+};
+
+export const rehberler:Rehber[]=[kiyiAlanPaylasimiEtikRehberi,yildirimGuvenligiRehberi,kiyiAkintiOkumaRehberi,palomarRehberi,sazanMisirRehberi,...eskiRehberler.filter((rehber)=>rehber.slug!==sazanMisirRehberi.slug).map(normalizeLegacy)];
 export const rehberKategorileri=[...new Set(rehberler.map((rehber)=>rehber.category))].sort((a,b)=>a.localeCompare(b,"tr"));
