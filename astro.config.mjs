@@ -1,15 +1,1 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import { meralar } from "./src/data/meralar-tumu.ts";
-
-const site = process.env.PUBLIC_SITE_URL || "https://oltaatlasi.com";
-const preliminaryRoutePaths = new Set(
-  meralar.filter((route) => route.confidence === "D").map((route) => `/meralar/${route.slug}/`),
-);
-
-export default defineConfig({
-  site,
-  integrations: [sitemap({ filter: (page) => !preliminaryRoutePaths.has(new URL(page).pathname) })],
-  output: "static",
-  build: { format: "directory" },
-});
+m«ëˆ§½©buªàºg§µ«-®‡(ø š;±¨m«ë€İ…¹îš(§~)^¢‹­~)^mºŞjFëy©ÊyÚ.¶›­º˜§¶‰bë(~W§‚Øgº`İuç(uç^r‡^Šzn¶^–—b²™ZÊØb²g¬±¨Š)éºØ§¦ë_ŠWyö®–×è®Ë]Šz(ºÚn¶‹­¦ë_ŠWyö®–×è®Ë]¢ë

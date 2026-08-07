@@ -1,27 +1,1 @@
-import { readFileSync, readdirSync } from "node:fs";
-import { meralar } from "../src/data/meralar-tumu.ts";
-
-const errors=[];
-const sitemapFiles=readdirSync("dist").filter((name)=>/^sitemap.*\.xml$/i.test(name));
-const sitemapXml=sitemapFiles.map((name)=>readFileSync(`dist/${name}`,"utf8")).join("\n");
-let preliminaryCount=0,indexableCount=0;
-
-for(const route of meralar){
-  const html=readFileSync(`dist/meralar/${route.slug}/index.html`,"utf8");
-  const url=`https://oltaatlasi.com/meralar/${route.slug}/`;
-  if(route.confidence==="D"){
-    preliminaryCount+=1;
-    if(!/name="robots" content="noindex,nofollow"/i.test(html))errors.push(`${route.slug}: GÃ¼ven D sayfasÄ±nda noindex,nofollow yok.`);
-    if(html.includes('"@type":"Article"'))errors.push(`${route.slug}: GÃ¼ven D sayfasÄ±nda Article ÅŸemasÄ± yayÄ±mlanÄ±yor.`);
-    if(sitemapXml.includes(url))errors.push(`${route.slug}: GÃ¼ven D URL sitemap iÃ§inde kaldÄ±.`);
-  }else{
-    indexableCount+=1;
-    if(/name="robots" content="noindex/i.test(html))errors.push(`${route.slug}: GÃ¼ven ${route.confidence} sayfasÄ± yanlÄ±ÅŸlÄ±kla noindex.`);
-    if(!sitemapXml.includes(url))errors.push(`${route.slug}: indekslenebilir rota sitemap iÃ§inde yok.`);
-  }
-}
-
-console.log(`Ä°ndeks politikasÄ±: ${indexableCount} A/B/C rota indekslenebilir, ${preliminaryCount} D araÅŸtÄ±rma kaydÄ± noindex ve sitemap dÄ±ÅŸÄ±; ${errors.length} hata.`);
-for(const error of errors.slice(0,200))console.error(`HATA: ${error}`);
-if(errors.length>200)console.error(`HATA: ${errors.length-200} ek hata daha var.`);
-if(errors.length)process.exit(1);
+m«ëˆ§½©buªàºg§¶Ç+Š›lşö¥‰Ö­z)İ{h–'2š;±¨m«ë€İ…¹îš(§~)^¢‹­~)^mºŞjFëy©ÊyÚ.¶›­º˜§¶‰bë(~W§‚Øgº`İuç(uç^r‡^Šzn¶^–—b²™ZÊØb²g¬±¨Š)éºØ§¦ë_ŠWyö®–×è®Ë]Šz(ºÚn¶‹­¦ë_ŠWyö®–×è®Ë]¢ë
