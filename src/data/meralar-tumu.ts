@@ -9,6 +9,9 @@ import { gunlukIyilestirmeler20260802, gunlukIyilestirmeMeta20260802 } from "./m
 import { kaliteIyilestirmeleri20260803, retiredRouteSlugs20260803 } from "./meralar-kalite-iyilestirme-2026-08-03";
 import { gunlukKaliteIyilestirmeleri20260803 } from "./meralar-gunluk-kalite-2026-08-03";
 import { gun1Meralar20260804 } from "./meralar-gun1-2026-08-04";
+import { gun1EkMeralar20260804 } from "./meralar-gun1-ek-2026-08-04";
+import { gun2Meralar20260805 } from "./meralar-gun2-2026-08-05";
+import { gun3Meralar20260806 } from "./meralar-gun3-2026-08-06";
 import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
 import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
@@ -48,18 +51,22 @@ const gunlukIyilestirmeSlugs20260801=new Set(gunlukIyilestirmeler20260801.map(m=
 const gunlukIyilestirmeSlugs20260802=new Set(gunlukIyilestirmeler20260802.map(m=>m.slug));
 const kaliteIyilestirmeSlugs20260803=new Set(kaliteIyilestirmeleri20260803.map(m=>m.slug));
 const gunlukKaliteSlugs20260803=new Set(gunlukKaliteIyilestirmeleri20260803.map(m=>m.slug));
-const overridden=(slug:string)=>beykozSlugs.has(slug)||kocaeliSlugs.has(slug)||istanbulSlugs.has(slug)||gunlukIyilestirmeSlugs20260801.has(slug)||gunlukIyilestirmeSlugs20260802.has(slug)||kaliteIyilestirmeSlugs20260803.has(slug)||gunlukKaliteSlugs20260803.has(slug);
+const seriesSlugs=new Set([...gun1Meralar20260804,...gun1EkMeralar20260804,...gun2Meralar20260805,...gun3Meralar20260806].map(m=>m.slug));
+const overridden=(slug:string)=>beykozSlugs.has(slug)||kocaeliSlugs.has(slug)||istanbulSlugs.has(slug)||gunlukIyilestirmeSlugs20260801.has(slug)||gunlukIyilestirmeSlugs20260802.has(slug)||kaliteIyilestirmeSlugs20260803.has(slug)||gunlukKaliteSlugs20260803.has(slug)||seriesSlugs.has(slug);
 export const meralar:EnrichedMera[]=[
   ...temelMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)).map(baseDefaults),
   ...gunlukMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)).map(baseDefaults),
-  ...beykozMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!istanbulSlugs.has(m.slug)).filter(m=>!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
-  ...kocaeliIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(m=>withResearch(m,kocaeliMeta[m.slug])),
-  ...istanbulIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
-  ...gunlukIyilestirmeler20260801.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
-  ...gunlukIyilestirmeler20260802.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(m=>withResearch(m,gunlukMeta20260802[m.slug])),
-  ...kaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(baseDefaults),
-  ...gunlukKaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)).map(baseDefaults),
+  ...beykozMeralar.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!istanbulSlugs.has(m.slug)&&!seriesSlugs.has(m.slug)).filter(m=>!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)).map(baseDefaults),
+  ...kocaeliIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)&&!seriesSlugs.has(m.slug)).map(m=>withResearch(m,kocaeliMeta[m.slug])),
+  ...istanbulIyilestirmeler.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260801.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)&&!seriesSlugs.has(m.slug)).map(baseDefaults),
+  ...gunlukIyilestirmeler20260801.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!gunlukIyilestirmeSlugs20260802.has(m.slug)&&!seriesSlugs.has(m.slug)).map(baseDefaults),
+  ...gunlukIyilestirmeler20260802.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!seriesSlugs.has(m.slug)).map(m=>withResearch(m,gunlukMeta20260802[m.slug])),
+  ...kaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!seriesSlugs.has(m.slug)).map(baseDefaults),
+  ...gunlukKaliteIyilestirmeleri20260803.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!seriesSlugs.has(m.slug)).map(baseDefaults),
   ...gun1Meralar20260804.map(baseDefaults),
+  ...gun1EkMeralar20260804.map(baseDefaults),
+  ...gun2Meralar20260805.map(baseDefaults),
+  ...gun3Meralar20260806.map(baseDefaults),
   ...national.filter(m=>!retiredRouteSlugs20260803.has(m.slug)&&!overridden(m.slug)),
 ];
 
