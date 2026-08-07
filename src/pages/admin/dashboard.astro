@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { meralar, provinces, fishOptions, districtsByProvince } from "../../data/meralar-tumu";
+import { meralar, provinces, fishOptions, districtsByProvince, contentQualityAudit, contentQualityStats } from "../../data/meralar-tumu";
 
-const weakSources = meralar.filter((m) => !m.sources || m.sources.length < 2);
-const weakTransport = meralar.filter((m) => !m.transport || m.transport.length < 90 || /güncel harita uygulaması|genel erişim bölgesine gider/i.test(m.transport));
-const weakAccommodation = meralar.filter((m) => !m.accommodationOptions?.length && !/konaklama|otel|pansiyon|ilçe merkezi|yerleşim/i.test(`${m.transport} ${m.planningNotes.join(" ")} ${m.amenities.join(" ")}`));
-const weakLocality = meralar.filter((m) => !m.shoreProfile || m.shoreProfile.length < 100 || /şehir içi ve düzenlenmiş bölümler|yerel engellerin bir arada/i.test(m.shoreProfile));
-const weakResearch = meralar.filter((m) => /pilot veri/i.test(m.verification));
+const weakSources = contentQualityAudit.sources;
+const weakTransport = contentQualityAudit.transport;
+const weakAccommodation = contentQualityAudit.accommodation;
+const weakLocality = contentQualityAudit.locality;
+const weakResearch = contentQualityAudit.research;
 const totalDistricts = Object.values(districtsByProvince).reduce((sum, districts) => sum + districts.length, 0);
 const byConfidence = ["A", "B", "C", "D"].map((level) => {
   const count = meralar.filter((m) => m.confidence === level).length;
@@ -26,7 +26,8 @@ const issues = [
   { label: "Kıyı profili şablon", count: weakLocality.length },
   { label: "Pilot doğrulama", count: weakResearch.length },
 ].sort((a, b) => b.count - a.count);
-const qualityScore = Math.max(0, Math.round(100 - (issues.reduce((sum, item) => sum + item.count, 0) / Math.max(1, meralar.length * issues.length)) * 100));
+const confidenceWeight:Record<string,number> = { A: 1, B: 0.8, C: 0.6, D: 0.15 };
+const evidenceScore = Math.round((meralar.reduce((sum, route) => sum + (confidenceWeight[route.confidence] || 0), 0) / Math.max(1, meralar.length)) * 100);
 const queue = meralar
   .map((m) => ({
     m,
@@ -51,7 +52,7 @@ const queue = meralar
           <h1>SEO, kullanıcı, altyapı ve içerik merkezi</h1>
           <p>Search Console, GA4, Cloudflare ve aktif avlak veri katmanını tek ekranda birleştirir.</p>
         </div>
-        <div class="score"><span>İçerik kalite puanı</span><strong>{qualityScore}</strong><small>100 üzerinden</small></div>
+        <div class="score"><span>Kanıt güven puanı</span><strong>{evidenceScore}</strong><small>A/B/C oranı yükseldikçe artar</small></div>
       </header>
 
       <section class="panel" aria-labelledby="ga4-title">
@@ -124,7 +125,7 @@ const queue = meralar
       </div>
 
       <div class="grid">
-        <section class="panel"><h2>Öncelikli eksikler</h2>{issues.map((item) => (<div class="row"><span>{item.label}</span><b>{item.count}</b></div>))}</section>
+        <section class="panel"><h2>Yapısal kalite kapısı · {contentQualityStats.score}/100</h2>{issues.map((item) => (<div class="row"><span>{item.label}</span><b>{item.count}</b></div>))}</section>
         <section class="panel"><h2>Güven seviyesi</h2>{byConfidence.map((item) => (<div class="confidence"><span><b>{item.level}</b> · {item.count} kayıt</span><i><em style={`width: ${item.ratio}%`}></em></i><strong>{item.ratio}%</strong></div>))}</section>
       </div>
 

@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Decide whether scheduled main needs validation
         id: guard
@@ -45,7 +45,7 @@ jobs:
             echo "needs_check=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         if: steps.guard.outputs.needs_check == 'true'
         with:
           node-version-file: .node-version

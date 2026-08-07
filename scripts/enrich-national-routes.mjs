@@ -2,6 +2,7 @@ import { writeFile } from "node:fs/promises";
 import path from "node:path";
 import { ulusalMeralar } from "../src/data/meralar-ulusal.js";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "../src/data/meralar-ulusal-koordinatlar.js";
+import { meaningfulRouteTokens } from "./national-research-matchers.mjs";
 
 const outputFile=path.resolve("src/data/meralar-ulusal-otomatik-arastirma.js");
 const generatedAt=new Date().toISOString();
@@ -192,17 +193,15 @@ const reconstructAbstract=(inverted)=>{
   for(const[word,indexes]of Object.entries(inverted))for(const index of indexes)positions[index]=word;
   return positions.filter(Boolean).join(" ");
 };
-const meaningfulRouteTokens=(route)=>normalize(route.name)
-  .split(" ")
-  .filter((token)=>token.length>3&&!["baraj","golu","goleti","nehri","cayi","deresi","irmagi","sahili","kiyisi","hatti"].includes(token));
 const openAlexResearch=async(route)=>{
-  const query=`"${route.name}" balık fish Turkey`;
+  const tokens=meaningfulRouteTokens(route);
+  if(!tokens.length)return{evidence:[],searchUrl:null};
+  const query=`"${route.name}" "${route.province}" balık fish Turkey`;
   const url=new URL("https://api.openalex.org/works");
   url.searchParams.set("search",query);
   url.searchParams.set("per-page","8");
   url.searchParams.set("mailto",contact);
   const data=await fetchJson(url,{}, {kind:"openalex",gap:220,attempts:3});
-  const tokens=meaningfulRouteTokens(route);
   const evidence=[];
   for(const work of data?.results||[]){
     const title=work.display_name||work.title||"";

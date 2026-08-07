@@ -32,12 +32,15 @@ const readCanonical=html=>{
   for(const pattern of patterns){const match=html.match(pattern);if(match)return match[1];}
   return "";
 };
+const isNoindex=(html)=>/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)
+  || /<meta[^>]+content=["'][^"']*noindex[^"']*["'][^>]+name=["']robots["']/i.test(html);
 
 let files=[];
 try{files=await walk(distDir);}catch(error){console.error("dist klasörü bulunamadı. Önce astro build çalıştırılmalı.");process.exit(1);}
 const records=[];
 for(const file of files){
   const html=await fs.readFile(file,"utf8");
+  if(isNoindex(html))continue;
   const loc=readCanonical(html);
   const image=readMeta(html,"og:image");
   if(!loc||!image||!loc.startsWith("https://oltaatlasi.com/"))continue;

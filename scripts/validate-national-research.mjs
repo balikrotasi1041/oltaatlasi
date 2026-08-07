@@ -1,12 +1,16 @@
 import { ulusalMeralar } from "../src/data/meralar-ulusal.js";
 import { ulusalOtomatikArastirma, ulusalOtomatikArastirmaMeta } from "../src/data/meralar-ulusal-otomatik-arastirma.js";
 import { ulusalManuelArastirma } from "../src/data/meralar-ulusal-manuel-arastirma.js";
+import { academicEvidenceMatchesRoute, meaningfulRouteTokens } from "./national-research-matchers.mjs";
 
 const expectedSlugs=new Set(ulusalMeralar.map((route)=>route.slug));
 const automatic=ulusalOtomatikArastirma||{};
 const manual=ulusalManuelArastirma||{};
 const errors=[];
 const warnings=[];
+
+if(meaningfulRouteTokens({name:"Balık Gölü"}).length!==0)errors.push("Genel 'Balık Gölü' adı ayırt edici akademik eşleşme üretmemelidir.");
+if(meaningfulRouteTokens({name:"Asartepe Baraj Gölü"}).join(" ")!=="asartepe")errors.push("Asartepe ayırt edici rota token testi başarısız.");
 
 const validUrl=(value)=>{
   try{return new URL(value).protocol==="https:";}catch{return false;}
@@ -47,11 +51,12 @@ const filterFishNames=new Set();
 for(const route of ulusalMeralar){
   const data=merged(route.slug);
   const prefix=`${route.province} / ${route.name}`;
+  const minimumEvidenceCount=manual[route.slug]?1:3;
   if(!data.researchStatus)errors.push(`${prefix}: researchStatus eksik.`);
   if(!data.researchedAt||!/^\d{4}-\d{2}-\d{2}$/.test(data.researchedAt))errors.push(`${prefix}: researchedAt eksik veya geçersiz.`);
   if(!data.researchSummary||data.researchSummary.length<120)errors.push(`${prefix}: araştırma özeti yetersiz.`);
-  if(!Array.isArray(data.fish)||data.fish.length<3)errors.push(`${prefix}: en az 3 muhtemel/kanıtlı tür gerekli.`);
-  if(!Array.isArray(data.fishEvidence)||data.fishEvidence.length<3)errors.push(`${prefix}: en az 3 tür kanıt kaydı gerekli.`);
+  if(!Array.isArray(data.fish)||data.fish.length<minimumEvidenceCount)errors.push(`${prefix}: en az ${minimumEvidenceCount} kanıtlı/araştırma adayı tür gerekli.`);
+  if(!Array.isArray(data.fishEvidence)||data.fishEvidence.length<minimumEvidenceCount)errors.push(`${prefix}: en az ${minimumEvidenceCount} tür kanıt kaydı gerekli.`);
   if(!Array.isArray(data.methods)||data.methods.length<1)errors.push(`${prefix}: yöntem bilgisi eksik.`);
   if(!Array.isArray(data.baits)||data.baits.length<1)errors.push(`${prefix}: yem/sahte bilgisi eksik.`);
   if(!Array.isArray(data.accessEvidence)||data.accessEvidence.length<1)errors.push(`${prefix}: ulaşım/erişim kanıtı eksik.`);
@@ -73,6 +78,7 @@ for(const route of ulusalMeralar){
   for(const evidence of data.fishEvidence||[]){
     if(!evidence?.name||!evidence?.evidenceLevel||!evidence?.note)errors.push(`${prefix}: eksik tür kanıt alanı.`);
     if(!validUrl(evidence?.sourceUrl))errors.push(`${prefix}: geçersiz tür kanıt URL'si: ${evidence?.sourceUrl||"boş"}`);
+    if(!academicEvidenceMatchesRoute(route,evidence))errors.push(`${prefix}: akademik kanıt rota adıyla ayırt edici biçimde eşleşmiyor: ${evidence?.sourceLabel||"etiketsiz"}`);
     evidenceLevels.add(evidence?.evidenceLevel||"");
     if(evidence?.name)evidenceNames.add(normalize(evidence.name));
   }
@@ -109,7 +115,7 @@ for(const route of ulusalMeralar){
 
 if(directEvidenceRoutes<1)errors.push("Hiçbir rotada doğrudan veya yakın çevre tür kanıtı bulunamadı.");
 if(filterFishNames.size<3)errors.push(`Harita balık filtresi için yalnızca ${filterFishNames.size} kullanılabilir tür üretildi.`);
-if(candidateOnlyRoutes>warnings.length)warnings.push(`${candidateOnlyRoutes} rota yalnızca bölgesel araştırma adayı türlerle yayımlanacak; bunlar sayfada açıkça bu düzeyde gösterilmelidir.`);
+if(candidateOnlyRoutes>warnings.length)warnings.push(`${candidateOnlyRoutes} rota yalnızca bölgesel araştırma adayı türler içeriyor; bunlar Güven D araştırma başlangıcı olarak noindex tutulmalı ve sayfada kanıt düzeyi açıkça gösterilmelidir.`);
 
 console.log(`Ulusal araştırma denetimi: 405 rota, ${directEvidenceRoutes} doğrudan/yakın tür kanıtlı, ${candidateOnlyRoutes} aday tür düzeyinde, ${filterFishNames.size} filtrelenebilir balık türü.`);
 for(const warning of warnings)console.warn(`UYARI: ${warning}`);

@@ -3,6 +3,17 @@
   "name": "balik-rotasi",
   "main": "./worker/security-router.js",
   "compatibility_date": "2026-07-23",
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "invocation_logs": true,
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    }
+  },
   "assets": {
     "directory": "./dist/",
     "binding": "ASSETS",
