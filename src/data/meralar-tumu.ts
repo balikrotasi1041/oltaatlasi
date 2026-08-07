@@ -55,8 +55,7 @@ const candidates:EnrichedMera[]=[
   ...gunlukKaliteIyilestirmeleri20260807.map(baseDefaults),
   ...gun2Meralar20260807.map(baseDefaults),
 ];
-// Veri katmanları tarihsel olarak aynı slugı birden fazla iyileştirme dosyasında tutabiliyor.
-// Map'e sırayla yazdığımız için en yeni/son katman kazanır ve canlı katalogda her slug yalnız bir kez yayımlanır.
+// Tarihsel iyileştirme katmanlarında aynı slug birden fazla kez bulunabiliyor. En son katman canlı kaydı belirler.
 export const meralar:EnrichedMera[]=[...new Map(candidates.map(m=>[m.slug,m])).values()];
 
 export const nationalCoordinateStats={resolved:ulusalKoordinatMeta.resolvedCount,unresolved:ulusalKoordinatMeta.unresolvedCount,generatedAt:ulusalKoordinatMeta.generatedAt};
@@ -68,7 +67,7 @@ if(invalidFish.length)throw new Error(`Geçersiz balık türü alanı bulunan av
 
 const dashboardWeakSources=meralar.filter((m)=>!m.sources||m.sources.length<2);
 const dashboardWeakTransport=meralar.filter((m)=>!m.transport||m.transport.length<90||/güncel harita uygulaması|genel erişim bölgesine gider/i.test(m.transport));
-const dashboardWeakAccommodation=meralar.filter((m)=>!m.accommodationOptions?.length&&!/konaklama|otel|pansiyon|ilçe merkezi|yerleşim/i.test(`${m.transport} ${m.planningNotes.join(" ")} ${m.amenities.join(" ")}`));
+const dashboardWeakAccommodation=meralar.filter((m)=>!m.accommodationOptions?.length&&!/konaklama|otel|pansiyon|ilçe merkez|yerleşim|gecelik kalış/i.test(`${m.transport} ${m.planningNotes.join(" ")} ${m.amenities.join(" ")}`));
 const dashboardWeakLocality=meralar.filter((m)=>!m.shoreProfile||m.shoreProfile.length<100||/şehir içi ve düzenlenmiş bölümler|yerel engellerin bir arada/i.test(m.shoreProfile));
 const dashboardWeakResearch=meralar.filter((m)=>/pilot veri/i.test(m.verification));
 const dashboardIssueSets=[dashboardWeakSources,dashboardWeakTransport,dashboardWeakAccommodation,dashboardWeakLocality,dashboardWeakResearch];
