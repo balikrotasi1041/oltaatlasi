@@ -1,1 +1,84 @@
-m«ëˆ§½©buªàºg§¶Ç+Š›lþö¥‰Ö­z)Ý{h–'2š;±¨m«ë€Ý…¹îš(§~)^¢‹­~)^mºÞjFëy©ÊyÚ.¶›­º˜§¶‰bë(~W§‚Øgº`Ýuç(uç^r‡^Šzn¶^–—b²™ZÊØb²g¬±¨Š)éºØ§¦ë_ŠWyö®–×è®Ë]Šz(ºÚn¶‹­¦ë_ŠWyö®–×è®Ë]¢ë
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { meralar } from "../src/data/meralar-tumu.ts";
+import { slugifyTr } from "../src/utils/slug.ts";
+
+const errors=[];
+const sitemapFiles=readdirSync("dist").filter((name)=>/^sitemap.*\.xml$/i.test(name));
+const normalSitemapXml=sitemapFiles
+  .filter((name)=>name!=="sitemap-index.xml"&&name!=="sitemap-images.xml")
+  .map((name)=>readFileSync(`dist/${name}`,"utf8")).join("\n");
+const imageSitemapXml=existsSync("dist/sitemap-images.xml")?readFileSync("dist/sitemap-images.xml","utf8"):"";
+let preliminaryCount=0,indexableCount=0;
+
+const htmlPathFor=(url)=>{
+  const pathname=new URL(url).pathname;
+  return pathname==="/"?"dist/index.html":`dist/${pathname.replace(/^\//,"")}index.html`;
+};
+const isNoindex=(html)=>/name="robots" content="noindex/i.test(html);
+const sitemapUrls=[...normalSitemapXml.matchAll(/<loc>(https:\/\/oltaatlasi\.com\/[^<]*)<\/loc>/g)].map((match)=>match[1]);
+for(const url of sitemapUrls){
+  const htmlPath=htmlPathFor(url);
+  if(!existsSync(htmlPath))continue;
+  if(isNoindex(readFileSync(htmlPath,"utf8")))errors.push(`${url}: noindex sayfa normal sitemap iÃ§inde.`);
+}
+for(const match of imageSitemapXml.matchAll(/<loc>(https:\/\/oltaatlasi\.com\/[^<]*)<\/loc>/g)){
+  const url=match[1];
+  const htmlPath=htmlPathFor(url);
+  if(!existsSync(htmlPath))continue;
+  if(isNoindex(readFileSync(htmlPath,"utf8")))errors.push(`${url}: noindex sayfa gÃ¶rsel sitemap iÃ§inde.`);
+}
+
+for(const route of meralar){
+  const html=readFileSync(`dist/meralar/${route.slug}/index.html`,"utf8");
+  const url=`https://oltaatlasi.com/meralar/${route.slug}/`;
+  if(route.confidence==="D"){
+    preliminaryCount+=1;
+    if(!/name="robots" content="noindex,nofollow"/i.test(html))errors.push(`${route.slug}: GÃ¼ven D sayfasÄ±nda noindex,nofollow yok.`);
+    if(html.includes('"@type":"Article"'))errors.push(`${route.slug}: GÃ¼ven D sayfasÄ±nda Article ÅŸemasÄ± yayÄ±mlanÄ±yor.`);
+    if(normalSitemapXml.includes(url)||imageSitemapXml.includes(url))errors.push(`${route.slug}: GÃ¼ven D URL sitemap iÃ§inde kaldÄ±.`);
+  }else{
+    indexableCount+=1;
+    if(/name="robots" content="noindex/i.test(html))errors.push(`${route.slug}: GÃ¼ven ${route.confidence} sayfasÄ± yanlÄ±ÅŸlÄ±kla noindex.`);
+    if(!normalSitemapXml.includes(url))errors.push(`${route.slug}: indekslenebilir rota normal sitemap iÃ§inde yok.`);
+    if(!normalSitemapXml.includes(`<loc>${url}</loc><lastmod>${route.updatedAt}`))errors.push(`${route.slug}: normal sitemap lastmod deÄŸeri rota gÃ¼ncelleme tarihiyle eÅŸleÅŸmiyor.`);
+  }
+}
+
+let noindexProvinceCount=0,noindexDistrictCount=0;
+for(const province of [...new Set(meralar.map((route)=>route.province))]){
+  const provinceRoutes=meralar.filter((route)=>route.province===province);
+  const provincePath=`/iller/${slugifyTr(province)}/`;
+  const provinceHtml=readFileSync(`dist${provincePath}index.html`,"utf8");
+  const provinceUrl=`https://oltaatlasi.com${provincePath}`;
+  const provinceShouldIndex=provinceRoutes.some((route)=>route.confidence!=="D");
+  if(provinceShouldIndex){
+    if(isNoindex(provinceHtml))errors.push(`${province}: doÄŸrulanabilir rota bulunan il sayfasÄ± noindex.`);
+    if(!normalSitemapXml.includes(provinceUrl))errors.push(`${province}: indekslenebilir il sayfasÄ± normal sitemap iÃ§inde yok.`);
+  }else{
+    noindexProvinceCount+=1;
+    if(!isNoindex(provinceHtml))errors.push(`${province}: yalnÄ±z D kayÄ±tlÄ± il sayfasÄ± noindex deÄŸil.`);
+    if(normalSitemapXml.includes(provinceUrl)||imageSitemapXml.includes(provinceUrl))errors.push(`${province}: yalnÄ±z D kayÄ±tlÄ± il sayfasÄ± sitemap iÃ§inde.`);
+  }
+
+  for(const district of [...new Set(provinceRoutes.map((route)=>route.district))]){
+    const districtRoutes=provinceRoutes.filter((route)=>route.district===district);
+    if(districtRoutes.length<2)continue;
+    const districtPath=`${provincePath}${slugifyTr(district)}/`;
+    const districtHtml=readFileSync(`dist${districtPath}index.html`,"utf8");
+    const districtUrl=`https://oltaatlasi.com${districtPath}`;
+    const districtShouldIndex=districtRoutes.some((route)=>route.confidence!=="D");
+    if(districtShouldIndex){
+      if(isNoindex(districtHtml))errors.push(`${province}/${district}: doÄŸrulanabilir rota bulunan ilÃ§e sayfasÄ± noindex.`);
+      if(!normalSitemapXml.includes(districtUrl))errors.push(`${province}/${district}: indekslenebilir ilÃ§e sayfasÄ± normal sitemap iÃ§inde yok.`);
+    }else{
+      noindexDistrictCount+=1;
+      if(!isNoindex(districtHtml))errors.push(`${province}/${district}: yalnÄ±z D kayÄ±tlÄ± ilÃ§e sayfasÄ± noindex deÄŸil.`);
+      if(normalSitemapXml.includes(districtUrl)||imageSitemapXml.includes(districtUrl))errors.push(`${province}/${district}: yalnÄ±z D kayÄ±tlÄ± ilÃ§e sayfasÄ± sitemap iÃ§inde.`);
+    }
+  }
+}
+
+console.log(`Ä°ndeks politikasÄ±: ${indexableCount} A/B/C rota indekslenebilir; ${preliminaryCount} D rota, ${noindexProvinceCount} yalnÄ±z-D il ve ${noindexDistrictCount} yalnÄ±z-D ilÃ§e noindex/sitemap dÄ±ÅŸÄ±; ${errors.length} hata.`);
+for(const error of errors.slice(0,200))console.error(`HATA: ${error}`);
+if(errors.length>200)console.error(`HATA: ${errors.length-200} ek hata daha var.`);
+if(errors.length)process.exit(1);

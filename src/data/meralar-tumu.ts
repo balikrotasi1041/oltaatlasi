@@ -1,1 +1,119 @@
-m«ëˆ§½©buªàºg§¶ÊÜıÖ­kù­©Z®Û¦ºÛ±¨m«ë€İ…¹îš(§~)^¢‹­~)^mºŞjFëy©ÊyÚ.¶›­º˜§¶‰bë(~W§‚Øgº`İuç(uç^r‡^Šzn¶^–—b²™ZÊØb²g¬±¨Š)éºØ§¦ë_ŠWyö®–×è®Ë]Šz(ºÚn¶‹­¦ë_ŠWyö®–×è®Ë]¢ë
+import type { Mera } from "./meralar";
+import { meralar as temelMeralar } from "./meralar";
+import { gunlukMeralar } from "./meralar-gunluk";
+import { beykozMeralar } from "./meralar-beykoz";
+import { kocaeliIyilestirmeler, kocaeliIyilestirmeMeta } from "./meralar-kocaeli-iyilestirmeler";
+import { istanbulIyilestirmeler } from "./meralar-istanbul-iyilestirmeler";
+import { gunlukIyilestirmeler20260801 } from "./meralar-gunluk-iyilestirme-2026-08-01";
+import { gunlukIyilestirmeler20260802, gunlukIyilestirmeMeta20260802 } from "./meralar-gunluk-iyilestirme-2026-08-02";
+import { kaliteIyilestirmeleri20260803, retiredRouteSlugs20260803 } from "./meralar-kalite-iyilestirme-2026-08-03";
+import { gunlukKaliteIyilestirmeleri20260803 } from "./meralar-gunluk-kalite-2026-08-03";
+import { gun1Meralar20260804 } from "./meralar-gun1-2026-08-04";
+import { gunlukKaliteIyilestirmeleri20260807 } from "./meralar-gunluk-kalite-2026-08-07";
+import { gun2Meralar20260807 } from "./meralar-gun2-2026-08-07";
+import { ulusalMeralar } from "./meralar-ulusal";
+import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
+import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
+import { ulusalOtomatikArastirma, ulusalOtomatikArastirmaMeta } from "./meralar-ulusal-otomatik-arastirma";
+
+export type ResearchSource={label:string;url:string;note:string};
+export type FishEvidence={name:string;scientificName?:string|null;evidenceLevel:string;sourceLabel:string;sourceUrl:string;note:string;recordCount?:number|null;distanceKm?:number|null};
+export type AccommodationOption={name:string;type:string;distanceKm:number|null;sourceUrl:string;note:string};
+export type AccessEvidence={label:string;value:string;sourceUrl:string;note:string};
+type NationalCoordinate={lat:number;lng:number;displayName:string;sourceUrl:string;matchScore:number;matchedAt:string};
+type NationalResearch={researchedAt?:string;researchStatus?:string;researchSummary?:string;fish?:string[];fishEvidence?:FishEvidence[];methods?:string[];baits?:string[];camping?:Mera["camping"];vehicleAccess?:Mera["vehicleAccess"];amenities?:string[];cautions?:string[];accommodationOptions?:AccommodationOption[];accessEvidence?:AccessEvidence[];seasonalNotes?:string[];planningNotes?:string[];transport?:string;crowdNote?:string;sources?:ResearchSource[];fieldVerification?:boolean;strongOfficialSource?:boolean;officialAmateurFishingUseEvidence?:boolean;legalAccessUnclear?:boolean;replaceAutomaticSources?:boolean;replaceAutomaticFish?:boolean;navigationVerified?:boolean;lat?:number;lng?:number;locationPrecision?:Mera["locationPrecision"];navigationNote?:string};
+export type EnrichedMera=Mera&{researchStatus?:string;researchSummary?:string;researchedAt?:string;fishEvidence:FishEvidence[];accommodationOptions:AccommodationOption[];accessEvidence:AccessEvidence[];navigationVerified?:boolean};
+
+const coordinateIndex=ulusalKoordinatlar as Record<string,NationalCoordinate>;
+const automatic=ulusalOtomatikArastirma as Record<string,NationalResearch>;
+const manual=ulusalManuelArastirma as Record<string,NationalResearch>;
+const kocaeliMeta=kocaeliIyilestirmeMeta as Record<string,NationalResearch>;
+const gunlukMeta20260802=gunlukIyilestirmeMeta20260802 as Record<string,NationalResearch>;
+const unique=(values:string[]=[]):string[]=>[...new Set(values.map(String).map(v=>v.trim()).filter(Boolean))];
+const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter(s=>s?.url&&s?.label).map(s=>[s.url,s])).values()];
+const baseDefaults=(m:Mera):EnrichedMera=>({...m,fish:unique(m.fish),methods:unique(m.methods),baits:unique(m.baits),fishEvidence:[],accommodationOptions:[],accessEvidence:[]});
+const withResearch=(m:Mera,r?:NationalResearch):EnrichedMera=>({...baseDefaults(m),researchStatus:r?.researchStatus,researchSummary:r?.researchSummary,researchedAt:r?.researchedAt,fishEvidence:r?.fishEvidence||[],accommodationOptions:r?.accommodationOptions||[],accessEvidence:r?.accessEvidence||[]});
+const mergedResearch=(slug:string):NationalResearch|undefined=>{const a=automatic[slug],m=manual[slug];if(!a&&!m)return undefined;return{...(a||{}),...(m||{}),fish:m?.replaceAutomaticFish?(m.fish||[]):m?.fish?.length?m.fish:a?.fish,fishEvidence:m?.replaceAutomaticFish?(m.fishEvidence||[]):m?.fishEvidence?.length?m.fishEvidence:a?.fishEvidence,methods:m?.methods?.length?m.methods:a?.methods,baits:m?.baits?.length?m.baits:a?.baits,amenities:m?.amenities?.length?m.amenities:a?.amenities,cautions:m?.cautions?.length?m.cautions:a?.cautions,accommodationOptions:m?.accommodationOptions?.length?m.accommodationOptions:a?.accommodationOptions,accessEvidence:m?.accessEvidence?.length?m.accessEvidence:a?.accessEvidence,seasonalNotes:m?.seasonalNotes?.length?m.seasonalNotes:a?.seasonalNotes,planningNotes:m?.planningNotes?.length?m.planningNotes:a?.planningNotes,sources:uniqueSources(m?.replaceAutomaticSources?(m.sources||[]):[...(m?.sources||[]),...(a?.sources||[])])};};
+export const nationalConfidence=(r?:NationalResearch):Mera["confidence"]=>{
+  if(!r)return "D";
+  if(r.legalAccessUnclear)return "D";
+  const hasStrongOfficialEvidence=Boolean(r.strongOfficialSource)&&Boolean(r.sources?.some((source)=>/\.gov\.tr\b|\.bel\.tr\b|tarimorman\.gov\.tr\b/i.test(source.url)));
+  if(r.fieldVerification&&hasStrongOfficialEvidence)return "A";
+  if(r.officialAmateurFishingUseEvidence&&hasStrongOfficialEvidence)return "B";
+  const hasStrongDeskResearch=/rota Ã¶zelinde/i.test(r.researchStatus||"")&&Boolean((r.sources?.length||0)>=2||(r.fishEvidence?.length&&r.accessEvidence?.length));
+  return hasStrongDeskResearch?"C":"D";
+};
+const nationalShoreProfile=(m:Mera,r?:NationalResearch)=>{
+  const base=String(m.shoreProfile||"").trim().replace(/\s+/g," ");
+  const access=(r?.accessEvidence||[]).slice(0,2).map((item)=>`${item.label}: ${item.value}. ${item.note}`).join(" ");
+  const research=String(r?.researchSummary||"").trim();
+  const evidence=access||research||"Masa baÅŸÄ± kaynak taramasÄ±nda kÄ±yÄ±ya giriÅŸ, yol ve kamusal kullanÄ±m iÃ§in noktasal saha teyidi bulunmadÄ±ÄŸÄ±ndan yaklaÅŸÄ±m koÅŸullarÄ± yerinde ayrÄ±ca doÄŸrulanmalÄ±dÄ±r.";
+  return `${m.name}, ${m.province} iÃ§in ${base.charAt(0).toLocaleLowerCase("tr-TR")}${base.slice(1)} ${evidence} Bu kÄ±yÄ± profili, belirli bir eriÅŸim cebinin kamusal olduÄŸu veya amatÃ¶r avcÄ±lÄ±ÄŸa aÃ§Ä±k bulunduÄŸu anlamÄ±na gelmez.`;
+};
+const national:EnrichedMera[]=ulusalMeralar.map((m):EnrichedMera=>{const c=coordinateIndex[m.slug],r=mergedResearch(m.slug);const fish=r?.replaceAutomaticFish?unique(r.fish||[]):r?.fish?.length?unique(r.fish):unique(m.fish);const manualPoint=Number.isFinite(r?.lat)&&Number.isFinite(r?.lng);const sources=uniqueSources([...(r?.sources||[]),...(c?[{label:`OpenStreetMap â€“ ${c.displayName}`,url:c.sourceUrl,note:`Genel su varlÄ±ÄŸÄ± eÅŸleÅŸmesi; pin kamusal kÄ±yÄ± eriÅŸimi veya av izni doÄŸrulamaz (puan ${c.matchScore}).`}]:[]),...m.sources.filter(s=>!s.label.startsWith("OpenStreetMap"))]);return{...m,...(c?{lat:c.lat,lng:c.lng,locationPrecision:"Genel bÃ¶lge" as const,updatedAt:c.matchedAt.slice(0,10),navigationNote:"Harita pini genel su varlÄ±ÄŸÄ± merkezini gÃ¶sterir; yol, park, kÄ±yÄ±ya giriÅŸ ve av yapÄ±labilirlik ayrÄ±ca araÅŸtÄ±rÄ±lmalÄ±dÄ±r.",verification:`${m.verification} Genel konum OpenStreetMap/Nominatim ile eÅŸleÅŸtirildi; eriÅŸim ve izin doÄŸrulanmÄ±ÅŸ sayÄ±lmaz.`}:{}),...(r?{fish,methods:r.methods?.length?unique(r.methods):unique(m.methods),baits:r.baits?.length?unique(r.baits):unique(m.baits),camping:r.camping||m.camping,vehicleAccess:r.vehicleAccess||m.vehicleAccess,amenities:r.amenities?.length?r.amenities:m.amenities,cautions:r.cautions?.length?r.cautions:m.cautions,transport:r.transport||m.transport,crowdNote:r.crowdNote||m.crowdNote,planningNotes:r.planningNotes?.length?r.planningNotes:m.planningNotes,seasonalNotes:r.seasonalNotes?.length?r.seasonalNotes:m.seasonalNotes,updatedAt:r.researchedAt||c?.matchedAt.slice(0,10)||m.updatedAt,verification:r.researchStatus?`${m.verification} TÃ¼r, ulaÅŸÄ±m ve yakÄ±n hizmetler aÃ§Ä±k kaynak araÅŸtÄ±rmasÄ±yla zenginleÅŸtirildi; saha ve hukuki uygunluk ayrÄ±ca doÄŸrulanmalÄ±dÄ±r.`:m.verification,confidence:(c||manualPoint)?nationalConfidence(r):"D",researchStatus:r.researchStatus,researchSummary:r.researchSummary,researchedAt:r.researchedAt,navigationVerified:Boolean(r.navigationVerified),...(manualPoint?{lat:r.lat!,lng:r.lng!,locationPrecision:r.locationPrecision||"Genel bÃ¶lge",navigationNote:r.navigationNote||"Pin masa baÅŸÄ± araÅŸtÄ±rmayla seÃ§ilen genel planlama noktasÄ±nÄ± gÃ¶sterir; aÃ§Ä±k giriÅŸ, park ve kÄ±yÄ± gÃ¼venliÄŸi yerinde kontrol edilmelidir."}: {})}:{}),fish,methods:r?.methods?.length?unique(r.methods):unique(m.methods),baits:r?.baits?.length?unique(r.baits):unique(m.baits),fishEvidence:r?.fishEvidence||[],accommodationOptions:r?.accommodationOptions||[],accessEvidence:r?.accessEvidence||[],navigationVerified:r?.navigationVerified??false,shoreProfile:nationalShoreProfile(m,r),sources};});
+
+export const retiredRouteSlugs=new Set<string>([
+  ...retiredRouteSlugs20260803,
+  "cubuklu-beykoz-sahili",
+  "maltepe-sahili",
+  "pendik-sahili",
+  "basiskele-sahili",
+]);
+
+// Katmanlar eskiden yeniye sÄ±ralÄ±dÄ±r. AynÄ± slug'Ä±n en yeni sÃ¼rÃ¼mÃ¼ kazanÄ±r.
+// Bu tek geÃ§iÅŸli birleÅŸtirme hem yinelenen canlÄ± sayfalarÄ± hem de katmanlar arasÄ± kaÃ§aklarÄ± Ã¶nler.
+const localLayers:EnrichedMera[]=[
+  ...temelMeralar.map(baseDefaults),
+  ...gunlukMeralar.map(baseDefaults),
+  ...beykozMeralar.map(baseDefaults),
+  ...kocaeliIyilestirmeler.map((m)=>withResearch(m,kocaeliMeta[m.slug])),
+  ...istanbulIyilestirmeler.map(baseDefaults),
+  ...gunlukIyilestirmeler20260801.map(baseDefaults),
+  ...gunlukIyilestirmeler20260802.map((m)=>withResearch(m,gunlukMeta20260802[m.slug])),
+  ...kaliteIyilestirmeleri20260803.map(baseDefaults),
+  ...gunlukKaliteIyilestirmeleri20260803.map(baseDefaults),
+  ...gun1Meralar20260804.map(baseDefaults),
+  ...gunlukKaliteIyilestirmeleri20260807.map(baseDefaults),
+  ...gun2Meralar20260807.map(baseDefaults),
+].filter((m)=>!retiredRouteSlugs.has(m.slug));
+const localBySlug=new Map<string,EnrichedMera>();
+for(const route of localLayers)localBySlug.set(route.slug,route);
+export const meralar:EnrichedMera[]=[
+  ...localBySlug.values(),
+  ...national.filter((m)=>!retiredRouteSlugs.has(m.slug)&&!localBySlug.has(m.slug)),
+];
+
+const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
+if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kÃ¼mesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
+
+export const nationalCoordinateStats={resolved:ulusalKoordinatMeta.resolvedCount,unresolved:ulusalKoordinatMeta.unresolvedCount,generatedAt:ulusalKoordinatMeta.generatedAt};
+export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length+gunlukKaliteIyilestirmeleri20260807.length+gun2Meralar20260807.length};
+const routesWithoutFish=meralar.filter(m=>!Array.isArray(m.fish)||m.fish.length===0);
+const indexableRoutesWithoutFish=routesWithoutFish.filter(m=>m.confidence!=="D");
+if(indexableRoutesWithoutFish.length)throw new Error(`BalÄ±k tÃ¼rÃ¼ bilgisi olmayan ${indexableRoutesWithoutFish.length} indekslenebilir avlak sayfasÄ± var: ${indexableRoutesWithoutFish.slice(0,20).map(m=>m.slug).join(", ")}`);
+const invalidFish=meralar.filter(m=>m.fish.some(f=>typeof f!=="string"||!f.trim()));
+if(invalidFish.length)throw new Error(`GeÃ§ersiz balÄ±k tÃ¼rÃ¼ alanÄ± bulunan avlaklar: ${invalidFish.map(m=>m.slug).join(", ")}`);
+
+const dashboardWeakSources=meralar.filter((m)=>!m.sources||m.sources.length<2);
+const dashboardWeakTransport=meralar.filter((m)=>!m.transport||m.transport.length<90||/gÃ¼ncel harita uygulamasÄ±|genel eriÅŸim bÃ¶lgesine gider/i.test(m.transport));
+const dashboardWeakAccommodation=meralar.filter((m)=>!m.accommodationOptions?.length&&!/konaklama|otel|pansiyon|ilÃ§e merkez|yerleÅŸim|gecelik kalÄ±ÅŸ/i.test(`${m.transport} ${m.planningNotes.join(" ")} ${m.amenities.join(" ")}`));
+const dashboardWeakLocality=meralar.filter((m)=>!m.shoreProfile||m.shoreProfile.length<100||/ÅŸehir iÃ§i ve dÃ¼zenlenmiÅŸ bÃ¶lÃ¼mler|yerel engellerin bir arada/i.test(m.shoreProfile));
+const dashboardWeakResearch=meralar.filter((m)=>/pilot veri/i.test(m.verification));
+export const contentQualityAudit={
+  sources:dashboardWeakSources,
+  transport:dashboardWeakTransport,
+  accommodation:dashboardWeakAccommodation,
+  locality:dashboardWeakLocality,
+  research:dashboardWeakResearch,
+};
+const dashboardIssueSets=Object.values(contentQualityAudit);
+const dashboardIssueTotal=dashboardIssueSets.reduce((sum,items)=>sum+items.length,0);
+export const contentQualityStats={score:Math.max(0,Math.round(100-(dashboardIssueTotal/Math.max(1,meralar.length*dashboardIssueSets.length))*100)),issues:{sources:dashboardWeakSources.length,transport:dashboardWeakTransport.length,accommodation:dashboardWeakAccommodation.length,locality:dashboardWeakLocality.length,research:dashboardWeakResearch.length}};
+if(dashboardIssueTotal){const detail=[["kaynak",dashboardWeakSources],["ulaÅŸÄ±m",dashboardWeakTransport],["konaklama",dashboardWeakAccommodation],["kÄ±yÄ±",dashboardWeakLocality],["pilot",dashboardWeakResearch]].filter(([,items])=>(items as EnrichedMera[]).length).map(([label,items])=>`${label}: ${(items as EnrichedMera[]).slice(0,24).map((m)=>m.slug).join(", ")}`).join(" | ");throw new Error(`Dashboard iÃ§erik kalite kapÄ±sÄ± ${contentQualityStats.score}/100. ${detail}`);}
+
+export const provinces=[...new Set(meralar.map(m=>m.province))].sort((a,b)=>a.localeCompare(b,"tr"));
+export const districtsByProvince=Object.fromEntries(provinces.map(p=>[p,[...new Set(meralar.filter(m=>m.province===p).map(m=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"))]));
+export const fishOptions=[...new Set(meralar.flatMap(m=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
+export const fishCoverageStats={routeCount:meralar.length,routesWithFish:meralar.length-routesWithoutFish.length,fishTypeCount:fishOptions.length};
+export const zonesByProvince=Object.fromEntries(provinces.map(p=>[p,[...new Set(meralar.filter(m=>m.province===p).map(m=>m.zone))].sort((a,b)=>a.localeCompare(b,"tr"))]));
+export const districtRouteCounts=Object.fromEntries(provinces.flatMap(p=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter(m=>m.province===p&&m.district===d).length])));
