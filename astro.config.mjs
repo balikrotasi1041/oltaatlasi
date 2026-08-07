@@ -1,6 +1,9 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { meralar } from "./src/data/meralar-tumu.ts";
+import { baliklar, balikContentUpdatedAt } from "./src/data/baliklar.ts";
+import { rehberler } from "./src/data/rehber-katalogu.ts";
+import { dunyaBalikcilikYazilari } from "./src/data/dunya-balikcilik.ts";
 import { slugifyTr } from "./src/utils/slug.ts";
 
 const site = process.env.PUBLIC_SITE_URL || "https://oltaatlasi.com";
@@ -34,6 +37,21 @@ for (const province of [...new Set(meralar.map((route) => route.province))]) {
 }
 
 for (const pathname of ["/", "/meralar/", "/iller/"]) rememberLastModified(pathname, meralar);
+
+const rememberDate = (pathname, value) => {
+  if (value) lastModifiedByPath.set(pathname, new Date(`${value}T00:00:00.000Z`));
+};
+for (const fish of baliklar) rememberDate(`/baliklar/${fish.slug}/`, balikContentUpdatedAt);
+rememberDate("/baliklar/", balikContentUpdatedAt);
+for (const guide of rehberler) rememberDate(`/rehberler/${guide.slug}/`, guide.updatedAt);
+rememberDate("/rehberler/", latestDate(rehberler));
+for (const article of dunyaBalikcilikYazilari) rememberDate(`/dunyada-balikcilik/${article.slug}/`, article.sourceCheckedAt || article.publishedAt);
+rememberDate("/dunyada-balikcilik/", latestDate(dunyaBalikcilikYazilari.map((article) => ({ updatedAt: article.sourceCheckedAt || article.publishedAt }))));
+rememberDate("/yazilar/", latestDate([
+  ...meralar,
+  ...rehberler,
+  ...dunyaBalikcilikYazilari.map((article) => ({ updatedAt: article.sourceCheckedAt || article.publishedAt })),
+]));
 
 export default defineConfig({
   site,

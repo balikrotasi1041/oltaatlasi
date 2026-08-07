@@ -31,7 +31,7 @@ const routeScore=(route:any)=>{
   if(route.province==="İstanbul"||route.province==="Kocaeli") score+=12;
   return score;
 };
-const relatedRoutes=specificTargets.length?meralar.map((route)=>({route,score:routeScore(route)})).filter(({score})=>score>=30).sort((a,b)=>b.score-a.score||(b.route.updatedAt||b.route.publishedAt).localeCompare(a.route.updatedAt||a.route.publishedAt)).slice(0,10).map(({route})=>route):[];
+const relatedRoutes=specificTargets.length?meralar.filter((route)=>route.confidence!=="D").map((route)=>({route,score:routeScore(route)})).filter(({score})=>score>=30).sort((a,b)=>b.score-a.score||(b.route.updatedAt||b.route.publishedAt).localeCompare(a.route.updatedAt||a.route.publishedAt)).slice(0,10).map(({route})=>route):[];
 const schema={"@context":"https://schema.org","@type":"Article","@id":`${pageUrl}#article`,headline:rehber.title,description:rehber.summary,image:[new URL(image,Astro.site).href],datePublished:rehber.publishedAt,dateModified:rehber.updatedAt,inLanguage:"tr-TR",mainEntityOfPage:{"@type":"WebPage","@id":pageUrl},author:{"@type":"Organization",name:rehber.author,url:new URL('/hakkinda/',Astro.site).href},publisher:{"@id":`${new URL('/',Astro.site).href}#organization`},about:rehber.targetSpecies.map((name)=>({"@type":"Thing",name})),citation:rehber.sources.map((source)=>source.url)};
 ---
 <BaseLayout title={rehber.title} description={rehber.summary} image={image} type="article" publishedAt={rehber.publishedAt} modifiedAt={rehber.updatedAt}>

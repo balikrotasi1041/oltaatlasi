@@ -15,17 +15,80 @@ const htmlPathFor=(url)=>{
   return pathname==="/"?"dist/index.html":`dist/${pathname.replace(/^\//,"")}index.html`;
 };
 const isNoindex=(html)=>/name="robots" content="noindex/i.test(html);
+const readCanonical=(html)=>html.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i)?.[1]
+  ||html.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i)?.[1]
+  ||"";
+const readMeta=(html,name)=>html.match(new RegExp(`<meta[^>]+name="${name}"[^>]+content="([^"]+)"`,`i`))?.[1]
+  ||html.match(new RegExp(`<meta[^>]+content="([^"]+)"[^>]+name="${name}"`,`i`))?.[1]
+  ||"";
+const htmlFiles=(directory)=>readdirSync(directory,{withFileTypes:true}).flatMap((entry)=>{
+  const path=`${directory}/${entry.name}`;
+  return entry.isDirectory()?htmlFiles(path):entry.isFile()&&entry.name==="index.html"?[path]:[];
+});
+const pathnameForHtml=(path)=>{
+  const relative=path.replace(/^dist\/?/,"").replace(/index\.html$/,"");
+  return relative?`/${relative}`:"/";
+};
 const sitemapUrls=[...normalSitemapXml.matchAll(/<loc>(https:\/\/oltaatlasi\.com\/[^<]*)<\/loc>/g)].map((match)=>match[1]);
+const sitemapUrlSet=new Set(sitemapUrls);
 for(const url of sitemapUrls){
   const htmlPath=htmlPathFor(url);
-  if(!existsSync(htmlPath))continue;
-  if(isNoindex(readFileSync(htmlPath,"utf8")))errors.push(`${url}: noindex sayfa normal sitemap içinde.`);
+  if(!existsSync(htmlPath)){errors.push(`${url}: normal sitemap URL'sinin derlenmiş HTML karşılığı yok.`);continue;}
+  const html=readFileSync(htmlPath,"utf8");
+  if(isNoindex(html))errors.push(`${url}: noindex sayfa normal sitemap içinde.`);
+  if(readCanonical(html)!==url)errors.push(`${url}: sitemap URL'sinin canonical değeri kendisi değil (${readCanonical(html)||"eksik"}).`);
 }
 for(const match of imageSitemapXml.matchAll(/<loc>(https:\/\/oltaatlasi\.com\/[^<]*)<\/loc>/g)){
   const url=match[1];
   const htmlPath=htmlPathFor(url);
   if(!existsSync(htmlPath))continue;
   if(isNoindex(readFileSync(htmlPath,"utf8")))errors.push(`${url}: noindex sayfa görsel sitemap içinde.`);
+}
+
+const recordsByPath=new Map();
+const canonicalOwners=new Map();
+for(const path of htmlFiles("dist")){
+  const html=readFileSync(path,"utf8");
+  const pathname=pathnameForHtml(path);
+  const url=`https://oltaatlasi.com${pathname}`;
+  const canonical=readCanonical(html);
+  const noindex=isNoindex(html);
+  recordsByPath.set(pathname,{path,html,url,canonical,noindex});
+  if(!canonical)errors.push(`${pathname}: canonical etiketi eksik.`);
+  else if(canonical!==url)errors.push(`${pathname}: canonical kendini göstermiyor (${canonical}).`);
+  if(canonical){
+    const owners=canonicalOwners.get(canonical)||[];
+    owners.push(pathname);
+    canonicalOwners.set(canonical,owners);
+  }
+  if(noindex){
+    if(sitemapUrlSet.has(url))errors.push(`${pathname}: noindex HTML normal sitemap içinde.`);
+  }else{
+    if(!sitemapUrlSet.has(url))errors.push(`${pathname}: indekslenebilir HTML normal sitemap içinde yok.`);
+    if(!/<title>[^<]{3,}<\/title>/i.test(html))errors.push(`${pathname}: başlık etiketi eksik veya boş.`);
+    if(readMeta(html,"description").trim().length<40)errors.push(`${pathname}: meta açıklaması eksik veya 40 karakterden kısa.`);
+  }
+}
+for(const [canonical,owners] of canonicalOwners){
+  if(owners.length>1)errors.push(`${canonical}: aynı canonical değeri ${owners.join(", ")} sayfalarında yineleniyor.`);
+}
+
+let nofollowNoindexLinks=0;
+for(const source of recordsByPath.values()){
+  if(source.noindex)continue;
+  for(const match of source.html.matchAll(/<a\b([^>]*?)href="([^"]+)"([^>]*)>/gi)){
+    const href=match[2];
+    if(!href||href.startsWith("#")||/^(?:mailto:|tel:|javascript:)/i.test(href))continue;
+    let target;
+    try{target=new URL(href,source.url);}catch{continue;}
+    if(target.origin!=="https://oltaatlasi.com")continue;
+    const pathname=target.pathname.endsWith("/")?target.pathname:`${target.pathname}/`;
+    const targetRecord=recordsByPath.get(pathname);
+    if(!targetRecord?.noindex)continue;
+    const attributes=`${match[1]} ${match[3]}`;
+    if(!/\brel="[^"]*nofollow/i.test(attributes))errors.push(`${source.url}: noindex hedefe takip edilebilir iç bağlantı veriyor (${pathname}).`);
+    else nofollowNoindexLinks+=1;
+  }
 }
 
 for(const route of meralar){
@@ -78,7 +141,7 @@ for(const province of [...new Set(meralar.map((route)=>route.province))]){
   }
 }
 
-console.log(`İndeks politikası: ${indexableCount} A/B/C rota indekslenebilir; ${preliminaryCount} D rota, ${noindexProvinceCount} yalnız-D il ve ${noindexDistrictCount} yalnız-D ilçe noindex/sitemap dışı; ${errors.length} hata.`);
+console.log(`İndeks politikası: ${sitemapUrls.length} sitemap URL'si; ${indexableCount} A/B/C rota indekslenebilir; ${preliminaryCount} D rota, ${noindexProvinceCount} yalnız-D il ve ${noindexDistrictCount} yalnız-D ilçe noindex/sitemap dışı; noindex hedeflere ${nofollowNoindexLinks} kontrollü nofollow iç bağlantı; ${errors.length} hata.`);
 for(const error of errors.slice(0,200))console.error(`HATA: ${error}`);
 if(errors.length>200)console.error(`HATA: ${errors.length-200} ek hata daha var.`);
 if(errors.length)process.exit(1);

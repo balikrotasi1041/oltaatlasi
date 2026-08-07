@@ -1,5 +1,7 @@
 export type Balik = { slug:string; name:string; water:string; habitat:string; seasonNote:string; methods:string[]; baits:string[]; caution:string; image:string; };
 
+export const balikContentUpdatedAt = "2026-08-08";
+
 export const baliklar: Balik[] = [
   {
     "slug": "istavrit",

@@ -117,9 +117,10 @@ const intro=provinceIntros[province]||[
       <div class="district-link-grid">
         {districts.map((district)=>{
           const districtItems=items.filter((m)=>m.district===district);
+          const districtIndexable= districtItems.some((m)=>m.confidence!=="D");
           const count=districtItems.length;
           const href=count>=2?`/iller/${slugifyTr(province)}/${slugifyTr(district)}/`:`/meralar/${districtItems[0].slug}/`;
-          return <a id={slugifyTr(district)} href={href}><strong>{locative(district)} balık tutulacak yerler</strong><span>{count} rota dosyası</span></a>;
+          return <a id={slugifyTr(district)} href={href} rel={districtIndexable?undefined:"nofollow"}><strong>{locative(district)} balık tutulacak yerler</strong><span>{count} rota dosyası</span></a>;
         })}
       </div>
     </section>
@@ -127,7 +128,7 @@ const intro=provinceIntros[province]||[
     {province==="İstanbul"&&<section class="info-block">
       <span class="kicker">İki yaka, farklı koşullar</span>
       <h2>Avrupa ve Anadolu Yakası nasıl ayrılıyor?</h2>
-      <div class="zone-columns">{zones.map((zone)=><div><h3>{zone}</h3><ul>{items.filter((m)=>m.zone===zone).slice(0,6).map((m)=><li><a href={`/meralar/${m.slug}/`}>{m.name}</a></li>)}</ul></div>)}</div>
+      <div class="zone-columns">{zones.map((zone)=><div><h3>{zone}</h3><ul>{items.filter((m)=>m.zone===zone).slice(0,6).map((m)=><li><a href={`/meralar/${m.slug}/`} rel={m.confidence==="D"?"nofollow":undefined}>{m.name}</a></li>)}</ul></div>)}</div>
     </section>}
 
     <section class="info-block">

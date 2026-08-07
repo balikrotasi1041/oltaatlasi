@@ -46,7 +46,8 @@ const startMap=()=>{
       : L.marker([item.lat,item.lng]);
     const fishText=item.fish.length?item.fish.slice(0,4).map(escapeHtml).join(", "):"Tür bilgisi doğrulanmayı bekliyor";
     const locationText=item.preliminary?"Genel su konumu; erişim pini değildir":escapeHtml(item.locationPrecision);
-    marker.bindPopup(`<strong>${escapeHtml(item.name)}</strong><br>${escapeHtml(item.province)} · ${escapeHtml(item.district)} · ${escapeHtml(item.zone)}<br><small>${fishText} · Güven ${escapeHtml(item.confidence)}</small><br><small>${locationText}</small><br><a href="/meralar/${encodeURIComponent(item.slug)}/">Rota dosyasını aç</a>`);
+    const linkRel=item.preliminary?' rel="nofollow"':'';
+    marker.bindPopup(`<strong>${escapeHtml(item.name)}</strong><br>${escapeHtml(item.province)} · ${escapeHtml(item.district)} · ${escapeHtml(item.zone)}<br><small>${fishText} · Güven ${escapeHtml(item.confidence)}</small><br><small>${locationText}</small><br><a${linkRel} href="/meralar/${encodeURIComponent(item.slug)}/">Rota dosyasını aç</a>`);
     markers[item.slug]=marker;
     return marker;
   };
