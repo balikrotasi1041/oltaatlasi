@@ -10,6 +10,7 @@ const PERMANENT_PATH_REDIRECTS = new Map([
   ["/meralar/basiskele-sahili", "/meralar/basiskele-kamusal-sahil-hatti/"],
 ]);
 const ADMIN_PREFIX = "/admin";
+const GOOGLE_SNAPSHOT_TTL_SECONDS = 7 * 24 * 60 * 60;
 const encoder = new TextEncoder();
 
 const isAdminPath = (pathname) => pathname === ADMIN_PREFIX || pathname.startsWith(`${ADMIN_PREFIX}/`);
@@ -133,7 +134,7 @@ const createGoogleJwt = async ({ email, privateKey }) => {
   return `${unsigned}.${base64Url(new Uint8Array(signature))}`;
 };
 
-const requestGoogleToken = async (body) => {
+const requestGoogleToken = async (body, feature) => {
   const response = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },
@@ -141,41 +142,51 @@ const requestGoogleToken = async (body) => {
   });
   const payload = await response.json();
   if (!response.ok || !payload.access_token) {
+    if (payload.error === "invalid_grant") {
+      throw new Error(`${feature} OAuth yenileme anahtarı geçersiz veya iptal edilmiş. İlgili Cloudflare sırrını yenileyin.`);
+    }
+    if (payload.error === "invalid_client") {
+      throw new Error(`${feature} OAuth istemci kimliği veya sırrı geçersiz. İlgili Cloudflare sırlarını kontrol edin.`);
+    }
     throw new Error(payload.error_description || payload.error || "Google erişim belirteci alınamadı.");
   }
   return payload.access_token;
 };
 
-const getOAuthAccessToken = (env, refreshToken) => requestGoogleToken(new URLSearchParams({
-  client_id: env.GSC_OAUTH_CLIENT_ID,
-  client_secret: env.GSC_OAUTH_CLIENT_SECRET,
+const getOAuthAccessToken = ({ clientId, clientSecret, refreshToken, feature }) => requestGoogleToken(new URLSearchParams({
+  client_id: clientId,
+  client_secret: clientSecret,
   refresh_token: refreshToken,
   grant_type: "refresh_token",
-}));
+}), feature);
 
 const getServiceAccountAccessToken = async (env) => {
   const assertion = await createGoogleJwt(getServiceAccount(env));
   return requestGoogleToken(new URLSearchParams({
     grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
     assertion,
-  }));
+  }), "Google servis hesabı");
 };
 
 const getGoogleAccess = async (env, feature = "Search Console") => {
+  const dedicatedGa4Client = feature === "GA4"
+    && Boolean(env.GA4_OAUTH_CLIENT_ID || env.GA4_OAUTH_CLIENT_SECRET);
+  const clientId = dedicatedGa4Client ? env.GA4_OAUTH_CLIENT_ID : env.GSC_OAUTH_CLIENT_ID;
+  const clientSecret = dedicatedGa4Client ? env.GA4_OAUTH_CLIENT_SECRET : env.GSC_OAUTH_CLIENT_SECRET;
   const refreshToken = feature === "GA4"
-    ? (env.GA4_OAUTH_REFRESH_TOKEN || env.GSC_OAUTH_REFRESH_TOKEN)
+    ? (dedicatedGa4Client ? env.GA4_OAUTH_REFRESH_TOKEN : (env.GA4_OAUTH_REFRESH_TOKEN || env.GSC_OAUTH_REFRESH_TOKEN))
     : env.GSC_OAUTH_REFRESH_TOKEN;
-  const oauthValues = [env.GSC_OAUTH_CLIENT_ID, env.GSC_OAUTH_CLIENT_SECRET, refreshToken];
+  const oauthValues = [clientId, clientSecret, refreshToken];
   const configuredCount = oauthValues.filter(Boolean).length;
   if (configuredCount > 0 && configuredCount < oauthValues.length) {
     throw new Error(`${feature} OAuth ayarları eksik: client ID, client secret ve refresh token birlikte tanımlanmalıdır.`);
   }
   if (configuredCount === oauthValues.length) {
     return {
-      accessToken: await getOAuthAccessToken(env, refreshToken),
-      authMode: feature === "GA4" && env.GA4_OAUTH_REFRESH_TOKEN
-        ? "oauth-ga4-refresh-token"
-        : "oauth-refresh-token",
+      accessToken: await getOAuthAccessToken({ clientId, clientSecret, refreshToken, feature }),
+      authMode: dedicatedGa4Client
+        ? "oauth-ga4-client"
+        : (feature === "GA4" && env.GA4_OAUTH_REFRESH_TOKEN ? "oauth-ga4-refresh-token" : "oauth-refresh-token"),
     };
   }
 
@@ -191,6 +202,45 @@ const getGoogleAccess = async (env, feature = "Search Console") => {
 
 const isoDate = (date) => date.toISOString().slice(0, 10);
 
+const googleSnapshotKey = (request, feature) => {
+  const requestUrl = new URL(request.url);
+  const days = requestUrl.searchParams.get("days") || "default";
+  return new Request(`https://oltaatlasi.internal/google-admin-data/${feature}?days=${encodeURIComponent(days)}`);
+};
+
+const saveGoogleSnapshot = async (ctx, cacheKey, payload) => {
+  const cacheWrite = caches.default.put(cacheKey, new Response(JSON.stringify(payload), {
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "Cache-Control": `max-age=${GOOGLE_SNAPSHOT_TTL_SECONDS}`,
+    },
+  }));
+  if (ctx?.waitUntil) ctx.waitUntil(cacheWrite);
+  else await cacheWrite;
+};
+
+const googleDataResponse = async ({ request, ctx, feature, load }) => {
+  const cacheKey = googleSnapshotKey(request, feature);
+  try {
+    const payload = await load();
+    await saveGoogleSnapshot(ctx, cacheKey, payload);
+    return jsonResponse(payload);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : `Bilinmeyen ${feature} hatası.`;
+    const cached = await caches.default.match(cacheKey);
+    if (cached) {
+      const snapshot = await cached.json();
+      return jsonResponse({
+        ...snapshot,
+        stale: true,
+        warning: `${feature} canlı bağlantısı geçici olarak kullanılamıyor; son başarılı veri gösteriliyor.`,
+        staleReason: message,
+      });
+    }
+    return jsonResponse({ connected: false, error: message }, 502);
+  }
+};
+
 const searchConsoleQuery = async ({ accessToken, siteUrl, body }) => {
   const endpoint = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/searchAnalytics/query`;
   const response = await fetch(endpoint, {
@@ -203,9 +253,9 @@ const searchConsoleQuery = async ({ accessToken, siteUrl, body }) => {
   return payload.rows || [];
 };
 
-const handleSearchConsole = async (request, env) => {
+const handleSearchConsole = async (request, env, ctx) => {
   if (request.method !== "GET") return jsonResponse({ error: "Yalnızca GET desteklenir." }, 405);
-  try {
+  return googleDataResponse({ request, ctx, feature: "Search Console", load: async () => {
     const requestUrl = new URL(request.url);
     const requestedDays = Number.parseInt(requestUrl.searchParams.get("days") || "28", 10);
     const days = [7, 28, 90].includes(requestedDays) ? requestedDays : 28;
@@ -232,7 +282,7 @@ const handleSearchConsole = async (request, env) => {
       ctr: row.ctr || 0,
       position: row.position || 0,
     }));
-    return jsonResponse({
+    return {
       connected: true,
       authMode,
       siteUrl,
@@ -247,10 +297,8 @@ const handleSearchConsole = async (request, env) => {
       queries: mapRows(queryRows, "query"),
       pages: mapRows(pageRows, "page"),
       fetchedAt: new Date().toISOString(),
-    });
-  } catch (error) {
-    return jsonResponse({ connected: false, error: error instanceof Error ? error.message : "Bilinmeyen Search Console hatası." }, 502);
-  }
+    };
+  } });
 };
 
 const normalizePropertyId = (value) => String(value || "").trim().replace(/^properties\//, "");
@@ -270,9 +318,9 @@ const analyticsRequest = async ({ accessToken, propertyId, method, body }) => {
 const metricValue = (row, index) => Number(row?.metricValues?.[index]?.value || 0);
 const dimensionValue = (row, index) => row?.dimensionValues?.[index]?.value || "";
 
-const handleGa4 = async (request, env) => {
+const handleGa4 = async (request, env, ctx) => {
   if (request.method !== "GET") return jsonResponse({ error: "Yalnızca GET desteklenir." }, 405);
-  try {
+  return googleDataResponse({ request, ctx, feature: "GA4", load: async () => {
     const propertyId = normalizePropertyId(env.GA4_PROPERTY_ID);
     if (!propertyId) throw new Error("GA4_PROPERTY_ID tanımlı değil.");
     const requestUrl = new URL(request.url);
@@ -329,7 +377,7 @@ const handleGa4 = async (request, env) => {
       .reduce((sum, row) => sum + row.sessions, 0);
     const totalSessions = metricValue(summaryRow, 1);
 
-    return jsonResponse({
+    return {
       connected: true,
       authMode,
       propertyId,
@@ -348,10 +396,8 @@ const handleGa4 = async (request, env) => {
       cities: (cities.rows || []).map((row) => ({ city: dimensionValue(row, 0), country: dimensionValue(row, 1), activeUsers: metricValue(row, 0), sessions: metricValue(row, 1) })),
       pages: (pages.rows || []).map((row) => ({ page: dimensionValue(row, 0), views: metricValue(row, 0), activeUsers: metricValue(row, 1), engagementRate: metricValue(row, 2) })),
       fetchedAt: new Date().toISOString(),
-    });
-  } catch (error) {
-    return jsonResponse({ connected: false, error: error instanceof Error ? error.message : "Bilinmeyen GA4 hatası." }, 502);
-  }
+    };
+  } });
 };
 
 const sampledCount = (row) => Math.round(Number(row?.count || 0) * Math.max(1, Number(row?.avg?.sampleInterval || 1)));
@@ -490,7 +536,7 @@ const handleCloudflare = async (request, env) => {
 };
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     let shouldRedirect = false;
 
@@ -512,8 +558,8 @@ export default {
     if (isAdminPath(url.pathname)) {
       if (!adminAuthConfigured(env)) return adminNotConfiguredResponse();
       if (!adminAuthorized(request, env)) return unauthorizedResponse();
-      if (url.pathname === "/admin/api/search-console") return handleSearchConsole(request, env);
-      if (url.pathname === "/admin/api/ga4") return handleGa4(request, env);
+      if (url.pathname === "/admin/api/search-console") return handleSearchConsole(request, env, ctx);
+      if (url.pathname === "/admin/api/ga4") return handleGa4(request, env, ctx);
       if (url.pathname === "/admin/api/cloudflare") return handleCloudflare(request, env);
     }
 

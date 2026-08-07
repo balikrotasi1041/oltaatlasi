@@ -18,7 +18,7 @@ Cloudflare Worker değişkenlerine eklenir:
 
 ## 3. OAuth refresh token
 
-Mevcut Search Console bağlantısını bozmamak için OAuth Playground'dan ayrı bir GA4 refresh token üretmek önerilir.
+Mevcut Search Console bağlantısını bozmamak için OAuth Playground'dan ayrı bir GA4 refresh token üretilmelidir.
 
 OAuth Playground kapsamı:
 
@@ -26,20 +26,24 @@ OAuth Playground kapsamı:
 https://www.googleapis.com/auth/analytics.readonly
 ```
 
-Aynı OAuth Client ID ve Client Secret kullanılabilir. Üretilen refresh token Cloudflare Worker sırlarına şu adla eklenir:
+GA4 istemcisi Search Console istemcisinden ayrılabiliyorsa aşağıdaki üç Worker sırrı birlikte tanımlanır:
 
 ```text
+GA4_OAUTH_CLIENT_ID
+GA4_OAUTH_CLIENT_SECRET
 GA4_OAUTH_REFRESH_TOKEN
 ```
 
-Worker şu mevcut değerleri kullanmaya devam eder:
+Bu ayrım bir servisin OAuth sırrı döndürüldüğünde diğer veri akışının kesilmesini önler. `GA4_OAUTH_CLIENT_ID` veya `GA4_OAUTH_CLIENT_SECRET` değerlerinden biri tanımlanırsa üç GA4 değerinin de eksiksiz olması zorunludur.
+
+Ayrı GA4 istemcisi tanımlanmazsa Worker geriye dönük uyumluluk için şu Search Console istemci değerlerini kullanır:
 
 ```text
 GSC_OAUTH_CLIENT_ID
 GSC_OAUTH_CLIENT_SECRET
 ```
 
-`GA4_OAUTH_REFRESH_TOKEN` tanımlanmazsa sistem mevcut `GSC_OAUTH_REFRESH_TOKEN` değerini dener. Bu durumda o tokenın hem Search Console hem Analytics kapsamlarını içermesi gerekir.
+`GA4_OAUTH_REFRESH_TOKEN` da tanımlanmazsa sistem mevcut `GSC_OAUTH_REFRESH_TOKEN` değerini dener. Bu durumda aynı tokenın hem Search Console hem Analytics kapsamlarını içermesi gerekir.
 
 ## 4. Deploy ve test
 
@@ -50,6 +54,8 @@ Değişkenler kaydedilip Worker yeniden deploy edildikten sonra şu korumalı ad
 ```
 
 Başarılı yanıtta `connected: true` görülür.
+
+Search Console ve GA4 için her başarılı yanıt yedi günlük dahili son-başarılı-veri yedeğini yeniler. Google bağlantısı geçici olarak kesilirse yönetim ekranı tamamen boşalmak yerine `stale: true` ve `warning` alanlarıyla bu yedeği gösterir. Bu davranış kimlik bilgisi sorununu gizlemez; `staleReason` yalnızca Basic Auth arkasındaki yönetim API'sinde döner.
 
 Dashboard şu verileri gösterir:
 
