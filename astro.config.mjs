@@ -7,7 +7,7 @@ import { dunyaBalikcilikYazilari } from "./src/data/dunya-balikcilik.ts";
 import { slugifyTr } from "./src/utils/slug.ts";
 
 const site = process.env.PUBLIC_SITE_URL || "https://oltaatlasi.com";
-const nonIndexablePaths = new Set(["/404/", "/admin/dashboard/", "/admin/seo-radar/"]);
+const nonIndexablePaths = new Set(["/404/", "/admin/dashboard/", "/admin/seo-radar/", "/admin/traffic-diagnostics/"]);
 const lastModifiedByPath = new Map();
 const latestDate = (routes) => routes.map((route) => route.updatedAt).filter(Boolean).sort().at(-1);
 const rememberLastModified = (pathname, routes) => {
