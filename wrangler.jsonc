@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "oltaatlasi",
-  "main": "./worker/security-router.js",
+  "main": "./worker/edge-health-router.js",
   "compatibility_date": "2026-07-23",
   "observability": {
     "enabled": true,
