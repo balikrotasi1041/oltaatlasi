@@ -11,6 +11,8 @@ import { gunlukKaliteIyilestirmeleri20260803 } from "./meralar-gunluk-kalite-202
 import { gun1Meralar20260804 } from "./meralar-gun1-2026-08-04";
 import { gunlukKaliteIyilestirmeleri20260807 } from "./meralar-gunluk-kalite-2026-08-07";
 import { gun2Meralar20260807 } from "./meralar-gun2-2026-08-07";
+import { istanbulKocaeliIyilestirmeleri20260808, istanbulKocaeliYeni20260808 } from "./meralar-istanbul-kocaeli-2026-08-08";
+import { istanbulKocaeliIyilestirmeleriFix20260808 } from "./meralar-istanbul-kocaeli-fix-2026-08-08";
 import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
 import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
@@ -60,8 +62,6 @@ export const retiredRouteSlugs=new Set<string>([
   "basiskele-sahili",
 ]);
 
-// Katmanlar eskiden yeniye sıralıdır. Aynı slug'ın en yeni sürümü kazanır.
-// Bu tek geçişli birleştirme hem yinelenen canlı sayfaları hem de katmanlar arası kaçakları önler.
 const localLayers:EnrichedMera[]=[
   ...temelMeralar.map(baseDefaults),
   ...gunlukMeralar.map(baseDefaults),
@@ -75,42 +75,33 @@ const localLayers:EnrichedMera[]=[
   ...gun1Meralar20260804.map(baseDefaults),
   ...gunlukKaliteIyilestirmeleri20260807.map(baseDefaults),
   ...gun2Meralar20260807.map(baseDefaults),
+  ...istanbulKocaeliIyilestirmeleri20260808.map(baseDefaults),
+  ...istanbulKocaeliIyilestirmeleriFix20260808.map(baseDefaults),
+  ...istanbulKocaeliYeni20260808.map(baseDefaults),
 ].filter((m)=>!retiredRouteSlugs.has(m.slug));
 const localBySlug=new Map<string,EnrichedMera>();
 for(const route of localLayers)localBySlug.set(route.slug,route);
-export const meralar:EnrichedMera[]=[
-  ...localBySlug.values(),
-  ...national.filter((m)=>!retiredRouteSlugs.has(m.slug)&&!localBySlug.has(m.slug)),
-];
+export const meralar:EnrichedMera[]=[...localBySlug.values(),...national.filter((m)=>!retiredRouteSlugs.has(m.slug)&&!localBySlug.has(m.slug))];
 
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
-
 export const nationalCoordinateStats={resolved:ulusalKoordinatMeta.resolvedCount,unresolved:ulusalKoordinatMeta.unresolvedCount,generatedAt:ulusalKoordinatMeta.generatedAt};
-export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length+gunlukKaliteIyilestirmeleri20260807.length+gun2Meralar20260807.length};
+export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length+gunlukKaliteIyilestirmeleri20260807.length+gun2Meralar20260807.length+istanbulKocaeliIyilestirmeleriFix20260808.length+istanbulKocaeliYeni20260808.length};
 const routesWithoutFish=meralar.filter(m=>!Array.isArray(m.fish)||m.fish.length===0);
 const indexableRoutesWithoutFish=routesWithoutFish.filter(m=>m.confidence!=="D");
 if(indexableRoutesWithoutFish.length)throw new Error(`Balık türü bilgisi olmayan ${indexableRoutesWithoutFish.length} indekslenebilir avlak sayfası var: ${indexableRoutesWithoutFish.slice(0,20).map(m=>m.slug).join(", ")}`);
 const invalidFish=meralar.filter(m=>m.fish.some(f=>typeof f!=="string"||!f.trim()));
 if(invalidFish.length)throw new Error(`Geçersiz balık türü alanı bulunan avlaklar: ${invalidFish.map(m=>m.slug).join(", ")}`);
-
 const dashboardWeakSources=meralar.filter((m)=>!m.sources||m.sources.length<2);
 const dashboardWeakTransport=meralar.filter((m)=>!m.transport||m.transport.length<90||/güncel harita uygulaması|genel erişim bölgesine gider/i.test(m.transport));
 const dashboardWeakAccommodation=meralar.filter((m)=>!m.accommodationOptions?.length&&!/konaklama|otel|pansiyon|ilçe merkez|yerleşim|gecelik kalış/i.test(`${m.transport} ${m.planningNotes.join(" ")} ${m.amenities.join(" ")}`));
 const dashboardWeakLocality=meralar.filter((m)=>!m.shoreProfile||m.shoreProfile.length<100||/şehir içi ve düzenlenmiş bölümler|yerel engellerin bir arada/i.test(m.shoreProfile));
 const dashboardWeakResearch=meralar.filter((m)=>/pilot veri/i.test(m.verification));
-export const contentQualityAudit={
-  sources:dashboardWeakSources,
-  transport:dashboardWeakTransport,
-  accommodation:dashboardWeakAccommodation,
-  locality:dashboardWeakLocality,
-  research:dashboardWeakResearch,
-};
+export const contentQualityAudit={sources:dashboardWeakSources,transport:dashboardWeakTransport,accommodation:dashboardWeakAccommodation,locality:dashboardWeakLocality,research:dashboardWeakResearch};
 const dashboardIssueSets=Object.values(contentQualityAudit);
 const dashboardIssueTotal=dashboardIssueSets.reduce((sum,items)=>sum+items.length,0);
 export const contentQualityStats={score:Math.max(0,Math.round(100-(dashboardIssueTotal/Math.max(1,meralar.length*dashboardIssueSets.length))*100)),issues:{sources:dashboardWeakSources.length,transport:dashboardWeakTransport.length,accommodation:dashboardWeakAccommodation.length,locality:dashboardWeakLocality.length,research:dashboardWeakResearch.length}};
 if(dashboardIssueTotal){const detail=[["kaynak",dashboardWeakSources],["ulaşım",dashboardWeakTransport],["konaklama",dashboardWeakAccommodation],["kıyı",dashboardWeakLocality],["pilot",dashboardWeakResearch]].filter(([,items])=>(items as EnrichedMera[]).length).map(([label,items])=>`${label}: ${(items as EnrichedMera[]).slice(0,24).map((m)=>m.slug).join(", ")}`).join(" | ");throw new Error(`Dashboard içerik kalite kapısı ${contentQualityStats.score}/100. ${detail}`);}
-
 export const provinces=[...new Set(meralar.map(m=>m.province))].sort((a,b)=>a.localeCompare(b,"tr"));
 export const districtsByProvince=Object.fromEntries(provinces.map(p=>[p,[...new Set(meralar.filter(m=>m.province===p).map(m=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const fishOptions=[...new Set(meralar.flatMap(m=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
