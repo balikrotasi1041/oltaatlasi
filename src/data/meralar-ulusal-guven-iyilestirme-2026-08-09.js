@@ -94,6 +94,10 @@ export const ulusalGuvenIyilestirmeleri20260809={
       "Adıyaman İl Tarım ve Orman Müdürlüğünün 2026 duyurusuna göre 1 Nisan-30 Haziran arasında ildeki baraj, göl, gölet ve akarsularda su ürünleri avcılığı yasaktır. Sonraki yıllarda veya yeni kararlarda güncel duyuru esas alınmalıdır.",
       "Genel mevzuatın bilinmesi, belirli kıyı parselinin kamuya açık olduğunu göstermez; son yaklaşım ve mülkiyet saha kontrolü gerektirir."
     ],
+    planningNotes:[
+      ...(camgaziBase?.planningNotes||[]),
+      "Kıyıda konaklama veya kamp hizmeti varsayma; gecelik kalış gerekiyorsa Adıyaman merkezdeki ruhsatlı seçenekleri ayrıca doğrula."
+    ],
     sources:[
       {label:"Adıyaman İl Tarım ve Orman Müdürlüğü – Çamgazi'ye 1.075.000 sazan",url:"https://adiyaman.tarimorman.gov.tr/Haber/889/Camgazi-Baraji-Golune-1-075-000-Sazan-Baligi-Yavrusu-Birakildi",note:"2 Eylül 2025'te Çamgazi Baraj Gölü'ne 1.075.000 sazan yavrusu bırakıldığını bildirir."},
       {label:"Adıyaman İl Tarım ve Orman Müdürlüğü – 2026 su ürünleri av yasağı",url:"https://adiyaman.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=714",note:"1 Nisan-30 Haziran 2026 arasında Adıyaman'daki bütün iç sularda avlanma yasağını bildirir."},
@@ -146,7 +150,8 @@ export const ulusalGuvenIyilestirmeleri20260809={
     navigationVerified:false,
     planningNotes:[
       "Sosyal/hobi içeriklerinde görülen olta kullanımı güncel izin veya koruma zonu doğrulaması değildir; bu nedenle mikro kıyı konumu yayımlanmaz.",
-      ...(catalanBase?.planningNotes||[])
+      ...(catalanBase?.planningNotes||[]),
+      "Kıyıda konaklama veya kamp varsayma; ziyaret zorunluysa Adana kent merkezindeki ruhsatlı gecelik kalış seçeneklerini ayrıca kontrol et."
     ]
   },
 
@@ -158,6 +163,10 @@ export const ulusalGuvenIyilestirmeleri20260809={
     legalAccessUnclear:true,
     officialAmateurFishingUseEvidence:false,
     navigationVerified:false,
+    planningNotes:[
+      ...(karkamisBase?.planningNotes||[]),
+      "Kıyıda kamp veya konaklama varsayma; zorunlu gecelik kalış için Birecik ya da Nizip gibi yerleşimlerdeki ruhsatlı seçenekleri ayrıca doğrula."
+    ],
     sources:[
       {label:"Aquaculture Studies – Karkamış Baraj Gölü alabalık işletmeleri",url:"https://dergipark.org.tr/en/pub/yunusae/article/235765",note:"Karkamış'ta 10 kafes işletmesini inceleyen rota-özel akademik çalışma; ticari/yetiştiricilik kullanımının yoğunluğunu gösterir, amatör av kanıtı değildir."},
       ...(karkamisBase?.sources||[]),
