@@ -17,21 +17,18 @@ const rememberLastModified = (pathname, routes) => {
 
 for (const route of meralar) {
   const pathname = `/meralar/${route.slug}/`;
-  if (route.confidence === "D") nonIndexablePaths.add(pathname);
   rememberLastModified(pathname, [route]);
 }
 
 for (const province of [...new Set(meralar.map((route) => route.province))]) {
   const provinceRoutes = meralar.filter((route) => route.province === province);
   const provincePath = `/iller/${slugifyTr(province)}/`;
-  if (provinceRoutes.every((route) => route.confidence === "D")) nonIndexablePaths.add(provincePath);
   rememberLastModified(provincePath, provinceRoutes);
 
   for (const district of [...new Set(provinceRoutes.map((route) => route.district))]) {
     const districtRoutes = provinceRoutes.filter((route) => route.district === district);
     if (districtRoutes.length < 2) continue;
     const districtPath = `${provincePath}${slugifyTr(district)}/`;
-    if (districtRoutes.every((route) => route.confidence === "D")) nonIndexablePaths.add(districtPath);
     rememberLastModified(districtPath, districtRoutes);
   }
 }
