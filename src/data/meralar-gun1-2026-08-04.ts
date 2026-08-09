@@ -3,6 +3,7 @@ import { gun1EkMeralar20260804 } from "./meralar-gun1-ek-2026-08-04";
 import { gun2Meralar20260805 } from "./meralar-gun2-2026-08-05";
 import { gun3Meralar20260806 } from "./meralar-gun3-2026-08-06";
 import { gun3Meralar20260808 } from "./meralar-gun3-2026-08-08";
+import { gun4Meralar20260809 } from "./meralar-gun4-2026-08-09";
 
 export const gun1Meralar20260804: Mera[] = [
   {
@@ -77,5 +78,6 @@ export const gun1Meralar20260804: Mera[] = [
   ...gun1EkMeralar20260804,
   ...gun2Meralar20260805,
   ...gun3Meralar20260806,
-  ...gun3Meralar20260808
+  ...gun3Meralar20260808,
+  ...gun4Meralar20260809
 ];
