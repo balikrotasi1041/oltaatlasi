@@ -65,8 +65,19 @@ const fishEvidence = [
   }
 ];
 
+const commonRulesSource={
+  label:"Tarım ve Orman Bakanlığı – 6/2 amatör su ürünleri avcılığı kuralları",
+  url:"https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+  note:"1 Eylül 2024–31 Ağustos 2028 dönemi genel kurallarıdır; il, su ve kiralanmış istihsal sahası koşulları hareket günü ayrıca kontrol edilmelidir."
+};
+const commonRulesAmendmentSource={
+  label:"Balıkçılık ve Su Ürünleri Genel Müdürlüğü – 6/2 Tebliğ 2025/12 değişikliği",
+  url:"https://www.tarimorman.gov.tr/BSGM/Haber/332/Su-Urunleri-Avciligini-Duzenleyen-Ticari-Ve-Amator-Tebliglerde-Yapilan-Onemli-Degisiklikler-Resmi-Gazetede-Yayimlanarak-Yururluge-Girdi",
+  note:"16 Nisan 2025'te yürürlüğe giren değişiklikleri ve 1 Ocak 2026'dan itibaren sualtı tüfeğiyle avcılık için belge zorunluluğunu açıklar."
+};
+
 const common = {
-  researchedAt:"2026-07-30",
+  researchedAt:"2026-08-09",
   researchStatus:"Rota özelinde araştırıldı",
   researchSummary:"Hirfanlı Baraj Gölü için tür bilgisi resmî stok ilanı, yerel kamu kurumları ve akademik yayınlarla karşılaştırıldı. Pin gölün genel konumudur; seçilecek kıyı, erişim ve av yasağı ayrıca kontrol edilmelidir.",
   fishEvidence,
@@ -75,11 +86,11 @@ const common = {
   baits:["Mısır","Hamur","Solucan","Silikon","Minnow","Kaşık"],
   seasonalNotes:[
     "Hirfanlı Baraj Gölü için sazan, sudak, tatlı su levreği, yayın, kadife, siraz, gümüş balığı ve gümüşi havuz balığına ilişkin resmî veya akademik kayıtlar bulunmaktadır. Türlerin aynı kıyıda ve aynı dönemde bulunacağı sonucu çıkarılmamalıdır.",
-    "Kırşehir İl Tarım ve Orman Müdürlüğü 2026 yılında 15 Mart–15 Haziran arasında amatör avcılık yasağı duyurmuştur. Tarihler ve istisnalar her yıl ve il sınırına göre yeniden kontrol edilmelidir."
+    "6/2 Tebliğ ile av yapılan ilin güncel duyurusu birlikte uygulanır. Çok illi rezervuarda başka bir ilin tarih veya istisnası seçilen kıyıya taşınmamalıdır."
   ],
   cautions:[
     "Barajın Ankara, Kırşehir, Kırıkkale ve Aksaray yönlerinde farklı işletme ve kıyı koşulları bulunabilir.",
-    "15 Mart–15 Haziran dönemindeki iç su yasağı ve güncel il müdürlüğü kararları kontrol edilmelidir.",
+    "6/2 Tebliğdeki dönem kuralları ve seçilen kıyının bağlı olduğu il müdürlüğünün güncel kararları kontrol edilmelidir.",
     "Su seviyesi değişimi, çamurlu yamaç, sert rüzgâr ve kıyıdan ani derinleşme riski vardır.",
     "Pin, güvenli kıyı girişi veya araç park noktası değildir."
   ],
@@ -95,21 +106,6 @@ const common = {
       note:"Sazan, tatlı su levreği ve yayın balığının avlandığını bildiren yerel kamu kaynağı."
     },
     {
-      label:"Kırşehir İl Tarım ve Orman Müdürlüğü – 2026 av yasağı duyurusu",
-      url:"https://kirsehir.tarimorman.gov.tr/Haber/690/%E2%80%8Bsu-Urunleri-Av-Yasaklari-Basliyor",
-      note:"2026 iç su av yasağı tarihleri; av öncesinde güncel duyuru yeniden kontrol edilmelidir."
-    },
-    {
-      label:"Kırşehir İl Kültür ve Turizm Müdürlüğü – Hirfanlı Barajı",
-      url:"https://kirsehir.ktb.gov.tr/TR-196433/hirfanli-baraj.html",
-      note:"Barajın kapsadığı alan, plaj, sosyal tesis ve çevre balıkçılığı hakkında resmî tanıtım."
-    },
-    {
-      label:"Kırşehir Valiliği – Doğal Güzelliklerimiz",
-      url:"https://www.kirsehir.gov.tr/dogal-guzelliklerimiz",
-      note:"Plaj, kamp kullanımı, asfalt ulaşım ve çevredeki sosyal tesisler hakkında resmî bilgi."
-    },
-    {
       label:"Hirfanlı Baraj Gölü sazan beslenmesi akademik çalışması",
       url:"https://dergipark.org.tr/tr/pub/kefdergi/article/626007",
       note:"Hirfanlı'dan 206 sazan örneğine dayanan akademik çalışma."
@@ -118,20 +114,16 @@ const common = {
       label:"Hirfanlı Baraj Gölü siraz balığı akademik çalışması",
       url:"https://dergipark.org.tr/tr/pub/kfbd/issue/22233/238665",
       note:"Hirfanlı'da yaşayan siraz balığına ilişkin akademik kayıt."
-    }
+    },
+    commonRulesSource,
+    commonRulesAmendmentSource
   ],
   replaceAutomaticSources:true,
   navigationVerified:false,
 };
 
-const commonRulesSource={
-  label:"Tarım ve Orman Bakanlığı – amatör su ürünleri avcılığı kuralları",
-  url:"https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
-  note:"Güncel dönem, tür, boy, adet, takım ve suya özel kısıtlar hareket gününde yeniden kontrol edilmelidir."
-};
-
 const agriBalikGolu={
-  researchedAt:"2026-08-07",
+  researchedAt:"2026-08-09",
   researchStatus:"Rota özelinde güçlü masa başı doğrulama",
   researchSummary:"Ağrı Balık Gölü; Kültür ve Turizm Bakanlığı, SERKA, Çevre Şehircilik ve İletişim Başkanlığı kayıtlarıyla su varlığı, kırmızı benekli alabalık ve sazan kaydı, koruma statüsü, ziyaretçi erişimi, kıyı çalışması ve mevsimsel tesis bağlamında doğrulandı. Saha teyidi ve amatör av izni yoktur.",
   fish:["Alabalık","Sazan"],
@@ -230,8 +222,8 @@ const seyhanBarajGolu={
   transport:"Kent içinden Çukurova ilçesindeki Adnan Menderes Bulvarı kamusal kıyı hattı hedeflenebilir. Navigasyon genel bulvar noktasına gider; aracı yalnız yasal park alanına bırak, bisiklet ve yaya yolunu kapatma, su yapıları ile koruma alanı sınırlarından uzak dur.",
   crowdNote:"Kamusal kıyı spor, yürüyüş, bisiklet ve dinlenme için yoğun kullanılır. Güvenli atış koridoru bulunmayan saat ve bölümlerde olta açılmamalıdır.",
   seasonalNotes:["Sazan, gümüşi havuz balığı ve gökkuşağı alabalığı rota-özel akademik veya Bakanlık kayıtlarında yer alır; aynı kıyıda güncel bulunurluk ve av verimi garanti değildir.","İçsu kapalı dönemleri, tür-boy-adet sınırları ve korunan alan kararları av günü resmî kaynaklardan kontrol edilmelidir."],
-  planningNotes:["Adnan Menderes kıyı şeridinde yaya ve bisiklet güvenliği uygun değilse olta açma.","Baraj gövdesi, su alma yapıları ve güvenlik alanlarını rota dışında tut.","Geceleme için yalnız belgeli kent tesislerini kullan; kıyı kampı varsayma."],
-  cautions:["Yoğun yaya ve bisiklet trafiği","Baraj işletme ve koruma alanları","Kıyıdan ani derinleşme ve düşme riski","Güncel içsu yasakları","Tüketim için güncel su ürünü duyurularını kontrol etme gereği"],
+  planningNotes:["Adnan Menderes kıyı şeridinde yaya ve bisiklet güvenliği uygun değilse olta açma.","Baraj gövdesi, su alma yapıları ve güvenlik alanlarını rota dışında tut.","DSİ ve Adana Valiliğinin tahliye/su seviyesi duyurularını hareket günü kontrol et; geçmiş duyuruyu güncel durum gibi yorumlama.","Geceleme için yalnız belgeli kent tesislerini kullan; kıyı kampı varsayma."],
+  cautions:["Yoğun yaya ve bisiklet trafiği","Baraj işletme ve koruma alanları","Kontrollü tahliyede ani su seviyesi değişimi","Kıyıdan ani derinleşme ve düşme riski","Güncel içsu yasakları","Tüketim için güncel su ürünü duyurularını kontrol etme gereği"],
   strongOfficialSource:true,
   officialAmateurFishingUseEvidence:true,
   replaceAutomaticSources:true,
@@ -241,14 +233,17 @@ const seyhanBarajGolu={
     {label:"Adana Büyükşehir – kıyı düzenlemesi",url:"https://www.adana.bel.tr/tr/haber/buyuksehir-den-adnan-menderes-bulvari-nda-aydinlatma--bisiklet-yolu-ve-korkuluk-yenileme-calismasi-",note:"3,5 km aydınlatma, bisiklet yolu ve korkuluk yenilemesini bildirir."},
     {label:"TR Dizin – Seyhan Baraj Gölü balık faunası",url:"https://search.trdizin.gov.tr/tr/yayin/detay/129399/",note:"2004–2005 örneklemesine dayalı rota-özel balık faunası çalışması."},
     {label:"Tarım ve Orman Bakanlığı – Seyhan Baraj Gölü egzotik balıkları",url:"https://www.tarimorman.gov.tr/DKMP/Belgeler/dkmp%20resmi%20istatistik/kutuphane/82.pdf",note:"Rota-özel tür tespitleri içeren teknik yayın."},
-    commonRulesSource
+    {label:"Adana Valiliği – 20 Şubat 2026 kontrollü su tahliyesi açıklaması",url:"https://www.adana.gov.tr/seyhan-barajinda-kontrollu-su-tahliyesinin-devam-etmesiyle-ilgili-basin-aciklamasi",note:"2026'daki tahliye sırasında ani seviye değişimi uyarısını belgeler; güncel tahliye durumu hareket günü ayrıca kontrol edilmelidir."},
+    {label:"Adana Valiliği – Seyhan Baraj Gölü çevresinde kaçak yapılaşma denetimi",url:"https://www.adana.gov.tr/bfk-423658",note:"2026'da göl çevresindeki kaçak yapıların kaldırıldığını bildirir; yapı, yol veya kıyı geçişi kamusal erişim kanıtı sayılmaz."},
+    commonRulesSource,
+    commonRulesAmendmentSource
   ]
 };
 
 const asartepeBarajGolu={
-  researchedAt:"2026-08-07",
-  researchStatus:"Rota özelinde güçlü masa başı doğrulama",
-  researchSummary:"Asartepe Baraj Gölü; Ankara Valiliği su yapısı kaydı, resmî çevre durum raporundaki hobi balıkçılığı ifadesi, EBA kamusal piknik alanı kaydı ve rota-özel akademik tür çalışmasıyla doğrulandı. Saha teyidi yapılmadı; genel göl pini güvenli kıyı girişi değildir.",
+  researchedAt:"2026-08-09",
+  researchStatus:"Rota özelinde kanıt var; güncel hukuki erişim doğrulanmadı",
+  researchSummary:"Asartepe Baraj Gölü'nün kimliği, su yapısı ve tür kaydı rota özelindeki resmî ve bilimsel kaynaklarla doğrulandı. Hobi balıkçılığı ifadesi 2016 çevre raporuna dayanır; 2026 için güncel amatör alan tahsisi, kiralama durumu veya açık kıyı girişi kanıtlamadığından kayıt Güven D'ye düşürüldü.",
   fish:["Gümüşi Havuz Balığı"],
   fishEvidence:[{name:"Gümüşi Havuz Balığı",scientificName:"Carassius gibelio",evidenceLevel:"Rota özelinde hakemli çalışma",sourceLabel:"Asartepe Baraj Gölü Carassius gibelio popülasyon çalışması",sourceUrl:"https://doi.org/10.17100/nevbiltek.565112",note:"Çalışma doğrudan Asartepe Baraj Gölü'ndeki Carassius gibelio popülasyonunu inceler; güncel yoğunluk ve av başarısı garanti değildir."}],
   methods:["Mevzuata uygun hafif dip oltası","Şamandıralı olta"],
@@ -263,19 +258,21 @@ const asartepeBarajGolu={
   ],
   transport:"Güdül/Çanıllı yönünden yalnız kamusal yol ve açık olduğu doğrulanmış piknik alanı hedeflenmelidir. Genel göl merkezine navigasyon verilmez; son yaklaşım, park, bariyer, tarım parseli ve DSİ işletme sınırı gündüz kontrol edilmelidir.",
   crowdNote:"Piknik alanı aile ve günübirlik ziyaretçilerle paylaşılır; güvenli atış koridoru yoksa olta açılmamalıdır.",
-  seasonalNotes:["Gümüşi havuz balığı rota-özel hakemli çalışmayla doğrulanmıştır; çalışma tarihi güncel stok veya av başarısı anlamına gelmez.","İçsu kapalı dönemi, tür-boy-adet sınırı ve yerel işletme kararları av öncesinde kontrol edilmelidir."],
+  seasonalNotes:["Gümüşi havuz balığı rota-özel hakemli çalışmayla doğrulanmıştır; bilimsel tür kaydı kıyıdan amatör av hakkı veya güncel stok yoğunluğu anlamına gelmez.","6/2 Tebliğ, 2025/12 değişikliği, Ankara İl Tarım ve Orman Müdürlüğünün güncel kararları ve varsa kiralanmış istihsal sahası levhaları av öncesinde birlikte kontrol edilmelidir."],
   planningNotes:["Baraj gövdesi, regülatör, su alma yapısı ve servis yollarından uzak dur.","Kamusal piknik alanı dışındaki tarla ve kıyı geçişlerinde mülkiyet izni varsayma.","Kıyıda konaklama veya kamp hizmeti varsayma; ilçe/kent seçeneğini önceden doğrula."],
   cautions:["Sulama işletme alanları","Özel tarım parselleri","Piknik ziyaretçileriyle ortak kullanım","Su seviyesi ve çamurlu kıyı","Genel pinin erişim noktası olmaması"],
   strongOfficialSource:true,
-  officialAmateurFishingUseEvidence:true,
+  officialAmateurFishingUseEvidence:false,
+  legalAccessUnclear:true,
   replaceAutomaticSources:true,
   navigationVerified:false,
   sources:[
     {label:"Ankara 2016 İl Çevre Durum Raporu",url:"https://webdosya.csb.gov.tr/db/ced/editordosya/Ankara_icdr2016.pdf",note:"Asartepe Barajında hobi balıkçılığı yapıldığını bildiren resmî çevre raporu."},
     {label:"MEB EBA – Asartepe Barajı ve Alay mevkii piknik alanları",url:"https://okuldisiogrenme.eba.gov.tr/mekan-detay/asartepe-baraji-ve-alay-mevkii-nde-piknik-alanlari-1281",note:"Kamusal ziyaret/piknik alanı ve genel adres bağlamı."},
     {label:"Ankara Valiliği – Barajlar",url:"https://www.ankara.gov.tr/barajlar",note:"Asartepe'nin Güdül yakınındaki sulama barajı olduğunu doğrular."},
-    {label:"Asartepe Baraj Gölü Carassius gibelio çalışması",url:"https://doi.org/10.17100/nevbiltek.565112",note:"Rota-özel tür ve popülasyon çalışması."},
-    commonRulesSource
+    {label:"Asartepe Baraj Gölü Carassius gibelio çalışması",url:"https://doi.org/10.17100/nevbiltek.565112",note:"Rota-özel tür ve popülasyon çalışması; amatör kıyı kullanım kanıtı değildir."},
+    commonRulesSource,
+    commonRulesAmendmentSource
   ]
 };
 
@@ -456,6 +453,9 @@ export const ulusalManuelArastirma = {
   "ulusal-bitlis-nazik-golu":nazikGolu,
   "ulusal-ankara-hirfanli-baraj-golu-ankara-kiyisi":{
     ...common,
+    researchedAt:"2026-08-09",
+    researchStatus:"Rota özelinde güçlü masa başı doğrulama; Ankara kıyı kararı teyit bekliyor",
+    researchSummary:"Hirfanlı Baraj Gölü'nün Ankara kıyısı için türler rota özelindeki stok ve bilimsel kayıtlarla, Evren sahili ise kamu kaynaklarıyla desteklenir. Kamuya açık 2026 Ankara il duyurusu rota dosyasında bulunmadığından belirli kıyı cebinin amatör av ve erişim durumu teyit bekler; Kırşehir kararı Ankara kıyısına uygulanmaz.",
     vehicleAccess:"Orta",
     camping:"Sınırlı",
     amenities:["Evren sahilinde piknik alanları","Evren yönünde konaklama tesisleri","İlçe merkezinde market ve yeme-içme seçenekleri","Kıyı seçimine göre otopark araştırması"],
@@ -476,6 +476,14 @@ export const ulusalManuelArastirma = {
         note:"Kaymakamlık tanıtımı genel bölgeyi doğrular."
       }
     ],
+    sources:[
+      ...common.sources,
+      {label:"Evren Kaymakamlığı – Evren sahili ve Hirfanlı Barajı",url:"https://evren.gov.tr/evren-sahili-ve-hirfanli-baraji",note:"Düzenlenmiş sahil ve rekreasyon bağlamını doğrular; güncel amatör av alanı tahsisi değildir."}
+    ],
+    seasonalNotes:[
+      common.seasonalNotes[0],
+      "Ankara kıyısında 6/2 Tebliğ ile Ankara İl Tarım ve Orman Müdürlüğünün güncel duyurusu esas alınır. Kırşehir'in 2026 tarihli 15 Mart–15 Haziran kararı Ankara kıyısına taşınmamalıdır."
+    ],
     transport:"Ankara yönünden Evren ilçe merkezi ve düzenlenmiş sahil bölgesi planlama başlangıcı olarak kullanılabilir. Son kıyı yaklaşımı, yol yüzeyi, bariyer ve özel mülkiyet sınırı yerinde kontrol edilmelidir.",
     planningNotes:[
       "Evren sahili gibi düzenlenmiş alanlar ile kırsal kıyı cepleri aynı erişim ve tesis düzeyine sahip değildir.",
@@ -485,6 +493,9 @@ export const ulusalManuelArastirma = {
   },
   "ulusal-kirsehir-hirfanli-baraj-golu-kirsehir-kiyisi":{
     ...common,
+    researchedAt:"2026-08-09",
+    researchStatus:"Rota özelinde 2026 mevzuat ve erişim taraması",
+    researchSummary:"Hirfanlı Baraj Gölü'nün Kırşehir kıyısı; rota özelindeki tür kayıtları, resmî kıyı/rekreasyon kaynakları ve Kırşehir İl Tarım ve Orman Müdürlüğünün 12 Mart 2026 duyurusuyla çaprazlandı. Duyuru 15 Mart–15 Haziran 2026 arasında ildeki tüm avlaklarda amatör avcılığı yasakladı; sonraki dönem için de hareket günü güncel karar kontrol edilmelidir.",
     vehicleAccess:"Kolay",
     camping:"Sınırlı",
     amenities:["Asfalt yolla erişilen kıyı seçenekleri","Plaj ve piknik alanları","Restoran ve sosyal tesis seçenekleri","Kırşehir/Kaman yönünde konaklama araştırması"],
@@ -517,6 +528,16 @@ export const ulusalManuelArastirma = {
         sourceUrl:"https://www.kirsehir.gov.tr/dogal-guzelliklerimiz",
         note:"Kıyı adı seçilerek son yaklaşım ayrıca kontrol edilmelidir."
       }
+    ],
+    sources:[
+      ...common.sources,
+      {label:"Kırşehir İl Kültür ve Turizm Müdürlüğü – Hirfanlı Barajı",url:"https://kirsehir.ktb.gov.tr/TR-196433/hirfanli-baraj.html",note:"Kırşehir kıyısındaki plaj, sosyal tesis ve çevre balıkçılığı hakkında resmî tanıtım; başka il kıyıları için erişim kanıtı değildir."},
+      {label:"Kırşehir Valiliği – Doğal Güzelliklerimiz",url:"https://www.kirsehir.gov.tr/dogal-guzelliklerimiz",note:"Kırşehir kıyısındaki plaj, kamp kullanımı, asfalt ulaşım ve sosyal tesisler hakkında resmî bilgi."},
+      {label:"Kırşehir İl Tarım ve Orman Müdürlüğü – 2026 su ürünleri av yasağı",url:"https://kirsehir.tarimorman.gov.tr/Haber/690/%E2%80%8Bsu-Urunleri-Av-Yasaklari-Basliyor",note:"15 Mart–15 Haziran 2026 arasında ildeki tüm avlaklarda amatör avcılığın yasak olduğunu bildirir; sonraki sezon güncel duyuru yeniden kontrol edilmelidir."}
+    ],
+    seasonalNotes:[
+      common.seasonalNotes[0],
+      "Kırşehir İl Tarım ve Orman Müdürlüğü 15 Mart–15 Haziran 2026 arasında ildeki tüm avlaklarda amatör avcılığı yasaklamıştır. Bu tarih geçmiş olsa bile her hareket gününde yeni karar ve istisnalar yeniden kontrol edilmelidir."
     ],
     transport:"Kırşehir yönünde Sıdıklı Büyükoba, Toklumen, Savcılı Büyükoba ve Hirfanlı çevresi resmî kaynaklarda rekreasyon ve kıyı erişimiyle anılır. Genel göl pinine doğrudan rota oluşturmak yerine seçilen yerleşim veya tesise navigasyon yapılmalıdır.",
     planningNotes:[
