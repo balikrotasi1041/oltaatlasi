@@ -17,7 +17,7 @@ Her boyut `güçlü`, `kısmi` veya `doğrulanmadı` olarak yayımlanır. En zay
 - **Güven A:** Rota özelinde güçlü resmî hukuk/kullanım kanıtı ve tarihli saha doğrulaması vardır. Değişken koşullar hareket günü yine kontrol edilir.
 - **Güven B:** Rota özelindeki güçlü resmî kaynak amatör veya sportif olta kullanımını destekler; saha doğrulaması eksik olabilir. Genel bölgesel tanıtım tek başına yeterli değildir.
 - **Güven C:** Su varlığı, tür veya genel erişim bağlamı çok kaynaklı masa başı araştırmayla desteklenir; belirli kıyının güncel hukuki ve fiziksel erişimi kanıtlanmış değildir.
-- **Güven D:** Kritik hukuk, erişim, koordinat veya kaynak boşluğu vardır. Kayıt ön değerlendirmedir ve arama motorlarına açılmaz.
+- **Güven D:** Kritik hukuk, erişim, koordinat veya kaynak boşluğu vardır. Kayıt ön değerlendirmedir; arama motorlarına açıktır fakat eksik kanıtlar ve kullanım sınırları sayfada belirgin biçimde gösterilir.
 
 Yanlış yüksek güven, yeni kaynak eklemekten daha risklidir. Tarihsel bir kullanım kaydı güncel izin gibi sunulamaz; başka bir ilin geçici kararı çok illi rezervuarın bütün kıyılarına uygulanamaz; akademik tür kaydı kıyı erişimini yükseltemez.
 
