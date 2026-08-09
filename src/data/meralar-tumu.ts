@@ -13,6 +13,7 @@ import { gunlukKaliteIyilestirmeleri20260807 } from "./meralar-gunluk-kalite-202
 import { gun2Meralar20260807 } from "./meralar-gun2-2026-08-07";
 import { istanbulKocaeliIyilestirmeleri20260808, istanbulKocaeliYeni20260808 } from "./meralar-istanbul-kocaeli-2026-08-08";
 import { istanbulKocaeliIyilestirmeleriFix20260808 } from "./meralar-istanbul-kocaeli-fix-2026-08-08";
+import { istanbulKocaeliIyilestirmeleri20260809, istanbulKocaeliYeni20260809 } from "./meralar-istanbul-kocaeli-2026-08-09";
 import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
 import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
@@ -78,6 +79,8 @@ const localLayers:EnrichedMera[]=[
   ...istanbulKocaeliIyilestirmeleri20260808.map(baseDefaults),
   ...istanbulKocaeliIyilestirmeleriFix20260808.map(baseDefaults),
   ...istanbulKocaeliYeni20260808.map(baseDefaults),
+  ...istanbulKocaeliIyilestirmeleri20260809.map(baseDefaults),
+  ...istanbulKocaeliYeni20260809.map(baseDefaults),
 ].filter((m)=>!retiredRouteSlugs.has(m.slug));
 const localBySlug=new Map<string,EnrichedMera>();
 for(const route of localLayers)localBySlug.set(route.slug,route);
@@ -86,7 +89,7 @@ export const meralar:EnrichedMera[]=[...localBySlug.values(),...national.filter(
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
 export const nationalCoordinateStats={resolved:ulusalKoordinatMeta.resolvedCount,unresolved:ulusalKoordinatMeta.unresolvedCount,generatedAt:ulusalKoordinatMeta.generatedAt};
-export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length+gunlukKaliteIyilestirmeleri20260807.length+gun2Meralar20260807.length+istanbulKocaeliIyilestirmeleriFix20260808.length+istanbulKocaeliYeni20260808.length};
+export const nationalResearchStats={routeCount:ulusalOtomatikArastirmaMeta.routeCount||Object.keys(automatic).length,fishEvidenceRouteCount:ulusalOtomatikArastirmaMeta.fishEvidenceRouteCount||0,accessEvidenceRouteCount:ulusalOtomatikArastirmaMeta.accessEvidenceRouteCount||0,generatedAt:ulusalOtomatikArastirmaMeta.generatedAt||null,manualRouteCount:Object.keys(manual).length+kocaeliIyilestirmeler.length+istanbulIyilestirmeler.length+gunlukIyilestirmeler20260801.length+gunlukIyilestirmeler20260802.length+gunlukKaliteIyilestirmeleri20260807.length+gun2Meralar20260807.length+istanbulKocaeliIyilestirmeleriFix20260808.length+istanbulKocaeliYeni20260808.length+istanbulKocaeliIyilestirmeleri20260809.length+istanbulKocaeliYeni20260809.length};
 const routesWithoutFish=meralar.filter(m=>!Array.isArray(m.fish)||m.fish.length===0);
 const indexableRoutesWithoutFish=routesWithoutFish.filter(m=>m.confidence!=="D");
 if(indexableRoutesWithoutFish.length)throw new Error(`Balık türü bilgisi olmayan ${indexableRoutesWithoutFish.length} indekslenebilir avlak sayfası var: ${indexableRoutesWithoutFish.slice(0,20).map(m=>m.slug).join(", ")}`);
