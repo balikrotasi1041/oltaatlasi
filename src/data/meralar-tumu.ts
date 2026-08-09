@@ -23,9 +23,11 @@ export type ResearchSource={label:string;url:string;note:string};
 export type FishEvidence={name:string;scientificName?:string|null;evidenceLevel:string;sourceLabel:string;sourceUrl:string;note:string;recordCount?:number|null;distanceKm?:number|null};
 export type AccommodationOption={name:string;type:string;distanceKm:number|null;sourceUrl:string;note:string};
 export type AccessEvidence={label:string;value:string;sourceUrl:string;note:string};
+export type ConfidenceDimension={level:"strong"|"partial"|"unverified";label:string;note:string};
+export type ConfidenceProfile={model:"evidence-v1";overall:Mera["confidence"];identity:ConfidenceDimension;legal:ConfidenceDimension;access:ConfidenceDimension;species:ConfidenceDimension;field:ConfidenceDimension;reviewedAt:string};
 type NationalCoordinate={lat:number;lng:number;displayName:string;sourceUrl:string;matchScore:number;matchedAt:string};
 type NationalResearch={researchedAt?:string;researchStatus?:string;researchSummary?:string;fish?:string[];fishEvidence?:FishEvidence[];methods?:string[];baits?:string[];camping?:Mera["camping"];vehicleAccess?:Mera["vehicleAccess"];amenities?:string[];cautions?:string[];accommodationOptions?:AccommodationOption[];accessEvidence?:AccessEvidence[];seasonalNotes?:string[];planningNotes?:string[];transport?:string;crowdNote?:string;sources?:ResearchSource[];fieldVerification?:boolean;strongOfficialSource?:boolean;officialAmateurFishingUseEvidence?:boolean;legalAccessUnclear?:boolean;replaceAutomaticSources?:boolean;replaceAutomaticFish?:boolean;navigationVerified?:boolean;lat?:number;lng?:number;locationPrecision?:Mera["locationPrecision"];navigationNote?:string};
-export type EnrichedMera=Mera&{researchStatus?:string;researchSummary?:string;researchedAt?:string;fishEvidence:FishEvidence[];accommodationOptions:AccommodationOption[];accessEvidence:AccessEvidence[];navigationVerified?:boolean};
+export type EnrichedMera=Mera&{researchStatus?:string;researchSummary?:string;researchedAt?:string;fishEvidence:FishEvidence[];accommodationOptions:AccommodationOption[];accessEvidence:AccessEvidence[];navigationVerified?:boolean;confidenceProfile?:ConfidenceProfile};
 
 const coordinateIndex=ulusalKoordinatlar as Record<string,NationalCoordinate>;
 const automatic=ulusalOtomatikArastirma as Record<string,NationalResearch>;
@@ -46,14 +48,106 @@ export const nationalConfidence=(r?:NationalResearch):Mera["confidence"]=>{
   const hasStrongDeskResearch=/rota özelinde/i.test(r.researchStatus||"")&&Boolean((r.sources?.length||0)>=2||(r.fishEvidence?.length&&r.accessEvidence?.length));
   return hasStrongDeskResearch?"C":"D";
 };
+const evidenceNames=(r?:NationalResearch)=>new Set((r?.fishEvidence||[]).map((item)=>item.name.toLocaleLowerCase("tr-TR")));
+const nationalConfidenceProfile=(r:NationalResearch|undefined,fish:string[],sources:ResearchSource[],hasCoordinates:boolean,overall:Mera["confidence"],reviewedAt:string):ConfidenceProfile=>{
+  const officialSources=sources.filter((source)=>/\.gov\.tr\b|\.bel\.tr\b|tarimorman\.gov\.tr\b/i.test(source.url));
+  const supportedFish=evidenceNames(r);
+  const allFishSupported=fish.length>0&&fish.every((name)=>supportedFish.has(name.toLocaleLowerCase("tr-TR")));
+  const identity:ConfidenceDimension=r?.strongOfficialSource&&officialSources.length
+    ?{level:"strong",label:"Resmî rota kimliği",note:"Su varlığı ve rota kimliği en az bir resmî, rota özelindeki kaynakla destekleniyor."}
+    :hasCoordinates&&sources.length>=2
+      ?{level:"partial",label:"Çok kaynaklı konum eşleşmesi",note:"Ad ve genel konum birden fazla kaynakla eşleşiyor; mikro kıyı noktası doğrulanmış sayılmaz."}
+      :{level:"unverified",label:"Aday konum",note:"Rota kimliği veya koordinatı ek doğrulama bekliyor."};
+  const legal:ConfidenceDimension=r?.legalAccessUnclear
+    ?{level:"unverified",label:"Rota özelinde hukuki durum belirsiz",note:"Genel tebliğ, güncel il kararı ve istihsal/kiralama durumu birlikte doğrulanmadan av uygunluğu varsayılmaz."}
+    :r?.officialAmateurFishingUseEvidence
+      ?{level:"strong",label:"Resmî amatör kullanım kanıtı",note:"Resmî kaynak amatör veya sportif olta kullanımını rota düzeyinde kaydediyor; güncel dönem ve saha kısıtları yine kontrol edilmelidir."}
+      :{level:"partial",label:"Genel mevzuat kontrolü",note:"6/2 Tebliğ çerçevesi biliniyor; belirli kıyı cebine ait güncel izin veya yasak kararı ayrıca teyit edilmelidir."};
+  const access:ConfidenceDimension=r?.navigationVerified&&(r.accessEvidence?.length||0)>0
+    ?{level:"strong",label:"Planlama noktası doğrulandı",note:"Kamusal planlama hedefi ile koordinat kaynaklarda eşleşiyor; yolun her an açık olduğu anlamına gelmez."}
+    :(r?.accessEvidence?.length||0)>0
+      ?{level:"partial",label:"Genel erişim bağlamı",note:"Yerleşim veya rekreasyon erişimi belgeli; son kıyı girişi, park ve mülkiyet sınırı saha teyitli değildir."}
+      :{level:"unverified",label:"Erişim doğrulanmadı",note:"Pin su varlığını gösterir; kıyıya giriş veya araç rotası kanıtı değildir."};
+  const species:ConfidenceDimension=allFishSupported
+    ?{level:"strong",label:"Rota özelinde tür kanıtı",note:"Listelenen türlerin tamamı bu su varlığına ait resmî veya bilimsel kayıtlarla eşleşiyor; kıyıdan av garantisi vermez."}
+    :(r?.fishEvidence?.length||0)>0
+      ?{level:"partial",label:"Kısmi tür kanıtı",note:"Bazı türler rota düzeyinde destekleniyor; liste günlük bulunurluk veya kıyıdan av başarısı anlamına gelmez."}
+      :{level:"unverified",label:"Tür listesi teyit bekliyor",note:"Bölgesel tür bilgisi belirli kıyıda amatör av kanıtı olarak kullanılmaz."};
+  const field:ConfidenceDimension=r?.fieldVerification
+    ?{level:"strong",label:"Saha doğrulaması var",note:"Kıyı koşulları yerinde kontrol edildi; tarih sonrası değişiklikler yine mümkündür."}
+    :{level:"unverified",label:"Saha doğrulaması yok",note:"Bariyer, tabela, su kotu, özel mülkiyet ve güncel riskler hareket günü yeniden kontrol edilmelidir."};
+  return{model:"evidence-v1",overall,identity,legal,access,species,field,reviewedAt};
+};
+const nationalSummary=(m:Mera,confidence:Mera["confidence"])=>{
+  if(confidence==="B")return`${m.name}, rota özelindeki güçlü resmî amatör kullanım kanıtı ve destekleyici erişim/tür kaynaklarıyla masa başında doğrulanmış bir planlama dosyasıdır; güncel saha koşulları ayrıca kontrol edilmelidir.`;
+  if(confidence==="C")return`${m.name}, su varlığı, tür veya genel erişim bağlamı rota özelindeki kaynaklarla desteklenen bir planlama dosyasıdır; belirli kıyı cebinin güncel amatör av ve kamusal erişim durumu doğrulanmış değildir.`;
+  return`${m.name}, açık kaynaklarda su varlığı olarak eşleştirilmiş ön değerlendirme rotasıdır; kamusal erişim ve avlanma uygunluğu ayrıca doğrulanmalıdır.`;
+};
+const nationalLongIntro=(m:Mera,confidence:Mera["confidence"]):string[]=>{
+  if(confidence==="B")return[
+    `${m.name}, resmî bir kaynağın amatör veya sportif olta kullanımını rota düzeyinde açıkça desteklediği; tür, ulaşım ve yakın hizmet bilgilerinin ayrı kanıtlarla çaprazlandığı bir Güven B dosyasıdır.`,
+    "Güven B, gölün veya kıyının her noktasında sürekli av izni anlamına gelmez. 6/2 Tebliğ, yürürlükteki değişiklikler, il müdürlüğü duyuruları, kiralanmış istihsal alanı sınırları, DSİ güvenlik sahası ve yerel tabela birlikte kontrol edilmelidir."
+  ];
+  if(confidence==="C")return[
+    `${m.name}, su varlığı ile tür veya genel erişim bağlamının rota özelindeki resmî ya da bilimsel kaynaklarla desteklenmesi nedeniyle Güven C düzeyinde yayımlanır.`,
+    "Bu seviye, belirli kıyı cebinin kamusal olduğu veya amatör avcılığa güncel olarak ayrıldığı anlamına gelmez. Bölgesel tür kaydı kıyıdan av kanıtı sayılmaz; son giriş, mevzuat, saha riski ve il bazlı karar ayrıca doğrulanmalıdır."
+  ];
+  return[
+    `${m.name}, ulusal toplu tarama kapsamında oluşturulmuş bir ön değerlendirme rota dosyasıdır. Su varlığının adı ve il eşleşmesi açık kaynak kayıtlarında kontrol edilmiş, belirli bir kıyının amatör balıkçılığa açık olduğu sonucu çıkarılmamıştır.`,
+    "Bu kaydın güven seviyesi D'dir. Fiziki erişim, coğrafi kısıt, özel mülkiyet, koruma veya güvenlik statüsü, su seviyesi ve hukuki uygunluk resmî kaynaklardan ve yerinde ayrıca doğrulanmalıdır."
+  ];
+};
 const nationalShoreProfile=(m:Mera,r?:NationalResearch)=>{
+  const cleanSentence=(value:string)=>String(value||"").trim().replace(/[.!?]+$/u,"");
   const base=String(m.shoreProfile||"").trim().replace(/\s+/g," ");
-  const access=(r?.accessEvidence||[]).slice(0,2).map((item)=>`${item.label}: ${item.value}. ${item.note}`).join(" ");
+  const access=(r?.accessEvidence||[]).slice(0,2).map((item)=>`${item.label}: ${cleanSentence(item.value)}. ${cleanSentence(item.note)}.`).join(" ");
   const research=String(r?.researchSummary||"").trim();
   const evidence=access||research||"Masa başı kaynak taramasında kıyıya giriş, yol ve kamusal kullanım için noktasal saha teyidi bulunmadığından yaklaşım koşulları yerinde ayrıca doğrulanmalıdır.";
-  return `${m.name}, ${m.province} için ${base.charAt(0).toLocaleLowerCase("tr-TR")}${base.slice(1)} ${evidence} Bu kıyı profili, belirli bir erişim cebinin kamusal olduğu veya amatör avcılığa açık bulunduğu anlamına gelmez.`;
+  return `${m.name}, ${m.province} için ${cleanSentence(base.charAt(0).toLocaleLowerCase("tr-TR")+base.slice(1))}. ${cleanSentence(evidence)}. Bu kıyı profili, belirli bir erişim cebinin kamusal olduğu veya amatör avcılığa açık bulunduğu anlamına gelmez.`;
 };
-const national:EnrichedMera[]=ulusalMeralar.map((m):EnrichedMera=>{const c=coordinateIndex[m.slug],r=mergedResearch(m.slug);const fish=r?.replaceAutomaticFish?unique(r.fish||[]):r?.fish?.length?unique(r.fish):unique(m.fish);const manualPoint=Number.isFinite(r?.lat)&&Number.isFinite(r?.lng);const sources=uniqueSources([...(r?.sources||[]),...(c?[{label:`OpenStreetMap – ${c.displayName}`,url:c.sourceUrl,note:`Genel su varlığı eşleşmesi; pin kamusal kıyı erişimi veya av izni doğrulamaz (puan ${c.matchScore}).`}]:[]),...m.sources.filter(s=>!s.label.startsWith("OpenStreetMap"))]);return{...m,...(c?{lat:c.lat,lng:c.lng,locationPrecision:"Genel bölge" as const,updatedAt:c.matchedAt.slice(0,10),navigationNote:"Harita pini genel su varlığı merkezini gösterir; yol, park, kıyıya giriş ve av yapılabilirlik ayrıca araştırılmalıdır.",verification:`${m.verification} Genel konum OpenStreetMap/Nominatim ile eşleştirildi; erişim ve izin doğrulanmış sayılmaz.`}:{}),...(r?{fish,methods:r.methods?.length?unique(r.methods):unique(m.methods),baits:r.baits?.length?unique(r.baits):unique(m.baits),camping:r.camping||m.camping,vehicleAccess:r.vehicleAccess||m.vehicleAccess,amenities:r.amenities?.length?r.amenities:m.amenities,cautions:r.cautions?.length?r.cautions:m.cautions,transport:r.transport||m.transport,crowdNote:r.crowdNote||m.crowdNote,planningNotes:r.planningNotes?.length?r.planningNotes:m.planningNotes,seasonalNotes:r.seasonalNotes?.length?r.seasonalNotes:m.seasonalNotes,updatedAt:r.researchedAt||c?.matchedAt.slice(0,10)||m.updatedAt,verification:r.researchStatus?`${m.verification} Tür, ulaşım ve yakın hizmetler açık kaynak araştırmasıyla zenginleştirildi; saha ve hukuki uygunluk ayrıca doğrulanmalıdır.`:m.verification,confidence:(c||manualPoint)?nationalConfidence(r):"D",researchStatus:r.researchStatus,researchSummary:r.researchSummary,researchedAt:r.researchedAt,navigationVerified:Boolean(r.navigationVerified),...(manualPoint?{lat:r.lat!,lng:r.lng!,locationPrecision:r.locationPrecision||"Genel bölge",navigationNote:r.navigationNote||"Pin masa başı araştırmayla seçilen genel planlama noktasını gösterir; açık giriş, park ve kıyı güvenliği yerinde kontrol edilmelidir."}: {})}:{}),fish,methods:r?.methods?.length?unique(r.methods):unique(m.methods),baits:r?.baits?.length?unique(r.baits):unique(m.baits),fishEvidence:r?.fishEvidence||[],accommodationOptions:r?.accommodationOptions||[],accessEvidence:r?.accessEvidence||[],navigationVerified:r?.navigationVerified??false,shoreProfile:nationalShoreProfile(m,r),sources};});
+const national:EnrichedMera[]=ulusalMeralar.map((m):EnrichedMera=>{
+  const c=coordinateIndex[m.slug];
+  const r=mergedResearch(m.slug);
+  const fish=r?.replaceAutomaticFish?unique(r.fish||[]):r?.fish?.length?unique(r.fish):unique(m.fish);
+  const manualPoint=Number.isFinite(r?.lat)&&Number.isFinite(r?.lng);
+  const hasCoordinates=Boolean(c||manualPoint);
+  const confidence=hasCoordinates?nationalConfidence(r):"D";
+  const updatedAt=r?.researchedAt||c?.matchedAt.slice(0,10)||m.updatedAt;
+  const sources=uniqueSources([...(r?.sources||[]),...(c?[{label:`OpenStreetMap – ${c.displayName}`,url:c.sourceUrl,note:`Genel su varlığı eşleşmesi; pin kamusal kıyı erişimi veya av izni doğrulamaz (puan ${c.matchScore}).`}]:[]),...m.sources.filter(s=>!s.label.startsWith("OpenStreetMap"))]);
+  return{
+    ...m,
+    ...(c?{lat:c.lat,lng:c.lng,locationPrecision:"Genel bölge" as const,navigationNote:"Harita pini genel su varlığı merkezini gösterir; yol, park, kıyıya giriş ve av yapılabilirlik ayrıca araştırılmalıdır."}:{}),
+    ...(r?{
+      methods:r.methods?.length?unique(r.methods):unique(m.methods),
+      baits:r.baits?.length?unique(r.baits):unique(m.baits),
+      camping:r.camping||m.camping,
+      vehicleAccess:r.vehicleAccess||m.vehicleAccess,
+      amenities:r.amenities?.length?r.amenities:m.amenities,
+      cautions:r.cautions?.length?r.cautions:m.cautions,
+      transport:r.transport||m.transport,
+      crowdNote:r.crowdNote||m.crowdNote,
+      planningNotes:r.planningNotes?.length?r.planningNotes:m.planningNotes,
+      seasonalNotes:r.seasonalNotes?.length?r.seasonalNotes:m.seasonalNotes,
+      researchStatus:r.researchStatus,
+      researchSummary:r.researchSummary,
+      researchedAt:r.researchedAt,
+      ...(manualPoint?{lat:r.lat!,lng:r.lng!,locationPrecision:r.locationPrecision||"Genel bölge",navigationNote:r.navigationNote||"Pin masa başı araştırmayla seçilen genel planlama noktasını gösterir; açık giriş, park ve kıyı güvenliği yerinde kontrol edilmelidir."}: {})
+    }:{}),
+    fish,
+    confidence,
+    summary:nationalSummary(m,confidence),
+    longIntro:nationalLongIntro(m,confidence),
+    updatedAt,
+    verification:r?.researchStatus?`${r.researchStatus}; Güven ${confidence}. Kaynak kanıtı ile kıyı erişimi, güncel av izni ve saha koşulu ayrı değerlendirilir.`:(c?`${m.verification} Genel konum OpenStreetMap/Nominatim ile eşleştirildi; erişim ve izin doğrulanmış sayılmaz.`:m.verification),
+    fishEvidence:r?.fishEvidence||[],
+    accommodationOptions:r?.accommodationOptions||[],
+    accessEvidence:r?.accessEvidence||[],
+    navigationVerified:r?.navigationVerified??false,
+    shoreProfile:nationalShoreProfile(m,r),
+    sources,
+    confidenceProfile:nationalConfidenceProfile(r,fish,sources,hasCoordinates,confidence,updatedAt),
+  };
+});
 
 export const retiredRouteSlugs=new Set<string>([
   ...retiredRouteSlugs20260803,
