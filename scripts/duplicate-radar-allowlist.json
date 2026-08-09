@@ -1,3 +1,11 @@
 {
-  "pairs": []
+  "pairs": [
+    {
+      "slugs": [
+        "bozyazi-sariyar-baraji-nallihan",
+        "bozyazi-koy-onu-sariyar-baraji-nallihan"
+      ],
+      "reason": "Ankara İl Tarım ve Orman Müdürlüğünün resmî amatör balıkçılık sınır tablosunda Bozyazı Mevki (2) ve Bozyazı Köy Önü Mevki (3) ayrı başlangıç/bitiş koordinatlarıyla farklı kıyı cepleri olarak yayımlanmıştır."
+    }
+  ]
 }
