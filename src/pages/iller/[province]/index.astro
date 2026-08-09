@@ -11,14 +11,13 @@ export function getStaticPaths(){
 
 const {province}=Astro.props;
 const items=meralar.filter((m)=>m.province===province);
-const indexableItems=items.filter((m)=>m.confidence!=="D");
+const verifiedItems=items.filter((m)=>m.confidence!=="D");
 const preliminaryItems=items.filter((m)=>m.confidence==="D");
-const orderedItems=[...indexableItems,...preliminaryItems];
+const orderedItems=[...verifiedItems,...preliminaryItems];
 const districts=[...new Set(items.map((m)=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"));
 const zones=[...new Set(items.map((m)=>m.zone))];
-const fish=[...new Set(indexableItems.flatMap((m)=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
+const fish=[...new Set(items.flatMap((m)=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
 const preliminaryCount=preliminaryItems.length;
-const noindex=indexableItems.length===0;
 const pageUrl=new URL(`/iller/${slugifyTr(province)}/`,Astro.site).href;
 
 const locative=(name:string)=>{
@@ -32,10 +31,8 @@ const locative=(name:string)=>{
 };
 
 const provinceLocative=locative(province);
-const seoTitle=noindex?`${province} Balıkçılık Rota Araştırmaları`:`${provinceLocative} Balık Tutulacak Yerler ve Avlaklar`;
-const seoDescription=noindex
-  ? `${province} için erişim ve avlanma durumu henüz güçlü kanıtla doğrulanmamış ${preliminaryCount} ön araştırma kaydı.`
-  : `${provinceLocative} balık tutulacak yerleri keşfet: ${indexableItems.length} doğrulanabilir rota, ${preliminaryCount} ön araştırma kaydı, ulaşım ve saha güvenliği notları.`;
+const seoTitle=`${provinceLocative} Balık Tutulacak Yerler ve Avlaklar`;
+const seoDescription=`${provinceLocative} balık tutulacak yerleri keşfet: ${items.length} indekslenebilir rota, ${verifiedItems.length} güçlü dosya ve ${preliminaryCount} ön araştırma kaydı.`;
 const schema={
   "@context":"https://schema.org",
   "@type":"CollectionPage",
@@ -45,7 +42,7 @@ const schema={
   about:{"@type":"Place",name:`${province}, Türkiye`},
   mainEntity:{
     "@type":"ItemList",
-    itemListElement:indexableItems.map((m,index)=>({
+    itemListElement:items.map((m,index)=>({
       "@type":"ListItem",
       position:index+1,
       url:new URL(`/meralar/${m.slug}/`,Astro.site).href,
@@ -81,15 +78,15 @@ const intro=provinceIntros[province]||[
   `Güven D kayıtları yalnızca araştırma başlangıcıdır; kıyı erişimi, avlanma izni, balık türleri ve fiziki koşullar resmî kaynaklardan ve yerinde ayrıca doğrulanmalıdır.`
 ];
 ---
-<BaseLayout title={seoTitle} description={seoDescription} noindex={noindex}>
-  {!noindex&&<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>}
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
 
   <section class="page-hero">
     <div class="container">
       <Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"İller",href:"/iller/"},{label:province}]}/>
-      <span class="kicker">{indexableItems.length} doğrulanabilir rota · {preliminaryCount} ön araştırma</span>
-      <h1>{noindex?`${province} balıkçılık rota araştırmaları`:`${provinceLocative} balık tutulacak yerler`}</h1>
-      <p class="lead">{noindex?`${province} için henüz avlak veya kamusal kullanım kanıtı tamamlanmamış su varlığı dosyalarını incele.`:`${provinceLocative} balık tutmak için araştırabileceğin kıyı ve iç su rotalarını; ilçe, su tipi, kaynak düzeyi, güven seviyesi ve saha notlarıyla karşılaştır.`}</p>
+      <span class="kicker">{items.length} indekslenebilir rota · {preliminaryCount} ön araştırma</span>
+      <h1>{provinceLocative} balık tutulacak yerler</h1>
+      <p class="lead">{provinceLocative} balık tutmak için araştırabileceğin kıyı ve iç su rotalarını; ilçe, su tipi, kaynak düzeyi, güven seviyesi ve saha notlarıyla karşılaştır.</p>
       <div class="detail-actions">
         <a class="button" href="#ilceler">İlçelere göre incele</a>
         <a class="button button-ghost" href="#rotalar">Tüm rotaları gör</a>
@@ -99,8 +96,8 @@ const intro=provinceIntros[province]||[
 
   <section class="container section article-prose">
     <section class="article-intro">
-      <h2>{noindex?`${province} araştırma dosyalarının durumu`:`${provinceLocative} nerede balık tutulur?`}</h2>
-      <p>{province} için katalogda {indexableItems.length} doğrulanabilir rota, {preliminaryCount} ön araştırma kaydı ve {districts.length} konum grubu bulunuyor. Önce ilçeyi seçip ardından rota dosyalarındaki kıyı karakteri, ulaşım ve doğrulama notlarını karşılaştırabilirsin.</p>
+      <h2>{provinceLocative} nerede balık tutulur?</h2>
+      <p>{province} için katalogda {verifiedItems.length} güçlü dosya, {preliminaryCount} ön araştırma kaydı ve {districts.length} konum grubu bulunuyor. Tüm rota sayfaları indekslenebilir; güven seviyesi kanıt kapsamını gösterir.</p>
       {intro.map((p:string)=><p>{p}</p>)}
     </section>
 
@@ -117,10 +114,9 @@ const intro=provinceIntros[province]||[
       <div class="district-link-grid">
         {districts.map((district)=>{
           const districtItems=items.filter((m)=>m.district===district);
-          const districtIndexable= districtItems.some((m)=>m.confidence!=="D");
           const count=districtItems.length;
           const href=count>=2?`/iller/${slugifyTr(province)}/${slugifyTr(district)}/`:`/meralar/${districtItems[0].slug}/`;
-          return <a id={slugifyTr(district)} href={href} rel={districtIndexable?undefined:"nofollow"}><strong>{locative(district)} balık tutulacak yerler</strong><span>{count} rota dosyası</span></a>;
+          return <a id={slugifyTr(district)} href={href}><strong>{locative(district)} balık tutulacak yerler</strong><span>{count} rota dosyası</span></a>;
         })}
       </div>
     </section>
@@ -128,7 +124,7 @@ const intro=provinceIntros[province]||[
     {province==="İstanbul"&&<section class="info-block">
       <span class="kicker">İki yaka, farklı koşullar</span>
       <h2>Avrupa ve Anadolu Yakası nasıl ayrılıyor?</h2>
-      <div class="zone-columns">{zones.map((zone)=><div><h3>{zone}</h3><ul>{items.filter((m)=>m.zone===zone).slice(0,6).map((m)=><li><a href={`/meralar/${m.slug}/`} rel={m.confidence==="D"?"nofollow":undefined}>{m.name}</a></li>)}</ul></div>)}</div>
+      <div class="zone-columns">{zones.map((zone)=><div><h3>{zone}</h3><ul>{items.filter((m)=>m.zone===zone).slice(0,6).map((m)=><li><a href={`/meralar/${m.slug}/`}>{m.name}</a></li>)}</ul></div>)}</div>
     </section>}
 
     <section class="info-block">

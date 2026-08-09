@@ -13,12 +13,11 @@ export function getStaticPaths(){
 
 const {province,district}=Astro.props;
 const items=meralar.filter((m)=>m.province===province&&m.district===district);
-const indexableItems=items.filter((m)=>m.confidence!=="D");
+const verifiedItems=items.filter((m)=>m.confidence!=="D");
 const preliminaryItems=items.filter((m)=>m.confidence==="D");
-const orderedItems=[...indexableItems,...preliminaryItems];
-const noindex=indexableItems.length===0;
-const fish=[...new Set(indexableItems.flatMap((m)=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
-const methods=[...new Set(indexableItems.flatMap((m)=>m.methods))].sort((a,b)=>a.localeCompare(b,"tr"));
+const orderedItems=[...verifiedItems,...preliminaryItems];
+const fish=[...new Set(items.flatMap((m)=>m.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
+const methods=[...new Set(items.flatMap((m)=>m.methods))].sort((a,b)=>a.localeCompare(b,"tr"));
 const waterTypes=[...new Set(items.map((m)=>m.waterType))].sort((a,b)=>a.localeCompare(b,"tr"));
 const provinceUrl=`/iller/${slugifyTr(province)}/`;
 const pageUrl=new URL(`${provinceUrl}${slugifyTr(district)}/`,Astro.site).href;
@@ -42,13 +41,11 @@ const isBeykoz=province==="İstanbul"&&district==="Beykoz";
 const beykozHighlights=isBeykoz
   ? ["Paşabahçe","Kanlıca","Çubuklu","Küçüksu"].map((keyword)=>items.find((route)=>route.name.includes(keyword))).filter((route):route is typeof items[number]=>Boolean(route))
   : [];
-const seoTitle=isBeykoz?`Beykoz’da Balık Tutulacak Yerler: ${items.length} Kıyı Rotası`:noindex?`${district} Balıkçılık Rota Araştırmaları`:`${districtLocative} Balık Tutulacak Yerler ve Avlaklar`;
+const seoTitle=isBeykoz?`Beykoz’da Balık Tutulacak Yerler: ${items.length} Kıyı Rotası`:`${districtLocative} Balık Tutulacak Yerler ve Avlaklar`;
 const seoDescription=isBeykoz
   ? `Beykoz’da balık tutulacak yerleri karşılaştır: ${beykozHighlights.map((route)=>route.name).join(", ")}. Kıyı yapısı, ulaşım, raporlanan türler ve güncel saha uyarıları.`
-  : noindex
-    ? `${district} için erişim ve avlanma durumu henüz güçlü kanıtla doğrulanmamış ${preliminaryItems.length} ön araştırma kaydı.`
-    : `${districtLocative} balık tutulacak yerleri karşılaştır: ${indexableItems.length} doğrulanabilir rota, ${preliminaryItems.length} ön araştırma kaydı, ulaşım ve saha güvenliği notları.`;
-const previewRoutes=[...indexableItems,...preliminaryItems].slice(0,5);
+  : `${districtLocative} balık tutulacak yerleri karşılaştır: ${items.length} indekslenebilir rota, ${verifiedItems.length} güçlü dosya ve ${preliminaryItems.length} ön araştırma kaydı.`;
+const previewRoutes=orderedItems.slice(0,5);
 const previewFish=fish.slice(0,8);
 const schema={
   "@context":"https://schema.org",
@@ -62,7 +59,7 @@ const schema={
   ],
   mainEntity:{
     "@type":"ItemList",
-    itemListElement:indexableItems.map((m,index)=>({
+    itemListElement:items.map((m,index)=>({
       "@type":"ListItem",
       position:index+1,
       url:new URL(`/meralar/${m.slug}/`,Astro.site).href,
@@ -71,15 +68,15 @@ const schema={
   }
 };
 ---
-<BaseLayout title={seoTitle} description={seoDescription} noindex={noindex}>
-  {!noindex&&<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>}
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
 
   <section class="page-hero">
     <div class="container">
       <Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"İller",href:"/iller/"},{label:province,href:provinceUrl},{label:district}]}/>
-      <span class="kicker">{indexableItems.length} doğrulanabilir rota · {preliminaryItems.length} ön araştırma</span>
-      <h1>{noindex?`${district} balıkçılık rota araştırmaları`:`${districtLocative} balık tutulacak yerler`}</h1>
-      <p class="lead">{isBeykoz?`Boğaz’ın Anadolu yakasında Paşabahçe, Kanlıca, Çubuklu ve Küçüksu çevresindeki rota dosyalarını; kıyı karakteri, ulaşım, raporlanan türler ve saha uyarılarıyla karşılaştır.`:noindex?`${district} için henüz avlak veya kamusal kullanım kanıtı tamamlanmamış su varlığı dosyalarını incele.`:`${districtLocative} balık tutmak için araştırabileceğin rota dosyalarını; raporlanan türler, kıyı karakteri, ulaşım ve saha notlarıyla tek yerde karşılaştır.`}</p>
+      <span class="kicker">{items.length} indekslenebilir rota · {preliminaryItems.length} ön araştırma</span>
+      <h1>{districtLocative} balık tutulacak yerler</h1>
+      <p class="lead">{isBeykoz?`Boğaz’ın Anadolu yakasında Paşabahçe, Kanlıca, Çubuklu ve Küçüksu çevresindeki rota dosyalarını; kıyı karakteri, ulaşım, raporlanan türler ve saha uyarılarıyla karşılaştır.`:`${districtLocative} balık tutmak için araştırabileceğin rota dosyalarını; raporlanan türler, kıyı karakteri, ulaşım ve saha notlarıyla tek yerde karşılaştır.`}</p>
       <div class="detail-actions">
         <a class="button" href="#rotalar">Rotaları karşılaştır</a>
         {fish.length>0&&<a class="button button-ghost" href="#baliklar">Balık türlerini gör</a>}
@@ -89,8 +86,8 @@ const schema={
 
   <section class="container section article-prose">
     <section class="article-intro">
-      <h2>{noindex?`${district} araştırma dosyalarının durumu`:`${districtLocative} nerede balık tutulur?`}</h2>
-      <p>{isBeykoz?`Beykoz kıyısındaki rota dosyaları aynı Boğaz hattında olsa da erişim biçimi, akıntı etkisi, kıyı düzeni ve yoğunluk açısından birbirinden ayrılır. Bu nedenle tek bir “en iyi nokta” yerine rota dosyalarını saha koşullarına göre karşılaştırmak daha sağlıklıdır. `:""}{district} için şu anda {indexableItems.length} doğrulanabilir rota ve {preliminaryItems.length} ön araştırma kaydı bulunuyor. {waterTypes.length>0?`Katalogda ${waterTypes.join(", ")} karakterindeki sular yer alıyor. `:""}Aşağıdaki kartlardan kıyı yapısı, ulaşım ve doğrulama düzeyi sana uygun olan dosyaları karşılaştırabilirsin.</p>
+      <h2>{districtLocative} nerede balık tutulur?</h2>
+      <p>{isBeykoz?`Beykoz kıyısındaki rota dosyaları aynı Boğaz hattında olsa da erişim biçimi, akıntı etkisi, kıyı düzeni ve yoğunluk açısından birbirinden ayrılır. Bu nedenle tek bir “en iyi nokta” yerine rota dosyalarını saha koşullarına göre karşılaştırmak daha sağlıklıdır. `:""}{district} için şu anda {verifiedItems.length} güçlü dosya ve {preliminaryItems.length} ön araştırma kaydı bulunuyor. Tüm rota sayfaları indekslenebilir. {waterTypes.length>0?`Katalogda ${waterTypes.join(", ")} karakterindeki sular yer alıyor. `:""}Aşağıdaki kartlardan kıyı yapısı, ulaşım ve doğrulama düzeyi sana uygun olan dosyaları karşılaştırabilirsin.</p>
       {previewRoutes.length>0&&<p>Öne çıkan dosyalardan bazıları: {previewRoutes.map((route)=>route.name).join(", ")}. Bu liste av garantisi değil; araştırmaya nereden başlayacağını gösteren bir rota indeksidir.</p>}
     </section>
 

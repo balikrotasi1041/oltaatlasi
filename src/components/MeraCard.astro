@@ -1,23 +1,19 @@
 ---
 import type { Mera } from "../data/meralar";
-import { districtIndexableRouteCounts, districtRouteCounts } from "../data/meralar-tumu";
+import { districtRouteCounts } from "../data/meralar-tumu";
 import { slugifyTr } from "../utils/slug";
 const { mera } = Astro.props as { mera: Mera };
 const districtCount=districtRouteCounts[`${mera.province}|${mera.district}`] || 0;
 const districtUrl=districtCount>=2 ? `/iller/${slugifyTr(mera.province)}/${slugifyTr(mera.district)}/` : `/iller/${slugifyTr(mera.province)}/#${slugifyTr(mera.district)}`;
-const preliminary=mera.confidence==="D";
-const districtNoindex=(districtIndexableRouteCounts[`${mera.province}|${mera.district}`] || 0)===0;
-const detailRel=preliminary?"nofollow":undefined;
-const districtRel=districtNoindex?"nofollow":undefined;
 const accessLabel=mera.confidence==="D"?"Kontrol edilmeli":mera.vehicleAccess;
 ---
 <article class="mera-card" data-card data-province={mera.province} data-district={mera.district} data-zone={mera.zone} data-water={mera.waterType} data-fish={mera.fish.join("|")} data-camping={mera.camping} data-confidence={mera.confidence}>
-  <a class="card-cover image-cover" href={`/meralar/${mera.slug}/`} rel={detailRel} aria-label={`${mera.name} dosyasını aç`}><img src={mera.image} alt={`${mera.name} kıyı rotası illüstrasyonu`} loading="lazy" width="1200" height="675" /></a>
+  <a class="card-cover image-cover" href={`/meralar/${mera.slug}/`} aria-label={`${mera.name} dosyasını aç`}><img src={mera.image} alt={`${mera.name} kıyı rotası illüstrasyonu`} loading="lazy" width="1200" height="675" /></a>
   <div class="card-body">
-    <div class="eyebrow-row"><a class="pill pill-link" href={districtUrl} rel={districtRel}>{mera.province} · {mera.district}</a><span class="pill pill-muted">{mera.zone}</span><span class={`confidence confidence-${mera.confidence.toLowerCase()}`}>Güven {mera.confidence}</span></div>
-    <h3><a href={`/meralar/${mera.slug}/`} rel={detailRel}>{mera.name}</a></h3><p>{mera.summary}</p>
+    <div class="eyebrow-row"><a class="pill pill-link" href={districtUrl}>{mera.province} · {mera.district}</a><span class="pill pill-muted">{mera.zone}</span><span class={`confidence confidence-${mera.confidence.toLowerCase()}`}>Güven {mera.confidence}</span></div>
+    <h3><a href={`/meralar/${mera.slug}/`}>{mera.name}</a></h3><p>{mera.summary}</p>
     {mera.fish.length > 0 ? <div class="tag-row" aria-label="Raporlanan balıklar">{mera.fish.slice(0,4).map((fish)=><span>{fish}</span>)}</div> : <p class="microcopy">Tür bilgisi rota bazında doğrulanmayı bekliyor.</p>}
     <dl class="mini-facts mini-facts-two"><div><dt>Su</dt><dd>{mera.waterType}</dd></div><div><dt>Araç</dt><dd>{accessLabel}</dd></div></dl>
-    <div class="card-actions"><a class="button button-small" href={`/meralar/${mera.slug}/`} rel={detailRel}>Mera dosyasını aç</a><button class="bookmark" type="button" data-bookmark={mera.slug} aria-label={`${mera.name} kaydet`}>☆</button></div>
+    <div class="card-actions"><a class="button button-small" href={`/meralar/${mera.slug}/`}>Mera dosyasını aç</a><button class="bookmark" type="button" data-bookmark={mera.slug} aria-label={`${mera.name} kaydet`}>☆</button></div>
   </div>
 </article>
