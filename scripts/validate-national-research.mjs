@@ -115,7 +115,7 @@ for(const route of ulusalMeralar){
 
 if(directEvidenceRoutes<1)errors.push("Hiçbir rotada doğrudan veya yakın çevre tür kanıtı bulunamadı.");
 if(filterFishNames.size<3)errors.push(`Harita balık filtresi için yalnızca ${filterFishNames.size} kullanılabilir tür üretildi.`);
-if(candidateOnlyRoutes>warnings.length)warnings.push(`${candidateOnlyRoutes} rota yalnızca bölgesel araştırma adayı türler içeriyor; bunlar Güven D araştırma başlangıcı olarak noindex tutulmalı ve sayfada kanıt düzeyi açıkça gösterilmelidir.`);
+if(candidateOnlyRoutes>warnings.length)warnings.push(`${candidateOnlyRoutes} rota yalnızca bölgesel araştırma adayı türler içeriyor; bunlar indekslenebilir Güven D araştırma başlangıçlarıdır ve sayfada kanıt düzeyi açıkça gösterilmelidir.`);
 
 console.log(`Ulusal araştırma denetimi: 405 rota, ${directEvidenceRoutes} doğrudan/yakın tür kanıtlı, ${candidateOnlyRoutes} aday tür düzeyinde, ${filterFishNames.size} filtrelenebilir balık türü.`);
 for(const warning of warnings)console.warn(`UYARI: ${warning}`);
