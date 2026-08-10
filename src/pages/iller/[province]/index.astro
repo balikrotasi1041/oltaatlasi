@@ -31,8 +31,11 @@ const locative=(name:string)=>{
 };
 
 const provinceLocative=locative(province);
-const seoTitle=`${provinceLocative} Balık Tutulacak Yerler ve Avlaklar`;
-const seoDescription=`${provinceLocative} balık tutulacak yerleri keşfet: ${items.length} indekslenebilir rota, ${verifiedItems.length} güçlü dosya ve ${preliminaryCount} ön araştırma kaydı.`;
+const isKirikkale=province==="Kırıkkale";
+const seoTitle=isKirikkale?`Kırıkkale'de Balık Tutulacak Yerler: Hirfanlı ve Kapulukaya`:`${provinceLocative} Balık Tutulacak Yerler ve Avlaklar`;
+const seoDescription=isKirikkale
+  ? `Kırıkkale'de balık tutulacak yerler: Hirfanlı ve Kapulukaya başta olmak üzere ${items.length} rota dosyasını tür, ulaşım, güven seviyesi ve güncel içsu notlarıyla karşılaştır.`
+  : `${provinceLocative} balık tutulacak yerleri keşfet: ${items.length} indekslenebilir rota, ${verifiedItems.length} güçlü dosya ve ${preliminaryCount} ön araştırma kaydı.`;
 const schema={
   "@context":"https://schema.org",
   "@type":"CollectionPage",
@@ -59,6 +62,10 @@ const provinceIntros:Record<string,string[]>={
   "Kocaeli":[
     "Kocaeli, Marmara kıyısı, İzmit Körfezi, Karadeniz sahilleri ve iç su rotalarını kısa mesafelerde bir araya getirir.",
     "Güven seviyesi düşük kayıtlar kesin av noktası olarak değil, saha doğrulaması bekleyen planlama dosyası olarak okunmalıdır."
+  ],
+  "Kırıkkale":[
+    "Kırıkkale rota kataloğunda Hirfanlı Baraj Gölü ve Kapulukaya Baraj Gölü gibi Kızılırmak havzasındaki büyük içsu sistemleri öne çıkar; aynı su alanı içindeki farklı kıyı cepleri ancak ayrı erişim ve resmî sınır kanıtı varsa ayrı rota olarak tutulur.",
+    "İçsu planında kapalı dönem, boy-adet limitleri, baraj işletme alanları ve kıyıya fiilî kamusal erişim birlikte kontrol edilmelidir; tür kaydı tek başına belirli kıyıda av yapılabileceği anlamına gelmez."
   ],
   "Yalova":[
     "Yalova kıyıları Güney Marmara'da koy, burun, dere ağzı ve düzenlenmiş sahil bölümlerini kısa mesafelerde birleştirir.",
