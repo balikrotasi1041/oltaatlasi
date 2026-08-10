@@ -15,7 +15,7 @@ const applyNationalResearch=(slug:string,research:any)=>{
   const previous=routeMap.get(slug);
   if(!previous)throw new Error(`Güven iyileştirme hedefi aktif veri kümesinde bulunamadı: ${slug}`);
   const sources=uniqueSources([...(research.sources||[]),...(previous.sources||[])]);
-  const fish=Array.isArray(research.fish)&&research.fish.length?[...new Set(research.fish.map(String).map((value:string)=>value.trim()).filter(Boolean))]:previous.fish;
+  const fish:string[]=Array.isArray(research.fish)&&research.fish.length?[...new Set<string>((research.fish as unknown[]).map((value)=>String(value).trim()).filter(Boolean))]:previous.fish;
   const fishEvidence=Array.isArray(research.fishEvidence)?research.fishEvidence:[];
   const hasCoordinates=Number.isFinite(previous.lat)&&Number.isFinite(previous.lng);
   const hasStrongOfficialEvidence=Boolean(research.strongOfficialSource)&&sources.some(officialSource);
