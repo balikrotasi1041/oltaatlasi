@@ -28,5 +28,8 @@ const structured = meralar.filter((route) => route.confidenceProfile).length;
 console.log(`Güven borcu: ${meralar.length} rota; A/B/C/D=${distribution.A}/${distribution.B}/${distribution.C}/${distribution.D}; yapılandırılmış profil=${structured}.`);
 console.log("En yüksek güven borcu (ilk 20):");
 for (const row of rows.slice(0, 20)) console.log(`${String(row.score).padStart(2, " ")}  ${row.confidence}  ${row.slug}  [${row.missing}]`);
+const dRows = rows.filter((row) => row.confidence === "D");
+console.log(`D güvenindeki tüm rotalar (${dRows.length}):`);
+for (const row of dRows) console.log(`D-ROUTE ${String(row.score).padStart(2, " ")}  ${row.slug}  [${row.missing}]`);
 for (const error of errors) console.error(`HATA: ${error}`);
 if (errors.length) process.exit(1);
