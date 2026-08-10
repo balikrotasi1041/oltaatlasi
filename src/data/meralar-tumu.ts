@@ -19,6 +19,7 @@ import { ulusalMeralar } from "./meralar-ulusal";
 import { ulusalKoordinatlar, ulusalKoordinatMeta } from "./meralar-ulusal-koordinatlar";
 import { ulusalManuelArastirma } from "./meralar-ulusal-manuel-arastirma";
 import { ulusalGuvenIyilestirmeleri20260809 } from "./meralar-ulusal-guven-iyilestirme-2026-08-09";
+import { ulusalGuvenIyilestirmeleri20260810 } from "./meralar-ulusal-guven-iyilestirme-2026-08-10";
 import { ulusalOtomatikArastirma, ulusalOtomatikArastirmaMeta } from "./meralar-ulusal-otomatik-arastirma";
 
 export type ResearchSource={label:string;url:string;note:string};
@@ -34,7 +35,7 @@ export type EnrichedMera=Mera&{researchStatus?:string;researchSummary?:string;re
 const coordinateIndex=ulusalKoordinatlar as Record<string,NationalCoordinate>;
 const automatic=ulusalOtomatikArastirma as Record<string,NationalResearch>;
 const manual=ulusalManuelArastirma as Record<string,NationalResearch>;
-const confidenceBoost=ulusalGuvenIyilestirmeleri20260809 as Record<string,NationalResearch>;
+const confidenceBoost={...ulusalGuvenIyilestirmeleri20260809,...ulusalGuvenIyilestirmeleri20260810} as Record<string,NationalResearch>;
 const kocaeliMeta=kocaeliIyilestirmeMeta as Record<string,NationalResearch>;
 const gunlukMeta20260802=gunlukIyilestirmeMeta20260802 as Record<string,NationalResearch>;
 const unique=(values:string[]=[]):string[]=>[...new Set(values.map(String).map(v=>v.trim()).filter(Boolean))];
