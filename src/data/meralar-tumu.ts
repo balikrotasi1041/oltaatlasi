@@ -2,7 +2,7 @@ export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera } from "./meralar-tumu-core";
 import { meralar as coreMeralar } from "./meralar-tumu-core";
-import { istanbulKocaeliIyilestirmeleri20260810Evening, istanbulKocaeliYeni20260810Evening } from "./meralar-istanbul-kocaeli-2026-08-10-evening";
+import { istanbulKocaeliIyilestirmeleri20260810Final, istanbulKocaeliYeni20260810Final } from "./meralar-istanbul-kocaeli-2026-08-10-final";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const applyOverride=(route:Mera)=>{
@@ -17,8 +17,8 @@ const applyOverride=(route:Mera)=>{
     confidenceProfile:previous?.confidenceProfile,
   } as EnrichedMera);
 };
-for(const route of istanbulKocaeliIyilestirmeleri20260810Evening)applyOverride(route);
-for(const route of istanbulKocaeliYeni20260810Evening)applyOverride(route);
+for(const route of istanbulKocaeliIyilestirmeleri20260810Final)applyOverride(route);
+for(const route of istanbulKocaeliYeni20260810Final)applyOverride(route);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
