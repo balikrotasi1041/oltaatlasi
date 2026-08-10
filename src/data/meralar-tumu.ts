@@ -1,10 +1,94 @@
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
-import type { EnrichedMera } from "./meralar-tumu-core";
+import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
 import { meralar as coreMeralar } from "./meralar-tumu-core";
 import { istanbulKocaeliIyilestirmeleri20260810Final, istanbulKocaeliYeni20260810Final } from "./meralar-istanbul-kocaeli-2026-08-10-final";
+import { ulusalGuvenIyilestirmeleri20260810Batch2 } from "./meralar-ulusal-guven-iyilestirme-2026-08-10-batch2";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
+const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
+const confidenceRank:Record<Mera["confidence"],number>={D:0,C:1,B:2,A:3};
+const officialSource=(source:ResearchSource)=>/\.gov\.tr\b|\.bel\.tr\b|tarimorman\.gov\.tr\b/i.test(source.url);
+const normalize=(value:string)=>String(value||"").toLocaleLowerCase("tr-TR").trim();
+
+const applyNationalResearch=(slug:string,research:any)=>{
+  const previous=routeMap.get(slug);
+  if(!previous)throw new Error(`Güven iyileştirme hedefi aktif veri kümesinde bulunamadı: ${slug}`);
+  const sources=uniqueSources([...(research.sources||[]),...(previous.sources||[])]);
+  const fish=Array.isArray(research.fish)&&research.fish.length?[...new Set(research.fish.map(String).map((value:string)=>value.trim()).filter(Boolean))]:previous.fish;
+  const fishEvidence=Array.isArray(research.fishEvidence)?research.fishEvidence:[];
+  const hasCoordinates=Number.isFinite(previous.lat)&&Number.isFinite(previous.lng);
+  const hasStrongOfficialEvidence=Boolean(research.strongOfficialSource)&&sources.some(officialSource);
+  const hasRouteSpecificResearch=/rota özelinde/i.test(research.researchStatus||"")&&Boolean(sources.length>=2||(fishEvidence.length&&(research.accessEvidence?.length||0)>0));
+  let candidate:Mera["confidence"]="D";
+  if(hasCoordinates&&!research.legalAccessUnclear){
+    if(research.fieldVerification&&hasStrongOfficialEvidence)candidate="A";
+    else if(research.officialAmateurFishingUseEvidence&&hasStrongOfficialEvidence)candidate="B";
+    else if(hasRouteSpecificResearch)candidate="C";
+  }
+  const confidence=confidenceRank[candidate]>confidenceRank[previous.confidence]?candidate:previous.confidence;
+  const evidenceNames=new Set(fishEvidence.map((item:any)=>normalize(item?.name)));
+  const allFishSupported=fish.length>0&&fish.every((name)=>evidenceNames.has(normalize(name)));
+  const profile:ConfidenceProfile={
+    model:"evidence-v1",
+    overall:confidence,
+    identity:hasStrongOfficialEvidence
+      ?{level:"strong",label:"Resmî rota kimliği",note:"Su varlığı ve rota kimliği en az bir resmî, rota özelindeki kaynakla destekleniyor."}
+      :{level:"partial",label:"Çok kaynaklı rota kimliği",note:"Rota birden fazla kaynakla eşleşiyor; ek resmî teyit ve mikro kıyı doğrulaması sürdürülmelidir."},
+    legal:research.officialAmateurFishingUseEvidence&&hasStrongOfficialEvidence
+      ?{level:"strong",label:"Resmî amatör kullanım kanıtı",note:"Resmî kaynak amatör veya sportif olta kullanımını rota düzeyinde kaydediyor; güncel dönem, ticari faaliyet ve saha kısıtları ayrıca uygulanır."}
+      :{level:"partial",label:"Rota özelinde hukuk ve kısıt araştırması",note:"Güncel tebliğ ile rota/il özelindeki resmî kararlar araştırıldı; belirli kıyı cebinin sürekli açık olduğu varsayılmaz."},
+    access:(research.accessEvidence?.length||0)>0
+      ?{level:"partial",label:"Kaynaklı erişim bağlamı",note:"Yerleşim, rekreasyon veya resmî alan bağlamı belgeli; son park, kıyı girişi ve mülkiyet sınırı saha teyitli değildir."}
+      :{level:"unverified",label:"Erişim doğrulanmadı",note:"Genel konum, kıyıya giriş veya araç rotası garantisi değildir."},
+    species:allFishSupported
+      ?{level:"strong",label:"Rota özelinde tür kanıtı",note:"Yayımlanan türlerin tamamı bu su varlığına ait resmî veya bilimsel kayıtlarla eşleşiyor; kıyıdan av garantisi vermez."}
+      :fishEvidence.length
+        ?{level:"partial",label:"Kısmi tür kanıtı",note:"Bazı türler rota düzeyinde destekleniyor; liste güncel av başarısı anlamına gelmez."}
+        :{level:"unverified",label:"Tür listesi teyit bekliyor",note:"Rota özelinde yeterli tür kanıtı henüz yok."},
+    field:research.fieldVerification
+      ?{level:"strong",label:"Saha doğrulaması var",note:"Kıyı koşulları yerinde kontrol edildi; tarih sonrası değişiklikler yine mümkündür."}
+      :{level:"unverified",label:"Saha doğrulaması yok",note:"Bariyer, tabela, su kotu, özel mülkiyet ve güncel riskler hareket günü yeniden kontrol edilmelidir."},
+    reviewedAt:research.researchedAt||previous.updatedAt,
+  };
+  const evidenceSummary=(research.accessEvidence||[]).slice(0,2).map((item:any)=>`${item.label}: ${item.value} ${item.note}`).join(" ");
+  routeMap.set(slug,{
+    ...previous,
+    fish,
+    methods:research.methods?.length?research.methods:previous.methods,
+    baits:research.baits?.length?research.baits:previous.baits,
+    camping:research.camping||previous.camping,
+    vehicleAccess:research.vehicleAccess||previous.vehicleAccess,
+    amenities:research.amenities?.length?research.amenities:previous.amenities,
+    cautions:research.cautions?.length?research.cautions:previous.cautions,
+    transport:research.transport||previous.transport,
+    crowdNote:research.crowdNote||previous.crowdNote,
+    planningNotes:research.planningNotes?.length?research.planningNotes:previous.planningNotes,
+    seasonalNotes:research.seasonalNotes?.length?research.seasonalNotes:previous.seasonalNotes,
+    researchStatus:research.researchStatus,
+    researchSummary:research.researchSummary,
+    researchedAt:research.researchedAt,
+    confidence,
+    summary:confidence==="B"
+      ?`${previous.name}, rota özelindeki güçlü resmî amatör kullanım kanıtı ile tür, erişim ve mevzuat kaynakları çaprazlanmış bir planlama dosyasıdır; güncel saha koşulları ayrıca kontrol edilmelidir.`
+      :`${previous.name}, rota özelindeki resmî/bilimsel tür, hukuk veya erişim kanıtlarıyla derinleştirilmiş bir planlama dosyasıdır; belirli kıyı cebinin güncel amatör av ve kamusal erişim durumu ayrıca doğrulanmalıdır.`,
+    longIntro:confidence==="B"
+      ?[`${previous.name}, resmî kaynakların amatör veya sportif olta kullanımını rota düzeyinde desteklediği; tür, ulaşım ve kısıtların ayrı kanıtlarla çaprazlandığı Güven B düzeyinde masa başı doğrulanmış bir dosyadır.`,`Güven B her kıyının sürekli açık olduğu anlamına gelmez. 6/2 Tebliğ, il müdürlüğü kararları, ticari istihsal alanları, DSİ/işletme güvenliği, özel mülkiyet ve saha tabelaları hareket günü birlikte kontrol edilmelidir.`]
+      :[`${previous.name}, su varlığı ile tür, erişim veya hukuki durumun rota özelindeki resmî ve gerektiğinde akademik kaynaklarla desteklenmesi nedeniyle Güven C düzeyinde yayımlanır.`,`Bu seviye belirli bir kıyı cebine giriş veya sürekli amatör av izni anlamına gelmez; son yaklaşım, yerel yasak, ticari faaliyet, su kotu ve saha güvenliği ayrıca doğrulanmalıdır.`],
+    verification:`${research.researchStatus}; Güven ${confidence}. Tür kanıtı, amatör kullanım hukuku ve kıyı erişimi birbirinden ayrı değerlendirilmiştir; saha teyidi bulunmamaktadır.`,
+    updatedAt:research.researchedAt||previous.updatedAt,
+    fishEvidence,
+    accommodationOptions:research.accommodationOptions||[],
+    accessEvidence:research.accessEvidence||[],
+    navigationVerified:Boolean(research.navigationVerified),
+    shoreProfile:`${previous.name} için mevcut su/kıyı profili rota-özel araştırmayla güncellendi. ${evidenceSummary||research.researchSummary} Bu açıklama belirli bir kıyı cebinin kamusal, sürekli açık veya amatör avcılığa sınırsız uygun olduğu anlamına gelmez.`,
+    sources,
+    confidenceProfile:profile,
+  });
+};
+
+for(const [slug,research] of Object.entries(ulusalGuvenIyilestirmeleri20260810Batch2))applyNationalResearch(slug,research);
+
 const applyOverride=(route:Mera)=>{
   const previous=routeMap.get(route.slug);
   routeMap.set(route.slug,{
