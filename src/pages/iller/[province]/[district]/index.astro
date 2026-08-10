@@ -43,7 +43,7 @@ const beykozHighlights=isBeykoz
   : [];
 const seoTitle=isBeykoz?`Beykoz’da Balık Tutulacak Yerler: ${items.length} Kıyı Rotası`:`${districtLocative} Balık Tutulacak Yerler ve Avlaklar`;
 const seoDescription=isBeykoz
-  ? `Beykoz’da balık tutulacak yerleri karşılaştır: ${beykozHighlights.map((route)=>route.name).join(", ")}. Kıyı yapısı, ulaşım, raporlanan türler ve güncel saha uyarıları.`
+  ? `Beykoz balık tutma yerleri: Çubuklu, Kanlıca, Paşabahçe ve Küçüksu dahil ${items.length} kıyı rotasını ulaşım, raporlanan türler, güven seviyesi ve güncel saha uyarılarıyla karşılaştır.`
   : `${districtLocative} balık tutulacak yerleri karşılaştır: ${items.length} indekslenebilir rota, ${verifiedItems.length} güçlü dosya ve ${preliminaryItems.length} ön araştırma kaydı.`;
 const previewRoutes=orderedItems.slice(0,5);
 const previewFish=fish.slice(0,8);
@@ -76,9 +76,9 @@ const schema={
       <Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"İller",href:"/iller/"},{label:province,href:provinceUrl},{label:district}]}/>
       <span class="kicker">{items.length} indekslenebilir rota · {preliminaryItems.length} ön araştırma</span>
       <h1>{districtLocative} balık tutulacak yerler</h1>
-      <p class="lead">{isBeykoz?`Boğaz’ın Anadolu yakasında Paşabahçe, Kanlıca, Çubuklu ve Küçüksu çevresindeki rota dosyalarını; kıyı karakteri, ulaşım, raporlanan türler ve saha uyarılarıyla karşılaştır.`:`${districtLocative} balık tutmak için araştırabileceğin rota dosyalarını; raporlanan türler, kıyı karakteri, ulaşım ve saha notlarıyla tek yerde karşılaştır.`}</p>
+      <p class="lead">{isBeykoz?`Beykoz balık tutma yerlerini Paşabahçe, Kanlıca, Çubuklu ve Küçüksu başta olmak üzere; kıyı karakteri, ulaşım, raporlanan türler, güven seviyesi ve saha uyarılarıyla karşılaştır.`:`${districtLocative} balık tutmak için araştırabileceğin rota dosyalarını; raporlanan türler, kıyı karakteri, ulaşım ve saha notlarıyla tek yerde karşılaştır.`}</p>
       <div class="detail-actions">
-        <a class="button" href="#rotalar">Rotaları karşılaştır</a>
+        <a class="button" href="#rotalar">Balık tutma yerlerini gör</a>
         {fish.length>0&&<a class="button button-ghost" href="#baliklar">Balık türlerini gör</a>}
       </div>
     </div>
