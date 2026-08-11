@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Körfez Atalar Sahil Parkı rota görseli</title>
+  <desc id="desc">İzmit Körfezi kıyısında yeşil sahil parkı, yürüyüş yolu, anıt alanı ve olta kamışı simgesiyle özgün rota illüstrasyonu.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff4f5"/><stop offset="1" stop-color="#f7fbf8"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2e8292"/><stop offset="1" stop-color="#155a70"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <path d="M0 338 C170 310 315 350 470 326 C660 296 790 340 950 315 C1040 300 1120 300 1200 314 L1200 630 L0 630 Z" fill="url(#sea)"/>
+  <path d="M0 420 C190 386 345 408 505 389 C680 369 815 404 980 378 C1060 365 1130 366 1200 375 L1200 630 L0 630 Z" fill="#0f6a73" opacity=".45"/>
+  <path d="M0 314 C155 286 305 300 470 280 C640 259 800 280 958 254 C1050 240 1135 244 1200 252 L1200 348 C1030 335 880 365 720 348 C535 329 365 351 190 340 C110 335 55 337 0 348 Z" fill="#79a85b"/>
+  <path d="M0 306 C170 274 320 288 470 267 C650 242 820 266 990 238 C1070 225 1140 228 1200 235" fill="none" stroke="#e9d9b2" stroke-width="30"/>
+  <path d="M75 273 C225 251 350 259 505 238 C690 213 845 238 1045 210" fill="none" stroke="#677d75" stroke-width="7" stroke-dasharray="18 14"/>
+  <g transform="translate(770 112)">
+    <rect x="0" y="55" width="12" height="105" rx="4" fill="#7d6a55"/>
+    <rect x="78" y="55" width="12" height="105" rx="4" fill="#7d6a55"/>
+    <path d="M6 65 Q45 15 84 65" fill="none" stroke="#9a7b57" stroke-width="12"/>
+    <circle cx="45" cy="45" r="18" fill="#f2c85b"/>
+    <path d="M45 63 v52 M20 88 h50" stroke="#5d5145" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g fill="#376b47">
+    <circle cx="145" cy="238" r="34"/><rect x="139" y="238" width="12" height="62" fill="#6a5a43"/>
+    <circle cx="255" cy="224" r="28"/><rect x="250" y="224" width="10" height="64" fill="#6a5a43"/>
+    <circle cx="1060" cy="192" r="31"/><rect x="1055" y="193" width="11" height="62" fill="#6a5a43"/>
+  </g>
+  <g transform="translate(155 402)" stroke="#f8fbf9" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M0 95 Q105 4 235 0"/>
+    <path d="M0 95 l-16 77"/>
+    <circle cx="-18" cy="178" r="13"/>
+    <path d="M235 0 q45 20 70 80" stroke-width="4"/>
+  </g>
+  <g transform="translate(72 62)">
+    <rect width="650" height="172" rx="28" fill="#ffffff" opacity=".92"/>
+    <text x="38" y="70" font-family="system-ui, sans-serif" font-size="43" font-weight="800" fill="#123d4a">Körfez Atalar Sahil Parkı</text>
+    <text x="38" y="112" font-family="system-ui, sans-serif" font-size="24" fill="#46646c">Kocaeli · İzmit Körfezi · genel kamusal kıyı</text>
+    <text x="38" y="148" font-family="system-ui, sans-serif" font-size="20" fill="#62787e">Anıt alanı ve yaya aksından güvenli mesafe bırak.</text>
+  </g>
+  <g transform="translate(976 504)"><rect width="162" height="62" rx="31" fill="#fff" opacity=".9"/><text x="81" y="39" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="#155a70">Olta Atlası</text></g>
+</svg>
