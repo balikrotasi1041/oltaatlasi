@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title="Balıkçılığa Nereden Başlarız?";
+const description="Balıkçılığa yeni başlayanlar için pahalı ekipmandan önce amaç, av yeri, hedef balık ve sade bir başlangıç üzerine samimi bir yazı.";
+const publishedAt="2026-08-11";
+const pageUrl=new URL("/balikci-gazetesi/balikciliga-nereden-baslariz/",Astro.site).href;
+const articleSchema={
+  "@context":"https://schema.org",
+  "@type":"Article",
+  headline:title,
+  description,
+  datePublished:publishedAt,
+  dateModified:publishedAt,
+  author:{"@type":"Person",name:"Soner BAYRAM"},
+  publisher:{"@type":"Organization",name:"Olta Atlası",url:new URL("/",Astro.site).href},
+  mainEntityOfPage:pageUrl,
+  inLanguage:"tr-TR"
+};
+---
+<BaseLayout title={title} description={description} type="article" publishedAt={publishedAt} modifiedAt={publishedAt}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)}/>
+  <article class="gazete-article">
+    <header class="gazete-header">
+      <div class="container gazete-reading">
+        <a class="gazete-back" href="/balikci-gazetesi/">← Balıkçı Gazetesi</a>
+        <p class="gazete-kicker">İlk sayı</p>
+        <h1>Balıkçılığa Nereden Başlarız?</h1>
+        <p class="gazete-byline">Soner BAYRAM · 11 Ağustos 2026</p>
+      </div>
+    </header>
+
+    <div class="container gazete-reading gazete-body">
+      <p class="dropcap">Son dönemde bu soruyu o kadar çok insandan duyuyorum ki söylesem inanmazsınız. Verdiğim ilk cevap ise çoğu kişiyi biraz hayal kırıklığına uğratıyor: Herkes için doğru tek bir olta, takım ya da marka yok. Çünkü balıkçılığa nereden başlayacağımızı belirleyen şey, önce neden balık tutmak istediğimiz; sonra da nerede ve ne tutacağımızdır.</p>
+
+      <h2>Neden Balık Tutmak İstiyoruz?</h2>
+      <p>Önce cevaplanması gereken soru budur. Kimi insan balığa yalnız kalmak, kafasını dağıtmak ve sakinleşmek için gider. Kimi dostlarıyla vakit geçirmek, yeni yerler görmek ya da sofraya kendi tuttuğu balığı koymak ister. Bazısı da yeni teknikler öğrenmekten ve zor bir avın peşine düşmekten keyif alır.</p>
+      <p>Bu amaçların hiçbiri diğerinden daha doğru değildir. Ancak seçilecek ekipman, ayrılacak bütçe ve öğrenilecek yöntem amaca göre değişir. Bu nedenle alışverişe çıkmadan önce kendimize şu soruyu sormalıyız: Ben bu işin en çok hangi tarafını seveceğim?</p>
+
+      <h2>İlk Karar: Nerede ve Ne Tutacaksınız?</h2>
+      <p>Balıkçılıkta takımı belirleyen asıl konu, yalnız mı yoksa arkadaşlarla mı avlanacağınızdan önce avın kendisidir. Tatlı su ile deniz, kıyı ile tekne, küçük balık ile güçlü bir av aynı ekipmanı istemez. Hedef balığı ve av yerini belirlemeden alınan takım ya yetersiz kalır ya da gereğinden pahalı olur.</p>
+      <p>Yeni başlayan biri için en sağlam yol, yaşadığı bölgede kolay ulaşabileceği bir avı seçmektir.</p>
+      <p>Yakındaki kıyılarda hangi yöntemlerin kullanıldığını gözlemlemek, deneyimli bir balıkçıya ya da güvenilir bir malzemeciye danışmak başlangıçta büyük avantaj sağlar. Yerel kuralları, yasak dönemleri ve boy sınırlarını kontrol etmek de hazırlığın bir parçasıdır.</p>
+
+      <h2>Başlangıçta Ne Kadar Ekipman Gerekir?</h2>
+      <p>Sanıldığı kadar çok değil. İlk gün için amaca uygun bir kamış ve makine, doğru misina, birkaç temel iğne ya da yem, küçük bir malzeme kutusu, pense ve ihtiyaç duyulabilecek birkaç yedek parça çoğu zaman yeterlidir. Av yerine göre can yeleği, kaymayan ayakkabı ve hava koşullarına uygun kıyafet gibi güvenlik ekipmanları ise gösteriş değil, gerekliliktir.</p>
+      <p>Mümkünse ilk takımı satın almadan önce bir arkadaşınızın ekipmanını deneyin veya birlikte ava çıkın. Bir gün boyunca takım kurmak, atış yapmak ve toplamak; onlarca ürün incelemekten daha öğreticidir. İlk avdan sonra neye gerçekten ihtiyacınız olduğunu çok daha iyi anlarsınız.</p>
+
+      <h2>Pahalı mı, İşlevsel mi?</h2>
+      <p>Ne en ucuz olanı almak gerekir ne de en pahalı olanı. Doğru takım; hedefe uygun, güvenilir, rahat kullanılan ve gerektiğinde parçası bulunabilen takımdır. Kalite önemlidir fakat kalite yalnızca fiyat etiketi demek değildir.</p>
+      <p>Avın ortasında kırılan bir takım insanı çaresiz bırakabilir. Bu nedenle bütçeyi yalnızca görünüşe değil, sağlamlığa ve işlevselliğe ayırmak gerekir. Öte yandan daha neyi sevdiğinizi bilmeden profesyonel seviyede ekipman almak da başka bir israftır. En doğrusu, güvenilir bir başlangıç takımıyla yola çıkıp ihtiyaç ortaya çıktıkça ilerlemektir.</p>
+
+      <h2>Tek Başına mı, Arkadaşlarla mı?</h2>
+      <p>Bu seçim ekipmandan çok deneyiminizi değiştirir. Tek başına avlanan biri hazırlığını daha dikkatli yapmalı, gideceği yeri bir yakınıyla paylaşmalı ve güvenliği ön planda tutmalıdır. Arkadaşlarla çıkmak ise yeni başlayanlar için öğrenmeyi hızlandırır; düğüm atmayı, takımı kurmayı ve av yerini okumayı bir başkasından görmek büyük kolaylıktır.</p>
+      <p>Takımın sade ya da gösterişli olması kişisel zevktir. Önemli olan, işini güvenli biçimde görmesi ve sahibini sudan uzaklaştıracak bir masrafa dönüşmemesidir. Nice büyük balıkların mütevazı takımlarla tutulduğunu hepimiz görmüşüzdür. Balığı kıymetli yapan çoğu zaman ekipmanın fiyatı değil, o ana verilen emektir.</p>
+
+      <h2>İlk Gün İçin Basit Yol Haritası</h2>
+      <ul>
+        <li>Kolay ulaşabileceğiniz bir av yeri seçin.</li>
+        <li>O bölgede tutulan bir hedef balık ve tek bir yöntem belirleyin.</li>
+        <li>Mümkünse ekipmanı ödünç alarak veya deneyimli biriyle çıkarak yöntemi deneyin.</li>
+        <li>Bütçenize uygun, sade ve güvenilir bir başlangıç takımı alın.</li>
+        <li>İlk birkaç avdan sonra eksikleri belirleyin; kullanmayacağınız malzemeyi baştan almayın.</li>
+        <li>Hava durumunu, yerel kuralları ve güvenlik koşullarını her avdan önce kontrol edin.</li>
+      </ul>
+
+      <h2>Peki, Nereden Başlayalım?</h2>
+      <p>Önce amacınızı belirleyin. Ardından bulunduğunuz bölgedeki en erişilebilir avı seçin ve yalnızca o av için gereken temel takımla başlayın. İlk gün hedefiniz büyük balık tutmak değil; takımı kurmayı, doğru atış yapmayı, suyu gözlemlemeyi ve neye ihtiyaç duyduğunuzu anlamak olsun.</p>
+      <p>Sonradan pişman olmak pek işe yaramıyor. Ne yazık ki çoğumuzun balkonları, hevesle alınıp kullanılmadan çürüyen takımlarla dolu. Bir olta mezarlığı yaratmadan, küçük ama doğru bir adımla başlayın. Balıkçılık en pahalı takıma sahip olma işi değil; doğru yerde, doğru yöntemle sabretme işidir.</p>
+
+      <footer class="gazete-signature">Soner BAYRAM</footer>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .gazete-article{background:#fbfaf6}
+  .gazete-header{padding:64px 0 42px;border-bottom:1px solid #ded9ce;background:#f5f1e8}
+  .gazete-reading{max-width:780px}
+  .gazete-back{display:inline-block;margin-bottom:34px;font-weight:800;text-decoration:none}.gazete-back:hover{text-decoration:underline}
+  .gazete-kicker{margin:0 0 12px;color:#777b76;font-size:.78rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+  .gazete-header h1{margin:0 0 18px;font:700 clamp(2.8rem,7vw,5.4rem)/.99 Georgia,serif;letter-spacing:-.045em;color:#18282d}
+  .gazete-byline{margin:0;color:#6e716e;font-size:.93rem}
+  .gazete-body{padding-top:54px;padding-bottom:90px;font:400 1.12rem/1.86 Georgia,serif;color:#313b3d}
+  .gazete-body p{margin:0 0 1.55em}.gazete-body h2{margin:2.25em 0 .65em;font:700 clamp(1.65rem,4vw,2.35rem)/1.15 Georgia,serif;color:#17292f;letter-spacing:-.025em}.gazete-body ul{margin:0 0 1.8em;padding-left:1.35em}.gazete-body li{margin:.55em 0}.dropcap:first-letter{float:left;margin:.1em .09em 0 0;font:700 4.3rem/.72 Georgia,serif;color:#b1682b}.gazete-signature{margin-top:54px;padding-top:22px;border-top:1px solid #d8d5cd;font:700 1rem/1 Georgia,serif;letter-spacing:.08em;color:#4a5556}
+  @media(max-width:760px){.gazete-header{padding:46px 0 32px}.gazete-back{margin-bottom:26px}.gazete-body{padding-top:40px;padding-bottom:68px;font-size:1.05rem;line-height:1.8}}
+</style>
