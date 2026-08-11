@@ -6,7 +6,8 @@ import { meralar } from "../data/meralar-tumu";
 import { baliklar } from "../data/baliklar";
 import { rehberler } from "../data/rehber-katalogu";
 import { dunyaBalikcilikYazilari } from "../data/dunya-balikcilik";
-const totalPosts = meralar.length + baliklar.length + rehberler.length + dunyaBalikcilikYazilari.length;
+const balikciGazetesiCount=1;
+const totalPosts = meralar.length + baliklar.length + rehberler.length + dunyaBalikcilikYazilari.length + balikciGazetesiCount;
 const istanbulCount=meralar.filter((m)=>m.province==="İstanbul").length;
 const kocaeliCount=meralar.filter((m)=>m.province==="Kocaeli").length;
 const provinceCount=new Set(meralar.map((m)=>m.province)).size;
@@ -24,6 +25,7 @@ const featuredMeralar=meralar.filter((route)=>route.confidence!=="D").sort((a,b)
 <section class="city-entry-section"><div class="container city-entry-grid"><a href="/iller/istanbul/" class="city-entry-card featured"><span class="kicker">{istanbulCount} rota · Avrupa ve Anadolu Yakası</span><h2>İstanbul’da balık tutulacak yerler</h2><p>Boğaz kıyılarından Marmara sahiline uzanan ilçe bazlı rota merkezini aç.</p><strong>İstanbul rehberini aç →</strong></a><a href="/iller/kocaeli/" class="city-entry-card"><span class="kicker">{kocaeliCount} rota · Marmara, Karadeniz ve iç su</span><h2>Kocaeli’de balık tutulacak yerler</h2><p>İzmit Körfezi, Kandıra kıyıları ve iç su kayıtlarını güven seviyesiyle karşılaştır.</p><strong>Kocaeli rehberini aç →</strong></a></div></section>
 <section class="container section"><div class="section-heading"><div><span class="kicker">Yeni ve güncellenen rotalar</span><h2>Öne çıkan 12 avlak</h2></div><a class="text-link" href="/meralar/">Bütün avlakları ara ve filtrele →</a></div><div class="card-grid">{featuredMeralar.map((mera)=><MeraCard mera={mera}/>)}</div></section>
 <section class="container section article-prose"><div class="section-heading"><div><span class="kicker">Olta Atlası nasıl çalışır?</span><h2>Bir avlak sayfasını nasıl okumalı?</h2></div></div><div class="three-feature-grid"><div><strong>01 · Kaynak</strong><p>Resmî mevzuat, resmî kullanım doğrulaması, editör araştırması ve saha gözlemi birbirinden ayrılır.</p></div><div><strong>02 · Güven seviyesi</strong><p>A saha doğrulaması ve güçlü resmî kaynağı; B rota özelinde güçlü resmî kullanım kanıtını; C güçlü masa başı doğrulamayı; D belirsiz araştırma başlangıcını gösterir.</p></div><div><strong>03 · Konum hassasiyeti</strong><p>Navigasyon çoğu zaman yalnızca genel planlama konumunu açar. Kamusal giriş, iskele, marina, liman ve özel mülkiyet sınırı yerinde doğrulanır.</p></div></div></section>
+<div class="container" style="padding:0 0 30px"><a class="text-link" href="/balikci-gazetesi/">Balıkçı Gazetesi →</a></div>
 <section class="section soft-section"><div class="container two-column"><div><span class="kicker">Saha etiği</span><h2>Merayı göstermek, merayı tüketmek değildir.</h2><p>Hassas ve küçük alanlarda tam koordinat yayımlamıyoruz. Navigasyon bağlantıları çoğu kayıtta yalnızca genel planlama bölgesini açar.</p></div><div class="principle-list"><div><strong>01</strong><span>Misina, iğne ve çöpünü geri götür.</span></div><div><strong>02</strong><span>Güncel yasak ve limitleri doğrula.</span></div><div><strong>03</strong><span>Şüpheli bilgiyi kesin gerçek gibi paylaşma.</span></div></div></div></section>
 <style is:global>
 .home-map-stage{padding:32px 0 44px;background:radial-gradient(circle at 88% 12%,rgba(246,180,74,.24),transparent 28%),linear-gradient(145deg,#071f27,#0f5564);border-bottom:1px solid rgba(255,255,255,.08)}
