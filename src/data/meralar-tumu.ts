@@ -4,6 +4,7 @@ import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-
 import { meralar as coreMeralar } from "./meralar-tumu-core";
 import { istanbulKocaeliIyilestirmeleri20260810Final, istanbulKocaeliYeni20260810Final } from "./meralar-istanbul-kocaeli-2026-08-10-final";
 import { ulusalGuvenIyilestirmeleri20260810Batch2 } from "./meralar-ulusal-guven-iyilestirme-2026-08-10-batch2";
+import { bilecikYeni20260811 } from "./meralar-bilecik-2026-08-11";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -103,6 +104,10 @@ const applyOverride=(route:Mera)=>{
 };
 for(const route of istanbulKocaeliIyilestirmeleri20260810Final)applyOverride(route);
 for(const route of istanbulKocaeliYeni20260810Final)applyOverride(route);
+for(const route of bilecikYeni20260811){
+  if(routeMap.has(route.slug))throw new Error(`Yeni Bilecik rotası mevcut slug ile çakışıyor: ${route.slug}`);
+  routeMap.set(route.slug,route);
+}
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
