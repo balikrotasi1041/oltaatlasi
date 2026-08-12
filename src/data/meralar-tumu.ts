@@ -6,6 +6,7 @@ import { istanbulKocaeliIyilestirmeleri20260810Final, istanbulKocaeliYeni2026081
 import { ulusalGuvenIyilestirmeleri20260810Batch2 } from "./meralar-ulusal-guven-iyilestirme-2026-08-10-batch2";
 import { bilecikYeni20260811 } from "./meralar-bilecik-2026-08-11";
 import { istanbulKocaeliIyilestirmeleri20260811 } from "./meralar-istanbul-kocaeli-2026-08-11-evening";
+import { istanbulKocaeliIyilestirmeleri20260812 } from "./meralar-istanbul-kocaeli-2026-08-12";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -112,12 +113,15 @@ for(const route of bilecikYeni20260811){
 
 const applyPatch=(slug:string,patch:Partial<Mera>)=>{
   const previous=routeMap.get(slug);
-  if(!previous)throw new Error(`11 Ağustos iyileştirme hedefi aktif veri kümesinde bulunamadı: ${slug}`);
+  if(!previous)throw new Error(`İyileştirme hedefi aktif veri kümesinde bulunamadı: ${slug}`);
   routeMap.set(slug,{...previous,...patch} as EnrichedMera);
 };
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260811))applyPatch(slug,patch);
-const publishedToday=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
-if(publishedToday.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday.length}`);
+for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260812))applyPatch(slug,patch);
+const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
+if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
+const publishedToday12=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-12");
+if(publishedToday12.length>10)throw new Error(`12 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday12.length}`);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
