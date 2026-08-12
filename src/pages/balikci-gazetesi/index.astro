@@ -13,10 +13,18 @@ const description="Balıkçılık üzerine rehber diliyle değil, kıyıda sohbe
   </section>
 
   <section class="container gazete-wrap gazete-list" aria-labelledby="son-yazilar">
-    <div class="gazete-rule"><span>İlk sayı</span></div>
+    <div class="gazete-rule"><span id="son-yazilar">Son yazılar</span></div>
+
+    <article class="gazete-card">
+      <p class="gazete-meta">13 Ağustos 2026 · Soner BAYRAM</p>
+      <h2><a href="/balikci-gazetesi/bos-kova-sendromu/">Boş Kova Sendromu</a></h2>
+      <p>Yanındaki balıkçı her attığını dolu çekerken şamandırası kıpırdamayanların iyi bildiği o his ve eve boş kovayla dönmenin aslında ne kadar dolu bir tarafı olduğu üzerine.</p>
+      <a class="gazete-read" href="/balikci-gazetesi/bos-kova-sendromu/">Yazıyı oku →</a>
+    </article>
+
     <article class="gazete-card">
       <p class="gazete-meta">11 Ağustos 2026 · Soner BAYRAM</p>
-      <h2 id="son-yazilar"><a href="/balikci-gazetesi/balikciliga-nereden-baslariz/">Balıkçılığa Nereden Başlarız?</a></h2>
+      <h2><a href="/balikci-gazetesi/balikciliga-nereden-baslariz/">Balıkçılığa Nereden Başlarız?</a></h2>
       <p>İlk oltayı almadan önce belki de sormamız gereken şey kamışın markası değil: Neden balık tutmak istiyoruz, nerede tutacağız ve gerçekten neye ihtiyacımız var?</p>
       <a class="gazete-read" href="/balikci-gazetesi/balikciliga-nereden-baslariz/">Yazıyı oku →</a>
     </article>
@@ -31,6 +39,6 @@ const description="Balıkçılık üzerine rehber diliyle değil, kıyıda sohbe
   .gazete-lead{max-width:720px;margin:0;font:400 1.16rem/1.8 Georgia,serif;color:#4c5657}
   .gazete-list{padding-top:52px;padding-bottom:88px}
   .gazete-rule{display:flex;align-items:center;gap:14px;margin-bottom:26px;color:#6d706d;font:700 .78rem/1 Georgia,serif;text-transform:uppercase;letter-spacing:.14em}.gazete-rule:after{content:"";height:1px;flex:1;background:#d8d5cd}
-  .gazete-card{padding-bottom:30px;border-bottom:1px solid #d8d5cd}.gazete-card h2{max-width:680px;margin:8px 0 14px;font:700 clamp(2rem,4.5vw,3.25rem)/1.08 Georgia,serif}.gazete-card h2 a{color:#17292f;text-decoration:none}.gazete-card h2 a:hover{text-decoration:underline;text-underline-offset:5px}.gazete-card>p:not(.gazete-meta){max-width:690px;font:400 1.05rem/1.72 Georgia,serif;color:#4f5859}.gazete-meta{margin:0;color:#7a7d79;font-size:.86rem}.gazete-read{display:inline-block;margin-top:7px;font-weight:850}
+  .gazete-card{padding:0 0 32px;margin:0 0 34px;border-bottom:1px solid #d8d5cd}.gazete-card:last-child{margin-bottom:0}.gazete-card h2{max-width:680px;margin:8px 0 14px;font:700 clamp(2rem,4.5vw,3.25rem)/1.08 Georgia,serif}.gazete-card h2 a{color:#17292f;text-decoration:none}.gazete-card h2 a:hover{text-decoration:underline;text-underline-offset:5px}.gazete-card>p:not(.gazete-meta){max-width:690px;font:400 1.05rem/1.72 Georgia,serif;color:#4f5859}.gazete-meta{margin:0;color:#7a7d79;font-size:.86rem}.gazete-read{display:inline-block;margin-top:7px;font-weight:850}
   @media(max-width:760px){.gazete-hero{padding:54px 0 34px}.gazete-list{padding-top:38px;padding-bottom:64px}}
 </style>
