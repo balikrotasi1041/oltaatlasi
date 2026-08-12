@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title="Boş Kova Sendromu";
+const description="Yanındaki balıkçı kovayı doldururken şamandırası kıpırdamayanların iyi bildiği o his; boş kovanın aslında ne kadar dolu olabileceği üzerine samimi bir balıkçılık yazısı.";
+const publishedAt="2026-08-13";
+const pageUrl=new URL("/balikci-gazetesi/bos-kova-sendromu/",Astro.site).href;
+const articleSchema={
+  "@context":"https://schema.org",
+  "@type":"Article",
+  headline:title,
+  description,
+  datePublished:publishedAt,
+  dateModified:publishedAt,
+  author:{"@type":"Person",name:"Soner BAYRAM"},
+  publisher:{"@type":"Organization",name:"Olta Atlası",url:new URL("/",Astro.site).href},
+  mainEntityOfPage:pageUrl,
+  inLanguage:"tr-TR"
+};
+---
+<BaseLayout title={title} description={description} type="article" publishedAt={publishedAt} modifiedAt={publishedAt}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)}/>
+  <article class="gazete-article">
+    <header class="gazete-header">
+      <div class="container gazete-reading">
+        <a class="gazete-back" href="/balikci-gazetesi/">← Balıkçı Gazetesi</a>
+        <p class="gazete-kicker">İkinci sayı</p>
+        <h1>Boş Kova Sendromu</h1>
+        <p class="gazete-byline">Soner BAYRAM · 13 Ağustos 2026</p>
+      </div>
+    </header>
+
+    <div class="container gazete-reading gazete-body">
+      <p class="dropcap">Tam balığa gittiniz, her şeyinizi nasıl olması gerekiyorsa ona göre hazırlayıp oltanızı attınız ve bekliyorsunuz. Baktınız ki komşunuz olan avcı da aynısını yapıyor. Sizden ne bir eksik, ne bir fazla. Ama sonra bir bakıyorsunuz sizin şamandıra oynamazken, o her attığını dolu çekiyor.</p>
+
+      <h2>O Tanıdık His</h2>
+      <p>O hissi hatırladınız değil mi? Oltayı çekip yemi kontrol ettiğiniz. Sonra oltayı atıp emin olmadan çekip bir defa daha kontrol ettiğiniz o an. Her balıkçı o anda görünmez olmak ister. Çünkü bilir ki, yanında oltası hep dolu olan avcı da aslında o görsün ister. “Bak nasıl tutuyorum, izle de feyz al” der gibi durur. Sorsanız inkar eder ama o duruş hep bir meydan okumayı işaret eder.</p>
+
+      <h2>Gün Bittiğinde…</h2>
+      <p>Gün bittiğinde eve giderken kovaya bakarsınız. Bir balık vardır zorlukla hayata tutunan. Bir balığa, bir de kovasını dolduran komşunuza bakarsınız. Ve itiraf edin, gönlünüz elvermez o balığı eve götürmeye. Balıkçı düsturunda alır onu da bahtı açık komşunuzun kovasına eklersiniz teamüle göre.</p>
+
+      <h2>E Peki Neden?</h2>
+      <p>Balığa giden birçok amatör balıkçı gibi eğer tuttuğunuz balığa bağımlı değilse sofranız, böyle yapmalısınız. Çünkü günün ilk atışını yaptığınız ana kadar bile aslında balıkçıdan bir kilo balık alabilecek kadar masraf yapmışsınızdır zaten. Yani asıl mesele balık yemek değil, balık avlamaktır. Başladığınızda ise tuttuğunuz ister 1 olsun, ister 1000, aslında varılmak istenen noktaya çoktan varılmıştır. Balık avlanmıştır nihayetinde yakalanmamış olsa da.</p>
+
+      <h2>Balıkçı Boş Kovadan Ne Anlamalı</h2>
+      <p>Amacın hasıl olduğunu anlamalı. Devasa bir kuzu alsa kucağına güzel olur muydu? Evet olurdu. Ama benim mesela en güzel avlarım şamandıraya bakarken aklımın raflarındaki karmaşaları düzenlediğim sakin avlardır. O şamandıra dalgada hafifçe ritim tutarken kafamdaki tüm sorunlar da o ritme ayak uydurur ve bilirim ki hiç balık tutmasam da kovam kadar boş bir kafayla ayrılacağım o avlaktan. Ki bu da hiçbir terapiye değişilmez bence.</p>
+
+      <h2>Boş Kovanın Faydaları</h2>
+      <p>Siz sabahın köründe o avlağa elbette eli boş dönmek için gitmediniz. Ama size 10 kilo balık ücreti verseler de kalkmazdınız kimse için o sıcak yatağınızdan. Siz acıktığınız için değil kafanızın ihtiyacı için gittiniz balığa. Ve kova dolu olsa elbet güzel olur. Ama boş kova da asla zannettiğiniz kadar boş değildir aslında. Saygılarımla…</p>
+
+      <footer class="gazete-signature">Soner BAYRAM</footer>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .gazete-article{background:#fbfaf6}
+  .gazete-header{padding:64px 0 42px;border-bottom:1px solid #ded9ce;background:#f5f1e8}
+  .gazete-reading{max-width:780px}
+  .gazete-back{display:inline-block;margin-bottom:34px;font-weight:800;text-decoration:none}.gazete-back:hover{text-decoration:underline}
+  .gazete-kicker{margin:0 0 12px;color:#777b76;font-size:.78rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+  .gazete-header h1{margin:0 0 18px;font:700 clamp(2.8rem,7vw,5.4rem)/.99 Georgia,serif;letter-spacing:-.045em;color:#18282d}
+  .gazete-byline{margin:0;color:#6e716e;font-size:.93rem}
+  .gazete-body{padding-top:54px;padding-bottom:90px;font:400 1.12rem/1.86 Georgia,serif;color:#313b3d}
+  .gazete-body p{margin:0 0 1.55em}.gazete-body h2{margin:2.25em 0 .65em;font:700 clamp(1.65rem,4vw,2.35rem)/1.15 Georgia,serif;color:#17292f;letter-spacing:-.025em}.dropcap:first-letter{float:left;margin:.1em .09em 0 0;font:700 4.3rem/.72 Georgia,serif;color:#b1682b}.gazete-signature{margin-top:54px;padding-top:22px;border-top:1px solid #d8d5cd;font:700 1rem/1 Georgia,serif;letter-spacing:.08em;color:#4a5556}
+  @media(max-width:760px){.gazete-header{padding:46px 0 32px}.gazete-back{margin-bottom:26px}.gazete-body{padding-top:40px;padding-bottom:68px;font-size:1.05rem;line-height:1.8}}
+</style>
