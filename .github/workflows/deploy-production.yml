@@ -65,7 +65,7 @@ jobs:
               -D /tmp/rum-headers.txt "$url" -o /tmp/rum-home.html
 
             if grep -q '<title>' /tmp/rum-home.html \
-              && grep -Eiq '^x-olta-security-policy:[[:space:]]*ip-blocklist-and-browser-headers-v2' /tmp/rum-headers.txt \
+              && grep -Eiq '^x-olta-security-policy:[[:space:]]*ip-blocklist-probe-guard-browser-headers-and-404-v4' /tmp/rum-headers.txt \
               && grep -Eiq '^strict-transport-security:' /tmp/rum-headers.txt; then
               home_ok=1
               break
@@ -92,6 +92,26 @@ jobs:
             exit 1
           fi
 
+          explicit_404_status=$(curl --silent --output /tmp/explicit-404.html --write-out '%{http_code}' \
+            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
+            'https://oltaatlasi.com/404')
+          if [ "$explicit_404_status" != "404" ]; then
+            echo "::error::/404 beklenen HTTP 404 yerine ${explicit_404_status} döndü."
+            exit 1
+          fi
+          if ! grep -q 'Bu rota haritada görünmüyor' /tmp/explicit-404.html; then
+            echo "::error::/404 özel hata sayfası gövdesi doğrulanamadı."
+            exit 1
+          fi
+
+          for probe_path in /export.sql /build.gradle /rest/executions /webhook-waiting/test /v1.40/swarm /.amplifyrc; do
+            probe_status=$(curl --silent --output /dev/null --write-out '%{http_code}' "https://oltaatlasi.com${probe_path}")
+            if [ "$probe_status" != "404" ]; then
+              echo "::error::${probe_path} probe isteği HTTP 404 yerine ${probe_status} döndü."
+              exit 1
+            fi
+          done
+
           if ! grep -q 'static.cloudflareinsights.com/beacon.min.js' /tmp/rum-home.html; then
             echo "::warning::RUM beacon HTML içinde görünmedi; otomatik enjeksiyon edge/yanıt koşullarına bağlı olabilir. Endpoint denetimi sürdürülecek."
           fi
@@ -107,6 +127,6 @@ jobs:
               echo "::warning::RUM toplama endpoint'i GET isteğine HTTP 404 verdi; bu yöntem yanıtı beacon gönderimini tek başına doğrulamaz. Canlı HTML ve güvenlik başlıkları doğrulandı."
               ;;
             *)
-              echo "Canlı site, güvenlik başlıkları ve Cloudflare RUM endpoint'i doğrulandı; endpoint HTTP ${rum_status}."
+              echo "Canlı site, güvenlik başlıkları, 404 davranışı, probe guard ve Cloudflare RUM endpoint'i doğrulandı; endpoint HTTP ${rum_status}."
               ;;
           esac
