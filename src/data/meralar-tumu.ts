@@ -7,6 +7,7 @@ import { ulusalGuvenIyilestirmeleri20260810Batch2 } from "./meralar-ulusal-guven
 import { bilecikYeni20260811 } from "./meralar-bilecik-2026-08-11";
 import { istanbulKocaeliIyilestirmeleri20260811 } from "./meralar-istanbul-kocaeli-2026-08-11-evening";
 import { istanbulKocaeliIyilestirmeleri20260812 } from "./meralar-istanbul-kocaeli-2026-08-12";
+import { kirklareliYeni20260813 } from "./meralar-kirklareli-2026-08-13";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -94,14 +95,15 @@ for(const [slug,research] of Object.entries(ulusalGuvenIyilestirmeleri20260810Ba
 
 const applyOverride=(route:Mera)=>{
   const previous=routeMap.get(route.slug);
+  const enriched=route as EnrichedMera;
   routeMap.set(route.slug,{
     ...(previous||{}),
     ...route,
-    fishEvidence:previous?.fishEvidence||[],
-    accommodationOptions:previous?.accommodationOptions||[],
-    accessEvidence:previous?.accessEvidence||[],
-    navigationVerified:previous?.navigationVerified??false,
-    confidenceProfile:previous?.confidenceProfile,
+    fishEvidence:enriched.fishEvidence||previous?.fishEvidence||[],
+    accommodationOptions:enriched.accommodationOptions||previous?.accommodationOptions||[],
+    accessEvidence:enriched.accessEvidence||previous?.accessEvidence||[],
+    navigationVerified:enriched.navigationVerified??previous?.navigationVerified??false,
+    confidenceProfile:enriched.confidenceProfile||previous?.confidenceProfile,
   } as EnrichedMera);
 };
 for(const route of istanbulKocaeliIyilestirmeleri20260810Final)applyOverride(route);
@@ -109,6 +111,12 @@ for(const route of istanbulKocaeliYeni20260810Final)applyOverride(route);
 for(const route of bilecikYeni20260811){
   if(routeMap.has(route.slug))throw new Error(`Yeni Bilecik rotası mevcut slug ile çakışıyor: ${route.slug}`);
   routeMap.set(route.slug,route);
+}
+const blockedKirklareliSlugs=new Set(["kirklareli-armagan-baraji","kirklareli-sofuhalil-goleti"]);
+for(const route of kirklareliYeni20260813){
+  if(blockedKirklareliSlugs.has(route.slug))continue;
+  if(routeMap.has(route.slug))throw new Error(`Yeni Kırklareli rotası mevcut slug ile çakışıyor: ${route.slug}`);
+  applyOverride(route);
 }
 
 const applyPatch=(slug:string,patch:Partial<Mera>)=>{
@@ -122,6 +130,8 @@ const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt=
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
 const publishedToday12=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-12");
 if(publishedToday12.length>10)throw new Error(`12 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday12.length}`);
+const publishedToday13=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-13");
+if(publishedToday13.length>10)throw new Error(`13 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday13.length}`);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
