@@ -1,105 +1,421 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { meralar, contentQualityStats } from "../../data/meralar-tumu";
+import { contentQualityStats } from "../../data/meralar-tumu";
 
 const coverage = { indexed: 59, excluded: 693, date: "2026-08-07" };
-const coverageRatio = Math.round((coverage.indexed / (coverage.indexed + coverage.excluded)) * 1000) / 10;
+const coverageTotal = coverage.indexed + coverage.excluded;
+const coverageRatio = coverageTotal > 0 ? (coverage.indexed / coverageTotal) * 100 : 0;
+const qualityScore = contentQualityStats.score;
 ---
-<BaseLayout title="Büyüme Kontrolü" description="Olta Atlası büyüme, indeksleme ve trafik karar merkezi." noindex={true}>
+
+<BaseLayout
+  title="Büyüme Kontrolü"
+  description="Olta Atlası büyüme, indeksleme ve trafik karar merkezi."
+  noindex={true}
+>
   <section class="control">
     <div class="container wrap">
       <header class="hero">
-        <div><p class="eyebrow">Olta Atlası · Dashboard</p><h1>Büyüme Kontrolü</h1><p>Search Console, GA4, Cloudflare ve indeksleme durumunu tek karara dönüştürür.</p></div>
-        <nav><a href="/admin/dashboard/">Dashboard</a><a href="/admin/seo-radar/">SEO Radarı</a></nav>
+        <div>
+          <p class="eyebrow">Olta Atlası · Dashboard</p>
+          <h1>Büyüme Kontrolü</h1>
+          <p>Search Console, GA4, Cloudflare ve indeksleme sinyallerini tek bir operasyon kararına dönüştürür.</p>
+        </div>
+        <nav aria-label="Yönetim bağlantıları">
+          <a href="/admin/dashboard/">Dashboard</a>
+          <a href="/admin/seo-radar/">SEO Radarı</a>
+        </nav>
       </header>
 
-      <section class="panel verdict">
-        <div><p class="eyebrow dark">Bugünün tavsiyesi</p><span id="badge" class="badge">VERİ YÜKLENİYOR</span><h2 id="verdict">Canlı veriler bekleniyor…</h2><p id="reason">Eksik veriyle strateji değiştirmeyeceğiz.</p></div>
-        <button id="refresh" type="button">Yenile</button>
+      <section class="panel verdict" aria-live="polite">
+        <div>
+          <p class="eyebrow dark">Bugünün tavsiyesi</p>
+          <span id="badge" class="badge">VERİ YÜKLENİYOR</span>
+          <h2 id="verdict">Canlı veriler bekleniyor…</h2>
+          <p id="reason">Eksik veriyle strateji değiştirmeyeceğiz.</p>
+        </div>
+        <button id="refresh" type="button">Tüm veriyi yenile</button>
       </section>
+
       <div id="error" class="error" hidden></div>
 
       <section class="panel">
-        <div class="heading"><div><p class="eyebrow dark">Çekirdek takip</p><h2>Her hafta bakacağımız rakamlar</h2></div><span>28 gün + son 7 gün</span></div>
+        <div class="heading">
+          <div>
+            <p class="eyebrow dark">Çekirdek takip</p>
+            <h2>Her hafta bakacağımız rakamlar</h2>
+            <p class="muted">Hedefler Google standardı değil, Olta Atlası'nın erken dönem operasyon eşikleridir.</p>
+          </div>
+          <span>28 gün + son 7 gün</span>
+        </div>
+
         <div class="metrics">
-          <article id="card-users"><span>Aktif kullanıcı</span><strong id="users">—</strong><small>28 gün · hedef 25+</small></article>
-          <article id="card-organic"><span>Organik oturum</span><strong id="organic">—</strong><small>28 gün · hedef 15+</small></article>
-          <article id="card-clicks"><span>Google tıklama</span><strong id="clicks">—</strong><small>28 gün · hedef 40+</small></article>
-          <article id="card-imp"><span>Gösterim</span><strong id="imp">—</strong><small id="imp-note">7 günlük yön</small></article>
-          <article id="card-ctr"><span>CTR</span><strong id="ctr">—</strong><small id="ctr-note">konumla birlikte</small></article>
+          <article id="card-users"><span>Aktif kullanıcı</span><strong id="users">—</strong><small>28 gün · ilk hedef 25+</small></article>
+          <article id="card-organic"><span>Organik oturum</span><strong id="organic">—</strong><small>28 gün · ilk hedef 15+</small></article>
+          <article id="card-clicks"><span>Google tıklama</span><strong id="clicks">—</strong><small>28 gün · ilk hedef 40+</small></article>
+          <article id="card-imp"><span>Google gösterim</span><strong id="imp">—</strong><small id="imp-note">7 günlük yön izlenir</small></article>
+          <article id="card-ctr"><span>CTR</span><strong id="ctr">—</strong><small id="ctr-note">konumla birlikte okunur</small></article>
           <article id="card-pos"><span>Ort. konum</span><strong id="pos">—</strong><small>10 ve altı güçlü sinyal</small></article>
           <article id="card-eng"><span>Etkileşim oranı</span><strong id="eng">—</strong><small>operasyon eşiği %50+</small></article>
-          <article id="card-index"><span>İndeksli URL</span><strong>{coverage.indexed}</strong><small>{coverage.date} · %{coverageRatio}</small></article>
+          <article id="card-index"><span>İndeksli URL snapshotu</span><strong>{coverage.indexed}</strong><small>{coverage.date} · %{coverageRatio.toFixed(1)}</small></article>
           <article id="card-5xx"><span>Cloudflare 5xx</span><strong id="five">—</strong><small>hedef 0</small></article>
         </div>
       </section>
 
       <div class="columns">
-        <section class="panel"><div class="heading"><h2>Şimdi yap</h2><span id="do-count">—</span></div><div id="do-list" class="list"><p>Veri yükleniyor…</p></div></section>
-        <section class="panel"><div class="heading"><h2>Bekle ve ölç</h2><span id="wait-count">—</span></div><div id="wait-list" class="list"><p>Veri yükleniyor…</p></div></section>
-        <section class="panel"><div class="heading"><h2>Şimdilik dokunma</h2><span id="keep-count">—</span></div><div id="keep-list" class="list"><p>Veri yükleniyor…</p></div></section>
+        <section class="panel action-panel">
+          <div class="heading"><h2>Şimdi yap</h2><span id="do-count">—</span></div>
+          <div id="do-list" class="list"><p class="muted">Veri yükleniyor…</p></div>
+        </section>
+        <section class="panel action-panel">
+          <div class="heading"><h2>Bekle ve ölç</h2><span id="wait-count">—</span></div>
+          <div id="wait-list" class="list"><p class="muted">Veri yükleniyor…</p></div>
+        </section>
+        <section class="panel action-panel">
+          <div class="heading"><h2>Şimdilik dokunma</h2><span id="keep-count">—</span></div>
+          <div id="keep-list" class="list"><p class="muted">Veri yükleniyor…</p></div>
+        </section>
       </div>
 
       <div class="two">
-        <section class="panel"><div class="heading"><h2>7 günlük yön</h2><span>28 günlük haftalık baza göre</span></div><div class="rows"><div><span>GSC tıklama</span><b id="t-clicks">—</b></div><div><span>GSC gösterim</span><b id="t-imp">—</b></div><div><span>GA4 kullanıcı</span><b id="t-users">—</b></div><div><span>Organik oturum</span><b id="t-organic">—</b></div></div></section>
-        <section class="panel"><div class="heading"><h2>Cloudflare filtresi</h2><span>7 gün</span></div><div class="rows"><div><span>HTTP isteği</span><b id="requests">—</b></div><div><span>4xx oranı</span><b id="four-rate">—</b></div><div><span>Cache hit</span><b id="cache">—</b></div><div><span>5xx</span><b id="server">—</b></div></div></section>
+        <section class="panel">
+          <div class="heading"><h2>7 günlük yön</h2><span>28 günlük haftalık baza göre</span></div>
+          <div class="rows">
+            <div><span>GSC tıklama</span><b id="t-clicks">—</b></div>
+            <div><span>GSC gösterim</span><b id="t-imp">—</b></div>
+            <div><span>GA4 kullanıcı</span><b id="t-users">—</b></div>
+            <div><span>Organik oturum</span><b id="t-organic">—</b></div>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="heading"><h2>Cloudflare filtresi</h2><span>7 gün</span></div>
+          <div class="rows">
+            <div><span>HTTP isteği</span><b id="requests">—</b></div>
+            <div><span>4xx oranı</span><b id="four-rate">—</b></div>
+            <div><span>Cache hit</span><b id="cache">—</b></div>
+            <div><span>5xx</span><b id="server">—</b></div>
+          </div>
+          <p class="muted mini">Cloudflare istekleri doğrudan “insan ziyaretçi” kabul edilmez. Trafik kararı için GA4 ve Search Console öndedir.</p>
+        </section>
       </div>
 
-      <section class="panel note">
-        <div class="heading"><div><h2>İndeksleme darboğazı</h2><p>Son GSC kapsam snapshotu: {coverage.indexed} indeksli, {coverage.excluded} indeks dışı, toplam {coverage.indexed + coverage.excluded} URL. Bu veri {coverage.date} tarihli olduğu için yeni coverage exportu geldiğinde güncellenmeli.</p></div><strong>%{coverageRatio}</strong></div>
+      <section class="panel coverage">
+        <div class="heading">
+          <div>
+            <p class="eyebrow dark">İndeksleme</p>
+            <h2>Mevcut darboğaz</h2>
+            <p>Son GSC kapsam snapshotunda <strong>{coverage.indexed}</strong> URL indeksli, <strong>{coverage.excluded}</strong> URL indeks dışı. Toplam kapsam: {coverageTotal}.</p>
+          </div>
+          <strong class="coverage-score">%{coverageRatio.toFixed(1)}</strong>
+        </div>
+        <p class="muted mini">Bu veri {coverage.date} tarihli manuel kapsam snapshotudur. SEARCHABLE sayısı değildir ve canlı Search Analytics ile karıştırılmaz.</p>
       </section>
 
-      <section class="panel"><div class="heading"><h2>Canlı SEO adayları</h2><a href="/admin/seo-radar/">Detaylı radarı aç</a></div><div id="seo" class="seo"><p>Search Console verisi yükleniyor…</p></div></section>
-      <section class="panel"><div class="heading"><h2>Veri bağlantıları</h2><span id="sources-state">kontrol ediliyor</span></div><div id="sources" class="sources"></div></section>
+      <section class="panel">
+        <div class="heading">
+          <div><p class="eyebrow dark">SEO iş listesi</p><h2>Canlı veriden ilk adaylar</h2></div>
+          <a class="panel-link" href="/admin/seo-radar/">Detaylı radarı aç</a>
+        </div>
+        <div id="seo" class="seo"><p class="muted">Search Console verisi yükleniyor…</p></div>
+      </section>
+
+      <section class="panel">
+        <div class="heading"><div><p class="eyebrow dark">Veri sağlığı</p><h2>Kaynaklar güncel mi?</h2></div><span id="sources-state">kontrol ediliyor</span></div>
+        <div id="sources" class="sources"></div>
+      </section>
     </div>
   </section>
 
-  <script is:inline define:vars={{ coverageRatio, qualityScore: contentQualityStats.score }}>
-    const nf=new Intl.NumberFormat("tr-TR",{maximumFractionDigits:0});
-    const df=new Intl.NumberFormat("tr-TR",{minimumFractionDigits:1,maximumFractionDigits:1});
-    const $=(s)=>document.querySelector(s); const n=(v)=>Number(v||0); const pc=(v)=>`%${df.format(n(v)*100)}`;
-    const get=async(url)=>{const r=await fetch(url,{credentials:"same-origin",headers:{Accept:"application/json"}});const p=await r.json();if(!r.ok||!p.connected)throw new Error(p.error||"Veri alınamadı");return p;};
-    const change=(current,base)=>base>0?(current-base)/base:(current>0?1:0);
-    const changeText=(value)=>`${value>0?"+":""}${df.format(value*100)}%`;
-    const paint=(id,state)=>{const el=$(id);if(el){el.classList.remove("good","warn","bad");el.classList.add(state);}};
-    const item=(title,text)=>{const a=document.createElement("article");const b=document.createElement("b");const p=document.createElement("p");b.textContent=title;p.textContent=text;a.append(b,p);return a;};
-    const renderList=(id,items)=>{const el=$(id);el.replaceChildren();items.forEach(x=>el.appendChild(item(x[0],x[1])));if(!items.length){const p=document.createElement("p");p.textContent="Bu başlıkta öneri yok.";el.appendChild(p);}};
-    const renderSeo=(pages)=>{const el=$("#seo");el.replaceChildren();const rows=(pages||[]).filter(x=>n(x.impressions)>=3&&n(x.position)<=15).slice(0,6);if(!rows.length){el.append("Bu dönem için yeterli aday yok.");return;}rows.forEach((x,i)=>{const a=document.createElement("article");let path=x.page;try{path=new URL(x.page).pathname}catch{}a.innerHTML=`<span>${i+1}</span><div><b></b><small></small></div><em></em>`;a.querySelector("b").textContent=path;a.querySelector("small").textContent=`${nf.format(x.impressions)} gösterim · ${nf.format(x.clicks)} tıklama · ${pc(x.ctr)} CTR · ${df.format(x.position)} sıra`;a.querySelector("em").textContent=n(x.position)<=10&&n(x.ctr)<.02?"CTR":"İç link";el.appendChild(a);});};
-    const refresh=async()=>{
-      $("#refresh").disabled=true;$("#error").hidden=true;
-      const defs=[["g28","/admin/api/search-console?days=28","Search Console 28g"],["g7","/admin/api/search-console?days=7","Search Console 7g"],["a28","/admin/api/ga4?days=28","GA4 28g"],["a7","/admin/api/ga4?days=7","GA4 7g"],["c7","/admin/api/cloudflare?days=7","Cloudflare 7g"]];
-      const settled=await Promise.allSettled(defs.map(x=>get(x[1])));const data={};const sources=[];
-      settled.forEach((r,i)=>{const [key,,name]=defs[i];if(r.status==="fulfilled"){data[key]=r.value;sources.push([name,true,r.value.stale?"snapshot":"canlı"]);}else{sources.push([name,false,r.reason?.message||"hata"]);}});
-      const src=$("#sources");src.replaceChildren();sources.forEach(x=>{const d=document.createElement("div");d.innerHTML="<span><b></b><small></small></span><strong></strong>";d.querySelector("b").textContent=x[0];d.querySelector("small").textContent=x[2];d.querySelector("strong").textContent=x[1]?"BAĞLI":"HATA";d.querySelector("strong").className=x[1]?"ok":"no";src.appendChild(d);});
-      const failed=sources.filter(x=>!x[1]);$("#sources-state").textContent=failed.length?`${failed.length} kaynak sorunlu`:"tümü bağlı";
-      if(failed.length){$("#error").hidden=false;$("#error").textContent="Eksik veri var. Kesin tavsiye üretmiyorum.";$("#badge").textContent="VERİ EKSİK";$("#verdict").textContent="Önce veri bağlantısını düzelt.";$("#reason").textContent="Kısmi metrikle SEO veya altyapı kararı vermek güvenilir değil.";$("#refresh").disabled=false;return;}
-      const g28=data.g28.totals,g7=data.g7.totals,a28=data.a28.totals,a7=data.a7.totals,c7=data.c7.totals;
-      const trends={clicks:change(n(g7.clicks),n(g28.clicks)/4),imp:change(n(g7.impressions),n(g28.impressions)/4),users:change(n(a7.activeUsers),n(a28.activeUsers)/4),organic:change(n(a7.organicSessions),n(a28.organicSessions)/4)};
-      $("#users").textContent=nf.format(a28.activeUsers);$("#organic").textContent=nf.format(a28.organicSessions);$("#clicks").textContent=nf.format(g28.clicks);$("#imp").textContent=nf.format(g28.impressions);$("#ctr").textContent=pc(g28.ctr);$("#pos").textContent=df.format(g28.position);$("#eng").textContent=pc(a28.engagementRate);$("#five").textContent=nf.format(c7.status5xx);$("#imp-note").textContent=`son 7 gün ${changeText(trends.imp)}`;$("#ctr-note").textContent=`${df.format(g28.position)} ort. konum`;
-      [["#t-clicks",trends.clicks],["#t-imp",trends.imp],["#t-users",trends.users],["#t-organic",trends.organic]].forEach(x=>{$(x[0]).textContent=changeText(x[1]);$(x[0]).className=x[1]>.05?"up":x[1]<-.05?"down":"flat";});
-      const req=n(c7.requests),four=req?n(c7.status4xx)/req:0;$("#requests").textContent=nf.format(req);$("#four-rate").textContent=pc(four);$("#cache").textContent=pc(c7.cacheHitRate);$("#server").textContent=nf.format(c7.status5xx);
-      paint("#card-users",n(a28.activeUsers)>=25?"good":"warn");paint("#card-organic",n(a28.organicSessions)>=15?"good":"warn");paint("#card-clicks",n(g28.clicks)>=40?"good":"warn");paint("#card-imp",trends.imp>.1?"good":trends.imp<-.1?"bad":"warn");paint("#card-ctr",n(g28.position)<=10&&n(g28.ctr)<.02?"warn":"good");paint("#card-pos",n(g28.position)<=10?"good":n(g28.position)<=15?"warn":"bad");paint("#card-eng",n(a28.engagementRate)>=.5?"good":"warn");paint("#card-index",coverageRatio>=15?"good":"bad");paint("#card-5xx",n(c7.status5xx)===0?"good":"bad");
-      const now=[],wait=[],keep=[];
-      if(n(c7.status5xx)>0)now.push(["Önce 5xx hatalarını çöz",`${nf.format(c7.status5xx)} sunucu hatası varken SEO ikinci planda.`]);
-      if(coverageRatio<15)now.push(["Yeni URL üretimini yavaşlat",`Son indeks oranı %${df.format(coverageRatio)}. Mevcut stok sindirilmeden yüzlerce yeni sayfa ekleme.`]);
-      if(n(g28.position)<=10&&n(g28.ctr)<.02&&n(g28.impressions)>=100)now.push(["CTR fırsatlarını düzelt",`Konum ${df.format(g28.position)}, CTR ${pc(g28.ctr)}. İlk sayfadaki title/snippet ve arama niyetine odaklan.`]);
-      if(n(a28.organicSessions)<15)now.push(["Organik oturumu büyüt",`28 günde ${nf.format(a28.organicSessions)} organik oturum. Gösterim alan sayfalara iç bağlantı ve ilgili avlak geçişi ekle.`]);
-      if(four>.2)now.push(["Cloudflare trafiğini insan sanma",`4xx oranı ${pc(four)}. Ziyaret kararında GA4 ve Search Console'u esas al.`]);
-      if(n(a28.activeUsers)<25)wait.push(["Kohort sonucu çıkarmak için erken",`${nf.format(a28.activeUsers)} aktif kullanıcıyla şehir, cihaz ve geri dönüş davranışını stratejiye çevirmeyelim.`]);
-      if(trends.imp>.1||trends.clicks>.1)wait.push(["SEO değişikliklerine süre ver","Son 7 gün haftalık bazın üzerinde. Yakın zamanda değişen title ve içerikleri tekrar oynatma."]);
-      keep.push(["Çalışan altyapıyı kurcalama",n(c7.status5xx)===0?"5xx sıfır. Büyük teknik yeniden yazım için sinyal yok.":"5xx çözülene kadar yalnız hataya odaklan."]);
-      if(n(a28.engagementRate)>=.5)keep.push(["UX'i baştan tasarlama",`Etkileşim ${pc(a28.engagementRate)}. Önce trafik ve gerçek kullanım olaylarını büyüt.`]);
-      if(qualityScore>=95)keep.push(["Kalite puanını 100 uğruna kovalamayı bırak",`Yapısal kalite ${qualityScore}/100. Darboğaz keşif, indeks ve tıklama.`]);
-      if(n(g28.position)<=10)keep.push(["SEO mimarisini koru",`Ortalama konum ${df.format(g28.position)}. Google mevcut yapıyı ilk sayfada deniyor.`]);
-      renderList("#do-list",now);renderList("#wait-list",wait);renderList("#keep-list",keep);$("#do-count").textContent=now.length;$("#wait-count").textContent=wait.length;$("#keep-count").textContent=keep.length;
-      let badge="ÖLÇ + İYİLEŞTİR",verdict="Mevcut görünürlüğü büyüt; büyük yeniden tasarım yapma.",reason="İndeks, organik tıklama, gerçek kullanıcı ve 5xx sinyalini birlikte izle.";
-      if(n(c7.status5xx)>0){badge="MÜDAHALE";verdict="Önce altyapıyı düzelt.";reason="5xx sıfırlanmadan büyüme optimizasyonuna geçme.";}else if(coverageRatio<15&&n(a28.activeUsers)<25){badge="ÜRETİMİ YAVAŞLAT";verdict="Yeni URL yerine mevcut sayfaları indekse ve tıklamaya çevir.";reason=`İndeks oranı %${df.format(coverageRatio)}, aktif kullanıcı ${nf.format(a28.activeUsers)}. İçerik stoğu talebin önünde.`;}else if(trends.imp>.15||trends.clicks>.15){badge="KORU + BÜYÜT";verdict="SEO yönü olumlu. CTR ve iç bağlantıyı güçlendir.";reason="Çalışan yapıyı bozmak yerine Google'ın zaten test ettiği sayfalardan daha fazla tıklama çıkar.";}
-      $("#badge").textContent=badge;$("#verdict").textContent=verdict;$("#reason").textContent=reason;renderSeo(data.g28.pages);$("#refresh").disabled=false;
+  <script is:inline define:vars={{ coverageRatio, qualityScore }}>
+    const nf = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 });
+    const df = new Intl.NumberFormat("tr-TR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const $ = (selector) => document.querySelector(selector);
+    const n = (value) => Number(value || 0);
+    const pc = (value) => `%${df.format(n(value) * 100)}`;
+    const delta = (current, base) => base > 0 ? (current - base) / base : (current > 0 ? 1 : 0);
+    const deltaText = (value) => `${value > 0 ? "+" : ""}${df.format(value * 100)}%`;
+
+    const getJson = async (url) => {
+      const response = await fetch(url, {
+        credentials: "same-origin",
+        headers: { Accept: "application/json" }
+      });
+      const payload = await response.json();
+      if (!response.ok || !payload.connected) {
+        throw new Error(payload.error || "Veri alınamadı");
+      }
+      return payload;
     };
-    $("#refresh").addEventListener("click",refresh);refresh();
+
+    const paint = (selector, status) => {
+      const node = $(selector);
+      if (!node) return;
+      node.classList.remove("good", "warn", "bad");
+      node.classList.add(status);
+    };
+
+    const actionNode = (title, text) => {
+      const article = document.createElement("article");
+      const strong = document.createElement("strong");
+      const paragraph = document.createElement("p");
+      strong.textContent = title;
+      paragraph.textContent = text;
+      article.append(strong, paragraph);
+      return article;
+    };
+
+    const renderActions = (selector, items) => {
+      const container = $(selector);
+      if (!container) return;
+      container.replaceChildren();
+      if (!items.length) {
+        const p = document.createElement("p");
+        p.className = "muted";
+        p.textContent = "Bu başlıkta şu an öneri yok.";
+        container.appendChild(p);
+        return;
+      }
+      items.forEach(([title, text]) => container.appendChild(actionNode(title, text)));
+    };
+
+    const renderTrend = (selector, value) => {
+      const node = $(selector);
+      if (!node) return;
+      node.textContent = deltaText(value);
+      node.className = value > 0.05 ? "up" : value < -0.05 ? "down" : "flat";
+    };
+
+    const renderSeo = (pages) => {
+      const container = $("#seo");
+      if (!container) return;
+      container.replaceChildren();
+      const rows = (pages || [])
+        .map((row) => ({
+          ...row,
+          clicks: n(row.clicks),
+          impressions: n(row.impressions),
+          ctr: n(row.ctr),
+          position: n(row.position)
+        }))
+        .filter((row) => row.impressions >= 3 && row.position <= 15)
+        .sort((a, b) => (b.impressions * Math.max(1, 16 - b.position)) - (a.impressions * Math.max(1, 16 - a.position)))
+        .slice(0, 8);
+
+      if (!rows.length) {
+        const p = document.createElement("p");
+        p.className = "muted";
+        p.textContent = "Bu dönem için ilk 15 sıra içinde yeterli gösterim alan aday yok.";
+        container.appendChild(p);
+        return;
+      }
+
+      rows.forEach((row, index) => {
+        const article = document.createElement("article");
+        const rank = document.createElement("span");
+        const body = document.createElement("div");
+        const title = document.createElement("strong");
+        const meta = document.createElement("small");
+        const advice = document.createElement("em");
+        let path = row.page || "/";
+        try { path = new URL(row.page).pathname || "/"; } catch {}
+        rank.textContent = String(index + 1);
+        title.textContent = path;
+        meta.textContent = `${nf.format(row.impressions)} gösterim · ${nf.format(row.clicks)} tıklama · ${pc(row.ctr)} CTR · ${df.format(row.position)} sıra`;
+        advice.textContent = row.position <= 10 && row.ctr < 0.02 ? "CTR / snippet" : "İç link / içerik";
+        body.append(title, meta);
+        article.append(rank, body, advice);
+        container.appendChild(article);
+      });
+    };
+
+    const renderSources = (sources) => {
+      const container = $("#sources");
+      if (!container) return;
+      container.replaceChildren();
+      sources.forEach(([name, ok, detail]) => {
+        const row = document.createElement("div");
+        const left = document.createElement("span");
+        const title = document.createElement("strong");
+        const small = document.createElement("small");
+        const status = document.createElement("b");
+        title.textContent = name;
+        small.textContent = detail;
+        status.textContent = ok ? "BAĞLI" : "HATA";
+        status.className = ok ? "ok" : "no";
+        left.append(title, small);
+        row.append(left, status);
+        container.appendChild(row);
+      });
+    };
+
+    const refresh = async () => {
+      const button = $("#refresh");
+      const error = $("#error");
+      button.disabled = true;
+      error.hidden = true;
+
+      const definitions = [
+        ["g28", "/admin/api/search-console?days=28", "Search Console 28g"],
+        ["g7", "/admin/api/search-console?days=7", "Search Console 7g"],
+        ["a28", "/admin/api/ga4?days=28", "GA4 28g"],
+        ["a7", "/admin/api/ga4?days=7", "GA4 7g"],
+        ["c7", "/admin/api/cloudflare?days=7", "Cloudflare 7g"]
+      ];
+
+      const settled = await Promise.allSettled(definitions.map((entry) => getJson(entry[1])));
+      const data = {};
+      const sources = [];
+
+      settled.forEach((result, index) => {
+        const [key, , name] = definitions[index];
+        if (result.status === "fulfilled") {
+          data[key] = result.value;
+          sources.push([name, true, result.value.stale ? "son başarılı snapshot" : "canlı"]);
+        } else {
+          sources.push([name, false, result.reason?.message || "bağlantı hatası"]);
+        }
+      });
+
+      renderSources(sources);
+      const failures = sources.filter((source) => !source[1]);
+      $("#sources-state").textContent = failures.length ? `${failures.length} kaynak sorunlu` : "tümü bağlı";
+
+      if (failures.length) {
+        error.hidden = false;
+        error.textContent = "Eksik veri var. Karar motoru kısmi metriklerle kesin tavsiye üretmiyor.";
+        $("#badge").textContent = "VERİ EKSİK";
+        $("#verdict").textContent = "Önce veri bağlantısını düzelt.";
+        $("#reason").textContent = "Kısmi verilerle SEO, içerik veya altyapı stratejisi değiştirmek güvenilir değil.";
+        button.disabled = false;
+        return;
+      }
+
+      const g28 = data.g28.totals || {};
+      const g7 = data.g7.totals || {};
+      const a28 = data.a28.totals || {};
+      const a7 = data.a7.totals || {};
+      const c7 = data.c7.totals || {};
+
+      const trends = {
+        clicks: delta(n(g7.clicks), n(g28.clicks) / 4),
+        impressions: delta(n(g7.impressions), n(g28.impressions) / 4),
+        users: delta(n(a7.activeUsers), n(a28.activeUsers) / 4),
+        organic: delta(n(a7.organicSessions), n(a28.organicSessions) / 4)
+      };
+
+      $("#users").textContent = nf.format(a28.activeUsers);
+      $("#organic").textContent = nf.format(a28.organicSessions);
+      $("#clicks").textContent = nf.format(g28.clicks);
+      $("#imp").textContent = nf.format(g28.impressions);
+      $("#ctr").textContent = pc(g28.ctr);
+      $("#pos").textContent = df.format(g28.position);
+      $("#eng").textContent = pc(a28.engagementRate);
+      $("#five").textContent = nf.format(c7.status5xx);
+      $("#imp-note").textContent = `son 7 gün ${deltaText(trends.impressions)}`;
+      $("#ctr-note").textContent = `${df.format(g28.position)} ort. konumla birlikte`;
+
+      renderTrend("#t-clicks", trends.clicks);
+      renderTrend("#t-imp", trends.impressions);
+      renderTrend("#t-users", trends.users);
+      renderTrend("#t-organic", trends.organic);
+
+      const requests = n(c7.requests);
+      const fourRate = requests > 0 ? n(c7.status4xx) / requests : 0;
+      $("#requests").textContent = nf.format(requests);
+      $("#four-rate").textContent = pc(fourRate);
+      $("#cache").textContent = pc(c7.cacheHitRate);
+      $("#server").textContent = nf.format(c7.status5xx);
+
+      paint("#card-users", n(a28.activeUsers) >= 25 ? "good" : "warn");
+      paint("#card-organic", n(a28.organicSessions) >= 15 ? "good" : "warn");
+      paint("#card-clicks", n(g28.clicks) >= 40 ? "good" : "warn");
+      paint("#card-imp", trends.impressions > 0.10 ? "good" : trends.impressions < -0.10 ? "bad" : "warn");
+      paint("#card-ctr", n(g28.position) <= 10 && n(g28.ctr) < 0.02 ? "warn" : "good");
+      paint("#card-pos", n(g28.position) <= 10 ? "good" : n(g28.position) <= 15 ? "warn" : "bad");
+      paint("#card-eng", n(a28.engagementRate) >= 0.50 ? "good" : "warn");
+      paint("#card-index", coverageRatio >= 15 ? "good" : "bad");
+      paint("#card-5xx", n(c7.status5xx) === 0 ? "good" : "bad");
+
+      const doNow = [];
+      const wait = [];
+      const keep = [];
+
+      if (n(c7.status5xx) > 0) {
+        doNow.push(["Önce 5xx hatalarını çöz", `${nf.format(c7.status5xx)} sunucu hatası varken SEO optimizasyonu ikinci planda.`]);
+      }
+      if (coverageRatio < 15) {
+        doNow.push(["Yeni URL üretimini yavaşlat", `Son indeks oranı %${df.format(coverageRatio)}. Mevcut stok sindirilmeden yüzlerce yeni sayfa ekleme.`]);
+      }
+      if (n(g28.position) <= 10 && n(g28.ctr) < 0.02 && n(g28.impressions) >= 100) {
+        doNow.push(["CTR fırsatlarını düzelt", `Ortalama konum ${df.format(g28.position)}, CTR ${pc(g28.ctr)}. İlk sayfadaki düşük CTR sayfalarının title, snippet ve arama niyetine odaklan.`]);
+      }
+      if (n(a28.organicSessions) < 15) {
+        doNow.push(["Organik oturumu büyüt", `28 günde ${nf.format(a28.organicSessions)} organik oturum. Gösterim alan sayfalara iç bağlantı ve ilgili avlak geçişleri ekle.`]);
+      }
+      if (fourRate > 0.20) {
+        doNow.push(["Cloudflare trafiğini insan sanma", `4xx oranı ${pc(fourRate)}. Ziyaret kararı için GA4 ve Search Console'u esas al.`]);
+      }
+
+      if (n(a28.activeUsers) < 25) {
+        wait.push(["Kohort sonucu çıkarmak için erken", `${nf.format(a28.activeUsers)} aktif kullanıcıyla şehir, cihaz ve geri dönüş davranışını stratejiye çevirmeyelim.`]);
+      }
+      if (trends.impressions > 0.10 || trends.clicks > 0.10) {
+        wait.push(["SEO değişikliklerine süre ver", "Son 7 gün 28 günlük haftalık bazın üzerinde. Yakın zamanda değişen title ve içerikleri tekrar tekrar oynatma."]);
+      }
+      if (coverageRatio < 15) {
+        wait.push(["İndeksleme kuyruğunu izle", "Bir sonraki ana eşik yeni sayfa sayısı değil, indeks oranının ve organik tıklamanın yükselmesi."]);
+      }
+
+      if (n(c7.status5xx) === 0) {
+        keep.push(["Çalışan altyapıyı kurcalama", "5xx sıfır. Büyük teknik yeniden yazım için şu an sinyal yok."]);
+      }
+      if (n(a28.engagementRate) >= 0.50) {
+        keep.push(["UX'i baştan tasarlama", `Etkileşim oranı ${pc(a28.engagementRate)}. Önce trafik ve gerçek kullanım olaylarını büyüt.`]);
+      }
+      if (qualityScore >= 95) {
+        keep.push(["Kalite puanını 100 uğruna kovalamayı bırak", `Yapısal içerik kalite puanı ${qualityScore}/100. Darboğaz daha çok keşif, indeksleme ve tıklama.`]);
+      }
+      if (n(g28.position) <= 10) {
+        keep.push(["SEO mimarisini koru", `Ortalama konum ${df.format(g28.position)}. Google mevcut yapıyı ilk sayfada test ediyor.`]);
+      }
+
+      renderActions("#do-list", doNow);
+      renderActions("#wait-list", wait);
+      renderActions("#keep-list", keep);
+      $("#do-count").textContent = String(doNow.length);
+      $("#wait-count").textContent = String(wait.length);
+      $("#keep-count").textContent = String(keep.length);
+
+      let badge = "ÖLÇ + İYİLEŞTİR";
+      let verdict = "Mevcut görünürlüğü büyüt; büyük yeniden tasarım yapma.";
+      let reason = "İndeks, organik tıklama, gerçek kullanıcı ve 5xx sinyalini birlikte izle.";
+
+      if (n(c7.status5xx) > 0) {
+        badge = "MÜDAHALE";
+        verdict = "Önce altyapıyı düzelt.";
+        reason = "5xx sıfırlanmadan büyüme optimizasyonuna geçme.";
+      } else if (coverageRatio < 15 && n(a28.activeUsers) < 25) {
+        badge = "ÜRETİMİ YAVAŞLAT";
+        verdict = "Yeni URL yerine mevcut sayfaları indekse ve tıklamaya çevir.";
+        reason = `İndeks oranı %${df.format(coverageRatio)}, aktif kullanıcı ${nf.format(a28.activeUsers)}. İçerik stoğu talep ve indeksleme hızının önünde.`;
+      } else if (trends.impressions > 0.15 || trends.clicks > 0.15) {
+        badge = "KORU + BÜYÜT";
+        verdict = "SEO yönü olumlu. CTR ve iç bağlantıyı güçlendir.";
+        reason = "Çalışan yapıyı bozmak yerine Google'ın zaten test ettiği sayfalardan daha fazla tıklama çıkar.";
+      }
+
+      $("#badge").textContent = badge;
+      $("#verdict").textContent = verdict;
+      $("#reason").textContent = reason;
+      renderSeo(data.g28.pages);
+      button.disabled = false;
+    };
+
+    $("#refresh")?.addEventListener("click", refresh);
+    refresh();
   </script>
 
   <style>
-    .control{background:#f3f7f7;min-height:80vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero{display:flex;justify-content:space-between;gap:24px;background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:30px;border-radius:24px}.hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:.2rem 0}.hero p{color:#d8ecef}.hero nav{display:flex;gap:8px;align-items:flex-start}.hero a,.panel a{background:#fff;color:#0b5967;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:800;white-space:nowrap}.eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#8edbe4;margin:0}.eyebrow.dark{color:#287685}.panel{background:#fff;border:1px solid #dce8e8;border-radius:18px;padding:22px;box-shadow:0 10px 24px #1439410f}.verdict{display:flex;justify-content:space-between;gap:20px}.verdict h2{font-size:clamp(1.5rem,3vw,2.3rem);margin:.6rem 0}.verdict p{color:#657d81}.verdict button{height:max-content;border:0;border-radius:10px;background:#0b5967;color:#fff;padding:10px 14px;font:inherit;font-weight:900}.badge{display:inline-block;margin-top:8px;padding:7px 10px;border-radius:999px;background:#fff1c9;color:#725200;font-size:.75rem;font-weight:900}.heading{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.heading h2{margin:0;color:#143d46}.heading>span{background:#e9f5f6;color:#176774;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:800}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.metrics article{border:1px solid #e1ecec;border-left:5px solid #d8e5e5;border-radius:13px;padding:15px}.metrics article.good{border-left-color:#42a56c}.metrics article.warn{border-left-color:#d5a72f}.metrics article.bad{border-left-color:#d85f45}.metrics span,.metrics small{display:block;color:#708589}.metrics strong{display:block;color:#0a3340;font-size:2rem}.columns{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.list article{border-top:1px solid #edf2f2;padding:12px 0}.list article b{color:#173f47}.list article p{color:#6d8084;margin:4px 0 0;font-size:.9rem}.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}.rows>div{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-top:1px solid #edf2f2}.rows .up{color:#187449}.rows .down{color:#a43d26}.rows .flat{color:#77672f}.note strong{font-size:2rem;color:#0b5967}.note p{color:#6c8084}.seo{display:grid}.seo article{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;border-top:1px solid #edf2f2;padding:11px 0}.seo article>span{width:28px;height:28px;border-radius:50%;background:#edf6f7;display:grid;place-items:center;font-weight:900}.seo small{display:block;color:#74888b}.seo em{font-style:normal;background:#fff5d8;color:#7b5a00;padding:5px 8px;border-radius:999px;font-size:.75rem;font-weight:800}.sources>div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #edf2f2;padding:10px 0}.sources span b,.sources span small{display:block}.sources small{color:#74888b}.sources .ok{color:#187449}.sources .no{color:#a43d26}.error{background:#fff0ea;color:#8b351d;border:1px solid #f0c8ba;padding:12px 14px;border-radius:12px}@media(max-width:950px){.metrics{grid-template-columns:repeat(2,1fr)}.columns{grid-template-columns:1fr}.hero,.verdict,.heading{flex-direction:column}.two{grid-template-columns:1fr}}@media(max-width:560px){.hero,.panel{padding:18px}.metrics{grid-template-columns:1fr}.hero nav{width:100%;flex-direction:column}.hero nav a{width:100%;text-align:center}.seo article{grid-template-columns:30px 1fr}.seo em{grid-column:2;justify-self:start}}
+    .control{background:#f3f7f7;min-height:80vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero{display:flex;justify-content:space-between;gap:24px;background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:30px;border-radius:24px}.hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:.2rem 0}.hero p{color:#d8ecef;max-width:780px}.hero nav{display:flex;gap:8px;align-items:flex-start}.hero a,.panel-link{background:#fff;color:#0b5967;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:800;white-space:nowrap}.eyebrow{font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#8edbe4;margin:0}.eyebrow.dark{color:#287685}.panel{background:#fff;border:1px solid #dce8e8;border-radius:18px;padding:22px;box-shadow:0 10px 24px #1439410f}.verdict{display:flex;justify-content:space-between;gap:20px}.verdict h2{font-size:clamp(1.5rem,3vw,2.3rem);margin:.6rem 0}.verdict p{color:#657d81}.verdict button{height:max-content;border:0;border-radius:10px;background:#0b5967;color:#fff;padding:10px 14px;font:inherit;font-weight:900;cursor:pointer}.verdict button:disabled{opacity:.6}.badge{display:inline-block;margin-top:8px;padding:7px 10px;border-radius:999px;background:#fff1c9;color:#725200;font-size:.75rem;font-weight:900}.heading{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.heading h2{margin:0;color:#143d46}.heading>span{background:#e9f5f6;color:#176774;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:800;white-space:nowrap}.muted{color:#718589}.mini{font-size:.85rem}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.metrics article{border:1px solid #e1ecec;border-left:5px solid #d8e5e5;border-radius:13px;padding:15px}.metrics article.good{border-left-color:#42a56c;background:#fbfffc}.metrics article.warn{border-left-color:#d5a72f;background:#fffdf8}.metrics article.bad{border-left-color:#d85f45;background:#fffaf8}.metrics span,.metrics small{display:block;color:#708589}.metrics strong{display:block;color:#0a3340;font-size:2rem;margin:.2rem 0}.columns{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.list article{border-top:1px solid #edf2f2;padding:12px 0}.list article strong{color:#173f47}.list article p{color:#6d8084;margin:4px 0 0;font-size:.9rem;line-height:1.45}.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}.rows>div{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-top:1px solid #edf2f2}.rows .up{color:#187449}.rows .down{color:#a43d26}.rows .flat{color:#77672f}.coverage-score{font-size:2rem;color:#0b5967}.coverage p{color:#6c8084}.seo{display:grid;margin-top:8px}.seo article{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;border-top:1px solid #edf2f2;padding:11px 0}.seo article>span{width:28px;height:28px;border-radius:50%;background:#edf6f7;display:grid;place-items:center;font-weight:900;color:#176774}.seo strong,.seo small{display:block;overflow-wrap:anywhere}.seo small{color:#74888b}.seo em{font-style:normal;background:#fff5d8;color:#7b5a00;padding:5px 8px;border-radius:999px;font-size:.75rem;font-weight:800;white-space:nowrap}.sources>div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #edf2f2;padding:10px 0}.sources span strong,.sources span small{display:block}.sources small{color:#74888b}.sources .ok{color:#187449}.sources .no{color:#a43d26}.error{background:#fff0ea;color:#8b351d;border:1px solid #f0c8ba;padding:12px 14px;border-radius:12px}@media(max-width:950px){.metrics{grid-template-columns:repeat(2,1fr)}.columns{grid-template-columns:1fr}.hero,.verdict,.heading{flex-direction:column}.two{grid-template-columns:1fr}}@media(max-width:560px){.hero,.panel{padding:18px}.metrics{grid-template-columns:1fr}.hero nav{width:100%;flex-direction:column}.hero nav a{width:100%;text-align:center}.seo article{grid-template-columns:30px 1fr}.seo em{grid-column:2;justify-self:start}}
   </style>
 </BaseLayout>
