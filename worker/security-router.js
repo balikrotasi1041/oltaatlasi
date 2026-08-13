@@ -8,18 +8,21 @@ const BLOCKED_IPS = new Set([
 
 const SENSITIVE_PROBE_PATTERNS = [
   /^\/(?:\.env|\.git)(?:\/|$)/i,
-  /^\/(?:backup(?:[-_.][^/]*)?\.sql|dump(?:[-_.][^/]*)?\.sql)$/i,
+  /^\/(?:backup(?:[-_.][^/]*)?\.sql|dump(?:[-_.][^/]*)?\.sql|export\.sql)$/i,
   /^\/log4j(?:2)?\.properties$/i,
   /^\/cron\.log$/i,
-  /^\/(?:pnpm-lock\.yaml|yarn\.lock|composer\.(?:json|lock))$/i,
+  /^\/(?:pnpm-lock\.yaml|yarn\.lock|composer\.(?:json|lock)|build\.gradle|\.amplifyrc)$/i,
   /^\/wp-(?:admin|login\.php|config\.php)(?:\/|$)/i,
   /^\/(?:phpmyadmin|adminer)(?:\.php|\/|$)/i,
   /^\/vendor\/phpunit(?:\/|$)/i,
   /^\/horizon\/api(?:\/|$)/i,
+  /^\/rest\/executions(?:\/|$)/i,
+  /^\/webhook-waiting(?:\/|$)/i,
+  /^\/v1\.40\/swarm(?:\/|$)/i,
 ];
 
 const SECURITY_POLICY_HEADER = "x-olta-security-policy";
-const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-and-browser-headers-v3";
+const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-and-404-v4";
 const CONTENT_SECURITY_POLICY = "base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests";
 
 const applySecurityHeaders = (headers) => {
@@ -35,6 +38,7 @@ const applySecurityHeaders = (headers) => {
 
 const getClientIp = (request) => request.headers.get("CF-Connecting-IP")?.trim() || "";
 const isSensitiveProbe = (pathname) => SENSITIVE_PROBE_PATTERNS.some((pattern) => pattern.test(pathname));
+const isExplicit404Path = (pathname) => pathname === "/404" || pathname === "/404/";
 
 const plainResponse = (body, status) => new Response(body, {
   status,
@@ -47,6 +51,25 @@ const plainResponse = (body, status) => new Response(body, {
 
 const forbiddenResponse = () => plainResponse("Forbidden", 403);
 const notFoundResponse = () => plainResponse("Not Found", 404);
+
+const explicit404Response = async (request, env) => {
+  if (!env.ASSETS?.fetch) return notFoundResponse();
+  const assetUrl = new URL(request.url);
+  assetUrl.pathname = "/404/";
+  assetUrl.search = "";
+  const assetResponse = await env.ASSETS.fetch(new Request(assetUrl.toString(), {
+    method: request.method === "HEAD" ? "HEAD" : "GET",
+    headers: request.headers,
+  }));
+  const headers = applySecurityHeaders(new Headers(assetResponse.headers));
+  headers.set("cache-control", "private, no-store");
+  headers.set("x-robots-tag", "noindex, nofollow, noarchive, nosnippet");
+  return new Response(request.method === "HEAD" ? null : assetResponse.body, {
+    status: 404,
+    statusText: "Not Found",
+    headers,
+  });
+};
 
 const markSecurityPolicy = async (response) => {
   const headers = applySecurityHeaders(new Headers(response.headers));
@@ -64,6 +87,7 @@ export default {
 
     const url = new URL(request.url);
     if (isSensitiveProbe(url.pathname)) return notFoundResponse();
+    if (isExplicit404Path(url.pathname)) return explicit404Response(request, env);
 
     return markSecurityPolicy(await appWorker.fetch(request, env, ctx));
   },
