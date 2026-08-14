@@ -9,6 +9,7 @@ import { istanbulKocaeliIyilestirmeleri20260811 } from "./meralar-istanbul-kocae
 import { istanbulKocaeliIyilestirmeleri20260812 } from "./meralar-istanbul-kocaeli-2026-08-12";
 import { kirklareliYeni20260813 } from "./meralar-kirklareli-2026-08-13";
 import { istanbulKocaeliIyilestirmeleri20260813Aksam } from "./meralar-istanbul-kocaeli-2026-08-13-evening";
+import { istanbulKocaeliIyilestirmeleri20260814 } from "./meralar-istanbul-kocaeli-2026-08-14";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -128,12 +129,15 @@ const applyPatch=(slug:string,patch:Partial<Mera>)=>{
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260811))applyPatch(slug,patch);
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260812))applyPatch(slug,patch);
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260813Aksam))applyPatch(slug,patch);
+for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260814))applyPatch(slug,patch);
 const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
 const publishedToday12=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-12");
 if(publishedToday12.length>10)throw new Error(`12 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday12.length}`);
 const publishedToday13=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-13");
 if(publishedToday13.length>10)throw new Error(`13 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday13.length}`);
+const publishedToday14=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-14");
+if(publishedToday14.length>10)throw new Error(`14 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday14.length}`);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
