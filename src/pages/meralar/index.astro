@@ -48,7 +48,7 @@ applyUrlState();render();syncUrl();
 province.addEventListener("change",()=>{fillLocation();commit("route_filter",{filter_name:"province",filter_value:province.value||"all"});});
 [confidence,district,zone,water,fish].forEach(field=>field.addEventListener("change",()=>commit("route_filter",{filter_name:field.id,filter_value:field.value||"all"})));
 search.addEventListener("input",()=>{visibleLimit=pageSize;render();syncUrl();});
-search.addEventListener("change",()=>{if(search.value.trim())track("route_search",{search_term:search.value.trim().slice(0,80)});});
+search.addEventListener("change",()=>{const query=search.value.trim();if(query)track("route_search",{query_length:Math.min(query.length,80)});});
 loadMore.addEventListener("click",()=>{visibleLimit+=pageSize;render();track("route_load_more",{visible_limit:visibleLimit});});
 document.querySelector("#reset").addEventListener("click",()=>{filters.reset();search.value="";savedOnly=false;fillLocation();commit("route_filter_reset");});
 document.querySelectorAll("[data-quick-province]").forEach(button=>button.addEventListener("click",()=>{province.value=button.dataset.quickProvince;fillLocation();commit("route_quick_province",{province:province.value||"all"});}));
