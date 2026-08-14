@@ -22,6 +22,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       <section class="panel" aria-labelledby="traffic-title">
         <div class="panel-head"><div><p class="eyebrow dark">HTTP trafik sınıflandırması</p><h2 id="traffic-title">İsteklerin kaynağı</h2><p id="status">Veriler yükleniyor…</p></div></div>
+        <div class="metric-cards summary-cards" id="summary-cards"><article><span>Yükleniyor</span><strong>—</strong></article></div>
+        <h3 class="section-label">User-Agent sınıfları</h3>
         <div class="metric-cards" id="category-cards"><article><span>Yükleniyor</span><strong>—</strong></article></div>
         <div class="grid">
           <section class="subpanel"><h3>En yoğun User-Agent kümeleri</h3><div id="agents" class="data-list"><p class="muted">Yükleniyor…</p></div></section>
@@ -44,12 +46,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
   <script is:inline>
     const nf = new Intl.NumberFormat("tr-TR");
+    const pf = new Intl.NumberFormat("tr-TR", { style: "percent", maximumFractionDigits: 1 });
     const period = document.querySelector("#period");
     const refresh = document.querySelector("#refresh");
     const errorBox = document.querySelector("#error");
     const warningBox = document.querySelector("#warning");
     const setText = (selector, value) => { const el = document.querySelector(selector); if (el) el.textContent = value; };
     const show = (node, text) => { if (!node) return; node.textContent = text; node.hidden = !text; };
+    const appendWarning = (text) => { if (!warningBox || !text) return; const current = warningBox.hidden ? "" : warningBox.textContent || ""; show(warningBox, current ? `${current} ${text}` : text); };
     const truncate = (value, max = 92) => { const text = String(value || ""); return text.length > max ? `${text.slice(0, max - 1)}…` : text; };
     const renderRows = (selector, rows, title, detail, value) => {
       const root = document.querySelector(selector); if (!root) return; root.replaceChildren();
@@ -61,34 +65,52 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       if (!rows.length) { const article = document.createElement("article"); article.innerHTML = "<span>Veri yok</span><strong>0</strong>"; root.appendChild(article); return; }
       rows.slice(0, 8).forEach((row) => { const article = document.createElement("article"); const span = document.createElement("span"); span.textContent = row.label; const strong = document.createElement("strong"); strong.textContent = nf.format(row.requests || 0); const small = document.createElement("small"); small.textContent = row.kind || "unknown"; article.append(span, strong, small); root.appendChild(article); });
     };
+    const renderSummary = (summary = {}) => {
+      const root = document.querySelector("#summary-cards"); if (!root) return; root.replaceChildren();
+      const browserShare = Number(summary.browserLikeShare || 0);
+      const cards = [
+        { label: "Tarayıcı benzeri", value: nf.format(summary.browserLikeRequests || 0), detail: `${pf.format(browserShare)} sınıflandırılmış HTTP trafiği` },
+        { label: "Tarayıcı dışı", value: nf.format(summary.nonBrowserRequests || 0), detail: `${pf.format(Math.max(0, 1 - browserShare))} crawler / script / diğer` },
+        { label: "HTTP 4xx", value: nf.format(summary.fourxxRequests || 0), detail: `${pf.format(Number(summary.fourxxShare || 0))} tüm durum kodları` },
+        { label: "HTTP 5xx", value: nf.format(summary.fivexxRequests || 0), detail: `${pf.format(Number(summary.fivexxShare || 0))} tüm durum kodları` },
+      ];
+      cards.forEach((card) => { const article = document.createElement("article"); const span = document.createElement("span"); span.textContent = card.label; const strong = document.createElement("strong"); strong.textContent = card.value; const small = document.createElement("small"); small.textContent = card.detail; article.append(span, strong, small); root.appendChild(article); });
+      if (browserShare > 0 && browserShare < 0.4) appendWarning("HTTP trafiğinin çoğu tarayıcı dışı imzalardan geliyor; ziyaretçi eğilimini değerlendirirken GA ve Search Console verilerini Cloudflare toplamlarından daha fazla ağırlıklandır.");
+      if (Number(summary.fourxxShare || 0) >= 0.1) appendWarning("4xx oranı yüksek. Üst rota tablosunda HTTP 4xx üreten crawler/script yollarını kontrol et; bu oranı doğrudan kullanıcı hatası veya SEO sorunu sayma.");
+      if (Number(summary.fivexxRequests || 0) > 0) appendWarning("5xx yanıtları görüldü. Bunlar sunucu tarafı sorun işareti olabileceği için rota bazında ayrıca incelenmeli.");
+    };
     const load = async () => {
       const days = period?.value || "1"; if (refresh) refresh.disabled = true; show(errorBox, ""); show(warningBox, ""); setText("#status", "Cloudflare verileri yükleniyor…"); setText("#security-status", "Security Events yükleniyor…");
       try {
         const response = await fetch(`/admin/api/traffic-diagnostics?days=${encodeURIComponent(days)}`, { credentials: "same-origin", headers: { Accept: "application/json" } });
         const payload = await response.json(); if (!response.ok || !payload.connected) throw new Error(payload.error || "Trafik teşhisi alınamadı.");
+        const summary = payload.traffic?.summary || {};
+        renderSummary(summary);
         renderCategories(payload.traffic?.categories || []);
         renderRows("#agents", (payload.traffic?.topAgents || []).slice(0, 20), (row) => `${row.classification} · ${row.country}`, (row) => truncate(row.userAgent), (row) => nf.format(row.requests || 0));
         renderRows("#routes", (payload.traffic?.topRoutes || []).slice(0, 20), (row) => truncate(row.path, 70), (row) => `${row.classification} · ${row.country} · HTTP ${row.status || "?"}`, (row) => nf.format(row.requests || 0));
-        setText("#status", `${payload.range?.days === 1 ? "Son 24 saat" : `Son ${payload.range?.days || days} gün`} · ${payload.traffic?.sampled ? "örneklenmiş veri" : "tam veri"}`);
+        const browserShareText = summary.classifiedRequests ? ` · tarayıcı benzeri ${pf.format(Number(summary.browserLikeShare || 0))}` : "";
+        const errorShareText = summary.totalStatusRequests ? ` · 4xx ${pf.format(Number(summary.fourxxShare || 0))}` : "";
+        setText("#status", `${payload.range?.days === 1 ? "Son 24 saat" : `Son ${payload.range?.days || days} gün`} · ${payload.traffic?.sampled ? "örneklenmiş veri" : "tam veri"}${browserShareText}${errorShareText}`);
         if (payload.security?.available) {
           setText("#security-status", `${nf.format(payload.security.eventCount || 0)} güvenlik olayı`);
           renderRows("#ips", (payload.security.topIps || []).slice(0, 25), (row) => row.ip || "unknown", (row) => `ASN ${row.asn || "?"} · ${row.country || "Unknown"} · ${row.classification || "Tanımsız"} · ${Object.entries(row.actions || {}).map(([k,v]) => `${k}:${v}`).join(" ")}`, (row) => nf.format(row.requests || 0));
           renderRows("#actions", payload.security.actions || [], (row) => row.action || "unknown", () => "Security Events aksiyonu", (row) => nf.format(row.requests || 0));
-          renderRows("#events", (payload.security.recentEvents || []).slice(0, 30), (row) => `${row.ip || "unknown"} · ${row.action || "unknown"}`, (row) => `${row.datetime || ""} · ASN ${row.asn || "?"} · ${row.country || "Unknown"} · ${truncate(row.path || "/", 55)} · ${row.classification || "Tanımsız"}`, () => row.source || "");
+          renderRows("#events", (payload.security.recentEvents || []).slice(0, 30), (row) => `${row.ip || "unknown"} · ${row.action || "unknown"}`, (row) => `${row.datetime || ""} · ASN ${row.asn || "?"} · ${row.country || "Unknown"} · ${truncate(row.path || "/", 55)} · ${row.classification || "Tanımsız"}`, (row) => row.source || "");
         } else {
           setText("#security-status", "Security Events erişimi yok veya sorgu desteklenmiyor.");
-          show(warningBox, payload.security?.error || "Security Events verisi alınamadı; HTTP sınıflandırması çalışmaya devam ediyor.");
+          appendWarning(payload.security?.error || "Security Events verisi alınamadı; HTTP sınıflandırması çalışmaya devam ediyor.");
           ["#ips", "#actions", "#events"].forEach((selector) => renderRows(selector, [], () => "", () => "", () => ""));
         }
         const notes = document.querySelector("#notes"); if (notes) { notes.replaceChildren(); (payload.notes || []).forEach((text) => { const li = document.createElement("li"); li.textContent = text; notes.appendChild(li); }); }
       } catch (error) {
-        show(errorBox, error instanceof Error ? error.message : "Bilinmeyen trafik teşhisi hatası."); setText("#status", "Trafik teşhisi kullanılamıyor."); setText("#security-status", "Security Events kullanılamıyor."); renderCategories([]); ["#agents", "#routes", "#ips", "#actions", "#events"].forEach((selector) => renderRows(selector, [], () => "", () => "", () => ""));
+        show(errorBox, error instanceof Error ? error.message : "Bilinmeyen trafik teşhisi hatası."); setText("#status", "Trafik teşhisi kullanılamıyor."); setText("#security-status", "Security Events kullanılamıyor."); renderSummary({}); renderCategories([]); ["#agents", "#routes", "#ips", "#actions", "#events"].forEach((selector) => renderRows(selector, [], () => "", () => "", () => ""));
       } finally { if (refresh) refresh.disabled = false; }
     };
     period?.addEventListener("change", load); refresh?.addEventListener("click", load); load();
   </script>
 
   <style>
-    .traffic-diagnostics{background:#f3f7f7;min-height:70vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero,.panel{background:#fff;border:1px solid #dce8e8;border-radius:20px;box-shadow:0 10px 24px #1439410f}.hero{background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:30px;display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.hero h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.03;margin:.2rem 0 .7rem}.hero p{max-width:850px;color:#d8ecef}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.75rem;color:#8edbe4}.eyebrow.dark{color:#287685;margin:0 0 5px}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.actions label{font-weight:800}.actions select,.actions button{border:1px solid #cadada;border-radius:10px;background:#fff;padding:9px 11px;font:inherit}.actions button{background:#0b5967;color:#fff;border-color:#0b5967;font-weight:800;cursor:pointer}.actions button:disabled{opacity:.55}.panel{padding:22px}.panel-head h2,.panel h2{margin:0 0 6px;color:#143d46}.panel-head p{margin:0;color:#6c8084}.metric-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}.metric-cards article{border:1px solid #e1ecec;border-radius:14px;padding:16px}.metric-cards span,.metric-cards small{display:block;color:#6b8084}.metric-cards strong{display:block;font-size:2rem;color:#0a3340;margin:3px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.subpanel{border:1px solid #e1ecec;border-radius:14px;padding:16px}.subpanel h3{margin:0 0 8px;color:#244e56}.events{margin-top:16px}.data-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #edf2f2}.data-row:last-child{border-bottom:0}.data-row span,.data-row small{display:block;min-width:0}.data-row b{overflow-wrap:anywhere}.data-row small{color:#75878a;margin-top:3px;overflow-wrap:anywhere}.data-row strong{color:#176774;white-space:nowrap}.notice{padding:12px 14px;border-radius:12px}.notice.error{background:#fff0ea;color:#8b351d;border:1px solid #f0c8ba}.notice.warning{background:#fff8df;color:#7c5a00;border:1px solid #ead995}.muted{color:#7a8b8e}.notes ul{margin:.5rem 0 0;padding-left:1.2rem}.notes li{margin:.45rem 0;color:#566e72}@media(max-width:900px){.hero{flex-direction:column}.grid{grid-template-columns:1fr}.metric-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.metric-cards{grid-template-columns:1fr}.hero,.panel{padding:18px}}
+    .traffic-diagnostics{background:#f3f7f7;min-height:70vh;padding:42px 0 72px}.wrap{display:grid;gap:22px}.hero,.panel{background:#fff;border:1px solid #dce8e8;border-radius:20px;box-shadow:0 10px 24px #1439410f}.hero{background:linear-gradient(135deg,#0a3340,#0b5967);color:#fff;padding:30px;display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.hero h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.03;margin:.2rem 0 .7rem}.hero p{max-width:850px;color:#d8ecef}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.75rem;color:#8edbe4}.eyebrow.dark{color:#287685;margin:0 0 5px}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.actions label{font-weight:800}.actions select,.actions button{border:1px solid #cadada;border-radius:10px;background:#fff;padding:9px 11px;font:inherit}.actions button{background:#0b5967;color:#fff;border-color:#0b5967;font-weight:800;cursor:pointer}.actions button:disabled{opacity:.55}.panel{padding:22px}.panel-head h2,.panel h2{margin:0 0 6px;color:#143d46}.panel-head p{margin:0;color:#6c8084}.section-label{margin:22px 0 -4px;color:#365f66;font-size:.92rem}.metric-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}.summary-cards article{background:#f8fbfb}.metric-cards article{border:1px solid #e1ecec;border-radius:14px;padding:16px}.metric-cards span,.metric-cards small{display:block;color:#6b8084}.metric-cards strong{display:block;font-size:2rem;color:#0a3340;margin:3px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.subpanel{border:1px solid #e1ecec;border-radius:14px;padding:16px}.subpanel h3{margin:0 0 8px;color:#244e56}.events{margin-top:16px}.data-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #edf2f2}.data-row:last-child{border-bottom:0}.data-row span,.data-row small{display:block;min-width:0}.data-row b{overflow-wrap:anywhere}.data-row small{color:#75878a;margin-top:3px;overflow-wrap:anywhere}.data-row strong{color:#176774;white-space:nowrap}.notice{padding:12px 14px;border-radius:12px}.notice.error{background:#fff0ea;color:#8b351d;border:1px solid #f0c8ba}.notice.warning{background:#fff8df;color:#7c5a00;border:1px solid #ead995}.muted{color:#7a8b8e}.notes ul{margin:.5rem 0 0;padding-left:1.2rem}.notes li{margin:.45rem 0;color:#566e72}@media(max-width:900px){.hero{flex-direction:column}.grid{grid-template-columns:1fr}.metric-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.metric-cards{grid-template-columns:1fr}.hero,.panel{padding:18px}}
   </style>
 </BaseLayout>
