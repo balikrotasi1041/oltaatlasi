@@ -124,7 +124,12 @@ for(const route of kirklareliYeni20260813){
 const applyPatch=(slug:string,patch:Partial<Mera>)=>{
   const previous=routeMap.get(slug);
   if(!previous)throw new Error(`İyileştirme hedefi aktif veri kümesinde bulunamadı: ${slug}`);
-  routeMap.set(slug,{...previous,...patch} as EnrichedMera);
+  const nextConfidence=patch.confidence??previous.confidence;
+  routeMap.set(slug,{
+    ...previous,
+    ...patch,
+    confidenceProfile:previous.confidenceProfile?{...previous.confidenceProfile,overall:nextConfidence}:previous.confidenceProfile,
+  } as EnrichedMera);
 };
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260811))applyPatch(slug,patch);
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260812))applyPatch(slug,patch);
