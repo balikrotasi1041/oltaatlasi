@@ -54,7 +54,7 @@ jobs:
         if: steps.guard.outputs.needs_check == 'true'
         run: npm run validate:routes
 
-      - name: Probe duplicate radar
+      - name: Probe active data and duplicate radar
         id: dup
         if: steps.guard.outputs.needs_check == 'true'
         shell: bash
@@ -63,12 +63,13 @@ jobs:
           out=$(npm run validate:duplicates 2>&1)
           code=$?
           printf '%s\n' "$out"
-          pair=$(printf '%s\n' "$out" | grep '^HATA:' | head -1 | sed 's/^HATA: //' | tr -d '\r' | cut -c1-180)
+          reason=$(printf '%s\n' "$out" | grep -E 'Dashboard içerik|İyileştirme hedefi|Error:|HATA:|Duplicate radar' | head -1 | tr -d '\r' | tr '%' '_' | cut -c1-180)
+          if [ -z "$reason" ]; then reason=$(printf '%s\n' "$out" | tail -n 5 | tr '\n' ' ' | tr -d '\r' | tr '%' '_' | cut -c1-180); fi
           echo "code=$code" >> "$GITHUB_OUTPUT"
-          echo "pair=$pair" >> "$GITHUB_OUTPUT"
+          echo "reason=$reason" >> "$GITHUB_OUTPUT"
           exit 0
 
-      - name: Duplicate radar ${{ steps.dup.outputs.pair }}
+      - name: Active data ${{ steps.dup.outputs.reason }}
         if: steps.guard.outputs.needs_check == 'true'
         run: test "${{ steps.dup.outputs.code }}" = "0"
 
