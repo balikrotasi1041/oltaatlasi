@@ -10,6 +10,7 @@ import { istanbulKocaeliIyilestirmeleri20260812 } from "./meralar-istanbul-kocae
 import { kirklareliYeni20260813 } from "./meralar-kirklareli-2026-08-13";
 import { istanbulKocaeliIyilestirmeleri20260813Aksam } from "./meralar-istanbul-kocaeli-2026-08-13-evening";
 import { istanbulKocaeliIyilestirmeleri20260814 } from "./meralar-istanbul-kocaeli-2026-08-14";
+import { istanbulEkIyilestirme20260814 } from "./meralar-istanbul-2026-08-14-extra";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -134,7 +135,8 @@ const applyPatch=(slug:string,patch:Partial<Mera>)=>{
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260811))applyPatch(slug,patch);
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260812))applyPatch(slug,patch);
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260813Aksam))applyPatch(slug,patch);
-for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260814))applyPatch(slug,patch);
+for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260814))if(slug!=="maltepe-sahili")applyPatch(slug,patch);
+for(const [slug,patch] of Object.entries(istanbulEkIyilestirme20260814))applyPatch(slug,patch);
 const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
 const publishedToday12=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-12");
