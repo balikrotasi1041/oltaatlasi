@@ -24,6 +24,18 @@ const SENSITIVE_PROBE_PATTERNS = [
 const SECURITY_POLICY_HEADER = "x-olta-security-policy";
 const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-and-404-v4";
 const CONTENT_SECURITY_POLICY = "base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests";
+const HASHED_ASSET_PATTERN = /^\/_astro\//;
+const IMAGE_ASSET_PATTERN = /^\/images\//;
+const SITEMAP_PATTERN = /^\/sitemap(?:-[^/]*)?\.xml$/;
+const STABLE_SITE_ASSETS = new Set(["/logo-mark.svg", "/favicon.svg", "/site.webmanifest"]);
+
+const browserCachePolicy = (pathname) => {
+  if (HASHED_ASSET_PATTERN.test(pathname)) return "public, max-age=31536000, immutable";
+  if (STABLE_SITE_ASSETS.has(pathname)) return "public, max-age=604800, stale-while-revalidate=2592000";
+  if (IMAGE_ASSET_PATTERN.test(pathname)) return "public, max-age=86400, stale-while-revalidate=604800";
+  if (pathname === "/robots.txt" || SITEMAP_PATTERN.test(pathname)) return "public, max-age=3600, stale-while-revalidate=86400";
+  return "";
+};
 
 const applySecurityHeaders = (headers) => {
   headers.set(SECURITY_POLICY_HEADER, SECURITY_POLICY_VALUE);
@@ -71,8 +83,10 @@ const explicit404Response = async (request, env) => {
   });
 };
 
-const markSecurityPolicy = async (response) => {
+const markSecurityPolicy = async (response, pathname, method) => {
   const headers = applySecurityHeaders(new Headers(response.headers));
+  const cachePolicy = response.ok && (method === "GET" || method === "HEAD") ? browserCachePolicy(pathname) : "";
+  if (cachePolicy) headers.set("cache-control", cachePolicy);
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
@@ -89,6 +103,6 @@ export default {
     if (isSensitiveProbe(url.pathname)) return notFoundResponse();
     if (isExplicit404Path(url.pathname)) return explicit404Response(request, env);
 
-    return markSecurityPolicy(await appWorker.fetch(request, env, ctx));
+    return markSecurityPolicy(await appWorker.fetch(request, env, ctx), url.pathname, request.method);
   },
 };
