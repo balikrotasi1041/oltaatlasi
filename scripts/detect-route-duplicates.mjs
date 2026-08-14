@@ -89,7 +89,9 @@ console.log(`Duplicate radar: ${meralar.length} aktif rota, ${candidates.length}
 for (const item of allowed) console.log(`ALLOW ${item.left.slug} ↔ ${item.right.slug}: ${allowlist.get(pairKey(item.left.slug, item.right.slug))}`);
 for (const [key, reason] of staleAllowlist) console.warn(`UYARI: Artık eşleşmeyen allowlist kaydı: ${key} (${reason})`);
 for (const item of blocked) {
-  console.error(`HATA: ${item.left.slug} ↔ ${item.right.slug} | ${item.distance.toFixed(2)} km | ad ${(item.nameSimilarity * 100).toFixed(0)}% | alan ${(item.areaSimilarity * 100).toFixed(0)}%`);
+  const detail=`${item.left.slug} ↔ ${item.right.slug} | ${item.distance.toFixed(2)} km | ad ${(item.nameSimilarity * 100).toFixed(0)}% | alan ${(item.areaSimilarity * 100).toFixed(0)}%`;
+  console.error(`HATA: ${detail}`);
+  console.error(`::error file=scripts/detect-route-duplicates.mjs,title=Duplicate radar::${detail}`);
 }
 if (exactDuplicates.length) {
   for (const slug of exactDuplicates) console.error(`HATA: Yinelenen aktif slug: ${slug}`);
