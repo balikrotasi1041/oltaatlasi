@@ -43,6 +43,9 @@ const requestQuery = `query TrafficDiagnostics($zoneTag: string, $start: Time, $
     routes: httpRequestsAdaptiveGroups(limit: 500, orderBy: [count_DESC], filter: { datetime_geq: $start, datetime_lt: $end, requestSource: "eyeball" }) {
       count avg { sampleInterval } dimensions { userAgent clientRequestPath clientCountryName edgeResponseStatus }
     }
+    statuses: httpRequestsAdaptiveGroups(limit: 100, orderBy: [count_DESC], filter: { datetime_geq: $start, datetime_lt: $end, requestSource: "eyeball" }) {
+      count avg { sampleInterval } dimensions { edgeResponseStatus }
+    }
   } }
 }`;
 
@@ -74,10 +77,20 @@ const classifyAgent = (value = "") => {
   return { key: "unknown", label: "Sınıflandırılamadı", kind: "unknown" };
 };
 
+const statusBucket = (status) => {
+  const code = Number(status || 0);
+  if (code >= 200 && code < 300) return "2xx";
+  if (code >= 300 && code < 400) return "3xx";
+  if (code >= 400 && code < 500) return "4xx";
+  if (code >= 500 && code < 600) return "5xx";
+  return "other";
+};
+
 const aggregateTraffic = (zones) => {
   const categoryMap = new Map();
   const agentMap = new Map();
   const routeMap = new Map();
+  const statusMap = new Map();
   let sampled = false;
   for (const zone of zones) {
     for (const row of zone.agents || []) {
@@ -96,6 +109,7 @@ const aggregateTraffic = (zones) => {
     }
     for (const row of zone.routes || []) {
       const requests = Math.round(Number(row.count || 0));
+      sampled ||= Number(row.avg?.sampleInterval || 1) > 1;
       const dimensions = row.dimensions || {};
       const classification = classifyAgent(dimensions.userAgent || "");
       const key = `${classification.key}\u0000${dimensions.clientRequestPath || "/"}\u0000${dimensions.clientCountryName || "Unknown"}\u0000${dimensions.edgeResponseStatus || 0}`;
@@ -103,11 +117,37 @@ const aggregateTraffic = (zones) => {
       route.requests += requests;
       routeMap.set(key, route);
     }
+    for (const row of zone.statuses || []) {
+      const requests = Math.round(Number(row.count || 0));
+      sampled ||= Number(row.avg?.sampleInterval || 1) > 1;
+      const bucket = statusBucket(row.dimensions?.edgeResponseStatus);
+      statusMap.set(bucket, (statusMap.get(bucket) || 0) + requests);
+    }
   }
+  const categories = [...categoryMap.values()].sort((a, b) => b.requests - a.requests);
+  const classifiedRequests = categories.reduce((sum, row) => sum + row.requests, 0);
+  const browserLikeRequests = categories.filter((row) => row.kind === "browser").reduce((sum, row) => sum + row.requests, 0);
+  const nonBrowserRequests = Math.max(0, classifiedRequests - browserLikeRequests);
+  const statusBuckets = ["2xx", "3xx", "4xx", "5xx", "other"].map((bucket) => ({ bucket, requests: statusMap.get(bucket) || 0 }));
+  const totalStatusRequests = statusBuckets.reduce((sum, row) => sum + row.requests, 0);
+  const fourxxRequests = statusMap.get("4xx") || 0;
+  const fivexxRequests = statusMap.get("5xx") || 0;
   return {
-    categories: [...categoryMap.values()].sort((a, b) => b.requests - a.requests),
+    categories,
     topAgents: [...agentMap.values()].sort((a, b) => b.requests - a.requests).slice(0, 100),
     topRoutes: [...routeMap.values()].sort((a, b) => b.requests - a.requests).slice(0, 100),
+    summary: {
+      classifiedRequests,
+      browserLikeRequests,
+      nonBrowserRequests,
+      browserLikeShare: classifiedRequests ? browserLikeRequests / classifiedRequests : 0,
+      totalStatusRequests,
+      statusBuckets,
+      fourxxRequests,
+      fourxxShare: totalStatusRequests ? fourxxRequests / totalStatusRequests : 0,
+      fivexxRequests,
+      fivexxShare: totalStatusRequests ? fivexxRequests / totalStatusRequests : 0,
+    },
     sampled,
   };
 };
@@ -167,6 +207,8 @@ const loadDiagnostics = async (request, env) => {
     security,
     notes: [
       "HTTP trafik sınıflandırması User-Agent imzasına dayanır; User-Agent taklit edilebilir.",
+      "Tarayıcı benzeri istek sayısı gerçek kişi veya oturum sayısı değildir; bot filtreli GA/Search Console verileriyle birlikte yorumlanmalıdır.",
+      "4xx oranı bot, script ve tarayıcıların var olmayan ya da korumalı adresleri taramasından yükselebilir; üst rota tablosunda HTTP durumu ve trafik sınıfı birlikte kontrol edilmelidir.",
       "Security Events yalnız güvenlik ürünlerinin kaydettiği olayları içerir; bütün HTTP isteklerinin ham IP günlüğü değildir.",
       "IP sahipliği için ASN/IP verileri açık kaynak WHOIS/RDAP ile ayrıca doğrulanmalıdır."
     ],
