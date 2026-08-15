@@ -40,7 +40,8 @@ for (const route of meralar) {
       if (route.confidenceProfile.model !== "evidence-v1") errors.push(`${route.slug}: bilinmeyen güven modeli.`);
       if (route.confidenceProfile.overall !== route.confidence) errors.push(`${route.slug}: genel güven ile kanıt profili çelişiyor.`);
       if (route.confidence === "A" && (route.confidenceProfile.field.level !== "strong" || route.confidenceProfile.legal.level !== "strong")) errors.push(`${route.slug}: Güven A için güçlü saha ve hukuk kanıtı yok.`);
-      if (route.confidence === "B" && route.confidenceProfile.legal.level !== "strong") errors.push(`${route.slug}: Güven B için rota özelinde güçlü hukuk/kullanım kanıtı yok.`);
+      const probabilitySpeciesEvidence = route.probabilityModel === "probability-v2" && (route.provinceEvidenceReview?.exactSpeciesEvidenceCount || 0) > 0;
+      if (route.confidence === "B" && route.confidenceProfile.legal.level !== "strong" && !probabilitySpeciesEvidence) errors.push(`${route.slug}: Güven B için güçlü hukuk/kullanım veya rota özelinde resmî tür/stok-balıklandırma kanıtı yok.`);
     }
     const narrative = `${route.summary} ${route.longIntro?.join(" ")}`;
     if (route.confidence !== "D" && /güven seviyesi d|güven d['’]dir|ön değerlendirme rota dosyası/i.test(narrative)) errors.push(`${route.slug}: anlatı güncel güven seviyesiyle çelişiyor.`);
