@@ -29,7 +29,7 @@
     "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.1.1",
-    "typescript": "^5.7.2"
+    "typescript": "^7.0.2"
   },
   "description": "Olta Atlası: avlak haritası, balık türleri, görselli yöntem rehberleri ve kaynaklı dünya balıkçılık günlüğü.",
   "devDependencies": {
