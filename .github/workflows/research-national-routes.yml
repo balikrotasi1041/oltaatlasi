@@ -37,7 +37,7 @@ env:
 
 jobs:
   research-and-cache:
-    if: github.actor != 'github-actions[bot]'
+    if: github.actor != 'github-actions[bot]' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 55
     steps:
