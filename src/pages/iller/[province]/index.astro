@@ -34,7 +34,7 @@ const provinceLocative=locative(province);
 const isKirikkale=province==="Kırıkkale";
 const seoTitle=isKirikkale?`Kırıkkale'de Balık Tutulacak Yerler: Hirfanlı ve Kapulukaya`:`${provinceLocative} Balık Tutulacak Yerler ve Avlaklar`;
 const seoDescription=isKirikkale
-  ? `Kırıkkale'de balık tutulacak yerler: Hirfanlı ve Kapulukaya başta olmak üzere ${items.length} rota dosyasını tür, ulaşım, güven seviyesi ve güncel içsu notlarıyla karşılaştır.`
+  ? `Kırıkkale'de balık tutulacak yerler: Hirfanlı ve Kapulukaya başta olmak üzere ${items.length} rotayı tür, ulaşım, güven seviyesi ve güncel içsu notlarıyla karşılaştır.`
   : `${provinceLocative} balık tutulacak yerleri keşfet: ${items.length} rota, ${verifiedItems.length} güçlü doğrulama ve ${preliminaryCount} genel konumlu rota.`;
 const schema={
   "@context":"https://schema.org",
@@ -81,7 +81,7 @@ const provinceIntros:Record<string,string[]>={
   ]
 };
 const intro=provinceIntros[province]||[
-  `${province} için yayımlanan dosyalar açık kaynaklarda kayıtlı su varlıklarını ve varsa daha ayrıntılı doğrulanmış rotaları aynı merkezde toplar.`,
+  `${province} için yayımlanan rotalar açık kaynaklarda kayıtlı su varlıklarını ve varsa daha ayrıntılı doğrulanmış rotaları aynı merkezde toplar.`,
   `Güven D rotaları da kullanıcıyı konuma götürecek harita bilgisi veya adla harita araması sunar; mikro kıyı erişimi, avlanma uygunluğu, balık türleri ve fiziki koşullar ayrıca kontrol edilmelidir.`
 ];
 ---
@@ -109,7 +109,7 @@ const intro=provinceIntros[province]||[
     </section>
 
     <div class="city-summary-grid">
-      <div><strong>{items.length}</strong><span>Rota dosyası</span></div>
+      <div><strong>{items.length}</strong><span>Avlak rotası</span></div>
       <div><strong>{districts.length}</strong><span>Konum grubu</span></div>
       <div><strong>{zones.length}</strong><span>Bölge</span></div>
       <div><strong>{fish.length}</strong><span>Raporlanan tür</span></div>
@@ -123,7 +123,7 @@ const intro=provinceIntros[province]||[
           const districtItems=items.filter((m)=>m.district===district);
           const count=districtItems.length;
           const href=count>=2?`/iller/${slugifyTr(province)}/${slugifyTr(district)}/`:`/meralar/${districtItems[0].slug}/`;
-          return <a id={slugifyTr(district)} href={href}><strong>{locative(district)} balık tutulacak yerler</strong><span>{count} rota dosyası</span></a>;
+          return <a id={slugifyTr(district)} href={href}><strong>{locative(district)} balık tutulacak yerler</strong><span>{count} rota</span></a>;
         })}
       </div>
     </section>
@@ -136,8 +136,8 @@ const intro=provinceIntros[province]||[
 
     <section class="info-block">
       <span class="kicker">Raporlanan türler</span>
-      <h2>{province} rota dosyalarında hangi balıklar kaynaklarla destekleniyor?</h2>
-      {fish.length>0?<><p>Bu liste, ilgili türün en az bir rota dosyasında raporlandığını gösterir. Balığın her mevsim veya her gün bulunacağı anlamına gelmez.</p><div class="tag-row large-tags">{fish.map((f)=><span>{f}</span>)}</div></>:<div class="warning-box"><p>Bu ildeki bazı Güven D rotalarında rota özelinde yeterli tür kaynağı henüz bulunmuyor. Konumu göstermeye devam ediyor, tür bilgisini ise tahminle doldurmuyoruz.</p></div>}
+      <h2>{province} rotalarında hangi balıklar kaynaklarla destekleniyor?</h2>
+      {fish.length>0?<><p>Bu liste, ilgili türün en az bir rotada raporlandığını gösterir. Balığın her mevsim veya her gün bulunacağı anlamına gelmez.</p><div class="tag-row large-tags">{fish.map((f)=><span>{f}</span>)}</div></>:<div class="warning-box"><p>Bu ildeki bazı Güven D rotalarında rota özelinde yeterli tür kaynağı henüz bulunmuyor. Konumu göstermeye devam ediyor, tür bilgisini ise tahminle doldurmuyoruz.</p></div>}
     </section>
 
     <section class="info-block">
@@ -149,8 +149,8 @@ const intro=provinceIntros[province]||[
 
   <section class="container section" id="rotalar">
     <div class="section-heading">
-      <div><span class="kicker">Tüm rota dosyaları</span><h2>{provinceLocative} balıkçılık rotaları ve konumları</h2></div>
-      <p>Konum hassasiyetini, güven seviyesini, kaynak kapsamını ve son güncelleme tarihini her dosyada kontrol et.</p>
+      <div><span class="kicker">Tüm avlak rotaları</span><h2>{provinceLocative} balıkçılık rotaları ve konumları</h2></div>
+      <p>Konum hassasiyetini, güven seviyesini, kaynak kapsamını ve son güncelleme tarihini her rotada kontrol et.</p>
     </div>
     <div class="card-grid">{orderedItems.map((m)=><MeraCard mera={m}/>)}</div>
   </section>
