@@ -65,8 +65,9 @@ const evidenceToFish=(item:ProvinceFisheriesEvidence):FishEvidence[]=>
     distanceKm:null,
   }));
 
-const buildProfile=(route:EnrichedMera,overall:EnrichedMera["confidence"],officialUse:ProvinceFisheriesEvidence[],speciesEvidence:ProvinceFisheriesEvidence[]):ConfidenceProfile=>{
+const buildProfile=(route:EnrichedMera,overall:EnrichedMera["confidence"],officialUse:ProvinceFisheriesEvidence[],speciesEvidence:ProvinceFisheriesEvidence[]):ConfidenceProfile|undefined=>{
   const existing=route.confidenceProfile;
+  if(!existing&&!officialUse.length)return undefined;
   const supported=new Set(speciesEvidence.flatMap((item)=>item.species||[]).map(canonicalSpecies));
   const routeFish=route.fish.map(canonicalSpecies);
   const matched=routeFish.filter((name)=>supported.has(name));
@@ -83,10 +84,10 @@ const buildProfile=(route:EnrichedMera,overall:EnrichedMera["confidence"],offici
   return{
     model:"evidence-v1",
     overall,
-    identity:existing?.identity||{level:"partial",label:"Rota kimliği",note:"Su adı ve genel konum mevcut açık kaynak araştırmasıyla eşleşiyor; mikro kıyı noktası saha teyitli değildir."},
-    legal:legalCandidate?strongest(existing?.legal,legalCandidate):(existing?.legal||{level:"partial",label:"Genel mevzuat kontrolü",note:"6/2 Tebliğ ve il düzeyindeki duyurular incelendi; belirli kıyı cebinin güncel kullanım durumu ayrıca kontrol edilmelidir."}),
-    access:existing?.access||{level:"unverified",label:"Erişim saha teyidi bekliyor",note:"Genel konum, son araç yolu, park veya kamusal kıyı girişi garantisi değildir."},
-    species:speciesCandidate?strongest(existing?.species,speciesCandidate):(existing?.species||{level:"unverified",label:"Tür kanıtı rota bazında sınırlı",note:"İl düzeyindeki balıklandırma veya tür kaydı belirli suya otomatik olarak taşınmamıştır."}),
+    identity:existing?.identity||{level:"strong",label:"Resmî rota kimliği ve kullanım eşleşmesi",note:"Rota/su adı resmî amatör kullanım kaynağında açıkça eşleşiyor; mikro kıyı noktası ayrıca saha kontrolü gerektirir."},
+    legal:legalCandidate?strongest(existing?.legal,legalCandidate):(existing?.legal as ConfidenceDimension),
+    access:existing?.access||{level:"unverified",label:"Erişim saha teyidi bekliyor",note:"Resmî amatör kullanım kaydı son araç yolu, park veya her kıyı cebine kamusal giriş garantisi değildir."},
+    species:speciesCandidate?strongest(existing?.species,speciesCandidate):(existing?.species||{level:"unverified",label:"Tür kanıtı ayrı değerlendiriliyor",note:"Amatör kullanım kanıtı tür listesi veya av başarısı garantisi değildir."}),
     field:existing?.field||{level:"unverified",label:"Saha doğrulaması yok",note:"Bariyer, tabela, su kotu, özel mülkiyet ve güncel kıyı riski hareket günü yeniden kontrol edilmelidir."},
     reviewedAt:provinceEvidenceReviewMeta.reviewedAt,
   };
@@ -130,8 +131,8 @@ export const applyProvinceConfidenceAudit=(routeMap:Map<string,EnrichedMera>):Pr
     const mergedFishEvidence=[...new Map([...existingFishEvidence,...extraFishEvidence].filter((item)=>item?.sourceUrl&&item?.name).map((item)=>[`${canonicalSpecies(item.name)}|${item.sourceUrl}`,item])).values()];
     const sources=officialUse.length?uniqueSources([...(route.sources||[]),...officialUse.map(evidenceToSource)]):route.sources;
     const profile=buildProfile(route,after,officialUse,speciesEvidence);
-    const changed=after!==before||officialUse.length>0||speciesEvidence.length>0;
-    if(!changed)unchangedRoutes+=1;
+    const visibleEvidenceChange=after!==before||officialUse.length>0||speciesEvidence.length>0;
+    if(!visibleEvidenceChange)unchangedRoutes+=1;
 
     const review:ProvinceEvidenceReview={
       province:route.province,
@@ -158,8 +159,8 @@ export const applyProvinceConfidenceAudit=(routeMap:Map<string,EnrichedMera>):Pr
       confidenceProfile:profile,
       fishEvidence:mergedFishEvidence,
       sources,
-      researchedAt:changed?provinceEvidenceReviewMeta.reviewedAt:route.researchedAt,
-      updatedAt:changed?provinceEvidenceReviewMeta.reviewedAt:route.updatedAt,
+      researchedAt:route.researchedAt,
+      updatedAt:visibleEvidenceChange?provinceEvidenceReviewMeta.reviewedAt:route.updatedAt,
       verification:after!==before
         ?`${route.verification} İl bazlı derin güven taramasında rota özelindeki resmî amatör kullanım kanıtıyla Güven ${after} olarak yeniden değerlendirildi; saha teyidi yok.`
         :route.verification,
