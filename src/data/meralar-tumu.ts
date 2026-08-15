@@ -120,7 +120,9 @@ for(const route of kirklareliYeni20260813){
   if(routeMap.has(route.slug))throw new Error(`Yeni Kırklareli rotası mevcut slug ile çakışıyor: ${route.slug}`);
   applyOverride(route);
 }
+const blocked20260815Slugs=new Set(["duzce-hasanlar-baraj-golu"]);
 for(const route of yeniMeralar20260815){
+  if(blocked20260815Slugs.has(route.slug))continue;
   if(routeMap.has(route.slug))throw new Error(`15 Ağustos yeni rotası mevcut slug ile çakışıyor: ${route.slug}`);
   routeMap.set(route.slug,route as EnrichedMera);
 }
