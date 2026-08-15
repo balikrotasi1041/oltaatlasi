@@ -122,10 +122,13 @@ jobs:
           done
 
           trace_status=$(curl --silent --request TRACE --output /dev/null --write-out '%{http_code}' 'https://oltaatlasi.com/')
-          if [ "$trace_status" != "405" ]; then
-            echo "::error::TRACE isteği HTTP 405 yerine ${trace_status} döndü."
-            exit 1
-          fi
+          case "$trace_status" in
+            403|405) ;;
+            *)
+              echo "::error::TRACE isteği güvenli biçimde reddedilmek yerine ${trace_status} döndü."
+              exit 1
+              ;;
+          esac
 
           if ! grep -q 'static.cloudflareinsights.com/beacon.min.js' /tmp/rum-home.html; then
             echo "::warning::RUM beacon HTML içinde görünmedi; otomatik enjeksiyon edge/yanıt koşullarına bağlı olabilir. Endpoint denetimi sürdürülecek."
