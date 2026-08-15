@@ -35,7 +35,7 @@ const isKirikkale=province==="Kırıkkale";
 const seoTitle=isKirikkale?`Kırıkkale'de Balık Tutulacak Yerler: Hirfanlı ve Kapulukaya`:`${provinceLocative} Balık Tutulacak Yerler ve Avlaklar`;
 const seoDescription=isKirikkale
   ? `Kırıkkale'de balık tutulacak yerler: Hirfanlı ve Kapulukaya başta olmak üzere ${items.length} rota dosyasını tür, ulaşım, güven seviyesi ve güncel içsu notlarıyla karşılaştır.`
-  : `${provinceLocative} balık tutulacak yerleri keşfet: ${items.length} indekslenebilir rota, ${verifiedItems.length} güçlü dosya ve ${preliminaryCount} ön araştırma kaydı.`;
+  : `${provinceLocative} balık tutulacak yerleri keşfet: ${items.length} rota, ${verifiedItems.length} güçlü doğrulama ve ${preliminaryCount} genel konumlu rota.`;
 const schema={
   "@context":"https://schema.org",
   "@type":"CollectionPage",
@@ -61,7 +61,7 @@ const provinceIntros:Record<string,string[]>={
   ],
   "Kocaeli":[
     "Kocaeli, Marmara kıyısı, İzmit Körfezi, Karadeniz sahilleri ve iç su rotalarını kısa mesafelerde bir araya getirir.",
-    "Güven seviyesi düşük kayıtlar kesin av noktası olarak değil, saha doğrulaması bekleyen planlama dosyası olarak okunmalıdır."
+    "Güven D rotalarında da konum bilgisi sunulur; son kıyı girişi, av uygunluğu ve saha koşulları hareket günü ayrıca kontrol edilmelidir."
   ],
   "Kırıkkale":[
     "Kırıkkale rota kataloğunda Hirfanlı Baraj Gölü ve Kapulukaya Baraj Gölü gibi Kızılırmak havzasındaki büyük içsu sistemleri öne çıkar; aynı su alanı içindeki farklı kıyı cepleri ancak ayrı erişim ve resmî sınır kanıtı varsa ayrı rota olarak tutulur.",
@@ -82,7 +82,7 @@ const provinceIntros:Record<string,string[]>={
 };
 const intro=provinceIntros[province]||[
   `${province} için yayımlanan dosyalar açık kaynaklarda kayıtlı su varlıklarını ve varsa daha ayrıntılı doğrulanmış rotaları aynı merkezde toplar.`,
-  `Güven D kayıtları yalnızca araştırma başlangıcıdır; kıyı erişimi, avlanma izni, balık türleri ve fiziki koşullar resmî kaynaklardan ve yerinde ayrıca doğrulanmalıdır.`
+  `Güven D rotaları da kullanıcıyı konuma götürecek harita bilgisi veya adla harita araması sunar; mikro kıyı erişimi, avlanma uygunluğu, balık türleri ve fiziki koşullar ayrıca kontrol edilmelidir.`
 ];
 ---
 <BaseLayout title={seoTitle} description={seoDescription}>
@@ -91,9 +91,9 @@ const intro=provinceIntros[province]||[
   <section class="page-hero">
     <div class="container">
       <Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"İller",href:"/iller/"},{label:province}]}/>
-      <span class="kicker">{items.length} indekslenebilir rota · {preliminaryCount} ön araştırma</span>
+      <span class="kicker">{items.length} rota · {preliminaryCount} genel konumlu rota</span>
       <h1>{provinceLocative} balık tutulacak yerler</h1>
-      <p class="lead">{provinceLocative} balık tutmak için araştırabileceğin kıyı ve iç su rotalarını; ilçe, su tipi, kaynak düzeyi, güven seviyesi ve saha notlarıyla karşılaştır.</p>
+      <p class="lead">{provinceLocative} balık tutmak için bakabileceğin kıyı ve iç su rotalarını; konum, ilçe, su tipi, kaynak düzeyi, güven seviyesi ve saha notlarıyla karşılaştır.</p>
       <div class="detail-actions">
         <a class="button" href="#ilceler">İlçelere göre incele</a>
         <a class="button button-ghost" href="#rotalar">Tüm rotaları gör</a>
@@ -104,7 +104,7 @@ const intro=provinceIntros[province]||[
   <section class="container section article-prose">
     <section class="article-intro">
       <h2>{provinceLocative} nerede balık tutulur?</h2>
-      <p>{province} için katalogda {verifiedItems.length} güçlü dosya, {preliminaryCount} ön araştırma kaydı ve {districts.length} konum grubu bulunuyor. Tüm rota sayfaları indekslenebilir; güven seviyesi kanıt kapsamını gösterir.</p>
+      <p>{province} için katalogda {verifiedItems.length} güçlü doğrulamalı rota, {preliminaryCount} genel konumlu rota ve {districts.length} konum grubu bulunuyor. Güven seviyesi sayfanın yayımlanma durumunu değil, kanıt derinliğini gösterir.</p>
       {intro.map((p:string)=><p>{p}</p>)}
     </section>
 
@@ -137,20 +137,20 @@ const intro=provinceIntros[province]||[
     <section class="info-block">
       <span class="kicker">Raporlanan türler</span>
       <h2>{province} rota dosyalarında hangi balıklar kaynaklarla destekleniyor?</h2>
-      {fish.length>0?<><p>Bu liste, ilgili türün en az bir rota dosyasında raporlandığını gösterir. Balığın her mevsim veya her gün bulunacağı anlamına gelmez.</p><div class="tag-row large-tags">{fish.map((f)=><span>{f}</span>)}</div></>:<div class="warning-box"><p>Bu ildeki yeni ön değerlendirme kayıtlarında rota bazında doğrulanmış tür listesi yayımlanmamıştır. Bölgesel tahmin eklenmemiştir.</p></div>}
+      {fish.length>0?<><p>Bu liste, ilgili türün en az bir rota dosyasında raporlandığını gösterir. Balığın her mevsim veya her gün bulunacağı anlamına gelmez.</p><div class="tag-row large-tags">{fish.map((f)=><span>{f}</span>)}</div></>:<div class="warning-box"><p>Bu ildeki bazı Güven D rotalarında rota özelinde yeterli tür kaynağı henüz bulunmuyor. Konumu göstermeye devam ediyor, tür bilgisini ise tahminle doldurmuyoruz.</p></div>}
     </section>
 
     <section class="info-block">
       <span class="kicker">Saha kontrolü</span>
       <h2>Rota bilgisini kullanmadan önce ne kontrol edilmeli?</h2>
-      <p>Olta Atlası bir noktaya giriş veya avlanma izni vermez. Özel mülkiyet, koruma statüsü, geçici kapatma, kıyı erişimi, hava, ulaşım ve güncel mevzuat yola çıkmadan önce ayrıca doğrulanmalıdır. {preliminaryCount} ön değerlendirme kaydı kesin av noktası olarak değil araştırma başlangıcı olarak okunmalıdır.</p>
+      <p>Olta Atlası bir noktaya giriş veya avlanma izni vermez. Özel mülkiyet, koruma statüsü, geçici kapatma, kıyı erişimi, hava, ulaşım ve güncel mevzuat yola çıkmadan önce ayrıca doğrulanmalıdır. Güven D olan {preliminaryCount} rotada konum planlama başlangıcıdır; son kıyı girişi ve av uygunluğu hareket günü ayrıca kontrol edilmelidir.</p>
     </section>
   </section>
 
   <section class="container section" id="rotalar">
     <div class="section-heading">
-      <div><span class="kicker">Tüm rota dosyaları</span><h2>{provinceLocative} araştırılan balıkçılık rotaları</h2></div>
-      <p>Güven seviyesi, kaynak kapsamı ve son güncelleme tarihini her dosyada kontrol et.</p>
+      <div><span class="kicker">Tüm rota dosyaları</span><h2>{provinceLocative} balıkçılık rotaları ve konumları</h2></div>
+      <p>Konum hassasiyetini, güven seviyesini, kaynak kapsamını ve son güncelleme tarihini her dosyada kontrol et.</p>
     </div>
     <div class="card-grid">{orderedItems.map((m)=><MeraCard mera={m}/>)}</div>
   </section>
