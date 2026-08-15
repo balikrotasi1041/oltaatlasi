@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "oltaatlasi",
-  "main": "./worker/traffic-diagnostics-router.js",
+  "main": "./worker/security-gate.js",
   "compatibility_date": "2026-07-23",
   "observability": {
     "enabled": true,
