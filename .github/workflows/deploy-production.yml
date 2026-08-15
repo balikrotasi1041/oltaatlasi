@@ -114,9 +114,9 @@ jobs:
           fi
 
           for probe_path in /export.sql /build.gradle /rest/executions /webhook-waiting/test /v1.40/swarm /.amplifyrc '/%2eenv' '/%252eenv' '/wp%2dlogin.php'; do
-            probe_status=$(curl --path-as-is --silent --output /dev/null --write-out '%{http_code}' "https://oltaatlasi.com${probe_path}")
+            probe_status=$(curl --path-as-is --location --max-redirs 4 --silent --output /dev/null --write-out '%{http_code}' "https://oltaatlasi.com${probe_path}")
             if [ "$probe_status" != "404" ]; then
-              echo "::error::${probe_path} probe isteği HTTP 404 yerine ${probe_status} döndü."
+              echo "::error::${probe_path} probe zincirinin nihai yanıtı HTTP 404 yerine ${probe_status} döndü."
               exit 1
             fi
           done
