@@ -1,5 +1,5 @@
 export const ulusalKoordinatMeta = {
-  "generatedAt": "2026-08-07T20:09:22.340Z",
+  "generatedAt": "2026-08-15T20:23:27.482Z",
   "provider": "OpenStreetMap Nominatim",
   "attribution": "© OpenStreetMap contributors, ODbL",
   "resolvedCount": 248,
