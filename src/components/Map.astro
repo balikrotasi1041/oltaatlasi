@@ -1,12 +1,22 @@
 ---
 import { meralar, nationalCoordinateStats } from "../data/meralar-tumu";
+import { routeLocationOverrides20260815 } from "../data/route-location-overrides-2026-08-15";
 const mapData = meralar
-  .filter((mera)=>Number.isFinite(mera.lat)&&Number.isFinite(mera.lng))
-  .map(({slug,name,province,district,zone,lat,lng,waterType,fish,confidence,locationPrecision})=>({
-    slug,name,province,district,zone,lat,lng,waterType,
-    fish:[...new Set((fish||[]).map((item)=>String(item).trim()).filter(Boolean))],
-    confidence,locationPrecision,preliminary:confidence==="D"
-  }));
+  .map(({slug,name,province,district,zone,lat,lng,waterType,fish,confidence,locationPrecision})=>{
+    const override=routeLocationOverrides20260815[slug];
+    return {
+      slug,name,province,district,zone,
+      lat:override?.lat??lat,
+      lng:override?.lng??lng,
+      waterType,
+      fish:[...new Set((fish||[]).map((item)=>String(item).trim()).filter(Boolean))],
+      confidence,
+      locationPrecision:override?.precision??locationPrecision,
+      locationLabel:override?.label||"",
+      preliminary:confidence==="D"
+    };
+  })
+  .filter((mera)=>Number.isFinite(mera.lat)&&Number.isFinite(mera.lng));
 const provinces=[...new Set(mapData.map((item)=>item.province))].sort((a,b)=>a.localeCompare(b,"tr"));
 const waterTypes=[...new Set(mapData.map((item)=>item.waterType))].sort((a,b)=>a.localeCompare(b,"tr"));
 const fishTypes=[...new Set(mapData.flatMap((item)=>item.fish))].sort((a,b)=>a.localeCompare(b,"tr"));
@@ -14,7 +24,7 @@ const fishTypes=[...new Set(mapData.flatMap((item)=>item.fish))].sort((a,b)=>a.l
 <section class="map-shell" aria-labelledby="map-title">
   <div class="section-heading compact">
     <div><span class="kicker">Türkiye avlak haritası</span><h2 id="map-title">Doğrulanmış ve genel konum pinleri</h2></div>
-    <p>Güven D işaretleri su varlığının genel coğrafi konumudur; kıyıya giriş, yol tarifi veya avlanma izni anlamına gelmez.</p>
+    <p>Güven D işaretleri rota veya su varlığının genel konumunu gösterir; kıyıya giriş, araç rotası ya da avlanma izni anlamına gelmez.</p>
   </div>
   <div class="map-filter-bar" aria-label="Harita filtreleri">
     <label><span>İl</span><select id="map-province"><option value="">Tüm iller</option>{provinces.map((province)=><option value={province}>{province}</option>)}</select></label>
@@ -23,8 +33,8 @@ const fishTypes=[...new Set(mapData.flatMap((item)=>item.fish))].sort((a,b)=>a.l
     <button class="button button-ghost button-small" id="map-reset" type="button">Haritayı sıfırla</button>
   </div>
   <div id="map" class="map" aria-label="Olta Atlası Türkiye avlak haritası"></div>
-  <div class="map-legend" aria-label="Harita işaret açıklaması"><span><i class="legend-dot legend-verified"></i> Kaynaklı rota pini</span><span><i class="legend-dot legend-preliminary"></i> Genel su konumu / Güven D</span></div>
-  <div class="map-footer"><span id="map-result-count">{mapData.length} koordinatlı kayıt</span><span>{fishTypes.length} balık türüyle filtrelenebilir</span><span>{nationalCoordinateStats.unresolved} ulusal kayıt koordinat eşleşmesi bekliyor</span><a href="/meralar/">81 ildeki tüm rota dosyalarını aç →</a></div>
+  <div class="map-legend" aria-label="Harita işaret açıklaması"><span><i class="legend-dot legend-verified"></i> Güçlü rota pini</span><span><i class="legend-dot legend-preliminary"></i> Genel konum / Güven D</span></div>
+  <div class="map-footer"><span id="map-result-count">{mapData.length} koordinatlı kayıt</span><span>{fishTypes.length} balık türüyle filtrelenebilir</span><span>{nationalCoordinateStats.unresolved} ulusal rota su-özel koordinat eşleşmesini geliştiriyor</span><a href="/meralar/">81 ildeki tüm rota dosyalarını aç →</a></div>
 </section>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="" />
@@ -44,9 +54,9 @@ const startMap=()=>{
     const marker=item.preliminary
       ? L.circleMarker([item.lat,item.lng],{radius:7,weight:2,fillOpacity:.72})
       : L.marker([item.lat,item.lng]);
-    const fishText=item.fish.length?item.fish.slice(0,4).map(escapeHtml).join(", "):"Tür bilgisi doğrulanmayı bekliyor";
-    const locationText=item.preliminary?"Genel su konumu; erişim pini değildir":escapeHtml(item.locationPrecision);
-    marker.bindPopup(`<strong>${escapeHtml(item.name)}</strong><br>${escapeHtml(item.province)} · ${escapeHtml(item.district)} · ${escapeHtml(item.zone)}<br><small>${fishText} · Güven ${escapeHtml(item.confidence)}</small><br><small>${locationText}</small><br><a href="/meralar/${encodeURIComponent(item.slug)}/">Rota dosyasını aç</a>`);
+    const fishText=item.fish.length?item.fish.slice(0,4).map(escapeHtml).join(", "):"Tür bilgisi kaynak doğrulaması bekliyor";
+    const locationText=item.locationLabel?escapeHtml(item.locationLabel):(item.preliminary?"Genel su konumu; erişim pini değildir":escapeHtml(item.locationPrecision));
+    marker.bindPopup(`<strong>${escapeHtml(item.name)}</strong><br>${escapeHtml(item.province)} · ${escapeHtml(item.district)} · ${escapeHtml(item.zone)}<br><small>${fishText} · Güven ${escapeHtml(item.confidence)}</small><br><small>${locationText}</small><br><a href="/meralar/${encodeURIComponent(item.slug)}/">Konum ve rota rehberini aç</a>`);
     markers[item.slug]=marker;
     return marker;
   };
