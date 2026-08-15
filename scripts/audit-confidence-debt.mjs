@@ -20,7 +20,8 @@ const rows = meralar.map((route) => {
   }
   if (profile.overall !== route.confidence) errors.push(`${route.slug}: profil/genel güven uyuşmazlığı.`);
   if (route.confidence === "A" && (profile.field.level !== "strong" || profile.legal.level !== "strong")) errors.push(`${route.slug}: Güven A saha ve hukuk eşiğini karşılamıyor.`);
-  if (route.confidence === "B" && profile.legal.level !== "strong") errors.push(`${route.slug}: Güven B hukuk/kullanım eşiğini karşılamıyor.`);
+  const probabilitySpeciesEvidence = route.probabilityModel === "probability-v2" && (route.provinceEvidenceReview?.exactSpeciesEvidenceCount || 0) > 0;
+  if (route.confidence === "B" && profile.legal.level !== "strong" && !probabilitySpeciesEvidence) errors.push(`${route.slug}: Güven B hukuk/kullanım veya rota özelinde resmî tür/stok-balıklandırma eşiğini karşılamıyor.`);
   const score = dimensions.reduce((total, dimension) => total + levelDebt[profile[dimension].level] * dimensionWeight[dimension], 0);
   const missing = dimensions.filter((dimension) => profile[dimension].level === "unverified").join(",") || "—";
   return { slug: route.slug, confidence: route.confidence, score, missing };
