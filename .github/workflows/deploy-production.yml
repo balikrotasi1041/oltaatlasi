@@ -16,10 +16,10 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Use Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version-file: .node-version
           cache: npm
@@ -92,6 +92,15 @@ jobs:
             exit 1
           fi
 
+          http_redirect=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://oltaatlasi.com/')
+          case "$http_redirect" in
+            301|308) ;;
+            *)
+              echo "::error::HTTP ana sayfa HTTPS'e kalıcı yönlendirme yerine ${http_redirect} döndü."
+              exit 1
+              ;;
+          esac
+
           explicit_404_status=$(curl --silent --output /tmp/explicit-404.html --write-out '%{http_code}' \
             -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
             'https://oltaatlasi.com/404')
@@ -104,13 +113,22 @@ jobs:
             exit 1
           fi
 
-          for probe_path in /export.sql /build.gradle /rest/executions /webhook-waiting/test /v1.40/swarm /.amplifyrc; do
-            probe_status=$(curl --silent --output /dev/null --write-out '%{http_code}' "https://oltaatlasi.com${probe_path}")
+          for probe_path in /export.sql /build.gradle /rest/executions /webhook-waiting/test /v1.40/swarm /.amplifyrc '/%2eenv' '/%252eenv' '/wp%2dlogin.php'; do
+            probe_status=$(curl --path-as-is --silent --output /dev/null --write-out '%{http_code}' "https://oltaatlasi.com${probe_path}")
             if [ "$probe_status" != "404" ]; then
               echo "::error::${probe_path} probe isteği HTTP 404 yerine ${probe_status} döndü."
               exit 1
             fi
           done
+
+          trace_status=$(curl --silent --request TRACE --output /dev/null --write-out '%{http_code}' 'https://oltaatlasi.com/')
+          case "$trace_status" in
+            403|405) ;;
+            *)
+              echo "::error::TRACE isteği güvenli biçimde reddedilmek yerine ${trace_status} döndü."
+              exit 1
+              ;;
+          esac
 
           if ! grep -q 'static.cloudflareinsights.com/beacon.min.js' /tmp/rum-home.html; then
             echo "::warning::RUM beacon HTML içinde görünmedi; otomatik enjeksiyon edge/yanıt koşullarına bağlı olabilir. Endpoint denetimi sürdürülecek."
@@ -127,6 +145,6 @@ jobs:
               echo "::warning::RUM toplama endpoint'i GET isteğine HTTP 404 verdi; bu yöntem yanıtı beacon gönderimini tek başına doğrulamaz. Canlı HTML ve güvenlik başlıkları doğrulandı."
               ;;
             *)
-              echo "Canlı site, güvenlik başlıkları, 404 davranışı, probe guard ve Cloudflare RUM endpoint'i doğrulandı; endpoint HTTP ${rum_status}."
+              echo "Canlı site, güvenlik başlıkları, HTTPS yönlendirmesi, encoded probe guard, TRACE reddi, 404 davranışı ve Cloudflare RUM endpoint'i doğrulandı; endpoint HTTP ${rum_status}."
               ;;
           esac
