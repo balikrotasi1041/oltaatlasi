@@ -16,6 +16,10 @@ const reportUrl = `/iletisim/?sayfa=${encodeURIComponent(title)}&url=${encodeURI
   <p class="feedback-status" data-feedback-status aria-live="polite"></p>
 </section>
 <script is:inline>
+  const trackMeraEvent = (name, params = {}) => {
+    if (typeof window.gtag === "function") window.gtag("event", name, params);
+  };
+
   document.querySelectorAll("[data-feedback]").forEach((panel) => {
     const key = `oltaatlasi-oy:${panel.dataset.feedbackKey}`;
     const legacyKey = `balikrotasi-oy:${panel.dataset.feedbackKey}`;
@@ -36,9 +40,69 @@ const reportUrl = `/iletisim/?sayfa=${encodeURIComponent(title)}&url=${encodeURI
     buttons.forEach((button) => button.addEventListener("click", () => {
       const vote = button.dataset.vote;
       const current = localStorage.getItem(key);
-      if (current === vote) localStorage.removeItem(key);
-      else localStorage.setItem(key, vote);
-      paint(localStorage.getItem(key));
+      const nextVote = current === vote ? null : vote;
+      if (!nextVote) localStorage.removeItem(key);
+      else localStorage.setItem(key, nextVote);
+      paint(nextVote);
+      if (nextVote) {
+        trackMeraEvent(nextVote === "like" ? "feedback_positive" : "feedback_negative", {
+          content_key: panel.dataset.feedbackKey || "mera"
+        });
+      }
     }));
   });
+
+  if (!document.documentElement.dataset.meraAnalyticsReady) {
+    document.documentElement.dataset.meraAnalyticsReady = "true";
+    document.addEventListener("click", (event) => {
+      const originTarget = event.target;
+      if (!(originTarget instanceof Element)) return;
+      const target = originTarget.closest("a,button");
+      if (!target) return;
+
+      if (target.matches("#copy-link")) {
+        trackMeraEvent("copy_link", { content_type: "mera" });
+        return;
+      }
+
+      if (!(target instanceof HTMLAnchorElement)) return;
+      const href = target.href || "";
+      const sameOriginPath = (() => {
+        try {
+          const parsed = new URL(href, window.location.href);
+          return parsed.origin === window.location.origin ? parsed.pathname : "";
+        } catch {
+          return "";
+        }
+      })();
+
+      if (target.closest("#yakin-rotalar") && sameOriginPath.startsWith("/meralar/")) {
+        trackMeraEvent("nearby_spot_click", { target_path: sameOriginPath });
+        return;
+      }
+
+      if (target.closest(".related-fish-grid") && sameOriginPath.startsWith("/baliklar/")) {
+        trackMeraEvent("fish_species_click", { target_path: sameOriginPath });
+        return;
+      }
+
+      if (sameOriginPath.startsWith("/iletisim/")) {
+        trackMeraEvent("report_issue_click", { content_type: "mera" });
+        return;
+      }
+
+      const mapProvider = href.includes("google.com/maps") ? "google"
+        : href.includes("maps.apple.com") ? "apple"
+        : href.includes("yandex.com/maps") ? "yandex"
+        : href.includes("openstreetmap.org") ? "osm"
+        : "";
+      if (!mapProvider) return;
+
+      const isDirections = href.includes("google.com/maps/dir") || href.includes("maps.apple.com/?daddr") || href.includes("yandex.com/maps/?rtext");
+      trackMeraEvent(isDirections ? "directions_click" : "map_location_click", {
+        provider: mapProvider,
+        content_type: "mera"
+      });
+    });
+  }
 </script>

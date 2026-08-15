@@ -107,6 +107,9 @@ const contactEmail = "balikrotasi1041@gmail.com";
     const pageInput = form?.querySelector('[name="page"]');
     const urlInput = form?.querySelector('[name="url"]');
     const params = new URLSearchParams(window.location.search);
+    const trackReportEvent = (name, eventParams = {}) => {
+      if (typeof window.gtag === "function") window.gtag("event", name, eventParams);
+    };
 
     if (pageInput && params.get("sayfa")) pageInput.value = params.get("sayfa");
     if (urlInput && params.get("url")) {
@@ -121,11 +124,12 @@ const contactEmail = "balikrotasi1041@gmail.com";
     form?.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = new FormData(form);
-      const subject = `Olta Atlası hata bildirimi: ${data.get("type")}`;
+      const reportType = String(data.get("type") || "Diğer");
+      const subject = `Olta Atlası hata bildirimi: ${reportType}`;
       const body = [
         "OLTA ATLASI HATA / İÇERİK BİLDİRİMİ",
         "",
-        `Bildirim türü: ${data.get("type")}`,
+        `Bildirim türü: ${reportType}`,
         `İlgili sayfa: ${data.get("page") || "-"}`,
         `Sayfa bağlantısı: ${data.get("url") || window.location.href}`,
         `Ad / rumuz: ${data.get("name") || "-"}`,
@@ -141,6 +145,11 @@ const contactEmail = "balikrotasi1041@gmail.com";
         preview.hidden = false;
         preview.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
+      trackReportEvent("report_draft_created", {
+        report_type: reportType,
+        has_page_context: Boolean(data.get("page")),
+        has_url_context: Boolean(data.get("url"))
+      });
       mailLink?.click();
     });
 
