@@ -51,8 +51,9 @@ for (const file of walk(DIST_DIR).filter((path) => path.endsWith(".html"))) {
   const h1Matches = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)];
   const h1 = text(h1Matches[0]?.[1] || "");
   const visible = text(html);
+  const visibleTr = visible.toLocaleLowerCase("tr-TR");
   const isRoute = /^\/meralar\/[^/]+\/$/.test(route);
-  const draftPattern = /\b(?:ön değerlendirme|araştırma başlangıcı|pilot veri|rota dosyası)\b/i;
+  const draftPattern = /(?:ön değerlendirme|araştırma başlangıcı|pilot veri|rota dosyası)/i;
 
   if (!title) errors.push(`${route}: title eksik.`);
   if (!description) errors.push(`${route}: meta description eksik.`);
@@ -74,9 +75,9 @@ for (const file of walk(DIST_DIR).filter((path) => path.endsWith(".html"))) {
 
   if (isRoute) {
     if (draftPattern.test(visible)) errors.push(`${route}: kullanıcıya görünen içerikte taslak/editörlük dili kaldı.`);
-    if (!/\bKonum\b/i.test(visible)) errors.push(`${route}: rota sayfasında görünür Konum bilgisi yok.`);
+    if (!visibleTr.includes("konum")) errors.push(`${route}: rota sayfasında görünür Konum bilgisi yok.`);
     if (!/google\.com\/maps|openstreetmap\.org/i.test(html)) errors.push(`${route}: harita/konum bağlantısı yok.`);
-    if (!/\bHassasiyet\b/i.test(visible)) errors.push(`${route}: konum hassasiyeti kullanıcıya gösterilmiyor.`);
+    if (!visibleTr.includes("hassasiyet")) errors.push(`${route}: konum hassasiyeti kullanıcıya gösterilmiyor.`);
   }
 
   if (title.length > 72) warnings.push(`${route}: title uzun (${title.length} karakter).`);
