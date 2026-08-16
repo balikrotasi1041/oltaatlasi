@@ -2,12 +2,12 @@ import { meralar } from "../../../../data/meralar-tumu";
 
 type VisualRoute = Pick<(typeof meralar)[number], "slug" | "name" | "province" | "district" | "waterType" | "confidence">;
 
-const nationalRoutes = meralar.filter((route) => route.slug.startsWith("ulusal-"));
+const generatedRoutes = meralar.filter((route) => route.image === `/images/meralar/ulusal/${route.slug}.svg`);
 
 export const prerender = true;
 
 export function getStaticPaths() {
-  return nationalRoutes.map((route) => ({
+  return generatedRoutes.map((route) => ({
     params: { slug: route.slug },
     props: { route },
   }));
@@ -64,7 +64,7 @@ const renderSvg = (route: VisualRoute) => {
   <path d="M0 438C143 386 251 469 389 428s239-2 350 9 238-83 461-20v258H0Z" fill="url(#water)"/>
   <g fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="3"><path d="M0 506c164-52 284 42 445-4s281 42 441 0 219-32 314-9"/><path d="M0 571c155-48 291 39 455 0s276 33 422 0 220-37 323-7"/></g>
   <g transform="translate(910 76)" filter="url(#shadow)"><path d="M95 0c52 0 95 42 95 95 0 72-95 172-95 172S0 167 0 95C0 42 42 0 95 0Z" fill="#fff"/><circle cx="95" cy="95" r="39" fill="${palette.water}"/><path d="M70 101c18-22 50-22 69 0-18 22-50 22-69 0Zm69 0 26-17v34Z" fill="#fff"/></g>
-  <text x="86" y="82" fill="${palette.light}" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="23" font-weight="800" letter-spacing="3">OLTA ATLASI · ULUSAL ROTA</text>
+  <text x="86" y="82" fill="${palette.light}" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="23" font-weight="800" letter-spacing="3">OLTA ATLASI · KAYNAKLI ROTA</text>
   <text x="86" y="172" fill="#fff" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="57" font-weight="850" letter-spacing="-1">${lineMarkup}</text>
   <text x="86" y="327" fill="#d9f4f3" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="27" font-weight="650">${location}</text>
   <g transform="translate(86 358)"><rect width="310" height="52" rx="26" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".28"/><text x="24" y="34" fill="#fff" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="750">${waterType} · Güven ${route.confidence}</text></g>
@@ -78,3 +78,4 @@ export const GET = ({ props }: { props: { route: VisualRoute } }) => new Respons
     "Cache-Control": "public, max-age=31536000, immutable",
   },
 });
+

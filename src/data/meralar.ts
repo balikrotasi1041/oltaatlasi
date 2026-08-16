@@ -4,7 +4,7 @@ export type Mera = {
   waterType: "Deniz" | "Gölet" | "Göl" | "Akarsu" | "Baraj";
   region: string; summary: string; fish: string[]; methods: string[]; baits: string[];
   camping: "Uygun" | "Sınırlı" | "Uygun değil" | "Kontrol edilmeli";
-  vehicleAccess: "Kolay" | "Orta" | "Zor"; amenities: string[]; cautions: string[];
+  vehicleAccess: "Kolay" | "Orta" | "Zor" | "Kontrol edilmeli"; amenities: string[]; cautions: string[];
   lat: number; lng: number; locationPrecision: "Yaklaşık" | "Genel bölge" | "Tam";
   verification: string; updatedAt: string; publishedAt: string; confidence: "A" | "B" | "C" | "D";
   image: string; socialImage: string; navigationNote: string; shoreProfile:string;
@@ -2220,3 +2220,4 @@ export const districtRouteCounts = Object.fromEntries(
     meralar.filter((m) => m.province === province && m.district === district).length,
   ]))
 );
+
