@@ -10,6 +10,7 @@ import { istanbulKocaeliIyilestirmeleri20260812 } from "./meralar-istanbul-kocae
 import { kirklareliYeni20260813 } from "./meralar-kirklareli-2026-08-13";
 import { istanbulKocaeliIyilestirmeleri20260813Aksam } from "./meralar-istanbul-kocaeli-2026-08-13-evening";
 import { yeniMeralar20260815 } from "./meralar-duzce-bolu-karabuk-2026-08-15";
+import { yeniMeralar20260816 } from "./meralar-corum-gumushane-ordu-2026-08-16";
 import { applyProvinceConfidenceAudit } from "./meralar-province-confidence-audit-2026-08-15";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
@@ -127,6 +128,10 @@ for(const route of yeniMeralar20260815){
   if(routeMap.has(route.slug))throw new Error(`15 Ağustos yeni rotası mevcut slug ile çakışıyor: ${route.slug}`);
   routeMap.set(route.slug,route as EnrichedMera);
 }
+for(const route of yeniMeralar20260816){
+  if(routeMap.has(route.slug))throw new Error(`16 Ağustos yeni rotası mevcut slug ile çakışıyor: ${route.slug}`);
+  routeMap.set(route.slug,route as EnrichedMera);
+}
 
 const applyPatch=(slug:string,patch:Partial<Mera>)=>{
   const previous=routeMap.get(slug);
@@ -145,6 +150,8 @@ const publishedToday13=[...routeMap.values()].filter((route)=>route.publishedAt=
 if(publishedToday13.length>10)throw new Error(`13 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday13.length}`);
 const publishedToday15=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-15");
 if(publishedToday15.length>10)throw new Error(`15 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday15.length}`);
+const publishedToday16=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-16");
+if(publishedToday16.length>10)throw new Error(`16 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday16.length}`);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
