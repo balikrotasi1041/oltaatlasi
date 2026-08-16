@@ -2,13 +2,15 @@ import appWorker from "./audit-router.js";
 
 const BLOCKED_IPS = new Set([
   "185.177.72.17",
+  "185.177.72.68",
   "185.177.72.100",
   "195.178.110.199",
 ]);
 
 const SENSITIVE_PROBE_PATTERNS = [
-  /^\/(?:\.env|\.git)(?:\/|$)/i,
-  /^\/(?:backup(?:[-_.][^/]*)?\.sql|dump(?:[-_.][^/]*)?\.sql|export\.sql)$/i,
+  /^\/(?:(?:\$\([^/]{1,64}\)\/)?\.env|\.git)(?:\/|$)/i,
+  /^\/(?:backup(?:[-_.][^/]*)?\.(?:sql|tgz|zip|tar(?:\.gz)?)|dump(?:[-_.][^/]*)?\.sql|export\.sql)$/i,
+  /^\/(?:rails\/info\/properties|app\.config|web\.config)$/i,
   /^\/log4j(?:2)?\.properties$/i,
   /^\/cron\.log$/i,
   /^\/(?:pnpm-lock\.yaml|yarn\.lock|composer\.(?:json|lock)|build\.gradle|\.amplifyrc)$/i,
@@ -22,7 +24,7 @@ const SENSITIVE_PROBE_PATTERNS = [
 ];
 
 const SECURITY_POLICY_HEADER = "x-olta-security-policy";
-const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-and-404-v4";
+const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-and-404-v5";
 const CONTENT_SECURITY_POLICY = "base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests";
 const HASHED_ASSET_PATTERN = /^\/_astro\//;
 const IMAGE_ASSET_PATTERN = /^\/images\//;
