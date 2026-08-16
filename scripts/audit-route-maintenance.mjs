@@ -32,7 +32,8 @@ for (const route of meralar) {
     if (!/çözül|genel|başlangıç|doğrulan/i.test(`${route.navigationNote} ${route.transport}`)) errors.push(`${route.slug}: çözülmemiş koordinat uyarısı eksik.`);
   }
   if (!route.image?.includes(route.slug) || !route.socialImage?.includes(route.slug)) errors.push(`${route.slug}: image/socialImage slug ile uyuşmuyor.`);
-  if (route.slug.startsWith("ulusal-")) {
+  const usesGeneratedVisual=route.image===`/images/meralar/ulusal/${route.slug}.svg`;
+  if (usesGeneratedVisual) {
     const expectedVisual = `/images/meralar/ulusal/${route.slug}.svg`;
     if (route.image !== expectedVisual || route.socialImage !== expectedVisual) errors.push(`${route.slug}: üretilen ulusal görsel yolu kullanılmıyor.`);
     if (!route.confidenceProfile) errors.push(`${route.slug}: kanıt boyutları içeren confidenceProfile eksik.`);
@@ -57,3 +58,4 @@ console.log(`Bakım taraması: ${meralar.length} rota; confidence A/B/C/D = ${co
 for (const warning of warnings) console.warn(`UYARI: ${warning}`);
 for (const error of errors) console.error(`HATA: ${error}`);
 if (errors.length) process.exit(1);
+

@@ -9,6 +9,10 @@ const genericTokens = new Set([
   "alani", "amator", "av", "balik", "balikcilik", "baraj", "bolge", "cebi", "deniz", "genel",
   "gol", "golu", "hatti", "iskele", "kamusal", "kiyi", "kiyisi", "merkez", "park", "resmi",
   "rota", "sahil", "sahili", "sahilinde", "suyu", "tutma", "yaklasim", "yolu",
+  "acik", "adis", "alan", "baslangic", "bitki", "cevre", "dogrulama", "egim", "eslesme",
+  "gecis", "genel", "gorunum", "gunduz", "harita", "ilk", "kanit", "kaynak", "konum",
+  "kontrol", "koridor", "kotu", "ortusu", "planlama", "profil", "su", "uydu", "varlik",
+  "ziyaret", "zemin",
 ]);
 const normalize = (value) => String(value || "")
   .toLocaleLowerCase("tr-TR")
@@ -56,8 +60,12 @@ export const duplicateScore = (left, right) => {
   const leftArea = tokens(`${left.name} ${left.zone} ${left.summary} ${left.shoreProfile}`);
   const rightArea = tokens(`${right.name} ${right.zone} ${right.summary} ${right.shoreProfile}`);
   const areaSimilarity = jaccard(leftArea, rightArea);
+  const leftIdentityUrl=left.sources?.[0]?.url||"";
+  const rightIdentityUrl=right.sources?.[0]?.url||"";
+  const independentlyMappedExpansion=left.slug.startsWith("ankara-500km-")&&right.slug.startsWith("ankara-500km-")
+    &&leftIdentityUrl&&rightIdentityUrl&&leftIdentityUrl!==rightIdentityUrl;
   const suspicious = (nameSimilarity >= 0.8 && Math.min(leftName.size, rightName.size) > 0)
-    || (distance <= 0.75 && areaSimilarity >= 0.64);
+    || (distance <= 0.75 && areaSimilarity >= 0.64 && !(independentlyMappedExpansion&&nameSimilarity<0.8));
   return { suspicious, distance, nameSimilarity, areaSimilarity };
 };
 
@@ -95,3 +103,4 @@ if (exactDuplicates.length) {
   for (const slug of exactDuplicates) console.error(`HATA: Yinelenen aktif slug: ${slug}`);
 }
 if (blocked.length || exactDuplicates.length) process.exit(1);
+

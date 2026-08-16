@@ -11,6 +11,7 @@ import { kirklareliYeni20260813 } from "./meralar-kirklareli-2026-08-13";
 import { istanbulKocaeliIyilestirmeleri20260813Aksam } from "./meralar-istanbul-kocaeli-2026-08-13-evening";
 import { yeniMeralar20260815 } from "./meralar-duzce-bolu-karabuk-2026-08-15";
 import { yeniMeralar20260816 } from "./meralar-corum-gumushane-ordu-2026-08-16";
+import { yeniMeralarAnkara500Km20260817 } from "./meralar-ankara-500km-2026-08-17";
 import { applyProvinceConfidenceAudit } from "./meralar-province-confidence-audit-2026-08-15";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
@@ -142,6 +143,10 @@ for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260811)
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260812))applyPatch(slug,patch);
 for(const [slug,patch] of Object.entries(istanbulKocaeliIyilestirmeleri20260813Aksam))applyPatch(slug,patch);
 export const provinceConfidenceAuditStats=applyProvinceConfidenceAudit(routeMap);
+for(const route of yeniMeralarAnkara500Km20260817){
+  if(routeMap.has(route.slug))throw new Error(`Ankara 500 km genişlemesi mevcut slug ile çakışıyor: ${route.slug}`);
+  routeMap.set(route.slug,route);
+}
 const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
 const publishedToday12=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-12");
@@ -181,3 +186,4 @@ export const fishCoverageStats={routeCount:meralar.length,routesWithFish:meralar
 export const zonesByProvince=Object.fromEntries(provinces.map((p)=>[p,[...new Set(meralar.filter((m)=>m.province===p).map((m)=>m.zone))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const districtRouteCounts=Object.fromEntries(provinces.flatMap((p)=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter((m)=>m.province===p&&m.district===d).length])));
 export const districtIndexableRouteCounts=Object.fromEntries(provinces.flatMap((p)=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter((m)=>m.province===p&&m.district===d&&m.confidence!=="D").length])));
+
