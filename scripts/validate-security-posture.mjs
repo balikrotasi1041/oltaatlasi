@@ -14,6 +14,16 @@ expect(gate.includes("decodeURIComponent"), "Security gate encoded probe normali
 expect(gate.includes('request.method === "TRACE"'), "Security gate TRACE isteklerini reddetmelidir.");
 expect(gate.includes('url.protocol === "http:"'), "Security gate HTTP→HTTPS korumasını içermelidir.");
 expect(gate.includes("CF-Connecting-IP"), "Security gate istemci IP'sini Cloudflare başlığından okumalıdır.");
+expect(gate.includes('"185.177.72.68"'), "Doğrulanmış tarayıcı 185.177.72.68 security gate blocklist içinde olmalıdır.");
+for (const signature of ["rails\\/info\\/properties", "app\\.config", "backup", "tgz", "\\$\\("]) {
+  expect(gate.includes(signature), `Security gate yeni probe imzasını korumalıdır: ${signature}`);
+}
+
+const router = readFileSync("worker/security-router.js", "utf8");
+expect(router.includes('"185.177.72.68"'), "Doğrulanmış tarayıcı 185.177.72.68 downstream blocklist içinde de olmalıdır.");
+expect(router.includes("rails\\/info\\/properties"), "Downstream probe guard Rails bilgi taramasını engellemelidir.");
+expect(router.includes("app\\.config"), "Downstream probe guard App.config taramasını engellemelidir.");
+expect(router.includes("tgz"), "Downstream probe guard backup.tgz benzeri arşiv taramalarını engellemelidir.");
 
 const ignore = readFileSync(".gitignore", "utf8").split(/\r?\n/);
 for (const entry of [".env", ".dev.vars", ".wrangler/", "*.pem", "*.key"]) {
@@ -32,4 +42,4 @@ if (errors.length) {
   for (const error of errors) console.error(`GÜVENLİK HATASI: ${error}`);
   process.exit(1);
 }
-console.log("Güvenlik duruşu doğrulandı: Worker yüzeyi, secret ignore kuralları ve GitHub Actions pinleri beklenen durumda.");
+console.log("Güvenlik duruşu doğrulandı: Worker yüzeyi, doğrulanmış tarayıcı blokları, probe korumaları, secret ignore kuralları ve GitHub Actions pinleri beklenen durumda.");
