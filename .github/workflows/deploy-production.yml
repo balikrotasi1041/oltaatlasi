@@ -56,6 +56,11 @@ jobs:
         run: |
           set -euo pipefail
           url="https://oltaatlasi.com/?rum-deploy-check=${GITHUB_SHA}"
+          expected_security_policy=$(sed -n 's/^const SECURITY_POLICY_VALUE = "\([^"]*\)";$/\1/p' worker/security-router.js)
+          if [ -z "$expected_security_policy" ]; then
+            echo "::error::Beklenen güvenlik politikası worker/security-router.js içinden okunamadı."
+            exit 1
+          fi
           home_ok=0
 
           for attempt in $(seq 1 20); do
@@ -65,7 +70,7 @@ jobs:
               -D /tmp/rum-headers.txt "$url" -o /tmp/rum-home.html
 
             if grep -q '<title>' /tmp/rum-home.html \
-              && grep -Eiq '^x-olta-security-policy:[[:space:]]*ip-blocklist-probe-guard-browser-headers-and-404-v4' /tmp/rum-headers.txt \
+              && grep -Fiq "x-olta-security-policy: ${expected_security_policy}" /tmp/rum-headers.txt \
               && grep -Eiq '^strict-transport-security:' /tmp/rum-headers.txt; then
               home_ok=1
               break
