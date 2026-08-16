@@ -87,3 +87,10 @@ En yakın kapsam dışı iller: Tunceli (509 km), Gümüşhane (510.7 km), Şanl
 | Elazığ | 491.3 km | 15/15 |
 
 Toplam: **870/870**.
+
+## Yayın izlenebilirliği
+
+- Veri kapsamı ve kalite kontrolleri: PR #96, squash commit `2a17327a5b083bc042325a4c5822b0331443c09b`.
+- Canlı doğrulama sürüm eşleştirmesi: PR #97, squash commit `49abc804ee222d17716de5d1b467b23460661f27`.
+- Mevcut 405 ulusal rota için otomatik araştırma önbelleği aynı yayın zincirinde yenilendi: `99d7b0a9dfb901f6f83cd2f72a30c0c1d74f2e6b`.
+- Canlı örnek doğrulama: `/meralar/ankara-500km-ankara-mogan-golu/` HTTP 200 ve ana sayfa toplamı 1.407 rota.
