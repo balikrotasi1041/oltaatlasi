@@ -5,6 +5,7 @@ const BLOCKED_IPS = new Set([
   "185.177.72.17",
   "185.177.72.68",
   "216.73.216.79",
+  "216.73.216.200",
   "91.92.47.81",
   "157.143.3.35",
 ]);
@@ -15,7 +16,7 @@ const SENSITIVE_SCAN_PATTERNS = [
   /^\/(?:phpinfo\.php|info\.php|server-status|appsettings(?:\.[^/]+)?\.json|app\.config|web\.config)$/i,
   /^\/(?:vendor\/phpunit(?:\/|$)|phpmyadmin(?:\/|$)|adminer(?:\.php|\/|$)|\.DS_Store$)/i,
   /^\/(?:backup(?:[-_.][^/]*)?\.(?:sql|tgz|zip|tar(?:\.gz)?)|dump(?:[-_.][^/]*)?\.sql|export\.sql)$/i,
-  /^\/(?:rails\/info\/properties|log4j(?:2)?\.properties|cron\.log|pnpm-lock\.yaml|yarn\.lock|composer\.(?:json|lock)|build\.gradle|\.amplifyrc)$/i,
+  /^\/(?:rails\/info\/properties|jenkinsfile|log4j(?:2)?\.properties|cron\.log|pnpm-lock\.yaml|yarn\.lock|composer\.(?:json|lock)|build\.gradle|\.amplifyrc)$/i,
   /^\/(?:horizon\/api(?:\/|$)|rest\/executions(?:\/|$)|webhook-waiting(?:\/|$)|v1\.40\/swarm(?:\/|$))/i,
 ];
 
