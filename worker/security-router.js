@@ -6,6 +6,8 @@ const BLOCKED_IPS = new Set([
   "185.177.72.100",
   "195.178.110.199",
   "216.73.216.200",
+  "51.68.234.131",
+  "2a01:4f9:4a:2aa5::2",
 ]);
 
 const SENSITIVE_PROBE_PATTERNS = [
@@ -25,7 +27,7 @@ const SENSITIVE_PROBE_PATTERNS = [
 ];
 
 const SECURITY_POLICY_HEADER = "x-olta-security-policy";
-const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-and-404-v6";
+const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-and-404-v7";
 const CONTENT_SECURITY_POLICY = "base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests";
 const HASHED_ASSET_PATTERN = /^\/_astro\//;
 const IMAGE_ASSET_PATTERN = /^\/images\//;
