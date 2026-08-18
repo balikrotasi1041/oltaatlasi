@@ -13,7 +13,9 @@ import { yeniMeralar20260815 } from "./meralar-duzce-bolu-karabuk-2026-08-15";
 import { yeniMeralar20260816 } from "./meralar-corum-gumushane-ordu-2026-08-16";
 import { yeniMeralarAnkara500Km20260817 } from "./meralar-ankara-500km-2026-08-17";
 import { applyProvinceConfidenceAudit } from "./meralar-province-confidence-audit-2026-08-15";
-import { applyGunlukBakim20260818, gunlukBakimHedefleri20260818, yeniMeralar20260818 } from "./meralar-gunluk-2026-08-18";
+import { applyGunlukBakim20260818, gunlukBakimHedefleri20260818 } from "./meralar-gunluk-2026-08-18";
+import { yeniMeralar20260818 } from "./meralar-gunluk-yeni-2026-08-18";
+import { applyGunlukSonuc20260818 } from "./meralar-gunluk-sonuc-2026-08-18";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -151,6 +153,7 @@ for(const route of yeniMeralarAnkara500Km20260817){
 
 export const gunlukBakimStats20260818=applyGunlukBakim20260818(routeMap);
 if(gunlukBakimStats20260818.reviewed!==17||gunlukBakimHedefleri20260818.length!==17)throw new Error(`18 Ağustos bakım kotası 17 değil: ${gunlukBakimStats20260818.reviewed}/${gunlukBakimHedefleri20260818.length}`);
+applyGunlukSonuc20260818(routeMap);
 for(const route of yeniMeralar20260818){
   if(routeMap.has(route.slug))throw new Error(`18 Ağustos yeni rotası mevcut slug ile çakışıyor: ${route.slug}`);
   routeMap.set(route.slug,route);
