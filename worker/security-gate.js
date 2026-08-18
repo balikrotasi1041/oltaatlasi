@@ -8,6 +8,8 @@ const BLOCKED_IPS = new Set([
   "216.73.216.200",
   "91.92.47.81",
   "157.143.3.35",
+  "51.68.234.131",
+  "2a01:4f9:4a:2aa5::2",
 ]);
 
 const SENSITIVE_SCAN_PATTERNS = [
