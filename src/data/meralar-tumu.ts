@@ -13,6 +13,7 @@ import { yeniMeralar20260815 } from "./meralar-duzce-bolu-karabuk-2026-08-15";
 import { yeniMeralar20260816 } from "./meralar-corum-gumushane-ordu-2026-08-16";
 import { yeniMeralarAnkara500Km20260817 } from "./meralar-ankara-500km-2026-08-17";
 import { applyProvinceConfidenceAudit } from "./meralar-province-confidence-audit-2026-08-15";
+import { applyGunlukBakim20260818, gunlukBakimHedefleri20260818, yeniMeralar20260818 } from "./meralar-gunluk-2026-08-18";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -147,6 +148,14 @@ for(const route of yeniMeralarAnkara500Km20260817){
   if(routeMap.has(route.slug))throw new Error(`Ankara 500 km genişlemesi mevcut slug ile çakışıyor: ${route.slug}`);
   routeMap.set(route.slug,route);
 }
+
+export const gunlukBakimStats20260818=applyGunlukBakim20260818(routeMap);
+if(gunlukBakimStats20260818.reviewed!==17||gunlukBakimHedefleri20260818.length!==17)throw new Error(`18 Ağustos bakım kotası 17 değil: ${gunlukBakimStats20260818.reviewed}/${gunlukBakimHedefleri20260818.length}`);
+for(const route of yeniMeralar20260818){
+  if(routeMap.has(route.slug))throw new Error(`18 Ağustos yeni rotası mevcut slug ile çakışıyor: ${route.slug}`);
+  routeMap.set(route.slug,route);
+}
+
 const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
 const publishedToday12=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-12");
@@ -157,6 +166,8 @@ const publishedToday15=[...routeMap.values()].filter((route)=>route.publishedAt=
 if(publishedToday15.length>10)throw new Error(`15 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday15.length}`);
 const publishedToday16=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-16");
 if(publishedToday16.length>10)throw new Error(`16 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday16.length}`);
+const publishedToday18=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-18");
+if(publishedToday18.length!==3)throw new Error(`18 Ağustos günlük yeni kayıt hedefi 3 olmalı: ${publishedToday18.length}`);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
@@ -186,4 +197,3 @@ export const fishCoverageStats={routeCount:meralar.length,routesWithFish:meralar
 export const zonesByProvince=Object.fromEntries(provinces.map((p)=>[p,[...new Set(meralar.filter((m)=>m.province===p).map((m)=>m.zone))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const districtRouteCounts=Object.fromEntries(provinces.flatMap((p)=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter((m)=>m.province===p&&m.district===d).length])));
 export const districtIndexableRouteCounts=Object.fromEntries(provinces.flatMap((p)=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter((m)=>m.province===p&&m.district===d&&m.confidence!=="D").length])));
-
