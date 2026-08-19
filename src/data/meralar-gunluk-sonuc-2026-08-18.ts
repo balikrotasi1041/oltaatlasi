@@ -1,4 +1,6 @@
 import type { EnrichedMera } from "./meralar-tumu-core";
+import { applyGunlukBakim20260819, gunlukBakimHedefleri20260819 } from "./meralar-gunluk-2026-08-19";
+import { yeniMeralar20260819 } from "./meralar-gunluk-yeni-2026-08-19";
 
 const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-acildi";
 const yesilVadi="https://www.kirikkale.gov.tr/vali-sayin-haktankacmaz-yesil-vadi-projesini-inceledi";
@@ -30,4 +32,13 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
     ...pertek,
     longIntro:["Keban Baraj Gölü'nün Pertek 5. Bölge kıyısı, Tunceli İl Tarım ve Orman Müdürlüğünün DSİ görüşüyle belirlediği amatör avcılık yapılabilecek kıyı sınırları sayesinde Güven B düzeyinde resmî kullanım kanıtına sahiptir.","Güven B, Pertek kıyısının tamamının serbest olduğu anlamına gelmez. Korluca/Kolonkaya-Zümek Köprüsü ve Eski Singeç Köprüsü arasında resmî metinde tanımlanan sınırlar, güncel saha tabelaları, dönem kuralları ve özel/işletme alanları birlikte dikkate alınmalıdır."],
   });
+
+  const stats=applyGunlukBakim20260819(routeMap);
+  if(stats.reviewed!==17||gunlukBakimHedefleri20260819.length!==17)throw new Error(`19 Ağustos bakım kotası 17 değil: ${stats.reviewed}/${gunlukBakimHedefleri20260819.length}`);
+  for(const route of yeniMeralar20260819){
+    if(routeMap.has(route.slug))throw new Error(`19 Ağustos yeni rotası mevcut slug ile çakışıyor: ${route.slug}`);
+    routeMap.set(route.slug,route);
+  }
+  const publishedToday19=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-19");
+  if(publishedToday19.length!==3)throw new Error(`19 Ağustos günlük yeni kayıt hedefi 3 olmalı: ${publishedToday19.length}`);
 };
