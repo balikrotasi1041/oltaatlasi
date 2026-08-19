@@ -32,8 +32,6 @@ export const gunlukBakimIlk5Gerekce20260819=[
 const teblig:ResearchSource={label:"Tarım ve Orman Bakanlığı - 6/2 Amatör Amaçlı Su Ürünleri Avcılığı",url:"https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",note:"Güncel dönem, tür, boy, adet, takım ve alan hükümleri için ana resmî çerçevedir; rota özelinde sürekli kıyı izni oluşturmaz."};
 const aksaray:ResearchSource={label:"Aksaray İl Tarım - Çiftevi Göleti balıklandırması",url:"https://aksaray.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=047eafe4-6858-4411-ba41-7573a582c389&TermSetId=105e597d-1fa9-4cfe-9c75-ca8d0ec3b992&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=419%2FAksarayin-",note:"Çiftevi Göleti'ne 10.000 sazan yavrusu bırakıldığını rota özelinde kaydeder. Sayfadaki tarihsel boy tavsiyesi güncel mevzuat yerine kullanılmaz."};
 const kastamonu:ResearchSource={label:"Kastamonu İl Tarım - Devrekâni Çiğdem Göleti balıklandırması",url:"https://kastamonu.tarimorman.gov.tr/Haber/1053/Ilimizde-Goletler-Baliklandirildi",note:"2018 programında Devrekâni Çiğdem Göleti'ne 20.000 aynalı/pullu sazan yavrusu bırakıldığını rota özelinde kaydeder."};
-const adiyaman:ResearchSource={label:"Adıyaman İl Tarım - 2024 göl ve gölet balıklandırması",url:"https://adiyaman.tarimorman.gov.tr/Haber/773/Gol-Ve-Goletlerimizdeki-Balik-Populasyonunu-Arttiriyoruz",note:"Atatürk Baraj Gölü ile Karahöyük dahil adı verilen göletlerin 2024 sazan balıklandırma programında bulunduğunu açıklar."};
-const ataturkRecent:ResearchSource={label:"Adıyaman İl Tarım - Atatürk Barajı 2024 sazan ve şabut",url:"https://adiyaman.tarimorman.gov.tr/Haber/780/Ataturk-Baraji-Golune-7-Milyon-Balik-Yavrusu-Birakildi",note:"Atatürk Baraj Gölü'ne 2024'te 4,5 milyon sazan ve 2,55 milyon şabut yavrusu bırakıldığını rota özelinde açıklar."};
 const unique=<T extends {url:string}>(items:T[])=>[...new Map(items.map((x)=>[x.url,x])).values()];
 
 const upgradeToC=(route:EnrichedMera,source:ResearchSource,fishName="Sazan"):EnrichedMera=>({
@@ -58,9 +56,7 @@ export const applyGunlukBakim20260819=(routeMap:Map<string,EnrichedMera>)=>{
 
   routeMap.set("ulusal-aksaray-ciftevi-baraj-golu",upgradeToC(routeMap.get("ulusal-aksaray-ciftevi-baraj-golu")!,aksaray));
   routeMap.set("ulusal-kastamonu-cigdem-baraj-golu-kastamonu",upgradeToC(routeMap.get("ulusal-kastamonu-cigdem-baraj-golu-kastamonu")!,kastamonu));
-  const ataturk=upgradeToC(routeMap.get("ankara-500km-adiyaman-ataturk-baraj-golu")!,ataturkRecent);
-  routeMap.set("ankara-500km-adiyaman-ataturk-baraj-golu",{...ataturk,sources:unique([...(ataturk.sources||[]),adiyaman])});
-  routeMap.set("ankara-500km-adiyaman-karahuyuk-goleti",upgradeToC(routeMap.get("ankara-500km-adiyaman-karahuyuk-goleti")!,adiyaman));
 
-  return {reviewed:17,strengthened:4,raised:4,unchanged:13,raisedSlugs:["ulusal-aksaray-ciftevi-baraj-golu","ulusal-kastamonu-cigdem-baraj-golu-kastamonu","ankara-500km-adiyaman-ataturk-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti"],unchangedSlugs:gunlukBakimHedefleri20260819.filter((slug)=>!["ulusal-aksaray-ciftevi-baraj-golu","ulusal-kastamonu-cigdem-baraj-golu-kastamonu","ankara-500km-adiyaman-ataturk-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti"].includes(slug))};
+  const raisedSlugs=["ulusal-aksaray-ciftevi-baraj-golu","ulusal-kastamonu-cigdem-baraj-golu-kastamonu"] as const;
+  return {reviewed:17,strengthened:2,raised:2,unchanged:15,raisedSlugs,unchangedSlugs:gunlukBakimHedefleri20260819.filter((slug)=>!raisedSlugs.includes(slug as typeof raisedSlugs[number]))};
 };
