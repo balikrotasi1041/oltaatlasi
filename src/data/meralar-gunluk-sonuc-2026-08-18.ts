@@ -1,4 +1,5 @@
 import type { EnrichedMera } from "./meralar-tumu-core";
+import { applyGunluk20260820 } from "./meralar-gunluk-2026-08-20";
 
 const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-acildi";
 const yesilVadi="https://www.kirikkale.gov.tr/vali-sayin-haktankacmaz-yesil-vadi-projesini-inceledi";
@@ -30,4 +31,6 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
     ...pertek,
     longIntro:["Keban Baraj Gölü'nün Pertek 5. Bölge kıyısı, Tunceli İl Tarım ve Orman Müdürlüğünün DSİ görüşüyle belirlediği amatör avcılık yapılabilecek kıyı sınırları sayesinde Güven B düzeyinde resmî kullanım kanıtına sahiptir.","Güven B, Pertek kıyısının tamamının serbest olduğu anlamına gelmez. Korluca/Kolonkaya-Zümek Köprüsü ve Eski Singeç Köprüsü arasında resmî metinde tanımlanan sınırlar, güncel saha tabelaları, dönem kuralları ve özel/işletme alanları birlikte dikkate alınmalıdır."],
   });
+
+  applyGunluk20260820(routeMap);
 };
