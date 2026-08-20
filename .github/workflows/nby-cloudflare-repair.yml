@@ -1,0 +1,165 @@
+name: Repair NBY Cloudflare build
+
+on:
+  push:
+    branches:
+      - ops/nby-cloudflare-repair
+    paths:
+      - .github/workflows/nby-cloudflare-repair.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Inspect and repair Cloudflare Workers Builds trigger
+        shell: bash
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID_SECRET: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CF_ACCOUNT_ID_FALLBACK: 5babf073b0ff52a7b1f5a4626301ec82
+          TARGET_WORKER: nereyebasvurulur
+          TARGET_BRANCH: main
+          TARGET_COMMIT: 7b9cb4355e18af618e9419dbdb505a88fe2f97f0
+        run: |
+          set -uo pipefail
+          mkdir -p _ops
+          STATUS=_ops/nby-cloudflare-repair-status.md
+          ACCOUNT_ID="${CF_ACCOUNT_ID_SECRET:-$CF_ACCOUNT_ID_FALLBACK}"
+          NOW=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+
+          cat > "$STATUS" <<EOF
+          # Nereye Başvurulur Cloudflare repair status
+
+          - Run: ${NOW}
+          - Target worker: ${TARGET_WORKER}
+          - Target branch: ${TARGET_BRANCH}
+          - Target commit: ${TARGET_COMMIT}
+          EOF
+
+          if [ -z "${CF_TOKEN:-}" ]; then
+            echo '- Result: FAILED' >> "$STATUS"
+            echo '- Reason: CLOUDFLARE_API_TOKEN secret is not available in the Olta Atlası repository.' >> "$STATUS"
+            exit 0
+          fi
+
+          api_get() {
+            local url="$1" out="$2"
+            curl --silent --show-error \
+              -H "Authorization: Bearer ${CF_TOKEN}" \
+              -H 'Content-Type: application/json' \
+              -o "$out" -w '%{http_code}' "$url"
+          }
+
+          SCRIPTS_HTTP=$(api_get "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/workers/scripts" /tmp/scripts.json || true)
+          if [ "$SCRIPTS_HTTP" != '200' ] || [ "$(jq -r '.success // false' /tmp/scripts.json 2>/dev/null)" != 'true' ]; then
+            MSG=$(jq -r '[.errors[]?.message] | join("; ")' /tmp/scripts.json 2>/dev/null || true)
+            echo '- Result: FAILED' >> "$STATUS"
+            echo "- Workers Scripts API HTTP: ${SCRIPTS_HTTP}" >> "$STATUS"
+            echo "- Reason: ${MSG:-Cloudflare API token could not list Workers.}" >> "$STATUS"
+            exit 0
+          fi
+
+          WORKER_TAG=$(jq -r --arg id "$TARGET_WORKER" '.result[]? | select(.id == $id) | .tag' /tmp/scripts.json | head -n1)
+          if [ -z "$WORKER_TAG" ] || [ "$WORKER_TAG" = 'null' ]; then
+            echo '- Result: FAILED' >> "$STATUS"
+            echo '- Reason: Target Worker was not found in this Cloudflare account.' >> "$STATUS"
+            exit 0
+          fi
+          echo '- Worker discovered: yes' >> "$STATUS"
+
+          TRIG_HTTP=$(api_get "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/builds/workers/${WORKER_TAG}/triggers" /tmp/triggers.json || true)
+          if [ "$TRIG_HTTP" != '200' ] || [ "$(jq -r '.success // false' /tmp/triggers.json 2>/dev/null)" != 'true' ]; then
+            MSG=$(jq -r '[.errors[]?.message] | join("; ")' /tmp/triggers.json 2>/dev/null || true)
+            echo '- Result: FAILED' >> "$STATUS"
+            echo "- Workers Builds API HTTP: ${TRIG_HTTP}" >> "$STATUS"
+            echo "- Reason: ${MSG:-Cloudflare token lacks Workers Builds access or the build connection is unavailable.}" >> "$STATUS"
+            exit 0
+          fi
+
+          TRIGGER_UUID=$(jq -r --arg branch "$TARGET_BRANCH" '.result[]? | select((.branch_includes // []) | index($branch)) | .trigger_uuid' /tmp/triggers.json | head -n1)
+          if [ -z "$TRIGGER_UUID" ] || [ "$TRIGGER_UUID" = 'null' ]; then
+            echo '- Result: FAILED' >> "$STATUS"
+            echo '- Reason: No production trigger including main exists. Recreating a trigger requires a Workers Builds user-scoped token/build-token pair.' >> "$STATUS"
+            echo '- Existing triggers:' >> "$STATUS"
+            jq -r '.result[]? | "  - \(.trigger_name // "unnamed"): includes=\((.branch_includes // [])|join(",")); excludes=\((.branch_excludes // [])|join(","))"' /tmp/triggers.json >> "$STATUS" 2>/dev/null || true
+            exit 0
+          fi
+
+          PATCH_HTTP=$(curl --silent --show-error \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H 'Content-Type: application/json' \
+            -X PATCH \
+            -d '{"branch_includes":["main"],"branch_excludes":[],"path_includes":["*"],"path_excludes":[],"deploy_command":"npx wrangler deploy","root_directory":"/"}' \
+            -o /tmp/patch.json -w '%{http_code}' \
+            "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/builds/triggers/${TRIGGER_UUID}" || true)
+
+          if [ "$PATCH_HTTP" != '200' ] || [ "$(jq -r '.success // false' /tmp/patch.json 2>/dev/null)" != 'true' ]; then
+            MSG=$(jq -r '[.errors[]?.message] | join("; ")' /tmp/patch.json 2>/dev/null || true)
+            echo '- Result: FAILED' >> "$STATUS"
+            echo "- Trigger patch HTTP: ${PATCH_HTTP}" >> "$STATUS"
+            echo "- Reason: ${MSG:-Production trigger could not be updated.}" >> "$STATUS"
+            exit 0
+          fi
+          echo '- Production trigger normalized: yes' >> "$STATUS"
+
+          BUILD_HTTP=$(curl --silent --show-error \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H 'Content-Type: application/json' \
+            -X POST \
+            -d "{\"branch\":\"${TARGET_BRANCH}\",\"commit_hash\":\"${TARGET_COMMIT}\"}" \
+            -o /tmp/build.json -w '%{http_code}' \
+            "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/builds/triggers/${TRIGGER_UUID}/builds" || true)
+
+          if [ "$BUILD_HTTP" != '200' ] && [ "$BUILD_HTTP" != '201' ] && [ "$BUILD_HTTP" != '202' ]; then
+            MSG=$(jq -r '[.errors[]?.message] | join("; ")' /tmp/build.json 2>/dev/null || true)
+            echo '- Result: FAILED' >> "$STATUS"
+            echo "- Manual build HTTP: ${BUILD_HTTP}" >> "$STATUS"
+            echo "- Reason: ${MSG:-Manual build could not be started.}" >> "$STATUS"
+            exit 0
+          fi
+
+          BUILD_UUID=$(jq -r '.result.build_uuid // .result.uuid // "unknown"' /tmp/build.json 2>/dev/null)
+          BUILD_STATUS=$(jq -r '.result.status // "queued"' /tmp/build.json 2>/dev/null)
+          echo "- Build UUID: ${BUILD_UUID}" >> "$STATUS"
+          echo "- Initial build status: ${BUILD_STATUS}" >> "$STATUS"
+
+          LIVE=0
+          for attempt in $(seq 1 24); do
+            if curl --fail --silent --show-error --location --max-time 12 \
+              "https://nereyebasvurulur.com/?verify-deploy=${TARGET_COMMIT}&attempt=${attempt}" \
+              -o /tmp/nby-home.html; then
+              if grep -Fq '5Vmhgh-JkZi7cm_gjUHEwjNymv-Sds3VmXmLpmDp3KU' /tmp/nby-home.html \
+                && grep -Fq '3fa0665bc8ba3bb6' /tmp/nby-home.html; then
+                LIVE=1
+                echo "- Live verification: SUCCESS on attempt ${attempt}" >> "$STATUS"
+                break
+              fi
+            fi
+            sleep 10
+          done
+
+          if [ "$LIVE" -eq 1 ]; then
+            echo '- Result: SUCCESS' >> "$STATUS"
+            echo '- Google verification meta: live' >> "$STATUS"
+            echo '- Yandex verification meta: live' >> "$STATUS"
+          else
+            echo '- Result: BUILD_TRIGGERED_BUT_LIVE_NOT_CONFIRMED' >> "$STATUS"
+            echo '- Reason: Build was accepted, but the public homepage did not expose both verification tokens within the polling window.' >> "$STATUS"
+          fi
+
+      - name: Record sanitized result
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'nby-cloudflare-repair-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add _ops/nby-cloudflare-repair-status.md
+          git commit -m 'ops: record NBY Cloudflare repair result' || exit 0
+          git push
