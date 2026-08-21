@@ -75,7 +75,7 @@ export const applyStabilizasyon20260821=(routeMap:Map<string,EnrichedMera>)=>{
     });
   }
 
-  return {
+  const stats={
     reviewed:unique.length,
     ctrReviewed:ctrFirsatlari20260821.length,
     dReviewed:dKaliteHedefleri20260821.length,
@@ -84,4 +84,6 @@ export const applyStabilizasyon20260821=(routeMap:Map<string,EnrichedMera>)=>{
     newRoutes:0,
     remainingD:[...routeMap.values()].filter((route)=>route.confidence==="D").length,
   };
+  console.log("[stabilizasyon-2026-08-21]",JSON.stringify(stats));
+  return stats;
 };
