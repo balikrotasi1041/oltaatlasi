@@ -13,7 +13,7 @@ export const ctrFirsatlari20260821 = [
 
 export const dKaliteHedefleri20260821 = [
   "ulusal-erzurum-demirdoven-baraj-golu",
-  "ulusal-erzurum-kuzgun-baraj-golu-erzurum",
+  "ulusal-erzurum-kuzgun-baraj-golu",
   "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
   "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
   "ulusal-erzurum-olur-baraj-golu",
