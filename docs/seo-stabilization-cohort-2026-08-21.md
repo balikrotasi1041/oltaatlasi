@@ -24,7 +24,7 @@ Nergizlik, Kozan ve Malatya Kapıkaya için kullanıcıya gösterilen konum katm
 ## 9 Güven D kalite hedefi
 
 1. `ulusal-erzurum-demirdoven-baraj-golu`
-2. `ulusal-erzurum-kuzgun-baraj-golu-erzurum`
+2. `ulusal-erzurum-kuzgun-baraj-golu`
 3. `ulusal-erzurum-kapikaya-baraj-golu-erzurum`
 4. `ulusal-erzurum-koycegiz-baraj-golu-erzurum`
 5. `ulusal-erzurum-olur-baraj-golu`
