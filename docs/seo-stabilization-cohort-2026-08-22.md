@@ -33,9 +33,11 @@ Koyunbaba bu turda yeni kohorta alındı. Önceki günün 8'lisini körlemesine 
 4. `ulusal-zonguldak-filyos-nehri-zonguldak-hatti`
 5. `ulusal-cankiri-karadere-baraj-golu-cankiri`
 6. `ulusal-erzincan-firat-nehri-kemaliye-hatti`
-7. `ulusal-adiyaman-ataturk-baraj-golu`
+7. `ulusal-bayburt-lori-deresi`
 8. `ulusal-adiyaman-karahuyuk-goleti`
 9. `ulusal-adiyaman-sirimtas-baraj-golu`
+
+İlk CI denemesinde `ulusal-adiyaman-ataturk-baraj-golu` hedefinin aktif koleksiyonda olmadığı kalite kapısı tarafından yakalandı. Hedef zorla geri getirilmedi; aktif ve halen Güven D olan `ulusal-bayburt-lori-deresi` ile değiştirildi.
 
 ## Gerçek veri iyileştirmeleri
 
