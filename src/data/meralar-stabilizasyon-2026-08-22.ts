@@ -18,7 +18,7 @@ export const dKaliteHedefleri20260822 = [
   "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
   "ulusal-cankiri-karadere-baraj-golu-cankiri",
   "ulusal-erzincan-firat-nehri-kemaliye-hatti",
-  "ulusal-adiyaman-ataturk-baraj-golu",
+  "ulusal-bayburt-lori-deresi",
   "ulusal-adiyaman-karahuyuk-goleti",
   "ulusal-adiyaman-sirimtas-baraj-golu",
 ] as const;
