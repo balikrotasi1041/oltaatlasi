@@ -1,6 +1,8 @@
 name: Deploy production
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -13,7 +15,9 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
+    env:
+      PUBLIC_SITE_URL: https://oltaatlasi.com
     steps:
       - name: Checkout
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -27,10 +31,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate production data
+        run: npm run validate:data
+
+      - name: Stamp exact build SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public/__deploy
+          printf '%s\n' "$GITHUB_SHA" > public/__deploy/version.txt
+
       - name: Build
-        env:
-          PUBLIC_SITE_URL: https://oltaatlasi.com
         run: npm run build
+
+      - name: Dry deploy
+        run: npm run deploy:dry
 
       - name: Deploy to Cloudflare
         id: deploy
@@ -38,118 +53,73 @@ jobs:
           CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: |
-          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "Current wrangler.jsonc ile doğrudan Worker deploy ediliyor."
-            npx wrangler deploy
-          elif [ -n "$CLOUDFLARE_DEPLOY_HOOK" ]; then
-            curl --fail --show-error --silent --request POST "$CLOUDFLARE_DEPLOY_HOOK"
-            echo "Cloudflare deploy hook tetiklendi."
-          else
-            echo "mode=cloudflare-git" >> "$GITHUB_OUTPUT"
-            echo "### Dağıtım modu: Cloudflare Git entegrasyonu" >> "$GITHUB_STEP_SUMMARY"
-            echo "Doğrudan dağıtım secret'ı yok; main dalına bağlı Cloudflare Git dağıtımı esas alındı. Canlı uç noktalar aşağıdaki adımda doğrulanacak." >> "$GITHUB_STEP_SUMMARY"
-          fi
-
-      - name: Verify production after deploy
         shell: bash
         run: |
           set -euo pipefail
-          url="https://oltaatlasi.com/?rum-deploy-check=${GITHUB_SHA}"
-          expected_security_policy=$(sed -n 's/^const SECURITY_POLICY_VALUE = "\([^"]*\)";$/\1/p' worker/security-router.js)
-          if [ -z "$expected_security_policy" ]; then
-            echo "::error::Beklenen güvenlik politikası worker/security-router.js içinden okunamadı."
+          if [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "mode=wrangler" >> "$GITHUB_OUTPUT"
+            echo "Cloudflare Workers'a doğrudan Wrangler deploy başlatılıyor."
+            npx wrangler deploy
+          elif [ -n "$CLOUDFLARE_DEPLOY_HOOK" ]; then
+            echo "mode=hook" >> "$GITHUB_OUTPUT"
+            curl --fail --show-error --silent --request POST "$CLOUDFLARE_DEPLOY_HOOK"
+            echo "Cloudflare deploy hook tetiklendi."
+          else
+            echo "::error::Production deploy yapılandırılmamış. CLOUDFLARE_API_TOKEN veya CLOUDFLARE_DEPLOY_HOOK GitHub Actions secret'larından biri zorunludur. Pasif Cloudflare Git entegrasyonu artık başarılı deploy sayılmayacak."
             exit 1
           fi
-          home_ok=0
 
-          for attempt in $(seq 1 20); do
-            curl --fail --show-error --silent --location \
-              -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
-              -H 'Accept: text/html,application/xhtml+xml' \
-              -D /tmp/rum-headers.txt "$url" -o /tmp/rum-home.html
+      - name: Verify exact production release
+        shell: bash
+        env:
+          DEPLOY_MODE: ${{ steps.deploy.outputs.mode }}
+        run: |
+          set -euo pipefail
+          ua='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36'
+          release_ok=0
 
-            if grep -q '<title>' /tmp/rum-home.html \
-              && grep -Fiq "x-olta-security-policy: ${expected_security_policy}" /tmp/rum-headers.txt \
-              && grep -Eiq '^strict-transport-security:' /tmp/rum-headers.txt; then
-              home_ok=1
+          for attempt in $(seq 1 30); do
+            fish_status=$(curl --silent --show-error --location -A "$ua" \
+              --output /tmp/mirmir.html --write-out '%{http_code}' \
+              "https://oltaatlasi.com/baliklar/mirmir/?deploy-check=${GITHUB_SHA}") || fish_status=000
+            guide_status=$(curl --silent --show-error --location -A "$ua" \
+              --output /tmp/mirmir-guide.html --write-out '%{http_code}' \
+              "https://oltaatlasi.com/rehberler/kiyidan-mirmir-avi/?deploy-check=${GITHUB_SHA}") || guide_status=000
+
+            if [ "$fish_status" = "200" ] \
+              && [ "$guide_status" = "200" ] \
+              && grep -Fq 'Lithognathus mormyrus' /tmp/mirmir.html \
+              && grep -Fq 'Kıyıdan Mırmır Avı' /tmp/mirmir-guide.html; then
+              release_ok=1
               break
             fi
 
-            echo "Canlı sürüm henüz bu commit'in HTML ve güvenlik başlıklarını birlikte vermiyor (deneme ${attempt}/20)."
-            sleep 6
+            echo "Yeni rehber paketi henüz canlıda görünmüyor (deneme ${attempt}/30; fish=${fish_status}, guide=${guide_status})."
+            sleep 10
           done
 
-          if [ "$home_ok" -ne 1 ]; then
-            echo "::error::Canlı ana sayfa veya güvenlik başlıkları doğrulanamadı."
+          if [ "$release_ok" -ne 1 ]; then
+            echo "::error::Cloudflare deploy adımı çalıştı fakat yeni rehber paketi canlı uç noktada doğrulanamadı."
             exit 1
           fi
 
-          for required_header in content-security-policy x-frame-options x-content-type-options referrer-policy permissions-policy; do
+          if [ "$DEPLOY_MODE" = "wrangler" ]; then
+            marker=$(curl --fail --show-error --silent --location -A "$ua" \
+              "https://oltaatlasi.com/__deploy/version.txt?deploy-check=${GITHUB_SHA}")
+            if [ "$marker" != "$GITHUB_SHA" ]; then
+              echo "::error::Canlı build SHA eşleşmiyor. Beklenen ${GITHUB_SHA}, görülen ${marker}."
+              exit 1
+            fi
+          fi
+
+          curl --fail --show-error --silent --location -A "$ua" \
+            -D /tmp/rum-headers.txt "https://oltaatlasi.com/?deploy-check=${GITHUB_SHA}" -o /tmp/rum-home.html
+
+          for required_header in strict-transport-security content-security-policy x-frame-options x-content-type-options referrer-policy permissions-policy; do
             if ! grep -Eiq "^${required_header}:" /tmp/rum-headers.txt; then
               echo "::error::Canlı yanıtta ${required_header} başlığı bulunamadı."
               exit 1
             fi
           done
 
-          if grep -Eiq '^cache-control:.*no-transform' /tmp/rum-headers.txt; then
-            echo "::error::Cache-Control no-transform Cloudflare'ın otomatik RUM enjeksiyonunu engelleyebilir."
-            exit 1
-          fi
-
-          http_redirect=$(curl --silent --output /dev/null --write-out '%{http_code}' 'http://oltaatlasi.com/')
-          case "$http_redirect" in
-            301|308) ;;
-            *)
-              echo "::error::HTTP ana sayfa HTTPS'e kalıcı yönlendirme yerine ${http_redirect} döndü."
-              exit 1
-              ;;
-          esac
-
-          explicit_404_status=$(curl --silent --output /tmp/explicit-404.html --write-out '%{http_code}' \
-            -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36' \
-            'https://oltaatlasi.com/404')
-          if [ "$explicit_404_status" != "404" ]; then
-            echo "::error::/404 beklenen HTTP 404 yerine ${explicit_404_status} döndü."
-            exit 1
-          fi
-          if ! grep -q 'Bu rota haritada görünmüyor' /tmp/explicit-404.html; then
-            echo "::error::/404 özel hata sayfası gövdesi doğrulanamadı."
-            exit 1
-          fi
-
-          for probe_path in /export.sql /build.gradle /rest/executions /webhook-waiting/test /v1.40/swarm /.amplifyrc '/%2eenv' '/%252eenv' '/wp%2dlogin.php'; do
-            probe_status=$(curl --path-as-is --location --max-redirs 4 --silent --output /dev/null --write-out '%{http_code}' "https://oltaatlasi.com${probe_path}")
-            if [ "$probe_status" != "404" ]; then
-              echo "::error::${probe_path} probe zincirinin nihai yanıtı HTTP 404 yerine ${probe_status} döndü."
-              exit 1
-            fi
-          done
-
-          trace_status=$(curl --silent --request TRACE --output /dev/null --write-out '%{http_code}' 'https://oltaatlasi.com/')
-          case "$trace_status" in
-            403|405) ;;
-            *)
-              echo "::error::TRACE isteği güvenli biçimde reddedilmek yerine ${trace_status} döndü."
-              exit 1
-              ;;
-          esac
-
-          if ! grep -q 'static.cloudflareinsights.com/beacon.min.js' /tmp/rum-home.html; then
-            echo "::warning::RUM beacon HTML içinde görünmedi; otomatik enjeksiyon edge/yanıt koşullarına bağlı olabilir. Endpoint denetimi sürdürülecek."
-          fi
-
-          rum_status=$(curl --silent --output /dev/null --write-out '%{http_code}' \
-            'https://oltaatlasi.com/cdn-cgi/rum')
-          case "$rum_status" in
-            5??)
-              echo "::error::Cloudflare RUM toplama endpoint'i sağlıklı görünmüyor; HTTP ${rum_status}."
-              exit 1
-              ;;
-            404)
-              echo "::warning::RUM toplama endpoint'i GET isteğine HTTP 404 verdi; bu yöntem yanıtı beacon gönderimini tek başına doğrulamaz. Canlı HTML ve güvenlik başlıkları doğrulandı."
-              ;;
-            *)
-              echo "Canlı site, güvenlik başlıkları, HTTPS yönlendirmesi, encoded probe guard, TRACE reddi, 404 davranışı ve Cloudflare RUM endpoint'i doğrulandı; endpoint HTTP ${rum_status}."
-              ;;
-          esac
+          echo "Production doğrulandı: yeni balık/rehber paketi canlı ve dağıtım modu ${DEPLOY_MODE}."
