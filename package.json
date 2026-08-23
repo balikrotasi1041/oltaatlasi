@@ -11,8 +11,9 @@
     "validate:admin-data-flow": "node scripts/validate-admin-data-flow.mjs",
     "validate:confidence": "tsx scripts/audit-confidence-debt.mjs",
     "validate:security": "node scripts/validate-security-posture.mjs",
+    "validate:guides": "tsx scripts/validate-guide-quality.ts",
     "validate:maintenance": "tsx scripts/audit-route-maintenance.mjs && npm run validate:confidence && node scripts/validate-worker-redirects.mjs && npm run validate:admin-data-flow && npm run validate:security",
-    "validate:data": "npm run validate:routes && npm run validate:ankara-500km && npm run validate:duplicates && npm run validate:maintenance",
+    "validate:data": "npm run validate:routes && npm run validate:ankara-500km && npm run validate:duplicates && npm run validate:maintenance && npm run validate:guides",
     "audit:sources": "tsx scripts/audit-source-health.mjs",
     "validate:research": "node scripts/run-with-node-data-imports.mjs scripts/validate-national-research.mjs",
     "validate:index-policy": "tsx scripts/validate-index-policy.mjs",
@@ -42,4 +43,3 @@
     "npm": ">=10.9.2"
   }
 }
-
