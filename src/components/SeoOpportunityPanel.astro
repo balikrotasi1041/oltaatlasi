@@ -5,9 +5,63 @@ const {path}=Astro.props as {path:string};
 const normalizedPath=path.endsWith("/")?path:`${path}/`;
 const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
 const shareUrl=isMeraDetail?new URL(normalizedPath,Astro.site).href:"";
+const locationCtrPilotPaths=new Set([
+  "/meralar/sarimsakli-baraji-genel-amator-kiyi/",
+  "/meralar/yamula-baraji-resmi-amator-balikcilik-alani/",
+]);
+const isLocationCtrPilot=locationCtrPilotPaths.has(normalizedPath);
 ---
 {isMeraDetail&&<section class="share-shell" aria-label="Avlak paylaşım araçları"><div class="container"><ShareToolbar title="Bu avlak sayfası" url={shareUrl}/></div></section>}
 <SeoIntentBridge path={path}/>
 <style>
 .share-shell{padding:24px 0;background:#f7fbfb;border-top:1px solid #dce8e8}@media(max-width:800px){.share-shell{padding:18px 0}}
 </style>
+{isLocationCtrPilot&&<style is:global>
+@media(max-width:680px){
+  .detail-hero .detail-grid>div:first-child{display:flex;flex-direction:column}
+  .detail-hero .detail-grid>div:first-child>.breadcrumb{order:1}
+  .detail-hero .detail-grid>div:first-child>.eyebrow-row{order:2}
+  .detail-hero .detail-grid>div:first-child>h1{order:3}
+  .detail-hero .detail-grid>div:first-child>.lead{order:4}
+  .detail-hero .detail-grid>div:first-child>.detail-actions{order:5;margin-top:16px;margin-bottom:4px}
+  .detail-hero .detail-grid>div:first-child>.warning-box{order:6}
+  .detail-hero .detail-grid>div:first-child>.article-byline{order:7}
+}
+@media(max-width:420px){
+  .detail-hero .detail-grid>div:first-child>.detail-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .detail-hero .detail-grid>div:first-child>.detail-actions .button{width:100%}
+}
+</style>}
+<script is:inline define:vars={{isMeraDetail}}>
+if(isMeraDetail){
+  const detailRoot=document.querySelector("main");
+  const track=(name,params={})=>{if(typeof window.gtag==="function")window.gtag("event",name,params);};
+  const providerFor=url=>{
+    const host=url.hostname.toLowerCase();
+    if(host.includes("google."))return"google_maps";
+    if(host.includes("openstreetmap.org"))return"openstreetmap";
+    if(host.includes("maps.apple.com"))return"apple_maps";
+    if(host.includes("yandex."))return"yandex_maps";
+    return"other";
+  };
+  const isMapUrl=url=>{
+    const host=url.hostname.toLowerCase();
+    return host.includes("google.")||host.includes("openstreetmap.org")||host.includes("maps.apple.com")||host.includes("yandex.");
+  };
+  const isDirectionsUrl=url=>url.pathname.includes("/maps/dir")||url.searchParams.has("daddr")||url.searchParams.has("rtext");
+  detailRoot?.addEventListener("click",event=>{
+    const link=event.target instanceof Element?event.target.closest("a[href]"):null;
+    if(!link)return;
+    let url;
+    try{url=new URL(link.href,location.href);}catch{return;}
+    if(!isMapUrl(url))return;
+    const routeSlug=location.pathname.split("/").filter(Boolean).at(-1)||"unknown";
+    const section=link.closest("section")?.id||link.closest(".detail-hero")?"hero":link.closest(".content-aside")?"aside":"detail";
+    track(isDirectionsUrl(url)?"directions_click":"map_location_click",{
+      route_slug:routeSlug,
+      map_provider:providerFor(url),
+      source_section:section,
+    });
+  });
+}
+</script>
