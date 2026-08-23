@@ -1,6 +1,8 @@
 ---
+import SeoOpportunityPanel from "./SeoOpportunityPanel.astro";
 const { title, contentKey, path } = Astro.props as { title: string; contentKey: string; path: string };
 const reportUrl = `/iletisim/?sayfa=${encodeURIComponent(title)}&url=${encodeURIComponent(path)}`;
+const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
 ---
 <section class="feedback-panel" data-feedback data-feedback-key={contentKey}>
   <div>
@@ -15,6 +17,7 @@ const reportUrl = `/iletisim/?sayfa=${encodeURIComponent(title)}&url=${encodeURI
   </div>
   <p class="feedback-status" data-feedback-status aria-live="polite"></p>
 </section>
+{isMeraDetail&&<SeoOpportunityPanel path={path}/>} 
 <script is:inline>
   const trackMeraEvent = (name, params = {}) => {
     if (typeof window.gtag === "function") window.gtag("event", name, params);
@@ -91,6 +94,7 @@ const reportUrl = `/iletisim/?sayfa=${encodeURIComponent(title)}&url=${encodeURI
         return;
       }
 
+      if (document.body.classList.contains("mera-detail-page")) return;
       const mapProvider = href.includes("google.com/maps") ? "google"
         : href.includes("maps.apple.com") ? "apple"
         : href.includes("yandex.com/maps") ? "yandex"
