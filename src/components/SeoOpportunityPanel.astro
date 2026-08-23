@@ -56,7 +56,7 @@ if(isMeraDetail){
     try{url=new URL(link.href,location.href);}catch{return;}
     if(!isMapUrl(url))return;
     const routeSlug=location.pathname.split("/").filter(Boolean).at(-1)||"unknown";
-    const section=link.closest("section")?.id||link.closest(".detail-hero")?"hero":link.closest(".content-aside")?"aside":"detail";
+    const section=link.closest("section")?.id||(link.closest(".detail-hero")?"hero":link.closest(".content-aside")?"aside":"detail");
     track(isDirectionsUrl(url)?"directions_click":"map_location_click",{
       route_slug:routeSlug,
       map_provider:providerFor(url),
