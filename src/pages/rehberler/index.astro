@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { rehberler, rehberKategorileri } from "../../data/rehber-katalogu";
-const ordered=[...rehberler].sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt));
+import { rehberler, rehberKategorileri } from "../../data/content-katalogu";
+const ordered=[...rehberler].sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt)||b.updatedAt.localeCompare(a.updatedAt));
 ---
 <BaseLayout title="Balıkçılık Rehberleri" description="Düğüm, takım, yem, güvenlik, kamp, hava ve mera doğrulama için görselli, uygulanabilir balıkçılık yazıları.">
 <section class="page-hero"><div class="container"><Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"Rehberler"}]}/><span class="kicker">{rehberler.length} uygulamalı yazı</span><h1>Balıkçılık rehberleri</h1><p class="lead">Temel düğümlerden yem sunumuna kadar her konuyu nedenleri, saha notları ve mümkün olduğunda özgün adım çizimleriyle öğren.</p></div></section>
