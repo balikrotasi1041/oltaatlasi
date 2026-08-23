@@ -1,1 +1,0 @@
-Mera detay hero alanındaki açık warning-box kartlarının koyu metin kontrastı harici, bundle edilen CSS üzerinden uygulanır. Bu dosya yalnız değişikliğin deploy çıktısında izlenebilir olmasını kolaylaştırmak için eklenmiştir.
