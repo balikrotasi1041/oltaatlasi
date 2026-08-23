@@ -1,0 +1,13 @@
+.detail-hero .warning-box {
+  color: #17333b !important;
+  background: #fff7ef !important;
+  border-color: #e1b78e !important;
+  text-shadow: none !important;
+}
+
+.detail-hero .warning-box,
+.detail-hero .warning-box * {
+  color: #17333b !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #17333b !important;
+}

@@ -1,6 +1,7 @@
 ---
 import ShareToolbar from "./ShareToolbar.astro";
 import SeoIntentBridge from "./SeoIntentBridge.astro";
+import "../styles/mera-detail-contrast.css";
 const {path}=Astro.props as {path:string};
 const normalizedPath=path.endsWith("/")?path:`${path}/`;
 const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
@@ -15,19 +16,6 @@ const isLocationCtrPilot=locationCtrPilotPaths.has(normalizedPath);
 <SeoIntentBridge path={path}/>
 <style>
 .share-shell{padding:24px 0;background:#f7fbfb;border-top:1px solid #dce8e8}@media(max-width:800px){.share-shell{padding:18px 0}}
-</style>
-<style is:global>
-.detail-hero .warning-box{
-  color:#17333b!important;
-  background:#fff7ef!important;
-  border-color:#e1b78e!important;
-  text-shadow:none!important;
-}
-.detail-hero .warning-box,
-.detail-hero .warning-box *{
-  color:#17333b!important;
-  opacity:1!important;
-}
 </style>
 {isLocationCtrPilot&&<style is:global>
 @media(max-width:680px){
