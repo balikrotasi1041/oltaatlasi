@@ -1,4 +1,5 @@
 import appWorker from "./traffic-diagnostics-router.js";
+import { handleWeatherRequest } from "./weather-service.js";
 
 const PRIMARY_HOSTS = new Set(["oltaatlasi.com", "www.oltaatlasi.com"]);
 const BLOCKED_IPS = new Set([
@@ -64,6 +65,7 @@ export default {
 
     if (request.method === "TRACE") return securityResponse(405);
     if (isSensitiveScanPath(url.pathname)) return securityResponse(404);
+    if (url.pathname === "/api/weather") return handleWeatherRequest(request, ctx);
 
     return appWorker.fetch(request, env, ctx);
   },

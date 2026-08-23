@@ -12,10 +12,57 @@ const locationCtrPilotPaths=new Set([
 ]);
 const isLocationCtrPilot=locationCtrPilotPaths.has(normalizedPath);
 ---
+{isMeraDetail&&<section id="weather-conditions-panel" class="weather-panel" aria-labelledby="weather-panel-title" aria-busy="true" hidden>
+  <div class="weather-panel-heading">
+    <div>
+      <span class="kicker">🌦️ Güncel saha koşulları</span>
+      <h2 id="weather-panel-title">Bugün hava ve kıyı kullanım koşulları</h2>
+      <p>Canlı tahmin, mera koordinatına göre yüklenir. Puan balık yakalama ihtimalini değil, meteorolojik koşulların saha kullanımı açısından göreli uygunluğunu özetler.</p>
+    </div>
+    <div class="weather-score" data-band="loading" aria-label="Saha koşulu puanı">
+      <strong id="weather-score-value">—</strong><span>/100</span>
+      <small id="weather-score-label">Yükleniyor</small>
+    </div>
+  </div>
+  <div class="weather-loading" id="weather-loading" role="status">Güncel tahmin alınıyor…</div>
+  <div class="weather-live" id="weather-live" hidden>
+    <div class="weather-metrics" aria-label="Anlık hava özeti">
+      <article><span>Sıcaklık</span><strong id="weather-temperature">—</strong><small id="weather-condition">—</small></article>
+      <article><span>Rüzgâr</span><strong id="weather-wind">—</strong><small id="weather-wind-direction">—</small></article>
+      <article><span>Yağış</span><strong id="weather-rain">—</strong><small>önümüzdeki 1 saat</small></article>
+      <article><span>Nem</span><strong id="weather-humidity">—</strong><small id="weather-updated">—</small></article>
+    </div>
+    <div class="weather-forecast-grid" aria-label="Yakın dönem tahmini">
+      <article><strong>Önümüzdeki 6 saat</strong><span id="weather-next6">—</span></article>
+      <article><strong>Önümüzdeki 12 saat</strong><span id="weather-next12">—</span></article>
+      <article><strong>Önümüzdeki 24 saat</strong><span id="weather-next24">—</span></article>
+    </div>
+    <div class="weather-reason-box" id="weather-reason-box">
+      <strong>Bu puan neden böyle?</strong>
+      <ul id="weather-reasons"></ul>
+    </div>
+  </div>
+  <div class="weather-unavailable" id="weather-unavailable" hidden>
+    <strong>Canlı hava verisi şu anda gösterilemiyor.</strong>
+    <p>Mera sayfasının konum, tür, mevzuat ve kaynak bilgileri bundan etkilenmez. Güncel resmî uyarıları aşağıdaki MGM bağlantısından kontrol edebilirsin.</p>
+  </div>
+  <div class="weather-official-check" id="weather-official-check" data-status="pending">
+    <div>
+      <span class="weather-official-badge">MGM günlük denetimi</span>
+      <strong id="weather-official-status">Resmî kontrol bilgisi yükleniyor…</strong>
+      <small id="weather-official-time"></small>
+    </div>
+    <div class="weather-official-links">
+      <a href="https://www.mgm.gov.tr/meteouyari/turkiye.aspx" target="_blank" rel="noreferrer">MGM MeteoUYARI</a>
+      <a href="https://www.mgm.gov.tr/tahmin/il-ve-ilceler.aspx" target="_blank" rel="noreferrer">MGM il/ilçe tahmini</a>
+    </div>
+  </div>
+  <p class="weather-source-note">Canlı noktasal tahmin: <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation" target="_blank" rel="noreferrer">MET Norway Locationforecast</a> · CC BY 4.0 · Olta Atlası tarafından özetlenmiştir. MGM, Türkiye için resmî günlük doğrulama ve uyarı katmanıdır.</p>
+</section>}
 {isMeraDetail&&<section class="share-shell" aria-label="Avlak paylaşım araçları"><div class="container"><ShareToolbar title="Bu avlak sayfası" url={shareUrl}/></div></section>}
 <SeoIntentBridge path={path}/>
 <style>
-.share-shell{padding:24px 0;background:#f7fbfb;border-top:1px solid #dce8e8}@media(max-width:800px){.share-shell{padding:18px 0}}
+.share-shell{padding:24px 0;background:#f5f9f8;border-top:1px solid #d7e4e2}@media(max-width:800px){.share-shell{padding:18px 0}}
 </style>
 {isLocationCtrPilot&&<style is:global>
 @media(max-width:680px){
@@ -35,23 +82,41 @@ const isLocationCtrPilot=locationCtrPilotPaths.has(normalizedPath);
 </style>}
 <script is:inline define:vars={{isMeraDetail}}>
 if(isMeraDetail){
+  document.body.classList.add("mera-detail-page");
   const detailRoot=document.querySelector("main");
+  const weatherPanel=document.querySelector("#weather-conditions-panel");
+  const locationSection=document.querySelector("#konum");
+  if(weatherPanel&&locationSection){
+    locationSection.insertAdjacentElement("afterend",weatherPanel);
+    weatherPanel.hidden=false;
+    const onPageNav=document.querySelector(".on-page-nav");
+    if(onPageNav&&!onPageNav.querySelector('a[href="#hava"]')){
+      const link=document.createElement("a");
+      link.href="#hava";
+      link.textContent="Hava";
+      const locationLink=onPageNav.querySelector('a[href="#konum"]');
+      locationLink?.insertAdjacentElement("afterend",link);
+    }
+    weatherPanel.id="hava";
+  }
+
   const enforceHeroWarningContrast=()=>{
     document.querySelectorAll(".detail-hero .warning-box").forEach(box=>{
-      box.style.setProperty("color","#17333b","important");
-      box.style.setProperty("background","#fff7ef","important");
-      box.style.setProperty("border-color","#e1b78e","important");
+      box.style.setProperty("color","#17343b","important");
+      box.style.setProperty("background","#fff8e8","important");
+      box.style.setProperty("border-color","#e6c77c","important");
       box.style.setProperty("text-shadow","none","important");
-      box.style.setProperty("-webkit-text-fill-color","#17333b","important");
+      box.style.setProperty("-webkit-text-fill-color","#17343b","important");
       box.querySelectorAll("*").forEach(child=>{
-        child.style.setProperty("color","#17333b","important");
+        child.style.setProperty("color","#17343b","important");
         child.style.setProperty("opacity","1","important");
-        child.style.setProperty("-webkit-text-fill-color","#17333b","important");
+        child.style.setProperty("-webkit-text-fill-color","#17343b","important");
       });
-      box.dataset.contrastFix="v3";
+      box.dataset.contrastFix="v4";
     });
   };
   enforceHeroWarningContrast();
+
   const track=(name,params={})=>{if(typeof window.gtag==="function")window.gtag("event",name,params);};
   const providerFor=url=>{
     const host=url.hostname.toLowerCase();
@@ -80,5 +145,119 @@ if(isMeraDetail){
       source_section:section,
     });
   });
+
+  const text=(selector,value)=>{const element=document.querySelector(selector);if(element)element.textContent=value;};
+  const fmt=(value,digits=0)=>value!==null&&value!==undefined&&value!==""&&Number.isFinite(Number(value))?Number(value).toLocaleString("tr-TR",{minimumFractionDigits:digits,maximumFractionDigits:digits}):"—";
+  const temperatureRange=period=>{
+    if(!period)return"—";
+    const min=fmt(period.minTemperature,0),max=fmt(period.maxTemperature,0),wind=fmt(period.maxWindSpeed,1),rain=fmt(period.precipitation,1);
+    return `${min}–${max}°C · rüzgâr en fazla ${wind} m/sn · yağış ${rain} mm`;
+  };
+  const extractLocationData=()=>{
+    const code=locationSection?.querySelector("code")?.textContent||"";
+    const coordinateMatch=code.match(/(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)/);
+    const listItems=[...(locationSection?.querySelectorAll("li")||[])].map(item=>item.textContent?.trim()||"");
+    const waterLine=listItems.find(item=>item.startsWith("Su türü:"))||"";
+    const waterType=waterLine.replace("Su türü:","").trim();
+    const provinceDistrict=document.querySelector(".detail-hero .eyebrow-row .pill")?.textContent||"";
+    const province=provinceDistrict.split("·")[0]?.trim()||"";
+    return coordinateMatch?{lat:Number(coordinateMatch[1]),lon:Number(coordinateMatch[2]),waterType,province}:{lat:null,lon:null,waterType,province};
+  };
+
+  const loadOfficialAudit=async(province)=>{
+    const box=document.querySelector("#weather-official-check");
+    if(!box)return;
+    try{
+      const response=await fetch("/data/weather-official-audit.json",{cache:"no-store"});
+      if(!response.ok)throw new Error("audit_unavailable");
+      const audit=await response.json();
+      const checkedAt=audit?.checkedAt?new Date(audit.checkedAt):null;
+      const fresh=checkedAt&&Number.isFinite(checkedAt.getTime())&&(Date.now()-checkedAt.getTime())<36*60*60*1000;
+      const warning=audit?.warnings?.[province];
+      if(fresh&&audit?.status==="verified"){
+        if(warning){
+          box.dataset.status="warning";
+          const level=warning.level?String(warning.level).toLocaleUpperCase("tr-TR"):"UYARI";
+          const events=Array.isArray(warning.events)&&warning.events.length?` · ${warning.events.join(", ")}`:"";
+          text("#weather-official-status",`MGM ${level}${events}`);
+        }else{
+          box.dataset.status="verified";
+          text("#weather-official-status",`${province||"Bu il"} için son günlük MGM denetiminde aktif uyarı kaydı bulunmadı.`);
+        }
+        text("#weather-official-time",`Son resmî kontrol: ${checkedAt.toLocaleString("tr-TR")}`);
+      }else{
+        box.dataset.status="pending";
+        text("#weather-official-status","Günlük MGM denetimi güncel değil; resmî uyarıyı ayrıca kontrol et.");
+        text("#weather-official-time",checkedAt?`Son kayıt: ${checkedAt.toLocaleString("tr-TR")}`:"İlk resmî denetim kaydı bekleniyor.");
+      }
+    }catch{
+      box.dataset.status="pending";
+      text("#weather-official-status","Resmî denetim kaydı şu anda okunamıyor; MGM bağlantısını doğrudan kontrol et.");
+      text("#weather-official-time","");
+    }
+  };
+
+  const loadWeather=async()=>{
+    if(!weatherPanel)return;
+    const data=extractLocationData();
+    loadOfficialAudit(data.province);
+    if(!Number.isFinite(data.lat)||!Number.isFinite(data.lon)){
+      document.querySelector("#weather-loading")?.setAttribute("hidden","");
+      document.querySelector("#weather-unavailable")?.removeAttribute("hidden");
+      weatherPanel.setAttribute("aria-busy","false");
+      weatherPanel.dataset.state="no-coordinates";
+      text("#weather-score-label","Konum doğrulaması gerekli");
+      return;
+    }
+    try{
+      const params=new URLSearchParams({lat:String(data.lat),lon:String(data.lon),water:data.waterType||"diger"});
+      const response=await fetch(`/api/weather?${params.toString()}`,{headers:{accept:"application/json"}});
+      if(!response.ok)throw new Error("weather_unavailable");
+      const payload=await response.json();
+      const current=payload.current||{};
+      const field=payload.fieldCondition||{};
+      text("#weather-score-value",String(field.score??"—"));
+      text("#weather-score-label",field.label||"Koşul bilgisi");
+      const scoreNode=document.querySelector(".weather-score");
+      if(scoreNode){
+        const score=Number(field.score);
+        scoreNode.dataset.band=score>=65?"good":score>=45?"medium":score>=25?"weak":"danger";
+      }
+      text("#weather-temperature",`${fmt(current.temperature,1)}°C`);
+      text("#weather-condition",current.condition||"Tahmin mevcut");
+      text("#weather-wind",`${fmt(current.windSpeed,1)} m/sn`);
+      text("#weather-wind-direction",`${current.windDirectionLabel||"—"} · ${fmt(current.windDirection,0)}°`);
+      text("#weather-rain",`${fmt(current.precipitationNextHour,1)} mm`);
+      text("#weather-humidity",`${fmt(current.humidity,0)}%`);
+      const updateTime=current.time?new Date(current.time):null;
+      text("#weather-updated",updateTime&&Number.isFinite(updateTime.getTime())?`Tahmin zamanı ${updateTime.toLocaleString("tr-TR",{hour:"2-digit",minute:"2-digit",day:"2-digit",month:"2-digit"})}`:"Canlı tahmin");
+      text("#weather-next6",temperatureRange(payload.forecast?.next6));
+      text("#weather-next12",temperatureRange(payload.forecast?.next12));
+      text("#weather-next24",temperatureRange(payload.forecast?.next24));
+      const reasons=document.querySelector("#weather-reasons");
+      if(reasons){
+        reasons.replaceChildren();
+        [...(field.reasons||[]),field.disclaimer].filter(Boolean).slice(0,5).forEach(reason=>{
+          const li=document.createElement("li");
+          li.textContent=reason;
+          reasons.appendChild(li);
+        });
+      }
+      const reasonBox=document.querySelector("#weather-reason-box");
+      if(reasonBox)reasonBox.dataset.safety=field.hasSafetyConcern?"true":"false";
+      document.querySelector("#weather-loading")?.setAttribute("hidden","");
+      document.querySelector("#weather-live")?.removeAttribute("hidden");
+      weatherPanel.setAttribute("aria-busy","false");
+      weatherPanel.dataset.state="ready";
+      track("weather_panel_loaded",{route_slug:location.pathname.split("/").filter(Boolean).at(-1)||"unknown",condition_score:Number(field.score)||0});
+    }catch{
+      document.querySelector("#weather-loading")?.setAttribute("hidden","");
+      document.querySelector("#weather-unavailable")?.removeAttribute("hidden");
+      weatherPanel.setAttribute("aria-busy","false");
+      weatherPanel.dataset.state="unavailable";
+      text("#weather-score-label","Veri alınamadı");
+    }
+  };
+  loadWeather();
 }
 </script>
