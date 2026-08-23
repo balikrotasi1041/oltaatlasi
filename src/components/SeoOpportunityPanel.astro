@@ -36,6 +36,22 @@ const isLocationCtrPilot=locationCtrPilotPaths.has(normalizedPath);
 <script is:inline define:vars={{isMeraDetail}}>
 if(isMeraDetail){
   const detailRoot=document.querySelector("main");
+  const enforceHeroWarningContrast=()=>{
+    document.querySelectorAll(".detail-hero .warning-box").forEach(box=>{
+      box.style.setProperty("color","#17333b","important");
+      box.style.setProperty("background","#fff7ef","important");
+      box.style.setProperty("border-color","#e1b78e","important");
+      box.style.setProperty("text-shadow","none","important");
+      box.style.setProperty("-webkit-text-fill-color","#17333b","important");
+      box.querySelectorAll("*").forEach(child=>{
+        child.style.setProperty("color","#17333b","important");
+        child.style.setProperty("opacity","1","important");
+        child.style.setProperty("-webkit-text-fill-color","#17333b","important");
+      });
+      box.dataset.contrastFix="v3";
+    });
+  };
+  enforceHeroWarningContrast();
   const track=(name,params={})=>{if(typeof window.gtag==="function")window.gtag("event",name,params);};
   const providerFor=url=>{
     const host=url.hostname.toLowerCase();
