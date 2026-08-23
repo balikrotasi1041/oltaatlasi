@@ -1,14 +1,16 @@
 import type { EnrichedMera } from "./meralar-tumu-core";
 
+// Search Console exportu 23 Ağustos 2026'da alındı; performans verisi 21 Ağustos'a kadar gelir.
+// Konum niyetinde yüksek gösterim + 3-15 pozisyon + düşük/sıfır CTR önceliklendirildi.
 export const ctrFirsatlari20260823 = [
-  { slug:"sarimsakli-baraji-genel-amator-kiyi", query:"sarımsaklı barajı yol tarifi", impressions:544, clicks:1, ctr:0.18, position:8.67 },
-  { slug:"yamula-baraji-resmi-amator-balikcilik-alani", query:"yamula barajı yol tarifi", impressions:126, clicks:0, ctr:0, position:7.22 },
-  { slug:"koyunbaba-baraji-demirci-oyumigde-amator-alani", query:"koyunbaba barajı yol tarifi", impressions:28, clicks:0, ctr:0, position:8.86 },
-  { slug:"ulusal-nigde-gumusler-baraj-golu", query:"gümüşler barajı yol tarifi", impressions:20, clicks:0, ctr:0, position:8.65 },
-  { slug:"sariyar-baraji-softabogazi-amator-alani", query:"sarıyar barajı yol tarifi", impressions:19, clicks:0, ctr:0, position:8.68 },
-  { slug:"cengelkoy-sahili", query:"çengelköy sahil yol tarifi", impressions:19, clicks:0, ctr:0, position:10.47 },
-  { slug:"bilecik-kizildamlar-baraj-goleti", query:"kızıldamlar barajı yol tarifi", impressions:16, clicks:0, ctr:0, position:9.81 },
-  { slug:"ulusal-adana-nergizlik-baraj-golu", query:"nergizlik barajı yol tarifi", impressions:14, clicks:0, ctr:0, position:6.93 },
+  { slug:"sarimsakli-baraji-genel-amator-kiyi", query:"sarımsaklı barajı yol tarifi", impressions:624, clicks:1, ctr:0.16, position:8.74 },
+  { slug:"yamula-baraji-resmi-amator-balikcilik-alani", query:"yamula barajı yol tarifi", impressions:182, clicks:0, ctr:0, position:7.13 },
+  { slug:"koyunbaba-baraji-demirci-oyumigde-amator-alani", query:"koyunbaba barajı yol tarifi", impressions:30, clicks:0, ctr:0, position:8.90 },
+  { slug:"ulusal-nigde-gumusler-baraj-golu", query:"gümüşler barajı yol tarifi", impressions:28, clicks:0, ctr:0, position:8.71 },
+  { slug:"bilecik-kizildamlar-baraj-goleti", query:"kızıldamlar barajı yol tarifi", impressions:28, clicks:0, ctr:0, position:9.32 },
+  { slug:"cengelkoy-sahili", query:"çengelköy sahil yol tarifi", impressions:25, clicks:0, ctr:0, position:10.24 },
+  { slug:"sariyar-baraji-softabogazi-amator-alani", query:"sarıyar barajı yol tarifi", impressions:21, clicks:0, ctr:0, position:8.90 },
+  { slug:"ulusal-nigde-akkaya-baraj-golu", query:"akkaya barajı yol tarifi", impressions:18, clicks:0, ctr:0, position:8.56 },
 ] as const;
 
 export const dKaliteHedefleri20260823 = [
@@ -37,9 +39,9 @@ export const applyStabilizasyon20260823=(routeMap:Map<string,EnrichedMera>)=>{
     if(route.confidence!=="D")throw new Error(`23 Ağustos D bakım hedefi artık D değil: ${slug} (${route.confidence})`);
   }
 
-  // Bu turda sırf dosyada değişiklik olsun diye görünür metin veya confidence şişirilmez.
-  // Search Console fırsatları mevcut title/H1/konum katmanları açısından denetlenir;
-  // doğrulanmış yeni mikro erişim kanıtı olmadan directions pini üretilmez.
+  // Sırf günlük kotayı doldurmak için görünür metin veya confidence şişirilmez.
+  // CTR adayları son GSC verisiyle yeniden sıralanır; mevcut SEO override/URL/canonical korunur.
+  // Doğrulanmış yeni mikro erişim kanıtı olmadan directions pini üretilmez.
   const stats={
     reviewed:unique.length,
     ctrReviewed:ctrFirsatlari20260823.length,
