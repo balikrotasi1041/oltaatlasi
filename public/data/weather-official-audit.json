@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "checkedAt": null,
+  "status": "pending",
+  "source": "Meteoroloji Genel Müdürlüğü (MGM)",
+  "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
+  "message": "İlk günlük resmî meteoroloji denetimi bekleniyor.",
+  "warnings": {}
+}
