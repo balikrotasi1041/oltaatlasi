@@ -82,6 +82,7 @@ const isLocationCtrPilot=locationCtrPilotPaths.has(normalizedPath);
 </style>}
 <script is:inline define:vars={{isMeraDetail}}>
 if(isMeraDetail){
+  document.body.classList.add("mera-detail-page");
   const detailRoot=document.querySelector("main");
   const weatherPanel=document.querySelector("#weather-conditions-panel");
   const locationSection=document.querySelector("#konum");
@@ -146,7 +147,7 @@ if(isMeraDetail){
   });
 
   const text=(selector,value)=>{const element=document.querySelector(selector);if(element)element.textContent=value;};
-  const fmt=(value,digits=0)=>Number.isFinite(Number(value))?Number(value).toLocaleString("tr-TR",{minimumFractionDigits:digits,maximumFractionDigits:digits}):"—";
+  const fmt=(value,digits=0)=>value!==null&&value!==undefined&&value!==""&&Number.isFinite(Number(value))?Number(value).toLocaleString("tr-TR",{minimumFractionDigits:digits,maximumFractionDigits:digits}):"—";
   const temperatureRange=period=>{
     if(!period)return"—";
     const min=fmt(period.minTemperature,0),max=fmt(period.maxTemperature,0),wind=fmt(period.maxWindSpeed,1),rain=fmt(period.precipitation,1);
