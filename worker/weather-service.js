@@ -19,9 +19,15 @@ const jsonResponse = (body, status = 200, extraHeaders = {}) => new Response(JSO
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 const roundCoord = (value) => Number(value.toFixed(3));
 const finite = (value) => Number.isFinite(Number(value));
-const safeWaterType = (value) => ["deniz", "gol", "göl", "baraj", "akarsu", "golet", "gölet"].includes(String(value || "").toLocaleLowerCase("tr-TR"))
-  ? String(value).toLocaleLowerCase("tr-TR")
-  : "diger";
+const safeWaterType = (value) => {
+  const normalized = String(value || "").toLocaleLowerCase("tr-TR");
+  if (normalized.includes("deniz") || normalized.includes("körfez") || normalized.includes("bogaz") || normalized.includes("boğaz")) return "deniz";
+  if (normalized.includes("akarsu") || normalized.includes("nehir") || normalized.includes("dere") || normalized.includes("çay") || normalized.includes("cay")) return "akarsu";
+  if (normalized.includes("baraj")) return "baraj";
+  if (normalized.includes("gölet") || normalized.includes("golet")) return "golet";
+  if (normalized.includes("göl") || normalized.includes("gol")) return "gol";
+  return "diger";
+};
 
 const compass = (degrees) => {
   if (!Number.isFinite(degrees)) return "—";
@@ -149,7 +155,9 @@ export async function handleWeatherRequest(request, ctx) {
 
   const roundedLat = roundCoord(lat);
   const roundedLon = roundCoord(lon);
-  const cacheUrl = new URL("https://weather-cache.oltaatlasi.local/forecast");
+  const cacheUrl = new URL(request.url);
+  cacheUrl.pathname = "/__internal/weather-cache";
+  cacheUrl.search = "";
   cacheUrl.searchParams.set("lat", String(roundedLat));
   cacheUrl.searchParams.set("lon", String(roundedLon));
   cacheUrl.searchParams.set("water", waterType);
