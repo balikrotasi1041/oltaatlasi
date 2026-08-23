@@ -16,6 +16,20 @@ const isLocationCtrPilot=locationCtrPilotPaths.has(normalizedPath);
 <style>
 .share-shell{padding:24px 0;background:#f7fbfb;border-top:1px solid #dce8e8}@media(max-width:800px){.share-shell{padding:18px 0}}
 </style>
+<style is:global>
+.detail-hero .warning-box{
+  color:#17333b;
+  background:#fff7ef;
+  border-color:#e1b78e;
+}
+.detail-hero .warning-box strong,
+.detail-hero .warning-box h2,
+.detail-hero .warning-box h3,
+.detail-hero .warning-box p,
+.detail-hero .warning-box li{
+  color:inherit;
+}
+</style>
 {isLocationCtrPilot&&<style is:global>
 @media(max-width:680px){
   .detail-hero .detail-grid>div:first-child{display:flex;flex-direction:column}
