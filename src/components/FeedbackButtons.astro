@@ -94,6 +94,7 @@ const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
         return;
       }
 
+      if (document.body.classList.contains("mera-detail-page")) return;
       const mapProvider = href.includes("google.com/maps") ? "google"
         : href.includes("maps.apple.com") ? "apple"
         : href.includes("yandex.com/maps") ? "yandex"
