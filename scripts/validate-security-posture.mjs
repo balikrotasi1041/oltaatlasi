@@ -20,6 +20,25 @@ for (const blockedIp of ["185.177.72.68", "216.73.216.200"]) {
 for (const signature of ["rails\\/info\\/properties", "app\\.config", "backup", "tgz", "\\$\\(", "jenkinsfile"]) {
   expect(gate.includes(signature), `Security gate probe imzasını korumalıdır: ${signature}`);
 }
+expect(gate.includes('url.pathname === "/api/weather"'), "Mera hava endpoint'i security gate üzerinden sunulmalıdır.");
+expect(gate.includes("handleWeatherRequest"), "Mera hava endpoint'i ayrı weather service handler'ına yönlenmelidir.");
+
+const weather = readFileSync("worker/weather-service.js", "utf8");
+expect(weather.includes("https://api.met.no/weatherapi/locationforecast/2.0/compact"), "Hava servisi sabit MET Norway Locationforecast kaynağını kullanmalıdır.");
+expect(weather.includes("caches.default"), "Hava servisi gereksiz upstream trafiğini önlemek için Cloudflare cache kullanmalıdır.");
+expect(weather.includes('"user-agent"'), "MET Norway istekleri tanımlayıcı User-Agent göndermelidir.");
+expect(weather.includes('"x-robots-tag": "noindex, nofollow, noarchive, nosnippet"'), "Hava API yanıtları arama indeksine kapalı olmalıdır.");
+expect(weather.includes('request.method !== "GET"'), "Hava endpoint'i yalnız GET kabul etmelidir.");
+expect(weather.includes("roundCoord"), "Hava endpoint'i koordinatları cache/veri minimizasyonu için yuvarlamalıdır.");
+expect(!weather.includes("eval("), "Hava servisi eval kullanmamalıdır.");
+
+const weatherUi = readFileSync("src/components/SeoOpportunityPanel.astro", "utf8");
+expect(weatherUi.includes("/api/weather?"), "Mera hava kartı yalnız aynı origin hava endpoint'ini çağırmalıdır.");
+expect(weatherUi.includes("/data/weather-official-audit.json"), "Mera hava kartı günlük MGM denetim kaydını okumalıdır.");
+expect(weatherUi.includes("balık yakalama ihtimalini değil"), "Saha koşulu skoru av garantisi gibi sunulmamalıdır.");
+const officialAudit = JSON.parse(readFileSync("public/data/weather-official-audit.json", "utf8"));
+expect(officialAudit.version === 1, "Resmî hava denetim dosyası sürüm 1 şemasını kullanmalıdır.");
+expect(typeof officialAudit.warnings === "object" && officialAudit.warnings !== null, "Resmî hava denetim dosyasında warnings nesnesi bulunmalıdır.");
 
 const router = readFileSync("worker/security-router.js", "utf8");
 for (const blockedIp of ["185.177.72.68", "216.73.216.200"]) {
@@ -47,4 +66,4 @@ if (errors.length) {
   for (const error of errors) console.error(`GÜVENLİK HATASI: ${error}`);
   process.exit(1);
 }
-console.log("Güvenlik duruşu doğrulandı: Worker yüzeyi, doğrulanmış kötüye kullanım adresi blokları, probe korumaları, secret ignore kuralları ve GitHub Actions pinleri beklenen durumda.");
+console.log("Güvenlik duruşu doğrulandı: Worker yüzeyi, kötüye kullanım blokları, probe korumaları, cache'li hava endpoint'i, secret ignore kuralları ve GitHub Actions pinleri beklenen durumda.");
