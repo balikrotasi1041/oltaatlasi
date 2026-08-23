@@ -29,8 +29,7 @@ for(const fish of baliklarEk20260823){
 for(const guide of rehberlerEk20260823){
   if(guide.sections.length<4)fail(`${guide.slug} needs at least 4 substantive sections`);
   if(guide.sources.length<3)fail(`${guide.slug} needs at least 3 sources`);
-  const cover=guide.cover;
-  if(!cover)fail(`${guide.slug} missing cover`);
+  const cover:string=guide.cover ?? fail(`${guide.slug} missing cover`);
   const asset=path.join(process.cwd(),"public",cover.replace(/^\//,""));
   if(!fs.existsSync(asset))fail(`${guide.slug} missing cover asset ${cover}`);
   const sourceHosts=new Set(guide.sources.map((source)=>new URL(source.url).hostname.replace(/^www\./,"")));
