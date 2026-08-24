@@ -10,6 +10,12 @@ const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-a
 const yesilVadi="https://www.kirikkale.gov.tr/vali-sayin-haktankacmaz-yesil-vadi-projesini-inceledi";
 const map="https://mapcarta.com/N1038522591";
 
+const appendDailyRiskNote=(routeMap:Map<string,EnrichedMera>,slug:string,note:string)=>{
+  const route=routeMap.get(slug);
+  if(!route)throw new Error(`24 Ağustos risk yaması hedefi yok: ${slug}`);
+  routeMap.set(slug,{...route,cautions:[...new Set([...(route.cautions||[]),note])]});
+};
+
 export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
   const slug="ulusal-kirikkale-kizilirmak-yahsihan-hatti";
   const previous=routeMap.get(slug);
@@ -42,5 +48,11 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
   applyStabilizasyon20260822(routeMap);
   applyStabilizasyon20260823(routeMap);
   applyGrowth20260823(routeMap);
-  return applyDailyQualityRun20260824(routeMap);
+  applyDailyQualityRun20260824(routeMap);
+
+  appendDailyRiskNote(routeMap,"sivas-golova-baraj-golu","Su kotu, dik/gevşek şev ve rüzgâr etkisi hareket günü yerinde değerlendirilmeden su kenarına inilmemelidir; baraj işletme sınırları ve saha tabelaları önceliklidir.");
+  appendDailyRiskNote(routeMap,"siirt-kurtalan-yayikli-goleti","Kırsal sulama göletinde yumuşak çamur, ani kıyı kırılması ve tarımsal araç trafiği riski bulunabilir; son yaklaşım ve kıyı zemini gündüz koşullarında kontrol edilmelidir.");
+  appendDailyRiskNote(routeMap,"siirt-kurtalan-cayirli-goleti","Düşük su seviyesinde açığa çıkan çamurlu taban güvenli zemin kabul edilmemeli; kuruma riski, sulama faaliyeti ve kıyı taşıma kapasitesi hareket günü yeniden değerlendirilmelidir.");
+
+  return routeMap;
 };
