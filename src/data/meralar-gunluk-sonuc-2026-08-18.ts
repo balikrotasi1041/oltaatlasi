@@ -4,7 +4,7 @@ import { applyStabilizasyon20260821 } from "./meralar-stabilizasyon-2026-08-21";
 import { applyStabilizasyon20260822 } from "./meralar-stabilizasyon-2026-08-22";
 import { applyStabilizasyon20260823 } from "./meralar-stabilizasyon-2026-08-23";
 import { applyGrowth20260823 } from "./meralar-growth-2026-08-23";
-import { applyDailyQuality20260824 } from "./meralar-daily-quality-2026-08-24";
+import { applyDailyQualityRun20260824 } from "./meralar-daily-quality-2026-08-24-run";
 
 const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-acildi";
 const yesilVadi="https://www.kirikkale.gov.tr/vali-sayin-haktankacmaz-yesil-vadi-projesini-inceledi";
@@ -42,5 +42,5 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
   applyStabilizasyon20260822(routeMap);
   applyStabilizasyon20260823(routeMap);
   applyGrowth20260823(routeMap);
-  return applyDailyQuality20260824(routeMap);
+  return applyDailyQualityRun20260824(routeMap);
 };
