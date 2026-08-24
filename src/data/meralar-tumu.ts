@@ -16,6 +16,7 @@ import { applyProvinceConfidenceAudit } from "./meralar-province-confidence-audi
 import { applyGunlukBakim20260818, gunlukBakimHedefleri20260818 } from "./meralar-gunluk-2026-08-18";
 import { yeniMeralar20260818 } from "./meralar-gunluk-yeni-2026-08-18";
 import { applyGunlukSonuc20260818 } from "./meralar-gunluk-sonuc-2026-08-18";
+import { applyGrowthUpgrades20260824, upgradeTargets20260824, yeniCPlusMeralar20260824 } from "./meralar-growth-2026-08-24";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -159,6 +160,14 @@ for(const route of yeniMeralar20260818){
   routeMap.set(route.slug,route);
 }
 
+export const growthStats20260824=applyGrowthUpgrades20260824(routeMap);
+if(growthStats20260824.reviewed!==17||growthStats20260824.upgraded!==17||upgradeTargets20260824.length!==17)throw new Error(`24 Ağustos D→C+ hedefi tamamlanmadı: ${growthStats20260824.upgraded}/${growthStats20260824.reviewed}`);
+for(const route of yeniCPlusMeralar20260824){
+  if(routeMap.has(route.slug))throw new Error(`24 Ağustos yeni rotası mevcut slug ile çakışıyor: ${route.slug}`);
+  if(route.confidence==="D")throw new Error(`24 Ağustos yeni rotası C+ değil: ${route.slug}`);
+  routeMap.set(route.slug,route);
+}
+
 const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
 const publishedToday12=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-12");
@@ -171,6 +180,8 @@ const publishedToday16=[...routeMap.values()].filter((route)=>route.publishedAt=
 if(publishedToday16.length>10)throw new Error(`16 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday16.length}`);
 const publishedToday18=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-18");
 if(publishedToday18.length!==3)throw new Error(`18 Ağustos günlük yeni kayıt hedefi 3 olmalı: ${publishedToday18.length}`);
+const publishedToday24=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-24");
+if(publishedToday24.length!==3||publishedToday24.some((route)=>route.confidence==="D"))throw new Error(`24 Ağustos günlük yeni C+ hedefi tam 3 olmalı: ${publishedToday24.length}`);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
