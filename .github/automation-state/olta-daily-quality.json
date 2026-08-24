@@ -42,10 +42,17 @@
   "mgmAudit": {
     "status": "pending",
     "representatives": ["İzmit Körfezi Sahil Bandı","Gölova Baraj Gölü","Yayıklı Göleti","Kızılırmak Yahşihan Hattı","Uzunçayır Baraj Gölü - Kanoğlu Resmî Amatör Kıyısı"],
-    "reason": "MGM MeteoUYARI, bölgesel/saatlik ve deniz ürünleri kontrol edildi; canlı /api/weather yanıtları denetim ortamından okunamadığı için model-resmî karşılaştırması tamamlanamadı."
+    "reason": "MGM MeteoUYARI, bölgesel/saatlik ve deniz ürünleri kontrol edildi; canlı /api/weather yanıtları denetim ortamından okunamadığı için model-resmî karşılaştırması tamamlanamadı. Resmî teyit yapılmış sayılmadı."
   },
-  "ci": {"status": "rerun_pending", "lastFailure":"Alleben ve Kılıçkaya Ankara-500 km veri kapısı; rota kohortu kanıta uygun alternatiflerle değiştirildi."},
-  "pr": {"number":120,"status":"open"},
-  "merge": null,
-  "deploy": {"status": "not_started"}
+  "ci": {
+    "status": "success",
+    "qualityCheckRun": 852,
+    "qualityGateRun": 819,
+    "headSha": "b05be329e5ef38c8fd85345161ab9c0095e24649",
+    "lastFailure": "Üç yeni merada cautions sayısı bakım validator alt sınırının altındaydı; konuma özgü üçüncü risk notları eklenerek düzeltildi."
+  },
+  "pr": {"number":120,"status":"merged"},
+  "merge": {"status":"success","mainSha":"2031087a3b704dde559008a8c157e560281af3b7","method":"squash"},
+  "deploy": {"status":"success","context":"production/cloudflare","mainSha":"2031087a3b704dde559008a8c157e560281af3b7"},
+  "blocker": "Günlük veri/yayın hedefleri, CI, merge ve production tamamlandı; ancak /api/weather model yanıtı okunamadığından MGM model-resmî karşılaştırması verified statüsüne taşınamadı."
 }
