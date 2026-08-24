@@ -7,6 +7,7 @@ const BLOCKED_IPS = new Set([
   "195.178.110.199",
   "216.73.216.200",
   "51.68.234.131",
+  "45.45.237.65",
   "2a01:4f9:4a:2aa5::2",
 ]);
 
@@ -27,17 +28,21 @@ const SENSITIVE_PROBE_PATTERNS = [
 ];
 
 const SECURITY_POLICY_HEADER = "x-olta-security-policy";
-const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-and-404-v7";
+const SECURITY_POLICY_VALUE = "ip-blocklist-probe-guard-browser-headers-rate-limit-and-404-v8";
 const CONTENT_SECURITY_POLICY = "base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests";
 const HASHED_ASSET_PATTERN = /^\/_astro\//;
 const IMAGE_ASSET_PATTERN = /^\/images\//;
+const DATA_ASSET_PATTERN = /^\/data\/[^?#]+\.json$/i;
 const SITEMAP_PATTERN = /^\/sitemap(?:-[^/]*)?\.xml$/;
 const STABLE_SITE_ASSETS = new Set(["/logo-mark.svg", "/favicon.svg", "/site.webmanifest"]);
+const SHORT_CACHE_PAGES = new Set(["/iletisim/"]);
 
 const browserCachePolicy = (pathname) => {
   if (HASHED_ASSET_PATTERN.test(pathname)) return "public, max-age=31536000, immutable";
   if (STABLE_SITE_ASSETS.has(pathname)) return "public, max-age=604800, stale-while-revalidate=2592000";
   if (IMAGE_ASSET_PATTERN.test(pathname)) return "public, max-age=86400, stale-while-revalidate=604800";
+  if (DATA_ASSET_PATTERN.test(pathname)) return "public, max-age=900, stale-while-revalidate=86400";
+  if (SHORT_CACHE_PAGES.has(pathname)) return "public, max-age=600, stale-while-revalidate=3600";
   if (pathname === "/robots.txt" || SITEMAP_PATTERN.test(pathname)) return "public, max-age=3600, stale-while-revalidate=86400";
   return "";
 };
