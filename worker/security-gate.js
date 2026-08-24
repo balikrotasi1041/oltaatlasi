@@ -10,7 +10,11 @@ const BLOCKED_IPS = new Set([
   "91.92.47.81",
   "157.143.3.35",
   "51.68.234.131",
+  "45.45.237.65",
   "2a01:4f9:4a:2aa5::2",
+]);
+const THROTTLED_IPS = new Set([
+  "216.244.66.233",
 ]);
 
 const SENSITIVE_SCAN_PATTERNS = [
@@ -23,14 +27,31 @@ const SENSITIVE_SCAN_PATTERNS = [
   /^\/(?:horizon\/api(?:\/|$)|rest\/executions(?:\/|$)|webhook-waiting(?:\/|$)|v1\.40\/swarm(?:\/|$))/i,
 ];
 
-const securityResponse = (status) => new Response(null, {
+const securityResponse = (status, extraHeaders = {}) => new Response(null, {
   status,
   headers: {
     "Cache-Control": "private, no-store",
     "X-Content-Type-Options": "nosniff",
     "X-Robots-Tag": "noindex, nofollow, noarchive, nosnippet",
+    ...extraHeaders,
   },
 });
+
+const rateLimitedResponse = (policy) => securityResponse(429, {
+  "Retry-After": "60",
+  "X-Olta-Rate-Limit": policy,
+});
+
+const enforceRateLimit = async (binding, key, policy) => {
+  if (!binding?.limit || !key) return null;
+  try {
+    const { success } = await binding.limit({ key });
+    return success ? null : rateLimitedResponse(policy);
+  } catch {
+    // Güvenlik bağı geçici olarak kullanılamazsa siteyi kapatmak yerine fail-open davran.
+    return null;
+  }
+};
 
 const clientIp = (request) => String(request.headers.get("CF-Connecting-IP") || "").trim();
 const normalizedProbePath = (pathname) => {
@@ -56,6 +77,11 @@ export default {
     const ip = clientIp(request);
     if (BLOCKED_IPS.has(ip)) return securityResponse(403);
 
+    if (THROTTLED_IPS.has(ip)) {
+      const throttled = await enforceRateLimit(env?.SUSPICIOUS_RATE_LIMITER, `suspect:${ip}`, "suspicious-crawler");
+      if (throttled) return throttled;
+    }
+
     const url = new URL(request.url);
     if (PRIMARY_HOSTS.has(url.hostname) && url.protocol === "http:") {
       url.protocol = "https:";
@@ -65,7 +91,11 @@ export default {
 
     if (request.method === "TRACE") return securityResponse(405);
     if (isSensitiveScanPath(url.pathname)) return securityResponse(404);
-    if (url.pathname === "/api/weather") return handleWeatherRequest(request, ctx);
+    if (url.pathname === "/api/weather") {
+      const throttled = await enforceRateLimit(env?.WEATHER_RATE_LIMITER, ip ? `weather:${ip}` : "", "weather-api");
+      if (throttled) return throttled;
+      return handleWeatherRequest(request, ctx);
+    }
 
     return appWorker.fetch(request, env, ctx);
   },

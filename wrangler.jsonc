@@ -16,6 +16,24 @@
       "head_sampling_rate": 0.1
     }
   },
+  "ratelimits": [
+    {
+      "name": "WEATHER_RATE_LIMITER",
+      "namespace_id": "2026082401",
+      "simple": {
+        "limit": 60,
+        "period": 60
+      }
+    },
+    {
+      "name": "SUSPICIOUS_RATE_LIMITER",
+      "namespace_id": "2026082402",
+      "simple": {
+        "limit": 15,
+        "period": 60
+      }
+    }
+  ],
   "assets": {
     "directory": "./dist/",
     "binding": "ASSETS",
