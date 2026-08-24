@@ -4,6 +4,6 @@
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
   "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
-  "message": "İlk günlük resmî meteoroloji denetimi bekleniyor.",
+  "message": "24 Ağustos 2026 tek günlük MGM denetiminde MeteoUYARI, güncel Türkiye/bölgesel tahminleri, Kocaeli-Sivas-Siirt-Kırıkkale-Tunceli saatlik ürünleri ve Marmara deniz tahmini kontrol edildi; MeteoUYARI Türkiye sayfası aktif il uyarısı göstermedi. İzmit Körfezi, Gölova Baraj Gölü, Yayıklı Göleti, Kızılırmak Yahşihan hattı ve Uzunçayır-Kanoğlu temsilî seti seçildi. Denetim ortamı oltaatlasi.com /api/weather noktasal yanıtlarını okuyamadığı için model-MGM karşılaştırması tamamlanamadı; bu nedenle resmî teyit statüsü pending bırakıldı ve önceki doğrulanmış checkedAt yapay biçimde yenilenmedi.",
   "warnings": {}
 }

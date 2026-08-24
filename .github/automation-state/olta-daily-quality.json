@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "date": "2026-08-24",
+  "timezone": "Europe/Istanbul",
+  "stage": 4,
+  "branch": "quality/daily-2026-08-24",
+  "done": false,
+  "research": {
+    "dCandidatesReviewed": 28,
+    "newCandidatesReviewed": 8,
+    "rejectedOrHeld": [
+      {"slug":"ulusal-duzce-efteni-golu","reason":"Koruma alanı kaynaklarında avlanma yasağı ifadesi bulundu; balıkçılığa özgü açık kullanım kanıtı olmadan yükseltilmedi."},
+      {"slug":"ankara-500km-gaziantep-alleben-goleti","reason":"Ankara-500 km veri kapısı doğrulanmamış alanlar ve paket tarihleri nedeniyle C yükseltmesini reddetti; D bırakıldı."},
+      {"slug":"ankara-500km-giresun-kilickaya-baraji-golu","reason":"Ankara-500 km veri kapısı doğrulanmamış alanlar ve paket tarihleri nedeniyle C yükseltmesini reddetti; D bırakıldı."},
+      {"slug":"ulusal-samsun-altinkaya-baraj-golu","reason":"Günlük turdan önce mevcut confidence audit tarafından zaten C seviyesine yükseltilmişti; bugünkü D→C kotasına sayılmadı."}
+    ]
+  },
+  "promotedSlugs": [
+    "ulusal-duzce-hasanlar-baraj-golu-duzce",
+    "ulusal-duzce-buyuk-melen-cayi",
+    "ulusal-kahramanmaras-menzelet-baraj-golu",
+    "ulusal-kahramanmaras-sir-baraj-golu",
+    "ulusal-elazig-keban-baraj-golu-elazig-kiyisi",
+    "ulusal-diyarbakir-devegecidi-baraj-golu",
+    "ulusal-diyarbakir-karakaya-baraj-golu-diyarbakir-kiyisi",
+    "ulusal-gaziantep-tahtakopru-baraj-golu-gaziantep",
+    "ulusal-gaziantep-birecik-baraj-golu-gaziantep-kiyisi",
+    "ulusal-gaziantep-hancagiz-baraj-golu",
+    "ulusal-sanliurfa-ataturk-baraj-golu-sanliurfa-kiyisi",
+    "ulusal-erzurum-kuzgun-baraj-golu",
+    "ulusal-tokat-almus-baraj-golu",
+    "ulusal-osmaniye-aslantas-baraj-golu",
+    "ulusal-tokat-atakoy-baraj-golu",
+    "ulusal-kahramanmaras-kilavuzlu-baraj-golu",
+    "ulusal-kahramanmaras-kartalkaya-baraj-golu"
+  ],
+  "newSlugs": [
+    "sivas-golova-baraj-golu",
+    "siirt-kurtalan-yayikli-goleti",
+    "siirt-kurtalan-cayirli-goleti"
+  ],
+  "mgmAudit": {
+    "status": "pending",
+    "representatives": ["İzmit Körfezi Sahil Bandı","Gölova Baraj Gölü","Yayıklı Göleti","Kızılırmak Yahşihan Hattı","Uzunçayır Baraj Gölü - Kanoğlu Resmî Amatör Kıyısı"],
+    "reason": "MGM MeteoUYARI, bölgesel/saatlik ve deniz ürünleri kontrol edildi; canlı /api/weather yanıtları denetim ortamından okunamadığı için model-resmî karşılaştırması tamamlanamadı."
+  },
+  "ci": {"status": "rerun_pending", "lastFailure":"Alleben ve Kılıçkaya Ankara-500 km veri kapısı; rota kohortu kanıta uygun alternatiflerle değiştirildi."},
+  "pr": {"number":120,"status":"open"},
+  "merge": null,
+  "deploy": {"status": "not_started"}
+}
