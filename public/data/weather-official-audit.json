@@ -4,6 +4,6 @@
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
   "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
-  "message": "İlk günlük resmî meteoroloji denetimi bekleniyor.",
+  "message": "24 Ağustos 2026'da MGM MeteoUYARI, Türkiye/genel tahmin, saatlik tahmin ve deniz tahmin ürünleri denetlendi. Resmî kaynaklara erişildi; ancak otomasyon ortamında /api/weather canlı model çıktısı en az 5 temsilî mera için güvenilir biçimde okunamadığından model-resmî karşılaştırma tamamlanamadı. Durum pending bırakıldı ve checkedAt ilerletilmedi.",
   "warnings": {}
 }
