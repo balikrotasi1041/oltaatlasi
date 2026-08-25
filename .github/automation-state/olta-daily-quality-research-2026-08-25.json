@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "date": "2026-08-25",
+  "timezone": "Europe/Istanbul",
+  "baseMainSha": "e11145f6820ad28ebd352ba5b3ff3cc5792c7c1e",
+  "searchConsole": {
+    "snapshot": "2026-08-23 exportu; performans 2026-08-21'e kadar",
+    "priorityRows": [
+      {"slug":"sarimsakli-baraji-genel-amator-kiyi","query":"sarımsaklı barajı yol tarifi","impressions":624,"clicks":1,"ctr":0.16,"position":8.74},
+      {"slug":"yamula-baraji-resmi-amator-balikcilik-alani","query":"yamula barajı yol tarifi","impressions":182,"clicks":0,"ctr":0,"position":7.13},
+      {"slug":"koyunbaba-baraji-demirci-oyumigde-amator-alani","query":"koyunbaba barajı yol tarifi","impressions":30,"clicks":0,"ctr":0,"position":8.90},
+      {"slug":"ulusal-nigde-gumusler-baraj-golu","query":"gümüşler barajı yol tarifi","impressions":28,"clicks":0,"ctr":0,"position":8.71},
+      {"slug":"bilecik-kizildamlar-baraj-goleti","query":"kızıldamlar barajı yol tarifi","impressions":28,"clicks":0,"ctr":0,"position":9.32},
+      {"slug":"cengelkoy-sahili","query":"çengelköy sahil yol tarifi","impressions":25,"clicks":0,"ctr":0,"position":10.24},
+      {"slug":"sariyar-baraji-softabogazi-amator-alani","query":"sarıyar barajı yol tarifi","impressions":21,"clicks":0,"ctr":0,"position":8.90},
+      {"slug":"ulusal-nigde-akkaya-baraj-golu","query":"akkaya barajı yol tarifi","impressions":18,"clicks":0,"ctr":0,"position":8.56}
+    ],
+    "note": "GSC sıralaması CTR/konum niyeti için kullanıldı. Günlük D→C kotasına yalnız çalıştırma başlangıcında gerçekten Güven D olan kayıtlar girecek; mevcut C/B rotalar sırf GSC fırsatı nedeniyle confidence işlemine alınmayacak."
+  },
+  "dCandidates": [
+    {"slug":"ulusal-amasya-destek-baraj-golu","families":["resmî Amasya KTB/DSİ tesis kimliği","yerel/harita erişim bağlamı"],"status":"hold-access"},
+    {"slug":"ulusal-aksaray-ciftevi-baraj-golu","families":["resmî İl Tarım rota-özel sazan balıklandırması","yerel/harita erişim bağlamı","6/2 mevzuat"],"status":"priority"},
+    {"slug":"ulusal-erzincan-karasu-nehri-erzincan-hatti","families":["akademik Karasu balık faunası ve ekoloji çalışmaları","resmî/yerel nehir-koridor kimliği","yerel erişim bağlamı"],"status":"priority"},
+    {"slug":"ulusal-ardahan-kura-nehri-ardahan-hatti","families":["resmî Ardahan KTB/İl Çevre raporu","akademik Ardahan ihtiyofaunası","yerel koridor bağlamı"],"status":"priority"},
+    {"slug":"ulusal-kastamonu-cigdem-baraj-golu-kastamonu","families":["resmî İl Tarım rota-özel sazan balıklandırması","yerel/harita erişim bağlamı","6/2 mevzuat"],"status":"priority"},
+    {"slug":"ulusal-zonguldak-filyos-nehri-zonguldak-hatti","families":["resmî nehir/havza kimliği","akademik/bölgesel su-balık literatürü","yerel erişim bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-erzurum-kapikaya-baraj-golu-erzurum","families":["resmî Erzurum İl Çevre/DSİ tesis kaydı","yerel/harita erişim bağlamı"],"status":"hold-species-access"},
+    {"slug":"ulusal-cankiri-karadere-baraj-golu-cankiri","families":["resmî su yapısı/il çevre kaydı","yerel/harita erişim bağlamı"],"status":"hold-species-access"},
+    {"slug":"ulusal-erzincan-firat-nehri-kemaliye-hatti","families":["resmî Fırat/Kemaliye koridor kimliği","akademik Fırat havzası balık literatürü","yerel turizm/erişim bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-bolu-caykoy-baraj-golu-bolu","families":["resmî su yapısı/il çevre kaydı","yerel/harita bağlamı"],"status":"hold-species-access"},
+    {"slug":"ulusal-sivas-delice-baraj-golu-sivas","families":["akademik Delice su kalitesi/ekoloji çalışması","resmî su yapısı bağlamı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-hakkari-zap-suyu-hakkari-hatti","families":["resmî/bölgesel Zap koridor kimliği","yerel güncel balıkçılık gözlemi"],"status":"hold-academic-legal"},
+    {"slug":"ulusal-bayburt-lori-deresi","families":["resmî/bölgesel akarsu kimliği","yerel/harita bağlamı"],"status":"hold-species-legal"},
+    {"slug":"ankara-500km-adiyaman-ataturk-baraj-golu","families":["resmî baraj/avlak-kiralama bağlamı","akademik Atatürk Baraj Gölü balıkçılık çalışması","yerel erişim bağlamı"],"status":"priority"},
+    {"slug":"ankara-500km-adiyaman-karahuyuk-goleti","families":["resmî su/il kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ankara-500km-adiyaman-sirimtas-baraj-golu","families":["resmî su/il kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ankara-500km-adiyaman-cataltepe-goleti","families":["resmî su/il kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-erzurum-demirdoven-baraj-golu","families":["resmî Erzurum İl Çevre/DSİ kaydı","akademik Demirdöven rezervuar/ekoloji literatürü","yerel erişim bağlamı"],"status":"priority"},
+    {"slug":"ulusal-erzurum-koycegiz-baraj-golu-erzurum","families":["resmî Erzurum İl Çevre/DSİ kaydı","yerel/harita bağlamı"],"status":"hold-species-access"},
+    {"slug":"ulusal-erzurum-olur-baraj-golu","families":["resmî su yapısı/il kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ankara-500km-amasya-derinoz-baraj-golu","families":["resmî Amasya su yapısı/il kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-amasya-ayvali-baraj-golu","families":["resmî Amasya su yapısı/il kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-amasya-dogantepe-baraj-golu","families":["resmî Amasya Valiliği/KTB su yapısı kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-amasya-citli-baraj-golu","families":["resmî Amasya su yapısı/il kaydı","yerel/harita bağlamı"],"status":"priority-research"},
+    {"slug":"ulusal-nigde-gumusler-baraj-golu","families":["GSC konum niyeti fırsatı","resmî su yapısı/il kaydı","yerel/harita bağlamı"],"status":"priority-gsc"}
+  ],
+  "newCandidates": [
+    {"name":"Kacarlar Göleti","province":"Tunceli","district":"Pertek","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Tunceli İl Tarım 2025 rota-özel 100 bin pullu sazan balıklandırması","yerel/harita ve Pertek genel erişim bağlamı"],"status":"priority-research"},
+    {"name":"Sefaköy Barajı","province":"Kars","district":"Kağızman","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Kars İl Tarım 2025 rota-özel sazan balıklandırması","baraj/HES işletme kimliği ve yerel konum kaydı"],"status":"hold-active-hes-access"},
+    {"name":"Asboğa Gölü","province":"Kars","district":"Sarıkamış","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Kars İl Tarım 2025 rota-özel sazan balıklandırması","yerel/ulusal basın göl kimliği ve erişim bağlamı"],"status":"reject-sensitive-ecology","note":"Göçmen kuş üreme/barınma alanı ve ciddi su çekilmesi riski nedeniyle mikro balıkçılık rotası yayımlamaya uygun görülmedi."},
+    {"name":"Alkumru Baraj Gölü","province":"Siirt","district":"Şirvan/Pervari","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Siirt İl Tarım 2025 rota-özel sazan ve şabut balıklandırması","baraj/HES ve bölgesel su kaynağı bağlamı"],"status":"hold-active-hes-access"},
+    {"name":"Kasımlar Baraj Gölü","province":"Isparta","district":"Sütçüler","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Isparta İl Tarım 2025 balıklandırma programı","baraj/HES işletme ve yerel konum kaydı"],"status":"hold-active-hes-access"},
+    {"name":"Gökçehüyük Göleti","province":"Konya","district":"Seydişehir","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Konya İl Tarım 2025 balıklandırma programı/etkinliği","yerel gölet ve ulaşım bağlamı"],"status":"priority-research"},
+    {"name":"Taşkale Göleti","province":"Karaman","district":"Merkez/Taşkale","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Karaman İl Tarım rota-özel 20 bin sazan balıklandırması","yerel yerleşim/harita bağlamı"],"status":"priority-research"},
+    {"name":"Dişli Göleti","province":"Yozgat","district":"Sorgun","outsideAegeanMarmara":true,"duplicateSearch":"no exact Olta Atlası result","families":["Yozgat İl Tarım 2024 rota-özel 10 bin sazan balıklandırması","yerel/harita ve ilçe bağlamı"],"status":"priority-research"}
+  ],
+  "stage1Decision": {
+    "promotionsApplied": 0,
+    "newRoutesPublished": 0,
+    "next": "Stage 2: yalnız gerçekten D olan adaylarda ikinci/üçüncü bağımsız kaynak ailesini ve kamusal genel erişim/hukuk bağlamını kapat; kanıt eşiğini geçen en az 17 benzersiz D→C+ yükseltmesi yap. Hold/reject kayıtlarını kota için yükseltme."
+  }
+}
