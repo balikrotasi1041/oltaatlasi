@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { meralar } from "../../data/meralar-tumu";
+import { baliklar } from "../../data/content-katalogu";
+import { probableSpeciesByRoute, speciesProfileGap, occurrenceEvidenceGap } from "../../data/species-occurrence";
+import { canonicalRegulationSpecies, speciesRegulations, provinceSeasonRules } from "../../data/species-regulations";
+
+const normalize=(value:string)=>String(value||"").toLocaleLowerCase("tr-TR").trim();
+const activeSpecies=[...new Set(meralar.flatMap((route)=>route.fish||[]))].sort((a,b)=>a.localeCompare(b,"tr"));
+const profileNames=new Set(baliklar.map((fish)=>normalize(fish.name)));
+const missingProfiles=speciesProfileGap(meralar,baliklar);
+const evidenceDebt=occurrenceEvidenceGap(meralar);
+const probableEntries=Object.entries(probableSpeciesByRoute).flatMap(([routeSlug,items])=>items.map((item)=>({routeSlug,...item})));
+const regulationMissing=activeSpecies.filter((name)=>!canonicalRegulationSpecies(name));
+const regulationCheckedDates=Object.values(speciesRegulations).map((item)=>item.checkedAt).filter(Boolean).sort();
+const oldestRegulationCheck=regulationCheckedDates[0]||"";
+const rows=activeSpecies.map((name)=>{
+  const routeMatches=meralar.filter((route)=>route.fish.includes(name));
+  const cPlus=routeMatches.filter((route)=>route.confidence!=="D").length;
+  const evidenceGaps=evidenceDebt.filter((item)=>item.species===name).length;
+  const probableCount=probableEntries.filter((item)=>item.name===name).length;
+  const regulationName=canonicalRegulationSpecies(name);
+  return {
+    name,
+    routeCount:routeMatches.length,
+    cPlus,
+    hasProfile:profileNames.has(normalize(name)),
+    regulationName,
+    evidenceGaps,
+    probableCount,
+  };
+}).sort((a,b)=>Number(a.hasProfile)-Number(b.hasProfile)||Number(Boolean(a.regulationName))-Number(Boolean(b.regulationName))||b.routeCount-a.routeCount||a.name.localeCompare(b.name,"tr"));
+---
+<BaseLayout title="Tür ve Mevzuat Sağlığı" description="Avlak türleri, balık profilleri, kanıt borcu ve güncel mevzuat kapsamı kontrol paneli." noindex={true}>
+<section class="container section">
+  <div class="page-hero" style="border-radius:22px;padding:28px;margin-bottom:20px;">
+    <p class="eyebrow">Olta Atlası · İç veri kontrolü</p>
+    <h1>Tür ve mevzuat sağlığı</h1>
+    <p>Avlaklarda kullanılan tür adlarını, bağımsız balık rehberlerini, rota-özel kanıt borcunu ve mevzuat kapsamını aynı yerde gösterir. Bu ekran build edilen production veri paketini temsil eder.</p>
+  </div>
+
+  <div class="cards" style="margin-bottom:20px;">
+    <article><span>Aktif avlak türü</span><strong>{activeSpecies.length}</strong></article>
+    <article><span>Balık profili</span><strong>{baliklar.length}</strong><small>{missingProfiles.length} profil açığı</small></article>
+    <article><span>Mevzuat profili</span><strong>{Object.keys(speciesRegulations).length}</strong><small>{regulationMissing.length} aktif tür teyit bekliyor</small></article>
+    <article><span>Rota tür kanıt borcu</span><strong>{evidenceDebt.length}</strong><small>fishEvidence eşleşmesi bekleyen</small></article>
+  </div>
+
+  <div class="grid" style="margin-bottom:20px;">
+    <section class="panel">
+      <h2>Mevzuat tazeliği</h2>
+      <div class="row"><span>En eski son kontrol</span><b>{oldestRegulationCheck||"—"}</b></div>
+      <div class="row"><span>İl dönem kuralı</span><b>{provinceSeasonRules.length}</b></div>
+      <div class="row"><span>Kaynaklı bölgesel olasılık</span><b>{probableEntries.length}</b></div>
+      <p class="microcopy">İl bazlı kural veri paketinde yoksa avlak sayfası “bugün serbest” üretmez; yerel teyit gerekli gösterir.</p>
+    </section>
+    <section class="panel">
+      <h2>Öncelikli açıklar</h2>
+      <div class="row"><span>Avlakta var, balık rehberi yok</span><b>{missingProfiles.length}</b></div>
+      <div class="row"><span>Avlakta var, mevzuat profili yok</span><b>{regulationMissing.length}</b></div>
+      <div class="row"><span>Muhtemel tür eşleşmesi</span><b>{probableEntries.length}</b></div>
+      <p class="microcopy">Yeni tür keşfi avlak yayınına engel olmaz; profil ve mevzuat açığı bu panelde görünür hâle gelir.</p>
+    </section>
+  </div>
+
+  <section class="panel table-panel">
+    <div class="heading" style="gap:14px;align-items:end;flex-wrap:wrap;">
+      <div><h2>Tür kapsam matrisi</h2><span>Production veri paketindeki aktif avlak türleri</span></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:end;">
+        <label style="display:grid;gap:4px;font-weight:800;">Ara<input id="species-search" type="search" placeholder="Sazan, yayın…" style="min-height:42px;padding:8px 10px;border:1px solid #cbd9dd;border-radius:10px;font-size:16px;" /></label>
+        <label style="display:grid;gap:4px;font-weight:800;">Durum<select id="species-filter" style="min-height:42px;padding:8px 10px;border:1px solid #cbd9dd;border-radius:10px;font-size:16px;"><option value="all">Tümü</option><option value="missing-profile">Profil eksik</option><option value="missing-regulation">Mevzuat eksik</option><option value="evidence-debt">Kanıt borcu</option><option value="healthy">Temel kapsam tamam</option></select></label>
+      </div>
+    </div>
+    <p id="species-result-count" class="microcopy" aria-live="polite">{rows.length} tür gösteriliyor.</p>
+    <div class="scroll"><table><thead><tr><th>Tür</th><th>Avlak</th><th>C+</th><th>Balık profili</th><th>Mevzuat</th><th>Tür kanıt borcu</th><th>Bölgesel olasılık</th></tr></thead><tbody id="species-rows">{rows.map((row)=><tr data-species-row data-name={normalize(row.name)} data-profile={row.hasProfile?"yes":"no"} data-regulation={row.regulationName?"yes":"no"} data-debt={row.evidenceGaps>0?"yes":"no"}><td><strong>{row.name}</strong>{row.hasProfile&&<small><a href={`/baliklar/${baliklar.find((fish)=>normalize(fish.name)===normalize(row.name))?.slug}/`}>Tür rehberini aç</a></small>}</td><td>{row.routeCount}</td><td>{row.cPlus}</td><td>{row.hasProfile?"✅ Var":"⚠️ Eksik"}</td><td>{row.regulationName?`✅ ${row.regulationName}`:"⚠️ Teyit bekliyor"}</td><td>{row.evidenceGaps}</td><td>{row.probableCount}</td></tr>)}</tbody></table></div>
+  </section>
+
+  {(missingProfiles.length>0||regulationMissing.length>0)&&<section class="panel" style="margin-top:20px;"><h2>İş kuyruğu</h2>{missingProfiles.length>0&&<><h3>Balık profili açığı</h3><p>{missingProfiles.join(" · ")}</p></>}{regulationMissing.length>0&&<><h3>Mevzuat doğrulaması bekleyen aktif türler</h3><p>{regulationMissing.join(" · ")}</p></>}</section>}
+</section>
+<script is:inline>
+(()=>{
+  const search=document.querySelector("#species-search");const filter=document.querySelector("#species-filter");const rows=[...document.querySelectorAll("[data-species-row]")];const count=document.querySelector("#species-result-count");
+  const apply=()=>{const q=String(search?.value||"").toLocaleLowerCase("tr-TR").trim();const mode=filter?.value||"all";let visible=0;rows.forEach((row)=>{const matchesText=!q||row.dataset.name.includes(q);const profile=row.dataset.profile==="yes";const regulation=row.dataset.regulation==="yes";const debt=row.dataset.debt==="yes";const matchesMode=mode==="all"||(mode==="missing-profile"&&!profile)||(mode==="missing-regulation"&&!regulation)||(mode==="evidence-debt"&&debt)||(mode==="healthy"&&profile&&regulation&&!debt);row.hidden=!(matchesText&&matchesMode);if(!row.hidden)visible+=1;});if(count)count.textContent=`${visible} tür gösteriliyor.`;};
+  search?.addEventListener("input",apply);filter?.addEventListener("change",apply);apply();
+})();
+</script>
+</BaseLayout>
