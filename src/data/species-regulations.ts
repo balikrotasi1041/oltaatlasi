@@ -28,6 +28,7 @@ export type SpeciesRegulationBase = {
 export type RouteRegulationContext={province?:string;waterType?:string;routeSlug?:string};
 export type ResolvedSpeciesRegulation={
   species:string;
+  requestedSpecies?:string;
   minLengthCm:number|null;
   retentionLimit:string|null;
   closedPeriods:ClosedPeriod[];
@@ -93,6 +94,22 @@ export const speciesRegulations:Record<string,SpeciesRegulationBase>={
   "Yayın":inner("Yayın","Silurus glanis",90,"1 adet"),
 };
 
+const normalize=(value:string)=>String(value||"").toLocaleLowerCase("tr-TR").replace(/\s+/g," ").trim();
+const aliases:Record<string,string>={
+  [normalize("Pullu Sazan")]:"Sazan",
+  [normalize("Adi Sazan")]:"Sazan",
+  [normalize("Turna Balığı")]:"Turna",
+  [normalize("Yayın Balığı")]:"Yayın",
+  [normalize("Sudak Balığı")]:"Sudak",
+  [normalize("Tatlı Su Levreği")]:"Tatlısu Levreği",
+  [normalize("Tatlısu levreği")]:"Tatlısu Levreği",
+  [normalize("Tatlı Su Kefali")]:"Tatlısu Kefali",
+  [normalize("Tatlısu kefali")]:"Tatlısu Kefali",
+  [normalize("Şiraz")]:"Siraz",
+};
+const canonicalByNormalized=new Map(Object.keys(speciesRegulations).map((name)=>[normalize(name),name]));
+export const canonicalRegulationSpecies=(value:string)=>aliases[normalize(value)]||canonicalByNormalized.get(normalize(value))||null;
+
 const seasonalSpecies=new Set(["Sazan","Kadife","Siraz","Yayın","Tatlısu Kefali"]);
 type ProvinceSeasonRule={province:string;start:string;end:string;label:string;source:RegulationSource;excludeAkarsuFor?:string[]};
 export const provinceSeasonRules:ProvinceSeasonRule[]=[
@@ -105,10 +122,11 @@ export const provinceSeasonRules:ProvinceSeasonRule[]=[
 ];
 
 const uniqSources=(items:RegulationSource[])=>[...new Map(items.map((item)=>[item.url,item])).values()];
-export const resolveSpeciesRegulation=(species:string,context:RouteRegulationContext={}):ResolvedSpeciesRegulation=>{
-  const base=speciesRegulations[species];
-  if(!base){
-    return {species,minLengthCm:null,retentionLimit:null,closedPeriods:[],statusMode:"unknown",statusNote:"Bu tür için güncel boy/dönem kaydı henüz veri katmanında doğrulanmadı. Av öncesinde 6/2 Tebliği ve ilgili il müdürlüğü duyurusu kontrol edilmelidir.",sources:[nationalAmateurSource,nationalAmateurAmendment2025],checkedAt:null,validThrough:null};
+export const resolveSpeciesRegulation=(requestedSpecies:string,context:RouteRegulationContext={}):ResolvedSpeciesRegulation=>{
+  const species=canonicalRegulationSpecies(requestedSpecies);
+  const base=species?speciesRegulations[species]:undefined;
+  if(!base||!species){
+    return {species:requestedSpecies,requestedSpecies,minLengthCm:null,retentionLimit:null,closedPeriods:[],statusMode:"unknown",statusNote:"Bu tür için güncel boy/dönem kaydı henüz veri katmanında doğrulanmadı. Av öncesinde 6/2 Tebliği ve ilgili il müdürlüğü duyurusu kontrol edilmelidir.",sources:[nationalAmateurSource,nationalAmateurAmendment2025],checkedAt:null,validThrough:null};
   }
   const closed=[...(base.nationalClosedPeriods||[])];
   let statusMode:ResolvedSpeciesRegulation["statusMode"]="computed";
@@ -125,11 +143,11 @@ export const resolveSpeciesRegulation=(species:string,context:RouteRegulationCon
       statusNote=`${context.province||"Bu il"} için güncel il bazlı kapalı dönem bu veri paketinde henüz doğrulanmadı. Boy ve miktar limiti gösterilebilir; "bugün serbest" sonucu verilmez.`;
     }
   }
-  return {species,minLengthCm:base.minLengthCm,retentionLimit:base.retentionLimit,closedPeriods:closed,statusMode,statusNote,sources:uniqSources([base.source,nationalAmateurSource,nationalAmateurAmendment2025,...closed.map((period)=>period.source)]),checkedAt:base.checkedAt,validThrough:base.validThrough};
+  return {species:requestedSpecies,requestedSpecies,minLengthCm:base.minLengthCm,retentionLimit:base.retentionLimit,closedPeriods:closed,statusMode,statusNote,sources:uniqSources([base.source,nationalAmateurSource,nationalAmateurAmendment2025,...closed.map((period)=>period.source)]),checkedAt:base.checkedAt,validThrough:base.validThrough};
 };
 
 export const regulationCoverage=(speciesNames:string[])=>{
   const unique=[...new Set(speciesNames)];
-  const covered=unique.filter((name)=>Boolean(speciesRegulations[name]));
-  return {total:unique.length,covered:covered.length,missing:unique.filter((name)=>!speciesRegulations[name])};
+  const covered=unique.filter((name)=>Boolean(canonicalRegulationSpecies(name)));
+  return {total:unique.length,covered:covered.length,missing:unique.filter((name)=>!canonicalRegulationSpecies(name))};
 };
