@@ -38,6 +38,12 @@
       "ulusal-amasya-citli-baraj-golu",
       "ulusal-nigde-gumusler-baraj-golu"
     ],
+    "additionalDReviewedForStage2": [
+      "ulusal-malatya-kapikaya-baraj-golu-malatya",
+      "ankara-500km-malatya-sultansuyu-baraj-golu",
+      "ankara-500km-malatya-beylerderesi-baraj-goleti",
+      "ankara-500km-malatya-orduzu-goleti"
+    ],
     "newCandidatesReviewed": 8,
     "newCandidates": [
       "Tunceli/Pertek Kacarlar Göleti",
@@ -57,12 +63,15 @@
     ]
   },
   "stage2": {
-    "status": "in_progress",
+    "status": "complete",
     "target": 17,
-    "applied": 10,
-    "remaining": 7,
-    "module": "src/data/meralar-daily-quality-2026-08-25-stage2.ts",
-    "note": "İkinci Stage 2 devam turunda Çiğdem, Atatürk, Karahöyük, Kemaliye-Fırat ve Gümüşler için resmî/akademik/yerel kanıt katmanları kapatıldı. Toplam 10 gerçek D→C yükseliş uygulanmış durumda. Zayıf adaylar kota uğruna yükseltilmedi; kalan 7 için Stage 2 devam edecek. MGM/CI/PR/merge/deploy henüz başlatılmadı."
+    "applied": 17,
+    "remaining": 0,
+    "modules": [
+      "src/data/meralar-daily-quality-2026-08-25-stage2.ts",
+      "src/data/meralar-daily-quality-2026-08-25-stage2-continuation.ts"
+    ],
+    "note": "Stage 2 tamamlandı. İlk 10 gerçek D→C yükselişine ek olarak Derinöz, Filyos, Olur/Ürünlü, Kapıkaya, Sultansuyu, Beylerderesi ve Orduzu kayıtları en az iki bağımsız kaynak ailesiyle çaprazlanarak D'den C'ye geçirildi. Ürünlü kaydında slug değiştirilmeden resmî ad/su türü kimliği düzeltildi. Kota uğruna kanıtsız yükseltme yapılmadı. Stage 3, MGM, CI, PR, merge ve deploy henüz başlatılmadı."
   },
   "promotedSlugs": [
     "ulusal-aksaray-ciftevi-baraj-golu",
@@ -74,7 +83,14 @@
     "ankara-500km-adiyaman-ataturk-baraj-golu",
     "ankara-500km-adiyaman-karahuyuk-goleti",
     "ulusal-erzincan-firat-nehri-kemaliye-hatti",
-    "ulusal-nigde-gumusler-baraj-golu"
+    "ulusal-nigde-gumusler-baraj-golu",
+    "ankara-500km-amasya-derinoz-baraj-golu",
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+    "ulusal-erzurum-olur-baraj-golu",
+    "ulusal-malatya-kapikaya-baraj-golu-malatya",
+    "ankara-500km-malatya-sultansuyu-baraj-golu",
+    "ankara-500km-malatya-beylerderesi-baraj-goleti",
+    "ankara-500km-malatya-orduzu-goleti"
   ],
   "newSlugs": [],
   "mgmAudit": {"status": "not_started", "representatives": []},
