@@ -59,17 +59,22 @@
   "stage2": {
     "status": "in_progress",
     "target": 17,
-    "applied": 5,
-    "remaining": 12,
+    "applied": 10,
+    "remaining": 7,
     "module": "src/data/meralar-daily-quality-2026-08-25-stage2.ts",
-    "note": "Yalnız bu çalıştırmada kanıt eşiği açık biçimde kapatılan 5 D rota C'ye geçirildi. Kota uğruna hold adayları zorlanmadı; Stage 2 bir sonraki çalıştırmada 12 ek gerçek D→C+ ile devam edecek. CI/quality gate Stage 4'e kadar çalıştırılmadı."
+    "note": "İkinci Stage 2 devam turunda Çiğdem, Atatürk, Karahöyük, Kemaliye-Fırat ve Gümüşler için resmî/akademik/yerel kanıt katmanları kapatıldı. Toplam 10 gerçek D→C yükseliş uygulanmış durumda. Zayıf adaylar kota uğruna yükseltilmedi; kalan 7 için Stage 2 devam edecek. MGM/CI/PR/merge/deploy henüz başlatılmadı."
   },
   "promotedSlugs": [
     "ulusal-aksaray-ciftevi-baraj-golu",
     "ulusal-erzincan-karasu-nehri-erzincan-hatti",
     "ulusal-ardahan-kura-nehri-ardahan-hatti",
     "ulusal-hakkari-zap-suyu-hakkari-hatti",
-    "ulusal-erzurum-demirdoven-baraj-golu"
+    "ulusal-erzurum-demirdoven-baraj-golu",
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+    "ankara-500km-adiyaman-ataturk-baraj-golu",
+    "ankara-500km-adiyaman-karahuyuk-goleti",
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+    "ulusal-nigde-gumusler-baraj-golu"
   ],
   "newSlugs": [],
   "mgmAudit": {"status": "not_started", "representatives": []},
