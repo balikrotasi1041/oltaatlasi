@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-08-25",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
+  "stage": 2,
   "branch": "quality/daily-2026-08-25",
   "done": false,
   "baseMainSha": "e11145f6820ad28ebd352ba5b3ff3cc5792c7c1e",
@@ -56,7 +56,21 @@
       {"candidate":"Isparta/Sütçüler Kasımlar Baraj Gölü","reason":"Aktif baraj/HES işletme sınırı ve kamusal genel erişim ayrımı ek kanıt istiyor; beklemede."}
     ]
   },
-  "promotedSlugs": [],
+  "stage2": {
+    "status": "in_progress",
+    "target": 17,
+    "applied": 5,
+    "remaining": 12,
+    "module": "src/data/meralar-daily-quality-2026-08-25-stage2.ts",
+    "note": "Yalnız bu çalıştırmada kanıt eşiği açık biçimde kapatılan 5 D rota C'ye geçirildi. Kota uğruna hold adayları zorlanmadı; Stage 2 bir sonraki çalıştırmada 12 ek gerçek D→C+ ile devam edecek. CI/quality gate Stage 4'e kadar çalıştırılmadı."
+  },
+  "promotedSlugs": [
+    "ulusal-aksaray-ciftevi-baraj-golu",
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ulusal-hakkari-zap-suyu-hakkari-hatti",
+    "ulusal-erzurum-demirdoven-baraj-golu"
+  ],
   "newSlugs": [],
   "mgmAudit": {"status": "not_started", "representatives": []},
   "ci": {"status": "not_started"},
