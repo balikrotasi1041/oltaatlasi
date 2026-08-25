@@ -34,6 +34,14 @@ for(const rule of provinceSeasonRules){
 if(!nationalAmateurSource.url.includes("20240811-4"))errors.push("6/2 ana Resmî Gazete kaynağı beklenen belge değil.");
 if(!nationalAmateurAmendment2025.url.includes("20250416-4"))errors.push("2025/12 değişiklik kaynağı beklenen belge değil.");
 
+const checkedDates=Object.values(speciesRegulations).map((item)=>item.checkedAt).filter(Boolean).sort();
+if(checkedDates.length){
+  const oldest=new Date(`${checkedDates[0]}T12:00:00+03:00`).getTime();
+  const ageDays=Math.floor((Date.now()-oldest)/86400000);
+  if(ageDays>31)errors.push(`Mevzuat veri katmanı ${ageDays} gündür resmî kaynaklarla yenilenmemiş. Güncel 6/2 değişiklikleri ve il kararları kontrol edilmeden build yayımlanamaz.`);
+  else if(ageDays>7)warnings.push(`Mevzuat veri katmanının en eski kontrolü ${ageDays} gün önce. Günlük kalite turunda resmî kaynak taraması yenilenmeli.`);
+}
+
 if(missingProfiles.length)warnings.push(`Avlaklarda geçen fakat balık profili olmayan ${missingProfiles.length} tür: ${missingProfiles.join(", ")}`);
 if(highConfidenceMissingProfiles.length)warnings.push(`C+ avlaklarda profilsiz tür eşleşmesi: ${highConfidenceMissingProfiles.slice(0,40).join(" | ")}${highConfidenceMissingProfiles.length>40?" …":""}`);
 if(missingRegulations.length)warnings.push(`Mevzuat veri katmanında henüz doğrulanmamış ${missingRegulations.length} aktif tür: ${missingRegulations.join(", ")}`);
