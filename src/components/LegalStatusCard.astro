@@ -1,0 +1,50 @@
+---
+import type { ResolvedSpeciesRegulation } from "../data/species-regulations";
+const { regulation, compact=false }=Astro.props as {regulation:ResolvedSpeciesRegulation;compact?:boolean};
+const periodPayload=JSON.stringify(regulation.closedPeriods.map((period)=>({start:period.start,end:period.end,label:period.label})));
+const sourceCount=regulation.sources.length;
+---
+<article class={`legal-status-card ${compact?"legal-status-card-compact":""}`} data-legal-status data-mode={regulation.statusMode} data-periods={periodPayload}>
+  <div class="legal-status-head">
+    <div>
+      <span class="kicker">⚖️ Yasal av durumu</span>
+      <h3>{regulation.species}</h3>
+    </div>
+    <strong class="legal-today" aria-live="polite">Kontrol ediliyor…</strong>
+  </div>
+  <dl class="compact-dl">
+    <div><dt>Asgari boy</dt><dd>{Number.isFinite(regulation.minLengthCm)?`${regulation.minLengthCm} cm`:"Doğrulanmış sınır yok"}</dd></div>
+    <div><dt>Alıkoyma</dt><dd>{regulation.retentionLimit||"Doğrulanmış limit yok"}</dd></div>
+    <div><dt>Kapalı dönem</dt><dd>{regulation.closedPeriods.length?regulation.closedPeriods.map((period)=>period.label).join(" · "):regulation.statusMode==="computed"?"Tür bazlı kayıtlı kapalı dönem yok":"Yerel teyit gerekli"}</dd></div>
+    <div><dt>Son mevzuat kontrolü</dt><dd>{regulation.checkedAt?new Date(`${regulation.checkedAt}T12:00:00+03:00`).toLocaleDateString("tr-TR"):"Bekliyor"}</dd></div>
+  </dl>
+  <p class="microcopy legal-note">{regulation.statusNote}</p>
+  <details class="legal-sources">
+    <summary>Resmî kaynaklar ({sourceCount})</summary>
+    <ul>{regulation.sources.map((source)=><li><a href={source.url} target="_blank" rel="noreferrer"><strong>{source.label}</strong></a><span>{source.note}</span></li>)}</ul>
+  </details>
+</article>
+<script is:inline>
+(()=>{
+  const parseMonthDay=(value,year)=>{const [m,d]=String(value||"").split("-").map(Number);return new Date(year,(m||1)-1,d||1,12,0,0,0)};
+  const inPeriod=(today,startText,endText)=>{
+    const year=today.getFullYear(); let start=parseMonthDay(startText,year),end=parseMonthDay(endText,year);
+    if(start<=end)return today>=start&&today<=end;
+    return today>=start||today<=end;
+  };
+  document.querySelectorAll("[data-legal-status]").forEach((node)=>{
+    if(node.dataset.legalReady==="1")return;node.dataset.legalReady="1";
+    const output=node.querySelector(".legal-today"); if(!output)return;
+    const mode=node.getAttribute("data-mode")||"unknown";
+    if(mode==="unknown"){output.textContent="Teyit bekliyor";return;}
+    if(mode==="verify"){output.textContent="Yerel teyit gerekli";return;}
+    if(mode==="prohibited"){output.textContent="Avlanamaz";return;}
+    let periods=[];try{periods=JSON.parse(node.getAttribute("data-periods")||"[]")}catch{}
+    const now=new Date(); const closed=periods.find((period)=>inPeriod(now,period.start,period.end));
+    output.textContent=closed?`Kapalı · ${closed.label}`:"Tür dönemi açık";
+  });
+})();
+</script>
+<style>
+.legal-status-card{border:1px solid var(--border,#d9e2e8);border-radius:18px;padding:18px;background:var(--surface,#fff);margin:16px 0}.legal-status-head{display:flex;gap:14px;align-items:flex-start;justify-content:space-between}.legal-status-head h3{margin:.2rem 0 0}.legal-today{font-size:.9rem;border-radius:999px;padding:.45rem .7rem;background:#eef4f6;white-space:nowrap}.legal-note{margin-top:12px}.legal-sources summary{cursor:pointer;font-weight:800}.legal-sources ul{margin-bottom:0}.legal-sources li span{display:block}.legal-status-card-compact{padding:14px}.legal-status-card-compact .legal-sources{margin-top:8px}@media(max-width:640px){.legal-status-head{display:block}.legal-today{display:inline-block;margin-top:8px;white-space:normal}}
+</style>
