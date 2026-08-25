@@ -6,6 +6,7 @@ import { applyStabilizasyon20260823 } from "./meralar-stabilizasyon-2026-08-23";
 import { applyGrowth20260823 } from "./meralar-growth-2026-08-23";
 import { applyDailyQualityRun20260824 } from "./meralar-daily-quality-2026-08-24-run";
 import { applyDailyQualityStage2_20260825 } from "./meralar-daily-quality-2026-08-25-stage2";
+import { applyDailyQualityStage2Continuation20260825 } from "./meralar-daily-quality-2026-08-25-stage2-continuation";
 
 const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-acildi";
 const yesilVadi="https://www.kirikkale.gov.tr/vali-sayin-haktankacmaz-yesil-vadi-projesini-inceledi";
@@ -51,6 +52,7 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
   applyGrowth20260823(routeMap);
   applyDailyQualityRun20260824(routeMap);
   applyDailyQualityStage2_20260825(routeMap);
+  applyDailyQualityStage2Continuation20260825(routeMap);
 
   appendDailyRiskNote(routeMap,"sivas-golova-baraj-golu","Su kotu, dik/gevşek şev ve rüzgâr etkisi hareket günü yerinde değerlendirilmeden su kenarına inilmemelidir; baraj işletme sınırları ve saha tabelaları önceliklidir.");
   appendDailyRiskNote(routeMap,"siirt-kurtalan-yayikli-goleti","Kırsal sulama göletinde yumuşak çamur, ani kıyı kırılması ve tarımsal araç trafiği riski bulunabilir; son yaklaşım ve kıyı zemini gündüz koşullarında kontrol edilmelidir.");
