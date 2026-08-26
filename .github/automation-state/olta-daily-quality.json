@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-08-26",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-08-26",
   "done": false,
   "research": {
@@ -12,11 +12,11 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "dCandidatesReviewed": 28,
+    "dCandidatesReviewed": 35,
     "newCandidatesReviewed": 8,
     "sourceFamiliesSearched": [
-      "resmi-DSI/Tarim/Kaymakamlik",
-      "akademik-YOK/DergiPark/universite",
+      "resmi-DSI/Tarim/Kaymakamlik/Valilik",
+      "akademik-YOK/DergiPark/universite/TRDizin",
       "yerel-kurumsal",
       "ikincil-acik-harita/site-duplicate"
     ],
@@ -45,17 +45,36 @@
       "ulusal-erzurum-olur-baraj-golu",
       "ulusal-erzincan-tercan-baraj-golu",
       "ulusal-artvin-borcka-baraj-golu",
-      "ulusal-van-zernek-baraj-golu"
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-bayburt-coruh-nehri-bayburt-hatti",
+      "ulusal-balikesir-ikizcetepeler-baraj-golu",
+      "ulusal-balikesir-saribeyler-baraj-golu",
+      "ulusal-aydin-topcam-baraj-golu-aydin",
+      "ulusal-aydin-kemer-baraj-golu",
+      "ulusal-balikesir-camkoy-baraj-golu",
+      "ulusal-balikesir-madra-baraj-golu",
+      "ulusal-bartin-kirazlikopru-baraj-golu",
+      "ulusal-aydin-yaylakavak-baraj-golu",
+      "ulusal-aydin-catak-baraj-golu"
     ],
     "stage2EvidenceNotes": [
       "Devrekani Kaymakamligi Cigdem Goleti kimlik, su kullanimi ve balik turlerini; daha sonraki sazan ekimini rota ozelinde destekliyor.",
       "DergiPark Karasu calismalari Erzincan hattini cok istasyonlu akademik orneklemeyle destekliyor.",
       "Ardahan Kura Nehri icin akademik alan kullanimi/rekreasyon ve ihtiyofauna katmanlari birlikte degerlendirildi.",
-      "Tercan, Borcka, Ciftevi ve Zap adaylari onceki arastirma turunda rota-ozel resmi/akademik kanit esigini gecmis adaylar olarak korundu.",
-      "Ataturk Baraj Golu Adiyaman kesimi icin 2021/2024 Il Tarim baliklandirma kayitlari sazan ve sabut olasiligini, akademik calisma avlak/su urunleri baglamini ve 2026 il duyurusu guncel mevzuati destekliyor.",
-      "Karahoyuk Goleti 2022 ve 2024 Il Tarim kayitlarinda dogrudan sazan baliklandirma hedefi olarak geciyor; konum mikro erisim iddiasina cevrilmedi.",
-      "Sirimtas Baraj Golu icin TAGEM Elazig Su Urunleri Enstitusu Capoeta umbla stok takviyesini rota ozelinde dogruluyor; HES/baraj isletme sahalari erisim alani sayilmiyor.",
-      "Filyos, Kapikaya, Karadere, Kemaliye, Caykoy, Delice, Lori, Demirdoven, Koycegiz ve Olur adaylarinda rota-ozel tur + kamusal genel erisim kombinasyonu henuz ayni kalite esiginde tamamlanmadigi icin kota ugruna yukseltilmedi."
+      "Tercan, Borcka, Ciftevi ve Zap rota-ozel resmi/akademik kanit esigini gecti.",
+      "Ataturk Baraj Golu Adiyaman kesimi icin Il Tarim baliklandirma kayitlari sazan ve sabut olasiligini, akademik calisma avlak/su urunleri baglamini ve 2026 il duyurusu mevzuati destekliyor.",
+      "Karahoyuk Goleti 2022 ve 2024 Il Tarim kayitlarinda dogrudan sazan baliklandirma hedefidir; mikro erisim iddiasina cevrilmedi.",
+      "Sirimtas Baraj Golu icin TAGEM Capoeta umbla stok takviyesi rota ozelindedir; HES/baraj isletme sahalari erisim alani sayilmadi.",
+      "Demirdoven Baraj Golu DSİ su kimligi ve Ataturk Universitesi TR Dizin tatlisu kefali populasyon calismasiyla C esigini gecti.",
+      "Zernek Baraj Golu 2019 saha operasyonlarina dayanan 2023 akademik stok calismasinda sazan ve siraz icin rota-ozel kanit tasiyor.",
+      "Coruh Nehri Bayburt hatti resmi DKMP sempozyum kitabindaki istasyonlu balik calismasi ile genel nehir-konum katmani birlikte degerlendirilerek C esigini gecti.",
+      "Ikizcetepeler Baraj Golu 2024 resmi sazan baliklandirmasi, resmi istihsal stok tablosu ve bagimsiz akademik fauna calismasiyla C esigini gecti; kiralama/su alma kisitlari korunuyor.",
+      "Saribeyler Baraj Golu resmi istihsal sahasi kimligi ve akademik/yerel kalkinma calismasindaki aynali sazan kaydiyla C esigini gecti; ticari istihsal amatör erisim sayilmadi.",
+      "Topcam Baraj Golu Aydin guncel DSİ su yapisi kaydi ve 332 tatlisu kefali bireyine dayanan rota-ozel akademik calismayla C esigini gecti; orman yangini tedbirleri risk katmaninda tutuldu.",
+      "Kemer Baraj Golu Aydin resmi su kutlesi kimligi ve iki bagimsiz akademik ornekleme ile C esigini gecti; HES/kafes yetistiriciligi ve koruma-mevzuat kisitlari mikro erisimden ayri tutuldu.",
+      "Filyos, Kapikaya, Karadere Cankiri, Kemaliye, Caykoy, Delice, Lori, Koycegiz ve Olur rota-ozel tur + kamusal genel erisim kombinasyonu ayni kalite esiginde tamamlanmadigi icin yukseltilmedi.",
+      "Camkoy Baraj Golu bor isletmesi kaynakli kirlenme kontrolu/atik-baraj baglami nedeniyle kalite ve guvenlik acisindan yukseltilmedi.",
+      "Kizilirmak Yahsihan ve Keban Pertek zaten C/B seviyesinde oldugu icin gercek D→C kotasina sayilmadi."
     ]
   },
   "promotedSlugs": [
@@ -68,14 +87,21 @@
     "ulusal-aksaray-ciftevi-baraj-golu",
     "ankara-500km-adiyaman-ataturk-baraj-golu",
     "ankara-500km-adiyaman-karahuyuk-goleti",
-    "ankara-500km-adiyaman-sirimtas-baraj-golu"
+    "ankara-500km-adiyaman-sirimtas-baraj-golu",
+    "ulusal-erzurum-demirdoven-baraj-golu",
+    "ulusal-van-zernek-baraj-golu",
+    "ulusal-bayburt-coruh-nehri-bayburt-hatti",
+    "ulusal-balikesir-ikizcetepeler-baraj-golu",
+    "ulusal-balikesir-saribeyler-baraj-golu",
+    "ulusal-aydin-topcam-baraj-golu-aydin",
+    "ulusal-aydin-kemer-baraj-golu"
   ],
   "stage2": {
     "required": 17,
-    "promoted": 10,
-    "remaining": 7,
-    "status": "in_progress",
-    "qualityGuard": "Yalniz iki bagimsiz kaynak ailesi, konum hassasiyeti, erisim baglami ve tur kaniti bulunan D kayitlar C seviyesine alinir; kota icin zayif kayit yukseltilmez."
+    "promoted": 17,
+    "remaining": 0,
+    "status": "complete",
+    "qualityGuard": "Yalniz iki bagimsiz kaynak ailesi, konum hassasiyeti, erisim/risk baglami ve rota-ozel tur kaniti bulunan gercek D kayitlar C seviyesine alindi; kota icin zayif kayit yukseltilmedi."
   },
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
