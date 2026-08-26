@@ -1,51 +1,51 @@
 {
   "version": 1,
-  "date": "2026-08-24",
+  "date": "2026-08-26",
   "timezone": "Europe/Istanbul",
-  "stage": 4,
-  "branch": "quality/daily-2026-08-24",
+  "stage": 2,
+  "branch": "quality/daily-2026-08-26",
   "done": false,
   "research": {
-    "dCandidatesReviewed": 28,
+    "mainShaAtStart": "e11145f6820ad28ebd352ba5b3ff3cc5792c7c1e",
+    "schemaAndPolicyChecked": true,
+    "confidenceAuditChecked": true,
+    "duplicatePolicyChecked": true,
+    "indexPolicyChecked": true,
+    "searchConsoleUsed": true,
+    "dCandidatesReviewed": 25,
     "newCandidatesReviewed": 8,
-    "rejectedOrHeld": [
-      {"slug":"ulusal-duzce-efteni-golu","reason":"Koruma alanı kaynaklarında avlanma yasağı ifadesi bulundu; balıkçılığa özgü açık kullanım kanıtı olmadan yükseltilmedi."},
-      {"slug":"ankara-500km-gaziantep-alleben-goleti","reason":"Ankara-500 km veri kapısı doğrulanmamış alanlar ve paket tarihleri nedeniyle C yükseltmesini reddetti; D bırakıldı."},
-      {"slug":"ankara-500km-giresun-kilickaya-baraji-golu","reason":"Ankara-500 km veri kapısı doğrulanmamış alanlar ve paket tarihleri nedeniyle C yükseltmesini reddetti; D bırakıldı."},
-      {"slug":"ulusal-samsun-altinkaya-baraj-golu","reason":"Günlük turdan önce mevcut confidence audit tarafından zaten C seviyesine yükseltilmişti; bugünkü D→C kotasına sayılmadı."}
+    "sourceFamiliesSearched": ["resmi-DSI/Tarim/Kaymakamlik", "akademik-YOK/DergiPark/universite", "yerel-kurumsal", "ikincil-acik-harita/site-duplicate"],
+    "dCandidates": [
+      "ulusal-amasya-destek-baraj-golu","ulusal-aksaray-ciftevi-baraj-golu","ulusal-erzincan-karasu-nehri-erzincan-hatti","ulusal-ardahan-kura-nehri-ardahan-hatti","ulusal-kastamonu-cigdem-baraj-golu-kastamonu","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-erzincan-firat-nehri-kemaliye-hatti","ulusal-bolu-caykoy-baraj-golu-bolu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-bayburt-lori-deresi","ankara-500km-adiyaman-ataturk-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-cataltepe-goleti","ulusal-kirikkale-kizilirmak-yahsihan-hatti","ulusal-tunceli-keban-baraj-golu-pertek-kiyisi","ulusal-erzurum-demirdoven-baraj-golu","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-erzurum-olur-baraj-golu","ulusal-erzincan-tercan-baraj-golu","ulusal-artvin-borcka-baraj-golu","ulusal-van-zernek-baraj-golu"
+    ],
+    "stage2EvidenceNotes": [
+      "Devrekani Kaymakamligi Cigdem Goleti kimlik, su kullanimi ve balik turlerini; daha sonraki sazan ekimini rota ozelinde destekliyor.",
+      "DergiPark Karasu calismalari Erzincan hattini cok istasyonlu akademik orneklemeyle destekliyor.",
+      "Ardahan Kura Nehri icin akademik alan kullanimi/rekreasyon ve ihtiyofauna katmanlari birlikte degerlendirildi.",
+      "Tercan, Borcka, Ciftevi ve Zap adaylari onceki arastirma turunda rota-ozel resmi/akademik kanit esigini gecmis adaylar olarak korundu.",
+      "Ek taramada held adaylarda rota-ozel kamusal erisim veya ikinci bagimsiz tur ailesi tamamlanmayanlar kota icin yukseltilmedi."
     ]
   },
   "promotedSlugs": [
-    "ulusal-duzce-hasanlar-baraj-golu-duzce",
-    "ulusal-duzce-buyuk-melen-cayi",
-    "ulusal-kahramanmaras-menzelet-baraj-golu",
-    "ulusal-kahramanmaras-sir-baraj-golu",
-    "ulusal-elazig-keban-baraj-golu-elazig-kiyisi",
-    "ulusal-diyarbakir-devegecidi-baraj-golu",
-    "ulusal-diyarbakir-karakaya-baraj-golu-diyarbakir-kiyisi",
-    "ulusal-gaziantep-tahtakopru-baraj-golu-gaziantep",
-    "ulusal-gaziantep-birecik-baraj-golu-gaziantep-kiyisi",
-    "ulusal-gaziantep-hancagiz-baraj-golu",
-    "ulusal-sanliurfa-ataturk-baraj-golu-sanliurfa-kiyisi",
-    "ulusal-erzurum-kuzgun-baraj-golu",
-    "ulusal-tokat-almus-baraj-golu",
-    "ulusal-osmaniye-aslantas-baraj-golu",
-    "ulusal-tokat-atakoy-baraj-golu",
-    "ulusal-kahramanmaras-kilavuzlu-baraj-golu",
-    "ulusal-kahramanmaras-kartalkaya-baraj-golu"
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ulusal-hakkari-zap-suyu-hakkari-hatti",
+    "ulusal-erzincan-tercan-baraj-golu",
+    "ulusal-artvin-borcka-baraj-golu",
+    "ulusal-aksaray-ciftevi-baraj-golu"
   ],
-  "newSlugs": [
-    "sivas-golova-baraj-golu",
-    "siirt-kurtalan-yayikli-goleti",
-    "siirt-kurtalan-cayirli-goleti"
-  ],
-  "mgmAudit": {
-    "status": "pending",
-    "representatives": ["İzmit Körfezi Sahil Bandı","Gölova Baraj Gölü","Yayıklı Göleti","Kızılırmak Yahşihan Hattı","Uzunçayır Baraj Gölü - Kanoğlu Resmî Amatör Kıyısı"],
-    "reason": "MGM MeteoUYARI, bölgesel/saatlik ve deniz ürünleri kontrol edildi; canlı /api/weather yanıtları denetim ortamından okunamadığı için model-resmî karşılaştırması tamamlanamadı."
+  "stage2": {
+    "required": 17,
+    "promoted": 7,
+    "remaining": 10,
+    "status": "in_progress",
+    "qualityGuard": "Yalniz iki bagimsiz kaynak ailesi, konum hassasiyeti, erisim baglami ve tur kaniti bulunan D kayitlar C seviyesine alinir; kota icin zayif kayit yukseltilmez."
   },
-  "ci": {"status": "rerun_pending", "lastFailure":"Alleben ve Kılıçkaya Ankara-500 km veri kapısı; rota kohortu kanıta uygun alternatiflerle değiştirildi."},
-  "pr": {"number":120,"status":"open"},
+  "newSlugs": [],
+  "mgmAudit": {"status":"not_started"},
+  "ci": {"status":"not_started"},
+  "pr": null,
   "merge": null,
-  "deploy": {"status": "not_started"}
+  "deploy": {"status":"not_started"}
 }
