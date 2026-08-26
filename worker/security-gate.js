@@ -1,4 +1,4 @@
-import appWorker from "./traffic-diagnostics-router.js";
+import appWorker from "./yandex-metrica-router.js";
 import { handleWeatherRequest } from "./weather-service.js";
 
 const PRIMARY_HOSTS = new Set(["oltaatlasi.com", "www.oltaatlasi.com"]);
