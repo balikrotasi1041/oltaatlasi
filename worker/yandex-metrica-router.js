@@ -191,6 +191,38 @@ const handleYandexMetrica = async (request, env, ctx) => {
 };
 
 const yandexPanel = `
+<style>
+#ym-dashboard{background:#fff;border:1px solid #dce8e8;border-radius:18px;box-shadow:0 10px 24px #1439410f;padding:24px}
+#ym-dashboard .panel-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:18px}
+#ym-dashboard .panel-head h2{margin:.15rem 0 .35rem;color:#0a3340}
+#ym-dashboard .panel-head p{margin:0;color:#637a7e}
+#ym-dashboard .eyebrow{color:#287685;text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.75rem}
+#ym-dashboard .actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#ym-dashboard .actions label{font-weight:800;color:#395b61}
+#ym-dashboard select,#ym-dashboard button{min-height:40px;border:1px solid #b9d2d6;border-radius:10px;background:#fff;color:#0b5967;padding:7px 11px;font:inherit}
+#ym-dashboard button{font-weight:800;cursor:pointer}
+#ym-dashboard button:disabled{opacity:.55;cursor:wait}
+#ym-dashboard .metric-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-bottom:18px}
+#ym-dashboard .metric-cards article{background:#f7fbfb;border:1px solid #dce8e8;border-radius:14px;padding:18px;min-width:0}
+#ym-dashboard .metric-cards span{color:#637a7e}
+#ym-dashboard .metric-cards strong{display:block;font-size:2rem;line-height:1.1;color:#0a3340;margin-top:5px;overflow-wrap:anywhere}
+#ym-dashboard .metric-cards small{display:block;color:#74888b;margin-top:6px}
+#ym-dashboard .analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#ym-dashboard .subpanel{border:1px solid #dce8e8;border-radius:14px;padding:18px;min-width:0}
+#ym-dashboard .subpanel h3{margin:0 0 12px;color:#0a3340}
+#ym-dashboard .data-list{display:grid;gap:2px}
+#ym-dashboard .data-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #edf3f3}
+#ym-dashboard .data-row:last-child{border-bottom:0}
+#ym-dashboard .data-row span{display:grid;min-width:0}
+#ym-dashboard .data-row b{color:#163f47;overflow-wrap:anywhere}
+#ym-dashboard .data-row small{color:#74888b;margin-top:2px}
+#ym-dashboard .data-row strong{color:#0b5967;white-space:nowrap}
+#ym-dashboard .muted{color:#74888b}
+#ym-dashboard .notice.error{margin:0 0 18px;padding:12px 14px;border-radius:12px;border:1px solid #e6b9b9;background:#fff3f3;color:#8a2727}
+@media(max-width:980px){#ym-dashboard .metric-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){#ym-dashboard .panel-head{display:grid}#ym-dashboard .analytics-grid{grid-template-columns:1fr}#ym-dashboard .metric-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){#ym-dashboard .metric-cards{grid-template-columns:1fr}}
+</style>
 <section class="panel" id="ym-dashboard" aria-labelledby="ym-title">
   <div class="panel-head">
     <div><p class="eyebrow dark">Yandex.Metrica</p><h2 id="ym-title">Davranış ve ziyaret trafiği</h2><p id="ym-status">Veriler yükleniyor…</p></div>
