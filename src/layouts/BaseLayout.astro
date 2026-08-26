@@ -51,7 +51,7 @@ const seoOverrides:Record<string,{title:string;description:string}>={
   },
   "/meralar/gumusoren-baraji-genel-amator-kiyi/":{
     title:"Gümüşören Barajı Balık Avı ve Yol Tarifi",
-    description:"Gümüşören Barajı balık avı ve yol tarifi: genel kıyı yaklaşımı, raporlanan türler, araç erişimi, zemin koşulları ve güncel içsu mevzuatı notları."
+    description:"Gümüşören Barajı balık avı ve yol tarifi: genel kamusal yaklaşım, raporlanan türler, araç erişimi, zemin koşulları ve güncel içsu mevzuatı notları."
   },
   "/meralar/beykoz-merkez-sahili/":{
     title:"Beykoz Merkez Sahili Balık Tutma Rehberi",
@@ -198,7 +198,7 @@ const websiteSchema = {
       </div>
       <div class="container footer-bottom">© {new Date().getFullYear()} Olta Atlası · Rota seçimi, alana giriş ve avlanma kullanıcının kendi sorumluluğundadır · Doğayı bulduğundan temiz bırak.</div>
     </footer>
-    <aside class="consent-banner" id="consent-banner" hidden aria-label="Analitik tercihleri" aria-live="polite"><div><strong>Analitik tercihi</strong><p>Siteyi geliştirmek için Google Analytics kullanıyoruz. İzin vermeden analitik etiketi yüklenmez. Harita açıldığında OpenStreetMap karo sunucularına bağlantı kurulur.</p><a href="/gizlilik/">Ayrıntıları oku</a></div><div class="consent-actions"><button class="button button-small" id="consent-accept" type="button">Analitiğe izin ver</button><button class="button button-small button-ghost consent-reject" id="consent-reject" type="button">Yalnızca gerekli</button></div></aside>
+    <aside class="consent-banner" id="consent-banner" hidden aria-label="Analitik tercihleri" aria-live="polite"><div><strong>Analitik tercihi</strong><p>Siteyi geliştirmek için Google Analytics ve Yandex.Metrica kullanıyoruz. İzin vermeden analitik etiketleri yüklenmez. Harita açıldığında OpenStreetMap karo sunucularına bağlantı kurulur.</p><a href="/gizlilik/">Ayrıntıları oku</a></div><div class="consent-actions"><button class="button button-small" id="consent-accept" type="button">Analitiğe izin ver</button><button class="button button-small button-ghost consent-reject" id="consent-reject" type="button">Yalnızca gerekli</button></div></aside>
     <script is:inline>
       const toggle = document.querySelector(".menu-toggle");
       const navigation = document.querySelector("#main-navigation");
@@ -211,7 +211,31 @@ const websiteSchema = {
       const consentKey="oltaatlasi-analytics-consent";
       const consentBanner=document.querySelector("#consent-banner");
       let analyticsLoaded=false;
-      const loadAnalytics=()=>{if(analyticsLoaded)return;analyticsLoaded=true;const script=document.createElement("script");script.async=true;script.src="https://www.googletagmanager.com/gtag/js?id=G-VRTYGZD66T";document.head.appendChild(script);window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};window.gtag("js",new Date());window.gtag("config","G-VRTYGZD66T",{anonymize_ip:true});};
+      const loadAnalytics=()=>{
+        if(analyticsLoaded)return;
+        analyticsLoaded=true;
+
+        const googleScript=document.createElement("script");
+        googleScript.async=true;
+        googleScript.src="https://www.googletagmanager.com/gtag/js?id=G-VRTYGZD66T";
+        document.head.appendChild(googleScript);
+        window.dataLayer=window.dataLayer||[];
+        window.gtag=function(){window.dataLayer.push(arguments);};
+        window.gtag("js",new Date());
+        window.gtag("config","G-VRTYGZD66T",{anonymize_ip:true});
+
+        window.ym=window.ym||function(){(window.ym.a=window.ym.a||[]).push(arguments);};
+        window.ym.l=1*new Date();
+        const metrikaSrc="https://mc.yandex.ru/metrika/tag.js?id=111979244";
+        const metrikaExists=Array.from(document.scripts).some((existingScript)=>existingScript.src===metrikaSrc);
+        if(!metrikaExists){
+          const metrikaScript=document.createElement("script");
+          metrikaScript.async=true;
+          metrikaScript.src=metrikaSrc;
+          document.head.appendChild(metrikaScript);
+        }
+        window.ym(111979244,"init",{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+      };
       const savedConsent=localStorage.getItem(consentKey);
       if(savedConsent==="granted")loadAnalytics();else if(!savedConsent)consentBanner.hidden=false;
       document.querySelector("#consent-accept")?.addEventListener("click",()=>{localStorage.setItem(consentKey,"granted");consentBanner.hidden=true;loadAnalytics();});
