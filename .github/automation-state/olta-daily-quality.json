@@ -12,18 +12,50 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "dCandidatesReviewed": 25,
+    "dCandidatesReviewed": 28,
     "newCandidatesReviewed": 8,
-    "sourceFamiliesSearched": ["resmi-DSI/Tarim/Kaymakamlik", "akademik-YOK/DergiPark/universite", "yerel-kurumsal", "ikincil-acik-harita/site-duplicate"],
+    "sourceFamiliesSearched": [
+      "resmi-DSI/Tarim/Kaymakamlik",
+      "akademik-YOK/DergiPark/universite",
+      "yerel-kurumsal",
+      "ikincil-acik-harita/site-duplicate"
+    ],
     "dCandidates": [
-      "ulusal-amasya-destek-baraj-golu","ulusal-aksaray-ciftevi-baraj-golu","ulusal-erzincan-karasu-nehri-erzincan-hatti","ulusal-ardahan-kura-nehri-ardahan-hatti","ulusal-kastamonu-cigdem-baraj-golu-kastamonu","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-erzincan-firat-nehri-kemaliye-hatti","ulusal-bolu-caykoy-baraj-golu-bolu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-bayburt-lori-deresi","ankara-500km-adiyaman-ataturk-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-cataltepe-goleti","ulusal-kirikkale-kizilirmak-yahsihan-hatti","ulusal-tunceli-keban-baraj-golu-pertek-kiyisi","ulusal-erzurum-demirdoven-baraj-golu","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-erzurum-olur-baraj-golu","ulusal-erzincan-tercan-baraj-golu","ulusal-artvin-borcka-baraj-golu","ulusal-van-zernek-baraj-golu"
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-aksaray-ciftevi-baraj-golu",
+      "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+      "ulusal-bolu-caykoy-baraj-golu-bolu",
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-bayburt-lori-deresi",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ankara-500km-adiyaman-karahuyuk-goleti",
+      "ankara-500km-adiyaman-sirimtas-baraj-golu",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
+      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
+      "ulusal-erzurum-olur-baraj-golu",
+      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-van-zernek-baraj-golu"
     ],
     "stage2EvidenceNotes": [
       "Devrekani Kaymakamligi Cigdem Goleti kimlik, su kullanimi ve balik turlerini; daha sonraki sazan ekimini rota ozelinde destekliyor.",
       "DergiPark Karasu calismalari Erzincan hattini cok istasyonlu akademik orneklemeyle destekliyor.",
       "Ardahan Kura Nehri icin akademik alan kullanimi/rekreasyon ve ihtiyofauna katmanlari birlikte degerlendirildi.",
       "Tercan, Borcka, Ciftevi ve Zap adaylari onceki arastirma turunda rota-ozel resmi/akademik kanit esigini gecmis adaylar olarak korundu.",
-      "Ek taramada held adaylarda rota-ozel kamusal erisim veya ikinci bagimsiz tur ailesi tamamlanmayanlar kota icin yukseltilmedi."
+      "Ataturk Baraj Golu Adiyaman kesimi icin 2021/2024 Il Tarim baliklandirma kayitlari sazan ve sabut olasiligini, akademik calisma avlak/su urunleri baglamini ve 2026 il duyurusu guncel mevzuati destekliyor.",
+      "Karahoyuk Goleti 2022 ve 2024 Il Tarim kayitlarinda dogrudan sazan baliklandirma hedefi olarak geciyor; konum mikro erisim iddiasina cevrilmedi.",
+      "Sirimtas Baraj Golu icin TAGEM Elazig Su Urunleri Enstitusu Capoeta umbla stok takviyesini rota ozelinde dogruluyor; HES/baraj isletme sahalari erisim alani sayilmiyor.",
+      "Filyos, Kapikaya, Karadere, Kemaliye, Caykoy, Delice, Lori, Demirdoven, Koycegiz ve Olur adaylarinda rota-ozel tur + kamusal genel erisim kombinasyonu henuz ayni kalite esiginde tamamlanmadigi icin kota ugruna yukseltilmedi."
     ]
   },
   "promotedSlugs": [
@@ -33,12 +65,15 @@
     "ulusal-hakkari-zap-suyu-hakkari-hatti",
     "ulusal-erzincan-tercan-baraj-golu",
     "ulusal-artvin-borcka-baraj-golu",
-    "ulusal-aksaray-ciftevi-baraj-golu"
+    "ulusal-aksaray-ciftevi-baraj-golu",
+    "ankara-500km-adiyaman-ataturk-baraj-golu",
+    "ankara-500km-adiyaman-karahuyuk-goleti",
+    "ankara-500km-adiyaman-sirimtas-baraj-golu"
   ],
   "stage2": {
     "required": 17,
-    "promoted": 7,
-    "remaining": 10,
+    "promoted": 10,
+    "remaining": 7,
     "status": "in_progress",
     "qualityGuard": "Yalniz iki bagimsiz kaynak ailesi, konum hassasiyeti, erisim baglami ve tur kaniti bulunan D kayitlar C seviyesine alinir; kota icin zayif kayit yukseltilmez."
   },
