@@ -12,10 +12,10 @@ const BLOCKED_IPS = new Set([
   "51.68.234.131",
   "45.45.237.65",
   "2a01:4f9:4a:2aa5::2",
-]);
-const THROTTLED_IPS = new Set([
+  "123.6.49.44",
   "216.244.66.233",
 ]);
+const THROTTLED_IPS = new Set([]);
 
 const SENSITIVE_SCAN_PATTERNS = [
   /^\/(?:(?:\$\([^/]{1,64}\)\/)?\.env|\.git(?:\/|$)|\.svn(?:\/|$)|\.hg(?:\/|$))/i,
