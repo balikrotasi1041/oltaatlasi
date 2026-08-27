@@ -55,10 +55,10 @@
   },
   "stage2": {
     "target": 17,
-    "completed": 8,
-    "remaining": 9,
+    "completed": 12,
+    "remaining": 5,
     "status": "in_progress",
-    "note": "Yalnız en az iki bağımsız rota-özel kaynak ailesiyle kimlik/tür/genel erişim/mevzuat eşiğini geçen gerçek D kayıtlar C'ye yükseltildi. Yahşihan ve Pertek güncel veri akışında zaten C/B olduğu için günlük D→C kotasına sayılmadı. Kanıtı yetersiz adaylar kota uğruna yükseltilmedi.",
+    "note": "Yalnız gerçek D kayıtlardan, rota kimliği + tür/fauna + genel erişim/planlama + mevzuat/risk katmanlarında en az iki bağımsız kaynak ailesini geçen kayıtlar C'ye yükseltildi. Bu çalıştırmada Tercan, Zernek, Zap ve Filyos eklendi; kalan 5 kayıt için kanıt eşiği zorlanmadı.",
     "promotedSlugs": [
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-aksaray-ciftevi-baraj-golu",
@@ -67,25 +67,24 @@
       "ulusal-sivas-delice-baraj-golu-sivas",
       "ankara-500km-adiyaman-ataturk-baraj-golu",
       "ulusal-erzincan-firat-nehri-kemaliye-hatti",
-      "ulusal-artvin-borcka-baraj-golu"
+      "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
     ],
     "heldSlugs": [
       "ulusal-amasya-destek-baraj-golu",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
       "ulusal-bolu-caykoy-baraj-golu-bolu",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-bayburt-lori-deresi",
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-erzurum-olur-baraj-golu",
-      "ulusal-erzincan-tercan-baraj-golu",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-van-zernek-baraj-golu"
+      "ulusal-erzurum-olur-baraj-golu"
     ],
     "newEvidenceThisRun": [
       "Çiğdem: Devrekâni Kaymakamlığı + Kastamonu İl Tarım rota-özel kimlik/tür kanıtı.",
@@ -95,7 +94,11 @@
       "Delice: 2015 İl Tarım sazan salımı + 2025 Bakanlık projesi saha haberi.",
       "Atatürk: Adıyaman İl Özel İdaresi su kimliği + 2025 akademik Samsat/Bozova sazan örneklemesi.",
       "Kemaliye: Erzincan Valiliği Karasu/Kemaliye kullanım bağlamı + Fırat Üniversitesi Kemaliye balık çalışması.",
-      "Borçka: Artvin Valiliği DSİ/turizm kimliği + YÖK Açık Bilim 156 Silurus glanis örneklemesi."
+      "Borçka: Artvin Valiliği DSİ/turizm kimliği + YÖK Açık Bilim 156 Silurus glanis örneklemesi.",
+      "Tercan: Tercan Kaymakamlığı baraj kimliği + akademik 190 Cyprinus carpio örneklemesi + belediye genel erişim bağlamı.",
+      "Zernek: Van İl Tarım resmî avlanabilir sazan/siraz stoku + Iğdır Üniversitesi rota-özel stok çalışması + saha su seviyesi riski.",
+      "Zap: Hakkari Valiliği rota kimliği + 2026 olta saha kaydı + Hakkari Üniversitesi uzman destekli Glyptothorax fauna kaydı + kurumsal hızlı akım riski.",
+      "Filyos: akademik hidroloji/rota kimliği + bağımsız balık faunası kaydı + Çaycuma belediye koridor bağlamı + ciddi akarsu risk kaydı."
     ]
   },
   "promotedSlugs": [
@@ -106,12 +109,17 @@
     "ulusal-sivas-delice-baraj-golu-sivas",
     "ankara-500km-adiyaman-ataturk-baraj-golu",
     "ulusal-erzincan-firat-nehri-kemaliye-hatti",
-    "ulusal-artvin-borcka-baraj-golu"
+    "ulusal-artvin-borcka-baraj-golu",
+    "ulusal-erzincan-tercan-baraj-golu",
+    "ulusal-van-zernek-baraj-golu",
+    "ulusal-hakkari-zap-suyu-hakkari-hatti",
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
   "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
-  "deploy": {"status":"not_started"}
+  "deploy": {"status":"not_started"},
+  "lastCheckpoint": "2026-08-27T17:03:22+03:00"
 }
