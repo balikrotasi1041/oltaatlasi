@@ -12,7 +12,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Güncel main üzerindeki confidence debt, route maintenance, locationPrecision ve index-policy doğrulama katmanları yeniden kontrol edildi. Repoda tutulan son Search Console fırsat setlerindeki konum/yol tarifi niyetli, yaklaşık 3-15 pozisyon bandında ve düşük CTR gösteren D rotalar önceliklendirildi; mevcut güçlü il/ilçe hub bağlantıları da sıralamaya dahil edildi. Search Console sinyali tek başına confidence yükseltme gerekçesi sayılmadı.",
+    "searchConsoleNotes": "Güncel main üzerindeki confidence debt, route maintenance, locationPrecision ve index-policy katmanları kontrol edildi. Repodaki son Search Console fırsat setlerinde konum/yol tarifi niyetli, yaklaşık 3-15 pozisyon bandındaki düşük CTR D kayıtları önceliklendirildi; Search Console sinyali tek başına confidence gerekçesi sayılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -41,125 +41,77 @@
       "ulusal-artvin-borcka-baraj-golu",
       "ulusal-van-zernek-baraj-golu"
     ],
-    "evidenceReadyPriority": [
+    "newCandidatesReviewed": 8,
+    "newCandidates": [
+      {"name":"Suat Uğurlu Baraj Gölü genel kamusal kıyı","province":"Samsun","status":"priority","sourceFamilies":["akademik-DergiPark","resmi-Samsun-Il-Tarim"]},
+      {"name":"Hasan Uğurlu Baraj Gölü genel kamusal kıyı","province":"Samsun","status":"priority","sourceFamilies":["resmi-Samsun-Il-Tarim","akademik-YOK-acik-bilim"]},
+      {"name":"Sultansuyu Baraj Gölü genel kıyı","province":"Malatya","status":"priority","sourceFamilies":["resmi-Malatya-Il-Tarim","akademik-DergiPark"]},
+      {"name":"Hazar Gölü genel kamusal kıyı","province":"Elazığ","status":"hold-duplicate-and-protection-check"},
+      {"name":"Keban Baraj Gölü genel kıyı","province":"Elazığ","status":"reject-duplicate-family"},
+      {"name":"Çıldır Gölü genel kıyı","province":"Ardahan","status":"hold-sensitive-ecosystem"},
+      {"name":"Seyhan Baraj Gölü genel kamusal kıyı","province":"Adana","status":"priority","sourceFamilies":["resmi-Adana-Il-Tarim","akademik-DergiPark"]},
+      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold-insufficient-route-specific-evidence"}
+    ]
+  },
+  "stage2": {
+    "target": 17,
+    "completed": 8,
+    "remaining": 9,
+    "status": "in_progress",
+    "note": "Yalnız en az iki bağımsız rota-özel kaynak ailesiyle kimlik/tür/genel erişim/mevzuat eşiğini geçen gerçek D kayıtlar C'ye yükseltildi. Yahşihan ve Pertek güncel veri akışında zaten C/B olduğu için günlük D→C kotasına sayılmadı. Kanıtı yetersiz adaylar kota uğruna yükseltilmedi.",
+    "promotedSlugs": [
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+      "ulusal-aksaray-ciftevi-baraj-golu",
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
       "ulusal-ardahan-kura-nehri-ardahan-hatti",
-      "ulusal-erzincan-tercan-baraj-golu",
-      "ulusal-artvin-borcka-baraj-golu",
-      "ulusal-aksaray-ciftevi-baraj-golu",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
-      "ulusal-van-zernek-baraj-golu"
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+      "ulusal-artvin-borcka-baraj-golu"
     ],
-    "heldForMoreRouteSpecificEvidence": [
+    "heldSlugs": [
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
-      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
       "ulusal-bolu-caykoy-baraj-golu-bolu",
-      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-bayburt-lori-deresi",
-      "ankara-500km-adiyaman-ataturk-baraj-golu",
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
       "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
       "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-erzurum-olur-baraj-golu"
+      "ulusal-erzurum-olur-baraj-golu",
+      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-van-zernek-baraj-golu"
     ],
-    "newCandidatesReviewed": 8,
-    "newCandidates": [
-      {
-        "name": "Suat Uğurlu Baraj Gölü genel kamusal kıyı",
-        "province": "Samsun",
-        "status": "priority",
-        "note": "Akademik ihtiyofauna çalışması gölde 7 tür + 1 alttür örnekliyor; Samsun İl Tarım sektör raporu Suat Uğurlu'yu baraj gölü avlak/istihsal sistemi içinde gösteriyor. Mikro erişim ve özel/işletme sahası çakışması Aşama 3 öncesi ayrıca temizlenecek.",
-        "sourceFamilies": ["akademik-DergiPark", "resmi-Samsun-Il-Tarim"],
-        "sources": ["https://dergipark.org.tr/tr/pub/egirdir/article/246546", "https://samsun.tarimorman.gov.tr/Belgeler/Yayinlar/Tarimsal_strateji/Su_Urunleri_Ekim_2017.pdf"]
-      },
-      {
-        "name": "Hasan Uğurlu Baraj Gölü genel kamusal kıyı",
-        "province": "Samsun",
-        "status": "priority",
-        "note": "Samsun İl Tarım Hasan Uğurlu'yu resmî baraj gölü avlak sahası olarak listeliyor ve 2021 istihsal ihalesinde avlanabilir tür/stok tablosu yayımlıyor; YÖK açık bilim çalışması Hasan ve Suat Uğurlu sistemindeki balık topluluklarını akademik olarak destekliyor.",
-        "sourceFamilies": ["resmi-Samsun-Il-Tarim", "akademik-YOK-acik-bilim"],
-        "sources": ["https://samsun.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=326", "https://acikbilim.yok.gov.tr/handle/20.500.12812/618354"]
-      },
-      {
-        "name": "Sultansuyu Baraj Gölü genel kıyı",
-        "province": "Malatya",
-        "status": "priority",
-        "note": "Malatya İl Tarım 2024 brifinginde Sultansuyu'nun avcılık amacıyla kiraya verildiğini doğruluyor; 2015 resmî avlama ihalesi de doğrudan istihsal/avcılık kaydı sağlıyor. DergiPark çalışması gölde sazan, tatlısu kefali ve Capoeta türlerini doğrudan inceliyor.",
-        "sourceFamilies": ["resmi-Malatya-Il-Tarim", "akademik-DergiPark"],
-        "sources": ["https://malatya.tarimorman.gov.tr/Belgeler/%C4%B0l%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%20Brifing/Brifing_2024.pdf", "https://malatya.tarimorman.gov.tr/Sayfalar/Detay.aspx?UrlSuffix=83%2FSultansuyu-Baraj-Golu-Avlama-Ihalesi", "https://dergipark.org.tr/tr/pub/trjfas-ayrildi/article/160413"]
-      },
-      {
-        "name": "Hazar Gölü genel kamusal kıyı",
-        "province": "Elazığ",
-        "status": "hold-duplicate-and-protection-check",
-        "note": "Elazığ İl Tarım Hazar Gölü için avcılık amaçlı avlak sahası ihalesi yayımlamış; akademik çalışma gölde aktif balıkçılığı doğruluyor. Ancak mevcut rota/koruma/özel işletme çakışması ve göl kıyısındaki kamusal alan ayrımı temizlenmeden yeni slug açılmayacak.",
-        "sourceFamilies": ["resmi-Elazig-Il-Tarim", "akademik-DergiPark"],
-        "sources": ["https://elazig.tarimorman.gov.tr/Duyuru/298/Ilimiz-Sivrice-Ilcesi-Hazar-Golu-Avlak-Sahasinin-Kiralanmasina-Iliskin-Ihale-Ilani", "https://dergipark.org.tr/en/pub/nwsaecolife/article/634813"]
-      },
-      {
-        "name": "Keban Baraj Gölü genel kıyı",
-        "province": "Elazığ",
-        "status": "reject-duplicate-family",
-        "note": "Çok güçlü resmî avlak ve akademik fauna kanıtı var; fakat sitede Keban/Pertek ailesi bulunduğu için yeni genel slug yerine mevcut rota ailesini güçlendirmek daha doğru. Yeni aday kotasında incelendi ancak Aşama 3'e taşınmayacak.",
-        "sourceFamilies": ["resmi-Elazig-Il-Tarim", "akademik-DergiPark"],
-        "sources": ["https://elazig.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=570", "https://dergipark.org.tr/tr/pub/fufbd/article/312862"]
-      },
-      {
-        "name": "Çıldır Gölü genel kıyı",
-        "province": "Ardahan",
-        "status": "hold-sensitive-ecosystem",
-        "note": "2022 İl Tarım ihalesi avcılık amaçlı istihsal ve stokları doğruluyor; 2024 akademik çalışma 17 tür kaydediyor. DKMP Çıldır'ı sulak alan/biyoçeşitlilik değeri yüksek alan olarak tanımladığı için yalnız genel kıyı bağlamı düşünülebilir, hassas mikro-konum yayımlanmayacak.",
-        "sourceFamilies": ["resmi-Ardahan-Il-Tarim", "akademik-DergiPark", "resmi-DKMP"],
-        "sources": ["https://ardahan.tarimorman.gov.tr/Duyuru/214/Cildir-Golu-Istihsal-Sahasinin-5-Yil-Sureli-Kiralanmasina-Iliskin-Ihale-Ilani", "https://dergipark.org.tr/tr/pub/jaes/article/1521913", "https://ekotaban.tarimorman.gov.tr/alan/605"]
-      },
-      {
-        "name": "Seyhan Baraj Gölü genel kamusal kıyı",
-        "province": "Adana",
-        "status": "priority",
-        "note": "Adana İl Tarım 20.01.2026 tarihli ilanda Seyhan Baraj Gölünü açıkça avcılık amaçlı istihsal sahası olarak ihaleye çıkardı; 2017 resmî denetimde göl çevresindeki canlı sazanlar göle geri bırakıldı. Akademik literatür Seyhan'da balık toplulukları ve sucul ekosistemi destekliyor. Kamusal kıyı ve rekreasyon erişimi ayrıca doğrulanacak.",
-        "sourceFamilies": ["resmi-Adana-Il-Tarim", "akademik-DergiPark"],
-        "sources": ["https://adana.tarimorman.gov.tr/Duyuru/733/Seyhan-Baraj-Golu-Ihale-Ilani", "https://adana.tarimorman.gov.tr/Haber/357/Ilimizde-Su-Urunleri-Denetim-Calismalari-Devam-Ediyor", "https://dergipark.org.tr/tr/pub/kfbd/issue/57177/783662"]
-      },
-      {
-        "name": "Arpaçay Baraj Gölü genel kıyı",
-        "province": "Kars",
-        "status": "hold-insufficient-route-specific-evidence",
-        "note": "Aday havuzunda tutuldu ancak bu turda kamusal amatör kıyı erişimi + tür/istihsal için iki bağımsız rota-özel kaynak ailesi tamamlanamadı. Kota için confidence zorlanmayacak; Aşama 3 havuzuna alınmadı.",
-        "sourceFamilies": ["resmi/akademik-arama-yapildi"],
-        "sources": []
-      }
-    ],
-    "sourceFamiliesSearched": [
-      "resmi-Tarim-ve-Orman-il-mudurlukleri",
-      "resmi-DSI/valilik/kaymakamlik/DKMP",
-      "akademik-DergiPark/TR-Dizin/YOK-acik-bilim/universite-arsivleri",
-      "yerel-kurumsal",
-      "ikincil-acik-harita-ve-site-duplicate-kontrolu"
-    ],
-    "freshFindings": [
-      "Hasan Uğurlu için Samsun İl Tarım avlanabilir stok tablosu tatlısu levreği, tatlısu kefali, siraz, yayın ve sazanı resmî olarak listeliyor.",
-      "Suat Uğurlu için akademik ihtiyofauna çalışması baraj gölünde doğrudan örneklenmiş çoklu tür kaydı sağlıyor.",
-      "Sultansuyu için 2024 Malatya İl Tarım brifingi avcılık kiralamasını, akademik çalışma ise sazan ve Capoeta türlerini bağımsız biçimde destekliyor.",
-      "Seyhan Baraj Gölü 20.01.2026 tarihli resmî ilanda 5 yıllık avcılık amaçlı istihsal ihalesine çıkarılmış; güncel yeni mera adayı olarak güçlü.",
-      "Çıldır için resmî avcılık/stok kaydı güçlü olsa da DKMP sulak alan hassasiyeti nedeniyle mikro-konum yayımlamak uygun değil.",
-      "Keban kanıt kalitesi yüksek ancak yeni genel slug duplicate aile riski taşıyor; mevcut Keban rotaları güçlendirilmeli.",
-      "Hazar Gölü için avcılık ve akademik balıkçılık kanıtı var; mevcut rota ve kıyı koruma/işletme çakışması temizlenmeden yeni sayfa açılmayacak.",
-      "Arpaçay bu turda iki bağımsız rota-özel kaynak eşiğini geçmedi ve bekletildi."
+    "newEvidenceThisRun": [
+      "Çiğdem: Devrekâni Kaymakamlığı + Kastamonu İl Tarım rota-özel kimlik/tür kanıtı.",
+      "Çiftevi: Aksaray Valiliği + Aksaray İl Tarım rota-özel gölet/sazan kanıtı.",
+      "Karasu: Erzincan Belediyesi rota kimliği + hakemli Cyprinus carpio/Luciobarbus esocinus örneklemesi.",
+      "Kura: Ardahan Valiliği nehir kimliği + Ardahan Üniversitesi ihtiyofauna çalışması.",
+      "Delice: 2015 İl Tarım sazan salımı + 2025 Bakanlık projesi saha haberi.",
+      "Atatürk: Adıyaman İl Özel İdaresi su kimliği + 2025 akademik Samsat/Bozova sazan örneklemesi.",
+      "Kemaliye: Erzincan Valiliği Karasu/Kemaliye kullanım bağlamı + Fırat Üniversitesi Kemaliye balık çalışması.",
+      "Borçka: Artvin Valiliği DSİ/turizm kimliği + YÖK Açık Bilim 156 Silurus glanis örneklemesi."
     ]
   },
-  "promotedSlugs": [],
+  "promotedSlugs": [
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+    "ulusal-aksaray-ciftevi-baraj-golu",
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ulusal-sivas-delice-baraj-golu-sivas",
+    "ankara-500km-adiyaman-ataturk-baraj-golu",
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+    "ulusal-artvin-borcka-baraj-golu"
+  ],
   "newSlugs": [],
-  "mgmAudit": {"status": "not_started"},
-  "ci": {"status": "not_started"},
+  "mgmAudit": {"status":"not_started"},
+  "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
-  "deploy": {"status": "not_started"}
+  "deploy": {"status":"not_started"}
 }
