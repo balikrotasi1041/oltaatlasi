@@ -1,18 +1,18 @@
 {
   "version": 1,
-  "date": "2026-08-26",
+  "date": "2026-08-27",
   "timezone": "Europe/Istanbul",
   "stage": 2,
-  "branch": "quality/daily-2026-08-26",
+  "branch": "daily-quality-20260827",
   "done": false,
   "research": {
-    "mainShaAtStart": "e11145f6820ad28ebd352ba5b3ff3cc5792c7c1e",
+    "mainShaAtStart": "7ec3b094c69865b46e227607cbc6bd158ef7a92e",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki 18 ve 23 Ağustos Search Console fırsat setleri yeniden kullanıldı; konum/yol tarifi niyetinde 3-15 pozisyon ve düşük CTR sinyalleri D aday önceliğine eklendi. Özellikle Kırıkkale Kızılırmak-Yahşihan, Destek ve Çiftevi geçmiş GSC verisinde düşük CTR/3-15 pozisyon bandındadır; emekliye ayrılmış rotalar dışarıda tutuldu.",
+    "searchConsoleNotes": "Güncel repodaki 23 Ağustos Search Console fırsat seti kullanıldı. Konum/yol tarifi niyetinde pozisyon 3-15 ve düşük CTR sinyali önceliklendirildi: Sarımsaklı 624 gösterim/%0,16/8,74; Yamula 182/%0/7,13; Koyunbaba 30/%0/8,90; Gümüşler 28/%0/8,71; Kızıldamlar 28/%0/9,32; Çengelköy 25/%0/10,24; Sarıyar 21/%0/8,90; Akkaya 18/%0/8,56. D aday havuzunda bu sinyaller doğrudan eşleşmediğinde güçlü hub/konum niyeti ikincil öncelik olarak kullanıldı; URL/canonical değiştirme planlanmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -48,7 +48,9 @@
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-erzincan-tercan-baraj-golu",
       "ulusal-artvin-borcka-baraj-golu",
-      "ulusal-aksaray-ciftevi-baraj-golu"
+      "ulusal-aksaray-ciftevi-baraj-golu",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi"
     ],
     "heldForMoreRouteSpecificEvidence": [
       "ulusal-amasya-destek-baraj-golu",
@@ -59,37 +61,40 @@
       "ulusal-bolu-caykoy-baraj-golu-bolu",
       "ulusal-sivas-delice-baraj-golu-sivas",
       "ulusal-bayburt-lori-deresi",
-      "ankara-500km-adiyaman-ataturk-baraj-golu",
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
-      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
       "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
       "ulusal-erzurum-olur-baraj-golu",
       "ulusal-van-zernek-baraj-golu"
     ],
-    "newCandidatesReviewed": 8,
+    "dEvidenceSearch": {
+      "families": ["resmi-Tarim/DSI/Valilik/Kaymakamlik/KTB", "akademik-DergiPark/YOK/universite", "yerel-kurumsal/il-ozel-idare", "ikincil-harita-yalniz-erisim-destegi"],
+      "notes": "25 adayın tamamında en az resmî ve akademik/üniversite ailesi birlikte arandı. Rota-özel mikro erişim veya amatör kullanım kanıtı çıkmayanlar D bırakılmak üzere held listesine alındı. Genel 6/2 Tebliğ tek başına C sayılmadı."
+    },
+    "newCandidatesReviewed": 9,
     "newCandidates": [
-      {"name":"Borçka Baraj Gölü","province":"Artvin","status":"reject-duplicate","note":"Akademik yayın balığı kanıtı güçlü; ancak mevcut ulusal-artvin-borcka-baraj-golu kaydı bulundu."},
-      {"name":"Demirözü Barajı","province":"Bayburt","status":"reject-duplicate","note":"Kaymakamlık erişim/turizm ve mevcut resmî balıklandırma katmanı güçlü; sitede zaten Güven B kayıt var."},
-      {"name":"Tercan Baraj Gölü","province":"Erzincan","status":"reject-duplicate","note":"Kaymakamlık kimlik kaydı ve 2025 İl Tarım alabalık üretim kaydı bulundu; sitede mevcut Güven D kayıt var."},
-      {"name":"Zernek Baraj Gölü","province":"Van","status":"reject-duplicate","note":"Sitede mevcut Güven D kayıt tespit edildi; yeni rota sayılmaz."},
-      {"name":"Gayt Barajı","province":"Bingöl","status":"reject-duplicate","note":"DSİ resmî baraj kimliği bulundu; sitede mevcut Güven D kayıt tespit edildi."},
-      {"name":"Süreyyabey (Çekerek) Barajı genel kıyı","province":"Tokat/Yozgat sınırı","status":"hold","note":"DSİ/Tarım havza planında resmî kimlik ve balık geçişi-tür restorasyonu bağlamı bulundu; rota-özel kamusal amatör kıyı ve ikinci bağımsız tür/erişim ailesi tamamlanmadan yayımlanmayacak."},
-      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold","note":"Yeni aday olarak duplicate ve güvenlik/erişim taramasında tutuldu; en az iki bağımsız rota-özel kaynak ailesi tamamlanmadan Aşama 3 havuzuna alınmayacak."},
-      {"name":"Hazar Gölü kamusal genel kıyı alternatifi","province":"Elazığ","status":"hold","note":"Akademik tür literatürü ve yerel rekreasyon kaynak ailesi araştırma hattına alındı; mevcut rota/koruma/özel işletme çakışması temizlenmeden yeni slug üretilmeyecek."}
+      {"name":"Suat Uğurlu Baraj Gölü genel kamusal kıyı","province":"Samsun","status":"priority-hold","sourceFamilies":["Samsun İl Tarım balıklandırma 2021/2022/2023/2025","Samsun İl Kültür ve Turizm/Ayvacık Kaymakamlığı erişim-turizm","DergiPark SDÜ balık faunası"],"note":"Repo aramasında aktif rota eşleşmesi bulunmadı. 2003-2004 bilimsel örneklemede 7 tür + 1 alttür; resmî kaynaklarda 2021-2025 sazan salımı ve Ayvacık su sporları/turizm kullanımı var. Mikro kıyı güvenliği/özel parsel sınırı Aşama 3'te ayrıca doğrulanmalı."},
+      {"name":"Hasan Uğurlu Baraj Gölü genel kamusal kıyı","province":"Samsun","status":"priority-hold","sourceFamilies":["Ayvacık Kaymakamlığı resmî baraj kimliği","Samsun İl Tarım 2021-2025 sazan balıklandırma","Tarım SYGM Yeşilırmak Havza Planı/akademik ekosistem literatürü"],"note":"Repo aramasında aktif rota eşleşmesi bulunmadı. Resmî balıklandırma güçlü tür olasılığıdır; av garantisi değildir. HES/gövde güvenlik alanı ve yalnız genel kamusal kıyı yaklaşımı kullanılmalı."},
+      {"name":"Sultansuyu Baraj Gölü genel kıyı","province":"Malatya","status":"priority-hold","sourceFamilies":["Malatya İl Tarım avlama/istihsal ihalesi","DergiPark/Turkish Journal of Fisheries and Aquatic Sciences tür-limnoloji çalışması"],"note":"Repo aramasında aktif rota eşleşmesi bulunmadı. Akademik çalışma Cyprinus carpio, Leuciscus cephalus, Capoeta trutta ve Capoeta capoeta umbla örnekliyor; resmî ihale su ürünleri avlama bağlamını doğruluyor. Güncel kamusal kıyı mikro erişimi ayrıca teyit edilmeli."},
+      {"name":"Almus Baraj Gölü alternatif genel kıyı","province":"Tokat","status":"reject-duplicate","sourceFamilies":["Tokat İl KTB/Tarım/Kaymakamlık","DergiPark Gaziosmanpaşa Üniversitesi"],"note":"Güçlü olta/tür kaynaklarına rağmen repoda 24 Ağustos kalite katmanında mevcut rota/kanıt bulunuyor; yeni slug üretilmeyecek."},
+      {"name":"Kılıçkaya Baraj Gölü alternatif genel kıyı","province":"Sivas","status":"reject-duplicate","sourceFamilies":["Sivas İl KTB/DSİ","DergiPark Gaziosmanpaşa/Kafkas Üniversitesi"],"note":"Akıncılar resmî kaynağı sazan/yayın avını destekliyor; repoda 24 Ağustos kalite katmanında mevcut rota/kanıt var."},
+      {"name":"Uzunçayır Baraj Gölü genel kıyı","province":"Tunceli","status":"reject-duplicate","sourceFamilies":["Tarım/DSİ havza-su yapısı","DergiPark Aquaculture Studies balık faunası"],"note":"Repoda tunceli-uzuncayir-kanoglu-resmi-amator-kiyisi aktif görsel/veri katmanı bulundu; yeni rota sayılmaz."},
+      {"name":"Menzelet Baraj Gölü genel kıyı","province":"Kahramanmaraş","status":"reject-duplicate","sourceFamilies":["Kahramanmaraş İl Tarım 2025 istihsal ihalesi ve stok","DSİ/SYGM havza kaynakları"],"note":"2025 resmî ihale sazan, siraz, bıyıklı, yayın ve gümüş balığı stoklarını veriyor; repoda 24 Ağustos kalite katmanında mevcut rota/kanıt var."},
+      {"name":"Keban Baraj Gölü yeni genel kıyı alternatifi","province":"Elazığ/Tunceli","status":"reject-generic-duplicate","sourceFamilies":["Elazığ İl Tarım 2025 avlak ihalesi","Fırat Üniversitesi balık faunası/Pertek-Kemaliye çalışmaları"],"note":"Bilimsel ve resmî kanıt çok güçlü ancak sitede Keban/Pertek/Kemaliye aileleri mevcut; yeni genel slug yerine mevcut rotaların D→C+ yükseltilmesi tercih edilecek."},
+      {"name":"Çıldır Gölü yeni genel kıyı alternatifi","province":"Ardahan/Kars","status":"hold-sensitive","sourceFamilies":["Tarım ve Orman DKMP Ekotaban + Ardahan İl Tarım 2022 istihsal ihalesi","2024 DergiPark güncel balık faunası"],"note":"2024 çalışma 17 tür bildiriyor, DKMP 15 balık türü ve sulak alan değerini doğruluyor. Hassas sulak alan/kamışlık mikro-konumlar yayımlanmayacak; mevcut koordinat referansı nedeniyle aktif rota duplicate kontrolü Aşama 3 öncesi yeniden yapılmalı."}
     ],
-    "sourceFamiliesSearched": ["resmi-DSI/Tarim/Kaymakamlik", "akademik-YOK/DergiPark/universite", "yerel-kurumsal", "ikincil-acik-harita/site-duplicate"],
+    "sourceFamiliesSearched": ["resmi-DSI/Tarim/Kaymakamlik/KTB/DKMP", "akademik-DergiPark/YOK/universite", "yerel-kurumsal", "ikincil-acik-harita-sadece-destek"],
     "freshFindings": [
-      "Çiğdem Göleti için Devrekani Kaymakamlığı su kimliği, in balığı/tatlısu kefali ve sonradan sazan ekimini birlikte doğruluyor.",
-      "Ardahan Üniversitesi ihtiyofauna çalışması Kura ana kolunda çoklu türleri doğrudan örnekliyor.",
-      "Erzincan Karasu yan kolları çalışması 12 türü akademik örneklemeyle kaydediyor.",
-      "Hakkari su kaynakları çalışması il bağlamında sazan ve alabalık avcılığını destekliyor; Zap mikro-kıyı erişimini tek başına doğrulamıyor.",
-      "Borçka Baraj Gölü için YÖK açık bilim tezinde 156 yayın balığı örneklenmiş; tür kanıtı güçlü fakat rota zaten mevcut.",
-      "Tercan Barajı için Kaymakamlık kimlik kaydı ve 30.04.2025 İl Tarım kafes alabalık kaydı var; yetiştiricilik sahası amatör av noktası sayılmayacak.",
-      "Süreyyabey için Yeşilırmak havza planında balık geçişi kaynaklı tür kaybı/restorasyon tedbiri var; bu tek başına amatör kıyı izni değildir."
+      "Samsun İl Tarım 2025 dahil resmî balıklandırma kayıtlarında Suat Uğurlu ve Hasan Uğurlu barajları tekrar tekrar sazan salımı yapılan avlaklar arasında; geçmiş salım tür olasılığıdır, av garantisi değildir.",
+      "Suat Uğurlu Baraj Gölü için SDÜ çalışması 7 tür ve 1 alttürü doğrudan örnekliyor; Samsun KTB Ayvacık'ı iki baraj gölü kıyısında su sporları/turizm bölgesi olarak tanımlıyor.",
+      "Sultansuyu Baraj Gölü için Malatya İl Tarım avlama ihalesi resmî su ürünleri kullanımını, akademik çalışma dört ekonomik balık türünü doğrudan destekliyor.",
+      "Çıldır Gölü 2024 güncel akademik örneklemede 17 tür içeriyor; DKMP sulak alan değeri ve koruma hassasiyeti nedeniyle mikro hassas kıyılar dışarıda tutulmalı.",
+      "Keban 2025 resmî 6. avlak ihalesinde siraz, bıyıklı balık, sazan ve kerevit stokları açıkça veriliyor; yeni genel URL yerine mevcut Keban ailesini güçlendirmek daha doğru.",
+      "Hakkari Zap için resmî KTB coğrafya kaydı ve Hakkari Üniversitesi/Tarım kökenli çalışma sazan-alabalık avcılığı olasılığını destekliyor fakat mikro kıyı erişimi ayrıca gerekli.",
+      "Atatürk Barajı için Adıyaman İl Tarım 2021'de 13-16. avlak sahalarına 1.596.000 pullu sazan bırakıldığını kaydediyor; 2021 akademik fauna çalışması 25 tür bildiriyor."
     ]
   },
   "promotedSlugs": [],
