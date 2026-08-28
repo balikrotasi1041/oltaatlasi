@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-08-28",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-08-28",
   "done": false,
   "research": {
@@ -11,9 +11,8 @@
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
-    "policyNotes": "confidence-index-v2 beş ayrı boyutu zorunlu tutuyor; geçmiş balıklandırma tür olasılığı kanıtıdır, erişim/hukuk veya av garantisi değildir. audit-confidence-debt B için güçlü hukuk veya rota-özel resmî tür/stok eşiğini ve A için güçlü saha+hukuk eşiğini denetliyor. duplicate radar aynı il/ilçe/su türünde 2.5 km yakınlık ile ad/alan benzerliğini kontrol ediyor. index policy mevcut tasarımda D dahil bütün rota sayfalarını indekslenebilir tutuyor; sitemap/canonical/Article/lastmod denetleniyor.",
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "28 Temmuz-25 Ağustos 2026 sorgu setinde 47 tıklama, 3.635 gösterim, %1,29 CTR ve 9,31 ortalama konum var. 3-15 konum bandında ve düşük CTR üreten yer niyetli sorgular (Sivas, Kütahya, Bartın, Düzce, Erzurum, Rize; ayrıca Enne, Sarıyar ve Yamula gibi rota niyetleri) öncelik sinyali olarak kullanıldı; GSC tek başına confidence gerekçesi sayılmadı. Önceki fırsat setindeki Kırıkkale Kızılırmak-Yahşihan, Destek ve Çiftevi düşük CTR/3-15 sinyali nedeniyle D havuzunda üst sırada tutuldu.",
+    "searchConsoleNotes": "28 Temmuz-25 Ağustos 2026 sorgu setindeki 3-15 konum, düşük CTR ve yer niyetli sorgular önceliklendirme için kullanıldı; Search Console sinyali confidence kanıtı sayılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -42,153 +41,124 @@
       "ulusal-artvin-borcka-baraj-golu",
       "ulusal-van-zernek-baraj-golu"
     ],
-    "evidenceReadyPriority": [
+    "newCandidatesReviewed": 8,
+    "newCandidates": [
+      {"name":"Suat Uğurlu Baraj Gölü genel kıyı","province":"Samsun","status":"priority","sourceFamilies":["resmi","akademik","yerel-kurumsal"]},
+      {"name":"Hasan Uğurlu Baraj Gölü genel kıyı","province":"Samsun","status":"priority","sourceFamilies":["resmi","akademik","yerel-kurumsal"]},
+      {"name":"Sultansuyu Baraj Gölü genel kıyı","province":"Malatya","status":"priority-with-operating-check","sourceFamilies":["resmi","akademik"]},
+      {"name":"Seyhan Baraj Gölü kamusal genel kıyı","province":"Adana","status":"hold-conservation-boundary","sourceFamilies":["resmi","akademik","koruma"]},
+      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold-border-and-academic-gap","sourceFamilies":["resmi-kurumsal","yerel-destekleyici"]},
+      {"name":"Çıldır Gölü kamusal genel kıyı","province":"Ardahan","status":"hold-sensitive-wetland","sourceFamilies":["resmi","akademik","koruma"]},
+      {"name":"Hazar Gölü kamusal genel kıyı alternatifi","province":"Elazığ","status":"hold-protection-and-private-use-overlap","sourceFamilies":["resmi","akademik","yerel-kurumsal"]},
+      {"name":"Süreyyabey (Çekerek) Baraj Gölü genel kıyı","province":"Yozgat","status":"hold-restricted-shore-map","sourceFamilies":["resmi","akademik"]}
+    ]
+  },
+  "stage2": {
+    "target": 17,
+    "completed": 17,
+    "remaining": 0,
+    "status": "completed",
+    "note": "Güncel main üzerinde D olan 17 benzersiz rota C'ye yükseltildi. 27 Ağustos dalında kanıtı tamamlanmış fakat main'e hiç birleşmemiş 12 D kaydı bugünkü main üzerinde yeniden doğrulanarak aynı kanıt katmanıyla uygulandı; bunlar bugünkü main'de hâlâ D oldukları için gerçek D→C geçişidir. Kota için kanıt eşiği düşürülmedi. İlk havuzdan Çayköy ayrıca yükseltildi; 17'yi tamamlamak için Tatvan, Karamurat, Köprübaşı ve Karagöl ek D adayları araştırılıp C'ye yükseltildi.",
+    "promotedSlugs": [
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+      "ulusal-aksaray-ciftevi-baraj-golu",
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
       "ulusal-ardahan-kura-nehri-ardahan-hatti",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
       "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-bolu-caykoy-baraj-golu-bolu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ankara-500km-bolu-karamurat-golu",
+      "ankara-500km-bolu-koprubasi-baraj-golu",
+      "ankara-500km-bolu-karagol"
+    ],
+    "carriedForwardRevalidated": [
+      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-aksaray-ciftevi-baraj-golu",
+      "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+      "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
     ],
-    "heldForMoreRouteSpecificEvidence": [
+    "newPromotionsThisRun": [
+      "ulusal-bolu-caykoy-baraj-golu-bolu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ankara-500km-bolu-karamurat-golu",
+      "ankara-500km-bolu-koprubasi-baraj-golu",
+      "ankara-500km-bolu-karagol"
+    ],
+    "additionalCandidatesReviewed": [
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ankara-500km-bolu-karamurat-golu",
+      "ankara-500km-bolu-koprubasi-baraj-golu",
+      "ankara-500km-bolu-karagol",
+      "ankara-500km-bolu-sunnet-golu",
+      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
+      "ulusal-erzurum-demirdoven-baraj-golu"
+    ],
+    "heldSlugs": [
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
-      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
-      "ulusal-bolu-caykoy-baraj-golu-bolu",
-      "ulusal-sivas-delice-baraj-golu-sivas",
       "ulusal-bayburt-lori-deresi",
-      "ankara-500km-adiyaman-ataturk-baraj-golu",
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
       "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
-      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
       "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
       "ulusal-erzurum-olur-baraj-golu",
-      "ulusal-van-zernek-baraj-golu"
+      "ankara-500km-bolu-sunnet-golu"
     ],
-    "newCandidatesReviewed": 8,
-    "newCandidates": [
-      {
-        "name": "Suat Uğurlu Baraj Gölü genel kıyı",
-        "province": "Samsun",
-        "status": "priority",
-        "sourceFamilies": ["resmi", "akademik", "yerel-kurumsal"],
-        "sources": [
-          "https://samsun.tarimorman.gov.tr/Haber/1358/Samsun-Da-Su-Kaynaklarina-Rekor-Duzeyde-Sazan-Baligi-Yavrusu-Birakildi",
-          "https://dergipark.org.tr/en/pub/egirdir/article/246546",
-          "https://ayvacik.gov.tr/barajlarimiz"
-        ],
-        "note": "2023 resmî balıklandırma Suat Uğurlu'yu açıkça sayıyor; 2003-2004 akademik örneklemesi 7 tür+1 alttür kaydediyor; Kaymakamlık su kimliği ve ilçe bağlamını doğruluyor. Mikro kıyı/park ayrıca doğrulanacak."
-      },
-      {
-        "name": "Hasan Uğurlu Baraj Gölü genel kıyı",
-        "province": "Samsun",
-        "status": "priority",
-        "sourceFamilies": ["resmi", "akademik", "yerel-kurumsal"],
-        "sources": [
-          "https://samsun.tarimorman.gov.tr/Haber/1358/Samsun-Da-Su-Kaynaklarina-Rekor-Duzeyde-Sazan-Baligi-Yavrusu-Birakildi",
-          "https://prensipjournals.com/ojs/index.php/actanatsci/article/view/220",
-          "https://ayvacik.gov.tr/barajlarimiz"
-        ],
-        "note": "2023 resmî sazan balıklandırması, 2019-2020 dönemine dayanan 406 sazanlık akademik stok çalışması ve Kaymakamlık baraj kimliği birlikte güçlü. Mikro erişim ve işletme güvenlik sınırı ayrı tutulacak."
-      },
-      {
-        "name": "Sultansuyu Baraj Gölü genel kıyı",
-        "province": "Malatya",
-        "status": "priority-with-operating-check",
-        "sourceFamilies": ["resmi", "akademik"],
-        "sources": [
-          "https://malatya.tarimorman.gov.tr/Haber/838/",
-          "https://malatya.tarimorman.gov.tr/Belgeler/%C4%B0l%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%20Brifing/Brifing_2024.pdf",
-          "https://dergipark.org.tr/en/pub/trjfas-ayrildi/article/160413"
-        ],
-        "note": "2023 resmî sazan balıklandırması ve 2024 resmî brifingde avcılık amaçlı kiralama var; akademik çalışma sazan, tatlısu kefali ve Capoeta türlerini doğruluyor. Kiralama/üretim alanları amatör kamusal kıyı sayılmayacak."
-      },
-      {
-        "name": "Seyhan Baraj Gölü kamusal genel kıyı",
-        "province": "Adana",
-        "status": "hold-conservation-boundary",
-        "sourceFamilies": ["resmi", "akademik", "koruma"],
-        "sources": [
-          "https://adana.tarimorman.gov.tr/Duyuru/733/Seyhan-Baraj-Golu-Ihale-Ilani",
-          "https://www.egejfas.org/en/pub/article/68385",
-          "https://acikbilim.yok.gov.tr/handle/20.500.12812/124089"
-        ],
-        "note": "20.01.2026 resmî avcılık amaçlı istihsal ilanı ve akademik sazan kaydı güçlü; ancak Yaban Hayatı Geliştirme Sahası yönetim sınırı nedeniyle mikro-konum yayımlanmadan koruma/rekreasyon sınırı temizlenecek."
-      },
-      {
-        "name": "Arpaçay Baraj Gölü genel kıyı",
-        "province": "Kars",
-        "status": "hold-border-and-academic-gap",
-        "sourceFamilies": ["resmi/kurumsal", "yerel-haber"],
-        "sources": [
-          "https://bolge24.dsi.gov.tr/Haber/Detay/13232",
-          "https://www.aa.com.tr/tr/yasam/karsta-gol-ve-goletlere-500-bin-sazan-yavrusu-birakildi/3685861"
-        ],
-        "note": "DSİ Arpaçay bölgesi su yapısı kimliğini, 12.09.2025 AA ise İl Tarım Müdürü beyanıyla Arpaçay'a sazan salımı ve amatör balıkçılığa açık saha bilgisini aktarıyor. Sınır güvenliği ve rota-özel akademik kaynak eksikliği nedeniyle henüz yeni C+ adayı değil."
-      },
-      {
-        "name": "Çıldır Gölü kamusal genel kıyı",
-        "province": "Ardahan",
-        "status": "hold-sensitive-wetland",
-        "sourceFamilies": ["resmi", "akademik", "koruma"],
-        "sources": [
-          "https://www.ardahan.gov.tr/cildir-golu",
-          "https://ardahan.tarimorman.gov.tr/Duyuru/214/Cildir-Golu-Istihsal-Sahasinin-5-Yil-Sureli-Kiralanmasina-Iliskin-Ihale-Ilani",
-          "https://dergipark.org.tr/en/pub/jaes/article/1521913",
-          "https://bolge13.tarimorman.gov.tr/Menu/41/Sulak-Alanlar"
-        ],
-        "note": "Valilik sportif olta kullanımını, İl Tarım avlanabilir stokları, 2024 çalışma 17 türü doğruluyor. Sulak alan ve kuş üreme habitatları nedeniyle hassas mikro-konum yayımlanmayacak; yalnız koruma sınırı dışında genel kamusal yaklaşım bulunursa ilerleyebilir."
-      },
-      {
-        "name": "Hazar Gölü kamusal genel kıyı alternatifi",
-        "province": "Elazığ",
-        "status": "hold-protection-and-private-use-overlap",
-        "sourceFamilies": ["resmi", "akademik", "yerel-kurumsal"],
-        "sources": [
-          "https://elazig.tarimorman.gov.tr/Haber/1717/Uluslararasi-Hazar-Sazan-Kupasi-Kapanisinda-Hazar-Golu-Binlerce-Balikla-Bulustu",
-          "https://elazig.gov.tr/hazar-golu",
-          "https://avesis.erdogan.edu.tr/yayin/b4674c70-4d7f-42b0-83e4-f25884d1ec48/hazar-golu-balik-faunasi-elazig"
-        ],
-        "note": "2025 resmî olta yarışması+30 bin sazan/siraz salımı ve Valilik balık avcılığı/rekreasyon kaydı güçlü; akademik fauna ailesi mevcut. Özel tesis, sit ve koruma/işletme çakışmaları ayrıştırılmadan slug üretilmeyecek."
-      },
-      {
-        "name": "Süreyyabey (Çekerek) Baraj Gölü genel kıyı",
-        "province": "Yozgat",
-        "status": "hold-restricted-shore-map",
-        "sourceFamilies": ["resmi", "akademik"],
-        "sources": [
-          "https://yozgat.tarimorman.gov.tr/Duyuru/475/",
-          "https://yozgat.tarimorman.gov.tr/Duyuru/168/Su-Urunleri-Avlama-Hakki-Ihale-Duyurusu",
-          "https://journal.bdfish.org/index.php/fisheries/article/view/JFish_19137",
-          "https://dergipark.org.tr/en/pub/muglajsci/article/396426"
-        ],
-        "note": "Resmî kaynak stok/ticari avcılığı ve 2025 yasak haritasını doğruluyor; akademik çalışmalar gölden doğrudan Atherina boyeri ve Aphanius marassantensis örnekliyor. Kırmızı/mavi yasak kıyılar dışında doğrulanmış kamusal amatör bölüm bulunmadan yayımlanmayacak."
-      }
+    "notEligibleBecauseAlreadyCPlus": [
+      "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
+      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi"
     ],
-    "duplicateScreen": "Sekiz yeni aday adı için repo code search tarandı; doğrudan eşleşme dönmedi. Aşama 3 öncesi koordinat/2.5 km duplicate radar ve mevcut su ailesi yeniden çalıştırılacak.",
-    "sourceFamiliesSearched": ["resmi-Tarim/DSI/Valilik/Kaymakamlik", "akademik-DergiPark/YOK/universite", "yerel-kurumsal", "koruma-DKMP/YHGS", "ikincil-haber"],
-    "freshFindings": [
-      "Suat Uğurlu: 2023 resmî balıklandırma + 2003-2004 rota-özel akademik fauna güçlü eşleşme.",
-      "Hasan Uğurlu: 2023 resmî balıklandırma + 406 sazanlık 2019-2020 akademik stok çalışması güçlü eşleşme.",
-      "Sultansuyu: 2023 sazan balıklandırması + 2024 resmî avcılık kiralama brifingi + akademik tür çalışması; işletme alanı ayrıştırılmalı.",
-      "Seyhan: 20.01.2026 avcılık amaçlı istihsal ilanı + akademik sazan kaydı; YHGS koruma sınırı nedeniyle beklemede.",
-      "Çıldır: Valilik sportif olta kaydı + İl Tarım stok + Mayıs 2024 akademik 17 tür; sulak alan hassasiyeti nedeniyle mikro-konum yok.",
-      "Hazar: 2025 uluslararası olta yarışması ve balıklandırma + Valilik balık avcılığı kaydı + akademik fauna; özel/koruma çakışması temizlenmeli.",
-      "Süreyyabey: resmî yasak kıyı haritası aktif; akademik tür kanıtı güçlü ama yalnız yasak dışı kamusal kıyı doğrulanırsa ilerleyebilir.",
-      "Arpaçay: 2025 sazan salımı ve amatör kullanım beyanı güçlü destek; sınır güvenliği ve akademik rota-özel kanıt açığı nedeniyle beklemede."
+    "evidenceNotes": [
+      "Çayköy: Bolu Valiliği rota kimliği + açık sportif olta kullanımı + il kapalı dönem kaydı; tür grup kaydı yalnız olasılık olarak tutuldu.",
+      "Tatvan: Bitlis İl Kültür-Turizm Van Gölü balıkçılık kullanımı + akademik Alburnus tarichi yayılımı/koruma çalışmaları; mikro kıyı yayımlanmadı.",
+      "Karamurat: Bolu Valiliği + Kültür Portalı rota kimliği/doğal sit + resmî sportif balıkçılık kaydı; tür stok iddiası genişletilmedi.",
+      "Köprübaşı: Bolu İl Tarım 527 ha avcılık amaçlı istihsal sahası ve rota-özel sazan/kababurun/siraz/kefal stok miktarları + il kapalı dönem kaydı; teknik/işletme alanları hariç tutuldu.",
+      "Karagöl: Bolu Valiliği + Kıbrıscık Kaymakamlığı + İl Kültür-Turizm Tabiat Parkı kimliği/kamusal ziyaret bağlamı + resmî sportif balıkçılık kaydı; park/işletme kuralları üstündür.",
+      "Sünnet Gölü yükseltilmedi: genel sportif olta bilgisinin karşısında güncel DKMP kaynağında balık avlama faaliyeti yasağı bulunduğu için C kotasına alınmadı.",
+      "Köyceğiz ve Demirdöven yükseltilmedi: rota kimliği/erişim bağlamı desteklense de adlandırılmış tür için yeterli rota-özel kanıt eşiği tamamlanmadı."
     ]
   },
-  "promotedSlugs": [],
+  "promotedSlugs": [
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+    "ulusal-aksaray-ciftevi-baraj-golu",
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ulusal-sivas-delice-baraj-golu-sivas",
+    "ankara-500km-adiyaman-ataturk-baraj-golu",
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+    "ulusal-artvin-borcka-baraj-golu",
+    "ulusal-erzincan-tercan-baraj-golu",
+    "ulusal-van-zernek-baraj-golu",
+    "ulusal-hakkari-zap-suyu-hakkari-hatti",
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+    "ulusal-bolu-caykoy-baraj-golu-bolu",
+    "ulusal-bitlis-van-golu-tatvan-kiyisi",
+    "ankara-500km-bolu-karamurat-golu",
+    "ankara-500km-bolu-koprubasi-baraj-golu",
+    "ankara-500km-bolu-karagol"
+  ],
   "newSlugs": [],
-  "mgmAudit": {"status": "not_started"},
-  "ci": {"status": "not_started"},
+  "mgmAudit": {"status":"not_started"},
+  "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
-  "deploy": {"status": "not_started"}
+  "deploy": {"status":"not_started"},
+  "lastCheckpoint": "2026-08-28T10:57:02+03:00"
 }
