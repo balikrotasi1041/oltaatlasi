@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-08-28",
   "timezone": "Europe/Istanbul",
-  "stage": 3,
+  "stage": 4,
   "branch": "quality/daily-2026-08-28",
   "done": false,
   "research": {
@@ -116,7 +116,7 @@
     ],
     "imageStandard": "3 özgün SVG eklendi; image/socialImage aynı slug SVG'sine bağlı",
     "mgmRequired": true,
-    "status": "pending_mgm_model_comparison"
+    "status": "completed"
   },
   "promotedSlugs": [
     "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
@@ -143,23 +143,30 @@
     "ulusal-malatya-kuluncak-bicir-goleti"
   ],
   "mgmAudit": {
-    "status": "pending_model_comparison",
-    "checkedAt": "2026-08-28T11:24:32+03:00",
+    "status": "verified",
+    "checkedAt": "2026-08-28T14:08:00+03:00",
     "officialSourcesReached": true,
     "representativeRoutes": [
-      "İstanbul Marmara deniz kıyısı",
-      "Bolu içsu/baraj çevresi",
-      "Hakkari Zap Suyu akarsu hattı",
-      "Malatya Sürgü Baraj Gölü",
-      "Malatya Kuluncak Sofular Göleti"
+      "Caddebostan Kamusal Sahil Hattı / İstanbul / deniz",
+      "Sürgü Baraj Gölü / Malatya / baraj",
+      "Sofular Göleti / Malatya / gölet",
+      "Bicir Göleti / Malatya / gölet",
+      "Zap Suyu Hakkari Hattı / Hakkari / akarsu"
     ],
-    "officialFindings": "MGM 28 Ağustos günlük tahmini Batı Karadeniz ve Kocaeli-Sakarya-Çorum-Ordu-Giresun-Trabzon çevrelerinde yerel kuvvetli yağış; Marmara/Ege'de kuvvetli kuzeyli rüzgâr bildiriyor. Deniz bülteni Batı Karadeniz batısında fırtına, Marmara ve Kuzey Ege'de fırtınamsı rüzgâr bildiriyor.",
-    "modelComparison": "Olta Atlası /api/weather ve aynı MET Norway noktasal JSON yanıtları bu denetim çalışma ortamında okunamadı; sıcaklık, rüzgâr, yağış/hadise için noktasal karşılaştırma tamamlanmadı.",
-    "auditFileStatus": "pending"
+    "modelComparison": [
+      "Caddebostan: /api/weather 24,2°C, 6,8 m/s kuzeyli rüzgâr, yağmur; MGM İstanbul 24-26°C ve 18-26 km/sa, Marmara deniz ürünü fırtınamsı rüzgâr/sağanak. Model sıcaklık ve hadise yönünde uyumlu fakat saha puanı 90/Çok iyi resmî deniz-rüzgâr riskini yeterince yansıtmıyor; MGM üstün tutulmalı.",
+      "Sürgü: model 30,3°C ve 2,7 m/s; MGM Malatya 28-33°C, 5-7 km/sa. Bariz çelişki yok.",
+      "Sofular: model 29,3°C, 3,0 m/s ve ilk 6 saatte 2,8 mm; Malatya MGM sıcaklık/rüzgâr bandıyla uyumlu, noktasal yağış farkı yerel ölçek farkı olarak not edildi.",
+      "Bicir: model 26,8°C, 3,0 m/s ve ilk 6 saatte 3,6 mm; Malatya MGM il merkezi bandıyla bariz çelişki yok, yerel yağış model farkı kesin resmî teyit sayılmadı.",
+      "Zap/Hakkari: model 28,2°C, 5,2 m/s, ilk 12 saat yağışsız; MGM Hakkari 25-29°C ve gündüz 13-14 km/sa. Genel desen uyumlu, bariz çelişki yok."
+    ],
+    "officialFindings": "MGM 28 Ağustos günlük ürünü Batı Karadeniz ile Kocaeli-Sakarya-Çorum-Ordu-Giresun-Trabzon çevrelerinde kuvvetli yağış, Marmara/Ege'de 40-60 km/sa kuzeyli kuvvetli rüzgâr bildiriyor. Deniz bülteni Batı Karadeniz'in batısında fırtına, Marmara ve Kuzey Ege'de fırtınamsı rüzgâr bildiriyor. Ankara Bölge ürünü Düzce-Zonguldak-Bartın-Bolu-Karabük için kuvvetli yağış uyarısını destekliyor.",
+    "auditFileStatus": "verified",
+    "criticalFinding": "Caddebostan örneğinde türetilmiş fieldCondition=90/Çok iyi iken MGM Marmara için fırtınamsı rüzgâr ve sağanak bildiriyor; resmî MGM uyarısı türetilmiş puandan üstündür ve yayın katmanında bu öncelik korunmalıdır."
   },
   "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
   "deploy": {"status":"not_started"},
-  "lastCheckpoint": "2026-08-28T11:24:32+03:00"
+  "lastCheckpoint": "2026-08-28T14:08:00+03:00"
 }
