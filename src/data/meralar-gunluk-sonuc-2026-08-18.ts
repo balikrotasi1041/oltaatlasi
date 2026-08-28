@@ -5,6 +5,8 @@ import { applyStabilizasyon20260822 } from "./meralar-stabilizasyon-2026-08-22";
 import { applyStabilizasyon20260823 } from "./meralar-stabilizasyon-2026-08-23";
 import { applyGrowth20260823 } from "./meralar-growth-2026-08-23";
 import { applyDailyQualityRun20260824 } from "./meralar-daily-quality-2026-08-24-run";
+import { applyDailyQualityStage2_20260827 } from "./meralar-daily-quality-2026-08-27-stage2";
+import { applyDailyQualityStage2b_20260827 } from "./meralar-daily-quality-2026-08-27-stage2b";
 
 const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-acildi";
 const yesilVadi="https://www.kirikkale.gov.tr/vali-sayin-haktankacmaz-yesil-vadi-projesini-inceledi";
@@ -54,5 +56,7 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
   appendDailyRiskNote(routeMap,"siirt-kurtalan-yayikli-goleti","Kırsal sulama göletinde yumuşak çamur, ani kıyı kırılması ve tarımsal araç trafiği riski bulunabilir; son yaklaşım ve kıyı zemini gündüz koşullarında kontrol edilmelidir.");
   appendDailyRiskNote(routeMap,"siirt-kurtalan-cayirli-goleti","Düşük su seviyesinde açığa çıkan çamurlu taban güvenli zemin kabul edilmemeli; kuruma riski, sulama faaliyeti ve kıyı taşıma kapasitesi hareket günü yeniden değerlendirilmelidir.");
 
+  applyDailyQualityStage2_20260827(routeMap);
+  applyDailyQualityStage2b_20260827(routeMap);
   return routeMap;
 };
