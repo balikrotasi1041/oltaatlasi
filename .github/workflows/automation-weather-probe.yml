@@ -1,0 +1,26 @@
+name: Automation weather probe
+on:
+  push:
+    branches:
+      - quality/daily-2026-08-28
+    paths:
+      - .github/workflows/automation-weather-probe.yml
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe production weather API
+        shell: bash
+        run: |
+          set -euo pipefail
+          probe(){
+            name="$1"; lat="$2"; lon="$3"; water="$4"
+            echo "=== ${name} ==="
+            curl --fail --silent --show-error --max-time 20 "https://oltaatlasi.com/api/weather?lat=${lat}&lon=${lon}&water=${water}"
+            echo
+          }
+          probe caddebostan 40.9622 29.0622 deniz
+          probe surgu 38.01814 37.91440 baraj
+          probe sofular 38.94567 37.55383 golet
+          probe bicir 38.93400 37.48800 golet
+          probe zap-hakkari 37.57400 43.74000 akarsu
