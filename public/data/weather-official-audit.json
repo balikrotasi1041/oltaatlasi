@@ -1,9 +1,21 @@
 {
   "version": 1,
-  "checkedAt": null,
+  "checkedAt": "2026-08-28T08:24:32.000Z",
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
-  "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
-  "message": "24 Ağustos 2026 tek günlük MGM denetiminde MeteoUYARI, güncel Türkiye/bölgesel tahminleri, Kocaeli-Sivas-Siirt-Kırıkkale-Tunceli saatlik ürünleri ve Marmara deniz tahmini kontrol edildi; MeteoUYARI Türkiye sayfası aktif il uyarısı göstermedi. İzmit Körfezi, Gölova Baraj Gölü, Yayıklı Göleti, Kızılırmak Yahşihan hattı ve Uzunçayır-Kanoğlu temsilî seti seçildi. Denetim ortamı oltaatlasi.com /api/weather noktasal yanıtlarını okuyamadığı için model-MGM karşılaştırması tamamlanamadı; bu nedenle resmî teyit statüsü pending bırakıldı ve önceki doğrulanmış checkedAt yapay biçimde yenilenmedi.",
-  "warnings": {}
+  "sourceUrl": "https://www.mgm.gov.tr/tahmin/gunluk-tahmin.aspx",
+  "message": "28 Ağustos 2026 tek günlük resmî denetimde MGM Türkiye günlük tahmini, Ankara Bölge günlük ürünü ve 3 günlük deniz tahmini kontrol edildi. Temsilî set: İstanbul/Marmara deniz kıyısı, Bolu içsu-baraj çevresi, Hakkari Zap akarsu hattı, Malatya Sürgü Baraj Gölü ve Malatya Kuluncak Sofular Göleti. MGM; Batı Karadeniz ile Kocaeli-Sakarya-Çorum-Ordu-Giresun-Trabzon çevrelerinde yerel kuvvetli yağış, Marmara ve Ege'de 40-60 km/sa kuzeyli kuvvetli rüzgâr; deniz bülteninde Batı Karadeniz'in batısında fırtına, Marmara/Kuzey Ege'de fırtınamsı rüzgâr bildiriyor. Olta Atlası /api/weather MET Norway model yanıtı bu denetim ortamından okunamadığı için sıcaklık-rüzgâr-yağış/hadise bazında noktasal model-MGM karşılaştırması tamamlanamadı; bu nedenle resmî teyit statüsü verified yapılmadı ve pending bırakıldı. MGM uyarıları türetilmiş saha puanından üstündür.",
+  "warnings": {
+    "Düzce": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Zonguldak": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Bartın": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Bolu": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Karabük": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Kocaeli": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Sakarya": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Çorum": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Ordu": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Giresun": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
+    "Trabzon": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]}
+  }
 }
