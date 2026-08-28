@@ -12,8 +12,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "28 Temmuz-25 Ağustos 2026 sorgu setindeki 3-15 konum, düşük CTR ve yer niyetli sorgular önceliklendirme için kullanıldı; Search Console sinyali confidence kanıtı sayılmadı.",
-    "dCandidatesReviewed": 25,
+    "dCandidatesReviewed": 32,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-aksaray-ciftevi-baraj-golu",
@@ -39,18 +38,28 @@
       "ulusal-erzurum-olur-baraj-golu",
       "ulusal-erzincan-tercan-baraj-golu",
       "ulusal-artvin-borcka-baraj-golu",
-      "ulusal-van-zernek-baraj-golu"
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ankara-500km-bolu-karamurat-golu",
+      "ankara-500km-bolu-koprubasi-baraj-golu",
+      "ankara-500km-bolu-karagol",
+      "ankara-500km-bolu-sunnet-golu",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-erzurum-koycegiz-baraj-golu-erzurum"
     ],
-    "newCandidatesReviewed": 8,
+    "newCandidatesReviewed": 11,
     "newCandidates": [
-      {"name":"Suat Uğurlu Baraj Gölü genel kıyı","province":"Samsun","status":"priority","sourceFamilies":["resmi","akademik","yerel-kurumsal"]},
-      {"name":"Hasan Uğurlu Baraj Gölü genel kıyı","province":"Samsun","status":"priority","sourceFamilies":["resmi","akademik","yerel-kurumsal"]},
-      {"name":"Sultansuyu Baraj Gölü genel kıyı","province":"Malatya","status":"priority-with-operating-check","sourceFamilies":["resmi","akademik"]},
-      {"name":"Seyhan Baraj Gölü kamusal genel kıyı","province":"Adana","status":"hold-conservation-boundary","sourceFamilies":["resmi","akademik","koruma"]},
-      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold-border-and-academic-gap","sourceFamilies":["resmi-kurumsal","yerel-destekleyici"]},
-      {"name":"Çıldır Gölü kamusal genel kıyı","province":"Ardahan","status":"hold-sensitive-wetland","sourceFamilies":["resmi","akademik","koruma"]},
-      {"name":"Hazar Gölü kamusal genel kıyı alternatifi","province":"Elazığ","status":"hold-protection-and-private-use-overlap","sourceFamilies":["resmi","akademik","yerel-kurumsal"]},
-      {"name":"Süreyyabey (Çekerek) Baraj Gölü genel kıyı","province":"Yozgat","status":"hold-restricted-shore-map","sourceFamilies":["resmi","akademik"]}
+      {"name":"Suat Uğurlu Baraj Gölü genel kıyı","province":"Samsun","status":"existing-D-not-new"},
+      {"name":"Hasan Uğurlu Baraj Gölü genel kıyı","province":"Samsun","status":"existing-D-not-new"},
+      {"name":"Sultansuyu Baraj Gölü genel kıyı","province":"Malatya","status":"existing-D-not-new"},
+      {"name":"Seyhan Baraj Gölü kamusal genel kıyı","province":"Adana","status":"hold-conservation-boundary"},
+      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold-border-and-academic-gap"},
+      {"name":"Çıldır Gölü kamusal genel kıyı","province":"Ardahan","status":"hold-sensitive-wetland"},
+      {"name":"Hazar Gölü kamusal genel kıyı alternatifi","province":"Elazığ","status":"hold-protection-and-private-use-overlap"},
+      {"name":"Süreyyabey (Çekerek) Baraj Gölü genel kıyı","province":"Yozgat","status":"hold-restricted-shore-map"},
+      {"name":"Sürgü Baraj Gölü","province":"Malatya","status":"added-C"},
+      {"name":"Sofular Göleti","province":"Malatya","status":"added-C"},
+      {"name":"Bicir Göleti","province":"Malatya","status":"added-C"}
     ]
   },
   "stage2": {
@@ -58,7 +67,6 @@
     "completed": 17,
     "remaining": 0,
     "status": "completed",
-    "note": "Güncel main üzerinde D olan 17 benzersiz rota C'ye yükseltildi. 27 Ağustos dalında kanıtı tamamlanmış fakat main'e hiç birleşmemiş 12 D kaydı bugünkü main üzerinde yeniden doğrulanarak aynı kanıt katmanıyla uygulandı; bunlar bugünkü main'de hâlâ D oldukları için gerçek D→C geçişidir. Kota için kanıt eşiği düşürülmedi. İlk havuzdan Çayköy ayrıca yükseltildi; 17'yi tamamlamak için Tatvan, Karamurat, Köprübaşı ve Karagöl ek D adayları araştırılıp C'ye yükseltildi.",
     "promotedSlugs": [
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-aksaray-ciftevi-baraj-golu",
@@ -78,36 +86,6 @@
       "ankara-500km-bolu-koprubasi-baraj-golu",
       "ankara-500km-bolu-karagol"
     ],
-    "carriedForwardRevalidated": [
-      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
-      "ulusal-aksaray-ciftevi-baraj-golu",
-      "ulusal-erzincan-karasu-nehri-erzincan-hatti",
-      "ulusal-ardahan-kura-nehri-ardahan-hatti",
-      "ulusal-sivas-delice-baraj-golu-sivas",
-      "ankara-500km-adiyaman-ataturk-baraj-golu",
-      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
-      "ulusal-artvin-borcka-baraj-golu",
-      "ulusal-erzincan-tercan-baraj-golu",
-      "ulusal-van-zernek-baraj-golu",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
-    ],
-    "newPromotionsThisRun": [
-      "ulusal-bolu-caykoy-baraj-golu-bolu",
-      "ulusal-bitlis-van-golu-tatvan-kiyisi",
-      "ankara-500km-bolu-karamurat-golu",
-      "ankara-500km-bolu-koprubasi-baraj-golu",
-      "ankara-500km-bolu-karagol"
-    ],
-    "additionalCandidatesReviewed": [
-      "ulusal-bitlis-van-golu-tatvan-kiyisi",
-      "ankara-500km-bolu-karamurat-golu",
-      "ankara-500km-bolu-koprubasi-baraj-golu",
-      "ankara-500km-bolu-karagol",
-      "ankara-500km-bolu-sunnet-golu",
-      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-erzurum-demirdoven-baraj-golu"
-    ],
     "heldSlugs": [
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
@@ -120,20 +98,25 @@
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
       "ulusal-erzurum-olur-baraj-golu",
       "ankara-500km-bolu-sunnet-golu"
-    ],
-    "notEligibleBecauseAlreadyCPlus": [
-      "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
-      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi"
-    ],
-    "evidenceNotes": [
-      "Çayköy: Bolu Valiliği rota kimliği + açık sportif olta kullanımı + il kapalı dönem kaydı; tür grup kaydı yalnız olasılık olarak tutuldu.",
-      "Tatvan: Bitlis İl Kültür-Turizm Van Gölü balıkçılık kullanımı + akademik Alburnus tarichi yayılımı/koruma çalışmaları; mikro kıyı yayımlanmadı.",
-      "Karamurat: Bolu Valiliği + Kültür Portalı rota kimliği/doğal sit + resmî sportif balıkçılık kaydı; tür stok iddiası genişletilmedi.",
-      "Köprübaşı: Bolu İl Tarım 527 ha avcılık amaçlı istihsal sahası ve rota-özel sazan/kababurun/siraz/kefal stok miktarları + il kapalı dönem kaydı; teknik/işletme alanları hariç tutuldu.",
-      "Karagöl: Bolu Valiliği + Kıbrıscık Kaymakamlığı + İl Kültür-Turizm Tabiat Parkı kimliği/kamusal ziyaret bağlamı + resmî sportif balıkçılık kaydı; park/işletme kuralları üstündür.",
-      "Sünnet Gölü yükseltilmedi: genel sportif olta bilgisinin karşısında güncel DKMP kaynağında balık avlama faaliyeti yasağı bulunduğu için C kotasına alınmadı.",
-      "Köyceğiz ve Demirdöven yükseltilmedi: rota kimliği/erişim bağlamı desteklense de adlandırılmış tür için yeterli rota-özel kanıt eşiği tamamlanmadı."
     ]
+  },
+  "stage3": {
+    "newRouteTarget": 3,
+    "newRouteCompleted": 3,
+    "routesStatus": "completed",
+    "newSlugs": [
+      "ulusal-malatya-dogansehir-surgu-baraj-golu",
+      "ulusal-malatya-kuluncak-sofular-goleti",
+      "ulusal-malatya-kuluncak-bicir-goleti"
+    ],
+    "duplicateCorrections": [
+      "Suat Uğurlu Baraj Gölü: mevcut D kayıt, yeni sayılamaz",
+      "Hasan Uğurlu Baraj Gölü: mevcut D kayıt, yeni sayılamaz",
+      "Sultansuyu Baraj Gölü: mevcut D kayıt, yeni sayılamaz"
+    ],
+    "imageStandard": "3 özgün SVG eklendi; image/socialImage aynı slug SVG'sine bağlı",
+    "mgmRequired": true,
+    "status": "pending_mgm_model_comparison"
   },
   "promotedSlugs": [
     "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
@@ -154,11 +137,29 @@
     "ankara-500km-bolu-koprubasi-baraj-golu",
     "ankara-500km-bolu-karagol"
   ],
-  "newSlugs": [],
-  "mgmAudit": {"status":"not_started"},
+  "newSlugs": [
+    "ulusal-malatya-dogansehir-surgu-baraj-golu",
+    "ulusal-malatya-kuluncak-sofular-goleti",
+    "ulusal-malatya-kuluncak-bicir-goleti"
+  ],
+  "mgmAudit": {
+    "status": "pending_model_comparison",
+    "checkedAt": "2026-08-28T11:24:32+03:00",
+    "officialSourcesReached": true,
+    "representativeRoutes": [
+      "İstanbul Marmara deniz kıyısı",
+      "Bolu içsu/baraj çevresi",
+      "Hakkari Zap Suyu akarsu hattı",
+      "Malatya Sürgü Baraj Gölü",
+      "Malatya Kuluncak Sofular Göleti"
+    ],
+    "officialFindings": "MGM 28 Ağustos günlük tahmini Batı Karadeniz ve Kocaeli-Sakarya-Çorum-Ordu-Giresun-Trabzon çevrelerinde yerel kuvvetli yağış; Marmara/Ege'de kuvvetli kuzeyli rüzgâr bildiriyor. Deniz bülteni Batı Karadeniz batısında fırtına, Marmara ve Kuzey Ege'de fırtınamsı rüzgâr bildiriyor.",
+    "modelComparison": "Olta Atlası /api/weather ve aynı MET Norway noktasal JSON yanıtları bu denetim çalışma ortamında okunamadı; sıcaklık, rüzgâr, yağış/hadise için noktasal karşılaştırma tamamlanmadı.",
+    "auditFileStatus": "pending"
+  },
   "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
   "deploy": {"status":"not_started"},
-  "lastCheckpoint": "2026-08-28T10:57:02+03:00"
+  "lastCheckpoint": "2026-08-28T11:24:32+03:00"
 }
