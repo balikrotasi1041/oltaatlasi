@@ -26,7 +26,7 @@ const ayvali:EnrichedMera={
   cautions:["Gölet gövdesi, savak, vana ve servis yapıları av noktası değildir","Genel pin Ayvalı Mahallesi yaklaşımını temsil eder; kesin gölet kıyısı, park veya kamusal geçiş değildir","Tarım parselleri ve teknik servis yolları izinsiz geçiş için kullanılmamalıdır","Su kotu düştüğünde yumuşak çamur ve kıyı kırılması riski artabilir"],
   lat:38.7480004,lng:37.587844,locationPrecision:"Genel bölge",
   verification:"Masa başı doğrulama; saha teyidi yok. DSİ Darende Ayvalı Göleti'nin tesis kimliği ve sulama işlevini doğrular. Malatya İl Tarım 2023 balıklandırmasında göleti adıyla sazan salınan sular arasında listeler. Koordinat göletin mikro konumu değil, Ayvalı Mahallesi genel yaklaşımıdır.",updatedAt:date,publishedAt:date,confidence:"C",
-  image:"/images/meralar/ulusal/malatya-darende-ayvali-goleti.svg",socialImage:"/images/meralar/ulusal/malatya-darende-ayvali-goleti.svg",navigationVerified:false,
+  image:"/images/meralar/ulusal/ulusal-malatya-darende-ayvali-goleti.svg",socialImage:"/images/meralar/ulusal/ulusal-malatya-darende-ayvali-goleti.svg",navigationVerified:false,
   navigationNote:"Pin Ayvalı Mahallesi'nin genel yaklaşım merkezidir; gölet kıyısı, park alanı, tarla yolu veya kesin olta noktası değildir. DSİ kaydı göletin Darende/Ayvalı bağlamını doğrular, son yaklaşım hareket günü ayrıca kontrol edilmelidir.",
   shoreProfile:"Sulama göletlerinde kıyı çizgisi mevsim ve sulama çekimine göre değişebilir. Yumuşak taban, dikleşen şev ve teknik yapılara yakın bölümler güvenli kıyı kabul edilmemelidir.",
   transport:"Darende'den Ayvalı Mahallesi genel yaklaşımı planlama başlangıcıdır. DSİ ve yerel kaynaklar göleti Ayvalı bağlamında doğrular; son kıyı yolu, park, özel parsel ve servis yolu açık kaynakla kesinleştirilmediğinden mikro yol tarifi yayımlanmaz.",
@@ -57,6 +57,14 @@ export const applyDailyQualityStage4Fixes20260828=(routeMap:Map<string,EnrichedM
   routeMap.delete("ulusal-malatya-dogansehir-surgu-baraj-golu");
   if(routeMap.has(ayvali.slug))throw new Error(`28 Ağustos Ayvalı yeni rota zaten mevcut: ${ayvali.slug}`);
   routeMap.set(ayvali.slug,ayvali);
+
+  // Yeni rota görselleri canonical slug'ı dosya yolunda birebir taşır; image/socialImage aynı özgün SVG'yi kullanır.
+  for(const slug of ["ulusal-malatya-kuluncak-sofular-goleti","ulusal-malatya-kuluncak-bicir-goleti",ayvali.slug]){
+    const route=routeMap.get(slug);
+    if(!route)throw new Error(`28 Ağustos görsel hedefi yok: ${slug}`);
+    const visual=`/images/meralar/ulusal/${slug}.svg`;
+    routeMap.set(slug,{...route,image:visual,socialImage:visual});
+  }
 
   // 27 Ağustos yükseltmesinde fish listesi yalnız bilimsel olarak doğrulanan sazana daraltılmıştı; eski D taslağındaki
   // bölgesel fishEvidence dizisi taşınmıştı. Kullanıcı yüzündeki listeyi rota-özel kanıtla birebir eşleştir.
