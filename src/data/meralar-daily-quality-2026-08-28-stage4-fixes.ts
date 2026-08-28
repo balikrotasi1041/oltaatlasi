@@ -42,10 +42,29 @@ const ayvali:EnrichedMera={
   confidenceProfile:profile,
 };
 
+const alignFishEvidence=(route:EnrichedMera)=>{
+  const wanted=new Set(route.fish.map((name)=>name.toLocaleLowerCase("tr-TR")));
+  const byName=new Map<string,FishEvidence>();
+  for(const evidence of route.fishEvidence||[]){
+    const key=evidence.name.toLocaleLowerCase("tr-TR");
+    if(wanted.has(key))byName.set(key,evidence);
+  }
+  return route.fish.map((name)=>byName.get(name.toLocaleLowerCase("tr-TR"))).filter((item):item is FishEvidence=>Boolean(item));
+};
+
 export const applyDailyQualityStage4Fixes20260828=(routeMap:Map<string,EnrichedMera>)=>{
   // Sürgü Baraj Gölü, 17 Ağustos Ankara-500 km paketindeki Sürgü Çayı kaydıyla aynı su kimliğine çakıştığı için yeni rota kotasından çıkarılır.
   routeMap.delete("ulusal-malatya-dogansehir-surgu-baraj-golu");
   if(routeMap.has(ayvali.slug))throw new Error(`28 Ağustos Ayvalı yeni rota zaten mevcut: ${ayvali.slug}`);
   routeMap.set(ayvali.slug,ayvali);
+
+  // 27 Ağustos yükseltmesinde fish listesi yalnız bilimsel olarak doğrulanan sazana daraltılmıştı; eski D taslağındaki
+  // bölgesel fishEvidence dizisi taşınmıştı. Kullanıcı yüzündeki listeyi rota-özel kanıtla birebir eşleştir.
+  const ataturkSlug="ankara-500km-adiyaman-ataturk-baraj-golu";
+  const ataturk=routeMap.get(ataturkSlug);
+  if(!ataturk)throw new Error(`28 Ağustos Atatürk kanıt hizalama hedefi yok: ${ataturkSlug}`);
+  const aligned=alignFishEvidence(ataturk);
+  if(aligned.length!==ataturk.fish.length)throw new Error(`28 Ağustos Atatürk tür kanıtı eksik: ${aligned.length}/${ataturk.fish.length}`);
+  routeMap.set(ataturkSlug,{...ataturk,fishEvidence:aligned});
   return routeMap;
 };
