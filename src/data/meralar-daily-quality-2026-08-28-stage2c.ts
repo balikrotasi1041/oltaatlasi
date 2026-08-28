@@ -43,7 +43,9 @@ export const applyDailyQualityStage2c_20260828=(routeMap:Map<string,EnrichedMera
     if(!previous)throw new Error(`28 Ağustos Stage 2 hedefi yok: ${item.slug}`);
     if(previous.confidence!=="D")throw new Error(`28 Ağustos Stage 2 kotasına yalnız D kayıt girebilir: ${item.slug} (${previous.confidence})`);
     const sources=uniqSources([...(previous.researchSources||[]),...item.sources,teblig,tebligDegisiklik]);
-    const fishEvidence=uniq([...(previous.fishEvidence||[]),...item.fishEvidence]);
+    // item.fish listesi bu aşamada yalnız kanıtı bulunan türlere daraltıldığı için eski D taslağındaki
+    // kanıtsız/bölgesel fishEvidence taşınmaz. Böylece kullanıcı yüzündeki tür listesi ile kanıt dizisi birebir kalır.
+    const fishEvidence=item.fishEvidence;
     routeMap.set(item.slug,{
       ...previous,
       ...(item.name?{name:item.name}:{}),
