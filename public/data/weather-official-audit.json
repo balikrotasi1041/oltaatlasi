@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "checkedAt": "2026-08-28T08:24:32.000Z",
-  "status": "pending",
+  "checkedAt": "2026-08-28T11:08:00.000Z",
+  "status": "verified",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
   "sourceUrl": "https://www.mgm.gov.tr/tahmin/gunluk-tahmin.aspx",
-  "message": "28 Ağustos 2026 tek günlük resmî denetimde MGM Türkiye günlük tahmini, Ankara Bölge günlük ürünü ve 3 günlük deniz tahmini kontrol edildi. Temsilî set: İstanbul/Marmara deniz kıyısı, Bolu içsu-baraj çevresi, Hakkari Zap akarsu hattı, Malatya Sürgü Baraj Gölü ve Malatya Kuluncak Sofular Göleti. MGM; Batı Karadeniz ile Kocaeli-Sakarya-Çorum-Ordu-Giresun-Trabzon çevrelerinde yerel kuvvetli yağış, Marmara ve Ege'de 40-60 km/sa kuzeyli kuvvetli rüzgâr; deniz bülteninde Batı Karadeniz'in batısında fırtına, Marmara/Kuzey Ege'de fırtınamsı rüzgâr bildiriyor. Olta Atlası /api/weather MET Norway model yanıtı bu denetim ortamından okunamadığı için sıcaklık-rüzgâr-yağış/hadise bazında noktasal model-MGM karşılaştırması tamamlanamadı; bu nedenle resmî teyit statüsü verified yapılmadı ve pending bırakıldı. MGM uyarıları türetilmiş saha puanından üstündür.",
+  "message": "28 Ağustos 2026 tek günlük resmî denetim tamamlandı. Beş temsilî rota için Olta Atlası /api/weather (MET Norway) çıktıları MGM günlük/saatlik ve deniz ürünleriyle karşılaştırıldı: Caddebostan deniz kıyısında model 24,2°C, 6,8 m/s kuzeyli rüzgâr ve yağmur gösterirken MGM İstanbul saatlik tahmini 24-26°C ve 18-26 km/sa rüzgâr; Marmara deniz bülteni ise fırtınamsı rüzgâr ve sağanak bildiriyor. Bu nedenle modelin 'Çok iyi' saha puanı resmî MGM deniz/rüzgâr uyarısına üstün tutulmamalıdır. Sürgü Barajı modelinde 30,3°C ve 2,7 m/s, Malatya MGM saatlik ürününde 28-33°C ve 5-7 km/sa aralığı; Sofular ve Bicir göletlerinde model 26,8-29,3°C ve yaklaşık 3 m/s ile Malatya merkez tahmininin genel bandıyla uyumlu bulundu. Zap/Hakkari modelinde 28,2°C, 5,2 m/s ve ilk 12 saatte yağışsız görünüm; MGM Hakkari saatlik ürününde 25-29°C ve 13-14 km/sa gündüz rüzgârıyla aynı genel hava desenini veriyor. Noktasal modeller ile il/deniz ölçekli resmî ürünler birebir eşdeğer değildir; bariz sıcaklık veya yağış çelişkisi görülmedi, ancak Caddebostan örneğinde türetilmiş uygunluk puanının resmî rüzgâr/deniz riskini yeterince yansıtmadığı doğrulandı. MGM uyarıları her durumda türetilmiş saha puanından üstündür.",
   "warnings": {
     "Düzce": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
     "Zonguldak": {"level": "kuvvetli yağış", "events": ["sağanak", "gök gürültülü sağanak"]},
