@@ -28,8 +28,13 @@ for (const route of meralar) {
   const hasCoordinates = [route.lat, route.lng].every((value) => Number.isFinite(Number(value)));
   if (!hasCoordinates) {
     unresolvedCoordinateCount += 1;
-    if (route.confidence !== "D") errors.push(`${route.slug}: çözülmemiş koordinat D dışında yayımlanıyor.`);
-    if (!/çözül|genel|başlangıç|doğrulan/i.test(`${route.navigationNote} ${route.transport}`)) errors.push(`${route.slug}: çözülmemiş koordinat uyarısı eksik.`);
+    const evidenceBackedGeneralC = route.confidence === "C"
+      && route.locationPrecision === "Genel bölge"
+      && route.navigationVerified === false
+      && route.confidenceProfile?.identity.level === "strong"
+      && route.confidenceProfile?.access.level !== "unverified";
+    if (route.confidence !== "D" && !evidenceBackedGeneralC) errors.push(`${route.slug}: çözülmemiş koordinat yalnız D veya açıkça Genel bölge olarak etiketli, rota kimliği/erişimi kaynaklı C kayıtta yayımlanabilir.`);
+    if (!/çözül|genel|başlangıç|doğrulan|mikro|kesin/i.test(`${route.navigationNote} ${route.transport}`)) errors.push(`${route.slug}: çözülmemiş koordinat uyarısı eksik.`);
   }
   if (!route.image?.includes(route.slug) || !route.socialImage?.includes(route.slug)) errors.push(`${route.slug}: image/socialImage slug ile uyuşmuyor.`);
   const usesGeneratedVisual=route.image===`/images/meralar/ulusal/${route.slug}.svg`;
@@ -54,8 +59,7 @@ for (const route of meralar) {
 }
 
 const confidence = Object.fromEntries(["A", "B", "C", "D"].map((level) => [level, meralar.filter((route) => route.confidence === level).length]));
-console.log(`Bakım taraması: ${meralar.length} rota; confidence A/B/C/D = ${confidence.A}/${confidence.B}/${confidence.C}/${confidence.D}; ${unresolvedCoordinateCount} çözülmemiş D pini; ${errors.length} hata, ${warnings.length} uyarı.`);
+console.log(`Bakım taraması: ${meralar.length} rota; confidence A/B/C/D = ${confidence.A}/${confidence.B}/${confidence.C}/${confidence.D}; ${unresolvedCoordinateCount} çözülmemiş/genel pin; ${errors.length} hata, ${warnings.length} uyarı.`);
 for (const warning of warnings) console.warn(`UYARI: ${warning}`);
 for (const error of errors) console.error(`HATA: ${error}`);
 if (errors.length) process.exit(1);
-
