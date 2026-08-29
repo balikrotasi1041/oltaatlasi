@@ -1,0 +1,27 @@
+name: Temporary weather probe 2026-08-29
+on:
+  push:
+    branches:
+      - quality/daily-2026-08-29
+    paths:
+      - .github/workflows/tmp-weather-probe-2026-08-29.yml
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe production weather API
+        shell: bash
+        run: |
+          set -euo pipefail
+          probe() {
+            local name="$1" lat="$2" lon="$3" water="$4"
+            echo "=== ${name} ==="
+            curl --fail --silent --show-error --max-time 25 \
+              "https://oltaatlasi.com/api/weather?lat=${lat}&lon=${lon}&water=${water}" \
+              | python3 -c 'import json,sys; d=json.load(sys.stdin); out={"current":d.get("current"),"next6":d.get("forecast",{}).get("next6"),"next12":d.get("forecast",{}).get("next12"),"fieldCondition":d.get("fieldCondition"),"source":d.get("source")}; print(json.dumps(out,ensure_ascii=False,separators=(",",":")))'
+          }
+          probe "Izmit Korfezi Sahil Bandi" 40.759 29.925 deniz
+          probe "Ayvali Goleti" 38.7480 37.5878 golet
+          probe "Sofular Goleti" 38.9457 37.5538 golet
+          probe "Surgu Baraj Golu" 38.0181 37.9144 baraj
+          probe "Zap Suyu Hakkari genel koridor" 37.5744 43.7408 akarsu
