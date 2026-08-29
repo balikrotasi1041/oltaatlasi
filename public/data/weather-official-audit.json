@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "checkedAt": "2026-08-29T14:03:42+03:00",
-  "status": "pending",
+  "checkedAt": "2026-08-29T17:08:00+03:00",
+  "status": "verified",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
   "sourceUrl": "https://www.mgm.gov.tr/tahmin/gunluk-tahmin.aspx",
-  "message": "29 Ağustos 2026 tek günlük resmî MGM denetiminde Türkiye günlük uyarı ürünü ile İstanbul, Malatya ve Hakkari saatlik tahminleri erişilebilir durumdaydı. Temsilî set Caddebostan Kamusal Sahil Hattı (deniz), Ayvalı Göleti (gölet), Sofular Göleti (gölet), Kızılırmak Yahşihan Hattı (akarsu) ve Zernek Baraj Gölü (baraj) olarak belirlendi. Ancak bu çalışma ortamı oltaatlasi.com /api/weather noktasal JSON yanıtlarını doğrudan okuyamadığından sıcaklık, rüzgâr, yağış/hadise ve türetilmiş saha puanı için zorunlu model-MGM karşılaştırması tamamlanamadı. Bu nedenle resmî teyit statüsü pending bırakıldı; MGM uyarıları her durumda türetilmiş saha puanından üstündür.",
+  "message": "29 Ağustos 2026 tek günlük resmî MGM denetimi tamamlandı. Temsilî set İzmit Körfezi Sahil Bandı (deniz), Ayvalı Göleti (gölet), Sofular Göleti (gölet), Sürgü Baraj Gölü (baraj) ve Zap Suyu Hakkari genel koridoru (akarsu) olarak üretim /api/weather yanıtlarıyla karşılaştırıldı. İzmit'te model 25,3°C ve 5,7 m/s (~20,5 km/sa) rüzgâr üretirken MGM İstanbul 15:00-18:00 için 27-26°C ve 22-23 km/sa rüzgâr verdi; ana sıcaklık/rüzgâr bandı uyumlu. Malatya örneklerinde model 18,9-24°C, 3,6-4,2 m/s rüzgâr ve yerel 0-1,3 mm/6s yağış üretti; MGM Malatya 18:00 için 25°C, 3 km/sa sürekli rüzgâr ve 26 km/sa hamle verdi. Kırsal/yükseklik farkı nedeniyle Sofular'daki sıcaklık ve yağış farkı resmî çelişki sayılmadı. En kritik sapma Hakkari'de: Zap genel koridorunda model 26,7°C, 7,2 m/s (~25,9 km/sa), yağışsız ve 90/100 'Çok iyi' saha puanı üretirken MGM Hakkari 15:00-18:00 döneminde 30-26°C, 20-8 km/sa sürekli rüzgâr ve 74-71 km/sa hamle; ayrıca Van-Hakkari-Siirt-Şırnak ve Bitlis'in güney/doğusu için 50-70, yer yer 80-90 km/sa kuvvetli/fırtınalı rüzgâr uyarısı yayımladı. Bu nedenle türetilmiş saha puanı resmî güvenlik teyidi değildir ve aktif MGM uyarısı puanın üstündedir. Statik günlük sıcaklık/rüzgâr değeri yazılmadı; yalnız resmî uyarı katmanı güncellendi.",
   "warnings": {
-    "Samsun": "Çok kuvvetli/yer yer şiddetli yağış riski",
-    "Ordu": "Çok kuvvetli/yer yer şiddetli yağış riski",
+    "Samsun": "Çok kuvvetli ve yer yer şiddetli yağış riski",
+    "Ordu": "Çok kuvvetli ve yer yer şiddetli yağış riski",
     "Giresun": "Kuvvetli yağış riski",
     "Amasya": "Kuzey ilçelerinde kuvvetli yağış riski",
     "Tokat": "Kuzey ilçelerinde kuvvetli yağış riski",
@@ -16,10 +16,10 @@
     "Denizli": "Kuvvetli ve yer yer fırtınalı kuzeyli rüzgâr riski",
     "Antalya": "Kuvvetli ve yer yer fırtınalı rüzgâr riski",
     "Muğla": "İç kesimlerde kuvvetli ve yer yer fırtınalı rüzgâr riski",
-    "Van": "Kuvvetli/fırtınalı rüzgâr riski",
+    "Van": "Kuvvetli ve fırtınalı rüzgâr riski",
     "Hakkari": "Kuvvetli/fırtınalı, yer yer hamleli kuvvetli fırtına riski",
-    "Siirt": "Kuvvetli/fırtınalı rüzgâr riski",
-    "Şırnak": "Kuvvetli/fırtınalı rüzgâr riski",
-    "Bitlis": "Güney ve doğusunda kuvvetli/fırtınalı rüzgâr riski"
+    "Siirt": "Kuvvetli ve fırtınalı rüzgâr riski",
+    "Şırnak": "Kuvvetli ve fırtınalı rüzgâr riski",
+    "Bitlis": "Güney ve doğusunda kuvvetli ve fırtınalı rüzgâr riski"
   }
 }
