@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-08-29",
   "timezone": "Europe/Istanbul",
-  "stage": 3,
+  "stage": 4,
   "branch": "quality/daily-2026-08-29",
   "done": false,
   "research": {
@@ -92,7 +92,7 @@
     ],
     "imageStandard": "3 özgün SVG; image/socialImage canonical slug SVG yoluna bağlı",
     "mgmRequired": true,
-    "status": "pending-mgm-model-comparison"
+    "status": "completed"
   },
   "promotedSlugs": [
     "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
@@ -119,23 +119,30 @@
     "ulusal-malatya-darende-ayvali-goleti"
   ],
   "mgmAudit": {
-    "status": "pending",
-    "checkedAt": "2026-08-29T14:03:42+03:00",
+    "status": "verified",
+    "checkedAt": "2026-08-29T17:08:00+03:00",
     "officialSourcesReached": true,
     "representativeRoutes": [
-      "Caddebostan Kamusal Sahil Hattı / İstanbul / deniz",
+      "İzmit Körfezi Sahil Bandı / Kocaeli / deniz",
       "Ayvalı Göleti / Malatya / gölet",
       "Sofular Göleti / Malatya / gölet",
-      "Kızılırmak Yahşihan Hattı / Kırıkkale / akarsu",
-      "Zernek Baraj Gölü / Van / baraj"
+      "Sürgü Baraj Gölü / Malatya / baraj",
+      "Zap Suyu Hakkari genel koridoru / Hakkari / akarsu"
     ],
-    "officialFindings": "MGM 29 Ağustos günlük ürününde Samsun-Ordu-Giresun ile Amasya/Tokat kuzeyinde kuvvetli-çok kuvvetli yağış; güneybatı ve Doğu Anadolu'nun güneydoğusunda kuvvetli/fırtınalı rüzgâr uyarıları yayımladı. İstanbul, Malatya ve Hakkari saatlik ürünleri de erişildi.",
-    "blocker": "Çalışma ortamı oltaatlasi.com /api/weather noktasal JSON yanıtlarını doğrudan okuyamadığı için zorunlu model-MGM sıcaklık/rüzgâr/yağış-hadise/uyarı karşılaştırması tamamlanamadı.",
-    "auditFileStatus": "pending"
+    "officialFindings": "Üretim /api/weather beş temsilî noktada canlı olarak okunup MGM 29 Ağustos günlük, İstanbul-Malatya-Hakkari saatlik ve deniz ürünleriyle karşılaştırıldı. İzmit sıcaklık/rüzgâr bandı MGM İstanbul ile uyumlu. Malatya kırsal noktalarında sıcaklık/rüzgâr farkları il merkezi ve rakım farkı sınırında kaldı. Kritik sapma Hakkari'de: model Zap genel koridoruna 26,7°C, 7,2 m/s ve 90/100 'Çok iyi' verirken MGM Hakkari 15:00-18:00 için 74-71 km/sa rüzgâr hamlesi ve il için kuvvetli/fırtınalı, yer yer 80-90 km/sa uyarı yayımladı; bu nedenle MGM uyarısı türetilmiş puanı geçersiz kılar.",
+    "modelProbe": {
+      "IzmitKorfezi":{"temperatureC":25.3,"windMs":5.7,"precipNext6Mm":0.1,"fieldScore":100},
+      "Ayvali":{"temperatureC":22.5,"windMs":4.2,"precipNext6Mm":0.3,"fieldScore":100},
+      "Sofular":{"temperatureC":18.9,"windMs":3.9,"precipNext6Mm":1.3,"fieldScore":93},
+      "Surgu":{"temperatureC":24.0,"windMs":3.6,"precipNext6Mm":0.0,"fieldScore":100},
+      "ZapHakkariGenel":{"temperatureC":26.7,"windMs":7.2,"precipNext6Mm":0.0,"fieldScore":90}
+    },
+    "blocker": null,
+    "auditFileStatus": "verified"
   },
   "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
   "deploy": {"status":"not_started"},
-  "lastCheckpoint": "2026-08-29T14:03:42+03:00"
+  "lastCheckpoint": "2026-08-29T17:08:00+03:00"
 }
