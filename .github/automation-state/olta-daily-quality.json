@@ -12,7 +12,6 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Mevcut repo fırsat setlerindeki konum/yol tarifi niyeti, 3-15 pozisyon ve düşük CTR sinyalleri yalnız önceliklendirme için korundu; confidence kanıtı sayılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -41,33 +40,27 @@
       "ulusal-artvin-borcka-baraj-golu",
       "ulusal-van-zernek-baraj-golu"
     ],
-    "newCandidatesReviewed": 8,
+    "newCandidatesReviewed": 11,
     "newCandidates": [
-      {"name":"Suat Uğurlu Baraj Gölü","province":"Samsun","status":"priority","note":"2023 İl Tarım sazan balıklandırması + rota-özel akademik fauna çalışması güçlü; duplicate kontrolü Aşama 3 öncesi tekrar yapılacak."},
-      {"name":"Hasan Uğurlu Baraj Gölü","province":"Samsun","status":"priority","note":"2023 İl Tarım sazan balıklandırması doğrulandı; ikinci rota-özel akademik/erişim ailesi tamamlanmadan yayımlanmayacak."},
-      {"name":"Sultansuyu Barajı","province":"Malatya","status":"hold","note":"DSİ rehabilitasyon çalışması devam ediyor; güvenli kamusal kıyı ve amatör erişim ayrıca doğrulanmalı."},
-      {"name":"Seyhan Baraj Gölü genel kıyı","province":"Adana","status":"priority","note":"20.01.2026 İl Tarım avcılık amaçlı istihsal ihalesi rota kimliği ve avcılık kullanımını doğruluyor; amatör kamusal kıyı/koruma çakışması ayrıca temizlenecek."},
-      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold","note":"Sınır/güvenlik ve rota-özel kamusal erişim teyidi tamamlanmadan yayımlanmayacak."},
-      {"name":"Süreyyabey Barajı genel kıyı","province":"Yozgat/Tokat","status":"hold","note":"Yasak kıyı ve amatör erişim sınırları nedeniyle yalnız açıkça izinli genel bölüm doğrulanırsa ilerleyecek."},
-      {"name":"Hazar Gölü kamusal genel kıyı","province":"Elazığ","status":"hold","note":"Valilik balık avcılığı ve rekreasyonu doğruluyor; özel işletme/koruma alanı çakışması temizlenmeden mikro-konum yayımlanmayacak."},
-      {"name":"Çıldır Gölü kamusal genel kıyı","province":"Ardahan/Kars","status":"hold","note":"Valilik/Kaymakamlık sportif balıkçılık ve sazanı doğruluyor; sulak alan hassasiyeti nedeniyle mikro-konum yayımlanmayacak."}
+      {"name":"Suat Uğurlu Baraj Gölü","province":"Samsun","status":"existing-D-not-new"},
+      {"name":"Hasan Uğurlu Baraj Gölü","province":"Samsun","status":"existing-D-not-new"},
+      {"name":"Sultansuyu Barajı","province":"Malatya","status":"hold-rehabilitation"},
+      {"name":"Seyhan Baraj Gölü genel kıyı","province":"Adana","status":"hold-conservation-access-check"},
+      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold-border-access"},
+      {"name":"Süreyyabey Barajı genel kıyı","province":"Yozgat/Tokat","status":"hold-restricted-shore"},
+      {"name":"Hazar Gölü kamusal genel kıyı","province":"Elazığ","status":"hold-protection-private-overlap"},
+      {"name":"Çıldır Gölü kamusal genel kıyı","province":"Ardahan/Kars","status":"hold-sensitive-wetland"},
+      {"name":"Sofular Göleti","province":"Malatya","status":"added-C"},
+      {"name":"Bicir Göleti","province":"Malatya","status":"added-C"},
+      {"name":"Ayvalı Göleti","province":"Malatya","status":"added-C"}
     ],
-    "sourceFamiliesSearched": ["resmi-Tarim/DSI/Valilik/Kaymakamlik", "akademik-DergiPark/universite", "yerel-kurumsal", "ikincil-harita-duplicate"],
-    "freshFindings": [
-      "Samsun İl Tarım 27.09.2023 kaydı Hasan Uğurlu ve Suat Uğurlu barajlarına sazan yavrusu bırakıldığını doğruluyor.",
-      "DergiPark Suat Uğurlu çalışması göl ve yan kollarında çoklu balık türlerini doğrudan örnekliyor.",
-      "Adana İl Tarım 20.01.2026 ilanı Seyhan Baraj Gölünü avcılık amaçlı istihsal sahası olarak doğruluyor.",
-      "DSİ 05.06.2025 kaydı Sultansuyu Barajında deprem hasarı rehabilitasyonunun sürdüğünü gösteriyor; bu nedenle erişim güvenliği ayrıca teyit edilmeli.",
-      "Elazığ Valiliği Hazar Gölünde balık avcılığı ve günübirlik rekreasyon kullanımını doğruluyor.",
-      "Ardahan Valiliği/Kaymakamlığı Çıldır Gölünde balıkçılık ve sazan varlığını doğruluyor; hassas kıyı mikro-konumları aday dışı tutulacak."
-    ]
+    "duplicateCorrections": ["Sürgü Baraj Gölü yeni rota olarak kullanılmadı; mevcut Sürgü Çayı rota ailesiyle aynı su kimliği çakışması nedeniyle Ayvalı Göleti ile değiştirildi."]
   },
   "stage2": {
     "target": 17,
     "completed": 17,
     "remaining": 0,
     "status": "completed",
-    "basis": "Önceki günün main'e hiç merge edilmemiş, aynı main SHA tabanlı kanıt yamaları bugünkü branch'e yalnız Stage 2 kapsamıyla taşındı; bu kayıtlar bugünkü main üzerinde hâlâ D olduğundan gerçek D→C yükselişidir.",
     "promotedSlugs": [
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-aksaray-ciftevi-baraj-golu",
@@ -86,19 +79,20 @@
       "ankara-500km-bolu-karamurat-golu",
       "ankara-500km-bolu-koprubasi-baraj-golu",
       "ankara-500km-bolu-karagol"
-    ],
-    "heldSlugs": [
-      "ulusal-amasya-destek-baraj-golu",
-      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
-      "ulusal-cankiri-karadere-baraj-golu-cankiri",
-      "ulusal-bayburt-lori-deresi",
-      "ankara-500km-adiyaman-karahuyuk-goleti",
-      "ankara-500km-adiyaman-sirimtas-baraj-golu",
-      "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-erzurum-demirdoven-baraj-golu",
-      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-erzurum-olur-baraj-golu"
     ]
+  },
+  "stage3": {
+    "newRouteTarget": 3,
+    "newRouteCompleted": 3,
+    "routesStatus": "completed",
+    "newSlugs": [
+      "ulusal-malatya-kuluncak-sofular-goleti",
+      "ulusal-malatya-kuluncak-bicir-goleti",
+      "ulusal-malatya-darende-ayvali-goleti"
+    ],
+    "imageStandard": "3 özgün SVG; image/socialImage canonical slug SVG yoluna bağlı",
+    "mgmRequired": true,
+    "status": "pending-mgm-model-comparison"
   },
   "promotedSlugs": [
     "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
@@ -119,11 +113,29 @@
     "ankara-500km-bolu-koprubasi-baraj-golu",
     "ankara-500km-bolu-karagol"
   ],
-  "newSlugs": [],
-  "mgmAudit": {"status":"not_started"},
+  "newSlugs": [
+    "ulusal-malatya-kuluncak-sofular-goleti",
+    "ulusal-malatya-kuluncak-bicir-goleti",
+    "ulusal-malatya-darende-ayvali-goleti"
+  ],
+  "mgmAudit": {
+    "status": "pending",
+    "checkedAt": "2026-08-29T14:03:42+03:00",
+    "officialSourcesReached": true,
+    "representativeRoutes": [
+      "Caddebostan Kamusal Sahil Hattı / İstanbul / deniz",
+      "Ayvalı Göleti / Malatya / gölet",
+      "Sofular Göleti / Malatya / gölet",
+      "Kızılırmak Yahşihan Hattı / Kırıkkale / akarsu",
+      "Zernek Baraj Gölü / Van / baraj"
+    ],
+    "officialFindings": "MGM 29 Ağustos günlük ürününde Samsun-Ordu-Giresun ile Amasya/Tokat kuzeyinde kuvvetli-çok kuvvetli yağış; güneybatı ve Doğu Anadolu'nun güneydoğusunda kuvvetli/fırtınalı rüzgâr uyarıları yayımladı. İstanbul, Malatya ve Hakkari saatlik ürünleri de erişildi.",
+    "blocker": "Çalışma ortamı oltaatlasi.com /api/weather noktasal JSON yanıtlarını doğrudan okuyamadığı için zorunlu model-MGM sıcaklık/rüzgâr/yağış-hadise/uyarı karşılaştırması tamamlanamadı.",
+    "auditFileStatus": "pending"
+  },
   "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
   "deploy": {"status":"not_started"},
-  "lastCheckpoint": "2026-08-29T11:09:00+03:00"
+  "lastCheckpoint": "2026-08-29T14:03:42+03:00"
 }
