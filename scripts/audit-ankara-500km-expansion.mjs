@@ -4,6 +4,7 @@ import { ankara500KmCandidates, ankara500KmExpansionMeta, yeniMeralarAnkara500Km
 
 const errors=[];
 const prefix="ankara-500km-";
+const packageDate="2026-08-17";
 const newRoutes=meralar.filter((route)=>route.slug.startsWith(prefix));
 const olderRoutes=meralar.filter((route)=>!route.slug.startsWith(prefix));
 const expectedProvinces=ankara500KmExpansionMeta.includedProvinces.map((item)=>item.name);
@@ -37,9 +38,22 @@ for(const route of newRoutes){
   if(olderExact.has(`${route.province}|${normalize(route.name)}`))errors.push(`${route.slug}: mevcut rota adıyla birebir çakışıyor.`);
   if(olderIdentity.has(`${route.province}|${identity(route)}`))errors.push(`${route.slug}: mevcut su kimliğiyle olası tekrar.`);
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.slug))errors.push(`${route.slug}: canonical slug biçimi geçersiz.`);
-  if(route.publishedAt!=="2026-08-17"||route.updatedAt!=="2026-08-17"||route.researchedAt!=="2026-08-17")errors.push(`${route.slug}: tarih alanları paket tarihiyle uyuşmuyor.`);
-  if(route.confidence!=="D"||route.confidenceProfile?.overall!=="D")errors.push(`${route.slug}: doğrulanmamış alanlara rağmen Güven D değil.`);
-  if(route.confidenceProfile?.legal.level!=="unverified"||route.confidenceProfile?.access.level!=="unverified"||route.confidenceProfile?.species.level!=="unverified"||route.confidenceProfile?.field.level!=="unverified")errors.push(`${route.slug}: kanıt boyutları ihtiyatlı sınıflandırılmamış.`);
+  if(route.publishedAt!==packageDate)errors.push(`${route.slug}: ilk yayın tarihi paket tarihiyle uyuşmuyor.`);
+
+  const promotedAfterPackage=route.confidence!=="D";
+  if(!promotedAfterPackage){
+    if(route.updatedAt!==packageDate||route.researchedAt!==packageDate)errors.push(`${route.slug}: D kayıt tarih alanları paket tarihiyle uyuşmuyor.`);
+    if(route.confidenceProfile?.overall!=="D")errors.push(`${route.slug}: Güven D profili aktif güven seviyesiyle uyuşmuyor.`);
+    if(route.confidenceProfile?.legal.level!=="unverified"||route.confidenceProfile?.access.level!=="unverified"||route.confidenceProfile?.species.level!=="unverified"||route.confidenceProfile?.field.level!=="unverified")errors.push(`${route.slug}: D kayıt kanıt boyutları ihtiyatlı sınıflandırılmamış.`);
+  }else{
+    if(!["C","B","A"].includes(route.confidence))errors.push(`${route.slug}: paket sonrası güven seviyesi geçersiz.`);
+    if(route.confidenceProfile?.overall!==route.confidence)errors.push(`${route.slug}: paket sonrası güven profili aktif seviye ile uyuşmuyor.`);
+    if(!route.updatedAt||route.updatedAt<=packageDate)errors.push(`${route.slug}: paket sonrası yükseltmenin güncelleme tarihi yok veya geçersiz.`);
+    if(route.researchedAt&&route.researchedAt<packageDate)errors.push(`${route.slug}: araştırma tarihi paket tarihinden eski olamaz.`);
+    if(route.confidenceProfile?.identity.level!=="strong")errors.push(`${route.slug}: paket sonrası yükseltmede rota kimliği güçlü kanıtlı değil.`);
+    if(route.confidenceProfile?.legal.level==="unverified"||route.confidenceProfile?.access.level==="unverified"||route.confidenceProfile?.species.level==="unverified")errors.push(`${route.slug}: paket sonrası yükseltmede hukuk/erişim/tür kanıt boyutlarından biri doğrulanmamış.`);
+  }
+
   if(route.locationPrecision!=="Genel bölge")errors.push(`${route.slug}: konum hassasiyeti Genel bölge değil.`);
   const hasCoordinates=Number.isFinite(route.lat)&&Number.isFinite(route.lng);
   if(hasCoordinates&&(route.lat<34.5||route.lat>43.5||route.lng<24.5||route.lng>46.5))errors.push(`${route.slug}: koordinat Türkiye sınır kutusu dışında.`);
@@ -76,7 +90,8 @@ const officialIdentity=ankara500KmCandidates.filter((candidate)=>candidate.origi
 const osmIdentity=ankara500KmCandidates.length-officialIdentity;
 const officialWaterLayerMatches=ankara500KmCandidates.filter((candidate)=>candidate.officialWaterMatch).length;
 const unresolved=newRoutes.filter((route)=>!Number.isFinite(route.lat)||!Number.isFinite(route.lng)).length;
-console.log(`Ankara 500 km genişleme auditi: 58/58 il, 870/870 rota, her il 15/15; kimlik kaynakları ${officialIdentity} doğrudan resmî + ${osmIdentity} OSM, ayrıca ${officialWaterLayerMatches} TATUS su katmanı eşleşmesi; ${unresolved} koordinatsız Genel bölge kaydı; ${errors.length} hata.`);
+const promotedCount=newRoutes.filter((route)=>route.confidence!=="D").length;
+console.log(`Ankara 500 km genişleme auditi: 58/58 il, 870/870 rota, her il 15/15; kimlik kaynakları ${officialIdentity} doğrudan resmî + ${osmIdentity} OSM, ayrıca ${officialWaterLayerMatches} TATUS su katmanı eşleşmesi; ${unresolved} koordinatsız Genel bölge kaydı; paket sonrası kanıtla yükseltilmiş ${promotedCount}; ${errors.length} hata.`);
 for(const error of errors.slice(0,250))console.error(`HATA: ${error}`);
 if(errors.length>250)console.error(`HATA: ${errors.length-250} ek hata daha var.`);
 if(errors.length)process.exit(1);
