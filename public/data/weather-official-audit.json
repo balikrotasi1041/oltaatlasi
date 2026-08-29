@@ -1,9 +1,25 @@
 {
   "version": 1,
-  "checkedAt": null,
+  "checkedAt": "2026-08-29T14:03:42+03:00",
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
-  "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
-  "message": "24 Ağustos 2026 tek günlük MGM denetiminde MeteoUYARI, güncel Türkiye/bölgesel tahminleri, Kocaeli-Sivas-Siirt-Kırıkkale-Tunceli saatlik ürünleri ve Marmara deniz tahmini kontrol edildi; MeteoUYARI Türkiye sayfası aktif il uyarısı göstermedi. İzmit Körfezi, Gölova Baraj Gölü, Yayıklı Göleti, Kızılırmak Yahşihan hattı ve Uzunçayır-Kanoğlu temsilî seti seçildi. Denetim ortamı oltaatlasi.com /api/weather noktasal yanıtlarını okuyamadığı için model-MGM karşılaştırması tamamlanamadı; bu nedenle resmî teyit statüsü pending bırakıldı ve önceki doğrulanmış checkedAt yapay biçimde yenilenmedi.",
-  "warnings": {}
+  "sourceUrl": "https://www.mgm.gov.tr/tahmin/gunluk-tahmin.aspx",
+  "message": "29 Ağustos 2026 tek günlük resmî MGM denetiminde Türkiye günlük uyarı ürünü ile İstanbul, Malatya ve Hakkari saatlik tahminleri erişilebilir durumdaydı. Temsilî set Caddebostan Kamusal Sahil Hattı (deniz), Ayvalı Göleti (gölet), Sofular Göleti (gölet), Kızılırmak Yahşihan Hattı (akarsu) ve Zernek Baraj Gölü (baraj) olarak belirlendi. Ancak bu çalışma ortamı oltaatlasi.com /api/weather noktasal JSON yanıtlarını doğrudan okuyamadığından sıcaklık, rüzgâr, yağış/hadise ve türetilmiş saha puanı için zorunlu model-MGM karşılaştırması tamamlanamadı. Bu nedenle resmî teyit statüsü pending bırakıldı; MGM uyarıları her durumda türetilmiş saha puanından üstündür.",
+  "warnings": {
+    "Samsun": "Çok kuvvetli/yer yer şiddetli yağış riski",
+    "Ordu": "Çok kuvvetli/yer yer şiddetli yağış riski",
+    "Giresun": "Kuvvetli yağış riski",
+    "Amasya": "Kuzey ilçelerinde kuvvetli yağış riski",
+    "Tokat": "Kuzey ilçelerinde kuvvetli yağış riski",
+    "Isparta": "Kuvvetli ve yer yer fırtınalı kuzeyli rüzgâr riski",
+    "Burdur": "Kuvvetli ve yer yer fırtınalı kuzeyli rüzgâr riski",
+    "Denizli": "Kuvvetli ve yer yer fırtınalı kuzeyli rüzgâr riski",
+    "Antalya": "Kuvvetli ve yer yer fırtınalı rüzgâr riski",
+    "Muğla": "İç kesimlerde kuvvetli ve yer yer fırtınalı rüzgâr riski",
+    "Van": "Kuvvetli/fırtınalı rüzgâr riski",
+    "Hakkari": "Kuvvetli/fırtınalı, yer yer hamleli kuvvetli fırtına riski",
+    "Siirt": "Kuvvetli/fırtınalı rüzgâr riski",
+    "Şırnak": "Kuvvetli/fırtınalı rüzgâr riski",
+    "Bitlis": "Güney ve doğusunda kuvvetli/fırtınalı rüzgâr riski"
+  }
 }
