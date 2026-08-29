@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-08-29",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-08-29",
   "done": false,
   "research": {
@@ -62,11 +62,68 @@
       "Ardahan Valiliği/Kaymakamlığı Çıldır Gölünde balıkçılık ve sazan varlığını doğruluyor; hassas kıyı mikro-konumları aday dışı tutulacak."
     ]
   },
-  "promotedSlugs": [],
+  "stage2": {
+    "target": 17,
+    "completed": 17,
+    "remaining": 0,
+    "status": "completed",
+    "basis": "Önceki günün main'e hiç merge edilmemiş, aynı main SHA tabanlı kanıt yamaları bugünkü branch'e yalnız Stage 2 kapsamıyla taşındı; bu kayıtlar bugünkü main üzerinde hâlâ D olduğundan gerçek D→C yükselişidir.",
+    "promotedSlugs": [
+      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+      "ulusal-aksaray-ciftevi-baraj-golu",
+      "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+      "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-bolu-caykoy-baraj-golu-bolu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ankara-500km-bolu-karamurat-golu",
+      "ankara-500km-bolu-koprubasi-baraj-golu",
+      "ankara-500km-bolu-karagol"
+    ],
+    "heldSlugs": [
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ulusal-bayburt-lori-deresi",
+      "ankara-500km-adiyaman-karahuyuk-goleti",
+      "ankara-500km-adiyaman-sirimtas-baraj-golu",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
+      "ulusal-erzurum-olur-baraj-golu"
+    ]
+  },
+  "promotedSlugs": [
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+    "ulusal-aksaray-ciftevi-baraj-golu",
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ulusal-sivas-delice-baraj-golu-sivas",
+    "ankara-500km-adiyaman-ataturk-baraj-golu",
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+    "ulusal-artvin-borcka-baraj-golu",
+    "ulusal-erzincan-tercan-baraj-golu",
+    "ulusal-van-zernek-baraj-golu",
+    "ulusal-hakkari-zap-suyu-hakkari-hatti",
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+    "ulusal-bolu-caykoy-baraj-golu-bolu",
+    "ulusal-bitlis-van-golu-tatvan-kiyisi",
+    "ankara-500km-bolu-karamurat-golu",
+    "ankara-500km-bolu-koprubasi-baraj-golu",
+    "ankara-500km-bolu-karagol"
+  ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
   "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
-  "deploy": {"status":"not_started"}
+  "deploy": {"status":"not_started"},
+  "lastCheckpoint": "2026-08-29T11:09:00+03:00"
 }
