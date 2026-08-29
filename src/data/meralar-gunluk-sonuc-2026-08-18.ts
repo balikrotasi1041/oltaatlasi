@@ -8,6 +8,7 @@ import { applyDailyQualityRun20260824 } from "./meralar-daily-quality-2026-08-24
 import { applyDailyQualityStage2_20260827 } from "./meralar-daily-quality-2026-08-27-stage2";
 import { applyDailyQualityStage2b_20260827 } from "./meralar-daily-quality-2026-08-27-stage2b";
 import { applyDailyQualityStage2c_20260828 } from "./meralar-daily-quality-2026-08-28-stage2c";
+import { applyDailyQualityStage3_20260829 } from "./meralar-daily-quality-2026-08-29-stage3";
 
 const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-acildi";
 const yesilVadi="https://www.kirikkale.gov.tr/vali-sayin-haktankacmaz-yesil-vadi-projesini-inceledi";
@@ -60,5 +61,6 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
   applyDailyQualityStage2_20260827(routeMap);
   applyDailyQualityStage2b_20260827(routeMap);
   applyDailyQualityStage2c_20260828(routeMap);
+  applyDailyQualityStage3_20260829(routeMap);
   return routeMap;
 };
