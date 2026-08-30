@@ -78,7 +78,57 @@
     ],
     "freshPromotionsCount": 0,
     "freshPromotionTarget": 17,
-    "note": "Stage 1 havuzundaki bazı kayıtların geçmiş 27-28 Ağustos stage2 yamaları tarafından mevcut nihai veri akışında zaten C'ye çıkarıldığı doğrulandı. Bunlar 30 Ağustos kotasına yeniden sayılmayacak. Aşama 2, 17 taze baseline-D kayıt için yeniden seçim ve kanıt çalışmasıyla devam edecek; kota uğruna confidence yükseltilmeyecek."
+    "evidenceCheckpoint": {
+      "checkedAt": "2026-08-30T14:00:00+03:00",
+      "readyForPatch": [
+        {
+          "slug": "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
+          "status": "evidence-ready",
+          "locationPrecision": "Genel bölge",
+          "sourceFamilies": ["Tunceli İl Kültür ve Turizm / kamu rota-erisim", "DergiPark / Fırat Üniversitesi akademik", "Tarım ve Orman / rezervuar yönetim bağlamı"],
+          "sourceUrls": [
+            "https://tunceli.ktb.gov.tr/TR-57258/pertek.html",
+            "https://tunceli.ktb.gov.tr/TR-57341/goller.html",
+            "https://dergipark.org.tr/tr/pub/fufbd/article/312890",
+            "https://dergipark.org.tr/tr/pub/actaquatr/article/1212438",
+            "https://elazig.tarimorman.gov.tr/Duyuru/704/Keban-Baraj-Golu-6-Nolu-Su-Urunleri-Avlak-Sahasinin-Avcilik-Yoluyla-Istihsal-Hakkinin-Kiraya-Verilmesi-Ihalesi"
+          ],
+          "note": "Pertek'in Keban Baraj Gölü kıyısındaki rota kimliği, feribot/genel kamusal ulaşım ve balıkçılık bağlamı resmî kamu kaynaklarında; Pertek bölgesinden avlanan balık türleri akademik örneklemede doğrulandı. Elazığ tarafındaki ticari stok ilanı Pertek mikro kıyısı için izin veya stok garantisi sayılmayacak. Mikro park/kıyı girişi yayımlanmayacak."
+        }
+      ],
+      "needsMoreEvidence": [
+        {
+          "slug": "ankara-500km-adiyaman-sirimtas-baraj-golu",
+          "status": "partial",
+          "sourceFamilies": ["TAGEM / Elazığ Su Ürünleri Araştırma Enstitüsü"],
+          "sourceUrls": ["https://arastirma.tarimorman.gov.tr/elazigsuurunleri/Haber/804/Tagem-Sahada-Sirimtas-Baraj-Golundeyiz%E2%80%A6"],
+          "note": "2024 resmî Siraz balıklandırması rota kimliği ve tür olasılığı için güçlü kanıt; ikinci bağımsız kaynak ailesi ve genel kamusal erişim/hukuk bağlamı tamamlanmadan C yapılmayacak."
+        },
+        {
+          "slug": "ankara-500km-adiyaman-karahuyuk-goleti",
+          "status": "partial",
+          "sourceFamilies": ["Tarım ve Orman kurumsal su yapıları"],
+          "sourceUrls": ["https://www.tarimorman.gov.tr/sgb/belgeler/master/adiyaman.pdf"],
+          "note": "Gölet kimliği resmî kayıtta var; rota-özel tür ve kamusal erişim için bağımsız ikinci aile eksik."
+        },
+        {
+          "slug": "ankara-500km-adiyaman-cataltepe-goleti",
+          "status": "hold-name-collision",
+          "note": "Aramada çıkan Çataltepe Göleti kayıtlarının bir bölümü Susurluk havzasına ait; Adıyaman rotasına yanlış kanıt taşınmaması için eşleştirme beklemede."
+        },
+        {
+          "slug": "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+          "status": "hold-name-collision",
+          "note": "Arama sonuçlarında Malatya/Battalgazi Kapıkaya ağırlığı tespit edildi; Erzurum rotasına il dışı kanıt taşınmayacak."
+        },
+        {
+          "slug": "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
+          "status": "partial",
+          "note": "Kızılırmak/Kırıkkale akademik ekoloji kaydı bulundu ancak Yahşihan rota-özel kamusal erişim ve tür kanıtı henüz yeterli değil."
+        }
+      ]
+    },
+    "note": "Stage 1 havuzundaki bazı kayıtların geçmiş 27-28 Ağustos stage2 yamaları tarafından mevcut nihai veri akışında zaten C'ye çıkarıldığı doğrulandı. Bunlar 30 Ağustos kotasına yeniden sayılmayacak. Bu çalıştırmada Pertek/Keban için yeterli çok-aileli kanıt paketi hazırlandı; diğer adaylarda kanıt eksikleri veya isim çakışmaları nedeniyle confidence artırılmadı. Kota uğruna confidence yükseltilmeyecek."
   },
   "promotedSlugs": [],
   "newSlugs": [],
