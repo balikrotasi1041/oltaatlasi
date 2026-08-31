@@ -14,7 +14,7 @@ const htmlPathFor=(url)=>{
   const pathname=new URL(url).pathname;
   return pathname==="/"?"dist/index.html":`dist/${pathname.replace(/^\//,"")}index.html`;
 };
-const isNoindex=(html)=>/name="robots" content="noindex/i.test(html);
+const isNoindex=(html)=>/name="robots" content="[^"]*noindex/i.test(html);
 const readCanonical=(html)=>html.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i)?.[1]
   ||html.match(/<link[^>]+href="([^"]+)"[^>]+rel="canonical"/i)?.[1]
   ||"";
@@ -55,7 +55,6 @@ for(const path of htmlFiles("dist")){
   const noindex=isNoindex(html);
   recordsByPath.set(pathname,{path,html,url,canonical,noindex});
   if(!canonical)errors.push(`${pathname}: canonical etiketi eksik.`);
-  else if(canonical!==url)errors.push(`${pathname}: canonical kendini göstermiyor (${canonical}).`);
   if(canonical){
     const owners=canonicalOwners.get(canonical)||[];
     owners.push(pathname);
@@ -64,13 +63,15 @@ for(const path of htmlFiles("dist")){
   if(noindex){
     if(sitemapUrlSet.has(url))errors.push(`${pathname}: noindex HTML normal sitemap içinde.`);
   }else{
+    if(canonical!==url)errors.push(`${pathname}: indekslenebilir canonical kendini göstermiyor (${canonical}).`);
     if(!sitemapUrlSet.has(url))errors.push(`${pathname}: indekslenebilir HTML normal sitemap içinde yok.`);
     if(!/<title>[^<]{3,}<\/title>/i.test(html))errors.push(`${pathname}: başlık etiketi eksik veya boş.`);
     if(readMeta(html,"description").trim().length<40)errors.push(`${pathname}: meta açıklaması eksik veya 40 karakterden kısa.`);
   }
 }
 for(const [canonical,owners] of canonicalOwners){
-  if(owners.length>1)errors.push(`${canonical}: aynı canonical değeri ${owners.join(", ")} sayfalarında yineleniyor.`);
+  const indexableOwners=owners.filter((pathname)=>!recordsByPath.get(pathname)?.noindex);
+  if(indexableOwners.length>1)errors.push(`${canonical}: aynı canonical değeri ${indexableOwners.join(", ")} indekslenebilir sayfalarında yineleniyor.`);
 }
 
 let nofollowNoindexLinks=0;
@@ -85,22 +86,27 @@ for(const source of recordsByPath.values()){
     const pathname=target.pathname.endsWith("/")?target.pathname:`${target.pathname}/`;
     const targetRecord=recordsByPath.get(pathname);
     if(!targetRecord?.noindex)continue;
-    const attributes=`${match[1]} ${match[3]}`;
-    if(!/\brel="[^"]*nofollow/i.test(attributes))errors.push(`${source.url}: noindex hedefe takip edilebilir iç bağlantı veriyor (${pathname}).`);
-    else nofollowNoindexLinks+=1;
+    // noindex,follow kalite sayfalarına normal iç bağlantı bilinçli olarak korunur; Google keşfi kaybolmaz.
+    if(/\brel="[^"]*nofollow/i.test(`${match[1]} ${match[3]}`))nofollowNoindexLinks+=1;
   }
 }
 
 for(const route of meralar){
   const html=readFileSync(`dist/meralar/${route.slug}/index.html`,"utf8");
   const url=`https://oltaatlasi.com/meralar/${route.slug}/`;
-  if(route.confidence==="D")preliminaryCount+=1;
-  indexableCount+=1;
-  if(/name="robots" content="noindex/i.test(html))errors.push(`${route.slug}: Güven ${route.confidence} sayfası yanlışlıkla noindex.`);
-  if(!html.includes('"@type":"Article"'))errors.push(`${route.slug}: indekslenebilir rota sayfasında Article şeması yok.`);
-  if(!normalSitemapXml.includes(url))errors.push(`${route.slug}: indekslenebilir rota normal sitemap içinde yok.`);
-  if(!imageSitemapXml.includes(url))errors.push(`${route.slug}: indekslenebilir rota görsel sitemap içinde yok.`);
-  if(!normalSitemapXml.includes(`<loc>${url}</loc><lastmod>${route.updatedAt}`))errors.push(`${route.slug}: normal sitemap lastmod değeri rota güncelleme tarihiyle eşleşmiyor.`);
+  if(route.confidence==="D"){
+    preliminaryCount+=1;
+    if(!isNoindex(html))errors.push(`${route.slug}: Güven D sayfası noindex değil.`);
+    if(normalSitemapXml.includes(url))errors.push(`${route.slug}: Güven D sayfası normal sitemap içinde olmamalı.`);
+    if(imageSitemapXml.includes(url))errors.push(`${route.slug}: Güven D sayfası görsel sitemap içinde olmamalı.`);
+  }else{
+    indexableCount+=1;
+    if(isNoindex(html))errors.push(`${route.slug}: Güven ${route.confidence} sayfası yanlışlıkla noindex.`);
+    if(!html.includes('"@type":"Article"'))errors.push(`${route.slug}: indekslenebilir rota sayfasında Article şeması yok.`);
+    if(!normalSitemapXml.includes(url))errors.push(`${route.slug}: indekslenebilir rota normal sitemap içinde yok.`);
+    if(!imageSitemapXml.includes(url))errors.push(`${route.slug}: indekslenebilir rota görsel sitemap içinde yok.`);
+    if(!normalSitemapXml.includes(`<loc>${url}</loc><lastmod>${route.updatedAt}`))errors.push(`${route.slug}: normal sitemap lastmod değeri rota güncelleme tarihiyle eşleşmiyor.`);
+  }
 }
 
 for(const province of [...new Set(meralar.map((route)=>route.province))]){
@@ -117,12 +123,19 @@ for(const province of [...new Set(meralar.map((route)=>route.province))]){
     const districtPath=`${provincePath}${slugifyTr(district)}/`;
     const districtHtml=readFileSync(`dist${districtPath}index.html`,"utf8");
     const districtUrl=`https://oltaatlasi.com${districtPath}`;
-    if(isNoindex(districtHtml))errors.push(`${province}/${district}: ilçe sayfası yanlışlıkla noindex.`);
-    if(!normalSitemapXml.includes(districtUrl))errors.push(`${province}/${district}: indekslenebilir ilçe sayfası normal sitemap içinde yok.`);
+    const verifiedCount=districtRoutes.filter((route)=>route.confidence!=="D").length;
+    const shouldIndex=district!=="İl geneli"&&verifiedCount>=2;
+    if(shouldIndex){
+      if(isNoindex(districtHtml))errors.push(`${province}/${district}: güçlü ilçe sayfası yanlışlıkla noindex.`);
+      if(!normalSitemapXml.includes(districtUrl))errors.push(`${province}/${district}: indekslenebilir ilçe sayfası normal sitemap içinde yok.`);
+    }else{
+      if(!isNoindex(districtHtml))errors.push(`${province}/${district}: zayıf/il-geneli sayfası noindex olmalı.`);
+      if(normalSitemapXml.includes(districtUrl))errors.push(`${province}/${district}: zayıf/il-geneli sayfası normal sitemap içinde olmamalı.`);
+    }
   }
 }
 
-console.log(`İndeks politikası: ${sitemapUrls.length} sitemap URL'si; ${indexableCount} rotanın tamamı indekslenebilir (${preliminaryCount} Güven D); noindex hedeflere ${nofollowNoindexLinks} kontrollü nofollow iç bağlantı; ${errors.length} hata.`);
+console.log(`İndeks politikası: ${sitemapUrls.length} sitemap URL'si; ${indexableCount} C+ rota indekslenebilir, ${preliminaryCount} Güven D noindex,follow; ${nofollowNoindexLinks} nofollow bağlantı; ${errors.length} hata.`);
 for(const error of errors.slice(0,200))console.error(`HATA: ${error}`);
 if(errors.length>200)console.error(`HATA: ${errors.length-200} ek hata daha var.`);
 if(errors.length)process.exit(1);
