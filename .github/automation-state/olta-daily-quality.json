@@ -61,36 +61,68 @@
       "ulusal-bolu-caykoy-baraj-golu-bolu",
       "ulusal-bayburt-lori-deresi",
       "ankara-500km-adiyaman-karahuyuk-goleti",
-      "ankara-500km-adiyaman-cataltepe-goleti"
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ankara-500km-adiyaman-sirimtas-baraj-golu",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-aksaray-ciftevi-baraj-golu",
+      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
+      "ulusal-erzurum-olur-baraj-golu",
+      "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-sivas-delice-baraj-golu-sivas"
     ],
     "newCandidatesReviewed": 8,
     "newCandidates": [
-      {"name":"Suat Uğurlu Baraj Gölü","province":"Samsun","status":"reject-duplicate","families":["Samsun İl Tarım/Ayvacık Kaymakamlığı","DergiPark/OMÜ"],"note":"Resmî içsu denetim kaydı ve rota-özel ihtiyofauna çalışması güçlü; ancak mevcut Güven D slug bulundu, yeni mera değil Stage 2 yükseltme adayı."},
-      {"name":"Hasan Uğurlu Baraj Gölü","province":"Samsun","status":"reject-duplicate","families":["Samsun İl Tarım/Kültür Turizm","YÖK Açık Bilim"],"note":"Resmî denetim ve mesire bağlamı ile akademik besin ağı çalışması mevcut; aktif Güven D slug bulundu."},
-      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"reject-duplicate","families":["Tunceli İl Kültür Turizm","Aquaculture Studies/DergiPark"],"note":"Sportif olta potansiyeli ve 12 taksonlu rota-özel akademik fauna çalışması güçlü; aktif Güven D slug bulundu."},
-      {"name":"Çıldır Gölü Kars kıyısı","province":"Kars","status":"reject-duplicate","families":["Kültür Portalı/Ardahan İl Kültür Turizm","Ardahan Üniversitesi/hakemli fauna"],"note":"Sportif olta ve fauna kanıtı güçlü; Kars kıyısı için aktif Güven D slug mevcut."},
-      {"name":"Karakaya Baraj Gölü Elazığ kıyısı","province":"Elazığ","status":"reject-duplicate","families":["DSİ/yerel idare","akademik havza çalışmaları"],"note":"Aktif Güven D Elazığ/Baskil slug bulundu; yeni kayıt açılmayacak."},
-      {"name":"Kılıçkaya Barajı Suşehri genel kıyı","province":"Sivas","status":"hold","families":["Suşehri Kaymakamlığı","akademik/yerel havza taraması"],"note":"Resmî baraj kimliği ve kıyı kullanım bağlamı var; sitedeki Giresun etiketli mevcut kayıtla isim/coğrafya uyuşmazlığı temizlenmeden yeni slug açılmayacak."},
-      {"name":"Alparslan II Baraj Gölü","province":"Muş","status":"reject-duplicate","families":["Muş İl Tarım/Valilik","akademik-havza taraması"],"note":"14.05.2026 güncel resmî av yasağı duyurusu rota adını açıkça sayıyor; aktif Güven D slug mevcut."},
-      {"name":"Kralkızı Baraj Gölü","province":"Diyarbakır","status":"hold","families":["Diyarbakır İl Tarım","akademik-havza taraması"],"note":"29.09.2025 resmî balıklandırma kaydında Kralkızı açıkça geçiyor; duplicate ve rota-özel kamusal kıyı erişimi kesinleştirilmeden yeni slug üretilmeyecek."}
+      {"name":"Suat Uğurlu Baraj Gölü","province":"Samsun","status":"reject-duplicate","families":["Samsun İl Tarım/Ayvacık kamu kurumları","DergiPark/OMÜ"],"note":"Mevcut Güven D slug Stage 2 yükseltmesine alındı."},
+      {"name":"Hasan Uğurlu Baraj Gölü","province":"Samsun","status":"reject-duplicate","families":["Samsun İl Tarım/Kültür Turizm","YÖK Açık Bilim"],"note":"Mevcut Güven D slug Stage 2 yükseltmesine alındı."},
+      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"reject-duplicate","families":["Tunceli İl Kültür Turizm","Aquaculture Studies/DergiPark"],"note":"Mevcut Güven D slug Stage 2 yükseltmesine alındı."},
+      {"name":"Çıldır Gölü Kars kıyısı","province":"Kars","status":"reject-duplicate","families":["Çıldır Kaymakamlığı/Kültür Portalı","DergiPark/2024 fauna"],"note":"Mevcut Güven D slug Stage 2 yükseltmesine alındı; hassas mikro-konum yayımlanmadı."},
+      {"name":"Karakaya Baraj Gölü Elazığ kıyısı","province":"Elazığ","status":"reject-duplicate","families":["Elazığ İl Tarım/FKA","DergiPark"],"note":"Mevcut Güven D Baskil/Elazığ slug Stage 2 yükseltmesine alındı; ticari istihsal alanı amatör erişim sayılmadı."},
+      {"name":"Kılıçkaya Barajı Suşehri genel kıyı","province":"Sivas","status":"hold","families":["Suşehri Kaymakamlığı","akademik/yerel havza taraması"],"note":"Mevcut Giresun etiketli kayıtla isim/coğrafya uyuşmazlığı çözülmeden yükseltilmeyecek."},
+      {"name":"Alparslan II Baraj Gölü","province":"Muş","status":"reject-duplicate","families":["Muş İl Tarım/Valilik","akademik-havza taraması"],"note":"Aktif Güven D slug mevcut; bugünkü 25'li havuz dışında tutuldu."},
+      {"name":"Kralkızı Baraj Gölü","province":"Diyarbakır","status":"hold","families":["Diyarbakır İl Tarım","akademik-havza taraması"],"note":"Balıklandırma ve denetim kanıtı güçlü; duplicate ve genel kamusal kıyı erişimi kesinleştirilmeden yeni slug üretilmeyecek."}
     ],
     "sourceFamiliesSearched": [
       "resmi-Tarim/DSI/Valilik/Kaymakamlik/KulturTurizm",
       "akademik-DergiPark/TRDizin/YOK/Universite",
       "yerel-kurumsal",
       "ikincil-site-duplicate/acik-harita"
-    ],
-    "freshFindings": [
-      "Suat Uğurlu için Samsun İl Tarım içsu denetim kaydı, Ayvacık Kaymakamlığı kıyı kimliği ve 2005 rota-özel fauna çalışması birlikte güçlü aday profili oluşturuyor.",
-      "Uzunçayır için İl Kültür Turizm sportif olta potansiyelini açıkça kaydediyor; Aquaculture Studies çalışması gölde 12 takson örnekliyor.",
-      "Alparslan II, Muş İl Tarım'ın 14.05.2026 güncel kapalı dönem duyurusunda açıkça sayılıyor; bu hukuk/tür bağlamı sağlıyor ama mikro kıyı erişimini doğrulamıyor.",
-      "Tercan Baraj Gölü'nde kafes alabalık yetiştiriciliği ve eski istihsal kiralama kayıtları var; yetiştiricilik sahası amatör kıyı olarak yorumlanmayacak.",
-      "Borçka'da 2024/2025 akademik çalışmalar tatlısu kefali ve diğer türleri rota özelinde doğruluyor; mevcut rota ile duplicate olduğundan yeni aday değil yükseltme/kanıt adayı.",
-      "Çiğdem Göleti canlı sitede hâlâ Güven D: resmî sazan balıklandırması güçlü olsa da doğrulanmış koordinat ve son kıyı erişimi eksik.",
-      "Kılıçkaya için Suşehri Kaymakamlığı barajı Sivas/Suşehri'nde tanımlıyor; mevcut Giresun etiketli rota ile olası coğrafi veri sorunu Stage 2 öncesi çözülmeli."
     ]
   },
-  "promotedSlugs": [],
+  "stage2": {
+    "status": "in_progress",
+    "target": 17,
+    "promotedCount": 7,
+    "checkedThisRun": 17,
+    "promotionRule": "Yalnız uygulama anında confidence=D olan kayıt; yama D değilse hata vererek günlük kotadan çıkarır.",
+    "promotions": [
+      {"slug":"ankara-500km-samsun-suat-ugurlu-baraj-golu","before":"D","after":"C","families":["DOKAP/Samsun İl Tarım","DergiPark"],"reason":"Ayvacık kıyı kullanım bağlamı + rota özelinde balık faunası + dönem mevzuatı."},
+      {"slug":"ankara-500km-tokat-hasan-ugurlu-baraj-golu","before":"D","after":"C","families":["Samsun İl Tarım/Kültür Turizm","YÖK Açık Bilim"],"reason":"Ayvacık baraj kimliği/kullanımı + Hasan/Suat sistemini kapsayan akademik besin ağı; mikro kıyı garanti edilmedi."},
+      {"slug":"ulusal-tunceli-uzuncayir-baraj-golu","before":"D","after":"C","families":["Tunceli İl Kültür Turizm","Aquaculture Studies/DergiPark"],"reason":"Sportif olta ve rekreasyon kullanımı + 12 taksonlu rota özel fauna."},
+      {"slug":"ulusal-kars-cildir-golu-kars-kiyisi","before":"D","after":"C","families":["Çıldır Kaymakamlığı/Kültür Portalı","DergiPark 2024"],"reason":"Ortak Kars-Ardahan göl kimliği, sportif olta kullanımı ve güncel 17 tür örneklemesi."},
+      {"slug":"ulusal-kastamonu-cigdem-baraj-golu-kastamonu","before":"D","after":"C","families":["Devrekani Kaymakamlığı","akademik su kalitesi"],"reason":"Resmî gölet kimliği/tür kaydı + üç istasyonlu akademik çalışma; mikro erişim teyitsiz."},
+      {"slug":"ankara-500km-elazig-karakaya-baraj-golu","before":"D","after":"C","families":["Elazığ İl Tarım/FKA","DergiPark"],"reason":"Baskil 2026 avlak stok verisi + Elazığ/Karakaya akademik ekoloji; ticari alan amatör izin sayılmadı."},
+      {"slug":"ankara-500km-adiyaman-ataturk-baraj-golu","before":"D","after":"C","families":["Adıyaman İl Tarım/Samsat Belediyesi","Ege Journal"],"reason":"Kahta-Samsat resmî balıklandırma + kamusal kıyı rekreasyonu + akademik havza bağlantısı."}
+    ],
+    "remainingNeeded": 10,
+    "notes": [
+      "Sırımtaş'ta resmî siraz balıklandırması tek başına yeterli görülmedi; genel kamusal kıyı erişimi için ikinci bağımsız rota ailesi bekleniyor.",
+      "Demirdöven'de resmî su kimliği güçlü; tür ve kamusal erişim kanıtı kota için yeterli değil.",
+      "Tercan'da kafes yetiştiriciliği amatör kıyı erişimi olarak yorumlanmadı.",
+      "Filyos ve Zap'ta akarsu kimliği güçlü olsa da hedef mikro/genel kıyı kullanım ve tür kanıtı birlikte tamamlanmadan yükseltilmedi."
+    ]
+  },
+  "promotedSlugs": [
+    "ankara-500km-samsun-suat-ugurlu-baraj-golu",
+    "ankara-500km-tokat-hasan-ugurlu-baraj-golu",
+    "ulusal-tunceli-uzuncayir-baraj-golu",
+    "ulusal-kars-cildir-golu-kars-kiyisi",
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+    "ankara-500km-elazig-karakaya-baraj-golu",
+    "ankara-500km-adiyaman-ataturk-baraj-golu"
+  ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
   "ci": {"status":"not_started"},
