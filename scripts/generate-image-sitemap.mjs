@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { NOINDEX_PATHS } from "../worker/index-policy-routes.js";
 
 const distDir=path.resolve("dist");
 const outputPath=path.join(distDir,"sitemap-images.xml");
@@ -42,8 +43,11 @@ for(const file of files){
   const html=await fs.readFile(file,"utf8");
   if(isNoindex(html))continue;
   const loc=readCanonical(html);
+  if(!loc||!loc.startsWith("https://oltaatlasi.com/"))continue;
+  const pathname=new URL(loc).pathname;
+  if(NOINDEX_PATHS.has(pathname.endsWith("/")?pathname:`${pathname}/`))continue;
   const image=readMeta(html,"og:image");
-  if(!loc||!image||!loc.startsWith("https://oltaatlasi.com/"))continue;
+  if(!image)continue;
   records.push({loc,image,title:readMeta(html,"og:title"),caption:readMeta(html,"og:description")});
 }
 const unique=[...new Map(records.map(record=>[`${record.loc}|${record.image}`,record])).values()].sort((a,b)=>a.loc.localeCompare(b.loc,"tr"));
