@@ -21,6 +21,13 @@ const normalize=(value="")=>String(value)
   .replaceAll("ö","o").replaceAll("ş","s").replaceAll("ü","u")
   .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
   .replace(/[^a-z0-9]+/g," ").trim();
+const evidenceClass=(level="")=>{
+  const value=normalize(level);
+  if(/resmi|kamu kurumu|akademik|hakemli|universite|su urunleri|balikcilik|akuakultur|tez|acik arsiv|arastirma enstitusu|yakin cevre biyolojik/.test(value))return "strong";
+  if(/vatandas bilimi|gonullu|amator coklu|amator calisma|kulup|dernek|yapilandirilmis gozlem/.test(value))return "community";
+  if(/forum|sosyal|tekil|ipucu|amator tekil/.test(value))return "hint";
+  return "unknown";
+};
 const merged=(slug)=>{
   const generated=automatic[slug]||{};
   const curated=manual[slug]||{};
@@ -46,6 +53,7 @@ for(const slug of Object.keys(automatic))if(!expectedSlugs.has(slug))errors.push
 for(const slug of Object.keys(manual))if(!expectedSlugs.has(slug))errors.push(`Manuel araştırmada bilinmeyen rota: ${slug}`);
 
 let directEvidenceRoutes=0;
+let communitySupportedRoutes=0;
 let candidateOnlyRoutes=0;
 const filterFishNames=new Set();
 for(const route of ulusalMeralar){
@@ -73,22 +81,29 @@ for(const route of ulusalMeralar){
     filterFishNames.add(fish.trim());
   }
 
-  const evidenceLevels=new Set();
+  const evidenceClasses=new Set();
   const evidenceNames=new Set();
+  let communityEvidenceCount=0;
   for(const evidence of data.fishEvidence||[]){
     if(!evidence?.name||!evidence?.evidenceLevel||!evidence?.note)errors.push(`${prefix}: eksik tür kanıt alanı.`);
     if(!validUrl(evidence?.sourceUrl))errors.push(`${prefix}: geçersiz tür kanıt URL'si: ${evidence?.sourceUrl||"boş"}`);
-    if(!academicEvidenceMatchesRoute(route,evidence))errors.push(`${prefix}: akademik kanıt rota adıyla ayırt edici biçimde eşleşmiyor: ${evidence?.sourceLabel||"etiketsiz"}`);
-    evidenceLevels.add(evidence?.evidenceLevel||"");
+    if(!academicEvidenceMatchesRoute(route,evidence))errors.push(`${prefix}: tür kanıtı rota adıyla ayırt edici biçimde eşleşmiyor: ${evidence?.sourceLabel||"etiketsiz"}`);
+    const cls=evidenceClass(evidence?.evidenceLevel||"");
+    evidenceClasses.add(cls);
+    if(cls==="unknown")warnings.push(`${prefix}: tanımsız evidenceLevel sınıfı: ${evidence?.evidenceLevel||"boş"}`);
+    if(cls==="community"){
+      communityEvidenceCount+=1;
+      if(String(evidence?.note||"").length<60)errors.push(`${prefix}: gönüllü/amatör tür kaydı tarih-konum-tür bağlamını açıklayacak kadar ayrıntılı değil.`);
+    }
     if(evidence?.name)evidenceNames.add(normalize(evidence.name));
   }
   const unsupportedFish=normalizedFish.filter((fish)=>!evidenceNames.has(fish));
   if(unsupportedFish.length)errors.push(`${prefix}: tür listesinde olup kanıt kaydı bulunmayan balıklar var: ${unsupportedFish.join(", ")}`);
 
-  const hasDirect=[...evidenceLevels].some((level)=>
-    /akademik|resmî|resmi|yakın çevre biyolojik|kamu kurumu/i.test(level)
-  );
-  if(hasDirect)directEvidenceRoutes+=1;
+  const hasStrong=evidenceClasses.has("strong");
+  const hasCommunitySupport=communityEvidenceCount>=2;
+  if(hasStrong)directEvidenceRoutes+=1;
+  else if(hasCommunitySupport)communitySupportedRoutes+=1;
   else candidateOnlyRoutes+=1;
 
   for(const evidence of data.accessEvidence||[]){
@@ -113,12 +128,13 @@ for(const route of ulusalMeralar){
   }
 }
 
-if(directEvidenceRoutes<1)errors.push("Hiçbir rotada doğrudan veya yakın çevre tür kanıtı bulunamadı.");
+if(directEvidenceRoutes<1)errors.push("Hiçbir rotada doğrudan resmî/akademik/üniversite tür kanıtı bulunamadı.");
 if(filterFishNames.size<3)errors.push(`Harita balık filtresi için yalnızca ${filterFishNames.size} kullanılabilir tür üretildi.`);
-if(candidateOnlyRoutes>warnings.length)warnings.push(`${candidateOnlyRoutes} rota yalnızca bölgesel araştırma adayı türler içeriyor; bunlar indekslenebilir Güven D araştırma başlangıçlarıdır ve sayfada kanıt düzeyi açıkça gösterilmelidir.`);
+if(candidateOnlyRoutes>0)warnings.push(`${candidateOnlyRoutes} rota güçlü veya en az iki bağımsız yapılandırılmış topluluk tür kanıtına ulaşmadı; bunlar Güven D araştırma kuyruğunda tutulmalıdır.`);
+if(communitySupportedRoutes>0)warnings.push(`${communitySupportedRoutes} rota birden fazla yapılandırılmış gönüllü/amatör kayıtla tür olasılığı desteği taşıyor; bu destek hukuk veya kamusal erişim kanıtı değildir.`);
 
-console.log(`Ulusal araştırma denetimi: 405 rota, ${directEvidenceRoutes} doğrudan/yakın tür kanıtlı, ${candidateOnlyRoutes} aday tür düzeyinde, ${filterFishNames.size} filtrelenebilir balık türü.`);
-for(const warning of warnings)console.warn(`UYARI: ${warning}`);
+console.log(`Ulusal araştırma denetimi: 405 rota, ${directEvidenceRoutes} güçlü resmî/akademik/üniversite tür kanıtlı, ${communitySupportedRoutes} çoklu gönüllü/amatör destekli, ${candidateOnlyRoutes} aday tür düzeyinde, ${filterFishNames.size} filtrelenebilir balık türü.`);
+for(const warning of [...new Set(warnings)])console.warn(`UYARI: ${warning}`);
 if(errors.length){
   for(const error of errors.slice(0,250))console.error(`HATA: ${error}`);
   if(errors.length>250)console.error(`HATA: ${errors.length-250} ek hata daha var.`);

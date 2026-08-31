@@ -18,6 +18,7 @@ const rememberLastModified = (pathname, routes) => {
 for (const route of meralar) {
   const pathname = `/meralar/${route.slug}/`;
   rememberLastModified(pathname, [route]);
+  if (route.confidence === "D") nonIndexablePaths.add(pathname);
 }
 
 for (const province of [...new Set(meralar.map((route) => route.province))]) {
@@ -30,6 +31,8 @@ for (const province of [...new Set(meralar.map((route) => route.province))]) {
     if (districtRoutes.length < 2) continue;
     const districtPath = `${provincePath}${slugifyTr(district)}/`;
     rememberLastModified(districtPath, districtRoutes);
+    const verifiedDistrictRoutes = districtRoutes.filter((route) => route.confidence !== "D");
+    if (district === "İl geneli" || verifiedDistrictRoutes.length < 2) nonIndexablePaths.add(districtPath);
   }
 }
 

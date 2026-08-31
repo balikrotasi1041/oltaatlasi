@@ -12,9 +12,12 @@ expect(wrangler.main === "./worker/security-gate.js", "Worker giriş noktası se
 const rateLimits = new Map((wrangler.ratelimits || []).map((item) => [item.name, item]));
 const weatherRateLimit = rateLimits.get("WEATHER_RATE_LIMITER");
 const suspiciousRateLimit = rateLimits.get("SUSPICIOUS_RATE_LIMITER");
+const contactRateLimit = rateLimits.get("CONTACT_RATE_LIMITER");
 expect(weatherRateLimit?.simple?.limit === 60 && weatherRateLimit?.simple?.period === 60, "Hava API rate limit'i 60 istek/60 saniye olmalıdır.");
 expect(suspiciousRateLimit?.simple?.limit === 15 && suspiciousRateLimit?.simple?.period === 60, "Şüpheli crawler rate limit'i 15 istek/60 saniye olmalıdır.");
+expect(contactRateLimit?.simple?.limit === 30 && contactRateLimit?.simple?.period === 60, "İletişim sayfası rate limit'i 30 istek/60 saniye olmalıdır.");
 expect(weatherRateLimit?.namespace_id !== suspiciousRateLimit?.namespace_id, "Rate limit binding namespace kimlikleri birbirinden farklı olmalıdır.");
+expect(contactRateLimit?.namespace_id !== suspiciousRateLimit?.namespace_id && contactRateLimit?.namespace_id !== weatherRateLimit?.namespace_id, "İletişim rate limit binding namespace kimliği ayrı olmalıdır.");
 
 const gate = readFileSync("worker/security-gate.js", "utf8");
 expect(gate.includes("decodeURIComponent"), "Security gate encoded probe normalizasyonunu korumalıdır.");
@@ -24,12 +27,13 @@ expect(gate.includes("CF-Connecting-IP"), "Security gate istemci IP'sini Cloudfl
 for (const blockedIp of ["185.177.72.68", "216.73.216.200", "45.45.237.65"]) {
   expect(gate.includes(`"${blockedIp}"`), `Doğrulanmış kötüye kullanım adresi ${blockedIp} security gate blocklist içinde olmalıdır.`);
 }
-expect(gate.includes('"216.244.66.233"'), "Yüksek hacimli şüpheli crawler IP'si throttle listesinde bulunmalıdır.");
+expect(gate.includes('"216.244.66.233"'), "Yüksek hacimli şüpheli crawler IP'si açıkça ele alınmalıdır.");
 expect(gate.includes("SUSPICIOUS_RATE_LIMITER"), "Şüpheli crawler trafiği Worker rate limit binding'i ile sınırlandırılmalıdır.");
 expect(gate.includes("WEATHER_RATE_LIMITER"), "Hava API'si Worker rate limit binding'i ile sınırlandırılmalıdır.");
+expect(gate.includes("CONTACT_RATE_LIMITER"), "İletişim sayfası Worker rate limit binding'i ile sınırlandırılmalıdır.");
 expect(gate.includes('"Retry-After": "60"'), "429 yanıtı istemciye Retry-After başlığı vermelidir.");
 expect(gate.includes('"X-Olta-Rate-Limit"'), "Rate limit yanıtları teşhis başlığı taşımalıdır.");
-for (const signature of ["rails\\/info\\/properties", "app\\.config", "backup", "tgz", "\\$\\(", "jenkinsfile"]) {
+for (const signature of ["rails\\/info\\/properties", "app\\.config", "backup", "tgz", "\\$\\(", "jenkinsfile", "\\.php", "wp-content", "wp-includes"]) {
   expect(gate.includes(signature), `Security gate probe imzasını korumalıdır: ${signature}`);
 }
 expect(gate.includes('url.pathname === "/api/weather"'), "Mera hava endpoint'i security gate üzerinden sunulmalıdır.");
@@ -59,7 +63,7 @@ for (const blockedIp of ["185.177.72.68", "216.73.216.200", "45.45.237.65"]) {
 expect(router.includes("rails\\/info\\/properties"), "Downstream probe guard Rails bilgi taramasını engellemelidir.");
 expect(router.includes("app\\.config"), "Downstream probe guard App.config taramasını engellemelidir.");
 expect(router.includes("tgz"), "Downstream probe guard backup.tgz benzeri arşiv taramalarını engellemelidir.");
-expect(router.includes("jenkinsfile"), "Downstream probe guard Jenkinsfile taramasını engellemelidir.");
+expect(router.includes("jenkinsfile"), "Downstream probe guard Jenkinsfile taramalarını engellemelidir.");
 expect(router.includes("DATA_ASSET_PATTERN"), "Statik JSON veri dosyaları kısa süreli güvenli browser cache politikası taşımalıdır.");
 expect(router.includes('SHORT_CACHE_PAGES = new Set(["/iletisim/"])'), "İletişim sayfası kısa browser cache politikasına alınmalıdır.");
 
@@ -67,6 +71,12 @@ const robotsGenerator = readFileSync("scripts/generate-robots.mjs", "utf8");
 for (const blockedPath of ["/admin/", "/api/", "/__deploy/", "/data/weather-official-audit.json"]) {
   expect(robotsGenerator.includes(`Disallow: ${blockedPath}`), `robots.txt üreticisi yardımcı yolu taramaya kapatmalıdır: ${blockedPath}`);
 }
+for (const crawler of ["SemrushBot", "DotBot"]) {
+  expect(robotsGenerator.includes(`User-agent: ${crawler}`), `${crawler} özel robots politikası bulunmalıdır.`);
+}
+expect(!robotsGenerator.includes("OAI-SearchBot\nDisallow: /"), "OAI-SearchBot genel keşif politikasında yanlışlıkla engellenmemelidir.");
+expect(!robotsGenerator.includes("Googlebot\nDisallow: /"), "Googlebot yanlışlıkla engellenmemelidir.");
+expect(!robotsGenerator.includes("bingbot\nDisallow: /"), "Bingbot yanlışlıkla engellenmemelidir.");
 
 const ignore = readFileSync(".gitignore", "utf8").split(/\r?\n/);
 for (const entry of [".env", ".dev.vars", ".wrangler/", "*.pem", "*.key"]) {
@@ -85,4 +95,4 @@ if (errors.length) {
   for (const error of errors) console.error(`GÜVENLİK HATASI: ${error}`);
   process.exit(1);
 }
-console.log("Güvenlik duruşu doğrulandı: Worker yüzeyi, kötüye kullanım blokları, rate limit binding'leri, probe korumaları, güvenli browser cache politikaları, cache'li hava endpoint'i, robots yardımcı yol dışlamaları, secret ignore kuralları ve GitHub Actions pinleri beklenen durumda.");
+console.log("Güvenlik duruşu doğrulandı: Worker yüzeyi, kötüye kullanım blokları, davranış bazlı rate limit binding'leri, PHP/WordPress probe korumaları, güvenli browser cache politikaları, cache'li hava endpoint'i, arama motorlarını koruyan robots politikaları, secret ignore kuralları ve GitHub Actions pinleri beklenen durumda.");

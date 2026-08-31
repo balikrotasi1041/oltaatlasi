@@ -1,5 +1,6 @@
 import appWorker from "./yandex-metrica-router.js";
 import { handleWeatherRequest } from "./weather-service.js";
+import { NOINDEX_PATHS } from "./index-policy-routes.js";
 
 const PRIMARY_HOSTS = new Set(["oltaatlasi.com", "www.oltaatlasi.com"]);
 const BLOCKED_IPS = new Set([
@@ -19,13 +20,30 @@ const THROTTLED_IPS = new Set([]);
 
 const SENSITIVE_SCAN_PATTERNS = [
   /^\/(?:(?:\$\([^/]{1,64}\)\/)?\.env|\.git(?:\/|$)|\.svn(?:\/|$)|\.hg(?:\/|$))/i,
-  /^\/(?:wp-admin(?:\/|$)|wp-login\.php$|wp-config\.php$|xmlrpc\.php$)/i,
+  /^\/(?:wp-admin(?:\/|$)|wp-login\.php$|wp-config\.php$|xmlrpc\.php$|wp-content(?:\/|$)|wp-includes(?:\/|$)|wp-[^/]+(?:\/|$))/i,
+  /^\/.*\.php(?:\/|$)/i,
   /^\/(?:phpinfo\.php|info\.php|server-status|appsettings(?:\.[^/]+)?\.json|app\.config|web\.config)$/i,
   /^\/(?:vendor\/phpunit(?:\/|$)|phpmyadmin(?:\/|$)|adminer(?:\.php|\/|$)|\.DS_Store$)/i,
   /^\/(?:backup(?:[-_.][^/]*)?\.(?:sql|tgz|zip|tar(?:\.gz)?)|dump(?:[-_.][^/]*)?\.sql|export\.sql)$/i,
   /^\/(?:rails\/info\/properties|jenkinsfile|log4j(?:2)?\.properties|cron\.log|pnpm-lock\.yaml|yarn\.lock|composer\.(?:json|lock)|build\.gradle|\.amplifyrc)$/i,
   /^\/(?:horizon\/api(?:\/|$)|rest\/executions(?:\/|$)|webhook-waiting(?:\/|$)|v1\.40\/swarm(?:\/|$))/i,
 ];
+
+const VERIFIED_BOT_HINTS = [
+  "googlebot",
+  "bingbot",
+  "oai-searchbot",
+  "chatgpt-user",
+  "applebot",
+  "yandexbot",
+];
+
+const SEO_RUNTIME_OVERRIDES = new Map([
+  ["/meralar/bilecik-kizildamlar-baraj-goleti/", {
+    title: "Kızıldamlar Barajı Yol Tarifi ve Balık Avı",
+    description: "Bilecik Kızıldamlar Barajı yol tarifi ve balık avı planı: genel konum, sazan kaydı, zorlu son yaklaşım, kıyı riskleri ve güncel içsu kuralları.",
+  }],
+]);
 
 const securityResponse = (status, extraHeaders = {}) => new Response(null, {
   status,
@@ -71,6 +89,32 @@ const isSensitiveScanPath = (pathname) => {
   const normalized = normalizedProbePath(pathname);
   return SENSITIVE_SCAN_PATTERNS.some((pattern) => pattern.test(normalized));
 };
+const isSearchCrawler = (request) => {
+  const ua = String(request.headers.get("user-agent") || "").toLocaleLowerCase("en-US");
+  return VERIFIED_BOT_HINTS.some((hint) => ua.includes(hint));
+};
+const normalizedIndexPath = (pathname) => pathname.endsWith("/") ? pathname : `${pathname}/`;
+const applyIndexPolicyHeaders = (response, pathname) => {
+  if (!NOINDEX_PATHS.has(normalizedIndexPath(pathname)) || response.status !== 200) return response;
+  const headers = new Headers(response.headers);
+  // URL erişilebilir ve takip edilebilir kalır; yalnızca düşük doğrulamalı sayfanın indekslenmesi ertelenir.
+  headers.set("X-Robots-Tag", "noindex, follow, max-image-preview:large");
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+};
+const applyRuntimeSeo = (response, pathname) => {
+  const override=SEO_RUNTIME_OVERRIDES.get(normalizedIndexPath(pathname));
+  const contentType=String(response.headers.get("content-type")||"").toLowerCase();
+  if(!override||response.status!==200||!contentType.includes("text/html"))return response;
+  const fullTitle=`${override.title} | Olta Atlası`;
+  return new HTMLRewriter()
+    .on("title",{element(element){element.setInnerContent(fullTitle);}})
+    .on('meta[name="description"]',{element(element){element.setAttribute("content",override.description);}})
+    .on('meta[property="og:title"]',{element(element){element.setAttribute("content",fullTitle);}})
+    .on('meta[property="og:description"]',{element(element){element.setAttribute("content",override.description);}})
+    .on('meta[name="twitter:title"]',{element(element){element.setAttribute("content",fullTitle);}})
+    .on('meta[name="twitter:description"]',{element(element){element.setAttribute("content",override.description);}})
+    .transform(response);
+};
 
 export default {
   async fetch(request, env, ctx) {
@@ -91,12 +135,21 @@ export default {
 
     if (request.method === "TRACE") return securityResponse(405);
     if (isSensitiveScanPath(url.pathname)) return securityResponse(404);
+
     if (url.pathname === "/api/weather") {
       const throttled = await enforceRateLimit(env?.WEATHER_RATE_LIMITER, ip ? `weather:${ip}` : "", "weather-api");
       if (throttled) return throttled;
       return handleWeatherRequest(request, ctx);
     }
 
-    return appWorker.fetch(request, env, ctx);
+    if (url.pathname === "/iletisim/" && request.method === "GET" && !isSearchCrawler(request)) {
+      const throttled = await enforceRateLimit(env?.CONTACT_RATE_LIMITER, ip ? `contact:${ip}` : "", "contact-page");
+      if (throttled) return throttled;
+    }
+
+    let response = await appWorker.fetch(request, env, ctx);
+    response = applyIndexPolicyHeaders(response, url.pathname);
+    response = applyRuntimeSeo(response, url.pathname);
+    return response;
   },
 };
