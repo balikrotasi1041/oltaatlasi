@@ -38,6 +38,13 @@ const VERIFIED_BOT_HINTS = [
   "yandexbot",
 ];
 
+const SEO_RUNTIME_OVERRIDES = new Map([
+  ["/meralar/bilecik-kizildamlar-baraj-goleti/", {
+    title: "Kızıldamlar Barajı Yol Tarifi ve Balık Avı",
+    description: "Bilecik Kızıldamlar Barajı yol tarifi ve balık avı planı: genel konum, sazan kaydı, zorlu son yaklaşım, kıyı riskleri ve güncel içsu kuralları.",
+  }],
+]);
+
 const securityResponse = (status, extraHeaders = {}) => new Response(null, {
   status,
   headers: {
@@ -94,6 +101,20 @@ const applyIndexPolicyHeaders = (response, pathname) => {
   headers.set("X-Robots-Tag", "noindex, follow, max-image-preview:large");
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 };
+const applyRuntimeSeo = (response, pathname) => {
+  const override=SEO_RUNTIME_OVERRIDES.get(normalizedIndexPath(pathname));
+  const contentType=String(response.headers.get("content-type")||"").toLowerCase();
+  if(!override||response.status!==200||!contentType.includes("text/html"))return response;
+  const fullTitle=`${override.title} | Olta Atlası`;
+  return new HTMLRewriter()
+    .on("title",{element(element){element.setInnerContent(fullTitle);}})
+    .on('meta[name="description"]',{element(element){element.setAttribute("content",override.description);}})
+    .on('meta[property="og:title"]',{element(element){element.setAttribute("content",fullTitle);}})
+    .on('meta[property="og:description"]',{element(element){element.setAttribute("content",override.description);}})
+    .on('meta[name="twitter:title"]',{element(element){element.setAttribute("content",fullTitle);}})
+    .on('meta[name="twitter:description"]',{element(element){element.setAttribute("content",override.description);}})
+    .transform(response);
+};
 
 export default {
   async fetch(request, env, ctx) {
@@ -126,7 +147,9 @@ export default {
       if (throttled) return throttled;
     }
 
-    const response = await appWorker.fetch(request, env, ctx);
-    return applyIndexPolicyHeaders(response, url.pathname);
+    let response = await appWorker.fetch(request, env, ctx);
+    response = applyIndexPolicyHeaders(response, url.pathname);
+    response = applyRuntimeSeo(response, url.pathname);
+    return response;
   },
 };
