@@ -19,12 +19,22 @@ const THROTTLED_IPS = new Set([]);
 
 const SENSITIVE_SCAN_PATTERNS = [
   /^\/(?:(?:\$\([^/]{1,64}\)\/)?\.env|\.git(?:\/|$)|\.svn(?:\/|$)|\.hg(?:\/|$))/i,
-  /^\/(?:wp-admin(?:\/|$)|wp-login\.php$|wp-config\.php$|xmlrpc\.php$)/i,
+  /^\/(?:wp-admin(?:\/|$)|wp-login\.php$|wp-config\.php$|xmlrpc\.php$|wp-content(?:\/|$)|wp-includes(?:\/|$)|wp-[^/]+(?:\/|$))/i,
+  /^\/.*\.php(?:\/|$)/i,
   /^\/(?:phpinfo\.php|info\.php|server-status|appsettings(?:\.[^/]+)?\.json|app\.config|web\.config)$/i,
   /^\/(?:vendor\/phpunit(?:\/|$)|phpmyadmin(?:\/|$)|adminer(?:\.php|\/|$)|\.DS_Store$)/i,
   /^\/(?:backup(?:[-_.][^/]*)?\.(?:sql|tgz|zip|tar(?:\.gz)?)|dump(?:[-_.][^/]*)?\.sql|export\.sql)$/i,
   /^\/(?:rails\/info\/properties|jenkinsfile|log4j(?:2)?\.properties|cron\.log|pnpm-lock\.yaml|yarn\.lock|composer\.(?:json|lock)|build\.gradle|\.amplifyrc)$/i,
   /^\/(?:horizon\/api(?:\/|$)|rest\/executions(?:\/|$)|webhook-waiting(?:\/|$)|v1\.40\/swarm(?:\/|$))/i,
+];
+
+const VERIFIED_BOT_HINTS = [
+  "googlebot",
+  "bingbot",
+  "oai-searchbot",
+  "chatgpt-user",
+  "applebot",
+  "yandexbot",
 ];
 
 const securityResponse = (status, extraHeaders = {}) => new Response(null, {
@@ -71,6 +81,10 @@ const isSensitiveScanPath = (pathname) => {
   const normalized = normalizedProbePath(pathname);
   return SENSITIVE_SCAN_PATTERNS.some((pattern) => pattern.test(normalized));
 };
+const isSearchCrawler = (request) => {
+  const ua = String(request.headers.get("user-agent") || "").toLocaleLowerCase("en-US");
+  return VERIFIED_BOT_HINTS.some((hint) => ua.includes(hint));
+};
 
 export default {
   async fetch(request, env, ctx) {
@@ -91,10 +105,16 @@ export default {
 
     if (request.method === "TRACE") return securityResponse(405);
     if (isSensitiveScanPath(url.pathname)) return securityResponse(404);
+
     if (url.pathname === "/api/weather") {
       const throttled = await enforceRateLimit(env?.WEATHER_RATE_LIMITER, ip ? `weather:${ip}` : "", "weather-api");
       if (throttled) return throttled;
       return handleWeatherRequest(request, ctx);
+    }
+
+    if (url.pathname === "/iletisim/" && request.method === "GET" && !isSearchCrawler(request)) {
+      const throttled = await enforceRateLimit(env?.CONTACT_RATE_LIMITER, ip ? `contact:${ip}` : "", "contact-page");
+      if (throttled) return throttled;
     }
 
     return appWorker.fetch(request, env, ctx);
