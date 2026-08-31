@@ -47,13 +47,18 @@
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-sivas-delice-baraj-golu-sivas"
     ],
+    "additionalDCandidatesReviewed": [
+      "ulusal-artvin-borcka-baraj-golu"
+    ],
     "evidenceReadyPriority": [
       "ankara-500km-samsun-suat-ugurlu-baraj-golu",
       "ulusal-tunceli-uzuncayir-baraj-golu",
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-erzincan-tercan-baraj-golu",
-      "ulusal-ardahan-kura-nehri-ardahan-hatti",
-      "ulusal-artvin-borcka-baraj-golu"
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti"
     ],
     "heldForMoreRouteSpecificEvidence": [
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
@@ -63,13 +68,10 @@
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
-      "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-aksaray-ciftevi-baraj-golu",
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
       "ulusal-erzurum-olur-baraj-golu",
-      "ulusal-erzincan-tercan-baraj-golu",
-      "ulusal-van-zernek-baraj-golu",
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-sivas-delice-baraj-golu-sivas"
     ],
@@ -94,8 +96,8 @@
   "stage2": {
     "status": "in_progress",
     "target": 17,
-    "promotedCount": 7,
-    "checkedThisRun": 17,
+    "promotedCount": 11,
+    "checkedThisRun": 21,
     "promotionRule": "Yalnız uygulama anında confidence=D olan kayıt; yama D değilse hata vererek günlük kotadan çıkarır.",
     "promotions": [
       {"slug":"ankara-500km-samsun-suat-ugurlu-baraj-golu","before":"D","after":"C","families":["DOKAP/Samsun İl Tarım","DergiPark"],"reason":"Ayvacık kıyı kullanım bağlamı + rota özelinde balık faunası + dönem mevzuatı."},
@@ -104,14 +106,18 @@
       {"slug":"ulusal-kars-cildir-golu-kars-kiyisi","before":"D","after":"C","families":["Çıldır Kaymakamlığı/Kültür Portalı","DergiPark 2024"],"reason":"Ortak Kars-Ardahan göl kimliği, sportif olta kullanımı ve güncel 17 tür örneklemesi."},
       {"slug":"ulusal-kastamonu-cigdem-baraj-golu-kastamonu","before":"D","after":"C","families":["Devrekani Kaymakamlığı","akademik su kalitesi"],"reason":"Resmî gölet kimliği/tür kaydı + üç istasyonlu akademik çalışma; mikro erişim teyitsiz."},
       {"slug":"ankara-500km-elazig-karakaya-baraj-golu","before":"D","after":"C","families":["Elazığ İl Tarım/FKA","DergiPark"],"reason":"Baskil 2026 avlak stok verisi + Elazığ/Karakaya akademik ekoloji; ticari alan amatör izin sayılmadı."},
-      {"slug":"ankara-500km-adiyaman-ataturk-baraj-golu","before":"D","after":"C","families":["Adıyaman İl Tarım/Samsat Belediyesi","Ege Journal"],"reason":"Kahta-Samsat resmî balıklandırma + kamusal kıyı rekreasyonu + akademik havza bağlantısı."}
+      {"slug":"ankara-500km-adiyaman-ataturk-baraj-golu","before":"D","after":"C","families":["Adıyaman İl Tarım/Samsat Belediyesi","Ege Journal"],"reason":"Kahta-Samsat resmî balıklandırma + kamusal kıyı rekreasyonu + akademik havza bağlantısı."},
+      {"slug":"ulusal-erzincan-tercan-baraj-golu","before":"D","after":"C","families":["Tercan Kaymakamlığı","DergiPark/Erzincan Üniversitesi"],"reason":"Tercan/Tuzla Çayı resmî baraj kimliği + 190 sazanlık rota-özel akademik örnekleme; mikro erişim garanti edilmedi."},
+      {"slug":"ulusal-artvin-borcka-baraj-golu","before":"D","after":"C","families":["Artvin Valiliği","YÖK Açık Bilim/RTEÜ"],"reason":"Borçka/Çoruh resmî kullanım bağlamı + 156 yayın balığına dayalı rota-özel tez; tür listesi yalnız Yayın'a daraltıldı."},
+      {"slug":"ulusal-erzurum-demirdoven-baraj-golu","before":"D","after":"C","families":["DSİ/Anadolu Ajansı","Atatürk Üniversitesi AVESIS/TR Dizin"],"reason":"Pasinler/Tımar Çayı rota kimliği + Demirdöven'e özgü Tatlısu Kefali çalışması; buz/kafes/işletme riski açıklandı."},
+      {"slug":"ulusal-van-zernek-baraj-golu","before":"D","after":"C","families":["Van İl Tarım","BIBAD/Anadolu Ajansı"],"reason":"Gürpınar/Zernek resmî stokta Sazan ve Siraz + rota-özel ekosistem çalışması; kafes alabalığı doğal tür kanıtı sayılmadı."}
     ],
-    "remainingNeeded": 10,
+    "remainingNeeded": 6,
     "notes": [
       "Sırımtaş'ta resmî siraz balıklandırması tek başına yeterli görülmedi; genel kamusal kıyı erişimi için ikinci bağımsız rota ailesi bekleniyor.",
-      "Demirdöven'de resmî su kimliği güçlü; tür ve kamusal erişim kanıtı kota için yeterli değil.",
-      "Tercan'da kafes yetiştiriciliği amatör kıyı erişimi olarak yorumlanmadı.",
-      "Filyos ve Zap'ta akarsu kimliği güçlü olsa da hedef mikro/genel kıyı kullanım ve tür kanıtı birlikte tamamlanmadan yükseltilmedi."
+      "Filyos ve Zap'ta akarsu kimliği güçlü olsa da hedef genel kıyı kullanım ve rota-özel tür kanıtı birlikte tamamlanmadan yükseltilmedi.",
+      "Kura Nehri için kamusal rekreasyon bağlamı güçlü; rota-özel tür kaynağı PDF olduğu için görsel/PDF doğrulama tamamlanmadan bugünkü kotaya alınmadı.",
+      "Tercan, Borçka, Demirdöven ve Zernek'te desteklenmeyen eski tür adayları korunmadı; yalnız rota-özel kanıtı olan türler yayımlandı."
     ]
   },
   "promotedSlugs": [
@@ -121,7 +127,11 @@
     "ulusal-kars-cildir-golu-kars-kiyisi",
     "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
     "ankara-500km-elazig-karakaya-baraj-golu",
-    "ankara-500km-adiyaman-ataturk-baraj-golu"
+    "ankara-500km-adiyaman-ataturk-baraj-golu",
+    "ulusal-erzincan-tercan-baraj-golu",
+    "ulusal-artvin-borcka-baraj-golu",
+    "ulusal-erzurum-demirdoven-baraj-golu",
+    "ulusal-van-zernek-baraj-golu"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
