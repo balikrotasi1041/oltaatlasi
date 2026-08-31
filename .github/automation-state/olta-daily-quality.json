@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-08-31",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-08-31",
   "done": false,
   "research": {
@@ -48,7 +48,10 @@
       "ulusal-sivas-delice-baraj-golu-sivas"
     ],
     "additionalDCandidatesReviewed": [
-      "ulusal-artvin-borcka-baraj-golu"
+      "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti"
     ],
     "evidenceReadyPriority": [
       "ankara-500km-samsun-suat-ugurlu-baraj-golu",
@@ -58,7 +61,12 @@
       "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-van-zernek-baraj-golu",
       "ulusal-artvin-borcka-baraj-golu",
-      "ulusal-ardahan-kura-nehri-ardahan-hatti"
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+      "ulusal-erzurum-olur-baraj-golu",
+      "ulusal-aksaray-ciftevi-baraj-golu"
     ],
     "heldForMoreRouteSpecificEvidence": [
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
@@ -68,10 +76,6 @@
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
-      "ulusal-aksaray-ciftevi-baraj-golu",
-      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-erzurum-olur-baraj-golu",
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-sivas-delice-baraj-golu-sivas"
     ],
@@ -94,10 +98,10 @@
     ]
   },
   "stage2": {
-    "status": "in_progress",
+    "status": "complete",
     "target": 17,
-    "promotedCount": 11,
-    "checkedThisRun": 21,
+    "promotedCount": 17,
+    "checkedThisRun": 27,
     "promotionRule": "Yalnız uygulama anında confidence=D olan kayıt; yama D değilse hata vererek günlük kotadan çıkarır.",
     "promotions": [
       {"slug":"ankara-500km-samsun-suat-ugurlu-baraj-golu","before":"D","after":"C","families":["DOKAP/Samsun İl Tarım","DergiPark"],"reason":"Ayvacık kıyı kullanım bağlamı + rota özelinde balık faunası + dönem mevzuatı."},
@@ -110,14 +114,21 @@
       {"slug":"ulusal-erzincan-tercan-baraj-golu","before":"D","after":"C","families":["Tercan Kaymakamlığı","DergiPark/Erzincan Üniversitesi"],"reason":"Tercan/Tuzla Çayı resmî baraj kimliği + 190 sazanlık rota-özel akademik örnekleme; mikro erişim garanti edilmedi."},
       {"slug":"ulusal-artvin-borcka-baraj-golu","before":"D","after":"C","families":["Artvin Valiliği","YÖK Açık Bilim/RTEÜ"],"reason":"Borçka/Çoruh resmî kullanım bağlamı + 156 yayın balığına dayalı rota-özel tez; tür listesi yalnız Yayın'a daraltıldı."},
       {"slug":"ulusal-erzurum-demirdoven-baraj-golu","before":"D","after":"C","families":["DSİ/Anadolu Ajansı","Atatürk Üniversitesi AVESIS/TR Dizin"],"reason":"Pasinler/Tımar Çayı rota kimliği + Demirdöven'e özgü Tatlısu Kefali çalışması; buz/kafes/işletme riski açıklandı."},
-      {"slug":"ulusal-van-zernek-baraj-golu","before":"D","after":"C","families":["Van İl Tarım","BIBAD/Anadolu Ajansı"],"reason":"Gürpınar/Zernek resmî stokta Sazan ve Siraz + rota-özel ekosistem çalışması; kafes alabalığı doğal tür kanıtı sayılmadı."}
+      {"slug":"ulusal-van-zernek-baraj-golu","before":"D","after":"C","families":["Van İl Tarım","BIBAD/Anadolu Ajansı"],"reason":"Gürpınar/Zernek resmî stokta Sazan ve Siraz + rota-özel ekosistem çalışması; kafes alabalığı doğal tür kanıtı sayılmadı."},
+      {"slug":"ulusal-ardahan-kura-nehri-ardahan-hatti","before":"D","after":"C","families":["Ardahan İl Kültür Turizm/Belediye","Ardahan Üniversitesi"],"reason":"Kura koridoru kimliği + kamusal Yaşam Vadisi kullanımı + Kura ihtiyofaunası; mikro kıyı garanti edilmedi."},
+      {"slug":"ulusal-zonguldak-filyos-nehri-zonguldak-hatti","before":"D","after":"C","families":["Zonguldak İl Kültür Turizm","Zootaxa/YÖK"],"reason":"Resmî olta/rekreasyon koridoru + Filyos drenajına özgü tür kaydı + ana kol akademik örnekleme; delta hassasiyeti korundu."},
+      {"slug":"ulusal-erzincan-karasu-nehri-erzincan-hatti","before":"D","after":"C","families":["Erzincan Belediyesi/AA","DergiPark"],"reason":"Karasu rota kimliği ve kamusal rekreasyon koridoru + Erzincan kesiminden Capoeta umbla yakalama kaydı."},
+      {"slug":"ulusal-erzincan-firat-nehri-kemaliye-hatti","before":"D","after":"C","families":["Kemaliye Kaymakamlığı/Erzincan KTB","Fırat Üniversitesi/DergiPark"],"reason":"Kemaliye-Fırat/Keban kıyı kimliği + doğa sporları/turizm kullanımı + 7 türlük rota-özel akademik av verisi."},
+      {"slug":"ulusal-erzurum-olur-baraj-golu","before":"D","after":"C","families":["Erzurum İl Kültür Turizm/yerel kurumsal","DHA/İlçe Tarım bağlamı"],"reason":"Olur Barajı adlandırması Ayvalı Barajı (Olur/Oltu) olarak düzeltildi; yerel olta kullanımı ve rota-özel sazan gözlemi çaprazlandı."},
+      {"slug":"ulusal-aksaray-ciftevi-baraj-golu","before":"D","after":"C","families":["Aksaray Valiliği/İl Tarım","OGM"],"reason":"Çiftevi Göleti kimliği + resmî sazan balıklandırması + 2026 güncel orman giriş kısıtı; erişim kısıtı açıkça üst bilgi yapıldı."}
     ],
-    "remainingNeeded": 6,
+    "remainingNeeded": 0,
     "notes": [
-      "Sırımtaş'ta resmî siraz balıklandırması tek başına yeterli görülmedi; genel kamusal kıyı erişimi için ikinci bağımsız rota ailesi bekleniyor.",
-      "Filyos ve Zap'ta akarsu kimliği güçlü olsa da hedef genel kıyı kullanım ve rota-özel tür kanıtı birlikte tamamlanmadan yükseltilmedi.",
-      "Kura Nehri için kamusal rekreasyon bağlamı güçlü; rota-özel tür kaynağı PDF olduğu için görsel/PDF doğrulama tamamlanmadan bugünkü kotaya alınmadı.",
-      "Tercan, Borçka, Demirdöven ve Zernek'te desteklenmeyen eski tür adayları korunmadı; yalnız rota-özel kanıtı olan türler yayımlandı."
+      "Sırımtaş, Zap, Kapıkaya, Karadere, Çayköy, Lori, Karahüyük, Çataltepe ve Delice yeterli rota-özel kanıt olmadan D bırakıldı.",
+      "Filyos ve Kura ancak kamusal kullanım bağlamı ile rota/havza tür kanıtı birlikte tamamlanınca C'ye yükseltildi.",
+      "Çiftevi için 1 Haziran-31 Ekim 2026 kontrolsüz giriş yasağı erişim bilgisinin önüne geçirildi; C seviyesi erişim açık demek değildir.",
+      "Olur kaydında su varlığı adlandırması Ayvalı Barajı (Olur/Oltu) olarak düzeltildi; aktif HES ve kafes sahaları risk olarak korundu.",
+      "Tüm 17 yama uygulama anında confidence=D şartını kod düzeyinde zorunlu tutuyor."
     ]
   },
   "promotedSlugs": [
@@ -131,7 +142,13 @@
     "ulusal-erzincan-tercan-baraj-golu",
     "ulusal-artvin-borcka-baraj-golu",
     "ulusal-erzurum-demirdoven-baraj-golu",
-    "ulusal-van-zernek-baraj-golu"
+    "ulusal-van-zernek-baraj-golu",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+    "ulusal-erzurum-olur-baraj-golu",
+    "ulusal-aksaray-ciftevi-baraj-golu"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
