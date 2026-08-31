@@ -2,9 +2,11 @@ export * from "./meralar-tumu-base-2026-08-31";
 import type { EnrichedMera } from "./meralar-tumu-core";
 import { meralar as baseMeralar } from "./meralar-tumu-base-2026-08-31";
 import { applyDailyQualityStage2_20260831 } from "./meralar-daily-quality-2026-08-31-stage2";
+import { applyDailyQualityStage2Extra_20260831 } from "./meralar-daily-quality-2026-08-31-stage2-extra";
 
 const routeMap=new Map<string,EnrichedMera>(baseMeralar.map((route)=>[route.slug,route]));
 applyDailyQualityStage2_20260831(routeMap);
+applyDailyQualityStage2Extra_20260831(routeMap);
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
