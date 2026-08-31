@@ -1,5 +1,6 @@
 import appWorker from "./yandex-metrica-router.js";
 import { handleWeatherRequest } from "./weather-service.js";
+import { NOINDEX_PATHS } from "./index-policy-routes.js";
 
 const PRIMARY_HOSTS = new Set(["oltaatlasi.com", "www.oltaatlasi.com"]);
 const BLOCKED_IPS = new Set([
@@ -85,6 +86,14 @@ const isSearchCrawler = (request) => {
   const ua = String(request.headers.get("user-agent") || "").toLocaleLowerCase("en-US");
   return VERIFIED_BOT_HINTS.some((hint) => ua.includes(hint));
 };
+const normalizedIndexPath = (pathname) => pathname.endsWith("/") ? pathname : `${pathname}/`;
+const applyIndexPolicyHeaders = (response, pathname) => {
+  if (!NOINDEX_PATHS.has(normalizedIndexPath(pathname)) || response.status !== 200) return response;
+  const headers = new Headers(response.headers);
+  // URL erişilebilir ve takip edilebilir kalır; yalnızca düşük doğrulamalı sayfanın indekslenmesi ertelenir.
+  headers.set("X-Robots-Tag", "noindex, follow, max-image-preview:large");
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+};
 
 export default {
   async fetch(request, env, ctx) {
@@ -117,6 +126,7 @@ export default {
       if (throttled) return throttled;
     }
 
-    return appWorker.fetch(request, env, ctx);
+    const response = await appWorker.fetch(request, env, ctx);
+    return applyIndexPolicyHeaders(response, url.pathname);
   },
 };
