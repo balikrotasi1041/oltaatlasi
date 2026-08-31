@@ -32,6 +32,14 @@
         "limit": 15,
         "period": 60
       }
+    },
+    {
+      "name": "CONTACT_RATE_LIMITER",
+      "namespace_id": "2026083101",
+      "simple": {
+        "limit": 30,
+        "period": 60
+      }
     }
   ],
   "assets": {
