@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-01",
   "timezone": "Europe/Istanbul",
-  "stage": 3,
+  "stage": 4,
   "branch": "quality/daily-2026-09-01",
   "done": false,
   "research": {
@@ -41,16 +41,21 @@
       "ulusal-artvin-borcka-baraj-golu",
       "ulusal-van-zernek-baraj-golu"
     ],
-    "newCandidatesReviewed": 8,
+    "newCandidatesReviewed": 13,
     "newCandidates": [
       {"name":"Gelingüllü Barajı genel kamusal kıyı","province":"Yozgat","status":"hold-ecology"},
-      {"name":"Kapulukaya Barajı Sulubük genel kıyı","province":"Kırıkkale","status":"hold"},
-      {"name":"Menzelet Barajı Bulutoğlu genel kıyı","province":"Kahramanmaraş","status":"hold"},
+      {"name":"Kapulukaya Barajı Sulubük genel kıyı","province":"Kırıkkale","status":"reject-duplicate"},
+      {"name":"Menzelet Barajı Bulutoğlu genel kıyı","province":"Kahramanmaraş","status":"reject-duplicate"},
       {"name":"Çamlıgöze Barajı genel kıyı","province":"Sivas","status":"hold-aquaculture"},
       {"name":"Karakaya Barajı Kale genel kıyı","province":"Malatya","status":"hold"},
       {"name":"Keban Barajı Korulu genel kıyı","province":"Elazığ","status":"hold"},
       {"name":"Kesikköprü Barajı Bala genel kıyı","province":"Ankara","status":"reject-sensitive-water-supply"},
-      {"name":"Almus Barajı genel kıyı alternatifi","province":"Tokat","status":"reject-duplicate"}
+      {"name":"Almus Barajı genel kıyı alternatifi","province":"Tokat","status":"reject-duplicate"},
+      {"name":"Damsa Baraj Gölü","province":"Nevşehir","status":"reject-duplicate"},
+      {"name":"Kumtepe Baraj Gölü","province":"Nevşehir","status":"reject-duplicate"},
+      {"name":"Çaylı Göleti","province":"Burdur","status":"selected-C"},
+      {"name":"Karamanlı Baraj Gölü","province":"Burdur","status":"selected-C"},
+      {"name":"Korkut Sulama Göleti","province":"Muş","status":"selected-C"}
     ]
   },
   "stage2": {
@@ -111,6 +116,16 @@
     ],
     "notes": "17 benzersiz kayıt gerçek D→C olarak günlük dalda kodlandı. Bu çalıştırmada dokuz ek D kayıt rota-özel resmî/akademik/yerel kanıtla eşiği geçti. Tercan ve Kemaliye'de doğrudan akademik balık verisi; Çatören/Gökçekaya'da resmî stok ve akademik çalışmalar; Mogan'da kamusal park + akademik fauna; Boztepe/Kapıkaya'da resmî balıklandırma/rekreasyon ve güvenlik; Yayıklı/Özdenk'te rota-özel resmî balıklandırma kullanıldı. Pertek ve Gölköy zaten C+ olduğu için günlük D→C kotasına yazılmadı. Porsuk il/ilçe kimliği ve hassas kullanım bağlamı yeterince netleşmeden yükseltilmedi. Mikro erişim, park veya özel mülkiyet kesinleştirilmedi; genel bölge/planlama hassasiyeti ve risk uyarıları korundu."
   },
+  "stage3": {
+    "status": "completed",
+    "newCPlusCount": 3,
+    "newSlugs": [
+      "burdur-tefenni-cayli-goleti",
+      "burdur-karamanli-karamanli-baraj-golu",
+      "mus-korkut-korkut-sulama-goleti"
+    ],
+    "notes": "Tam 3 yeni Güven C rota eklendi. Üçü de Ege/Marmara dışındadır. Çaylı ve Karamanlı için Burdur İl Tarımın 4 Ağustos 2026 sazan balıklandırması temel tür kanıtıdır; su yapısı/ilçe kimliği Bakanlık ve Kaymakamlık kaynaklarıyla çaprazlandı. Korkut Sulama Göleti Kaymakamlık su kimliği, Muş İl Tarım sazan balıklandırması ve 2025 kamusal etkinlik erişim bağlamıyla desteklendi. Mikro kıyı/park/özel parsel kesinleştirilmedi. Kapulukaya ve Menzelet mevcut kayıt oldukları için, Almus/Damsa/Kumtepe duplicate olduğu için; Kesikköprü hassas içme suyu bağlamı, Çamlıgöze yetiştiricilik ve Gelingüllü ekolojik hassasiyet nedeniyle yeni kota dışında tutuldu. Her yeni slug için ayrı özgün SVG eklendi."
+  },
   "promotedSlugs": [
     "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
     "ulusal-erzincan-karasu-nehri-erzincan-hatti",
@@ -130,8 +145,26 @@
     "ankara-500km-eskisehir-yayikli-goleti",
     "ankara-500km-eskisehir-ozdenk-goleti"
   ],
-  "newSlugs": [],
-  "mgmAudit": {"status":"not_started"},
+  "newSlugs": [
+    "burdur-tefenni-cayli-goleti",
+    "burdur-karamanli-karamanli-baraj-golu",
+    "mus-korkut-korkut-sulama-goleti"
+  ],
+  "mgmAudit": {
+    "status": "completed_pending",
+    "checkedAt": "2026-09-01T17:03:41+03:00",
+    "officialStatus": "pending",
+    "representativeSlugs": [
+      "kandira-kefken-sahili",
+      "ankara-500km-ankara-mogan-golu",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-artvin-borcka-baraj-golu"
+    ],
+    "warnings": [],
+    "notes": "MGM 1 Eylül günlük/bölgesel ve deniz tahminleri erişilebilir durumdaydı ve ulusal rapor güncel meteorolojik uyarı bulunmadığını bildirdi. Doğu Anadolu'nun doğusu ile Orta/Doğu Karadeniz için sağanak/gök gürültülü sağanak, denizlerde fırtına beklenmediği; Karadeniz ve Van Gölü için yağışlı deniz/göl koşulları kaydedildi. Çalışma ortamı canlı /api/weather noktasal yanıtlarını okuyamadığı için sıcaklık-rüzgâr-yağış/hadise model karşılaştırması tamamlanamadı; weather-official-audit.json bu nedenle pending ve resmi teyit iddiası üretmiyor."
+  },
   "ci": {"status":"not_started"},
   "pr": null,
   "merge": null,
