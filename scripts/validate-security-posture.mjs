@@ -27,7 +27,10 @@ expect(gate.includes("CF-Connecting-IP"), "Security gate istemci IP'sini Cloudfl
 for (const blockedIp of ["185.177.72.68", "216.73.216.200", "45.45.237.65"]) {
   expect(gate.includes(`"${blockedIp}"`), `Doğrulanmış kötüye kullanım adresi ${blockedIp} security gate blocklist içinde olmalıdır.`);
 }
-expect(gate.includes('"216.244.66.233"'), "Yüksek hacimli şüpheli crawler IP'si açıkça ele alınmalıdır.");
+for (const throttledIp of ["148.251.126.195", "195.178.110.22", "216.244.66.233"]) {
+  expect(gate.includes(`"${throttledIp}"`), `Kontrollü crawler adresi ${throttledIp} throttle listesinde bulunmalıdır.`);
+}
+expect(gate.includes('`probe:${ip}`'), "Exploit-path taramaları IP bazlı davranışsal rate limit'e girmelidir.");
 expect(gate.includes("SUSPICIOUS_RATE_LIMITER"), "Şüpheli crawler trafiği Worker rate limit binding'i ile sınırlandırılmalıdır.");
 expect(gate.includes("WEATHER_RATE_LIMITER"), "Hava API'si Worker rate limit binding'i ile sınırlandırılmalıdır.");
 expect(gate.includes("CONTACT_RATE_LIMITER"), "İletişim sayfası Worker rate limit binding'i ile sınırlandırılmalıdır.");

@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import "../styles/world.css";
 import SeoOpportunityPanel from "../components/SeoOpportunityPanel.astro";
+import { seoDemandTargets } from "../data/seo-demand-targets";
 
 const {
   title = "Olta Atlası",
@@ -66,7 +67,7 @@ const seoOverrides:Record<string,{title:string;description:string}>={
     description:"Sazan için konserve ve kuru mısır hazırlama; tane kıvamı, kontrollü haşlama, iğne açıklığı, saçlı takım ve güvenli saklama adımları."
   }
 };
-const seoOverride=seoOverrides[normalizedPath];
+const seoOverride=seoDemandTargets[normalizedPath] || seoOverrides[normalizedPath];
 const effectiveTitle=seoOverride?.title||title;
 const effectiveDescription=seoOverride?.description||description;
 const pageUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;

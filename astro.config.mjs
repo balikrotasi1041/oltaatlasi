@@ -5,10 +5,12 @@ import { baliklar, balikContentUpdatedAt } from "./src/data/baliklar.ts";
 import { rehberler } from "./src/data/rehber-katalogu.ts";
 import { dunyaBalikcilikYazilari } from "./src/data/dunya-balikcilik.ts";
 import { slugifyTr } from "./src/utils/slug.ts";
+import { seoDemandTargets } from "./src/data/seo-demand-targets.ts";
 
 const site = process.env.PUBLIC_SITE_URL || "https://oltaatlasi.com";
 const nonIndexablePaths = new Set(["/404/", "/admin/dashboard/", "/admin/seo-radar/", "/admin/traffic-diagnostics/", "/admin/growth-control/"]);
 const lastModifiedByPath = new Map();
+const sitemapPriorityByPath = new Map();
 const latestDate = (routes) => routes.map((route) => route.updatedAt).filter(Boolean).sort().at(-1);
 const rememberLastModified = (pathname, routes) => {
   const value = latestDate(routes);
@@ -19,12 +21,14 @@ for (const route of meralar) {
   const pathname = `/meralar/${route.slug}/`;
   rememberLastModified(pathname, [route]);
   if (route.confidence === "D") nonIndexablePaths.add(pathname);
+  else sitemapPriorityByPath.set(pathname, seoDemandTargets[pathname]?.priority || (route.confidence === "A" ? 0.9 : route.confidence === "B" ? 0.8 : 0.7));
 }
 
 for (const province of [...new Set(meralar.map((route) => route.province))]) {
   const provinceRoutes = meralar.filter((route) => route.province === province);
   const provincePath = `/iller/${slugifyTr(province)}/`;
   rememberLastModified(provincePath, provinceRoutes);
+  sitemapPriorityByPath.set(provincePath, seoDemandTargets[provincePath]?.priority || 0.8);
 
   for (const district of [...new Set(provinceRoutes.map((route) => route.district))]) {
     const districtRoutes = provinceRoutes.filter((route) => route.district === district);
@@ -33,6 +37,7 @@ for (const province of [...new Set(meralar.map((route) => route.province))]) {
     rememberLastModified(districtPath, districtRoutes);
     const verifiedDistrictRoutes = districtRoutes.filter((route) => route.confidence !== "D");
     if (district === "İl geneli" || verifiedDistrictRoutes.length < 2) nonIndexablePaths.add(districtPath);
+    else sitemapPriorityByPath.set(districtPath, 0.65);
   }
 }
 
@@ -58,8 +63,10 @@ export default defineConfig({
   integrations: [sitemap({
     filter: (page) => !nonIndexablePaths.has(new URL(page).pathname),
     serialize: (item) => {
-      const lastmod = lastModifiedByPath.get(new URL(item.url).pathname);
-      return lastmod ? { ...item, lastmod } : item;
+      const pathname = new URL(item.url).pathname;
+      const lastmod = lastModifiedByPath.get(pathname);
+      const priority = sitemapPriorityByPath.get(pathname);
+      return { ...item, ...(lastmod ? { lastmod } : {}), ...(priority ? { priority, changefreq: priority >= 0.9 ? "weekly" : "monthly" } : {}) };
     },
   })],
   output: "static",

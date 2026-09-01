@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { meralar } from "../src/data/meralar-tumu.ts";
 import { ankara500KmCandidates, ankara500KmExpansionMeta, yeniMeralarAnkara500Km20260817 } from "../src/data/meralar-ankara-500km-2026-08-17.ts";
+import { promoted20260901Stage2 } from "../src/data/meralar-daily-quality-2026-09-01-stage2.ts";
 
 const errors=[];
 const prefix="ankara-500km-";
@@ -14,6 +15,7 @@ const generic=new Set("baraj baraji cayi dere deresi gol golu golet goleti irmak
 const identity=(route)=>normalize(route.name).split(/\s+/).filter((token)=>token.length>2&&!generic.has(token)).sort().join("|");
 const duplicate=(values)=>[...new Set(values.filter((value,index)=>values.indexOf(value)!==index))];
 const banned=/ön değerlendirme|\btaslak\b|pilot veri/i;
+const evidencePromotions=new Set(promoted20260901Stage2);
 
 if(expectedProvinces.length!==58)errors.push(`Kapsam il sayısı 58 yerine ${expectedProvinces.length}.`);
 if(new Set(expectedProvinces).size!==expectedProvinces.length)errors.push("Kapsam listesinde yinelenen il var.");
@@ -34,12 +36,20 @@ const olderExact=new Set(olderRoutes.map((route)=>`${route.province}|${normalize
 const olderIdentity=new Set(olderRoutes.map((route)=>`${route.province}|${identity(route)}`).filter((value)=>!value.endsWith("|")));
 for(const route of newRoutes){
   const text=JSON.stringify(route);
+  const promoted=evidencePromotions.has(route.slug);
   if(olderExact.has(`${route.province}|${normalize(route.name)}`))errors.push(`${route.slug}: mevcut rota adıyla birebir çakışıyor.`);
   if(olderIdentity.has(`${route.province}|${identity(route)}`))errors.push(`${route.slug}: mevcut su kimliğiyle olası tekrar.`);
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.slug))errors.push(`${route.slug}: canonical slug biçimi geçersiz.`);
-  if(route.publishedAt!=="2026-08-17"||route.updatedAt!=="2026-08-17"||route.researchedAt!=="2026-08-17")errors.push(`${route.slug}: tarih alanları paket tarihiyle uyuşmuyor.`);
-  if(route.confidence!=="D"||route.confidenceProfile?.overall!=="D")errors.push(`${route.slug}: doğrulanmamış alanlara rağmen Güven D değil.`);
-  if(route.confidenceProfile?.legal.level!=="unverified"||route.confidenceProfile?.access.level!=="unverified"||route.confidenceProfile?.species.level!=="unverified"||route.confidenceProfile?.field.level!=="unverified")errors.push(`${route.slug}: kanıt boyutları ihtiyatlı sınıflandırılmamış.`);
+  if(route.publishedAt!=="2026-08-17")errors.push(`${route.slug}: ilk yayın tarihi paket tarihiyle uyuşmuyor.`);
+  if(promoted){
+    if(route.updatedAt!=="2026-09-01"||route.researchedAt!=="2026-09-01")errors.push(`${route.slug}: kanıt yükseltme tarihi 2026-09-01 değil.`);
+    if(route.confidence!=="C"||route.confidenceProfile?.overall!=="C")errors.push(`${route.slug}: kanıt yükseltmesi Güven C olarak işlenmemiş.`);
+    if(route.confidenceProfile?.legal.level!=="partial"||route.confidenceProfile?.access.level!=="partial"||route.confidenceProfile?.species.level!=="strong"||route.confidenceProfile?.field.level!=="unverified")errors.push(`${route.slug}: yükseltilen kanıt boyutları C profiliyle uyuşmuyor.`);
+  }else{
+    if(route.updatedAt!=="2026-08-17"||route.researchedAt!=="2026-08-17")errors.push(`${route.slug}: tarih alanları paket tarihiyle uyuşmuyor.`);
+    if(route.confidence!=="D"||route.confidenceProfile?.overall!=="D")errors.push(`${route.slug}: doğrulanmamış alanlara rağmen Güven D değil.`);
+    if(route.confidenceProfile?.legal.level!=="unverified"||route.confidenceProfile?.access.level!=="unverified"||route.confidenceProfile?.species.level!=="unverified"||route.confidenceProfile?.field.level!=="unverified")errors.push(`${route.slug}: kanıt boyutları ihtiyatlı sınıflandırılmamış.`);
+  }
   if(route.locationPrecision!=="Genel bölge")errors.push(`${route.slug}: konum hassasiyeti Genel bölge değil.`);
   const hasCoordinates=Number.isFinite(route.lat)&&Number.isFinite(route.lng);
   if(hasCoordinates&&(route.lat<34.5||route.lat>43.5||route.lng<24.5||route.lng>46.5))errors.push(`${route.slug}: koordinat Türkiye sınır kutusu dışında.`);
