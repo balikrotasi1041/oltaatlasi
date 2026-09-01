@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-01",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-09-01",
   "done": false,
   "research": {
@@ -12,7 +12,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Güncel main'de D meraların noindex/follow ve sitemap dışı politikası doğrulandı. Repodaki en son somut Search Console fırsat seti 23 Ağustos exportudur (veri 21 Ağustos'a kadar): konum/yol tarifi niyetli, 3-15 pozisyon ve düşük CTR sinyali önceliklendirmede yeniden kullanıldı. Sadece eski snapshot'a dayanarak confidence yükseltilmeyecek; rota-özel kanıt zorunlu.",
+    "searchConsoleNotes": "Güncel main'de D meraların noindex/follow ve sitemap dışı politikası doğrulandı. Repodaki en son somut Search Console fırsat seti 23 Ağustos exportudur (veri 21 Ağustos'a kadar): konum/yol tarifi niyetli, 3-15 pozisyon ve düşük CTR sinyali önceliklendirmede yeniden kullanıldı. Sadece eski snapshot'a dayanarak confidence yükseltilmedi; rota-özel kanıt zorunlu tutuldu.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -54,10 +54,10 @@
     ]
   },
   "stage2": {
-    "status": "in_progress",
+    "status": "completed",
     "targetPromotions": 17,
-    "promotedCount": 8,
-    "promotedThisRun": [
+    "promotedCount": 17,
+    "promotedPreviousRuns": [
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
       "ulusal-ardahan-kura-nehri-ardahan-hatti",
@@ -67,11 +67,32 @@
       "ulusal-van-zernek-baraj-golu",
       "ankara-500km-adiyaman-ataturk-baraj-golu"
     ],
-    "heldAfterResearch": [
+    "promotedThisRun": [
       "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+      "ulusal-eskisehir-catoren-baraj-golu",
+      "ulusal-eskisehir-gokcekaya-baraj-golu",
+      "ankara-500km-ankara-mogan-golu",
+      "ulusal-malatya-boztepe-baraj-golu-malatya",
+      "ulusal-malatya-kapikaya-baraj-golu-malatya",
+      "ankara-500km-eskisehir-yayikli-goleti",
+      "ankara-500km-eskisehir-ozdenk-goleti"
+    ],
+    "additionalReviewedSlugs": [
+      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
+      "ulusal-bolu-golkoy-baraj-golu",
+      "ulusal-eskisehir-catoren-baraj-golu",
+      "ulusal-eskisehir-gokcekaya-baraj-golu",
+      "ankara-500km-ankara-mogan-golu",
+      "ulusal-malatya-boztepe-baraj-golu-malatya",
+      "ulusal-malatya-kapikaya-baraj-golu-malatya",
+      "ankara-500km-eskisehir-yayikli-goleti",
+      "ankara-500km-eskisehir-ozdenk-goleti",
+      "ulusal-eskisehir-porsuk-baraj-golu"
+    ],
+    "heldAfterResearch": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-erzurum-demirdoven-baraj-golu",
-      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-sivas-delice-baraj-golu-sivas",
       "ulusal-bayburt-lori-deresi",
@@ -81,9 +102,14 @@
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
-      "ankara-500km-adiyaman-cataltepe-goleti"
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-eskisehir-porsuk-baraj-golu"
     ],
-    "notes": "Sekiz kayıt gerçek D→C olarak kodlandı. Her birinde rota kimliği + tür olasılığı için rota-özel resmî/akademik kanıt ve güncel mevzuat çerçevesi eklendi; mikro erişim/park kesinleştirilmedi. Tercan'daki kafes yetiştiriciliği doğal amatör av tür kanıtı sayılmadı; diğer zayıf adaylar kota uğruna yükseltilmedi. 17 hedefe ulaşılmadığı için stage=2 ve done=false korunuyor."
+    "notCountedAlreadyCPlus": [
+      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
+      "ulusal-bolu-golkoy-baraj-golu"
+    ],
+    "notes": "17 benzersiz kayıt gerçek D→C olarak günlük dalda kodlandı. Bu çalıştırmada dokuz ek D kayıt rota-özel resmî/akademik/yerel kanıtla eşiği geçti. Tercan ve Kemaliye'de doğrudan akademik balık verisi; Çatören/Gökçekaya'da resmî stok ve akademik çalışmalar; Mogan'da kamusal park + akademik fauna; Boztepe/Kapıkaya'da resmî balıklandırma/rekreasyon ve güvenlik; Yayıklı/Özdenk'te rota-özel resmî balıklandırma kullanıldı. Pertek ve Gölköy zaten C+ olduğu için günlük D→C kotasına yazılmadı. Porsuk il/ilçe kimliği ve hassas kullanım bağlamı yeterince netleşmeden yükseltilmedi. Mikro erişim, park veya özel mülkiyet kesinleştirilmedi; genel bölge/planlama hassasiyeti ve risk uyarıları korundu."
   },
   "promotedSlugs": [
     "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
@@ -93,7 +119,16 @@
     "ulusal-aksaray-ciftevi-baraj-golu",
     "ulusal-bolu-caykoy-baraj-golu-bolu",
     "ulusal-van-zernek-baraj-golu",
-    "ankara-500km-adiyaman-ataturk-baraj-golu"
+    "ankara-500km-adiyaman-ataturk-baraj-golu",
+    "ulusal-erzincan-tercan-baraj-golu",
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+    "ulusal-eskisehir-catoren-baraj-golu",
+    "ulusal-eskisehir-gokcekaya-baraj-golu",
+    "ankara-500km-ankara-mogan-golu",
+    "ulusal-malatya-boztepe-baraj-golu-malatya",
+    "ulusal-malatya-kapikaya-baraj-golu-malatya",
+    "ankara-500km-eskisehir-yayikli-goleti",
+    "ankara-500km-eskisehir-ozdenk-goleti"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
