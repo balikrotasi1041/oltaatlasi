@@ -1,18 +1,18 @@
 {
   "version": 1,
-  "date": "2026-08-26",
+  "date": "2026-09-01",
   "timezone": "Europe/Istanbul",
   "stage": 2,
-  "branch": "quality/daily-2026-08-26",
+  "branch": "quality/daily-2026-09-01",
   "done": false,
   "research": {
-    "mainShaAtStart": "e11145f6820ad28ebd352ba5b3ff3cc5792c7c1e",
+    "mainShaAtStart": "221e6cfa7b633edb9e176977ba64eb8c74d0fad6",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki 18 ve 23 Ağustos Search Console fırsat setleri yeniden kullanıldı; konum/yol tarifi niyetinde 3-15 pozisyon ve düşük CTR sinyalleri D aday önceliğine eklendi. Özellikle Kırıkkale Kızılırmak-Yahşihan, Destek ve Çiftevi geçmiş GSC verisinde düşük CTR/3-15 pozisyon bandındadır; emekliye ayrılmış rotalar dışarıda tutuldu.",
+    "searchConsoleNotes": "Güncel main'de D meraların noindex/follow ve sitemap dışı politikası doğrulandı. Repodaki en son somut Search Console fırsat seti 23 Ağustos exportudur (veri 21 Ağustos'a kadar): konum/yol tarifi niyetli, 3-15 pozisyon ve düşük CTR sinyali önceliklendirmede yeniden kullanıldı. Sadece eski snapshot'a dayanarak confidence yükseltilmeyecek; Aşama 2'de rota-özel kanıt zorunlu.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -45,8 +45,8 @@
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
       "ulusal-ardahan-kura-nehri-ardahan-hatti",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-erzincan-tercan-baraj-golu",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-artvin-borcka-baraj-golu",
       "ulusal-aksaray-ciftevi-baraj-golu"
     ],
@@ -70,26 +70,40 @@
       "ulusal-erzurum-olur-baraj-golu",
       "ulusal-van-zernek-baraj-golu"
     ],
+    "dEvidenceNotes": [
+      {"slug":"ulusal-kastamonu-cigdem-baraj-golu-kastamonu","families":["resmi-kaymakamlik/DSI","yerel-kurumsal"],"status":"priority","note":"Devrekani Kaymakamlığı gölet kimliğini, in balığı/tatlısu kefali kaydını ve sonradan pullu/aynalı sazan ekimini rota özelinde veriyor; Aşama 2'de güncel mevzuat/erişim ikinci bağımsız aile ile tamamlanacak."},
+      {"slug":"ulusal-erzincan-karasu-nehri-erzincan-hatti","families":["resmi-valilik/kalkinma","akademik-universite"],"status":"priority","note":"Karasu ana su kimliği ve ekolojik bağlam resmî kaynaklarda; rota-özel tür örneklemeleri akademik aileden çaprazlanacak."},
+      {"slug":"ulusal-ardahan-kura-nehri-ardahan-hatti","families":["akademik-universite","resmi-yerel"],"status":"priority","note":"Ardahan Üniversitesi ihtiyofauna çalışması Kura ana kolunda doğrudan çoklu tür örnekliyor; güncel erişim/hukuk ikinci aile ile tamamlanacak."},
+      {"slug":"ulusal-erzincan-tercan-baraj-golu","families":["resmi-kaymakamlik","resmi-tarim","yerel-turizm"],"status":"priority","note":"Kaymakamlık baraj kimliği/konumunu, İl Tarım kafes alabalık yetiştiriciliğini doğruluyor; yetiştiricilik sahası amatör av noktası sayılmayacak."},
+      {"slug":"ulusal-hakkari-zap-suyu-hakkari-hatti","families":["resmi-kultur/valilik","akademik"],"status":"priority","note":"Zap su kimliği ve kamusal rekreasyon bağlamı güçlü; mikro kıyı ve tür kanıtı tamamlanmadan yükseltilmeyecek."},
+      {"slug":"ulusal-artvin-borcka-baraj-golu","families":["resmi-DSI/Tarim","akademik-tez"],"status":"priority","note":"Baraj kimliği resmî, yayın balığına ilişkin akademik örnekleme güçlü; güvenlik/işletme sahaları dışarıda tutularak erişim kanıtı tamamlanmalı."},
+      {"slug":"ulusal-aksaray-ciftevi-baraj-golu","families":["resmi","akademik/yerel"],"status":"priority","note":"Önceki taramada rota-özel kaynaklar bulundu; Aşama 2'de güncel erişim ve tür aileleri yeniden doğrulanacak."}
+    ],
     "newCandidatesReviewed": 8,
     "newCandidates": [
-      {"name":"Borçka Baraj Gölü","province":"Artvin","status":"reject-duplicate","note":"Akademik yayın balığı kanıtı güçlü; ancak mevcut ulusal-artvin-borcka-baraj-golu kaydı bulundu."},
-      {"name":"Demirözü Barajı","province":"Bayburt","status":"reject-duplicate","note":"Kaymakamlık erişim/turizm ve mevcut resmî balıklandırma katmanı güçlü; sitede zaten Güven B kayıt var."},
-      {"name":"Tercan Baraj Gölü","province":"Erzincan","status":"reject-duplicate","note":"Kaymakamlık kimlik kaydı ve 2025 İl Tarım alabalık üretim kaydı bulundu; sitede mevcut Güven D kayıt var."},
-      {"name":"Zernek Baraj Gölü","province":"Van","status":"reject-duplicate","note":"Sitede mevcut Güven D kayıt tespit edildi; yeni rota sayılmaz."},
-      {"name":"Gayt Barajı","province":"Bingöl","status":"reject-duplicate","note":"DSİ resmî baraj kimliği bulundu; sitede mevcut Güven D kayıt tespit edildi."},
-      {"name":"Süreyyabey (Çekerek) Barajı genel kıyı","province":"Tokat/Yozgat sınırı","status":"hold","note":"DSİ/Tarım havza planında resmî kimlik ve balık geçişi-tür restorasyonu bağlamı bulundu; rota-özel kamusal amatör kıyı ve ikinci bağımsız tür/erişim ailesi tamamlanmadan yayımlanmayacak."},
-      {"name":"Arpaçay Baraj Gölü genel kıyı","province":"Kars","status":"hold","note":"Yeni aday olarak duplicate ve güvenlik/erişim taramasında tutuldu; en az iki bağımsız rota-özel kaynak ailesi tamamlanmadan Aşama 3 havuzuna alınmayacak."},
-      {"name":"Hazar Gölü kamusal genel kıyı alternatifi","province":"Elazığ","status":"hold","note":"Akademik tür literatürü ve yerel rekreasyon kaynak ailesi araştırma hattına alındı; mevcut rota/koruma/özel işletme çakışması temizlenmeden yeni slug üretilmeyecek."}
+      {"name":"Gelingüllü Barajı genel kamusal kıyı","province":"Yozgat","status":"hold-ecology","families":["DSI","Yozgat Valiligi/CSB"],"note":"DSİ su kimliğini ve sulak alan/flamingo önemini doğruluyor; hassas kuş yaşam alanları nedeniyle mikro-konum yayımlanmayacak. Tür ve güvenli amatör kıyı kanıtı tamamlanmadan aday yayınlanmaz."},
+      {"name":"Kapulukaya Barajı Sulubük genel kıyı","province":"Kırıkkale","status":"hold","families":["Kultur Portali","Iletisim/yerel kamu"],"note":"Baraj ve Sulubük kıyısında kamusal etkinlik bağlamı var; rota-özel tür ve güncel amatör kullanım kanıtı eksik."},
+      {"name":"Menzelet Barajı Bulutoğlu genel kıyı","province":"Kahramanmaraş","status":"hold","families":["DSI","MEB/Kultur"],"note":"DSİ baraj/HES kimliği ve Bulutoğlu mesire yolu kamusal bağlamı doğrulanıyor; HES/işletme sahalarından uzak güvenli kıyı ve tür kanıtı tamamlanmalı."},
+      {"name":"Çamlıgöze Barajı genel kıyı","province":"Sivas","status":"hold-aquaculture","families":["Susehri Kaymakamligi","Sivas Il Tarim"],"note":"Baraj kimliği ve yoğun kafes yetiştiriciliği doğrulandı; kafes/işletme sahaları amatör mera sayılmayacak. Bağımsız doğal tür ve kamusal erişim kanıtı aranacak."},
+      {"name":"Karakaya Barajı Kale genel kıyı","province":"Malatya","status":"hold","families":["Kale Kaymakamligi","yerel turizm/koruma"],"note":"Baraj ve turizm bağlamı güçlü; HES, feribot/işletme ve koruma alanları ayrıştırılmadan mikro rota oluşturulmayacak."},
+      {"name":"Keban Barajı Korulu genel kıyı","province":"Elazığ","status":"hold","families":["Keban Kaymakamligi","Il Kultur/DSI"],"note":"Baraj kimliği ve tarihsel av sezonu/kamusal etkinlik kaydı var; 2019 kaydı güncel izin yerine geçmez. 2026 mevzuat ve kıyı erişimi yeniden doğrulanmalı."},
+      {"name":"Kesikköprü Barajı Bala genel kıyı","province":"Ankara","status":"reject-sensitive-water-supply","families":["Bala Kaymakamligi","ASKI/e-Devlet"],"note":"Ankara içme suyu sisteminde aktif kaynak/aktarım rolü doğrulandı; içme suyu ve tesis güvenliği nedeniyle yeni mera adayı olarak ileri taşınmıyor."},
+      {"name":"Almus Barajı genel kıyı alternatifi","province":"Tokat","status":"reject-duplicate","families":["Almus Kaymakamligi","Tokat Valiligi"],"note":"Kaymakamlık kıyı koyları ve rekreasyon bağlamını, Valilik 2023 sazan balıklandırmasını doğruluyor; ancak sitede ulusal-tokat-almus-baraj-golu mevcut olduğu için yeni slug üretilmeyecek."}
     ],
-    "sourceFamiliesSearched": ["resmi-DSI/Tarim/Kaymakamlik", "akademik-YOK/DergiPark/universite", "yerel-kurumsal", "ikincil-acik-harita/site-duplicate"],
+    "sourceFamiliesSearched": [
+      "resmi-Tarim/DSI/Valilik/Kaymakamlik/CSB/Kultur",
+      "akademik-DergiPark/universite/acik-arsiv/tez",
+      "yerel-kurumsal-kalkinma/mesire/turizm",
+      "ikincil-acik-harita-yalniz-destek"
+    ],
     "freshFindings": [
-      "Çiğdem Göleti için Devrekani Kaymakamlığı su kimliği, in balığı/tatlısu kefali ve sonradan sazan ekimini birlikte doğruluyor.",
-      "Ardahan Üniversitesi ihtiyofauna çalışması Kura ana kolunda çoklu türleri doğrudan örnekliyor.",
-      "Erzincan Karasu yan kolları çalışması 12 türü akademik örneklemeyle kaydediyor.",
-      "Hakkari su kaynakları çalışması il bağlamında sazan ve alabalık avcılığını destekliyor; Zap mikro-kıyı erişimini tek başına doğrulamıyor.",
-      "Borçka Baraj Gölü için YÖK açık bilim tezinde 156 yayın balığı örneklenmiş; tür kanıtı güçlü fakat rota zaten mevcut.",
-      "Tercan Barajı için Kaymakamlık kimlik kaydı ve 30.04.2025 İl Tarım kafes alabalık kaydı var; yetiştiricilik sahası amatör av noktası sayılmayacak.",
-      "Süreyyabey için Yeşilırmak havza planında balık geçişi kaynaklı tür kaybı/restorasyon tedbiri var; bu tek başına amatör kıyı izni değildir."
+      "Devrekani Kaymakamlığı Çiğdem Göleti için in balığı ve tatlısu kefali tespiti ile sonradan pullu/aynalı sazan ekimini doğrudan kaydediyor.",
+      "Ardahan Üniversitesi ihtiyofauna çalışması Kura Nehri ana kolunda türleri doğrudan örnekliyor.",
+      "Tercan Kaymakamlığı barajı Tercan'ın yaklaşık 5 km güneydoğusunda tanımlıyor; İl Tarım 2024'te 8 işletme/150 kafeste alabalık yetiştiriciliğini kaydediyor. Bu, doğal amatör av alanı kanıtı değildir.",
+      "Gelingüllü Barajı DSİ tarafından yapay sulak alan ve yoğun flamingo yaşam alanı olarak tanımlandığından hassas mikro-konum yayımlama riski taşıyor.",
+      "Çamlıgöze Barajı Suşehri Kaymakamlığınca HES olarak doğrulanıyor; İl Tarım 2024'te 5 kafes tesis ve 4.250 ton/yıl yetiştiricilik kapasitesi bildiriyor.",
+      "Kesikköprü ASKİ'nin Ankara içme suyu sistemine su aktarım kaynağıdır; yeni mera adaylığında ihtiyat gerektirir.",
+      "Almus Valiliğin 13.09.2023 kaydında 800 bin yavru sazanla balıklandırılmıştır; ancak mevcut slug nedeniyle yeni mera sayılmaz."
     ]
   },
   "promotedSlugs": [],
