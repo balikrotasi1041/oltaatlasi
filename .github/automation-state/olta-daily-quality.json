@@ -4,7 +4,7 @@
   "timezone": "Europe/Istanbul",
   "stage": 4,
   "branch": "quality/daily-2026-09-01",
-  "done": false,
+  "done": true,
   "research": {
     "mainShaAtStart": "221e6cfa7b633edb9e176977ba64eb8c74d0fad6",
     "schemaAndPolicyChecked": true,
@@ -43,12 +43,15 @@
     "notes":"MGM 1 Eylül günlük/bölgesel ve deniz tahminleri erişilebilir durumdaydı ve ulusal rapor güncel meteorolojik uyarı bulunmadığını bildirdi. Doğu Anadolu'nun doğusu ile Orta/Doğu Karadeniz için sağanak/gök gürültülü sağanak, denizlerde fırtına beklenmediği; Karadeniz ve Van Gölü için yağışlı deniz/göl koşulları kaydedildi. Çalışma ortamı canlı /api/weather noktasal yanıtlarını okuyamadığı için sıcaklık-rüzgâr-yağış/hadise model karşılaştırması tamamlanamadı; weather-official-audit.json bu nedenle pending ve resmi teyit iddiası üretmiyor."
   },
   "stage4": {
-    "status":"local_passed",
+    "status":"completed",
     "seo":"Talep Hasadı kuyruğu eklendi: >=50 gösterim, 3-15 pozisyon ve <%2 CTR eşiği; yüksek talep rotalarında özgün title/meta, sitemap önceliği ve iç bağlantı önceliği merkezi veriyle yönetiliyor.",
     "indexing":"D rotalar noindex,follow ve sitemap dışı; 215 C+ rota indekslenebilir; sitemap 414 URL. Talep hedefleri ve öncelikleri build sırasında doğrulanıyor.",
     "security":"Exploit-path taramaları davranışsal 15/dk limite bağlandı. 148.251.126.195, 195.178.110.22 ve 216.244.66.233 kör blok yerine kontrollü throttle altında; Google/OAI bot aralıklarına dokunulmadı.",
     "qualityGate":"npm run build, npm run validate:security, npm run deploy:dry ve git diff --check başarılı. 1420 rota bakım taramasında 0 hata/0 uyarı; indeks politikası 0 hata.",
     "stage2Corrections":"Önceki yükseltmelerde kalan 6 koordinatsız C rota genel-konum notlarıyla düzeltildi; 11 eski Güven D anlatısı C kanıt seviyesine uygun biçimde yenilendi. Mikro erişim/park/kıyı iddiası eklenmedi."
   },
-  "ci":{"status":"local_passed","remote":"pending_push"},"pr":null,"merge":null,"deploy":{"status":"dry_run_passed","production":"pending_merge"}
+  "ci":{"status":"success","qualityGateRun":1054,"qualityCheckRun":979},
+  "pr":{"number":127,"url":"https://github.com/balikrotasi1041/oltaatlasi/pull/127","status":"merged"},
+  "merge":{"method":"squash","sha":"e40b97ae6d9cd525d050e6de19879a7544f4de70"},
+  "deploy":{"status":"success","production":"verified","verifiedAt":"2026-09-02T00:31:39+03:00","checks":"GitHub production/cloudflare success; ana sayfa 200; robots.txt güncel; Kızıldamlar talep başlığı canlı; yeni C rota 200/indexlenebilir; örnek D rota noindex,follow; backup.zip 404; yönetim radarı 401/noindex."}
 }
