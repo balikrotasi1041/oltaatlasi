@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { meralar } from "../src/data/meralar-tumu.ts";
 import { slugifyTr } from "../src/utils/slug.ts";
+import { seoDemandTargets } from "../src/data/seo-demand-targets.ts";
 import { NOINDEX_PATHS } from "../worker/index-policy-routes.js";
 
 const errors=[];
@@ -24,6 +25,8 @@ const readCanonical=(html)=>html.match(/<link[^>]+rel="canonical"[^>]+href="([^"
 const readMeta=(html,name)=>html.match(new RegExp(`<meta[^>]+name="${name}"[^>]+content="([^"]+)"`,`i`))?.[1]
   ||html.match(new RegExp(`<meta[^>]+content="([^"]+)"[^>]+name="${name}"`,`i`))?.[1]
   ||"";
+const decodeHtml=(value)=>String(value||"").replaceAll("&#39;","'").replaceAll("&amp;","&").replaceAll("&quot;",'"');
+const readTitle=(html)=>decodeHtml(html.match(/<title>([^<]+)<\/title>/i)?.[1]||"");
 const htmlFiles=(directory)=>readdirSync(directory,{withFileTypes:true}).flatMap((entry)=>{
   const path=`${directory}/${entry.name}`;
   return entry.isDirectory()?htmlFiles(path):entry.isFile()&&entry.name==="index.html"?[path]:[];
@@ -34,6 +37,7 @@ const pathnameForHtml=(path)=>{
 };
 const sitemapUrls=[...normalSitemapXml.matchAll(/<loc>(https:\/\/oltaatlasi\.com\/[^<]*)<\/loc>/g)].map((match)=>match[1]);
 const sitemapUrlSet=new Set(sitemapUrls);
+const sitemapEntryFor=(url)=>normalSitemapXml.match(new RegExp(`<url><loc>${url.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}</loc>[\\s\\S]*?</url>`))?.[0]||"";
 for(const url of sitemapUrls){
   const htmlPath=htmlPathFor(url);
   if(!existsSync(htmlPath)){errors.push(`${url}: normal sitemap URL'sinin derlenmiş HTML karşılığı yok.`);continue;}
@@ -77,6 +81,20 @@ for(const path of htmlFiles("dist")){
 for(const [canonical,owners] of canonicalOwners){
   const indexableOwners=owners.filter((pathname)=>!recordsByPath.get(pathname)?.noindex);
   if(indexableOwners.length>1)errors.push(`${canonical}: aynı canonical değeri ${indexableOwners.join(", ")} indekslenebilir sayfalarında yineleniyor.`);
+}
+
+for(const [pathname,target] of Object.entries(seoDemandTargets)){
+  const record=recordsByPath.get(pathname);
+  if(!record){errors.push(`${pathname}: talep hasadı hedefinin derlenmiş sayfası yok.`);continue;}
+  if(record.noindex)errors.push(`${pathname}: talep hasadı hedefi yanlışlıkla noindex.`);
+  if(readTitle(record.html)!==`${target.title} | Olta Atlası`)errors.push(`${pathname}: talep hasadı title değeri hedefle eşleşmiyor.`);
+  if(readMeta(record.html,"description")!==target.description)errors.push(`${pathname}: talep hasadı meta açıklaması hedefle eşleşmiyor.`);
+  const entry=sitemapEntryFor(record.url);
+  if(!entry)errors.push(`${pathname}: talep hasadı hedefi sitemap içinde yok.`);
+  else {
+    const actualPriority=Number(entry.match(/<priority>([^<]+)<\/priority>/)?.[1]);
+    if(!Number.isFinite(actualPriority)||Math.abs(actualPriority-target.priority)>0.001)errors.push(`${pathname}: sitemap önceliği ${target.priority} değil.`);
+  }
 }
 
 let nofollowNoindexLinks=0;

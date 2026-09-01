@@ -14,9 +14,14 @@ const BLOCKED_IPS = new Set([
   "45.45.237.65",
   "2a01:4f9:4a:2aa5::2",
   "123.6.49.44",
+]);
+// Veri merkezi/crawler adresleri doğrudan saldırgan sayılmaz. Meşru keşfi tamamen
+// kesmeden ani istek patlamaları sınırlandırılır; karar davranışa göre verilir.
+const THROTTLED_IPS = new Set([
+  "148.251.126.195",
+  "195.178.110.22",
   "216.244.66.233",
 ]);
-const THROTTLED_IPS = new Set([]);
 
 const SENSITIVE_SCAN_PATTERNS = [
   /^\/(?:(?:\$\([^/]{1,64}\)\/)?\.env|\.git(?:\/|$)|\.svn(?:\/|$)|\.hg(?:\/|$))/i,
@@ -37,13 +42,6 @@ const VERIFIED_BOT_HINTS = [
   "applebot",
   "yandexbot",
 ];
-
-const SEO_RUNTIME_OVERRIDES = new Map([
-  ["/meralar/bilecik-kizildamlar-baraj-goleti/", {
-    title: "Kızıldamlar Barajı Yol Tarifi ve Balık Avı",
-    description: "Bilecik Kızıldamlar Barajı yol tarifi ve balık avı planı: genel konum, sazan kaydı, zorlu son yaklaşım, kıyı riskleri ve güncel içsu kuralları.",
-  }],
-]);
 
 const securityResponse = (status, extraHeaders = {}) => new Response(null, {
   status,
@@ -101,21 +99,6 @@ const applyIndexPolicyHeaders = (response, pathname) => {
   headers.set("X-Robots-Tag", "noindex, follow, max-image-preview:large");
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 };
-const applyRuntimeSeo = (response, pathname) => {
-  const override=SEO_RUNTIME_OVERRIDES.get(normalizedIndexPath(pathname));
-  const contentType=String(response.headers.get("content-type")||"").toLowerCase();
-  if(!override||response.status!==200||!contentType.includes("text/html"))return response;
-  const fullTitle=`${override.title} | Olta Atlası`;
-  return new HTMLRewriter()
-    .on("title",{element(element){element.setInnerContent(fullTitle);}})
-    .on('meta[name="description"]',{element(element){element.setAttribute("content",override.description);}})
-    .on('meta[property="og:title"]',{element(element){element.setAttribute("content",fullTitle);}})
-    .on('meta[property="og:description"]',{element(element){element.setAttribute("content",override.description);}})
-    .on('meta[name="twitter:title"]',{element(element){element.setAttribute("content",fullTitle);}})
-    .on('meta[name="twitter:description"]',{element(element){element.setAttribute("content",override.description);}})
-    .transform(response);
-};
-
 export default {
   async fetch(request, env, ctx) {
     const ip = clientIp(request);
@@ -134,7 +117,11 @@ export default {
     }
 
     if (request.method === "TRACE") return securityResponse(405);
-    if (isSensitiveScanPath(url.pathname)) return securityResponse(404);
+    if (isSensitiveScanPath(url.pathname)) {
+      const throttled = await enforceRateLimit(env?.SUSPICIOUS_RATE_LIMITER, ip ? `probe:${ip}` : "", "exploit-path-probe");
+      if (throttled) return throttled;
+      return securityResponse(404);
+    }
 
     if (url.pathname === "/api/weather") {
       const throttled = await enforceRateLimit(env?.WEATHER_RATE_LIMITER, ip ? `weather:${ip}` : "", "weather-api");
@@ -149,7 +136,6 @@ export default {
 
     let response = await appWorker.fetch(request, env, ctx);
     response = applyIndexPolicyHeaders(response, url.pathname);
-    response = applyRuntimeSeo(response, url.pathname);
     return response;
   },
 };

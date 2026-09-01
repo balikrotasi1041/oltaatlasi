@@ -3,6 +3,7 @@ import { meralar, provinces, districtRouteCounts } from "../data/meralar-tumu";
 import { baliklar } from "../data/baliklar";
 import { rehberler } from "../data/rehber-katalogu";
 import { slugifyTr } from "../utils/slug";
+import { routeDemandPriority } from "../data/seo-demand-targets";
 
 type LinkItem={href:string;label:string;note:string};
 type IntentPanel={eyebrow:string;title:string;body:string;points:string[];links:LinkItem[]};
@@ -24,7 +25,7 @@ const uniqueLinks=(items:LinkItem[],limit=6)=>{
   return items.filter((item)=>item.href&&item.href!==normalizedPath&&!seen.has(item.href)&&seen.add(item.href)).slice(0,limit);
 };
 const confidenceScore:Record<string,number>={A:4,B:3,C:2,D:0};
-const strongRoutes=[...meralar].filter((route)=>route.confidence!=="D").sort((a,b)=>(confidenceScore[b.confidence]||0)-(confidenceScore[a.confidence]||0)||(b.updatedAt||b.publishedAt).localeCompare(a.updatedAt||a.publishedAt));
+const strongRoutes=[...meralar].filter((route)=>route.confidence!=="D").sort((a,b)=>routeDemandPriority(b.slug)-routeDemandPriority(a.slug)||(confidenceScore[b.confidence]||0)-(confidenceScore[a.confidence]||0)||(b.updatedAt||b.publishedAt).localeCompare(a.updatedAt||a.publishedAt));
 
 let panel:IntentPanel|null=null;
 const meraMatch=normalizedPath.match(/^\/meralar\/([^/]+)\/$/);

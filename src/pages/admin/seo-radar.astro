@@ -21,14 +21,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <div id="radar-error" class="notice error" hidden></div>
         <div class="summary" aria-live="polite">
           <article><span>Hızlı kazanım</span><strong id="quick-count">—</strong><small>4–15. sıra</small></article>
-          <article><span>CTR fırsatı</span><strong id="ctr-count">—</strong><small>gösterim var, tıklama zayıf</small></article>
+          <article><span>Talep hasadı</span><strong id="ctr-count">—</strong><small>50+ gösterim · 3–15. sıra · CTR &lt;%2</small></article>
           <article><span>İlk sayfa adayı</span><strong id="page-count">—</strong><small>sayfa bazında</small></article>
         </div>
       </section>
 
       <div class="grid">
         <section class="panel"><div class="heading"><div><p class="eyebrow dark">Öncelik 1</p><h2>Hızlı kazanım sorguları</h2></div><span>4–15. sıra</span></div><p class="intro">Google’ın zaten ilk sayfa çevresinde denediği sorgular. Başlık, giriş metni ve iç bağlantı iyileştirmeleri için ilk adaylar.</p><div id="quick-wins" class="list"><p class="muted">Yükleniyor…</p></div></section>
-        <section class="panel"><div class="heading"><div><p class="eyebrow dark">Öncelik 2</p><h2>CTR fırsatları</h2></div><span>yüksek gösterim</span></div><p class="intro">Google gösteriyor fakat tıklama oranı zayıf. Title, meta açıklaması ve arama niyeti uyumu kontrol edilmeli.</p><div id="ctr-opportunities" class="list"><p class="muted">Yükleniyor…</p></div></section>
+        <section class="panel"><div class="heading"><div><p class="eyebrow dark">Öncelik 2</p><h2>Talep hasadı kuyruğu</h2></div><span>yüksek gösterim · düşük CTR</span></div><p class="intro">Google'ın zaten gösterdiği mevcut URL'ler. Yeni sayfa açmadan title, açıklama, hızlı cevap, yol tarifi ve iç bağlantı katmanı güçlendirilir.</p><div id="ctr-opportunities" class="list"><p class="muted">Yükleniyor…</p></div></section>
       </div>
 
       <section class="panel"><div class="heading"><div><p class="eyebrow dark">Öncelik 3</p><h2>Güçlenen sayfalar</h2></div><span>ilk 15 sıra</span></div><p class="intro">Gösterim alan ve ilk 15 sıra içinde bulunan sayfalar. İçerik genişletme ve ilgili rota/rehber bağlantıları için adaydır.</p><div id="rising-pages" class="list wide"><p class="muted">Yükleniyor…</p></div></section>
@@ -44,8 +44,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     const errorBox=document.querySelector("#radar-error");
     const shortPage=(value)=>{try{return new URL(value).pathname||"/";}catch{return value||"/";}};
     const setText=(selector,value)=>{const node=document.querySelector(selector);if(node)node.textContent=value;};
-    const scoreQuery=(row)=>Number(row.impressions||0)*Math.max(1,16-Number(row.position||99));
-    const scorePage=(row)=>Number(row.impressions||0)*Math.max(1,16-Number(row.position||99));
+    const positionOpportunity=(position)=>Math.max(0,16-Number(position||99));
+    const opportunityScore=(row)=>Number(row.impressions||0)*positionOpportunity(row.position)*(1-Number(row.ctr||0));
+    const scoreQuery=(row)=>opportunityScore(row);
+    const scorePage=(row)=>Number(row.impressions||0)*Math.max(1,positionOpportunity(row.position));
     const empty=(container,text)=>{container.replaceChildren();const p=document.createElement("p");p.className="muted";p.textContent=text;container.appendChild(p);};
     const render=(selector,rows,type)=>{
       const container=document.querySelector(selector);if(!container)return;container.replaceChildren();
@@ -55,10 +57,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         const rank=document.createElement("span");rank.className="rank";rank.textContent=String(index+1);
         const body=document.createElement("div");
         const title=document.createElement("strong");title.textContent=type==="query"?(row.query||"Tanımsız sorgu"):shortPage(row.page);
-        const meta=document.createElement("small");meta.textContent=`${nf.format(row.impressions||0)} gösterim · ${nf.format(row.clicks||0)} tıklama · %${df.format(Number(row.ctr||0)*100)} CTR · ${df.format(row.position||0)} sıra`;
+        const meta=document.createElement("small");meta.textContent=`${nf.format(row.impressions||0)} gösterim · ${nf.format(row.clicks||0)} tıklama · %${df.format(Number(row.ctr||0)*100)} CTR · ${df.format(row.position||0)} sıra${type==="ctr"?` · fırsat ${nf.format(opportunityScore(row))}`:""}`;
         body.append(title,meta);
         const action=document.createElement("span");action.className="action";
-        if(type==="query") action.textContent=Number(row.position)<=10?"Başlık + snippet":"İç bağlantı + içerik";
+        if(type==="query") action.textContent=/yol tarifi|nerede|konum/i.test(row.query||"")?"Konum niyeti":Number(row.position)<=10?"Başlık + snippet":"İç bağlantı + içerik";
+        else if(type==="ctr") action.textContent="Talep hasadı";
         else action.textContent=Number(row.ctr||0)<0.03?"CTR iyileştir":"İçeriği güçlendir";
         item.append(rank,body,action);container.appendChild(item);
       });
@@ -70,11 +73,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         const payload=await response.json();if(!response.ok||!payload.connected)throw new Error(payload.error||"Search Console bağlantısı kurulamadı.");
         const queries=(payload.queries||[]).map((row)=>({...row,position:Number(row.position||0),impressions:Number(row.impressions||0),clicks:Number(row.clicks||0),ctr:Number(row.ctr||0)}));
         const pages=(payload.pages||[]).map((row)=>({...row,position:Number(row.position||0),impressions:Number(row.impressions||0),clicks:Number(row.clicks||0),ctr:Number(row.ctr||0)}));
-        const quick=queries.filter((row)=>row.impressions>=2&&row.position>=4&&row.position<=15).sort((a,b)=>scoreQuery(b)-scoreQuery(a)).slice(0,15);
-        const ctr=pages.filter((row)=>row.impressions>=3&&row.position<=15&&row.ctr<0.05).sort((a,b)=>b.impressions-a.impressions||a.ctr-b.ctr).slice(0,15);
+        const quick=queries.filter((row)=>row.impressions>=10&&row.position>=3&&row.position<=15).sort((a,b)=>scoreQuery(b)-scoreQuery(a)).slice(0,15);
+        const ctr=pages.filter((row)=>row.impressions>=50&&row.position>=3&&row.position<=15&&row.ctr<0.02).sort((a,b)=>opportunityScore(b)-opportunityScore(a)).slice(0,20);
         const rising=pages.filter((row)=>row.impressions>=2&&row.position<=15).sort((a,b)=>scorePage(b)-scorePage(a)).slice(0,20);
         setText("#quick-count",nf.format(quick.length));setText("#ctr-count",nf.format(ctr.length));setText("#page-count",nf.format(rising.length));
-        render("#quick-wins",quick,"query");render("#ctr-opportunities",ctr,"page");render("#rising-pages",rising,"page");
+        render("#quick-wins",quick,"query");render("#ctr-opportunities",ctr,"ctr");render("#rising-pages",rising,"page");
         if(status)status.textContent=`${payload.range.startDate} – ${payload.range.endDate} · ${payload.siteUrl}`;
       }catch(error){["#quick-count","#ctr-count","#page-count"].forEach((selector)=>setText(selector,"—"));["#quick-wins","#ctr-opportunities","#rising-pages"].forEach((selector)=>{const node=document.querySelector(selector);if(node)empty(node,"Veri yüklenemedi.");});if(status)status.textContent="Search Console bağlantısı bekleniyor.";if(errorBox){errorBox.hidden=false;errorBox.textContent=error instanceof Error?error.message:"Bilinmeyen hata.";}}
       finally{if(refresh)refresh.disabled=false;}

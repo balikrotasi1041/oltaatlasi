@@ -4,6 +4,7 @@ const teblig:ResearchSource={label:"6/2 Numaralı Amatör Amaçlı Su Ürünleri
 const uniq=(items:ResearchSource[])=>[...new Map(items.filter((s)=>s?.url).map((s)=>[s.url,s])).values()];
 
 type UpgradeNote={district?:string;researchSummary:string;verification:string;caution:string;navigationNote?:string};
+type GeneralLocation={lat:number;lng:number;note:string;source?:ResearchSource};
 
 export const promoted20260901Stage2=[
   "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
@@ -112,6 +113,17 @@ const notesBySlug:Record<string,UpgradeNote>={
   "ankara-500km-eskisehir-ozdenk-goleti":{district:"Alpu",researchSummary:"Özdenk Göleti Alpu resmî su yapısı kayıtlarında doğrulanır; 2022 İl Tarım balıklandırması pullu sazanı rota özelinde destekler ve programın amatör balıkçıların yararlanabileceği yetiştiriciliğe açılmamış kaynaklara yönelik olduğunu belirtir.",verification:"1 Eylül 2026: Eskişehir İl Tarımın 2018 il brifingi ile 2022 Özdenk sazan balıklandırma kaydı çaprazlandı. Genel bölge C seviyesine çıkarıldı; mikro kıyı, park, tarla geçişi ve güncel saha tabelası doğrulanmış sayılmaz.",caution:"Sulama göletinde su seviyesinin hızla değişmesi, çamurlu kıyı ve tarımsal mülkiyet/geçiş riski vardır; araçla doğrudan su kenarına yönlendirme yapılmaz."},
 };
 
+// Bunlar kıyı/park pini değil, yalnızca kaynakla eşleşen su veya yerleşim koridoru
+// merkezleridir. Kullanıcı arayüzünde "Genel bölge" olarak gösterilir.
+const generalLocationBySlug:Record<string,GeneralLocation>={
+  "ulusal-kastamonu-cigdem-baraj-golu-kastamonu":{lat:41.583617,lng:33.870807,note:"Çiğdem Göleti su gövdesinin harita merkezidir; kıyı girişi veya park noktası değildir.",source:{label:"Yandex Maps - Çiğdem Barajı genel su merkezi",url:"https://yandex.com.tr/maps/115892/devrekani/geo/cigdem_baraji/2525118513/",note:"Devrekâni Çiğdem su gövdesini 41.583617, 33.870807 genel merkez koordinatıyla gösterir; mikro erişim kanıtı değildir."}},
+  "ulusal-aksaray-ciftevi-baraj-golu":{lat:38.835697,lng:34.023772,note:"Koordinat Çiftevi yerleşim merkezidir; iki göletten herhangi birinin kıyı girişi veya park noktası olarak kullanılmamalıdır.",source:{label:"Yandex Maps - Çiftevi Köyü genel merkez",url:"https://yandex.com.tr/harita/104675/ortakoy/geo/ciftevi_koyu/4996571766/",note:"Çiftevi yerleşimini 38.835697, 34.023772 ile doğrular; gölet kıyısı ve erişim yolu kanıtı değildir."}},
+  "ulusal-bolu-caykoy-baraj-golu-bolu":{lat:40.272107,lng:30.759465,note:"Çayköy Göleti su gövdesinin harita merkezidir; güvenli kıyı, araç girişi veya park noktası değildir.",source:{label:"Yandex Maps - Çayköy Göleti genel su merkezi",url:"https://yandex.com.tr/maps/108058/goynuk/geo/caykoy_goleti/2525108898/",note:"Göynük/Bayındır çevresindeki Çayköy Göletini 40.272107, 30.759465 genel merkez koordinatıyla gösterir; mikro erişim kanıtı değildir."}},
+  "ulusal-ardahan-kura-nehri-ardahan-hatti":{lat:41.115883,lng:42.700961,note:"Koordinat Kura'nın Ardahan merkez koridorundaki temsilî nehir noktasıdır; av yeri, kıyı girişi veya park noktası değildir.",source:{label:"Wikimedia Commons - Ardahan Kura Nehri konumlu fotoğraf",url:"https://commons.wikimedia.org/wiki/File:Kura_nehri_ardahan_11_2011.jpg",note:"Ardahan merkez koridorundaki Kura Nehri için konumlu görsel kaydı sağlar; kamusal kıyı/av izni kanıtı değildir."}},
+  "ulusal-erzincan-karasu-nehri-erzincan-hatti":{lat:39.68,lng:39.72,note:"Koordinat akademik çalışmada tarif edilen Üzümlü güneydoğusu Karasu koridorunun temsilî genel merkezidir; belirli örnekleme veya kıyı giriş noktası değildir."},
+  "ulusal-erzincan-firat-nehri-kemaliye-hatti":{lat:39.26,lng:38.5,note:"Koordinat Kemaliye yerleşimi ile Karasu/Fırat koridorunun temsilî genel merkezidir; kanyon kıyısı, tekne iskelesi veya araç girişi değildir."},
+};
+
 const confidenceProfile=(slug:string)=>({
   model:"evidence-v1" as const,
   overall:"C" as const,
@@ -130,16 +142,23 @@ export const applyDailyQuality20260901Stage2=(routeMap:Map<string,EnrichedMera>)
     if(previous.confidence!=="D")throw new Error(`2026-09-01 Stage2 gerçek D→C koşulu sağlanmıyor: ${slug} (${previous.confidence})`);
     const additions=evidenceBySlug[slug]||[];
     const note=notesBySlug[slug];
+    const generalLocation=generalLocationBySlug[slug];
+    const primaryEvidence=note?.researchSummary||`${previous.name} için rota kimliği ve tür olasılığı ${additions.map((source)=>source.label).join("; ")} kayıtlarıyla yeniden değerlendirildi.`;
+    const navigationNote=note?.navigationNote||generalLocation?.note||previous.navigationNote||"Gösterilen konum genel planlama içindir; kesin park/kıyı girişi değildir. Son yaklaşımda kamusal yol, özel mülkiyet, işletme/güvenlik sınırı ve saha tabelaları kontrol edilmelidir.";
     routeMap.set(slug,{
       ...previous,
       district:note?.district||previous.district,
-      sources:uniq([...(previous.sources||[]),...additions,teblig]),
+      lat:generalLocation?.lat??previous.lat,
+      lng:generalLocation?.lng??previous.lng,
+      sources:uniq([...(previous.sources||[]),...additions,...(generalLocation?.source?[generalLocation.source]:[]),teblig]),
       confidence:"C",
-      locationPrecision:previous.locationPrecision||"Genel bölge",
+      locationPrecision:generalLocation?"Genel bölge":previous.locationPrecision||"Genel bölge",
       navigationVerified:false,
-      navigationNote:note?.navigationNote||previous.navigationNote||"Gösterilen konum genel planlama içindir; kesin park/kıyı girişi değildir. Son yaklaşımda kamusal yol, özel mülkiyet, işletme/güvenlik sınırı ve saha tabelaları kontrol edilmelidir.",
+      navigationNote,
+      summary:`${previous.name}, rota kimliği ve tür olasılığı kaynaklarla desteklenen Güven C düzeyinde genel planlama kaydıdır; mikro kıyı erişimi ve güncel kullanım sınırları ayrıca kontrol edilmelidir.`,
+      longIntro:[primaryEvidence,"Güven C, su veya genel koridor kanıtının güçlendiğini gösterir; belirli kıyının kamusal, açık ve güvenli olduğunu garanti etmez. Harita pini yalnız genel planlama içindir; saha tabelası, özel mülkiyet, işletme ve koruma sınırları hareket günü ayrıca kontrol edilmelidir."],
       researchStatus:"1 Eylül 2026 masa başı kalite yükseltmesi tamamlandı; confidence yalnız rota-özel kanıt eşiğini geçen kayıtlarda D'den C'ye çıkarıldı.",
-      researchSummary:note?.researchSummary||previous.researchSummary||"Rota kimliği ve tür olasılığı en az iki bağımsız kaynak ailesiyle yeniden değerlendirildi; mikro kıyı saha teyitli değildir.",
+      researchSummary:primaryEvidence,
       verification:note?.verification||`1 Eylül 2026 masa başı kalite yükseltmesi: rota kimliği ve tür olasılığı en az iki bağımsız kaynak ailesiyle yeniden değerlendirildi. ${additions.map((s)=>s.label).join("; ")}. Mikro kıyı erişimi ve güncel saha durumu doğrulanmış sayılmaz; geçmiş balıklandırma veya stok kaydı av garantisi değildir.`,
       researchedAt:"2026-09-01",
       updatedAt:"2026-09-01",
