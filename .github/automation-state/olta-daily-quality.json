@@ -12,7 +12,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Güncel main'de D meraların noindex/follow ve sitemap dışı politikası doğrulandı. Repodaki en son somut Search Console fırsat seti 23 Ağustos exportudur (veri 21 Ağustos'a kadar): konum/yol tarifi niyetli, 3-15 pozisyon ve düşük CTR sinyali önceliklendirmede yeniden kullanıldı. Sadece eski snapshot'a dayanarak confidence yükseltilmeyecek; Aşama 2'de rota-özel kanıt zorunlu.",
+    "searchConsoleNotes": "Güncel main'de D meraların noindex/follow ve sitemap dışı politikası doğrulandı. Repodaki en son somut Search Console fırsat seti 23 Ağustos exportudur (veri 21 Ağustos'a kadar): konum/yol tarifi niyetli, 3-15 pozisyon ve düşük CTR sinyali önceliklendirmede yeniden kullanıldı. Sadece eski snapshot'a dayanarak confidence yükseltilmeyecek; rota-özel kanıt zorunlu.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -41,72 +41,60 @@
       "ulusal-artvin-borcka-baraj-golu",
       "ulusal-van-zernek-baraj-golu"
     ],
-    "evidenceReadyPriority": [
+    "newCandidatesReviewed": 8,
+    "newCandidates": [
+      {"name":"Gelingüllü Barajı genel kamusal kıyı","province":"Yozgat","status":"hold-ecology"},
+      {"name":"Kapulukaya Barajı Sulubük genel kıyı","province":"Kırıkkale","status":"hold"},
+      {"name":"Menzelet Barajı Bulutoğlu genel kıyı","province":"Kahramanmaraş","status":"hold"},
+      {"name":"Çamlıgöze Barajı genel kıyı","province":"Sivas","status":"hold-aquaculture"},
+      {"name":"Karakaya Barajı Kale genel kıyı","province":"Malatya","status":"hold"},
+      {"name":"Keban Barajı Korulu genel kıyı","province":"Elazığ","status":"hold"},
+      {"name":"Kesikköprü Barajı Bala genel kıyı","province":"Ankara","status":"reject-sensitive-water-supply"},
+      {"name":"Almus Barajı genel kıyı alternatifi","province":"Tokat","status":"reject-duplicate"}
+    ]
+  },
+  "stage2": {
+    "status": "in_progress",
+    "targetPromotions": 17,
+    "promotedCount": 8,
+    "promotedThisRun": [
       "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
       "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ulusal-artvin-borcka-baraj-golu",
+      "ulusal-aksaray-ciftevi-baraj-golu",
+      "ulusal-bolu-caykoy-baraj-golu-bolu",
+      "ulusal-van-zernek-baraj-golu",
+      "ankara-500km-adiyaman-ataturk-baraj-golu"
+    ],
+    "heldAfterResearch": [
       "ulusal-erzincan-tercan-baraj-golu",
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-artvin-borcka-baraj-golu",
-      "ulusal-aksaray-ciftevi-baraj-golu"
-    ],
-    "heldForMoreRouteSpecificEvidence": [
-      "ulusal-amasya-destek-baraj-golu",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
-      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
-      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-erzincan-firat-nehri-kemaliye-hatti",
-      "ulusal-bolu-caykoy-baraj-golu-bolu",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-sivas-delice-baraj-golu-sivas",
       "ulusal-bayburt-lori-deresi",
-      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
-      "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-kirikkale-kizilirmak-yahsihan-hatti",
-      "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi",
-      "ulusal-erzurum-demirdoven-baraj-golu",
-      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-erzurum-olur-baraj-golu",
-      "ulusal-van-zernek-baraj-golu"
+      "ankara-500km-adiyaman-cataltepe-goleti"
     ],
-    "dEvidenceNotes": [
-      {"slug":"ulusal-kastamonu-cigdem-baraj-golu-kastamonu","families":["resmi-kaymakamlik/DSI","yerel-kurumsal"],"status":"priority","note":"Devrekani Kaymakamlığı gölet kimliğini, in balığı/tatlısu kefali kaydını ve sonradan pullu/aynalı sazan ekimini rota özelinde veriyor; Aşama 2'de güncel mevzuat/erişim ikinci bağımsız aile ile tamamlanacak."},
-      {"slug":"ulusal-erzincan-karasu-nehri-erzincan-hatti","families":["resmi-valilik/kalkinma","akademik-universite"],"status":"priority","note":"Karasu ana su kimliği ve ekolojik bağlam resmî kaynaklarda; rota-özel tür örneklemeleri akademik aileden çaprazlanacak."},
-      {"slug":"ulusal-ardahan-kura-nehri-ardahan-hatti","families":["akademik-universite","resmi-yerel"],"status":"priority","note":"Ardahan Üniversitesi ihtiyofauna çalışması Kura ana kolunda doğrudan çoklu tür örnekliyor; güncel erişim/hukuk ikinci aile ile tamamlanacak."},
-      {"slug":"ulusal-erzincan-tercan-baraj-golu","families":["resmi-kaymakamlik","resmi-tarim","yerel-turizm"],"status":"priority","note":"Kaymakamlık baraj kimliği/konumunu, İl Tarım kafes alabalık yetiştiriciliğini doğruluyor; yetiştiricilik sahası amatör av noktası sayılmayacak."},
-      {"slug":"ulusal-hakkari-zap-suyu-hakkari-hatti","families":["resmi-kultur/valilik","akademik"],"status":"priority","note":"Zap su kimliği ve kamusal rekreasyon bağlamı güçlü; mikro kıyı ve tür kanıtı tamamlanmadan yükseltilmeyecek."},
-      {"slug":"ulusal-artvin-borcka-baraj-golu","families":["resmi-DSI/Tarim","akademik-tez"],"status":"priority","note":"Baraj kimliği resmî, yayın balığına ilişkin akademik örnekleme güçlü; güvenlik/işletme sahaları dışarıda tutularak erişim kanıtı tamamlanmalı."},
-      {"slug":"ulusal-aksaray-ciftevi-baraj-golu","families":["resmi","akademik/yerel"],"status":"priority","note":"Önceki taramada rota-özel kaynaklar bulundu; Aşama 2'de güncel erişim ve tür aileleri yeniden doğrulanacak."}
-    ],
-    "newCandidatesReviewed": 8,
-    "newCandidates": [
-      {"name":"Gelingüllü Barajı genel kamusal kıyı","province":"Yozgat","status":"hold-ecology","families":["DSI","Yozgat Valiligi/CSB"],"note":"DSİ su kimliğini ve sulak alan/flamingo önemini doğruluyor; hassas kuş yaşam alanları nedeniyle mikro-konum yayımlanmayacak. Tür ve güvenli amatör kıyı kanıtı tamamlanmadan aday yayınlanmaz."},
-      {"name":"Kapulukaya Barajı Sulubük genel kıyı","province":"Kırıkkale","status":"hold","families":["Kultur Portali","Iletisim/yerel kamu"],"note":"Baraj ve Sulubük kıyısında kamusal etkinlik bağlamı var; rota-özel tür ve güncel amatör kullanım kanıtı eksik."},
-      {"name":"Menzelet Barajı Bulutoğlu genel kıyı","province":"Kahramanmaraş","status":"hold","families":["DSI","MEB/Kultur"],"note":"DSİ baraj/HES kimliği ve Bulutoğlu mesire yolu kamusal bağlamı doğrulanıyor; HES/işletme sahalarından uzak güvenli kıyı ve tür kanıtı tamamlanmalı."},
-      {"name":"Çamlıgöze Barajı genel kıyı","province":"Sivas","status":"hold-aquaculture","families":["Susehri Kaymakamligi","Sivas Il Tarim"],"note":"Baraj kimliği ve yoğun kafes yetiştiriciliği doğrulandı; kafes/işletme sahaları amatör mera sayılmayacak. Bağımsız doğal tür ve kamusal erişim kanıtı aranacak."},
-      {"name":"Karakaya Barajı Kale genel kıyı","province":"Malatya","status":"hold","families":["Kale Kaymakamligi","yerel turizm/koruma"],"note":"Baraj ve turizm bağlamı güçlü; HES, feribot/işletme ve koruma alanları ayrıştırılmadan mikro rota oluşturulmayacak."},
-      {"name":"Keban Barajı Korulu genel kıyı","province":"Elazığ","status":"hold","families":["Keban Kaymakamligi","Il Kultur/DSI"],"note":"Baraj kimliği ve tarihsel av sezonu/kamusal etkinlik kaydı var; 2019 kaydı güncel izin yerine geçmez. 2026 mevzuat ve kıyı erişimi yeniden doğrulanmalı."},
-      {"name":"Kesikköprü Barajı Bala genel kıyı","province":"Ankara","status":"reject-sensitive-water-supply","families":["Bala Kaymakamligi","ASKI/e-Devlet"],"note":"Ankara içme suyu sisteminde aktif kaynak/aktarım rolü doğrulandı; içme suyu ve tesis güvenliği nedeniyle yeni mera adayı olarak ileri taşınmıyor."},
-      {"name":"Almus Barajı genel kıyı alternatifi","province":"Tokat","status":"reject-duplicate","families":["Almus Kaymakamligi","Tokat Valiligi"],"note":"Kaymakamlık kıyı koyları ve rekreasyon bağlamını, Valilik 2023 sazan balıklandırmasını doğruluyor; ancak sitede ulusal-tokat-almus-baraj-golu mevcut olduğu için yeni slug üretilmeyecek."}
-    ],
-    "sourceFamiliesSearched": [
-      "resmi-Tarim/DSI/Valilik/Kaymakamlik/CSB/Kultur",
-      "akademik-DergiPark/universite/acik-arsiv/tez",
-      "yerel-kurumsal-kalkinma/mesire/turizm",
-      "ikincil-acik-harita-yalniz-destek"
-    ],
-    "freshFindings": [
-      "Devrekani Kaymakamlığı Çiğdem Göleti için in balığı ve tatlısu kefali tespiti ile sonradan pullu/aynalı sazan ekimini doğrudan kaydediyor.",
-      "Ardahan Üniversitesi ihtiyofauna çalışması Kura Nehri ana kolunda türleri doğrudan örnekliyor.",
-      "Tercan Kaymakamlığı barajı Tercan'ın yaklaşık 5 km güneydoğusunda tanımlıyor; İl Tarım 2024'te 8 işletme/150 kafeste alabalık yetiştiriciliğini kaydediyor. Bu, doğal amatör av alanı kanıtı değildir.",
-      "Gelingüllü Barajı DSİ tarafından yapay sulak alan ve yoğun flamingo yaşam alanı olarak tanımlandığından hassas mikro-konum yayımlama riski taşıyor.",
-      "Çamlıgöze Barajı Suşehri Kaymakamlığınca HES olarak doğrulanıyor; İl Tarım 2024'te 5 kafes tesis ve 4.250 ton/yıl yetiştiricilik kapasitesi bildiriyor.",
-      "Kesikköprü ASKİ'nin Ankara içme suyu sistemine su aktarım kaynağıdır; yeni mera adaylığında ihtiyat gerektirir.",
-      "Almus Valiliğin 13.09.2023 kaydında 800 bin yavru sazanla balıklandırılmıştır; ancak mevcut slug nedeniyle yeni mera sayılmaz."
-    ]
+    "notes": "Sekiz kayıt gerçek D→C olarak kodlandı. Her birinde rota kimliği + tür olasılığı için rota-özel resmî/akademik kanıt ve güncel mevzuat çerçevesi eklendi; mikro erişim/park kesinleştirilmedi. Tercan'daki kafes yetiştiriciliği doğal amatör av tür kanıtı sayılmadı; diğer zayıf adaylar kota uğruna yükseltilmedi. 17 hedefe ulaşılmadığı için stage=2 ve done=false korunuyor."
   },
-  "promotedSlugs": [],
+  "promotedSlugs": [
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ulusal-artvin-borcka-baraj-golu",
+    "ulusal-aksaray-ciftevi-baraj-golu",
+    "ulusal-bolu-caykoy-baraj-golu-bolu",
+    "ulusal-van-zernek-baraj-golu",
+    "ankara-500km-adiyaman-ataturk-baraj-golu"
+  ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started"},
   "ci": {"status":"not_started"},
