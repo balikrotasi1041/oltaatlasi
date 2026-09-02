@@ -18,31 +18,7 @@
     "searchConsoleNotes": "Konum/yol tarifi niyetli, 3-15 sıra ve düşük CTR sinyali araştırma sıralamasında kullanıldı; confidence kanıtı sayılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-erzurum-demirdoven-baraj-golu",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
-      "ulusal-sivas-delice-baraj-golu-sivas",
-      "ulusal-bayburt-lori-deresi",
-      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-amasya-destek-baraj-golu",
-      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
-      "ulusal-cankiri-karadere-baraj-golu-cankiri",
-      "ankara-500km-adiyaman-karahuyuk-goleti",
-      "ankara-500km-adiyaman-sirimtas-baraj-golu",
-      "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-eskisehir-porsuk-baraj-golu",
-      "ulusal-erzurum-olur-baraj-golu",
-      "ulusal-erzurum-kuzgun-baraj-golu",
-      "ankara-500km-ankara-cubuk-i-baraj-golu",
-      "ankara-500km-ankara-doganozu-baraj-golu",
-      "ankara-500km-ankara-egrekkaya-baraj-golu",
-      "ankara-500km-ankara-kavsakkaya-baraj-golu",
-      "ankara-500km-ankara-kurtbogazi-baraj-golu",
-      "ankara-500km-ankara-kizilca-goleti",
-      "ankara-500km-ankara-yenice-baraj-golu",
-      "ankara-500km-ankara-anadolu-goleti",
-      "ankara-500km-ankara-eyrez-goleti",
-      "ankara-500km-ankara-yukari-cavundur-goleti"
+      "ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-erzurum-demirdoven-baraj-golu","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-sivas-delice-baraj-golu-sivas","ulusal-bayburt-lori-deresi","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-karahuyuk-goleti","ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-cataltepe-goleti","ulusal-eskisehir-porsuk-baraj-golu","ulusal-erzurum-olur-baraj-golu","ulusal-erzurum-kuzgun-baraj-golu","ankara-500km-ankara-cubuk-i-baraj-golu","ankara-500km-ankara-doganozu-baraj-golu","ankara-500km-ankara-egrekkaya-baraj-golu","ankara-500km-ankara-kavsakkaya-baraj-golu","ankara-500km-ankara-kurtbogazi-baraj-golu","ankara-500km-ankara-kizilca-goleti","ankara-500km-ankara-yenice-baraj-golu","ankara-500km-ankara-anadolu-goleti","ankara-500km-ankara-eyrez-goleti","ankara-500km-ankara-yukari-cavundur-goleti"
     ],
     "newCandidatesReviewed": 8,
     "newCandidates": [
@@ -59,45 +35,36 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 6,
-    "remainingNeeded": 11,
+    "promotedCount": 9,
+    "remainingNeeded": 8,
     "promotedSlugs": [
       "ankara-500km-tokat-zinav-golu",
       "ulusal-tunceli-uzuncayir-baraj-golu",
       "ankara-500km-bolu-sunnet-golu",
       "ulusal-yozgat-uzunlu-baraj-golu",
       "ankara-500km-yozgat-divanli-goleti",
-      "ankara-500km-yozgat-altinsu-goleti"
+      "ankara-500km-yozgat-altinsu-goleti",
+      "ankara-500km-sivas-todurge-golu",
+      "ankara-500km-sivas-yapialtin-baraj-golu",
+      "ulusal-sivas-delice-baraj-golu-sivas"
     ],
     "expandedReviewed": [
-      "ankara-500km-tokat-zinav-golu",
-      "ulusal-tunceli-uzuncayir-baraj-golu",
-      "ankara-500km-bolu-sunnet-golu",
-      "ulusal-yozgat-uzunlu-baraj-golu",
-      "ankara-500km-yozgat-divanli-goleti",
-      "ankara-500km-yozgat-altinsu-goleti",
-      "ankara-500km-yozgat-yenipazar-goleti",
-      "ankara-500km-yozgat-barakli-baraj-golu",
-      "ulusal-mersin-berdan-baraj-golu",
-      "ulusal-siirt-botan-cayi",
-      "ulusal-zonguldak-kizilcapinar-baraj-golu"
+      "ankara-500km-tokat-zinav-golu","ulusal-tunceli-uzuncayir-baraj-golu","ankara-500km-bolu-sunnet-golu","ulusal-yozgat-uzunlu-baraj-golu","ankara-500km-yozgat-divanli-goleti","ankara-500km-yozgat-altinsu-goleti","ankara-500km-yozgat-yenipazar-goleti","ankara-500km-yozgat-barakli-baraj-golu","ulusal-mersin-berdan-baraj-golu","ulusal-siirt-botan-cayi","ulusal-zonguldak-kizilcapinar-baraj-golu","ankara-500km-sivas-todurge-golu","ankara-500km-sivas-yapialtin-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ankara-500km-tokat-tepekisla-baraj-golu","ulusal-erzurum-kuzgun-baraj-golu"
     ],
     "heldOrRejected": [
       {"slug":"ankara-500km-yozgat-yenipazar-goleti","reason":"Resmî su kimliği ve sazan balıklandırması var; İl Özel İdaresi gölet çevresi mülkiyetini şahıs/tarla olarak kaydediyor. Kamusal genel kıyı erişimi doğrulanmadan D kalır."},
       {"slug":"ankara-500km-yozgat-barakli-baraj-golu","reason":"Resmî sulama kimliği ve 2025 sazan balıklandırması var; genel kamusal olta erişimi rota özelinde yeterince doğrulanmadı."},
       {"slug":"ulusal-mersin-berdan-baraj-golu","reason":"İçme suyu ve mutlak koruma/güvenlik bağlamı nedeniyle D korunur."},
       {"slug":"ulusal-siirt-botan-cayi","reason":"Baraj salımı/taşkın güvenlik uyarıları nedeniyle kamusal kıyı kullanımı güvenle genellenemez."},
-      {"slug":"ulusal-zonguldak-kizilcapinar-baraj-golu","reason":"İçme suyu/endüstri kullanım bağlamı var; amatör kamusal erişim kanıtı eksik."}
+      {"slug":"ulusal-zonguldak-kizilcapinar-baraj-golu","reason":"İçme suyu/endüstri kullanım bağlamı var; amatör kamusal erişim kanıtı eksik."},
+      {"slug":"ankara-500km-tokat-tepekisla-baraj-golu","reason":"Rota kimliği ve sazan balıklandırması doğrulandı ancak aktif HES/işletme ve 2026 taşkın-salım riski nedeniyle kamusal genel kıyı kullanımı yeterince güvenli doğrulanmadı; D korunur."},
+      {"slug":"ulusal-erzurum-kuzgun-baraj-golu","reason":"Güncel ana veride zaten Güven C olduğu doğrulandı; gerçek D→C kotasına yazılamaz."},
+      {"slug":"ankara-500km-yozgat-ikikara-goleti","reason":"İl Özel İdaresi tesisi Sorgun Şeker Fabrikasına devredilmiş ve çevre mülkiyetini şahıs/tarla olarak kaydediyor; C yükseltmesi yapılmadı."}
     ],
-    "notes": "Bu çalıştırmada yalnız kanıt eşiğini geçen 6 benzersiz gerçek D→C yükseltme kodlandı. Zinav'da Valilik+Kültür Portalı; Uzunçayır'da Kültür Portalı+hakemli fauna; Sünnet'te Valilik+İl Tarım; Uzunlu'da Kaymakamlık+İl Tarım+yerel saha; Divanlı ve Altınsu'da Yozgat İl Tarım 2025 sazan balıklandırması ile 2026 kamusal/olta kullanım kayıtları birlikte kullanıldı. Mikro kıyı/park/yol garantisi verilmedi. Kota 17'ye ulaşmadığı için stage2 tamamlanmış sayılmadı ve done=false bırakıldı."
+    "notes": "Önceki 6 gerçek D→C yükseltmeye bu çalıştırmada Tödürge Gölü, Yapıaltın Baraj Gölü ve Delice Göleti eklendi. Tödürge'de Kaymakamlık rekreasyon/alan bağlamı + rota özelinde akademik balık kanıtı; Yapıaltın'da Tarım ve Orman balıklandırması + güncel amatör olta saha kaydı; Delice'de 2025 Bakanlık balıklandırması, Kaymakam katılımlı saha programı ve amatör balıkçılık bağlamı kullanıldı. Üçünde de locationPrecision Genel bölge, navigationVerified=false ve mikro kıyı/park/yol/mülkiyet belirsizliği açıkça korunur. Kota 9/17'dir; sırf sayı tamamlamak için Tepekışla, İkikara veya zaten C olan Kuzgun yükseltilmedi/sayılmadı."
   },
   "promotedSlugs": [
-    "ankara-500km-tokat-zinav-golu",
-    "ulusal-tunceli-uzuncayir-baraj-golu",
-    "ankara-500km-bolu-sunnet-golu",
-    "ulusal-yozgat-uzunlu-baraj-golu",
-    "ankara-500km-yozgat-divanli-goleti",
-    "ankara-500km-yozgat-altinsu-goleti"
+    "ankara-500km-tokat-zinav-golu","ulusal-tunceli-uzuncayir-baraj-golu","ankara-500km-bolu-sunnet-golu","ulusal-yozgat-uzunlu-baraj-golu","ankara-500km-yozgat-divanli-goleti","ankara-500km-yozgat-altinsu-goleti","ankara-500km-sivas-todurge-golu","ankara-500km-sivas-yapialtin-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_run","checkedAt":null,"officialStatus":"not_run","warnings":[],"notes":"Aşama 3'e ait; bu çalıştırmada yapılmadı."},
