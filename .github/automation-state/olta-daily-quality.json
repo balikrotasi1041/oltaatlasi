@@ -33,10 +33,10 @@
     ]
   },
   "stage2": {
-    "status": "in_progress",
+    "status": "completed",
     "targetPromotions": 17,
-    "promotedCount": 9,
-    "remainingNeeded": 8,
+    "promotedCount": 17,
+    "remainingNeeded": 0,
     "promotedSlugs": [
       "ankara-500km-tokat-zinav-golu",
       "ulusal-tunceli-uzuncayir-baraj-golu",
@@ -46,10 +46,28 @@
       "ankara-500km-yozgat-altinsu-goleti",
       "ankara-500km-sivas-todurge-golu",
       "ankara-500km-sivas-yapialtin-baraj-golu",
-      "ulusal-sivas-delice-baraj-golu-sivas"
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-bingol-murat-nehri-bingol-hatti",
+      "ulusal-mersin-goksu-nehri-silifke-hatti",
+      "ulusal-mus-murat-nehri-mus-hatti",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ulusal-bayburt-coruh-nehri-bayburt-hatti",
+      "ulusal-trabzon-solakli-deresi",
+      "ankara-500km-samsun-yesilirmak"
+    ],
+    "promotedThisRun": [
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-bingol-murat-nehri-bingol-hatti",
+      "ulusal-mersin-goksu-nehri-silifke-hatti",
+      "ulusal-mus-murat-nehri-mus-hatti",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ulusal-bayburt-coruh-nehri-bayburt-hatti",
+      "ulusal-trabzon-solakli-deresi",
+      "ankara-500km-samsun-yesilirmak"
     ],
     "expandedReviewed": [
-      "ankara-500km-tokat-zinav-golu","ulusal-tunceli-uzuncayir-baraj-golu","ankara-500km-bolu-sunnet-golu","ulusal-yozgat-uzunlu-baraj-golu","ankara-500km-yozgat-divanli-goleti","ankara-500km-yozgat-altinsu-goleti","ankara-500km-yozgat-yenipazar-goleti","ankara-500km-yozgat-barakli-baraj-golu","ulusal-mersin-berdan-baraj-golu","ulusal-siirt-botan-cayi","ulusal-zonguldak-kizilcapinar-baraj-golu","ankara-500km-sivas-todurge-golu","ankara-500km-sivas-yapialtin-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ankara-500km-tokat-tepekisla-baraj-golu","ulusal-erzurum-kuzgun-baraj-golu"
+      "ankara-500km-tokat-zinav-golu","ulusal-tunceli-uzuncayir-baraj-golu","ankara-500km-bolu-sunnet-golu","ulusal-yozgat-uzunlu-baraj-golu","ankara-500km-yozgat-divanli-goleti","ankara-500km-yozgat-altinsu-goleti","ankara-500km-yozgat-yenipazar-goleti","ankara-500km-yozgat-barakli-baraj-golu","ulusal-mersin-berdan-baraj-golu","ulusal-siirt-botan-cayi","ulusal-zonguldak-kizilcapinar-baraj-golu","ankara-500km-sivas-todurge-golu","ankara-500km-sivas-yapialtin-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ankara-500km-tokat-tepekisla-baraj-golu","ulusal-erzurum-kuzgun-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-bingol-murat-nehri-bingol-hatti","ulusal-mersin-goksu-nehri-silifke-hatti","ulusal-mus-murat-nehri-mus-hatti","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-bayburt-coruh-nehri-bayburt-hatti","ulusal-trabzon-solakli-deresi","ankara-500km-samsun-yesilirmak","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-bayburt-lori-deresi"
     ],
     "heldOrRejected": [
       {"slug":"ankara-500km-yozgat-yenipazar-goleti","reason":"Resmî su kimliği ve sazan balıklandırması var; İl Özel İdaresi gölet çevresi mülkiyetini şahıs/tarla olarak kaydediyor. Kamusal genel kıyı erişimi doğrulanmadan D kalır."},
@@ -59,12 +77,15 @@
       {"slug":"ulusal-zonguldak-kizilcapinar-baraj-golu","reason":"İçme suyu/endüstri kullanım bağlamı var; amatör kamusal erişim kanıtı eksik."},
       {"slug":"ankara-500km-tokat-tepekisla-baraj-golu","reason":"Rota kimliği ve sazan balıklandırması doğrulandı ancak aktif HES/işletme ve 2026 taşkın-salım riski nedeniyle kamusal genel kıyı kullanımı yeterince güvenli doğrulanmadı; D korunur."},
       {"slug":"ulusal-erzurum-kuzgun-baraj-golu","reason":"Güncel ana veride zaten Güven C olduğu doğrulandı; gerçek D→C kotasına yazılamaz."},
-      {"slug":"ankara-500km-yozgat-ikikara-goleti","reason":"İl Özel İdaresi tesisi Sorgun Şeker Fabrikasına devredilmiş ve çevre mülkiyetini şahıs/tarla olarak kaydediyor; C yükseltmesi yapılmadı."}
+      {"slug":"ankara-500km-yozgat-ikikara-goleti","reason":"İl Özel İdaresi tesisi Sorgun Şeker Fabrikasına devredilmiş ve çevre mülkiyetini şahıs/tarla olarak kaydediyor; C yükseltmesi yapılmadı."},
+      {"slug":"ulusal-amasya-destek-baraj-golu","reason":"Resmî su yapısı kimliği güçlü ancak rota özelinde tür olasılığı ve güncel kamusal genel olta erişimi birlikte C eşiğine ulaşmadı; D korunur."},
+      {"slug":"ulusal-erzurum-koycegiz-baraj-golu-erzurum","reason":"Resmî gölet kimliği var ancak rota özelinde tür ve kamusal genel kullanım kanıtı birlikte yeterli değil; D korunur."},
+      {"slug":"ulusal-bayburt-lori-deresi","reason":"Akarsu kimliği desteklenmekle birlikte rota özelinde güncel kamusal erişim ve yeterli tür kanıtı C eşiğini karşılamadı; D korunur."}
     ],
-    "notes": "Önceki 6 gerçek D→C yükseltmeye bu çalıştırmada Tödürge Gölü, Yapıaltın Baraj Gölü ve Delice Göleti eklendi. Tödürge'de Kaymakamlık rekreasyon/alan bağlamı + rota özelinde akademik balık kanıtı; Yapıaltın'da Tarım ve Orman balıklandırması + güncel amatör olta saha kaydı; Delice'de 2025 Bakanlık balıklandırması, Kaymakam katılımlı saha programı ve amatör balıkçılık bağlamı kullanıldı. Üçünde de locationPrecision Genel bölge, navigationVerified=false ve mikro kıyı/park/yol/mülkiyet belirsizliği açıkça korunur. Kota 9/17'dir; sırf sayı tamamlamak için Tepekışla, İkikara veya zaten C olan Kuzgun yükseltilmedi/sayılmadı."
+    "notes": "Aşama 2 tamamlandı: 17 benzersiz kayıt gerçekten D'den C'ye yükseltildi. Son sekiz yükseltme Demirdöven Baraj Gölü, Bingöl/Genç Murat Nehri, Silifke Göksu Nehri, Muş Murat Nehri, Tatvan Van Gölü kıyısı, Bayburt Çoruh Nehri, Trabzon Solaklı Deresi ve Samsun/Çarşamba Yeşilırmak rotalarıdır. Her birinde rota kimliği, tür olasılığı, genel kamusal kullanım/ulaşım bağlamı, mevzuat ve risk en az iki bağımsız kaynak ailesiyle çaprazlandı; mümkün olanlarda resmî + akademik + güncel destekleyici üçlü kullanıldı. locationPrecision 'Genel bölge', navigationVerified=false tutuldu; mikro kıyı, park, yol, özel mülkiyet veya av garantisi iddiası yapılmadı. İçme suyu, özel mülk, HES/ani debi veya yetersiz tür/erişim kanıtı bulunan adaylar kota uğruna yükseltilmedi."
   },
   "promotedSlugs": [
-    "ankara-500km-tokat-zinav-golu","ulusal-tunceli-uzuncayir-baraj-golu","ankara-500km-bolu-sunnet-golu","ulusal-yozgat-uzunlu-baraj-golu","ankara-500km-yozgat-divanli-goleti","ankara-500km-yozgat-altinsu-goleti","ankara-500km-sivas-todurge-golu","ankara-500km-sivas-yapialtin-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas"
+    "ankara-500km-tokat-zinav-golu","ulusal-tunceli-uzuncayir-baraj-golu","ankara-500km-bolu-sunnet-golu","ulusal-yozgat-uzunlu-baraj-golu","ankara-500km-yozgat-divanli-goleti","ankara-500km-yozgat-altinsu-goleti","ankara-500km-sivas-todurge-golu","ankara-500km-sivas-yapialtin-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-erzurum-demirdoven-baraj-golu","ulusal-bingol-murat-nehri-bingol-hatti","ulusal-mersin-goksu-nehri-silifke-hatti","ulusal-mus-murat-nehri-mus-hatti","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-bayburt-coruh-nehri-bayburt-hatti","ulusal-trabzon-solakli-deresi","ankara-500km-samsun-yesilirmak"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_run","checkedAt":null,"officialStatus":"not_run","warnings":[],"notes":"Aşama 3'e ait; bu çalıştırmada yapılmadı."},
