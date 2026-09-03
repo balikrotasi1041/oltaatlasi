@@ -13,7 +13,7 @@
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
     "searchConsoleNotes": "23 Ağustos Search Console snapshotu (21 Ağustos'a kadar veri) yalnız araştırma önceliğinde kullanıldı; confidence kanıtı sayılmadı.",
-    "dCandidatesReviewed": 25,
+    "dCandidatesReviewed": 31,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
@@ -39,7 +39,13 @@
       "ulusal-diyarbakir-devegecidi-baraj-golu",
       "ulusal-batman-batman-baraj-golu",
       "ulusal-elazig-cip-baraj-golu",
-      "ulusal-gaziantep-kayacik-baraj-golu"
+      "ulusal-gaziantep-kayacik-baraj-golu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ulusal-ardahan-aktas-golu",
+      "ulusal-ardahan-posof-cayi",
+      "ankara-500km-bolu-buyukgol",
+      "ankara-500km-bolu-deringol",
+      "ankara-500km-yozgat-gelingullu-baraj-golu"
     ],
     "stage1FalsePositiveCandidates": [
       {"slug":"ulusal-kirikkale-kizilirmak-yahsihan-hatti","reason":"current route is already Güven C"},
@@ -49,7 +55,7 @@
     ],
     "newCandidatesReviewed": 10,
     "newCandidates": [
-      {"name":"Gelingüllü Barajı genel kıyı","province":"Yozgat","status":"hold-ecology"},
+      {"name":"Gelingüllü Barajı genel kıyı","province":"Yozgat","status":"reject-existing-route-promoted-in-stage2"},
       {"name":"Batman Baraj Gölü genel kıyı","province":"Batman","status":"reject-duplicate"},
       {"name":"Cip Baraj Gölü genel kıyı","province":"Elazığ","status":"reject-duplicate"},
       {"name":"Ayvalı Barajı genel kıyı","province":"Kahramanmaraş","status":"reject-sensitive-drinking-water"},
@@ -64,15 +70,33 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 4,
+    "promotedCount": 12,
     "promotedSlugs": [
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
       "ankara-500km-adiyaman-karahuyuk-goleti",
       "ulusal-nigde-gumusler-baraj-golu",
-      "ulusal-sivas-delice-baraj-golu-sivas"
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ulusal-eskisehir-porsuk-baraj-golu",
+      "ulusal-agri-balik-golu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ulusal-ardahan-aktas-golu",
+      "ulusal-ardahan-posof-cayi",
+      "ankara-500km-bolu-buyukgol",
+      "ankara-500km-bolu-deringol",
+      "ankara-500km-yozgat-gelingullu-baraj-golu"
     ],
-    "remainingNeeded": 13,
-    "notes": "Bu çalıştırmada yalnız kanıt eşiğini geçen dört gerçek D kayıt kodda C'ye yükseltildi. Sırımtaş: TAGEM siraz stok takviyesi + DergiPark HES kimliği + GAP işletme bağlamı; Karahöyük: İl Tarım sazan balıklandırması + DSİ gölet kimliği + Çevre Durum Raporu; Gümüşler: İl Tarım sazan balıklandırması + İl Kültür/Turizm baraj kimliği + çevre raporu tür kaydı; Delice: İl Tarım rota-özel 2015 sazan balıklandırması + 2025 yerel sulama ve balıklandırma kayıtları. Mikro kıyı/park/yol kesinleştirilmedi; locationPrecision Genel bölge ve navigationVerified=false tutuldu. Stage 1 havuzunda zaten C olduğu sonradan doğrulanan Yahşihan, Devegeçidi, Batman ve Köyceğiz günlük D→C kotasından çıkarıldı."
+    "remainingNeeded": 5,
+    "additionalReviewedThisRun": [
+      "ulusal-eskisehir-porsuk-baraj-golu",
+      "ulusal-agri-balik-golu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ulusal-ardahan-aktas-golu",
+      "ulusal-ardahan-posof-cayi",
+      "ankara-500km-bolu-buyukgol",
+      "ankara-500km-bolu-deringol",
+      "ankara-500km-yozgat-gelingullu-baraj-golu"
+    ],
+    "notes": "Toplam 12 gerçek D→C yükseltme kodda uygulanmış durumda. Bu çalıştırmada Porsuk: Kütahya İl Kültür/Turizm resmî sportif olta kaydı + DergiPark rota-özel balık çalışması; Ağrı Balık Gölü: İl Kültür/Turizm kimlik/koruma/tür kaydı + DergiPark fiilî balıkçılık saha çalışması; Tatvan Van Gölü: Bitlis İl Kültür/Turizm balıkçılık ve kıyı erişim bağlamı + Van Gölü inci kefali bilimsel çalışması; Aktaş: Kültür Portalı sportif olta kaydı + Ardahan Valiliği sazan balıklandırması ve sınır/koruma uyarıları; Posof: resmî sportif olta kaydı + kayıtta mevcut akademik/GBIF tür katmanı; Yedigöller Büyükgöl/Deringöl: Bolu İl Kültür/Turizm resmî ücretli/dönemsel sportif olta ve alabalık kaydı + MEB/yerel park kaynakları; Gelingüllü: Yozgat İl Tarım resmî stok/ticari avlak kaydı + Yozgat Valiliği genel rekreasyon bağlamı kullanıldı. Gelingüllü ilçe bilgisi resmî ilana göre Yozgat Merkez olarak düzeltildi. Mikro kıyı, park, özel parsel veya yol girişi kesinleştirilmedi; locationPrecision Genel bölge ve navigationVerified=false tutuldu. Kota henüz tamamlanmadı; beş gerçek D→C+ daha gerekiyor."
   },
   "stage3": {
     "status": "pending",
