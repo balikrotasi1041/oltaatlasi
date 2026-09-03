@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-03",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-09-03",
   "done": false,
   "research": {
@@ -14,16 +14,13 @@
     "searchConsoleUsed": true,
     "searchConsoleNotes": "23 Ağustos Search Console snapshotu (21 Ağustos'a kadar veri) yalnız araştırma önceliğinde kullanıldı; confidence kanıtı sayılmadı.",
     "dCandidatesReviewed": 36,
-    "dCandidates": [
-      "ulusal-amasya-destek-baraj-golu","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-sivas-delice-baraj-golu-sivas","ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-bayburt-lori-deresi","ankara-500km-adiyaman-karahuyuk-goleti","ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-cataltepe-goleti","ulusal-eskisehir-porsuk-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-erzurum-olur-baraj-golu","ulusal-adana-catalan-baraj-golu","ulusal-sanliurfa-karkamis-baraj-golu-sanliurfa-kiyisi","ulusal-kirikkale-kizilirmak-yahsihan-hatti","ulusal-nigde-gumusler-baraj-golu","ulusal-nigde-akkaya-baraj-golu","ulusal-adana-nergizlik-baraj-golu","ulusal-agri-balik-golu","ulusal-diyarbakir-devegecidi-baraj-golu","ulusal-batman-batman-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-ardahan-aktas-golu","ulusal-ardahan-posof-cayi","ankara-500km-bolu-buyukgol","ankara-500km-bolu-deringol","ankara-500km-yozgat-gelingullu-baraj-golu","ulusal-adiyaman-cat-baraj-golu","ulusal-denizli-adiguzel-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu"
-    ],
     "stage1FalsePositiveCandidates": [
       {"slug":"ulusal-kirikkale-kizilirmak-yahsihan-hatti","reason":"already C"},
       {"slug":"ulusal-diyarbakir-devegecidi-baraj-golu","reason":"already C"},
       {"slug":"ulusal-batman-batman-baraj-golu","reason":"already C"},
       {"slug":"ulusal-erzurum-koycegiz-baraj-golu-erzurum","reason":"already C"}
     ],
-    "newCandidatesReviewed": 10,
+    "newCandidatesReviewed": 15,
     "newCandidates": [
       {"name":"Gelingüllü Barajı genel kıyı","province":"Yozgat","status":"reject-existing-route-promoted-in-stage2"},
       {"name":"Batman Baraj Gölü genel kıyı","province":"Batman","status":"reject-duplicate"},
@@ -34,7 +31,12 @@
       {"name":"Kayacık Baraj Gölü genel kıyı","province":"Gaziantep","status":"reject-duplicate"},
       {"name":"Gerek Barajı/Göleti","province":"Erzurum","status":"reject-under-construction"},
       {"name":"Küçüktüy Göleti","province":"Erzurum","status":"reject-under-construction"},
-      {"name":"Kavuşturan Göleti","province":"Erzurum","status":"reject-under-construction"}
+      {"name":"Kavuşturan Göleti","province":"Erzurum","status":"reject-under-construction"},
+      {"name":"Alpsarı Göleti","province":"Çankırı","status":"selected-C"},
+      {"name":"Kızılcaören Göleti","province":"Eskişehir","status":"selected-C"},
+      {"name":"Günyüzü-1 Göleti","province":"Eskişehir","status":"selected-C"},
+      {"name":"Alkumru Baraj Gölü","province":"Siirt","status":"hold-aquaculture-and-operational-context"},
+      {"name":"Okçu Göleti","province":"Eskişehir","status":"reject-fish-farm-context-ambiguity"}
     ]
   },
   "stage2": {
@@ -61,21 +63,33 @@
       "ulusal-denizli-adiguzel-baraj-golu"
     ],
     "remainingNeeded": 0,
-    "notes": "17 benzersiz kayıt gerçek D→C olarak kodlandı. Son beş kayıt: Demirdöven (AVESİS tatlısu kefali + 2026 AA balıkçılık/Pasinler kimliği), Çat (İl Tarım resmî avlak + İl Kültür Çelikhan/sulama kimliği + mevcut rota-özel bilimsel tür katmanı), Cip (Tarım Orman balık popülasyonu + resmî mesire kullanımı + AA güncel habitat), Kayacık (İl Tarım resmî avlak/Oğuzeli + hakemli su kalitesi + Oğuzeli Belediyesi işletme bağlamı) ve Adıgüzel (Güney Kaymakamlığı HES kimliği + hakemli göl çalışması + 2025 amatör sazan saha kaydı). Ticari avlak, kafes yetiştiriciliği, HES, mesire veya tekil av haberi mikro kıyı izni sayılmadı. Tümünde locationPrecision Genel bölge ve navigationVerified=false korundu."
+    "notes": "17 benzersiz kayıt gerçek D→C olarak kodlandı; mikro erişim ve saha doğrulaması olmayan kayıtlarda Genel bölge ve navigationVerified=false korundu."
   },
   "stage3": {
-    "status": "pending",
+    "status": "completed",
     "newCPlusTarget": 3,
-    "newCPlusCount": 0,
-    "newSlugs": []
+    "newCPlusCount": 3,
+    "newSlugs": [
+      "cankiri-korgun-alpsari-goleti",
+      "eskisehir-beylikova-kizilcaoren-goleti",
+      "eskisehir-gunyuzu-gunyuzu-1-goleti"
+    ],
+    "notes": "Tam 3 yeni Güven C rota eklendi; Ege/Marmara dışındadır. Alpsarı 3 Eylül 2026 Çankırı İl Tarım sazan balıklandırması + Valilik rekreasyon + Korgun sulama bağlamıyla; Kızılcaören ve Günyüzü-1 Eskişehir İl Tarımın rota özelindeki balıklandırma/amatör kullanım kayıtları + kurumsal gölet envanteri + bağımsız genel konum verisiyle desteklendi. Üçünde de mikro kıyı/park/mülkiyet kesinleştirilmedi ve özgün SVG image/socialImage eklendi."
   },
   "mgmAudit": {
-    "status": "pending",
-    "checkedAt": null,
+    "status": "completed_pending",
+    "checkedAt": "2026-09-03T16:55:34+03:00",
     "officialStatus": "pending",
-    "representativeSlugs": [],
+    "representativeSlugs": [
+      "kefken-cebeci-kiyilari",
+      "ankara-500km-ankara-mogan-golu",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ulusal-van-zernek-baraj-golu",
+      "ulusal-artvin-borcka-baraj-golu"
+    ],
     "warnings": [],
-    "notes": "Aşama 3'e kadar MGM denetimi çalıştırılmayacak."
+    "notes": "MGM MeteoUYARI, 03.09.2026 Türkiye/bölgesel-il tahmini ve 24 saatlik/3 günlük deniz tahminleri tam bir kez kontrol edildi. Türkiye raporu güneybatı Marmara/Kuzey Ege'de 40-60 km/saat kuvvetli rüzgâr; Doğu Karadeniz/Ordu/Samsun doğusu ve sabah Sinop'ta sağanak bildiriyor. MeteoUYARI denetim anında il bazında etkin renk kodlu uyarı vermediğinden warnings boş tutuldu. Çalışma ortamından /api/weather noktasal yanıtları güvenilir okunamadığı için sıcaklık-rüzgâr-yağış/hadise model-MGM karşılaştırması tamamlanamadı; weather-official-audit.json pending tutuldu ve resmî teyit iddiası üretilmedi."
   },
   "ci": {"status":"pending"},
   "pr": null,
