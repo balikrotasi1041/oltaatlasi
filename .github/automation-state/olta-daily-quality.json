@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-03",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
+  "stage": 2,
   "branch": "quality/daily-2026-09-03",
   "done": false,
   "research": {
@@ -12,7 +12,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat snapshotu 23 Ağustos dosyasında, performans verisi 21 Ağustos 2026'ya kadar. 3-15 pozisyon, düşük/sıfır CTR ve konum/yol tarifi niyeti yalnız araştırma önceliği olarak kullanıldı; confidence kanıtı sayılmadı. Gümüşler ve Akkaya 8-9 bandında, Nergizlik önceki stabilizasyon snapshotunda 3-15 bandında olduğu için D araştırma sırasına öne alındı.",
+    "searchConsoleNotes": "23 Ağustos Search Console snapshotu (21 Ağustos'a kadar veri) yalnız araştırma önceliğinde kullanıldı; confidence kanıtı sayılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -41,53 +41,38 @@
       "ulusal-elazig-cip-baraj-golu",
       "ulusal-gaziantep-kayacik-baraj-golu"
     ],
-    "dCandidateFindings": [
-      {"slug":"ankara-500km-adiyaman-sirimtas-baraj-golu","status":"priority","note":"TAGEM/Elazığ Su Ürünleri Araştırma Enstitüsü 3 Ocak 2024'te Sırımtaş'a Siraz stok takviyesini rota özelinde doğruluyor; kimlik, erişim ve güncel hukuki bağlam ikinci ailelerle tamamlanmalı."},
-      {"slug":"ankara-500km-adiyaman-karahuyuk-goleti","status":"priority","note":"DSİ Karahöyük sulama yapısını, Adıyaman İl Tarım 2024 balıklandırması Karahöyük'e sazan salımını doğruluyor; kamusal son kıyı ve mikro erişim yine teyitsiz."},
-      {"slug":"ulusal-erzurum-koycegiz-baraj-golu-erzurum","status":"priority-review","note":"Karayazı Kaymakamlığı gölet kimliği ve rekreasyon bağlamını güçlü biçimde doğruluyor; tür olasılığı için rota özelinde güçlü ikinci aile aranacak."},
-      {"slug":"ulusal-sivas-delice-baraj-golu-sivas","status":"priority-review","note":"Sivas İl Tarımın güncel ve geçmiş balıklandırma programları güçlü il/tesis sinyali veriyor; Delice'nin rota özelindeki salım/tür ve erişim eşleşmesi Stage 2 öncesi kesinleştirilecek."},
-      {"slug":"ulusal-adana-catalan-baraj-golu","status":"hold-safety","note":"İçme suyu/koruma bağlamı ve erişim belirsizliği sürüyor; tür kanıtı tek başına yükseltme üretmez."},
-      {"slug":"ulusal-sanliurfa-karkamis-baraj-golu-sanliurfa-kiyisi","status":"hold-aquaculture","note":"İşletme/yetiştiricilik ve mikro kamusal kıyı belirsizliği nedeniyle D korunmalı; yalnız güçlü erişim/hukuk kanıtı çıkarsa yeniden değerlendirilir."},
-      {"slug":"ulusal-agri-balik-golu","status":"hold-protection","note":"Koruma/içme suyu hassasiyeti nedeniyle tür ve ziyaretçi erişimi amatör av hakkı sayılmıyor."},
-      {"slug":"ulusal-diyarbakir-devegecidi-baraj-golu","status":"hold-commercial","note":"2026 denetimleri balık varlığı ve aktif av baskısını gösterse de istihsal/kiralama ve son kıyı kullanım sınırı ayrı doğrulanmadan yükseltme yapılmayacak."},
-      {"slug":"ulusal-batman-batman-baraj-golu","status":"priority-review","note":"3 Eylül 2025 tarihli İl Tarım kaydı 1 milyon sazan + 1 milyon şabut salımını doğruluyor; 2025-2026 denetimleri su ürünleri kullanımını destekliyor, mikro kamusal erişim hâlâ ayrı kanıt istiyor."},
-      {"slug":"ulusal-amasya-destek-baraj-golu","status":"hold-evidence-gap","note":"Resmî tesis kimliği güçlü; rota özelinde güçlü tür ve kamusal kıyı erişimi birleşimi henüz yeterli değil."},
-      {"slug":"ulusal-zonguldak-filyos-nehri-zonguldak-hatti","status":"hold-evidence-gap","note":"Nehir kimliği güçlü olsa da hedef kıyı, erişim, tür ve güncel kullanım hakkı aynı rota üzerinde yeterince birleşmedi."},
-      {"slug":"ulusal-erzurum-kapikaya-baraj-golu-erzurum","status":"hold-evidence-gap","note":"Tesis kimliği araştırılıyor; mikro erişim ve rota özelinde tür kanıtı C eşiğini henüz karşılamıyor."},
-      {"slug":"ulusal-cankiri-karadere-baraj-golu-cankiri","status":"hold-evidence-gap","note":"Su yapısı kimliği tek başına yeterli değil; tür ve kamusal genel erişim için bağımsız rota aileleri aranıyor."},
-      {"slug":"ulusal-hakkari-zap-suyu-hakkari-hatti","status":"hold-risk","note":"Akarsu kimliği güçlü; hızlı akım, güvenlik ve mikro kıyı belirsizliği yanında rota özelinde tür/amatör kullanım birleşimi yetersiz."},
-      {"slug":"ulusal-bayburt-lori-deresi","status":"hold-evidence-gap","note":"Akarsu kimliği ile tür/erişim kanıtları aynı mikro rota düzeyinde henüz birleşmiyor."},
-      {"slug":"ankara-500km-adiyaman-cataltepe-goleti","status":"hold-evidence-gap","note":"Adıyaman balıklandırma programları il düzeyinde güçlü olsa da Çataltepe rota özelindeki tür ve kamusal erişim kanıtı eksik."},
-      {"slug":"ulusal-eskisehir-porsuk-baraj-golu","status":"hold-sensitive-use","note":"Su yapısı ve tür kaynakları bulunmasına rağmen kullanım/erişim ve hassas altyapı bağlamı netleşmeden C yapılmayacak."},
-      {"slug":"ulusal-erzurum-demirdoven-baraj-golu","status":"hold-evidence-gap","note":"DSİ rota kimliği güçlü; tür ve güncel genel kamusal erişim için ikinci güçlü aile gerekiyor."},
-      {"slug":"ulusal-erzurum-olur-baraj-golu","status":"hold-identity","note":"Olur ilçesindeki resmî turizm kaynakları Ayvalı/Beğendik su varlıklarını gösteriyor; kayıt adının mevcut slugla kimlik eşleşmesi kesinleştirilmeden yükseltme yapılmayacak."},
-      {"slug":"ulusal-kirikkale-kizilirmak-yahsihan-hatti","status":"priority-review","note":"Yerel kamusal rekreasyon/olta bağlamı daha önce tespit edildi; rota özelindeki tür ve güncel kıyı sınırı yeniden çaprazlanacak."},
-      {"slug":"ulusal-nigde-gumusler-baraj-golu","status":"search-console-priority","note":"Konum niyetli Search Console fırsatı; trafik sinyali confidence kanıtı değildir. Resmî tür + erişim aileleri bulunursa Stage 2 adayı olabilir."},
-      {"slug":"ulusal-nigde-akkaya-baraj-golu","status":"search-console-priority","note":"Konum niyetli Search Console fırsatı; çevresel hassasiyet ve su kalitesi ayrıca incelenmeden yükseltilmeyecek."},
-      {"slug":"ulusal-adana-nergizlik-baraj-golu","status":"search-console-priority","note":"Önceki Search Console snapshotunda iyi pozisyon/düşük CTR sinyali var; rota kimliği, tür ve erişim ayrı kanıtlarla tamamlanmalı."},
-      {"slug":"ulusal-elazig-cip-baraj-golu","status":"hold-sensitive-use","note":"Aktif rota mevcut; yeni aday değildir. Su kullanımı, erişim ve tür kanıtı birlikte yeterli hale gelmeden D tutulur."},
-      {"slug":"ulusal-gaziantep-kayacik-baraj-golu","status":"hold-existing","note":"Aktif rota mevcut; yeni aday değildir. Rota özelinde amatör erişim/hukuk ve tür kanıtı birleşimi yeniden aranacak."}
+    "stage1FalsePositiveCandidates": [
+      {"slug":"ulusal-kirikkale-kizilirmak-yahsihan-hatti","reason":"current route is already Güven C"},
+      {"slug":"ulusal-diyarbakir-devegecidi-baraj-golu","reason":"current route is already Güven C"},
+      {"slug":"ulusal-batman-batman-baraj-golu","reason":"current route is already Güven C"},
+      {"slug":"ulusal-erzurum-koycegiz-baraj-golu-erzurum","reason":"current route is already Güven C"}
     ],
-    "sourceFamiliesSearched": ["resmi-kurumsal", "akademik-universite", "yerel-destekleyici"],
     "newCandidatesReviewed": 10,
     "newCandidates": [
-      {"name":"Gelingüllü Barajı genel kıyı","province":"Yozgat","status":"hold-ecology","note":"2025 DSİ sulak alan/flamingo hassasiyeti ve 2026 İl Tarım denetim bağlamı nedeniyle mikro kıyı yayımlanmayacak; Stage 3 için şimdilik beklemede."},
-      {"name":"Batman Baraj Gölü genel kıyı","province":"Batman","status":"reject-duplicate","note":"Repoda ulusal-batman-batman-baraj-golu zaten aktif."},
-      {"name":"Cip Baraj Gölü genel kıyı","province":"Elazığ","status":"reject-duplicate","note":"Repoda ulusal-elazig-cip-baraj-golu zaten aktif."},
-      {"name":"Ayvalı Barajı genel kıyı","province":"Kahramanmaraş","status":"reject-sensitive-drinking-water","note":"2025 Bakanlık kaydı Ayvalı'yı Kahramanmaraş içme suyu arzının parçası olarak doğruluyor; genel mera adayı olarak yayımlanmayacak."},
-      {"name":"Kralkızı Baraj Gölü genel kıyı","province":"Diyarbakır","status":"hold-aquaculture","note":"2025 balıklandırma kaydı güçlü tür olasılığı verir; İl Tarım kayıtlarında büyük yetiştiricilik/avlak sahaları bulunduğundan kamusal genel kıyı ayrıştırılmadan yayımlanmayacak."},
-      {"name":"Mursal Barajı genel kıyı","province":"Sivas","status":"reject-sensitive-drinking-water","note":"DSİ kaydı Mursal suyunun Divriği içme suyuna verildiğini doğruluyor; Stage 3 yeni mera havuzuna alınmayacak."},
-      {"name":"Kayacık Baraj Gölü genel kıyı","province":"Gaziantep","status":"reject-duplicate","note":"Repoda ulusal-gaziantep-kayacik-baraj-golu zaten aktif."},
-      {"name":"Gerek Barajı/Göleti","province":"Erzurum","status":"reject-under-construction","note":"29 Temmuz 2026 Valilik kaydı yapımın sürdüğünü ve su tutulmasının 2027 sonbaharında planlandığını bildiriyor."},
-      {"name":"Küçüktüy Göleti","province":"Erzurum","status":"reject-under-construction","note":"DSİ/Valilik kaynaklarında yapımı devam ediyor; mevcut balıkçılık merası değildir."},
-      {"name":"Kavuşturan Göleti","province":"Erzurum","status":"reject-under-construction","note":"Bakanlık 17 Eylül 2025 kaydında yapımın sürdüğünü ve ileride su tutulmasının planlandığını bildiriyor; mevcut mera değildir."}
+      {"name":"Gelingüllü Barajı genel kıyı","province":"Yozgat","status":"hold-ecology"},
+      {"name":"Batman Baraj Gölü genel kıyı","province":"Batman","status":"reject-duplicate"},
+      {"name":"Cip Baraj Gölü genel kıyı","province":"Elazığ","status":"reject-duplicate"},
+      {"name":"Ayvalı Barajı genel kıyı","province":"Kahramanmaraş","status":"reject-sensitive-drinking-water"},
+      {"name":"Kralkızı Baraj Gölü genel kıyı","province":"Diyarbakır","status":"hold-aquaculture"},
+      {"name":"Mursal Barajı genel kıyı","province":"Sivas","status":"reject-sensitive-drinking-water"},
+      {"name":"Kayacık Baraj Gölü genel kıyı","province":"Gaziantep","status":"reject-duplicate"},
+      {"name":"Gerek Barajı/Göleti","province":"Erzurum","status":"reject-under-construction"},
+      {"name":"Küçüktüy Göleti","province":"Erzurum","status":"reject-under-construction"},
+      {"name":"Kavuşturan Göleti","province":"Erzurum","status":"reject-under-construction"}
     ]
   },
   "stage2": {
-    "status": "pending",
+    "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 0,
-    "promotedSlugs": []
+    "promotedCount": 4,
+    "promotedSlugs": [
+      "ankara-500km-adiyaman-sirimtas-baraj-golu",
+      "ankara-500km-adiyaman-karahuyuk-goleti",
+      "ulusal-nigde-gumusler-baraj-golu",
+      "ulusal-sivas-delice-baraj-golu-sivas"
+    ],
+    "remainingNeeded": 13,
+    "notes": "Bu çalıştırmada yalnız kanıt eşiğini geçen dört gerçek D kayıt kodda C'ye yükseltildi. Sırımtaş: TAGEM siraz stok takviyesi + DergiPark HES kimliği + GAP işletme bağlamı; Karahöyük: İl Tarım sazan balıklandırması + DSİ gölet kimliği + Çevre Durum Raporu; Gümüşler: İl Tarım sazan balıklandırması + İl Kültür/Turizm baraj kimliği + çevre raporu tür kaydı; Delice: İl Tarım rota-özel 2015 sazan balıklandırması + 2025 yerel sulama ve balıklandırma kayıtları. Mikro kıyı/park/yol kesinleştirilmedi; locationPrecision Genel bölge ve navigationVerified=false tutuldu. Stage 1 havuzunda zaten C olduğu sonradan doğrulanan Yahşihan, Devegeçidi, Batman ve Köyceğiz günlük D→C kotasından çıkarıldı."
   },
   "stage3": {
     "status": "pending",
@@ -101,7 +86,7 @@
     "officialStatus": "pending",
     "representativeSlugs": [],
     "warnings": [],
-    "notes": "Aşama 1'de MGM denetimi çalıştırılmadı; tek resmî denetim Aşama 3'te yapılacak."
+    "notes": "Aşama 3'e kadar MGM denetimi çalıştırılmayacak."
   },
   "ci": {"status":"pending"},
   "pr": null,
