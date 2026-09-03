@@ -1,0 +1,48 @@
+import type { EnrichedMera, ConfidenceProfile, ResearchSource, FishEvidence, AccessEvidence } from "./meralar-tumu-core";
+
+const date="2026-09-03";
+const teblig:ResearchSource={label:"6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığı Tebliği (2024/21)",url:"https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",note:"2024-2028 genel amatör avcılık çerçevesidir; il/su özelindeki karar, kiralama, koruma ve saha kısıtları ayrıca uygulanır."};
+const s=(label:string,url:string,note:string):ResearchSource=>({label,url,note});
+const fishEv=(source:ResearchSource,note:string):FishEvidence=>({name:"Sazan",scientificName:"Cyprinus carpio",evidenceLevel:"Güçlü olasılık · rota özelinde resmî balıklandırma",sourceLabel:source.label,sourceUrl:source.url,note,recordCount:null,distanceKm:null});
+const accessEv=(label:string,value:string,source:ResearchSource,note:string):AccessEvidence=>({label,value,sourceUrl:source.url,note});
+const profile=(identity:string,access:string,species:string):ConfidenceProfile=>({model:"evidence-v1",overall:"C",identity:{level:"strong",label:"Rota özelinde resmî kimlik",note:identity},legal:{level:"partial",label:"Güncel mevzuat + rota kullanımı",note:"Genel 6/2 Tebliğ rota özelindeki resmî amatör kullanım/balıklandırma kayıtlarıyla birlikte değerlendirilmiştir. Belirli kıyı cebinin sürekli açık olduğu varsayılmaz."},access:{level:"partial",label:"Genel erişim bağlamı",note:access},species:{level:"strong",label:"Rota özelinde sazan kanıtı",note:species},field:{level:"unverified",label:"Saha doğrulaması yok",note:"Son park, özel parsel, bariyer, kıyı zemini, su kotu ve güncel tabela hareket günü yerinde doğrulanmalıdır."},reviewedAt:date});
+
+const alpsariStock=s("Çankırı İl Tarım ve Orman Müdürlüğü - 2026 Alpsarı balıklandırması","https://cankiri.tarimorman.gov.tr/Haber/1352/Ilimizde-Gol-Ve-Goletler-662-Bin-500-Sazan-Yavrusu-Ile-Bereketleniyor","3 Eylül 2026 tarihli kayıt Korgun Alpsarı Göletine 50 bin sazan yavrusu bırakıldığını rota adıyla doğrular.");
+const alpsariValilik=s("Çankırı Valiliği - Alpsarı Göleti","https://www.cankiri.gov.tr/alpsari-goleti","Göletin Çankırı-Korgun arasında bulunduğunu ve mesire/rekreasyon kullanımını resmî il kaynağıyla tanımlar.");
+const alpsariKorgun=s("Korgun Kaymakamlığı - Alpsarı Göleti çevresi","https://www.korgun.gov.tr/alpsari-goletinde-incelemelerde-bulunuldu","Alpsarı Göletinin Korgun Ovası ve Alpsarı köyü sulama bağlamını resmî ilçe kaynağıyla destekler.");
+const alpsariMap=s("OpenStreetMap tabanlı Alpsarı genel konumu","https://mapcarta.com/13838538","Alpsarı yerleşimini 40.68462, 33.53091 genel planlama noktasında gösterir ve yakındaki Alpsarı Göletini işaretler; kıyı girişi değildir.");
+
+const esk2022=s("Eskişehir İl Tarım ve Orman Müdürlüğü - 2022 sazan balıklandırması","https://eskisehir.tarimorman.gov.tr/Haber/1045/903-Bin-Adet-Yavru-Sazan-Baligi-Eskisehir-Sularinda","Kızılcaören ve Günyüzü-1 dahil listelenen sulara sazan bırakıldığını; seçilen suların yetiştiriciliğe açılmamış ve amatör balıkçıların yararlanabildiği kaynaklar olduğunu bildirir.");
+const esk2018=s("Eskişehir İl Tarım ve Orman Müdürlüğü - 2018 il brifingi","https://eskisehir.tarimorman.gov.tr/Belgeler/2018_Faaliyet_Raporu/2018_Yili_Brifing.pdf","İşletmedeki göletleri ilçe ve adlarıyla kurumsal envanterde listeler; rota kimliği için kullanılır.");
+const kizilMap=s("OpenStreetMap tabanlı Kızılcaören genel konumu","https://mapcarta.com/12960272","Beylikova Kızılcaören yerleşimini 39.63287, 31.36453 noktasında gösterir; gölet kıyısı veya park noktası değildir.");
+const gunyuzuMap=s("OpenStreetMap tabanlı Günyüzü Göleti genel çevresi","https://mapcarta.com/N9379331245","39.37929, 31.81662 noktasının yaklaşık 450 m güneyinde Günyüzü Göletini gösterir; yayımlanan pin yalnız genel çevre planlamasıdır.");
+
+const common=(slug:string,name:string,district:string,province:string,zone:string,lat:number,lng:number,image:string,sources:ResearchSource[],mapSource:ResearchSource,summary:string,identity:string,access:string):EnrichedMera=>({
+  slug,name,district,province,zone,waterType:"Gölet",region:"İç Anadolu",summary,
+  fish:["Sazan"],methods:["Dip oltası","Şamandıralı olta"],baits:["Mısır","Hamur","Solucan"],camping:"Kontrol edilmeli",vehicleAccess:"Kontrol edilmeli",
+  amenities:[`${district} ilçe merkezindeki temel hizmetler`,`Genel yerleşim yaklaşımı`],
+  cautions:["Pin genel planlama bölgesidir; kesin kıyı girişi, park yeri veya kamusal parsel göstermez.","Sulama/işletme yapıları, savak, dolgu gövde ve teknik tesisler av noktası kabul edilmez.","Sazan balıklandırması tür olasılığı kanıtıdır; av garantisi değildir. Güncel 6/2 Tebliğ, il kararları ve saha tabelaları kontrol edilmelidir."],
+  lat,lng,locationPrecision:"Genel bölge",verification:"Rota özelinde resmî su/balıklandırma kaydı + bağımsız genel konum/erişim bağlamı",updatedAt:date,publishedAt:date,confidence:"C",image,socialImage:image,
+  navigationNote:"Gösterilen koordinat son kıyı cebine yönlendirme değildir. Son yaklaşım, yol açıklığı, özel parsel, park, bariyer ve güvenlik sınırları hareket günü yerinde kontrol edilmelidir.",
+  shoreProfile:"Kırsal göletlerde su kotu, çamur, gevşek şev ve işletme sınırları mevsime göre değişebilir. Yalnız sahada açıkça güvenli ve kamusal olduğu görülen kıyı kesimleri değerlendirilmelidir.",
+  transport:`${district} üzerinden genel yerleşim/gölet çevresi planlanabilir. Mikro yol, araçla kıyıya iniş ve park cebi doğrulanmadığından navigasyon son kilometre için kesin kabul edilmemelidir.`,
+  crowdNote:"Küçük içsu rotalarında uygun kıyı alanı su seviyesi, tarımsal faaliyet ve yerel kullanım nedeniyle sınırlı olabilir.",
+  longIntro:[`${name}, rota kimliği ve sazan olasılığı resmî kayıtlarla desteklenen, mikro kıyı erişimi kesinleştirilmeden Güven C düzeyinde yayımlanan bir içsu planlama rotasıdır.`,`Güven C, göletin her kıyısının sürekli açık veya avlanmaya uygun olduğu anlamına gelmez. Güncel mevzuat, özel mülkiyet, işletme güvenliği ve saha tabelaları hareket günü ayrıca kontrol edilmelidir.`],
+  planningNotes:["Güncel 6/2 Tebliğ ve varsa il/ilçe duyuruları hareket öncesi kontrol edilir.","Teknik gölet yapıları ve işletme sahalarından güvenli mesafe korunur.","Kamp/gecelik kalış izni varsayılmaz; ilçe merkezindeki konaklama ve hizmetler tercih edilir."],
+  seasonalNotes:["Geçmiş veya güncel sazan balıklandırması türün bulunabileceğine dair kalıcı olasılık kanıtıdır; güncel stok yoğunluğu veya yakalama başarısı garantisi değildir.","Sulama sezonunda su seviyesi ve kıyı zemini hızla değişebilir."],
+  sources:[...sources,teblig],researchedAt:date,researchStatus:"Rota özelinde çok kaynaklı masa başı doğrulama tamamlandı; mikro erişim genel bölge seviyesinde tutuldu.",researchSummary:summary,
+  fishEvidence:[fishEv(sources[0],`${name} rota adıyla sazan balıklandırma kaydında yer alır.`)],accommodationOptions:[],
+  accessEvidence:[accessEv("Genel konum",zone,mapSource,"İkincil harita yalnız genel planlama bölgesini destekler; mülkiyet veya kıyı giriş izni değildir.")],navigationVerified:false,
+  confidenceProfile:profile(identity,access,"Resmî balıklandırma kaydı sazan varlığı için güçlü olasılık kanıtıdır; güncel av başarısı anlamına gelmez.")
+});
+
+export const yeniMeralar20260903:EnrichedMera[]=[
+  common("cankiri-korgun-alpsari-goleti","Alpsarı Göleti","Korgun","Çankırı","Alpsarı genel bölge",40.68462,33.53091,"/images/meralar/ulusal/cankiri-korgun-alpsari-goleti.svg",[alpsariStock,alpsariValilik,alpsariKorgun,alpsariMap],alpsariMap,"Alpsarı Göleti, 3 Eylül 2026 resmî sazan balıklandırması, Valilik rekreasyon kaydı ve Korgun sulama kimliğiyle çaprazlanan Güven C rotasıdır.","İl Tarım balıklandırması, Valilik gölet/rekreasyon kaydı ve Kaymakamlık sulama bağlamı aynı Alpsarı Göletini doğrular.","Valilik gölet çevresini mesire/rekreasyon bağlamında tanımlar; bununla birlikte son kıyı cebi, park ve mülkiyet sınırı saha teyitli değildir."),
+  common("eskisehir-beylikova-kizilcaoren-goleti","Kızılcaören Göleti","Beylikova","Eskişehir","Kızılcaören genel bölge",39.63287,31.36453,"/images/meralar/ulusal/eskisehir-beylikova-kizilcaoren-goleti.svg",[esk2022,esk2018,kizilMap],kizilMap,"Kızılcaören Göleti, 2022 resmî sazan balıklandırması ve Eskişehir gölet envanteriyle doğrulanan; yetiştiriciliğe açılmamış amatör kullanım kaydı bulunan Güven C rotasıdır.","İl Tarımın balıklandırma kaydı ile kurumsal gölet envanteri Beylikova Kızılcaören kimliğini destekler.","İl Tarım balıklandırılan suların yetiştiriciliğe açılmamış ve amatör balıkçıların yararlanabildiği kaynaklar arasından seçildiğini bildirir; mikro kıyı erişimi yine doğrulanmış sayılmaz."),
+  common("eskisehir-gunyuzu-gunyuzu-1-goleti","Günyüzü-1 Göleti","Günyüzü","Eskişehir","Günyüzü genel gölet çevresi",39.37929,31.81662,"/images/meralar/ulusal/eskisehir-gunyuzu-gunyuzu-1-goleti.svg",[esk2022,esk2018,gunyuzuMap],gunyuzuMap,"Günyüzü-1 Göleti, birden fazla resmî sazan balıklandırma kaydı ve kurumsal su envanteriyle doğrulanan; genel bölge hassasiyetinde yayımlanan Güven C rotasıdır.","İl Tarım balıklandırma kayıtları Günyüzü-1 adını ilçe düzeyinde tekrarlar; genel su yapısı çevresi bağımsız harita verisiyle eşleştirilir.","İl Tarımın amatör balıkçıların yararlanabildiği ve yetiştiriciliğe açılmamış kaynak seçimi kaydı kamusal genel kullanım bağlamı sağlar; son kıyı girişi saha teyitli değildir.")
+];
+
+export const applyDailyQuality20260903Stage3=(routeMap:Map<string,EnrichedMera>)=>{
+  for(const route of yeniMeralar20260903){if(routeMap.has(route.slug))throw new Error(`3 Eylül yeni rota duplicate: ${route.slug}`);routeMap.set(route.slug,route);}
+  return routeMap;
+};
