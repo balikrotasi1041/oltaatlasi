@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "checkedAt": "2026-09-01T17:03:41+03:00",
+  "checkedAt": "2026-09-03T16:55:34+03:00",
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
   "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
-  "message": "1 Eylül 2026 tek günlük resmî MGM denetiminde MeteoUYARI/günlük Türkiye-bölgesel tahminleri ve deniz tahminleri kontrol edildi. Temsilî set: Kandıra/Kocaeli deniz kıyısı, Ankara Mogan Gölü, Ardahan Kura Nehri, Adıyaman Atatürk Baraj Gölü, Van Zernek Baraj Gölü ve Artvin Borçka Baraj Gölü. MGM 01.09.2026 06:00-02.09.2026 06:00 raporunda güncel meteorolojik uyarı bulunmadığını bildirirken Doğu Anadolu'nun doğusu ile Orta/Doğu Karadeniz için sağanak ve gök gürültülü sağanak; denizlerde ise fırtına beklenmediğini, Karadeniz ve Van Gölü'nde yağışlı koşulları bildiriyor. Denetim ortamı oltaatlasi.com /api/weather noktasal model yanıtlarını canlı olarak okuyamadığından sıcaklık-rüzgâr-yağış/hadise bazındaki model-MGM karşılaştırması tamamlanamadı. Bu nedenle resmî teyit statüsü verified yapılmadı; MGM uyarısı türetilmiş saha puanının üzerinde tutulmaya devam ediyor.",
+  "message": "3 Eylül 2026 tek günlük resmî MGM denetiminde MeteoUYARI, Türkiye/bölgesel-il tahminleri ve deniz tahminleri kontrol edildi. Temsilî set: Kefken-Cebeci/Kocaeli deniz kıyısı, Ankara Mogan Gölü, Ardahan Kura Nehri, Adıyaman Atatürk Baraj Gölü, Van Zernek Baraj Gölü ve Artvin Borçka Baraj Gölü. MGM 03.09.2026 06:00-04.09.2026 06:00 Türkiye raporu Doğu Karadeniz kıyıları, Ordu, Samsun'un doğusu ve sabah Sinop çevrelerinde sağanak; Marmara'nın güneybatısı ile Kuzey Ege'de 40-60 km/saat kuvvetli kuzey/kuzeydoğu rüzgârı bildiriyor. 24 saatlik deniz raporunda Doğu Karadeniz'de fırtına beklenmiyor, doğusunda sağanak ve 1-2 m dalga öngörülüyor; Piri Reis üç günlük ürünü Güney Ege için fırtınamsı rüzgâr bildiriyor. MeteoUYARI sayfasında denetim anında il bazında etkin renk kodlu uyarı kaydı okunmadığından warnings nesnesine il eklenmedi. Çalışma ortamı oltaatlasi.com /api/weather noktasal model yanıtlarını güvenilir biçimde okuyamadığı için altı temsilî merada sıcaklık, rüzgâr, yağış/hadise ve uyarı bazında model-MGM sayısal karşılaştırması tamamlanamadı. Bu nedenle resmî teyit statüsü verified yapılmadı; MGM uyarısı türetilmiş saha puanının üzerinde tutulmaya devam ediyor.",
   "warnings": {}
 }
