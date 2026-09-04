@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "checkedAt": "2026-09-01T17:03:41+03:00",
+  "checkedAt": "2026-09-04T14:00:32+03:00",
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
   "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
-  "message": "1 Eylül 2026 tek günlük resmî MGM denetiminde MeteoUYARI/günlük Türkiye-bölgesel tahminleri ve deniz tahminleri kontrol edildi. Temsilî set: Kandıra/Kocaeli deniz kıyısı, Ankara Mogan Gölü, Ardahan Kura Nehri, Adıyaman Atatürk Baraj Gölü, Van Zernek Baraj Gölü ve Artvin Borçka Baraj Gölü. MGM 01.09.2026 06:00-02.09.2026 06:00 raporunda güncel meteorolojik uyarı bulunmadığını bildirirken Doğu Anadolu'nun doğusu ile Orta/Doğu Karadeniz için sağanak ve gök gürültülü sağanak; denizlerde ise fırtına beklenmediğini, Karadeniz ve Van Gölü'nde yağışlı koşulları bildiriyor. Denetim ortamı oltaatlasi.com /api/weather noktasal model yanıtlarını canlı olarak okuyamadığından sıcaklık-rüzgâr-yağış/hadise bazındaki model-MGM karşılaştırması tamamlanamadı. Bu nedenle resmî teyit statüsü verified yapılmadı; MGM uyarısı türetilmiş saha puanının üzerinde tutulmaya devam ediyor.",
+  "message": "4 Eylül 2026 tek günlük resmî MGM denetiminde MeteoUYARI, günlük Türkiye/bölgesel tahminler ile 24 saatlik ve 3 günlük deniz tahminleri kontrol edildi. Temsilî set: Kefken-Cebeci/Kocaeli deniz kıyısı, Ankara Mogan Gölü, Ardahan Kura Nehri, Adıyaman Atatürk Baraj Gölü, Çankırı Alpsarı Göleti ve Artvin Borçka Baraj Gölü. MGM MeteoUYARI denetim anında aktif il bazlı renk kodlu uyarı göstermedi. 4 Eylül deniz bülteni Ege'de fırtınamsı rüzgâr, Doğu Karadeniz'de sağanak/gök gürültülü sağanak; Marmara'da kuzey-kuzeydoğudan 3-5 yer yer 6 kuvvetinde rüzgâr bildiriyor. Günlük Türkiye tahmini kuzey ve batının parçalı/yer yer çok bulutlu, İç Ege'nin güney/doğusu, Akdeniz'in iç ve yüksek kesimleri, Batı Karadeniz'in batısının iç kesimleri, Orta ve Doğu Karadeniz kıyıları ile Doğu Anadolu'nun kuzeydoğusunda sağanak/gök gürültülü sağanak öngörüyor. Denetim ortamından oltaatlasi.com /api/weather noktasal model yanıtlarına DNS/erişim sağlanamadığından sıcaklık-rüzgâr-yağış/hadise bazındaki model-MGM karşılaştırması tamamlanamadı. Bu nedenle status verified yapılmadı; resmî teyit iddiası üretilmiyor ve MGM uyarısı türetilmiş puanın üzerinde tutuluyor.",
   "warnings": {}
 }
