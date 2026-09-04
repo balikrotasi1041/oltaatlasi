@@ -8,6 +8,7 @@ import { applyDailyQualityRun20260824 } from "./meralar-daily-quality-2026-08-24
 import { applyDailyQuality20260901Stage2 } from "./meralar-daily-quality-2026-09-01-stage2";
 import { applyDailyQuality20260903Stage2 } from "./meralar-daily-quality-2026-09-03-stage2";
 import { applyDailyQuality20260903Stage2B } from "./meralar-daily-quality-2026-09-03-stage2b";
+import { applyDailyQuality20260904Stage4EvidenceFix } from "./meralar-daily-quality-2026-09-04-stage4-evidence-fix";
 import { applyDailyQuality20260904Stage3 } from "./meralar-daily-quality-2026-09-04-stage3";
 
 const valilik="https://www.kirikkale.gov.tr/turkuaz-bisiklet-yolunun-ilk-etabi-acildi";
@@ -56,6 +57,7 @@ export const applyGunlukSonuc20260818=(routeMap:Map<string,EnrichedMera>)=>{
   applyDailyQuality20260901Stage2(routeMap);
   applyDailyQuality20260903Stage2(routeMap);
   applyDailyQuality20260903Stage2B(routeMap);
+  applyDailyQuality20260904Stage4EvidenceFix(routeMap);
   applyDailyQuality20260904Stage3(routeMap);
 
   appendDailyRiskNote(routeMap,"sivas-golova-baraj-golu","Su kotu, dik/gevşek şev ve rüzgâr etkisi hareket günü yerinde değerlendirilmeden su kenarına inilmemelidir; baraj işletme sınırları ve saha tabelaları önceliklidir.");
