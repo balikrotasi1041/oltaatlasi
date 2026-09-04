@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-04",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-09-04",
   "done": false,
   "research": {
@@ -41,7 +41,7 @@
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-erzurum-olur-baraj-golu"
     ],
-    "newCandidatesReviewed": 8,
+    "newCandidatesReviewed": 11,
     "newCandidates": [
       {"name":"Ergani Baraj Gölü","province":"Diyarbakır","status":"candidate-strong","sourceFamilies":["resmi","akademik"]},
       {"name":"Dicle Baraj Gölü","province":"Diyarbakır","status":"hold-protection-access","sourceFamilies":["resmi","akademik/üniversite"]},
@@ -50,7 +50,10 @@
       {"name":"Kralkızı Baraj Gölü","province":"Diyarbakır/Elazığ","status":"hold-aquaculture-commercial","sourceFamilies":["resmi","akademik"]},
       {"name":"Çetin Baraj Gölü","province":"Siirt","status":"hold-hes-access","sourceFamilies":["resmi","yerel-destekleyici"]},
       {"name":"Keban Baraj Gölü","province":"Elazığ/Tunceli","status":"reject-general-duplicate-or-commercial-complexity","sourceFamilies":["resmi","akademik"]},
-      {"name":"Karakaya Baraj Gölü","province":"Malatya/Elazığ","status":"reject-general-duplicate-or-commercial-complexity","sourceFamilies":["resmi","akademik"]}
+      {"name":"Karakaya Baraj Gölü","province":"Malatya/Elazığ","status":"reject-general-duplicate-or-commercial-complexity","sourceFamilies":["resmi","akademik"]},
+      {"name":"Alpsarı Göleti","province":"Çankırı","status":"selected-C","sourceFamilies":["resmi-il-tarim","valilik/kaymakamlik","ikincil-konum"]},
+      {"name":"Kızılcaören Göleti","province":"Eskişehir","status":"selected-C","sourceFamilies":["resmi-il-tarim","DSI","resmi-kiralama","ikincil-konum"]},
+      {"name":"Günyüzü-1 Göleti","province":"Eskişehir","status":"selected-C","sourceFamilies":["resmi-il-tarim-coklu-kayit","resmi-kiralama","ikincil-konum"]}
     ]
   },
   "stage2": {
@@ -87,21 +90,33 @@
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-erzurum-olur-baraj-golu"
     ],
-    "notes": "17 benzersiz kayıt 4 Eylül başlangıç main SHA'sında gerçekten D idi ve D→C uygulama fonksiyonları confidence==='D' önkoşuluyla işlendi. Kanıt paketleri bir önceki gün aynı main SHA üzerinde hazırlanmış fakat main'e merge edilmemişti; 4 Eylül'de değişmemiş baseline üzerinde yeniden doğrulandı. Her yükselişte rota-özel resmi/kurumsal ve akademik veya yerel destekleyici kaynak aileleri kullanılıyor; genel 6/2 tebliği tek başına yeterli sayılmıyor. Geçmiş balıklandırma yalnız tür olasılığı kanıtıdır. Mikro kıyı, park, yol veya koordinat kesinleştirilmedi; gerekli kayıtlarda locationPrecision='Genel bölge' ve navigationVerified=false korunuyor."
+    "notes": "17 benzersiz kayıt 4 Eylül başlangıç main SHA'sında gerçekten D idi ve D→C uygulama fonksiyonları confidence==='D' önkoşuluyla işlendi. Her yükselişte rota-özel resmî/kurumsal ve akademik veya yerel destekleyici kaynak aileleri kullanılıyor; genel 6/2 tebliği tek başına yeterli sayılmıyor. Geçmiş balıklandırma yalnız tür olasılığı kanıtıdır. Mikro kıyı, park, yol veya koordinat kesinleştirilmedi; gerekli kayıtlarda locationPrecision='Genel bölge' ve navigationVerified=false korunuyor."
   },
   "stage3": {
-    "status": "pending",
+    "status": "completed",
     "newCPlusTarget": 3,
-    "newCPlusCount": 0,
-    "newSlugs": []
+    "newCPlusCount": 3,
+    "newSlugs": [
+      "cankiri-korgun-alpsari-goleti",
+      "eskisehir-beylikova-kizilcaoren-goleti",
+      "eskisehir-gunyuzu-gunyuzu-1-goleti"
+    ],
+    "notes": "Tam 3 yeni Güven C rota bugünkü dala eklendi; Ege/Marmara dışındadır. Üçünde de duplicate kontrolü çalışma fonksiyonunda zorunlu, mikro kıyı/park/mülkiyet kesinleştirilmedi, locationPrecision='Genel bölge' ve navigationVerified=false tutuldu. Alpsarı 3 Eylül 2026 İl Tarım sazan balıklandırması + Valilik/Kaymakamlık rekreasyon/çevre kullanımı; Kızılcaören İl Tarım balıklandırması + DSİ işletme envanteri + resmî kiralama bağlamı; Günyüzü-1 tekrarlanan İl Tarım balıklandırma kayıtları + resmî kiralama bağlamıyla desteklendi. Özgün SVG image/socialImage eklendi."
   },
   "mgmAudit": {
-    "status": "pending",
-    "checkedAt": null,
+    "status": "completed_pending",
+    "checkedAt": "2026-09-04T14:00:32+03:00",
     "officialStatus": "pending",
-    "representativeSlugs": [],
+    "representativeSlugs": [
+      "kefken-cebeci-kiyilari",
+      "ankara-500km-ankara-mogan-golu",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "cankiri-korgun-alpsari-goleti",
+      "ulusal-artvin-borcka-baraj-golu"
+    ],
     "warnings": [],
-    "notes": "Aşama 3'e kadar çalıştırılmayacak."
+    "notes": "MGM MeteoUYARI, 4 Eylül 2026 günlük Türkiye/bölgesel tahminleri ile 24 saatlik ve 3 günlük deniz tahminleri tam bir kez kontrol edildi. MeteoUYARI denetim anında aktif il bazlı renk kodlu uyarı göstermedi. Deniz bülteni Ege'de fırtınamsı rüzgâr, Doğu Karadeniz'de yağış; günlük tahmin kuzey/batının parçalı-yer yer çok bulutlu ve çeşitli bölgelerde sağanak/gök gürültülü sağanak olduğunu bildiriyor. Çalışma ortamı oltaatlasi.com /api/weather noktasal model yanıtlarına DNS/erişim sağlayamadığı için sıcaklık-rüzgâr-yağış/hadise model-MGM karşılaştırması tamamlanamadı. weather-official-audit.json bu nedenle pending tutuldu; resmî teyit iddiası üretilmedi."
   },
   "ci": {"status": "pending"},
   "pr": null,
