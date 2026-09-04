@@ -38,6 +38,42 @@ export const seoDemandTargets: Record<string, SeoDemandTarget> = {
     priority: 0.9,
     intent: "konum",
   },
+  "/meralar/ulusal-nigde-gumusler-baraj-golu/": {
+    title: "Gümüşler Barajı Yol Tarifi ve Balık Avı",
+    description: "Niğde Gümüşler Barajı yol tarifi ve balık avı planı: genel konum, raporlanan türler, kıyı yaklaşımı, erişim ve güncel içsu notları.",
+    priority: 0.9,
+    intent: "konum",
+  },
+  "/meralar/ulusal-nigde-akkaya-baraj-golu/": {
+    title: "Akkaya Barajı Niğde Yol Tarifi ve Balık Avı",
+    description: "Niğde Akkaya Barajı yol tarifi ve balık avı rehberi: genel konum, raporlanan türler, kıyı erişimi, saha riskleri ve güncel içsu kuralları.",
+    priority: 0.9,
+    intent: "konum",
+  },
+  "/meralar/ulusal-bursa-babasultan-baraj-golu/": {
+    title: "Babasultan Barajı Yol Tarifi ve Balık Türleri",
+    description: "Bursa Babasultan Barajı için yol tarifi, genel konum, raporlanan balık türleri, kıyı erişimi, saha koşulları ve güncel içsu notlarını birlikte incele.",
+    priority: 0.9,
+    intent: "konum",
+  },
+  "/meralar/ulusal-kayseri-agcasar-baraj-golu/": {
+    title: "Ağcaşar Barajı Balık Avı, Türler ve Yol Tarifi",
+    description: "Kayseri Ağcaşar Barajı balık avı planı: yol tarifi, genel konum, raporlanan türler, kıyı yaklaşımı, erişim ve güncel içsu kuralları.",
+    priority: 0.9,
+    intent: "balikcilik",
+  },
+  "/meralar/ulusal-kastamonu-germectepe-baraj-golu/": {
+    title: "Germeçtepe Barajı Nerede? Yol Tarifi ve Balık Avı",
+    description: "Kastamonu Germeçtepe Barajı için konum ve yol tarifi, raporlanan balık türleri, kıyı erişimi, saha koşulları ve güncel içsu notları.",
+    priority: 0.85,
+    intent: "konum",
+  },
+  "/meralar/ulusal-adana-nergizlik-baraj-golu/": {
+    title: "Nergizlik Barajı Nerede? Yol Tarifi ve Balık Avı",
+    description: "Adana Nergizlik Barajı için konum ve yol tarifi, raporlanan türler, kıyı yaklaşımı, erişim, saha riskleri ve güncel içsu notlarını incele.",
+    priority: 0.85,
+    intent: "konum",
+  },
   "/meralar/cengelkoy-sahili/": {
     title: "Çengelköy Sahili Yol Tarifi ve Balık Tutma",
     description: "Çengelköy Sahili yol tarifi ve balık tutma rehberi: Boğaz kıyısı erişimi, raporlanan türler, akıntı, yaya yoğunluğu ve güncel saha uyarıları.",
