@@ -20,12 +20,12 @@ const normalizeEvidence = (route: EnrichedMera): FishEvidence[] => {
     return {
       name,
       scientificName: previous?.scientificName ?? scientificNameFor(name),
-      evidenceLevel: /olasılık/i.test(previousLevel) ? previousLevel : `${previousLevel} · tür olasılığı`,
+      evidenceLevel: /olasılık/i.test(previousLevel) ? previousLevel : `${previousLevel} · tür olasılık kanıtı`,
       sourceLabel: previous?.sourceLabel || fallbackSource.label,
       sourceUrl: previous?.sourceUrl || fallbackSource.url,
       note: /olasılık/i.test(previousNote)
         ? previousNote
-        : `${previousNote} Bu kanıt türün bu su gövdesinde bulunma olasılığını destekler; güncel stok yoğunluğu veya av başarısı garantisi değildir.`.trim(),
+        : `${previousNote} Bu kayıt tür varlığı için olasılık kanıtıdır; güncel stok yoğunluğu veya av başarısı garantisi değildir.`.trim(),
       recordCount: previous?.recordCount ?? null,
       distanceKm: previous?.distanceKm ?? null,
     };
