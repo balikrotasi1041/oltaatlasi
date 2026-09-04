@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-04",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
+  "stage": 2,
   "branch": "quality/daily-2026-09-04",
   "done": false,
   "research": {
@@ -12,10 +12,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum/yol tarifi niyetinde 3-15 pozisyon ve düşük CTR yalnız araştırma önceliği olarak kullanıldı; eski trafik verisi confidence kanıtı yapılmadı. Sarımsaklı 624 gösterim/8,74 konum/%0,16 CTR ve Yamula 182 gösterim/7,13 konum/%0 CTR ile en güçlü talep sinyalleridir; D havuzunda ise rota-özel kanıt eşiği esas alındı.",
-    "confidencePolicyNotes": "Güncel evidence-v1 modelinde legalAccessUnclear doğrudan D üretir. C için rota-özel masa başı araştırma ve en az iki bağımsız kaynak/kanıt ekseni gerekir; mikro kıyı ve yol saha teyidi olmadan doğrulanmış sayılmaz.",
-    "duplicatePolicyNotes": "Duplicate radar aynı il/ilçe/su türünde 2,5 km içinde ad/alan benzerliğini kontrol eder; yeni adaylar Stage 3'e geçmeden aktif rota ve allowlist ile tekrar karşılaştırılacaktır.",
-    "indexPolicyNotes": "D/noindex yollar sitemap dışı kalır; indekslenebilir sayfalarda canonical kendini göstermeli, title/meta ve sitemap kaydı bulunmalıdır. Talep hasadı hedeflerinin noindex olması blokajdır.",
+    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum/yol tarifi niyetinde 3-15 pozisyon ve düşük CTR yalnız araştırma önceliği olarak kullanıldı; eski trafik verisi confidence kanıtı yapılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
@@ -44,81 +41,53 @@
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-erzurum-olur-baraj-golu"
     ],
-    "dCandidateNotes": "İlk 17 aday, 3 Eylül dalında yayımlanmamış araştırmada D→C eşiğini karşılayan kanıt paketlerine sahipti; gün değiştiği için sayaç sıfırlandı ve bunlar 4 Eylül için main üzerinde yeniden aday olarak tutuldu. Kalan sekiz aday daha önce kanıt yetersizliği nedeniyle D bırakılmış kayıtlardır. Stage 2'de her kayıt güncel main confidence ve kaynak ailesi açısından yeniden doğrulanmadan kotaya sayılmayacaktır.",
     "newCandidatesReviewed": 8,
     "newCandidates": [
-      {
-        "name": "Ergani Baraj Gölü",
-        "province": "Diyarbakır",
-        "status": "candidate-strong",
-        "sourceFamilies": ["resmi", "akademik"],
-        "evidence": ["Diyarbakır İl Tarım 29.09.2025 balıklandırma kaydı Ergani'yi doğrudan sayıyor", "MedFAR 2025 Ergani Baraj Gölü rota-özel su kalitesi çalışması"],
-        "caution": "İçme suyu/koruma ve belirli kıyının kamusal erişimi ayrıca doğrulanacak."
-      },
-      {
-        "name": "Dicle Baraj Gölü",
-        "province": "Diyarbakır",
-        "status": "hold-protection-access",
-        "sourceFamilies": ["resmi", "akademik/üniversite"],
-        "evidence": ["Diyarbakır İl Tarım 29.09.2025 balıklandırma kaydı Dicle Barajı'nı sayıyor", "DergiPark su kalitesi çalışması ve Dicle Üniversitesi havza koruma planı baraj kimliğini doğruluyor"],
-        "caution": "Havza koruma planı nedeniyle kamusal kıyı ve amatör kullanım ayrı doğrulanmadan yayımlanmayacak."
-      },
-      {
-        "name": "Sultansuyu Baraj Gölü",
-        "province": "Malatya",
-        "status": "candidate-strong-duplicate-check",
-        "sourceFamilies": ["resmi", "akademik"],
-        "evidence": ["Malatya İl Tarım 26.09.2023 sazan balıklandırması", "Turkish Journal of Fisheries and Aquatic Sciences rota-özel balık türleri ve limnoloji çalışması"],
-        "caution": "Aktif rota duplicate kontrolü ve mikro erişim teyidi yapılacak."
-      },
-      {
-        "name": "Ilısu Prof. Dr. Veysel Eroğlu Baraj Gölü",
-        "province": "Batman/Şırnak/Siirt/Mardin",
-        "status": "hold-complex-operational",
-        "sourceFamilies": ["resmi", "kurumsal-arastirma", "yerel-destekleyici"],
-        "evidence": ["Batman ve Şırnak İl Tarım 2024 sazan/şabut balıklandırmaları", "TAGEM 13.05.2024 stok ve su kalitesi saha projesi", "AA/yerel kayıtlar rekreasyonel-sportif balıkçılık bağlamını destekliyor"],
-        "caution": "Çok il, HES, ticari avlak ve güvenlik bağlamı nedeniyle tek genel kıyı rotası olarak yayımlanmayacak; güvenli kamusal bölüm aranacak."
-      },
-      {
-        "name": "Kralkızı Baraj Gölü",
-        "province": "Diyarbakır/Elazığ",
-        "status": "hold-aquaculture-commercial",
-        "sourceFamilies": ["resmi", "akademik"],
-        "evidence": ["Diyarbakır İl Tarım 29.09.2025 balıklandırma kaydı Kralkızı'nı doğrudan sayıyor", "Aquaculture Studies Elazığ su ürünleri kooperatifleri çalışması Kralkızı'nda aktif avcılık/kooperatif bağlamını belgeliyor"],
-        "caution": "Ticari avlak/yetiştiricilik alanları ayrıştırılmadan amatör rota yayımlanmayacak."
-      },
-      {
-        "name": "Çetin Baraj Gölü",
-        "province": "Siirt",
-        "status": "hold-hes-access",
-        "sourceFamilies": ["resmi", "yerel-destekleyici"],
-        "evidence": ["Tarım ve Orman Bakanlığı baraj/HES kimliği ve işletme bağlamı", "İletişim Başkanlığı/AA 02-04.11.2024 kayıtları Çetin'e 500 bin şabut yavrusu bırakıldığını doğruluyor"],
-        "caution": "Aktif HES güvenlik sahası ile kamusal genel kıyı ayrıştırılmadan yayımlanmayacak."
-      },
-      {
-        "name": "Keban Baraj Gölü",
-        "province": "Elazığ/Tunceli",
-        "status": "reject-general-duplicate-or-commercial-complexity",
-        "sourceFamilies": ["resmi", "akademik"],
-        "evidence": ["Elazığ İl Tarım 2025 6. avlak sahası stok/kiralama kaydı ve 2026 TAGEM örneklemesi", "DergiPark Keban balıkçı tekneleri/avcılık çalışması"],
-        "caution": "Çok sayıda ticari avlak ve yetiştiricilik bölgesi bulunuyor; yeni genel rota yerine mevcut özel rotalar iyileştirilmeli."
-      },
-      {
-        "name": "Karakaya Baraj Gölü",
-        "province": "Malatya/Elazığ",
-        "status": "reject-general-duplicate-or-commercial-complexity",
-        "sourceFamilies": ["resmi", "akademik"],
-        "evidence": ["Malatya İl Tarım 10.12.2025 7. bölge avlak ihalesi ve 2023 balıklandırma", "DergiPark Karakaya ağ kafes taşıma kapasitesi çalışması"],
-        "caution": "Ticari avlak ve yetiştiricilik bölgeleri yoğun; yeni genel rota yerine mevcut güvenli/özgül kayıtlar tercih edilmeli."
-      }
-    ],
-    "stage1Outcome": "Aşama 1 tamamlandı. Stage 2 için 25 D aday havuzu hazır; 8 yeni Ege/Marmara dışı aday iki veya daha fazla kaynak ailesiyle tarandı. Yeni adaylarda koruma, HES, ticari avlak ve yetiştiricilik riskleri nedeniyle yalnız Ergani ve Sultansuyu ilk güçlü adaylar; diğerleri hold/reject olarak işaretlendi."
+      {"name":"Ergani Baraj Gölü","province":"Diyarbakır","status":"candidate-strong","sourceFamilies":["resmi","akademik"]},
+      {"name":"Dicle Baraj Gölü","province":"Diyarbakır","status":"hold-protection-access","sourceFamilies":["resmi","akademik/üniversite"]},
+      {"name":"Sultansuyu Baraj Gölü","province":"Malatya","status":"candidate-strong-duplicate-check","sourceFamilies":["resmi","akademik"]},
+      {"name":"Ilısu Prof. Dr. Veysel Eroğlu Baraj Gölü","province":"Batman/Şırnak/Siirt/Mardin","status":"hold-complex-operational","sourceFamilies":["resmi","kurumsal-arastirma","yerel-destekleyici"]},
+      {"name":"Kralkızı Baraj Gölü","province":"Diyarbakır/Elazığ","status":"hold-aquaculture-commercial","sourceFamilies":["resmi","akademik"]},
+      {"name":"Çetin Baraj Gölü","province":"Siirt","status":"hold-hes-access","sourceFamilies":["resmi","yerel-destekleyici"]},
+      {"name":"Keban Baraj Gölü","province":"Elazığ/Tunceli","status":"reject-general-duplicate-or-commercial-complexity","sourceFamilies":["resmi","akademik"]},
+      {"name":"Karakaya Baraj Gölü","province":"Malatya/Elazığ","status":"reject-general-duplicate-or-commercial-complexity","sourceFamilies":["resmi","akademik"]}
+    ]
   },
   "stage2": {
-    "status": "pending",
+    "status": "completed",
     "targetPromotions": 17,
-    "promotedCount": 0,
-    "promotedSlugs": []
+    "promotedCount": 17,
+    "remainingNeeded": 0,
+    "promotedSlugs": [
+      "ankara-500km-adiyaman-sirimtas-baraj-golu",
+      "ankara-500km-adiyaman-karahuyuk-goleti",
+      "ulusal-nigde-gumusler-baraj-golu",
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ulusal-eskisehir-porsuk-baraj-golu",
+      "ulusal-agri-balik-golu",
+      "ulusal-bitlis-van-golu-tatvan-kiyisi",
+      "ulusal-ardahan-aktas-golu",
+      "ulusal-ardahan-posof-cayi",
+      "ankara-500km-bolu-buyukgol",
+      "ankara-500km-bolu-deringol",
+      "ankara-500km-yozgat-gelingullu-baraj-golu",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-adiyaman-cat-baraj-golu",
+      "ulusal-elazig-cip-baraj-golu",
+      "ulusal-gaziantep-kayacik-baraj-golu",
+      "ulusal-denizli-adiguzel-baraj-golu"
+    ],
+    "heldSlugs": [
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-bayburt-lori-deresi",
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-erzurum-olur-baraj-golu"
+    ],
+    "notes": "17 benzersiz kayıt 4 Eylül başlangıç main SHA'sında gerçekten D idi ve D→C uygulama fonksiyonları confidence==='D' önkoşuluyla işlendi. Kanıt paketleri bir önceki gün aynı main SHA üzerinde hazırlanmış fakat main'e merge edilmemişti; 4 Eylül'de değişmemiş baseline üzerinde yeniden doğrulandı. Her yükselişte rota-özel resmi/kurumsal ve akademik veya yerel destekleyici kaynak aileleri kullanılıyor; genel 6/2 tebliği tek başına yeterli sayılmıyor. Geçmiş balıklandırma yalnız tür olasılığı kanıtıdır. Mikro kıyı, park, yol veya koordinat kesinleştirilmedi; gerekli kayıtlarda locationPrecision='Genel bölge' ve navigationVerified=false korunuyor."
   },
   "stage3": {
     "status": "pending",
