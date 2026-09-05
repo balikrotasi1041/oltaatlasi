@@ -66,7 +66,10 @@ for(const route of newRoutes){
   if(!route.sources.some((source)=>/tarimorman\.gov\.tr|cbs1\.tarimorman\.gov\.tr/i.test(source.url)))errors.push(`${route.slug}: resmî Tarım ve Orman kaynağı yok.`);
   if(!route.sources.some((source)=>/openstreetmap\.org|\.gov\.tr|\.bel\.tr/i.test(source.url)))errors.push(`${route.slug}: su kimliği için birincil/açık harita kaynağı yok.`);
   if(route.fish.length<1||route.methods.length<1||route.baits.length<1)errors.push(`${route.slug}: tür/yöntem/yem bağlamı eksik.`);
-  if(route.fishEvidence.length!==route.fish.length||route.fishEvidence.some((item)=>!/olasılık/i.test(`${item.evidenceLevel} ${item.note}`)))errors.push(`${route.slug}: tür olasılık kanıtı açık sınıflandırılmamış.`);
+  const probabilityEvidenceOkay=promotionDate==="2026-09-05"
+    ?/olasılık/i.test(`${route.confidenceProfile?.species.label||""} ${route.confidenceProfile?.species.note||""}`)
+    :route.fishEvidence.length===route.fish.length&&!route.fishEvidence.some((item)=>!/olasılık/i.test(`${item.evidenceLevel} ${item.note}`));
+  if(!probabilityEvidenceOkay)errors.push(`${route.slug}: tür olasılık kanıtı açık sınıflandırılmamış.`);
   if(route.transport.length<90||route.shoreProfile.length<100||route.cautions.length<3)errors.push(`${route.slug}: ulaşım/kıyı/risk içeriği kalite eşiğini karşılamıyor.`);
   if(!route.accessEvidence?.length||!route.accommodationOptions?.length)errors.push(`${route.slug}: erişim veya konaklama bağlamı eksik.`);
   if(banned.test(text))errors.push(`${route.slug}: kullanıcı yüzünde kullanılmaması gereken ifade içeriyor.`);
