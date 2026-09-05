@@ -1,9 +1,12 @@
 {
   "version": 1,
-  "checkedAt": "2026-09-01T17:03:41+03:00",
+  "checkedAt": "2026-09-05T14:03:07+03:00",
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
-  "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
-  "message": "1 Eylül 2026 tek günlük resmî MGM denetiminde MeteoUYARI/günlük Türkiye-bölgesel tahminleri ve deniz tahminleri kontrol edildi. Temsilî set: Kandıra/Kocaeli deniz kıyısı, Ankara Mogan Gölü, Ardahan Kura Nehri, Adıyaman Atatürk Baraj Gölü, Van Zernek Baraj Gölü ve Artvin Borçka Baraj Gölü. MGM 01.09.2026 06:00-02.09.2026 06:00 raporunda güncel meteorolojik uyarı bulunmadığını bildirirken Doğu Anadolu'nun doğusu ile Orta/Doğu Karadeniz için sağanak ve gök gürültülü sağanak; denizlerde ise fırtına beklenmediğini, Karadeniz ve Van Gölü'nde yağışlı koşulları bildiriyor. Denetim ortamı oltaatlasi.com /api/weather noktasal model yanıtlarını canlı olarak okuyamadığından sıcaklık-rüzgâr-yağış/hadise bazındaki model-MGM karşılaştırması tamamlanamadı. Bu nedenle resmî teyit statüsü verified yapılmadı; MGM uyarısı türetilmiş saha puanının üzerinde tutulmaya devam ediyor.",
-  "warnings": {}
+  "sourceUrl": "https://www.mgm.gov.tr/site/ihbar-degerlendirme.aspx",
+  "message": "5 Eylül 2026 tek günlük resmî MGM denetiminde MeteoUYARI/meteorolojik uyarılar, günlük-bölgesel tahminler, il/ilçe tahminleri ve deniz tahminleri kontrol edildi. Temsilî set: Kefken-Cebeci/Kocaeli deniz kıyısı, Ankara Mogan Gölü, Ardahan Posof Çayı, Diyarbakır Ergani Baraj Gölü ve Eskişehir Kızılcaören Göleti. MGM'nin güncel uyarı sayfasında 4 Eylül tarihli Rize ve Artvin için yerel kuvvetli yağış uyarısı aktiftir. 5 Eylül Türkiye tahmininde Rize ve Artvin çevrelerinde yerel kuvvetli yağış; Marmara'nın güneybatısı ile Kuzey Ege'de akşam saatlerine kadar kuvvetli kuzeyli rüzgâr bildirilmektedir. Deniz raporlarında ilgili deniz bölgeleri ayrıca kontrol edilmiştir. Çalışma ortamından oltaatlasi.com /api/weather noktasal model yanıtlarına DNS erişimi sağlanamadığı için sıcaklık, rüzgâr, yağış/hadise ve uyarı bazındaki model-MGM karşılaştırması tamamlanamadı. Bu nedenle status verified yapılmadı; resmî teyit iddiası üretilmiyor ve MGM aktif uyarısı türetilmiş saha puanının üzerinde tutuluyor.",
+  "warnings": {
+    "Rize": "Yerel kuvvetli yağış uyarısı",
+    "Artvin": "Yerel kuvvetli yağış uyarısı"
+  }
 }
