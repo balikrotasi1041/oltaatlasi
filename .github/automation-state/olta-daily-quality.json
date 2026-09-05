@@ -1,57 +1,68 @@
 {
   "version": 1,
-  "date": "2026-09-01",
+  "date": "2026-09-05",
   "timezone": "Europe/Istanbul",
-  "stage": 4,
-  "branch": "quality/daily-2026-09-01",
-  "done": true,
+  "stage": 3,
+  "branch": "quality/daily-2026-09-05",
+  "done": false,
   "research": {
-    "mainShaAtStart": "221e6cfa7b633edb9e176977ba64eb8c74d0fad6",
+    "status": "completed",
+    "mainShaAtStart": "574e6df730c4ffd7423df6a8229606bcde3645bd",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Güncel main'de D meraların noindex/follow ve sitemap dışı politikası doğrulandı. Repodaki en son somut Search Console fırsat seti 23 Ağustos exportudur (veri 21 Ağustos'a kadar): konum/yol tarifi niyetli, 3-15 pozisyon ve düşük CTR sinyali önceliklendirmede yeniden kullanıldı. Sadece eski snapshot'a dayanarak confidence yükseltilmedi; rota-özel kanıt zorunlu tutuldu.",
+    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Eski trafik verisi confidence kanıtı yapılmadı.",
     "dCandidatesReviewed": 25,
-    "dCandidates": ["ulusal-amasya-destek-baraj-golu","ulusal-aksaray-ciftevi-baraj-golu","ulusal-erzincan-karasu-nehri-erzincan-hatti","ulusal-ardahan-kura-nehri-ardahan-hatti","ulusal-kastamonu-cigdem-baraj-golu-kastamonu","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-erzincan-firat-nehri-kemaliye-hatti","ulusal-bolu-caykoy-baraj-golu-bolu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-bayburt-lori-deresi","ankara-500km-adiyaman-ataturk-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-cataltepe-goleti","ulusal-kirikkale-kizilirmak-yahsihan-hatti","ulusal-tunceli-keban-baraj-golu-pertek-kiyisi","ulusal-erzurum-demirdoven-baraj-golu","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-erzurum-olur-baraj-golu","ulusal-erzincan-tercan-baraj-golu","ulusal-artvin-borcka-baraj-golu","ulusal-van-zernek-baraj-golu"],
-    "newCandidatesReviewed": 13,
+    "dCandidates": [
+      "ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ulusal-nigde-gumusler-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-eskisehir-porsuk-baraj-golu","ulusal-agri-balik-golu","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-ardahan-aktas-golu","ulusal-ardahan-posof-cayi","ankara-500km-bolu-buyukgol","ankara-500km-bolu-deringol","ankara-500km-yozgat-gelingullu-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-adiyaman-cat-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-denizli-adiguzel-baraj-golu","ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu"
+    ],
+    "newCandidatesReviewed": 8,
     "newCandidates": [
-      {"name":"Gelingüllü Barajı genel kamusal kıyı","province":"Yozgat","status":"hold-ecology"},{"name":"Kapulukaya Barajı Sulubük genel kıyı","province":"Kırıkkale","status":"reject-duplicate"},{"name":"Menzelet Barajı Bulutoğlu genel kıyı","province":"Kahramanmaraş","status":"reject-duplicate"},{"name":"Çamlıgöze Barajı genel kıyı","province":"Sivas","status":"hold-aquaculture"},{"name":"Karakaya Barajı Kale genel kıyı","province":"Malatya","status":"hold"},{"name":"Keban Barajı Korulu genel kıyı","province":"Elazığ","status":"hold"},{"name":"Kesikköprü Barajı Bala genel kıyı","province":"Ankara","status":"reject-sensitive-water-supply"},{"name":"Almus Barajı genel kıyı alternatifi","province":"Tokat","status":"reject-duplicate"},{"name":"Damsa Baraj Gölü","province":"Nevşehir","status":"reject-duplicate"},{"name":"Kumtepe Baraj Gölü","province":"Nevşehir","status":"reject-duplicate"},{"name":"Çaylı Göleti","province":"Burdur","status":"selected-C"},{"name":"Karamanlı Baraj Gölü","province":"Burdur","status":"selected-C"},{"name":"Korkut Sulama Göleti","province":"Muş","status":"selected-C"}
+      {"name":"Ergani Baraj Gölü","province":"Diyarbakır","status":"selected-C","sourceFamiliesSearched":["resmi/DSI-il-tarim","akademik-DergiPark/üniversite","yerel-destekleyici"]},
+      {"name":"Sultansuyu Barajı","province":"Malatya","status":"hold-rehabilitation","sourceFamiliesSearched":["resmi-DSI","akademik/üniversite","yerel-destekleyici"]},
+      {"name":"Dicle Baraj Gölü","province":"Diyarbakır","status":"hold-protection-access","sourceFamiliesSearched":["resmi/DSI-Tarim","akademik/üniversite","yerel-destekleyici"]},
+      {"name":"Ilısu Prof. Dr. Veysel Eroğlu Baraj Gölü","province":"Siirt/Şırnak/Batman/Mardin","status":"hold-complex-operational","sourceFamiliesSearched":["resmi-Tarim/İletişim","akademik/TAGEM-üniversite","yerel-destekleyici"]},
+      {"name":"Kralkızı Baraj Gölü","province":"Diyarbakır/Elazığ","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi/DSI-Tarim","akademik-DergiPark","yerel-destekleyici"]},
+      {"name":"Çetin Baraj Gölü","province":"Siirt","status":"hold-hes-access","sourceFamiliesSearched":["resmi-Tarim/İletişim","üniversite","yerel-destekleyici"]},
+      {"name":"Çamlıgöze Barajı","province":"Sivas","status":"hold-aquaculture-hes","sourceFamiliesSearched":["resmi-kaymakamlik/DSI","akademik/üniversite","yerel-destekleyici"]},
+      {"name":"Mursal Barajı","province":"Sivas","status":"hold-insufficient-evidence","sourceFamiliesSearched":["resmi/DSI-Tarim","akademik/üniversite","yerel-destekleyici"]},
+      {"name":"Kızılcaören Göleti","province":"Eskişehir","status":"selected-C","sourceFamiliesSearched":["resmi-il-tarim","DSI","resmi-kiralama","ikincil-konum"]},
+      {"name":"Günyüzü-1 Göleti","province":"Eskişehir","status":"selected-C","sourceFamiliesSearched":["resmi-il-tarim-coklu-kayit","resmi-kiralama","ikincil-konum"]}
     ]
   },
   "stage2": {
-    "status":"completed","targetPromotions":17,"promotedCount":17,
-    "promotedPreviousRuns":["ulusal-kastamonu-cigdem-baraj-golu-kastamonu","ulusal-erzincan-karasu-nehri-erzincan-hatti","ulusal-ardahan-kura-nehri-ardahan-hatti","ulusal-artvin-borcka-baraj-golu","ulusal-aksaray-ciftevi-baraj-golu","ulusal-bolu-caykoy-baraj-golu-bolu","ulusal-van-zernek-baraj-golu","ankara-500km-adiyaman-ataturk-baraj-golu"],
-    "promotedThisRun":["ulusal-erzincan-tercan-baraj-golu","ulusal-erzincan-firat-nehri-kemaliye-hatti","ulusal-eskisehir-catoren-baraj-golu","ulusal-eskisehir-gokcekaya-baraj-golu","ankara-500km-ankara-mogan-golu","ulusal-malatya-boztepe-baraj-golu-malatya","ulusal-malatya-kapikaya-baraj-golu-malatya","ankara-500km-eskisehir-yayikli-goleti","ankara-500km-eskisehir-ozdenk-goleti"],
-    "additionalReviewedSlugs":["ulusal-tunceli-keban-baraj-golu-pertek-kiyisi","ulusal-bolu-golkoy-baraj-golu","ulusal-eskisehir-catoren-baraj-golu","ulusal-eskisehir-gokcekaya-baraj-golu","ankara-500km-ankara-mogan-golu","ulusal-malatya-boztepe-baraj-golu-malatya","ulusal-malatya-kapikaya-baraj-golu-malatya","ankara-500km-eskisehir-yayikli-goleti","ankara-500km-eskisehir-ozdenk-goleti","ulusal-eskisehir-porsuk-baraj-golu"],
-    "heldAfterResearch":["ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-erzurum-demirdoven-baraj-golu","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-sivas-delice-baraj-golu-sivas","ulusal-bayburt-lori-deresi","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-karahuyuk-goleti","ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-cataltepe-goleti","ulusal-eskisehir-porsuk-baraj-golu"],
-    "notCountedAlreadyCPlus":["ulusal-tunceli-keban-baraj-golu-pertek-kiyisi","ulusal-bolu-golkoy-baraj-golu"],
-    "notes":"17 benzersiz kayıt gerçek D→C olarak günlük dalda kodlandı. Bu çalıştırmada dokuz ek D kayıt rota-özel resmî/akademik/yerel kanıtla eşiği geçti. Tercan ve Kemaliye'de doğrudan akademik balık verisi; Çatören/Gökçekaya'da resmî stok ve akademik çalışmalar; Mogan'da kamusal park + akademik fauna; Boztepe/Kapıkaya'da resmî balıklandırma/rekreasyon ve güvenlik; Yayıklı/Özdenk'te rota-özel resmî balıklandırma kullanıldı. Pertek ve Gölköy zaten C+ olduğu için günlük D→C kotasına yazılmadı. Porsuk il/ilçe kimliği ve hassas kullanım bağlamı yeterince netleşmeden yükseltilmedi. Mikro erişim, park veya özel mülkiyet kesinleştirilmedi; genel bölge/planlama hassasiyeti ve risk uyarıları korundu."
+    "status": "completed",
+    "targetPromotions": 17,
+    "promotedCount": 17,
+    "remainingNeeded": 0,
+    "promotedSlugs": [
+      "ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ulusal-nigde-gumusler-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-eskisehir-porsuk-baraj-golu","ulusal-agri-balik-golu","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-ardahan-aktas-golu","ulusal-ardahan-posof-cayi","ankara-500km-bolu-buyukgol","ankara-500km-bolu-deringol","ankara-500km-yozgat-gelingullu-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-adiyaman-cat-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-denizli-adiguzel-baraj-golu"
+    ],
+    "heldSlugs": ["ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu"]
   },
   "stage3": {
-    "status":"completed","newCPlusCount":3,
-    "newSlugs":["burdur-tefenni-cayli-goleti","burdur-karamanli-karamanli-baraj-golu","mus-korkut-korkut-sulama-goleti"],
-    "notes":"Tam 3 yeni Güven C rota eklendi. Üçü de Ege/Marmara dışındadır. Çaylı ve Karamanlı için Burdur İl Tarımın 4 Ağustos 2026 sazan balıklandırması temel tür kanıtıdır; su yapısı/ilçe kimliği Bakanlık ve Kaymakamlık kaynaklarıyla çaprazlandı. Korkut Sulama Göleti Kaymakamlık su kimliği, Muş İl Tarım sazan balıklandırması ve 2025 kamusal etkinlik erişim bağlamıyla desteklendi. Mikro kıyı/park/özel parsel kesinleştirilmedi. Kapulukaya ve Menzelet mevcut kayıt oldukları için, Almus/Damsa/Kumtepe duplicate olduğu için; Kesikköprü hassas içme suyu bağlamı, Çamlıgöze yetiştiricilik ve Gelingüllü ekolojik hassasiyet nedeniyle yeni kota dışında tutuldu. Her yeni slug için ayrı özgün SVG eklendi."
+    "status": "completed",
+    "newCPlusTarget": 3,
+    "newCPlusCount": 3,
+    "newSlugs": ["diyarbakir-ergani-ergani-baraj-golu","eskisehir-beylikova-kizilcaoren-goleti","eskisehir-gunyuzu-gunyuzu-1-goleti"],
+    "notes": "Tam 3 yeni Güven C rota eklendi. Üçü de Ege/Marmara dışındadır. Mikro kıyı, park, özel parsel ve son yaklaşım doğrulanmış sayılmadı; locationPrecision=Genel bölge ve navigationVerified=false tutuldu. Ergani'de resmî balıklandırma + DSİ + 2025 hakemli çalışma; Kızılcaören'de İl Tarım + DSİ + kiralama bağlamı; Günyüzü-1'de tekrarlanan İl Tarım balıklandırmaları + kiralama bağlamı kullanıldı."
   },
-  "promotedSlugs":["ulusal-kastamonu-cigdem-baraj-golu-kastamonu","ulusal-erzincan-karasu-nehri-erzincan-hatti","ulusal-ardahan-kura-nehri-ardahan-hatti","ulusal-artvin-borcka-baraj-golu","ulusal-aksaray-ciftevi-baraj-golu","ulusal-bolu-caykoy-baraj-golu-bolu","ulusal-van-zernek-baraj-golu","ankara-500km-adiyaman-ataturk-baraj-golu","ulusal-erzincan-tercan-baraj-golu","ulusal-erzincan-firat-nehri-kemaliye-hatti","ulusal-eskisehir-catoren-baraj-golu","ulusal-eskisehir-gokcekaya-baraj-golu","ankara-500km-ankara-mogan-golu","ulusal-malatya-boztepe-baraj-golu-malatya","ulusal-malatya-kapikaya-baraj-golu-malatya","ankara-500km-eskisehir-yayikli-goleti","ankara-500km-eskisehir-ozdenk-goleti"],
-  "newSlugs":["burdur-tefenni-cayli-goleti","burdur-karamanli-karamanli-baraj-golu","mus-korkut-korkut-sulama-goleti"],
+  "promotedSlugs": [
+    "ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ulusal-nigde-gumusler-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-eskisehir-porsuk-baraj-golu","ulusal-agri-balik-golu","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-ardahan-aktas-golu","ulusal-ardahan-posof-cayi","ankara-500km-bolu-buyukgol","ankara-500km-bolu-deringol","ankara-500km-yozgat-gelingullu-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-adiyaman-cat-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-denizli-adiguzel-baraj-golu"
+  ],
+  "newSlugs": ["diyarbakir-ergani-ergani-baraj-golu","eskisehir-beylikova-kizilcaoren-goleti","eskisehir-gunyuzu-gunyuzu-1-goleti"],
   "mgmAudit": {
-    "status":"completed_pending","checkedAt":"2026-09-01T17:03:41+03:00","officialStatus":"pending",
-    "representativeSlugs":["kefken-cebeci-kiyilari","ankara-500km-ankara-mogan-golu","ulusal-ardahan-kura-nehri-ardahan-hatti","ankara-500km-adiyaman-ataturk-baraj-golu","ulusal-van-zernek-baraj-golu","ulusal-artvin-borcka-baraj-golu"],
-    "warnings":[],
-    "notes":"MGM 1 Eylül günlük/bölgesel ve deniz tahminleri erişilebilir durumdaydı ve ulusal rapor güncel meteorolojik uyarı bulunmadığını bildirdi. Doğu Anadolu'nun doğusu ile Orta/Doğu Karadeniz için sağanak/gök gürültülü sağanak, denizlerde fırtına beklenmediği; Karadeniz ve Van Gölü için yağışlı deniz/göl koşulları kaydedildi. Çalışma ortamı canlı /api/weather noktasal yanıtlarını okuyamadığı için sıcaklık-rüzgâr-yağış/hadise model karşılaştırması tamamlanamadı; weather-official-audit.json bu nedenle pending ve resmi teyit iddiası üretmiyor."
+    "status": "completed_pending",
+    "checkedAt": "2026-09-05T14:03:07+03:00",
+    "officialStatus": "pending",
+    "representativeSlugs": ["kefken-cebeci-kiyilari","ankara-500km-ankara-mogan-golu","ulusal-ardahan-posof-cayi","diyarbakir-ergani-ergani-baraj-golu","eskisehir-beylikova-kizilcaoren-goleti"],
+    "warnings": ["Rize","Artvin"],
+    "notes": "MGM resmî uyarı, günlük/bölgesel/ilçe ve deniz tahmin kaynakları erişildi. Rize ve Artvin için yerel kuvvetli yağış uyarısı aktiftir. Çalışma ortamından oltaatlasi.com /api/weather DNS çözümlemesi yapılamadığı için noktasal model-MGM sıcaklık/rüzgâr/yağış-hadise karşılaştırması tamamlanamadı; weather-official-audit.json pending bırakıldı."
   },
-  "stage4": {
-    "status":"completed",
-    "seo":"Talep Hasadı kuyruğu eklendi: >=50 gösterim, 3-15 pozisyon ve <%2 CTR eşiği; yüksek talep rotalarında özgün title/meta, sitemap önceliği ve iç bağlantı önceliği merkezi veriyle yönetiliyor.",
-    "indexing":"D rotalar noindex,follow ve sitemap dışı; 215 C+ rota indekslenebilir; sitemap 414 URL. Talep hedefleri ve öncelikleri build sırasında doğrulanıyor.",
-    "security":"Exploit-path taramaları davranışsal 15/dk limite bağlandı. 148.251.126.195, 195.178.110.22 ve 216.244.66.233 kör blok yerine kontrollü throttle altında; Google/OAI bot aralıklarına dokunulmadı.",
-    "qualityGate":"npm run build, npm run validate:security, npm run deploy:dry ve git diff --check başarılı. 1420 rota bakım taramasında 0 hata/0 uyarı; indeks politikası 0 hata.",
-    "stage2Corrections":"Önceki yükseltmelerde kalan 6 koordinatsız C rota genel-konum notlarıyla düzeltildi; 11 eski Güven D anlatısı C kanıt seviyesine uygun biçimde yenilendi. Mikro erişim/park/kıyı iddiası eklenmedi."
-  },
-  "ci":{"status":"success","qualityGateRun":1054,"qualityCheckRun":979},
-  "pr":{"number":127,"url":"https://github.com/balikrotasi1041/oltaatlasi/pull/127","status":"merged"},
-  "merge":{"method":"squash","sha":"e40b97ae6d9cd525d050e6de19879a7544f4de70"},
-  "deploy":{"status":"success","production":"verified","verifiedAt":"2026-09-02T00:31:39+03:00","checks":"GitHub production/cloudflare success; ana sayfa 200; robots.txt güncel; Kızıldamlar talep başlığı canlı; yeni C rota 200/indexlenebilir; örnek D rota noindex,follow; backup.zip 404; yönetim radarı 401/noindex."}
+  "ci": {"status":"pending"},
+  "pr": null,
+  "merge": null,
+  "deploy": {"status":"pending","production":"pending"}
 }
