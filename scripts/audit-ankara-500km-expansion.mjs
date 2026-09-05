@@ -67,7 +67,7 @@ for(const route of newRoutes){
   if(!route.sources.some((source)=>/openstreetmap\.org|\.gov\.tr|\.bel\.tr/i.test(source.url)))errors.push(`${route.slug}: su kimliği için birincil/açık harita kaynağı yok.`);
   if(route.fish.length<1||route.methods.length<1||route.baits.length<1)errors.push(`${route.slug}: tür/yöntem/yem bağlamı eksik.`);
   const probabilityEvidenceOkay=promotionDate==="2026-09-05"
-    ?/olasılık/i.test(`${route.confidenceProfile?.species.label||""} ${route.confidenceProfile?.species.note||""}`)
+    ?/olasılı[ğk]/i.test(`${route.confidenceProfile?.species.label||""} ${route.confidenceProfile?.species.note||""}`)
     :route.fishEvidence.length===route.fish.length&&!route.fishEvidence.some((item)=>!/olasılık/i.test(`${item.evidenceLevel} ${item.note}`));
   if(!probabilityEvidenceOkay)errors.push(`${route.slug}: tür olasılık kanıtı açık sınıflandırılmamış.`);
   if(route.transport.length<90||route.shoreProfile.length<100||route.cautions.length<3)errors.push(`${route.slug}: ulaşım/kıyı/risk içeriği kalite eşiğini karşılamıyor.`);
