@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-06",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
+  "stage": 2,
   "branch": "quality/daily-2026-09-06",
   "done": false,
   "research": {
@@ -42,7 +42,7 @@
       "ankara-500km-konya-kopek-golu",
       "ankara-500km-konya-beysehir-cayi"
     ],
-    "dCandidateNotes": "İlk sekiz kayıt 5 Eylül sonunda kanıt/erişim eşiğini geçemeyip D kalan kayıtlardır. Diğer kayıtlar Ankara-500 km genişleme paketindeki D havuzudur. 6 Eylül Stage 2 derin incelemesinde Alpsarı ve Bozoğlu'nun ardından Kurtboğazı ile Doğanözü gerçek D->C eşiğini geçti. Sille Barajı güncel destekleyici kayıtta balık tutmanın yasak olduğu bildirildiği için C yapılmadı; kota için yasak/erişim riski örtülmedi.",
+    "dCandidateNotes": "İlk sekiz kayıt önceki gün sonunda kanıt/erişim eşiğini geçemeyip D kalan kayıtlardır. 6 Eylül Stage 2 derin incelemesinde Alpsarı, Bozoğlu, Kurtboğazı, Doğanözü, Çubuk Karagöl ve Yukarı Çavundur gerçek D->C eşiğini geçti. Çubuk Karagöl için DKMP tabiat parkı kaydı kontrollü sportif olta kullanımını, ulaşım/otopark ve korunan alan bağlamını; Tarım Orman Ekranı geçmiş Abant alası balıklandırmasını doğruluyor. Yukarı Çavundur için Çubuk Belediyesi 2025-2029 Stratejik Planı mesire/ulaşım, olta kullanımı ve aynalı-kambur sazan bilgisini; 2 Mayıs 2026 AA kaynaklı etkinlik kaydı güncel kamusal çevre kullanımını destekliyor. Sille Barajı balık tutma yasağı nedeniyle D bırakıldı. Köpek Gölü kesin korunacak hassas alan olduğundan yayımlama/yükseltme adayı yapılmadı.",
     "newCandidatesReviewed": 8,
     "newCandidates": [
       {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"promising-deep-review","sourceFamiliesSearched":["resmi/Il-Kultur-Turizm-Kultur-Portali","akademik-Aquaculture-Studies-DergiPark","akademik-su-kalitesi"],"notes":"Resmî turizm kaynağı sportif olta/piknik-kamp bağlamını, rota-özel akademik çalışma 12 balık taksonunu doğruluyor. HES ve mikro kıyı erişimi Stage 3 öncesi ayrıca elenecek."},
@@ -58,13 +58,15 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 4,
-    "remainingNeeded": 13,
+    "promotedCount": 6,
+    "remainingNeeded": 11,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
       "ankara-500km-ankara-kurtbogazi-baraj-golu",
-      "ankara-500km-ankara-doganozu-baraj-golu"
+      "ankara-500km-ankara-doganozu-baraj-golu",
+      "ankara-500km-ankara-karagol",
+      "ankara-500km-ankara-yukari-cavundur-goleti"
     ],
     "heldSlugs": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
@@ -82,17 +84,15 @@
       "ankara-500km-ankara-kizilca-goleti",
       "ankara-500km-ankara-yenice-baraj-golu",
       "ankara-500km-ankara-anadolu-goleti",
-      "ankara-500km-konya-sille-baraj-golu"
+      "ankara-500km-konya-sille-baraj-golu",
+      "ankara-500km-konya-kopek-golu"
     ],
     "pendingSlugs": [
       "ankara-500km-ankara-sakarya-nehri",
-      "ankara-500km-ankara-karagol",
       "ankara-500km-ankara-eyrez-goleti",
-      "ankara-500km-ankara-yukari-cavundur-goleti",
-      "ankara-500km-konya-kopek-golu",
       "ankara-500km-konya-beysehir-cayi"
     ],
-    "notes": "Bu çalıştırmada Kurtboğazı ve Doğanözü gerçek D->C olarak eklendi. Kurtboğazı için Kahramankazan Kaymakamlığı rota özelinde olta balıkçılığı ile sazan/gümüş balığı bilgisini, ASKİ ise resmî su kaynağı ve rekreasyon kimliğini doğruluyor. Doğanözü için TATUS resmî su kimliği ile 2026 tarihli bağımsız rota/tür/olta kaydı çaprazlandı. İkisinde de locationPrecision=Genel bölge ve navigationVerified=false. Sille Barajı güncel destekleyici haberde balık tutma yasağı bildirildiği için D bırakıldı."
+    "notes": "Bu çalıştırmada Çubuk Karagöl ve Yukarı Çavundur gerçek D->C olarak eklendi. Karagöl için DKMP resmî tabiat parkı/erişim/kontrollü sportif olta kaydı, Ekotaban korunan alan statüsü, Tarım Orman Ekranı rota özelinde Abant alası balıklandırması ve 2026 Çubuk Belediyesi ziyaret kaydı kullanıldı. Yukarı Çavundur için Çubuk Belediyesi 2025-2029 Stratejik Planı rota kimliği, mesire/ulaşım, olta kullanımı ve aynalı-kambur sazan bilgisini; 2 Mayıs 2026 AA kaynaklı belediye yürüyüş etkinliği güncel kamusal çevre kullanımını destekledi. İkisinde de locationPrecision=Genel bölge ve navigationVerified=false. Kota uğruna korunan/yasak veya erişim kanıtı yetersiz adaylar yükseltilmedi."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -100,7 +100,9 @@
     "ankara-500km-cankiri-alpsari-goleti",
     "ankara-500km-cankiri-bozoglu-goleti",
     "ankara-500km-ankara-kurtbogazi-baraj-golu",
-    "ankara-500km-ankara-doganozu-baraj-golu"
+    "ankara-500km-ankara-doganozu-baraj-golu",
+    "ankara-500km-ankara-karagol",
+    "ankara-500km-ankara-yukari-cavundur-goleti"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
