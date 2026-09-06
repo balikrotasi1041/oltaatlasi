@@ -13,12 +13,18 @@ const bozogluIdentityUrl = "https://www.cerkes.gov.tr/ilce-tanitim-karti-cografi
 const bozogluStockUrl = "https://www.haberler.com/guncel/cankiri-da-320-bin-sazan-yavrusu-su-kaynaklarina-birakildi-18984892-haberi/";
 const bozogluOfficialPressUrl = "https://cankiri.tarimorman.gov.tr/Link/44/Basinda-Biz";
 const cankiriLegalUrl = "https://cankiri.tarimorman.gov.tr/Haber/1251/Cankirida-Su-Urunleri-Avlanma-Yasagi-Sona-Eriyor";
+const kurtbogaziKaymakamlikUrl = "https://www.kahramankazan.gov.tr/kurtbogazi-baraji-ilcemiz";
+const kurtbogaziAskiUrl = "https://aski.gov.tr/TR/ICERIKDETAY/Kurtbogazi-Baraji/32/15";
+const doganozuTatusUrl = "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/7";
+const doganozuCurrentUrl = "https://mansetankara.com/ozel-haber/2025-yilinda-alarm-veren-doganozu-barajinda-su-seviyesi-yukseldi-261785h";
 
 const uniqSources = (items: ResearchSource[]) => [...new Map(items.filter((s) => s?.url).map((s) => [s.url, s])).values()];
 
 export const promoted20260906Stage2Partial = [
   "ankara-500km-cankiri-alpsari-goleti",
-  "ankara-500km-cankiri-bozoglu-goleti"
+  "ankara-500km-cankiri-bozoglu-goleti",
+  "ankara-500km-ankara-kurtbogazi-baraj-golu",
+  "ankara-500km-ankara-doganozu-baraj-golu"
 ] as const;
 
 type Upgrade = {
@@ -109,6 +115,101 @@ const evidence: Record<(typeof promoted20260906Stage2Partial)[number], Upgrade> 
     }],
     summary: "Bozoğlu Göletinin Çerkeş'teki sulama suyu kimliği, rota adıyla sazan balıklandırması ve Çankırı'nın güncel içsu avcılık çerçevesi ayrı kaynak aileleriyle çaprazlandı.",
     risk: "Sulama göletinde servis/tarla yolları ve kıyı parselleri kamusal varsayılamaz; zemin, su seviyesi, tarımsal faaliyet, bariyer/tabela ve dönem kuralları hareket günü kontrol edilmelidir."
+  },
+  "ankara-500km-ankara-kurtbogazi-baraj-golu": {
+    fish: ["Sazan", "Gümüş balığı"],
+    sources: [
+      {
+        label: "Kahramankazan Kaymakamlığı - Kurtboğazı Barajı",
+        url: kurtbogaziKaymakamlikUrl,
+        note: "Barajı Kahramankazan sınırlarında resmî olarak tanımlar; rekreasyon, piknik ve olta balıkçılığı kullanımını açıkça sayar ve aynalı/pullu sazan ile gümüş balığı türlerini bildirir."
+      },
+      {
+        label: "ASKİ - Kurtboğazı Barajı",
+        url: kurtbogaziAskiUrl,
+        note: "Kurtboğazı'nın Ankara içme suyu sistemindeki resmî su kaynağı kimliğini, kapasitesini ve rekreasyon kullanımını doğrular. İçme suyu işlevi nedeniyle saha kısıtları önceliklidir."
+      }
+    ],
+    fishEvidence: [
+      {
+        name: "Sazan",
+        evidenceLevel: "Güçlü olasılık · rota özelinde resmî tür kaydı",
+        sourceLabel: "Kahramankazan Kaymakamlığı - Kurtboğazı Barajı",
+        sourceUrl: kurtbogaziKaymakamlikUrl,
+        note: "Kaymakamlık sayfası aynalı ve pullu sazanı rota özelinde bildirir. Bu tür varlığı olasılığıdır; av başarısı, stok yoğunluğu veya belirli kıyıda av izni garantisi değildir.",
+        recordCount: null,
+        distanceKm: null
+      },
+      {
+        name: "Gümüş balığı",
+        evidenceLevel: "Güçlü olasılık · rota özelinde resmî tür kaydı",
+        sourceLabel: "Kahramankazan Kaymakamlığı - Kurtboğazı Barajı",
+        sourceUrl: kurtbogaziKaymakamlikUrl,
+        note: "Kaymakamlık rota özelinde gümüş balığını bildirir; güncel av başarısı garantisi değildir.",
+        recordCount: null,
+        distanceKm: null
+      }
+    ],
+    accessEvidence: [{
+      label: "Kamusal genel rekreasyon ve olta bağlamı",
+      value: "Kahramankazan sınırlarında rekreasyon alanı",
+      sourceUrl: kurtbogaziKaymakamlikUrl,
+      note: "Kaymakamlık olta balıkçılığını faaliyetler arasında sayar. Bu, barajın tüm kıyılarını açık yapmaz; içme suyu koruma/işletme alanları, özel mesire işletmeleri ve saha tabelaları ayrıca kontrol edilir."
+    }],
+    summary: "Kurtboğazı Barajının Kahramankazan'daki kimliği, ASKİ içme suyu/rekreasyon kaydı ve Kaymakamlığın rota özelindeki olta-tür bilgisi bağımsız kamu kurumları üzerinden çaprazlandı.",
+    risk: "Kurtboğazı aktif içme suyu kaynağıdır. Koruma kuşakları, tesis/işletme alanları ve bariyerler önceliklidir; Kaymakamlığın genel olta kullanım kaydı belirli bir kıyı cebinin sürekli açık olduğu anlamına gelmez."
+  },
+  "ankara-500km-ankara-doganozu-baraj-golu": {
+    fish: ["Sazan", "Tatlısu kefali", "Yayın"],
+    sources: [
+      {
+        label: "Tarım ve Orman TATUS - Doğanözü Baraj Gölü gözlem eşleşmesi",
+        url: doganozuTatusUrl,
+        note: "Tarım ve Orman Bakanlığı TATUS baraj gözlem katmanında DOĞANÖZÜ adıyla resmî su varlığı eşleşmesini destekler; mikro kıyı erişimi değildir."
+      },
+      {
+        label: "Manşet Ankara - 2026 Doğanözü güncel su/olta/tür kaydı",
+        url: doganozuCurrentUrl,
+        note: "2026 ilkbaharındaki su seviyesi toparlanmasını, Kızılcahamam-Güdül yolu/Kirmir Vadisi genel konumunu ve sazan, tatlısu kefali, yayın ile olta balıkçılığı kullanımını rota özelinde bildirir. Bağımsız yerel destekleyici kaynaktır."
+      }
+    ],
+    fishEvidence: [
+      {
+        name: "Sazan",
+        evidenceLevel: "Orta-güçlü olasılık · güncel rota özelinde yerel kayıt",
+        sourceLabel: "Manşet Ankara - 2026 Doğanözü",
+        sourceUrl: doganozuCurrentUrl,
+        note: "Rota özelinde sazan bulunduğunu bildirir; resmî stok sayımı değildir ve av garantisi sayılmaz.",
+        recordCount: null,
+        distanceKm: null
+      },
+      {
+        name: "Tatlısu kefali",
+        evidenceLevel: "Orta olasılık · güncel rota özelinde yerel kayıt",
+        sourceLabel: "Manşet Ankara - 2026 Doğanözü",
+        sourceUrl: doganozuCurrentUrl,
+        note: "Rota özelinde tatlısu kefali bulunduğunu bildirir; akademik/resmî stok sayımı değildir.",
+        recordCount: null,
+        distanceKm: null
+      },
+      {
+        name: "Yayın",
+        evidenceLevel: "Orta olasılık · güncel rota özelinde yerel kayıt",
+        sourceLabel: "Manşet Ankara - 2026 Doğanözü",
+        sourceUrl: doganozuCurrentUrl,
+        note: "Rota özelinde yayın balığı bulunduğunu bildirir; av başarısı veya stok yoğunluğu garantisi değildir.",
+        recordCount: null,
+        distanceKm: null
+      }
+    ],
+    accessEvidence: [{
+      label: "Genel ulaşım ve olta kullanım bağlamı",
+      value: "Kızılcahamam-Güdül yolu / Kirmir Çayı Vadisi genel baraj çevresi",
+      sourceUrl: doganozuCurrentUrl,
+      note: "Güncel yerel kaynak barajı ekoturizm ve olta balıkçılığı bağlamında tanımlar. Belirli kıyı cebi, servis yolu, park veya özel parsel geçişi doğrulanmış sayılmaz."
+    }],
+    summary: "Doğanözü Barajının resmî TATUS su kimliği, 2026 tarihli bağımsız rota/tür/olta kaydı ve genel 6/2 mevzuat çerçevesi çaprazlandı; mikro erişim iddiası üretilmedi.",
+    risk: "2025'te ciddi su çekilmesi yaşanan barajda 2026'da seviye toparlanmış olsa da kot hızlı değişebilir. Tarımsal işletme, servis yolu, özel parsel, dik/çamurlu şev ve saha tabelaları hareket günü kontrol edilmelidir."
   }
 };
 
@@ -125,10 +226,10 @@ export const applyDailyQuality20260906Stage2Partial = (routeMap: Map<string, Enr
       confidence: "C",
       locationPrecision: "Genel bölge",
       navigationVerified: false,
-      summary: `${upgrade.summary} Geçmiş balıklandırma tür bulunma olasılığını destekler; güncel av başarısı veya av garantisi değildir.`,
+      summary: `${upgrade.summary} Geçmiş balıklandırma veya tür kayıtları yalnız tür bulunma olasılığını destekler; güncel av başarısı veya av garantisi değildir.`,
       longIntro: [
         `${previous.name}, rota kimliği, genel erişim bağlamı, güncel mevzuat ve rota özelindeki tür olasılığı ayrı kanıt katmanlarıyla yeniden değerlendirildiği için Güven C düzeyine çıkarılmıştır.`,
-        "Güven C belirli bir kıyı cebinin sürekli açık, kamusal veya araçla erişilebilir olduğu anlamına gelmez. Konum yalnız genel bölge planlamasıdır; park, yol sonu, özel mülkiyet, işletme sınırı ve saha tabelaları hareket günü ayrıca doğrulanmalıdır."
+        "Güven C belirli bir kıyı cebinin sürekli açık, kamusal veya araçla erişilebilir olduğu anlamına gelmez. Konum yalnız genel bölge planlamasıdır; park, yol sonu, özel mülkiyet, işletme/koruma sınırı ve saha tabelaları hareket günü ayrıca doğrulanmalıdır."
       ],
       verification: `2026-09-06 Stage 2 çok kaynaklı araştırma tamamlandı; Güven C. ${upgrade.risk}`,
       updatedAt: "2026-09-06",
@@ -144,9 +245,9 @@ export const applyDailyQuality20260906Stage2Partial = (routeMap: Map<string, Enr
         model: "evidence-v1",
         overall: "C",
         identity: { level: "strong", label: "Rota özelinde kimlik kanıtı", note: "Ad, il/ilçe ve su varlığı kimliği resmî/kurumsal kaynaklarla eşleşmiştir; konum yalnız genel bölgedir." },
-        legal: { level: "partial", label: "Güncel mevzuat + yerel bağlam", note: "6/2 Tebliğ ve il düzeyindeki güncel avcılık duyuruları birlikte uygulanır; belirli kıyının sürekli açık olduğu varsayılmaz." },
-        access: { level: "partial", label: "Genel erişim bağlamı", note: "Yerel kamu/rekreasyon veya sulama suyu bağlamı kaynaklıdır; mikro kıyı, park, yol sonu ve özel mülk geçişi saha teyitli değildir." },
-        species: { level: "strong", label: "Rota özelinde tür olasılığı", note: "Sazan rota adıyla balıklandırma kaydıyla desteklenir; güncel av başarısı, stok yoğunluğu veya yasal boyda balık garantisi değildir." },
+        legal: { level: "partial", label: "Güncel mevzuat + yerel bağlam", note: "6/2 Tebliğ ve su/il düzeyindeki güncel koruma, işletme ve avcılık kuralları birlikte uygulanır; belirli kıyının sürekli açık olduğu varsayılmaz." },
+        access: { level: "partial", label: "Genel erişim bağlamı", note: "Kamu/rekreasyon veya güncel rota kullanım kaydı kaynaklıdır; mikro kıyı, park, yol sonu ve özel mülk geçişi saha teyitli değildir." },
+        species: { level: "strong", label: "Rota özelinde tür olasılığı", note: "Türler rota özelindeki resmî veya güncel destekleyici kayıtlardan türetilir; av başarısı, stok yoğunluğu veya yasal boy garantisi değildir." },
         field: { level: "unverified", label: "Saha doğrulaması yok", note: "Bariyer, tabela, su kotu, zemin, özel mülkiyet ve güncel riskler hareket günü yeniden kontrol edilmelidir." },
         reviewedAt: "2026-09-06"
       }
