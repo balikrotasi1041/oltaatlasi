@@ -1,76 +1,137 @@
 {
   "version": 1,
-  "date": "2026-09-05",
+  "date": "2026-09-06",
   "timezone": "Europe/Istanbul",
-  "stage": 4,
-  "branch": "quality/daily-2026-09-05",
-  "done": true,
+  "stage": 1,
+  "branch": "quality/daily-2026-09-06",
+  "done": false,
   "research": {
     "status": "completed",
-    "mainShaAtStart": "574e6df730c4ffd7423df6a8229606bcde3645bd",
+    "mainShaAtStart": "ecc958ca1cbd91d59ca3def4fc1d0b90ffe0d6c5",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Eski trafik verisi confidence kanıtı yapılmadı.",
+    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum niyetli 3-15 pozisyon/düşük CTR sinyalleri yalnız araştırma sıralamasında kullanıldı; eski trafik verisi confidence kanıtı yapılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
-      "ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ulusal-nigde-gumusler-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-eskisehir-porsuk-baraj-golu","ulusal-agri-balik-golu","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-ardahan-aktas-golu","ulusal-ardahan-posof-cayi","ankara-500km-bolu-buyukgol","ankara-500km-bolu-deringol","ankara-500km-yozgat-gelingullu-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-adiyaman-cat-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-denizli-adiguzel-baraj-golu","ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu"
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-bayburt-lori-deresi",
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-erzurum-olur-baraj-golu",
+      "ankara-500km-ankara-cubuk-i-baraj-golu",
+      "ankara-500km-ankara-sakarya-nehri",
+      "ankara-500km-ankara-doganozu-baraj-golu",
+      "ankara-500km-ankara-egrekkaya-baraj-golu",
+      "ankara-500km-ankara-kavsakkaya-baraj-golu",
+      "ankara-500km-ankara-kurtbogazi-baraj-golu",
+      "ankara-500km-ankara-eymir-golu",
+      "ankara-500km-ankara-karagol",
+      "ankara-500km-ankara-kizilca-goleti",
+      "ankara-500km-ankara-yenice-baraj-golu",
+      "ankara-500km-ankara-anadolu-goleti",
+      "ankara-500km-ankara-eyrez-goleti",
+      "ankara-500km-ankara-yukari-cavundur-goleti",
+      "ankara-500km-cankiri-bozoglu-goleti",
+      "ankara-500km-konya-sille-baraj-golu",
+      "ankara-500km-konya-kopek-golu",
+      "ankara-500km-konya-beysehir-cayi"
     ],
-    "newCandidatesReviewed": 10,
+    "dCandidateNotes": "İlk sekiz kayıt 5 Eylül sonunda kanıt/erişim eşiğini geçemeyip D kalan kayıtlardır. Diğer 17 kayıt Ankara-500 km genişleme paketinde daha önce 1 veya 5 Eylül promotion listesine girmemiştir; mevcut bakım auditi bu kayıtların Güven D ve Genel bölge olarak kalmasını zorunlu tutar. Resmî TATUS su katmanı eşleşmesi bulunanlar ve güçlü il/ilçe hub bağlantısı olanlar Stage 2 derin araştırmasında önce ele alınacaktır. Hiçbir kayıt sırf kota için yükseltilmedi.",
+    "newCandidatesReviewed": 8,
     "newCandidates": [
-      {"name":"Ergani Baraj Gölü","province":"Diyarbakır","status":"selected-C","sourceFamiliesSearched":["resmi/DSI-il-tarim","akademik-DergiPark/üniversite","yerel-destekleyici"]},
-      {"name":"Sultansuyu Barajı","province":"Malatya","status":"hold-rehabilitation","sourceFamiliesSearched":["resmi-DSI","akademik/üniversite","yerel-destekleyici"]},
-      {"name":"Dicle Baraj Gölü","province":"Diyarbakır","status":"hold-protection-access","sourceFamiliesSearched":["resmi/DSI-Tarim","akademik/üniversite","yerel-destekleyici"]},
-      {"name":"Ilısu Prof. Dr. Veysel Eroğlu Baraj Gölü","province":"Siirt/Şırnak/Batman/Mardin","status":"hold-complex-operational","sourceFamiliesSearched":["resmi-Tarim/İletişim","akademik/TAGEM-üniversite","yerel-destekleyici"]},
-      {"name":"Kralkızı Baraj Gölü","province":"Diyarbakır/Elazığ","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi/DSI-Tarim","akademik-DergiPark","yerel-destekleyici"]},
-      {"name":"Çetin Baraj Gölü","province":"Siirt","status":"hold-hes-access","sourceFamiliesSearched":["resmi-Tarim/İletişim","üniversite","yerel-destekleyici"]},
-      {"name":"Çamlıgöze Barajı","province":"Sivas","status":"hold-aquaculture-hes","sourceFamiliesSearched":["resmi-kaymakamlik/DSI","akademik/üniversite","yerel-destekleyici"]},
-      {"name":"Mursal Barajı","province":"Sivas","status":"hold-insufficient-evidence","sourceFamiliesSearched":["resmi/DSI-Tarim","akademik/üniversite","yerel-destekleyici"]},
-      {"name":"Kızılcaören Göleti","province":"Eskişehir","status":"selected-C","sourceFamiliesSearched":["resmi-il-tarim","DSI","resmi-kiralama","ikincil-konum"]},
-      {"name":"Günyüzü-1 Göleti","province":"Eskişehir","status":"selected-C","sourceFamiliesSearched":["resmi-il-tarim-coklu-kayit","resmi-kiralama","ikincil-konum"]}
+      {
+        "name": "Uzunçayır Baraj Gölü",
+        "province": "Tunceli",
+        "status": "promising-deep-review",
+        "sourceFamiliesSearched": ["resmi/Il-Kultur-Turizm-Kultur-Portali", "akademik-Aquaculture-Studies-DergiPark", "akademik-su-kalitesi"],
+        "notes": "Resmî turizm kaynağı sportif olta/piknik-kamp bağlamını, rota-özel akademik çalışma 12 balık taksonunu doğruluyor. HES ve mikro kıyı erişimi Stage 3 öncesi ayrıca elenecek."
+      },
+      {
+        "name": "Gölova Baraj Gölü",
+        "province": "Sivas",
+        "status": "hold-aquaculture",
+        "sourceFamiliesSearched": ["resmi-kaymakamlik", "akademik-DergiPark-sazan", "akademik-DergiPark-siraz"],
+        "notes": "Sazan ve siraz için güçlü rota-özel kanıt var; Kaymakamlık baraj içinde aktif alabalık kafes işletmeciliğini de bildiriyor. Kamusal bölüm ayrıştırılmadan yayımlanmayacak."
+      },
+      {
+        "name": "Özlüce Baraj Gölü",
+        "province": "Elazığ/Bingöl",
+        "status": "hold-commercial-aquaculture",
+        "sourceFamiliesSearched": ["resmi-Elazig-Il-Tarim-avlak", "resmi-Bingol-Il-Tarim-2025", "akademik-DergiPark-TAGEM"],
+        "notes": "Tür/stok ve akademik kanıt güçlü; 9.200 ha ticari istihsal alanı, aktif yetiştiricilik ve kiralanmış haklar nedeniyle genel kamusal rota oluşturulmayacak."
+      },
+      {
+        "name": "Kalecik Baraj Gölü",
+        "province": "Osmaniye",
+        "status": "hold-aquaculture",
+        "sourceFamiliesSearched": ["resmi-Il-Tarim-baliklandirma-arastirmasi", "akademik-DergiPark", "yerel-destekleyici"],
+        "notes": "Akademik kayıt ağ kafeslerde alabalık yetiştiriciliğini doğruluyor; üretim sahasından bağımsız kamusal kıyı açıkça ayrıştırılmadan aday ilerletilmeyecek."
+      },
+      {
+        "name": "Karkamış Baraj Gölü",
+        "province": "Gaziantep",
+        "status": "hold-heavy-aquaculture",
+        "sourceFamiliesSearched": ["resmi-Il-Kultur-Turizm-sportif-olta", "akademik-DergiPark-ekoloji", "akademik-yetistiricilik"],
+        "notes": "Resmî kaynak sportif olta bağlamını destekliyor, ancak akademik kayıtlar yoğun ağ-kafes alabalık işletmelerini gösteriyor. İşletme sahalarından ayrı güvenli kamusal kesim kanıtı olmadan yayımlanmayacak."
+      },
+      {
+        "name": "Tahtaköprü Baraj Gölü",
+        "province": "Gaziantep",
+        "status": "hold-protected-sensitive",
+        "sourceFamiliesSearched": ["resmi-DKMP-Ekotaban", "resmi-Il-Kultur-Turizm", "resmi-bolgesel-koruma"],
+        "notes": "Sportif olta kullanımı bilinse de alan Yaban Hayatı Geliştirme Sahası ve önemli su kuşu habitatıdır. Hassas ekolojik mikro-konum yayımlanmayacak."
+      },
+      {
+        "name": "Beyhan-1 Baraj Gölü",
+        "province": "Elazığ",
+        "status": "hold-commercial-aquaculture",
+        "sourceFamiliesSearched": ["resmi-BSGM-yetistiricilik-2026", "resmi-Elazig-Il-Tarim-avlak", "akademik-DergiPark-TAGEM-2024-2025"],
+        "notes": "Güncel akademik balık popülasyonu kanıtı çok güçlü; 2026'da yetiştiricilik bölgesi tahsisi ve ticari avlak kiralaması nedeniyle bağımsız kamusal bölüm kanıtı olmadan yayımlanmayacak."
+      },
+      {
+        "name": "Kalecik Baraj Gölü",
+        "province": "Elazığ/Karakoçan",
+        "status": "hold-access-refresh-needed",
+        "sourceFamiliesSearched": ["yerel-kalkinma-ajansi", "akademik-Aquaculture-Studies", "yerel-destekleyici"],
+        "notes": "Kalkınma ajansı geçmişte mesire ve balık tutma kullanımını kaydediyor, fakat tesislerin bakımsızlık nedeniyle kapandığını da belirtiyor. Güncel kamusal erişim ve resmî hukuk teyidi olmadan ilerletilmeyecek."
+      }
     ]
   },
   "stage2": {
-    "status": "completed",
+    "status": "not_started",
     "targetPromotions": 17,
-    "promotedCount": 17,
-    "remainingNeeded": 0,
-    "promotedSlugs": [
-      "ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ulusal-nigde-gumusler-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-eskisehir-porsuk-baraj-golu","ulusal-agri-balik-golu","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-ardahan-aktas-golu","ulusal-ardahan-posof-cayi","ankara-500km-bolu-buyukgol","ankara-500km-bolu-deringol","ankara-500km-yozgat-gelingullu-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-adiyaman-cat-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-denizli-adiguzel-baraj-golu"
-    ],
-    "heldSlugs": ["ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu"],
-    "remainingDTotalAfterRun": 1188
+    "promotedCount": 0,
+    "remainingNeeded": 17,
+    "promotedSlugs": [],
+    "heldSlugs": []
   },
   "stage3": {
-    "status": "completed",
+    "status": "not_started",
     "newCPlusTarget": 3,
-    "newCPlusCount": 3,
-    "newSlugs": ["diyarbakir-ergani-ergani-baraj-golu","eskisehir-beylikova-kizilcaoren-goleti","eskisehir-gunyuzu-gunyuzu-1-goleti"],
-    "notes": "Tam 3 yeni Güven C rota eklendi. Üçü de Ege/Marmara dışındadır. Mikro kıyı, park, özel parsel ve son yaklaşım doğrulanmış sayılmadı; locationPrecision=Genel bölge ve navigationVerified=false tutuldu. Ergani'de resmî balıklandırma + DSİ + 2025 hakemli çalışma; Kızılcaören'de İl Tarım + DSİ + kiralama bağlamı; Günyüzü-1'de tekrarlanan İl Tarım balıklandırmaları + kiralama bağlamı kullanıldı."
+    "newCPlusCount": 0,
+    "newSlugs": []
   },
   "stage4": {
-    "status": "completed",
-    "ctrTechnicalNotes": "URL/slug/canonical değiştirilmedi; toplu title şablonu veya keyword stuffing uygulanmadı. Quality gate'in yakaladığı 12 Güven C sayfasındaki eski D/ön değerlendirme anlatıları C kanıt modeline uyumlu hale getirildi. Aktaş Gölü, Posof Çayı ve İmranlı Delice Barajı için yalnız genel su/bölge planlama koordinatları eklendi; mikro kıyı, park, mülkiyet veya geçiş izni olarak etiketlenmedi.",
-    "ciFixes": ["Ankara-500km bakım denetçisi 2026-09-05 kanıt yükseltmelerini tarihli olarak tanıyacak şekilde güncellendi.","Tür olasılığı denetimi güncel confidenceProfile yapısı ve Türkçe olasılık/olasılığı çekimiyle uyumlandı.","Stage3 waterType tipi şema birliğine bağlandı ve Ergani Barajı geçerli Baraj sınıfına düzeltildi."],
-    "qualityCheckRun": 33970927386,
-    "qualityGateRun": 33970927292
+    "status": "not_started"
   },
-  "promotedSlugs": [
-    "ankara-500km-adiyaman-sirimtas-baraj-golu","ankara-500km-adiyaman-karahuyuk-goleti","ulusal-nigde-gumusler-baraj-golu","ulusal-sivas-delice-baraj-golu-sivas","ulusal-eskisehir-porsuk-baraj-golu","ulusal-agri-balik-golu","ulusal-bitlis-van-golu-tatvan-kiyisi","ulusal-ardahan-aktas-golu","ulusal-ardahan-posof-cayi","ankara-500km-bolu-buyukgol","ankara-500km-bolu-deringol","ankara-500km-yozgat-gelingullu-baraj-golu","ulusal-erzurum-demirdoven-baraj-golu","ulusal-adiyaman-cat-baraj-golu","ulusal-elazig-cip-baraj-golu","ulusal-gaziantep-kayacik-baraj-golu","ulusal-denizli-adiguzel-baraj-golu"
-  ],
-  "newSlugs": ["diyarbakir-ergani-ergani-baraj-golu","eskisehir-beylikova-kizilcaoren-goleti","eskisehir-gunyuzu-gunyuzu-1-goleti"],
+  "promotedSlugs": [],
+  "newSlugs": [],
   "mgmAudit": {
-    "status": "completed_pending",
-    "checkedAt": "2026-09-05T14:03:07+03:00",
-    "officialStatus": "pending",
-    "representativeSlugs": ["kefken-cebeci-kiyilari","ankara-500km-ankara-mogan-golu","ulusal-ardahan-posof-cayi","diyarbakir-ergani-ergani-baraj-golu","eskisehir-beylikova-kizilcaoren-goleti"],
-    "warnings": ["Rize","Artvin"],
-    "notes": "MGM resmî uyarı, günlük/bölgesel/ilçe ve deniz tahmin kaynakları erişildi. Rize ve Artvin için yerel kuvvetli yağış uyarısı aktiftir. Çalışma ortamından oltaatlasi.com /api/weather DNS çözümlemesi yapılamadığı için noktasal model-MGM sıcaklık/rüzgâr/yağış-hadise karşılaştırması tamamlanamadı; weather-official-audit.json pending bırakıldı."
+    "status": "not_started",
+    "checkedAt": null,
+    "officialStatus": "not_started",
+    "representativeSlugs": [],
+    "warnings": [],
+    "notes": ""
   },
-  "ci": {"status":"passed","qualityCheck":"success","qualityGate":"success","npmCi":"success","validateData":"success","validateResearch":"success","validateIndexPolicy":"success","security":"success","duplicate":"success","maintenance":"success","build":"success","deployDry":"success"},
-  "pr": {"number":131,"status":"merged","url":"https://github.com/Balikrotasi1041/oltaatlasi/pull/131"},
-  "merge": {"status":"squash-merged","contentSha":"3ae5e1e744f0b2461d602ddde7772bd599ef8b95"},
-  "deploy": {"status":"verified","production":"verified","runId":33971047782,"productionSha":"3ae5e1e744f0b2461d602ddde7772bd599ef8b95","verification":"Cloudflare deploy, exact production release, build SHA marker and required HTTP security headers all passed in Deploy production run 329."}
+  "ci": {"status": "not_started"},
+  "pr": {"status": "not_started"},
+  "merge": {"status": "not_started"},
+  "deploy": {"status": "not_started"}
 }
