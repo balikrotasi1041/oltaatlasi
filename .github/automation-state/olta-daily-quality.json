@@ -104,12 +104,43 @@
     ]
   },
   "stage2": {
-    "status": "not_started",
+    "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 0,
-    "remainingNeeded": 17,
-    "promotedSlugs": [],
-    "heldSlugs": []
+    "promotedCount": 2,
+    "remainingNeeded": 15,
+    "promotedSlugs": [
+      "ankara-500km-cankiri-alpsari-goleti",
+      "ankara-500km-cankiri-bozoglu-goleti"
+    ],
+    "heldSlugs": [
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-bayburt-lori-deresi",
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-erzurum-olur-baraj-golu",
+      "ankara-500km-ankara-cubuk-i-baraj-golu",
+      "ankara-500km-ankara-doganozu-baraj-golu",
+      "ankara-500km-ankara-egrekkaya-baraj-golu",
+      "ankara-500km-ankara-kavsakkaya-baraj-golu",
+      "ankara-500km-ankara-kurtbogazi-baraj-golu",
+      "ankara-500km-ankara-eymir-golu",
+      "ankara-500km-ankara-kizilca-goleti",
+      "ankara-500km-ankara-yenice-baraj-golu",
+      "ankara-500km-ankara-anadolu-goleti"
+    ],
+    "pendingSlugs": [
+      "ankara-500km-ankara-sakarya-nehri",
+      "ankara-500km-ankara-karagol",
+      "ankara-500km-ankara-eyrez-goleti",
+      "ankara-500km-ankara-yukari-cavundur-goleti",
+      "ankara-500km-konya-sille-baraj-golu",
+      "ankara-500km-konya-kopek-golu",
+      "ankara-500km-konya-beysehir-cayi"
+    ],
+    "notes": "Bu çalıştırmada yalnız kanıt eşiğini net geçen iki gerçek D kaydı C seviyesine çıkarıldı. Alpsarı'da rota özelindeki 2026 resmî sazan balıklandırması, Korgun kimliği ve kamusal rekreasyon bağlamı; Bozoğlu'nda Kaymakamlık su yapısı kimliği, rota adıyla sazan balıklandırması ve il düzeyi güncel avcılık çerçevesi çaprazlandı. Her ikisinde locationPrecision=Genel bölge ve navigationVerified=false korunur. Kota için zayıf aday yükseltilmedi."
   },
   "stage3": {
     "status": "not_started",
@@ -120,7 +151,10 @@
   "stage4": {
     "status": "not_started"
   },
-  "promotedSlugs": [],
+  "promotedSlugs": [
+    "ankara-500km-cankiri-alpsari-goleti",
+    "ankara-500km-cankiri-bozoglu-goleti"
+  ],
   "newSlugs": [],
   "mgmAudit": {
     "status": "not_started",
