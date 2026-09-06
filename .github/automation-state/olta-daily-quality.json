@@ -42,75 +42,29 @@
       "ankara-500km-konya-kopek-golu",
       "ankara-500km-konya-beysehir-cayi"
     ],
-    "dCandidateNotes": "İlk sekiz kayıt 5 Eylül sonunda kanıt/erişim eşiğini geçemeyip D kalan kayıtlardır. Diğer 17 kayıt Ankara-500 km genişleme paketinde daha önce 1 veya 5 Eylül promotion listesine girmemiştir; mevcut bakım auditi bu kayıtların Güven D ve Genel bölge olarak kalmasını zorunlu tutar. Resmî TATUS su katmanı eşleşmesi bulunanlar ve güçlü il/ilçe hub bağlantısı olanlar Stage 2 derin araştırmasında önce ele alınacaktır. Hiçbir kayıt sırf kota için yükseltilmedi.",
+    "dCandidateNotes": "İlk sekiz kayıt 5 Eylül sonunda kanıt/erişim eşiğini geçemeyip D kalan kayıtlardır. Diğer kayıtlar Ankara-500 km genişleme paketindeki D havuzudur. 6 Eylül Stage 2 derin incelemesinde Alpsarı ve Bozoğlu'nun ardından Kurtboğazı ile Doğanözü gerçek D->C eşiğini geçti. Sille Barajı güncel destekleyici kayıtta balık tutmanın yasak olduğu bildirildiği için C yapılmadı; kota için yasak/erişim riski örtülmedi.",
     "newCandidatesReviewed": 8,
     "newCandidates": [
-      {
-        "name": "Uzunçayır Baraj Gölü",
-        "province": "Tunceli",
-        "status": "promising-deep-review",
-        "sourceFamiliesSearched": ["resmi/Il-Kultur-Turizm-Kultur-Portali", "akademik-Aquaculture-Studies-DergiPark", "akademik-su-kalitesi"],
-        "notes": "Resmî turizm kaynağı sportif olta/piknik-kamp bağlamını, rota-özel akademik çalışma 12 balık taksonunu doğruluyor. HES ve mikro kıyı erişimi Stage 3 öncesi ayrıca elenecek."
-      },
-      {
-        "name": "Gölova Baraj Gölü",
-        "province": "Sivas",
-        "status": "hold-aquaculture",
-        "sourceFamiliesSearched": ["resmi-kaymakamlik", "akademik-DergiPark-sazan", "akademik-DergiPark-siraz"],
-        "notes": "Sazan ve siraz için güçlü rota-özel kanıt var; Kaymakamlık baraj içinde aktif alabalık kafes işletmeciliğini de bildiriyor. Kamusal bölüm ayrıştırılmadan yayımlanmayacak."
-      },
-      {
-        "name": "Özlüce Baraj Gölü",
-        "province": "Elazığ/Bingöl",
-        "status": "hold-commercial-aquaculture",
-        "sourceFamiliesSearched": ["resmi-Elazig-Il-Tarim-avlak", "resmi-Bingol-Il-Tarim-2025", "akademik-DergiPark-TAGEM"],
-        "notes": "Tür/stok ve akademik kanıt güçlü; 9.200 ha ticari istihsal alanı, aktif yetiştiricilik ve kiralanmış haklar nedeniyle genel kamusal rota oluşturulmayacak."
-      },
-      {
-        "name": "Kalecik Baraj Gölü",
-        "province": "Osmaniye",
-        "status": "hold-aquaculture",
-        "sourceFamiliesSearched": ["resmi-Il-Tarim-baliklandirma-arastirmasi", "akademik-DergiPark", "yerel-destekleyici"],
-        "notes": "Akademik kayıt ağ kafeslerde alabalık yetiştiriciliğini doğruluyor; üretim sahasından bağımsız kamusal kıyı açıkça ayrıştırılmadan aday ilerletilmeyecek."
-      },
-      {
-        "name": "Karkamış Baraj Gölü",
-        "province": "Gaziantep",
-        "status": "hold-heavy-aquaculture",
-        "sourceFamiliesSearched": ["resmi-Il-Kultur-Turizm-sportif-olta", "akademik-DergiPark-ekoloji", "akademik-yetistiricilik"],
-        "notes": "Resmî kaynak sportif olta bağlamını destekliyor, ancak akademik kayıtlar yoğun ağ-kafes alabalık işletmelerini gösteriyor. İşletme sahalarından ayrı güvenli kamusal kesim kanıtı olmadan yayımlanmayacak."
-      },
-      {
-        "name": "Tahtaköprü Baraj Gölü",
-        "province": "Gaziantep",
-        "status": "hold-protected-sensitive",
-        "sourceFamiliesSearched": ["resmi-DKMP-Ekotaban", "resmi-Il-Kultur-Turizm", "resmi-bolgesel-koruma"],
-        "notes": "Sportif olta kullanımı bilinse de alan Yaban Hayatı Geliştirme Sahası ve önemli su kuşu habitatıdır. Hassas ekolojik mikro-konum yayımlanmayacak."
-      },
-      {
-        "name": "Beyhan-1 Baraj Gölü",
-        "province": "Elazığ",
-        "status": "hold-commercial-aquaculture",
-        "sourceFamiliesSearched": ["resmi-BSGM-yetistiricilik-2026", "resmi-Elazig-Il-Tarim-avlak", "akademik-DergiPark-TAGEM-2024-2025"],
-        "notes": "Güncel akademik balık popülasyonu kanıtı çok güçlü; 2026'da yetiştiricilik bölgesi tahsisi ve ticari avlak kiralaması nedeniyle bağımsız kamusal bölüm kanıtı olmadan yayımlanmayacak."
-      },
-      {
-        "name": "Kalecik Baraj Gölü",
-        "province": "Elazığ/Karakoçan",
-        "status": "hold-access-refresh-needed",
-        "sourceFamiliesSearched": ["yerel-kalkinma-ajansi", "akademik-Aquaculture-Studies", "yerel-destekleyici"],
-        "notes": "Kalkınma ajansı geçmişte mesire ve balık tutma kullanımını kaydediyor, fakat tesislerin bakımsızlık nedeniyle kapandığını da belirtiyor. Güncel kamusal erişim ve resmî hukuk teyidi olmadan ilerletilmeyecek."
-      }
+      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"promising-deep-review","sourceFamiliesSearched":["resmi/Il-Kultur-Turizm-Kultur-Portali","akademik-Aquaculture-Studies-DergiPark","akademik-su-kalitesi"],"notes":"Resmî turizm kaynağı sportif olta/piknik-kamp bağlamını, rota-özel akademik çalışma 12 balık taksonunu doğruluyor. HES ve mikro kıyı erişimi Stage 3 öncesi ayrıca elenecek."},
+      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"hold-aquaculture","sourceFamiliesSearched":["resmi-kaymakamlik","akademik-DergiPark-sazan","akademik-DergiPark-siraz"],"notes":"Sazan ve siraz için güçlü rota-özel kanıt var; Kaymakamlık baraj içinde aktif alabalık kafes işletmeciliğini de bildiriyor. Kamusal bölüm ayrıştırılmadan yayımlanmayacak."},
+      {"name":"Özlüce Baraj Gölü","province":"Elazığ/Bingöl","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi-Elazig-Il-Tarim-avlak","resmi-Bingol-Il-Tarim-2025","akademik-DergiPark-TAGEM"],"notes":"Tür/stok ve akademik kanıt güçlü; ticari istihsal alanı, aktif yetiştiricilik ve kiralanmış haklar nedeniyle genel kamusal rota oluşturulmayacak."},
+      {"name":"Kalecik Baraj Gölü","province":"Osmaniye","status":"hold-aquaculture","sourceFamiliesSearched":["resmi-Il-Tarim-baliklandirma-arastirmasi","akademik-DergiPark","yerel-destekleyici"],"notes":"Akademik kayıt ağ kafeslerde alabalık yetiştiriciliğini doğruluyor; üretim sahasından bağımsız kamusal kıyı açıkça ayrıştırılmadan aday ilerletilmeyecek."},
+      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-heavy-aquaculture","sourceFamiliesSearched":["resmi-Il-Kultur-Turizm-sportif-olta","akademik-DergiPark-ekoloji","akademik-yetistiricilik"],"notes":"Resmî kaynak sportif olta bağlamını destekliyor, ancak akademik kayıtlar yoğun ağ-kafes alabalık işletmelerini gösteriyor. İşletme sahalarından ayrı güvenli kamusal kesim kanıtı olmadan yayımlanmayacak."},
+      {"name":"Tahtaköprü Baraj Gölü","province":"Gaziantep","status":"hold-protected-sensitive","sourceFamiliesSearched":["resmi-DKMP-Ekotaban","resmi-Il-Kultur-Turizm","resmi-bolgesel-koruma"],"notes":"Sportif olta kullanımı bilinse de alan Yaban Hayatı Geliştirme Sahası ve önemli su kuşu habitatıdır. Hassas ekolojik mikro-konum yayımlanmayacak."},
+      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi-BSGM-yetistiricilik-2026","resmi-Elazig-Il-Tarim-avlak","akademik-DergiPark-TAGEM-2024-2025"],"notes":"Güncel akademik balık popülasyonu kanıtı çok güçlü; 2026'da yetiştiricilik bölgesi tahsisi ve ticari avlak kiralaması nedeniyle bağımsız kamusal bölüm kanıtı olmadan yayımlanmayacak."},
+      {"name":"Kalecik Baraj Gölü","province":"Elazığ/Karakoçan","status":"hold-access-refresh-needed","sourceFamiliesSearched":["yerel-kalkinma-ajansi","akademik-Aquaculture-Studies","yerel-destekleyici"],"notes":"Kalkınma ajansı geçmişte mesire ve balık tutma kullanımını kaydediyor, fakat tesislerin bakımsızlık nedeniyle kapandığını da belirtiyor. Güncel kamusal erişim ve resmî hukuk teyidi olmadan ilerletilmeyecek."}
     ]
   },
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 2,
-    "remainingNeeded": 15,
+    "promotedCount": 4,
+    "remainingNeeded": 13,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
-      "ankara-500km-cankiri-bozoglu-goleti"
+      "ankara-500km-cankiri-bozoglu-goleti",
+      "ankara-500km-ankara-kurtbogazi-baraj-golu",
+      "ankara-500km-ankara-doganozu-baraj-golu"
     ],
     "heldSlugs": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
@@ -122,50 +76,36 @@
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-erzurum-olur-baraj-golu",
       "ankara-500km-ankara-cubuk-i-baraj-golu",
-      "ankara-500km-ankara-doganozu-baraj-golu",
       "ankara-500km-ankara-egrekkaya-baraj-golu",
       "ankara-500km-ankara-kavsakkaya-baraj-golu",
-      "ankara-500km-ankara-kurtbogazi-baraj-golu",
       "ankara-500km-ankara-eymir-golu",
       "ankara-500km-ankara-kizilca-goleti",
       "ankara-500km-ankara-yenice-baraj-golu",
-      "ankara-500km-ankara-anadolu-goleti"
+      "ankara-500km-ankara-anadolu-goleti",
+      "ankara-500km-konya-sille-baraj-golu"
     ],
     "pendingSlugs": [
       "ankara-500km-ankara-sakarya-nehri",
       "ankara-500km-ankara-karagol",
       "ankara-500km-ankara-eyrez-goleti",
       "ankara-500km-ankara-yukari-cavundur-goleti",
-      "ankara-500km-konya-sille-baraj-golu",
       "ankara-500km-konya-kopek-golu",
       "ankara-500km-konya-beysehir-cayi"
     ],
-    "notes": "Bu çalıştırmada yalnız kanıt eşiğini net geçen iki gerçek D kaydı C seviyesine çıkarıldı. Alpsarı'da rota özelindeki 2026 resmî sazan balıklandırması, Korgun kimliği ve kamusal rekreasyon bağlamı; Bozoğlu'nda Kaymakamlık su yapısı kimliği, rota adıyla sazan balıklandırması ve il düzeyi güncel avcılık çerçevesi çaprazlandı. Her ikisinde locationPrecision=Genel bölge ve navigationVerified=false korunur. Kota için zayıf aday yükseltilmedi."
+    "notes": "Bu çalıştırmada Kurtboğazı ve Doğanözü gerçek D->C olarak eklendi. Kurtboğazı için Kahramankazan Kaymakamlığı rota özelinde olta balıkçılığı ile sazan/gümüş balığı bilgisini, ASKİ ise resmî su kaynağı ve rekreasyon kimliğini doğruluyor. Doğanözü için TATUS resmî su kimliği ile 2026 tarihli bağımsız rota/tür/olta kaydı çaprazlandı. İkisinde de locationPrecision=Genel bölge ve navigationVerified=false. Sille Barajı güncel destekleyici haberde balık tutma yasağı bildirildiği için D bırakıldı."
   },
-  "stage3": {
-    "status": "not_started",
-    "newCPlusTarget": 3,
-    "newCPlusCount": 0,
-    "newSlugs": []
-  },
-  "stage4": {
-    "status": "not_started"
-  },
+  "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
+  "stage4": {"status":"not_started"},
   "promotedSlugs": [
     "ankara-500km-cankiri-alpsari-goleti",
-    "ankara-500km-cankiri-bozoglu-goleti"
+    "ankara-500km-cankiri-bozoglu-goleti",
+    "ankara-500km-ankara-kurtbogazi-baraj-golu",
+    "ankara-500km-ankara-doganozu-baraj-golu"
   ],
   "newSlugs": [],
-  "mgmAudit": {
-    "status": "not_started",
-    "checkedAt": null,
-    "officialStatus": "not_started",
-    "representativeSlugs": [],
-    "warnings": [],
-    "notes": ""
-  },
-  "ci": {"status": "not_started"},
-  "pr": {"status": "not_started"},
-  "merge": {"status": "not_started"},
-  "deploy": {"status": "not_started"}
+  "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
+  "ci": {"status":"not_started"},
+  "pr": {"status":"not_started"},
+  "merge": {"status":"not_started"},
+  "deploy": {"status":"not_started"}
 }
