@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-07",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
+  "stage": 2,
   "branch": "quality/daily-2026-09-07",
   "done": false,
   "research": {
@@ -14,7 +14,7 @@
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
     "searchConsoleNotes": "Main 5 Eylül 2026'dan beri değişmedi. Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum niyetli 3-15 pozisyon, düşük CTR ve gösterim sinyalleri yalnız araştırma önceliği olarak kullanıldı; eski trafik verisi confidence kanıtı yapılmadı.",
-    "dCandidatesReviewed": 25,
+    "dCandidatesReviewed": 26,
     "dCandidates": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
@@ -40,25 +40,71 @@
       "ankara-500km-cankiri-bozoglu-goleti",
       "ankara-500km-konya-sille-baraj-golu",
       "ankara-500km-konya-kopek-golu",
-      "ankara-500km-konya-beysehir-cayi"
+      "ankara-500km-konya-beysehir-cayi",
+      "ankara-500km-cankiri-alpsari-goleti"
     ],
-    "dCandidateNotes": "Bu 25 kayıt değişmemiş main üzerinde hâlen Stage 2 araştırma havuzudur. 6 Eylül dalındaki yükseltmeler main'e birleşmediği için bugünkü kotaya aktarılmadı. Sille Barajı için yasak, Köpek Gölü için hassas koruma kaydı güçlü karşı kanıt olarak korunacak; Eğrekkaya/Kavşakkaya gibi içme suyu ve işletme bağlamı güçlü adaylarda mikro erişim varsayılmayacak.",
+    "dCandidateNotes": "Stage 2'de Alpsarı ek D adayı olarak havuza katıldı. 7 Eylül batch-1 araştırmasında Alpsarı, Bozoğlu, Kurtboğazı, Doğanözü, Çubuk Karagöl ve Yukarı Çavundur gerçek D->C eşiğini geçti. Alpsarı için 3 Eylül 2026 İl Tarım rota özelinde 50 bin sazan balıklandırmasını; Kurtboğazı için Kaymakamlık olta ve tür bilgisini, ASKİ içme suyu/işletme kimliğini; Karagöl için DKMP kontrollü sportif olta/korunan alan bağlamını ve geçmiş resmî Abant alası balıklandırmasını destekliyor. Tümünde locationPrecision=Genel bölge ve navigationVerified=false tutuldu. Sille/Köpek Gölü gibi yasak/hassas karşı kanıtlı kayıtlar yükseltilmedi.",
     "newCandidatesReviewed": 8,
     "newCandidates": [
       {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"promising-deep-review","sourceFamiliesSearched":["resmi-Il-Tarim-kiralama","resmi/yerel-turizm","akademik-DergiPark/üniversite"],"notes":"21.05.2025 İl Tarım ilanı rezervuarın devlet hüküm ve tasarrufunda olduğunu ve seddeye 100 m yasak bölge bulunduğunu doğruluyor; tür/olta kanıtı için akademik ve turizm kayıtları güçlü, fakat ticari istihsal ve HES/mikro kıyı ayrımı Stage 3 öncesi yeniden kontrol edilecek."},
       {"name":"Gölova Baraj Gölü","province":"Sivas","status":"hold-aquaculture","sourceFamiliesSearched":["resmi-kaymakamlik/DSI","akademik-DergiPark-sazan/siraz","yerel-destekleyici"],"notes":"Rota-özel tür kanıtı güçlü; aktif kafes yetiştiriciliği ve kamusal kıyı ayrımı netleşmeden yayımlanmayacak."},
-      {"name":"Özlüce Baraj Gölü","province":"Elazığ/Bingöl","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi-Elazig-Il-Tarim-avlak","resmi-yetistiricilik","akademik-DergiPark/TAGEM"],"notes":"Elazığ İl Tarım 1. avlak sahasında ticari istihsal kiralamasını ve sazan/siraz/bıyıklı/tatlısu kefali stoklarını veriyor. Ticari haklar ve yetiştiricilik baskısı nedeniyle bağımsız kamusal bölüm kanıtı olmadan yayımlanmayacak."},
-      {"name":"Kalecik Baraj Gölü","province":"Osmaniye","status":"hold-aquaculture-separation","sourceFamiliesSearched":["resmi-Osmaniye-Il-Tarim-baliklandirma","akademik-DergiPark/üniversite","yerel-destekleyici"],"notes":"08.07.2025 İl Tarım kaydı 175 bin pullu sazan balıklandırmasını doğruluyor. Tür olasılığı güçlü; ağ kafes/yetiştiricilik sahalarından ayrı kamusal kıyı kanıtı Stage 3'te şart."},
-      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-heavy-aquaculture","sourceFamiliesSearched":["resmi-Gaziantep-Il-Kultur-Turizm","resmi/yerel-su-urunleri","akademik-DergiPark/üniversite"],"notes":"Gaziantep İl Kültür ve Turizm sportif olta balıkçılığını açıkça destekliyor. Ancak kafes yetiştiriciliği/işletme sahaları ayrıştırılmadan yeni genel rota yayımlanmayacak."},
-      {"name":"Tahtaköprü Baraj Gölü","province":"Gaziantep","status":"hold-protected-sensitive","sourceFamiliesSearched":["resmi-DKMP/koruma","resmi-Gaziantep-Il-Kultur-Turizm","akademik/yerel-ekoloji"],"notes":"Resmî turizm kaynağı sportif olta bağlamını destekliyor; korunan habitat ve yaban hayatı statüsü nedeniyle hassas mikro-konum yayımlanmayacak."},
-      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi-BSGM-2026-yetistiricilik","resmi-Elazig-Il-Tarim","akademik-DergiPark/TAGEM"],"notes":"05.01.2026 ve 02.03.2026 resmî duyurular gölün yetiştiricilik bölgesi olarak açıldığını; 17 ayrı tesis alanı için süreç yürütüldüğünü doğruluyor. Güçlü tür/akademik kanıt olsa bile kamusal olta kıyısı ayrıca ayrıştırılmadan yayımlanmayacak."},
-      {"name":"Kalecik Baraj Gölü","province":"Elazığ/Karakoçan","status":"hold-access-refresh-needed","sourceFamiliesSearched":["yerel-kalkinma-ajansi","resmi-Elazig-Il-Tarim-su-urunleri","akademik-Aquaculture-Studies/üniversite"],"notes":"Geçmiş mesire/balık tutma kullanımı için destekleyici kayıtlar var; güncel kamusal erişim ve işletme/hukuk durumu yeterince taze değil. Stage 3 adayı yapılmadan resmî güncel erişim kanıtı aranacak."}
+      {"name":"Özlüce Baraj Gölü","province":"Elazığ/Bingöl","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi-Elazig-Il-Tarim-avlak","resmi-yetistiricilik","akademik-DergiPark/TAGEM"],"notes":"Tür/stok ve akademik kanıt güçlü; ticari istihsal ve yetiştiricilik baskısı nedeniyle bağımsız kamusal bölüm kanıtı olmadan yayımlanmayacak."},
+      {"name":"Kalecik Baraj Gölü","province":"Osmaniye","status":"hold-aquaculture-separation","sourceFamiliesSearched":["resmi-Osmaniye-Il-Tarim-baliklandirma","akademik-DergiPark/üniversite","yerel-destekleyici"],"notes":"08.07.2025 İl Tarım kaydı 175 bin pullu sazan balıklandırmasını doğruluyor; ağ kafes/yetiştiricilik sahalarından ayrı kamusal kıyı kanıtı şart."},
+      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-heavy-aquaculture","sourceFamiliesSearched":["resmi-Gaziantep-Il-Kultur-Turizm","resmi/yerel-su-urunleri","akademik-DergiPark/üniversite"],"notes":"Resmî turizm kaynağı sportif olta bağlamını destekliyor; kafes/işletme sahaları ayrıştırılmadan yayımlanmayacak."},
+      {"name":"Tahtaköprü Baraj Gölü","province":"Gaziantep","status":"hold-protected-sensitive","sourceFamiliesSearched":["resmi-DKMP/koruma","resmi-Gaziantep-Il-Kultur-Turizm","akademik/yerel-ekoloji"],"notes":"Resmî turizm sportif olta bağlamını destekliyor; korunan habitat nedeniyle hassas mikro-konum yayımlanmayacak."},
+      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-commercial-aquaculture","sourceFamiliesSearched":["resmi-BSGM-2026-yetistiricilik","resmi-Elazig-Il-Tarim","akademik-DergiPark/TAGEM"],"notes":"2026 resmî duyurular yetiştiricilik bölgesi ve çoklu tesis alanı sürecini doğruluyor; bağımsız kamusal kıyı ayrıştırılmadan yayımlanmayacak."},
+      {"name":"Kalecik Baraj Gölü","province":"Elazığ/Karakoçan","status":"hold-access-refresh-needed","sourceFamiliesSearched":["yerel-kalkinma-ajansi","resmi-Elazig-Il-Tarim-su-urunleri","akademik-Aquaculture-Studies/üniversite"],"notes":"Geçmiş mesire/balık tutma kullanımı var; güncel kamusal erişim ve işletme/hukuk durumu yeterince taze değil."}
     ]
   },
-  "stage2": {"status":"not_started","targetPromotions":17,"promotedCount":0,"remainingNeeded":17,"promotedSlugs":[],"heldSlugs":[],"pendingSlugs":[]},
+  "stage2": {
+    "status": "in_progress",
+    "targetPromotions": 17,
+    "promotedCount": 6,
+    "remainingNeeded": 11,
+    "promotedSlugs": [
+      "ankara-500km-cankiri-alpsari-goleti",
+      "ankara-500km-cankiri-bozoglu-goleti",
+      "ankara-500km-ankara-kurtbogazi-baraj-golu",
+      "ankara-500km-ankara-doganozu-baraj-golu",
+      "ankara-500km-ankara-karagol",
+      "ankara-500km-ankara-yukari-cavundur-goleti"
+    ],
+    "heldSlugs": [
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-bayburt-lori-deresi",
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-erzurum-olur-baraj-golu",
+      "ankara-500km-ankara-cubuk-i-baraj-golu",
+      "ankara-500km-ankara-egrekkaya-baraj-golu",
+      "ankara-500km-ankara-kavsakkaya-baraj-golu",
+      "ankara-500km-ankara-eymir-golu",
+      "ankara-500km-ankara-kizilca-goleti",
+      "ankara-500km-ankara-yenice-baraj-golu",
+      "ankara-500km-ankara-anadolu-goleti",
+      "ankara-500km-konya-sille-baraj-golu",
+      "ankara-500km-konya-kopek-golu"
+    ],
+    "pendingSlugs": [
+      "ankara-500km-ankara-sakarya-nehri",
+      "ankara-500km-ankara-eyrez-goleti",
+      "ankara-500km-konya-beysehir-cayi"
+    ],
+    "notes": "7 Eylül Stage 2 batch-1 tamamlandı: 6 gerçek D->C yükseltme kodlandı ve ana veri akışına bağlandı. Tüm yükseltmeler runtime'da previous.confidence === D önkoşulunu zorunlu kılar. Mikro erişim doğrulanmadı; locationPrecision=Genel bölge, navigationVerified=false. Kalan hedef 11 gerçek D->C+ yükseltmedir."
+  },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
-  "promotedSlugs": [],
+  "promotedSlugs": [
+    "ankara-500km-cankiri-alpsari-goleti",
+    "ankara-500km-cankiri-bozoglu-goleti",
+    "ankara-500km-ankara-kurtbogazi-baraj-golu",
+    "ankara-500km-ankara-doganozu-baraj-golu",
+    "ankara-500km-ankara-karagol",
+    "ankara-500km-ankara-yukari-cavundur-goleti"
+  ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
   "ci": {"status":"not_started"},
