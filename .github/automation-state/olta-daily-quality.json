@@ -14,7 +14,7 @@
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
     "searchConsoleNotes": "Main 5 Eylül 2026'dan beri değişmedi. Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum niyetli 3-15 pozisyon, düşük CTR ve gösterim sinyalleri yalnız araştırma önceliği olarak kullanıldı; eski trafik verisi confidence kanıtı yapılmadı.",
-    "dCandidatesReviewed": 31,
+    "dCandidatesReviewed": 33,
     "dCandidates": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
@@ -46,9 +46,11 @@
       "ulusal-yozgat-uzunlu-baraj-golu",
       "ulusal-balikesir-ikizcetepeler-baraj-golu",
       "ankara-500km-tokat-guzelce-baraj-golu",
-      "ankara-500km-yozgat-musabeyli-baraj-golu"
+      "ankara-500km-yozgat-musabeyli-baraj-golu",
+      "ankara-500km-cankiri-akhasan-baraj-golu",
+      "ankara-500km-cankiri-devrez-cayi"
     ],
-    "dCandidateNotes": "7 Eylül Stage 2 araştırması sürüyor. Alpsarı, Bozoğlu, Kurtboğazı, Doğanözü, Çubuk Karagöl, Yukarı Çavundur ve Divanlı gerçek D->C eşiğini geçti. Divanlı için 2025 İl Tarım kaydı Saraykent Divanlı'ya 20 bin sazan bırakıldığını; 19.02.2026 İl Tarım kaydı gölet bölgesindeki belediye Millet Bahçesi kullanımını; DergiPark'taki Yozgat alternatif turizm araştırması Divanlı Göleti ve Mesire Yerini bağımsız olarak doğruluyor. Uzunlu, geçmiş kafes/yetiştiricilik bağlamı ve güncel mikro erişim ayrımı; İkizcetepeler içme suyu/erişim belirsizliği; Güzelce tür ve kamusal erişim kanıtının henüz yeterince ayrışmaması; Musabeyli ise kullanım/erişim eşiği nedeniyle D bırakıldı. Tüm yükseltmelerde locationPrecision=Genel bölge ve navigationVerified=false korunur.",
+    "dCandidateNotes": "7 Eylül Stage 2 araştırması sürüyor. Alpsarı, Bozoğlu, Kurtboğazı, Doğanözü, Çubuk Karagöl, Yukarı Çavundur, Divanlı ve Akhasan gerçek D->C eşiğini geçti. Akhasan için Çerkeş Kaymakamlığının 2026 saha incelemesi/DSİ bağlamı rota kimliğini ve güncel su işletme durumunu, Tarım ve Orman Bakanlığı projesini aktaran AA kaydı rota adıyla sazan balıklandırmasını, bağımsız yerel kaynak ise genel kullanım ve kuraklık/sulama riskini destekliyor. Devrez Çayı için rota-özel 2023 akademik balık faunası çalışması güçlü olmasına rağmen mevcut genişleme kaydındaki ilçe etiketi ile resmî Devrez koridor tanımları yeterince temiz eşleşmediğinden kota sayacına alınmadı. Uzunlu, İkizcetepeler, Güzelce ve Musabeyli önceki erişim/işletme nedenleriyle D kaldı. Tüm yükseltmelerde locationPrecision=Genel bölge ve navigationVerified=false korunur.",
     "newCandidatesReviewed": 8,
     "newCandidates": [
       {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"promising-deep-review","sourceFamiliesSearched":["resmi-Il-Tarim-kiralama","resmi/yerel-turizm","akademik-DergiPark/üniversite"],"notes":"21.05.2025 İl Tarım ilanı rezervuarın devlet hüküm ve tasarrufunda olduğunu ve seddeye 100 m yasak bölge bulunduğunu doğruluyor; tür/olta kanıtı için akademik ve turizm kayıtları güçlü, fakat ticari istihsal ve HES/mikro kıyı ayrımı Stage 3 öncesi yeniden kontrol edilecek."},
@@ -64,8 +66,8 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 7,
-    "remainingNeeded": 10,
+    "promotedCount": 8,
+    "remainingNeeded": 9,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -73,7 +75,8 @@
       "ankara-500km-ankara-doganozu-baraj-golu",
       "ankara-500km-ankara-karagol",
       "ankara-500km-ankara-yukari-cavundur-goleti",
-      "ankara-500km-yozgat-divanli-goleti"
+      "ankara-500km-yozgat-divanli-goleti",
+      "ankara-500km-cankiri-akhasan-baraj-golu"
     ],
     "heldSlugs": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
@@ -96,14 +99,15 @@
       "ulusal-yozgat-uzunlu-baraj-golu",
       "ulusal-balikesir-ikizcetepeler-baraj-golu",
       "ankara-500km-tokat-guzelce-baraj-golu",
-      "ankara-500km-yozgat-musabeyli-baraj-golu"
+      "ankara-500km-yozgat-musabeyli-baraj-golu",
+      "ankara-500km-cankiri-devrez-cayi"
     ],
     "pendingSlugs": [
       "ankara-500km-ankara-sakarya-nehri",
       "ankara-500km-ankara-eyrez-goleti",
       "ankara-500km-konya-beysehir-cayi"
     ],
-    "notes": "7 Eylül Stage 2 devam ediyor: 7 gerçek D->C yükseltme kodlandı ve ana veri akışına bağlandı. Son eklenen Divanlı Göleti; rota özelindeki 2025 sazan balıklandırması, 2026 Millet Bahçesi kullanımı ve bağımsız akademik mesire kaydıyla eşiği geçti. Mikro erişim doğrulanmadı; locationPrecision=Genel bölge, navigationVerified=false. Kalan hedef 10 gerçek D->C+ yükseltmedir."
+    "notes": "7 Eylül Stage 2 devam ediyor: 8 gerçek D->C yükseltme kodlandı ve ana veri akışına bağlandı. Son eklenen Akhasan Baraj Gölü; 2026 Kaymakamlık/DSİ rota-su bağlamı, Tarım ve Orman projesi kaynaklı sazan balıklandırması ve bağımsız yerel kullanım/kuraklık kaydıyla eşiği geçti. Devrez'de akademik tür kanıtı güçlü olsa da ilçe/koridor eşleşmesi temizlenmeden confidence yükseltilmedi. Mikro erişim doğrulanmadı; locationPrecision=Genel bölge, navigationVerified=false. Kalan hedef 9 gerçek D->C+ yükseltmedir."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -114,7 +118,8 @@
     "ankara-500km-ankara-doganozu-baraj-golu",
     "ankara-500km-ankara-karagol",
     "ankara-500km-ankara-yukari-cavundur-goleti",
-    "ankara-500km-yozgat-divanli-goleti"
+    "ankara-500km-yozgat-divanli-goleti",
+    "ankara-500km-cankiri-akhasan-baraj-golu"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
