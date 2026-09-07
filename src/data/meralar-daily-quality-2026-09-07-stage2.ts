@@ -12,7 +12,8 @@ export const promoted20260907Stage2 = [
   "ankara-500km-ankara-kurtbogazi-baraj-golu",
   "ankara-500km-ankara-doganozu-baraj-golu",
   "ankara-500km-ankara-karagol",
-  "ankara-500km-ankara-yukari-cavundur-goleti"
+  "ankara-500km-ankara-yukari-cavundur-goleti",
+  "ankara-500km-yozgat-divanli-goleti"
 ] as const;
 
 type Evidence = {
@@ -86,6 +87,17 @@ const evidence: Record<(typeof promoted20260907Stage2)[number], Evidence> = {
     accessUrl:"https://www.cubuk.bel.tr/wp-content/uploads/2024/09/2025-2029-stratejik-plan.pdf",
     summary:"Yukarı Çavundur Göletinin Çubuk/Kayapınar kimliği, genel mesire-ulaşım bağlamı, güncel kamusal çevre kullanımı ve rota özelindeki sazan türleri iki bağımsız kaynak ailesiyle çaprazlandı.",
     risk:"Mesire ve yürüyüş kullanımı göletin tüm kıyılarını sürekli açık yapmaz; tarla/servis yolu, özel mülkiyet, su kotu ve saha tabelaları ayrıca kontrol edilmelidir."
+  },
+  "ankara-500km-yozgat-divanli-goleti": {
+    fish:["Sazan"],
+    sources:[
+      {label:"Yozgat İl Tarım - 2025 Divanlı balıklandırması",url:"https://yozgat.tarimorman.gov.tr/Haber/725/2025-Yili-Yozgat-Ili-Icsu-Baliklandirma-Faaliyeti",note:"Saraykent Divanlı'ya 20 bin sazan yavrusu bırakıldığını rota özelinde doğrular; program 5 hektarın altındaki ve kiralanmış avlakları kapsam dışı bırakmıştır. Balıklandırma av garantisi değildir."},
+      {label:"Yozgat İl Tarım - 2026 Divanlı Göleti Millet Bahçesi",url:"https://yozgat.tarimorman.gov.tr/Haber/775/Budama-Egitimi-Verildi",note:"Saraykent Belediyesinin Divanlı Göleti bölgesindeki Millet Bahçesini 19 Şubat 2026 tarihinde güncel kamusal rekreasyon bağlamıyla doğrular; göletin tüm kıyısına erişim izni değildir."},
+      {label:"Turizm Çalışmaları Dergisi - Yozgat alternatif turizm alan araştırması",url:"https://dergipark.org.tr/en/download/article-file/910550",note:"Saraykent bölümünde Divanlı Göleti ve Mesire Yerini bağımsız akademik/turizm kaynağı olarak listeler; mikro kıyı izni veya güncel av garantisi değildir."}
+    ],
+    accessUrl:"https://yozgat.tarimorman.gov.tr/Haber/775/Budama-Egitimi-Verildi",
+    summary:"Divanlı Göletinin Saraykent kimliği, 2026'da gölet bölgesindeki belediye Millet Bahçesi kullanımı, bağımsız akademik mesire kaydı ve 2025 rota özelindeki 20 bin sazan balıklandırmasıyla çaprazlandı.",
+    risk:"Millet Bahçesi varlığı göletin bütün çevresini kamusal veya olta avına açık yapmaz; kıyı geçişi, belediye düzenlemeleri, su kotu, özel parseller ve güncel saha tabelaları hareket günü kontrol edilmelidir."
   }
 };
 
