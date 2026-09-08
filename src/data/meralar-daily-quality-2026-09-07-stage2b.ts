@@ -1,4 +1,5 @@
 import type { EnrichedMera, ResearchSource } from "./meralar-tumu-core";
+import { applyDailyQuality20260908Stage2 } from "./meralar-daily-quality-2026-09-08-stage2";
 
 const teblig:ResearchSource={
   label:"6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığı Tebliği",
@@ -56,5 +57,6 @@ export const applyDailyQuality20260907Stage2B=(routeMap:Map<string,EnrichedMera>
       reviewedAt:"2026-09-07"
     }
   });
+  applyDailyQuality20260908Stage2(routeMap);
   return routeMap;
 };
