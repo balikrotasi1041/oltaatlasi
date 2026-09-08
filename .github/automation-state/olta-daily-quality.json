@@ -57,8 +57,8 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 8,
-    "remainingNeeded": 9,
+    "promotedCount": 9,
+    "remainingNeeded": 8,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -67,7 +67,8 @@
       "ankara-500km-ankara-karagol",
       "ankara-500km-ankara-yukari-cavundur-goleti",
       "ankara-500km-yozgat-divanli-goleti",
-      "ankara-500km-cankiri-akhasan-baraj-golu"
+      "ankara-500km-cankiri-akhasan-baraj-golu",
+      "ankara-500km-ankara-anadolu-goleti"
     ],
     "heldSlugs": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
@@ -77,20 +78,19 @@
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
       "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-erzurum-olur-baraj-golu"
+      "ulusal-erzurum-olur-baraj-golu",
+      "ankara-500km-ankara-kizilca-goleti",
+      "ankara-500km-ankara-eymir-golu"
     ],
     "pendingSlugs": [
       "ankara-500km-ankara-cubuk-i-baraj-golu",
       "ankara-500km-ankara-sakarya-nehri",
       "ankara-500km-ankara-egrekkaya-baraj-golu",
       "ankara-500km-ankara-kavsakkaya-baraj-golu",
-      "ankara-500km-ankara-eymir-golu",
-      "ankara-500km-ankara-kizilca-goleti",
       "ankara-500km-ankara-yenice-baraj-golu",
-      "ankara-500km-ankara-anadolu-goleti",
       "ankara-500km-ankara-eyrez-goleti"
     ],
-    "notes": "Main 5 Eylül'den beri değişmediği için 7 Eylül'de araştırılıp merge edilmemiş sekiz kayıt bugünkü dalda yeniden D başlangıç önkoşuluyla uygulanmıştır. Kod her hedefte previous.confidence === 'D' koşulunu zorunlu tutar; bu nedenle yalnız gerçek D->C geçişler sayılır. 8 Eylül'de Alpsarı, Kurtboğazı, Çubuk Karagöl ve Akhasan'ın kritik resmî kaynakları tekrar erişilebilir/doğrulanabilir bulundu. Tümünde locationPrecision=Genel bölge ve navigationVerified=false; geçmiş balıklandırma av garantisi değildir. Kalan hedef 9 gerçek D->C+ yükseltmedir."
+    "notes": "8 Eylül 2026 çalıştırmasında Anadolu OSB Yağmursuyu Göleti gerçek D başlangıç önkoşuluyla C'ye yükseltildi. Anadolu OSB'nin kendi kaynakları Sincan/Malıköy-Temelli kimliğini, doğal gölet ve sportif olta etkinliğini doğruluyor; Ankara Büyükşehir Belediyesi bağımsız kullanım desteği, ASOF 28 Eylül 2025 kaydı ise 12 sazan ve 159 havuz balığı ile rota özelinde güncel tür kanıtı sağlıyor. OSB içi kontrollü etkinlik sürekli kamusal erişim sayılmadı; locationPrecision=Genel bölge, navigationVerified=false korundu. Kızılca 2025 balık ölümleri ve 2026 su restorasyonu sonrası güncel tür stoku belirsiz olduğu için D bırakıldı. Eymir 30 Mart 2026 istihsal hakkı kiralama ilanı nedeniyle amatör kıyı kullanım ayrımı netleşmeden yükseltilmedi. Kalan hedef 8 gerçek D->C+ yükseltmedir."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -102,7 +102,8 @@
     "ankara-500km-ankara-karagol",
     "ankara-500km-ankara-yukari-cavundur-goleti",
     "ankara-500km-yozgat-divanli-goleti",
-    "ankara-500km-cankiri-akhasan-baraj-golu"
+    "ankara-500km-cankiri-akhasan-baraj-golu",
+    "ankara-500km-ankara-anadolu-goleti"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
