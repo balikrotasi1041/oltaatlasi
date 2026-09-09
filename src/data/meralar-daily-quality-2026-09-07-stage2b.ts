@@ -1,5 +1,6 @@
 import type { EnrichedMera, ResearchSource } from "./meralar-tumu-core";
 import { applyDailyQuality20260908Stage2 } from "./meralar-daily-quality-2026-09-08-stage2";
+import { applyDailyQuality20260909Stage2C } from "./meralar-daily-quality-2026-09-09-stage2c";
 
 const teblig:ResearchSource={
   label:"6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığı Tebliği",
@@ -58,5 +59,6 @@ export const applyDailyQuality20260907Stage2B=(routeMap:Map<string,EnrichedMera>
     }
   });
   applyDailyQuality20260908Stage2(routeMap);
+  applyDailyQuality20260909Stage2C(routeMap);
   return routeMap;
 };
