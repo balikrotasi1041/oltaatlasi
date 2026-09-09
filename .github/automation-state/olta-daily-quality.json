@@ -57,8 +57,8 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 9,
-    "remainingNeeded": 8,
+    "promotedCount": 10,
+    "remainingNeeded": 7,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -68,11 +68,11 @@
       "ankara-500km-ankara-yukari-cavundur-goleti",
       "ankara-500km-yozgat-divanli-goleti",
       "ankara-500km-cankiri-akhasan-baraj-golu",
-      "ankara-500km-ankara-anadolu-goleti"
+      "ankara-500km-ankara-anadolu-goleti",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
     ],
     "heldSlugs": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-bayburt-lori-deresi",
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
@@ -88,7 +88,7 @@
       "ankara-500km-ankara-eyrez-goleti"
     ],
     "pendingSlugs": ["ankara-500km-ankara-sakarya-nehri"],
-    "notes": "Dokuz benzersiz kayıt aynı değişmemiş main SHA üzerinde gerçekten Güven D başlangıcından Güven C'ye geçen, çoklu kaynaklı yamalar olarak bugünkü dala taşındı. Kod her hedefte previous.confidence === 'D' önkoşulunu korur. Bu çalıştırmadaki ek araştırmada Çataltepe için resmî/akademik tür ve kamusal kıyı kanıtı yeterli bulunmadı; Lori için resmî akarsu kimliği güçlendi ancak rota-özel tür ve kamusal kıyı eşiği aşılmadı; Erzurum Kapıkaya/Olur ve Çankırı Karadere için de işletme/erişim ve tür zinciri yetersiz kaldı. Kota uğruna confidence yükseltilmedi. Kalan hedef 8 gerçek D->C+ yükseltmedir."
+    "notes": "On benzersiz kayıt aynı değişmemiş main SHA üzerinde gerçekten Güven D başlangıcından Güven C'ye geçen çoklu kaynaklı yamalar olarak bugünkü dala bağlıdır. Bu çalıştırmada Filyos Çayı Zonguldak hattı; Çaycuma Kaymakamlığı rota kimliği, Visit Zonguldak genel olta kullanım bağlamı, Hacettepe Üniversitesi Filyos alt havzası balık topluluğu çalışması ve ikincil rota tür kaydıyla çaprazlanarak D->C yükseltildi. locationPrecision Genel bölge ve navigationVerified=false korunur. Kota uğruna confidence yükseltilmedi. Kalan hedef 7 gerçek D->C+ yükseltmedir."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -101,7 +101,8 @@
     "ankara-500km-ankara-yukari-cavundur-goleti",
     "ankara-500km-yozgat-divanli-goleti",
     "ankara-500km-cankiri-akhasan-baraj-golu",
-    "ankara-500km-ankara-anadolu-goleti"
+    "ankara-500km-ankara-anadolu-goleti",
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
