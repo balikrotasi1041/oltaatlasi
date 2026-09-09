@@ -1,4 +1,5 @@
 import type { EnrichedMera, ResearchSource } from "./meralar-tumu-core";
+import { applyDailyQuality20260909Stage2D } from "./meralar-daily-quality-2026-09-09-stage2d";
 
 const teblig:ResearchSource={
   label:"Tarım ve Orman Bakanlığı - Amatör Balıkçılık Mevzuatı",
@@ -79,5 +80,6 @@ export const applyDailyQuality20260909Stage2C=(routeMap:Map<string,EnrichedMera>
       reviewedAt:"2026-09-09"
     }
   });
+  applyDailyQuality20260909Stage2D(routeMap);
   return routeMap;
 };
