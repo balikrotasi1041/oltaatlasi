@@ -57,8 +57,8 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 10,
-    "remainingNeeded": 7,
+    "promotedCount": 11,
+    "remainingNeeded": 6,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -69,14 +69,14 @@
       "ankara-500km-yozgat-divanli-goleti",
       "ankara-500km-cankiri-akhasan-baraj-golu",
       "ankara-500km-ankara-anadolu-goleti",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri"
     ],
     "heldSlugs": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-bayburt-lori-deresi",
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
-      "ulusal-cankiri-karadere-baraj-golu-cankiri",
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-erzurum-olur-baraj-golu",
       "ankara-500km-ankara-cubuk-i-baraj-golu",
@@ -88,7 +88,7 @@
       "ankara-500km-ankara-eyrez-goleti"
     ],
     "pendingSlugs": ["ankara-500km-ankara-sakarya-nehri"],
-    "notes": "On benzersiz kayıt aynı değişmemiş main SHA üzerinde gerçekten Güven D başlangıcından Güven C'ye geçen çoklu kaynaklı yamalar olarak bugünkü dala bağlıdır. Bu çalıştırmada Filyos Çayı Zonguldak hattı; Çaycuma Kaymakamlığı rota kimliği, Visit Zonguldak genel olta kullanım bağlamı, Hacettepe Üniversitesi Filyos alt havzası balık topluluğu çalışması ve ikincil rota tür kaydıyla çaprazlanarak D->C yükseltildi. locationPrecision Genel bölge ve navigationVerified=false korunur. Kota uğruna confidence yükseltilmedi. Kalan hedef 7 gerçek D->C+ yükseltmedir."
+    "notes": "On bir benzersiz kayıt aynı değişmemiş main SHA üzerinde gerçekten Güven D başlangıcından Güven C'ye geçen çoklu kaynaklı yamalar olarak bugünkü dala bağlıdır. Bu çalıştırmada Çankırı/Eldivan Karadere Göleti; İl Tarımın rota özelindeki 2018 aynalı sazan balıklandırma tablosu, İl Kültür ve Turizmin Karadere Göleti çevresindeki piknik/kamp rekreasyon bağlamı ve yalnız destekleyici ikincil saha kaydıyla çaprazlanarak D->C yükseltildi. Su türü Baraj Gölü yerine resmî adlandırmaya uygun Gölet olarak düzeltildi. locationPrecision Genel bölge ve navigationVerified=false korunur. Kota uğruna confidence yükseltilmedi. Kalan hedef 6 gerçek D->C+ yükseltmedir."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -102,7 +102,8 @@
     "ankara-500km-yozgat-divanli-goleti",
     "ankara-500km-cankiri-akhasan-baraj-golu",
     "ankara-500km-ankara-anadolu-goleti",
-    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+    "ulusal-cankiri-karadere-baraj-golu-cankiri"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
