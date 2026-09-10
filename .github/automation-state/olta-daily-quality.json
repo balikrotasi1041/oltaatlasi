@@ -13,8 +13,8 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum niyetli, pozisyon 3-15 ve düşük CTR kayıtları araştırma sırasını etkiler; trafik sinyali confidence kanıtı değildir. Main SHA değişmediği için daha önce araştırılmış fakat main'e birleşmemiş gerçek D->C yamaları başlangıç D önkoşulu ve kanıt eşiği korunarak bugünkü dala yeniden bağlandı.",
-    "dCandidatesReviewed": 25,
+    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Trafik sinyali confidence kanıtı değildir. Stage 2 sırasında kota için gerekirse ilk 25 havuzunun dışındaki gerçek D kayıtlar da aynı kanıt eşiğiyle taranır.",
+    "dCandidatesReviewed": 26,
     "dCandidates": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
@@ -40,25 +40,26 @@
       "ankara-500km-cankiri-bozoglu-goleti",
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-yozgat-divanli-goleti",
-      "ankara-500km-cankiri-akhasan-baraj-golu"
+      "ankara-500km-cankiri-akhasan-baraj-golu",
+      "ulusal-karabuk-arac-cayi"
     ],
     "newCandidatesReviewed": 8,
     "newCandidates": [
-      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"promising-deep-review","sourceFamiliesSearched":["resmi/jandarma-yerel-idare","akademik-DergiPark","yerel-destekleyici"],"note":"Hakemli çalışmalar rota özelinde 12 takson ve 2022 saha örnekleri sağlar; kamusal mikro kıyı ayrıca teyit edilmeli."},
-      {"name":"Kalecik Barajı","province":"Osmaniye","status":"promising-access-review","sourceFamiliesSearched":["resmi/Tarim-Orman","akademik/üniversite-arama","yerel-DHA"],"note":"2025'te 175.000 pullu sazan balıklandırması güçlü tür olasılığı kanıtıdır; güncel güvenli/kamusal kıyı erişimi ayrıca doğrulanmalı."},
-      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"promising-sensitive-review","sourceFamiliesSearched":["resmi-il-kultur-turizm","akademik-DergiPark","yerel-destekleyici"],"note":"Resmî il kaynağı balık türlerini, 2022 hakemli çalışma siraz popülasyonunu doğrular; hassas kuş alanı ve kıyı erişimi ayrı ele alınmalı."},
-      {"name":"Tahtaköprü Barajı","province":"Gaziantep","status":"hold-sensitive-enforcement-access","sourceFamiliesSearched":["resmi/Tarim-Orman","akademik/çevre-arama","yerel-DHA/TRT"],"note":"Balıklandırma var ancak yaban hayatı ve değişken su seviyesi/mikro erişim nedeniyle C için ek güvenlik-koruma teyidi gerekir."},
-      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-aquaculture","sourceFamiliesSearched":["resmi-ÇED/valilik","akademik/üniversite-arama","yerel-destekleyici"],"note":"Baraj gölü çevresinde yeni alabalık üretim tesisi ÇED süreci mevcut; amatör kıyı ile tesis alanları ayrıştırılmadan yayımlanmayacak."},
-      {"name":"Özlüce Baraj Gölü","province":"Bingöl/Elazığ","status":"hold-active-aquaculture","sourceFamiliesSearched":["resmi-il-tarim","akademik-hakemli/DOAJ","yerel-destekleyici"],"note":"Rota özelinde balık akademik kanıtı güçlü ancak 2025 faaliyet raporu aktif yetiştiriciliği doğruluyor; tesis alanlarından bağımsız kamusal mikro kıyı teyidi şart."},
-      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-active-aquaculture","sourceFamiliesSearched":["resmi-BSGM/il-tarim","akademik/üniversite-arama","yerel-destekleyici"],"note":"2026'da resmen su ürünleri yetiştiricilik bölgesine açıldı; tesis alanlarından ayrıştırılmadan yeni mera olarak seçilmeyecek."},
-      {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-aquaculture-hes","sourceFamiliesSearched":["resmi-il-tarim/TAGEM","akademik-DergiPark-2026","yerel-destekleyici"],"note":"2026 hakemli su kalitesi çalışması mevcut; aynı gölde aktif ağ kafes üretimi nedeniyle amatör kıyı segmenti ayrıca ayrıştırılmalı."}
+      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"promising-deep-review"},
+      {"name":"Kalecik Barajı","province":"Osmaniye","status":"promising-access-review"},
+      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"promising-sensitive-review"},
+      {"name":"Tahtaköprü Barajı","province":"Gaziantep","status":"hold-sensitive-enforcement-access"},
+      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-aquaculture"},
+      {"name":"Özlüce Baraj Gölü","province":"Bingöl/Elazığ","status":"hold-active-aquaculture"},
+      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-active-aquaculture"},
+      {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-aquaculture-hes"}
     ]
   },
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 11,
-    "remainingNeeded": 6,
+    "promotedCount": 12,
+    "remainingNeeded": 5,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -70,7 +71,8 @@
       "ankara-500km-cankiri-akhasan-baraj-golu",
       "ankara-500km-ankara-anadolu-goleti",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
-      "ulusal-cankiri-karadere-baraj-golu-cankiri"
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ulusal-karabuk-arac-cayi"
     ],
     "heldSlugs": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
@@ -88,7 +90,7 @@
       "ankara-500km-ankara-eyrez-goleti"
     ],
     "pendingSlugs": ["ankara-500km-ankara-sakarya-nehri"],
-    "notes": "On bir benzersiz kayıt değişmemiş main SHA üzerinde gerçekten Güven D başlangıcından Güven C'ye geçen, en az iki bağımsız kaynak ailesiyle hazırlanmış yamalar olarak 10 Eylül dalına yeniden bağlandı. Önceki çalışma dalları main'e birleşmediği için bu kayıtlar gün başlangıcında main üzerinde hâlâ D idi. locationPrecision/navigationVerified sınırları ve geçmiş balıklandırmanın yalnız tür olasılığı sayılması korunur. Ek aday araştırmasında Kura ve Çayköy için güçlü kimlik/kullanım kanıtları bulundu ancak mevcut 25'li havuz dışında oldukları ve mikro erişim zinciri tamamlanmadığı için bu checkpointte kotaya eklenmedi. Kota uğruna confidence yükseltilmedi. Kalan hedef 6 gerçek D->C+ yükseltmedir."
+    "notes": "12. yükseltme olarak ulusal-karabuk-arac-cayi gerçek D->C önkoşuluyla bağlandı. Karabük İl Kültür ve Turizm ile İl Tarım rota/su kimliğini doğrular; 2020 hakemli Araç Çayı çalışması sucul habitatı destekler; 2025 kamu-STK temizlik çalışması yalnız genel kamusal/kurumsal kıyı bağlamıdır. Modifier mevcut rota-özel fishEvidence yoksa hata verir. locationPrecision=Genel bölge ve navigationVerified=false korunur. Kota uğruna mikro erişim veya av izni uydurulmadı. Kalan hedef 5 gerçek D->C+ yükseltmedir."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -103,7 +105,8 @@
     "ankara-500km-cankiri-akhasan-baraj-golu",
     "ankara-500km-ankara-anadolu-goleti",
     "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
-    "ulusal-cankiri-karadere-baraj-golu-cankiri"
+    "ulusal-cankiri-karadere-baraj-golu-cankiri",
+    "ulusal-karabuk-arac-cayi"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
