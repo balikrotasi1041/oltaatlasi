@@ -58,8 +58,8 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 12,
-    "remainingNeeded": 5,
+    "promotedCount": 13,
+    "remainingNeeded": 4,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -72,10 +72,10 @@
       "ankara-500km-ankara-anadolu-goleti",
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
-      "ulusal-karabuk-arac-cayi"
+      "ulusal-karabuk-arac-cayi",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti"
     ],
     "heldSlugs": [
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
       "ulusal-bayburt-lori-deresi",
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
@@ -90,7 +90,7 @@
       "ankara-500km-ankara-eyrez-goleti"
     ],
     "pendingSlugs": ["ankara-500km-ankara-sakarya-nehri"],
-    "notes": "12. yükseltme olarak ulusal-karabuk-arac-cayi gerçek D->C önkoşuluyla bağlandı. Karabük İl Kültür ve Turizm ile İl Tarım rota/su kimliğini doğrular; 2020 hakemli Araç Çayı çalışması sucul habitatı destekler; 2025 kamu-STK temizlik çalışması yalnız genel kamusal/kurumsal kıyı bağlamıdır. Modifier mevcut rota-özel fishEvidence yoksa hata verir. locationPrecision=Genel bölge ve navigationVerified=false korunur. Kota uğruna mikro erişim veya av izni uydurulmadı. Kalan hedef 5 gerçek D->C+ yükseltmedir."
+    "notes": "13. yükseltme olarak ulusal-hakkari-zap-suyu-hakkari-hatti gerçek D->C önkoşuluyla bağlandı. Hakkâri Valiliği ve İl Kültür Turizm rota kimliğini ve genel rekreasyon koridorunu doğrular; Hakkâri Üniversitesi/Tarım İl Müdürlüğü katkılı su ürünleri çalışması sazan ve alabalık tür olasılığını destekler; 16 Ocak 2026 yerel saha kaydı Zap üzerinde fiilî balıkçılığı destekler. locationPrecision=Genel bölge ve navigationVerified=false korunur. Mikro kıyı, park, güvenlik veya av izni uydurulmadı. Kalan hedef 4 gerçek D->C+ yükseltmedir."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -106,7 +106,8 @@
     "ankara-500km-ankara-anadolu-goleti",
     "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
     "ulusal-cankiri-karadere-baraj-golu-cankiri",
-    "ulusal-karabuk-arac-cayi"
+    "ulusal-karabuk-arac-cayi",
+    "ulusal-hakkari-zap-suyu-hakkari-hatti"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
