@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "timezone": "Europe/Istanbul",
   "stage": 2,
-  "branch": "quality/daily-2026-09-10-a",
+  "branch": "quality/daily-2026-09-11",
   "done": false,
   "research": {
     "status": "completed",
@@ -13,7 +13,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Trafik sinyali confidence kanıtı değildir. Stage 2 sırasında kota için gerekirse ilk 25 havuzunun dışındaki gerçek D kayıtlar da aynı kanıt eşiğiyle taranır.",
+    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Trafik sinyali confidence kanıtı değildir. 10 Eylül dalındaki 13 kanıt paketi main'e birleşmediği ve main SHA değişmediği için 11 Eylül başlangıcında bu kayıtlar hâlâ gerçek Güven D idi; kanıt paketleri bugünkü dala taşındı.",
     "dCandidatesReviewed": 26,
     "dCandidates": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
@@ -58,8 +58,8 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 13,
-    "remainingNeeded": 4,
+    "promotedCount": 14,
+    "remainingNeeded": 3,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -73,7 +73,8 @@
       "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
       "ulusal-karabuk-arac-cayi",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti"
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ankara-500km-ankara-eymir-golu"
     ],
     "heldSlugs": [
       "ulusal-bayburt-lori-deresi",
@@ -84,13 +85,12 @@
       "ankara-500km-ankara-cubuk-i-baraj-golu",
       "ankara-500km-ankara-egrekkaya-baraj-golu",
       "ankara-500km-ankara-kavsakkaya-baraj-golu",
-      "ankara-500km-ankara-eymir-golu",
       "ankara-500km-ankara-kizilca-goleti",
       "ankara-500km-ankara-yenice-baraj-golu",
       "ankara-500km-ankara-eyrez-goleti"
     ],
     "pendingSlugs": ["ankara-500km-ankara-sakarya-nehri"],
-    "notes": "13. yükseltme olarak ulusal-hakkari-zap-suyu-hakkari-hatti gerçek D->C önkoşuluyla bağlandı. Hakkâri Valiliği ve İl Kültür Turizm rota kimliğini ve genel rekreasyon koridorunu doğrular; Hakkâri Üniversitesi/Tarım İl Müdürlüğü katkılı su ürünleri çalışması sazan ve alabalık tür olasılığını destekler; 16 Ocak 2026 yerel saha kaydı Zap üzerinde fiilî balıkçılığı destekler. locationPrecision=Genel bölge ve navigationVerified=false korunur. Mikro kıyı, park, güvenlik veya av izni uydurulmadı. Kalan hedef 4 gerçek D->C+ yükseltmedir."
+    "notes": "Main 5 Eylül SHA'sında değişmediği için önceki birleşmemiş dalda hazırlanmış 13 kayıt 11 Eylül başlangıcında hâlâ gerçek D idi ve aynı D->C önkoşullarıyla bugünkü dala taşındı. 14. yükseltme Eymir Gölü oldu: ODTÜ resmî kuralları kontrollü balık avını ve erişim rejimini doğrudan düzenliyor; ODTÜ EKOSAM yıllık balık örneklemesini doğruluyor; TÜBİTAK hakemli çalışma sazan ve kadifeyi rota özelinde kaydediyor. locationPrecision=Genel bölge, navigationVerified=false. Kalan hedef 3 gerçek D->C+ yükseltmedir."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -107,7 +107,8 @@
     "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
     "ulusal-cankiri-karadere-baraj-golu-cankiri",
     "ulusal-karabuk-arac-cayi",
-    "ulusal-hakkari-zap-suyu-hakkari-hatti"
+    "ulusal-hakkari-zap-suyu-hakkari-hatti",
+    "ankara-500km-ankara-eymir-golu"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
