@@ -1,4 +1,5 @@
 import type { EnrichedMera, ResearchSource } from "./meralar-tumu-core";
+import { applyDailyQuality20260911Stage2G } from "./meralar-daily-quality-2026-09-11-stage2g";
 
 const teblig:ResearchSource={
   label:"Tarım ve Orman Bakanlığı - Amatör Balıkçılık Mevzuatı",
@@ -43,5 +44,6 @@ export const applyDailyQuality20260910Stage2F=(routeMap:Map<string,EnrichedMera>
     navigationNote:`Harita bilgisi Zap Suyu'nun Hakkâri içindeki genel akarsu koridorunu temsil eder; kesin yol sonu, park, özel mülk geçişi veya olta cebi değildir. ${risk}`,
     confidenceProfile:{model:"evidence-v1",overall:"C",identity:{level:"strong",label:"Resmî rota kimliği",note:"Valilik ve İl Kültür Turizm Zap Suyu'nun Hakkâri koridorunu doğrular."},legal:{level:"partial",label:"Genel mevzuat + yerel güvenlik kontrolü",note:"6/2 Tebliğ uygulanır; güvenlik, sınır, koruma ve yerel kararlar ayrıca kontrol edilmelidir."},access:{level:"partial",label:"Genel rekreasyon erişim bağlamı",note:"Resmî rafting/su sporu kullanımı genel erişilebilir koridoru destekler; mikro kıyı teyitli değildir."},species:{level:"partial",label:"Çok kaynaklı tür olasılığı",note:"Hakkâri su ürünleri çalışması ve 2026 fiilî balıkçılık kaydı tür/balık varlığı olasılığını destekler; av garantisi değildir."},field:{level:"unverified",label:"Saha doğrulaması yok",note:"Akım, taşkın, yol şevi, bariyer, güvenlik ve mülkiyet hareket günü kontrol edilmelidir."},reviewedAt:"2026-09-10"}
   });
+  applyDailyQuality20260911Stage2G(routeMap);
   return routeMap;
 };
