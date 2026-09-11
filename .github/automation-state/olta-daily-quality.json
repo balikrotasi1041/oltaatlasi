@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-11",
   "timezone": "Europe/Istanbul",
-  "stage": 3,
+  "stage": 4,
   "branch": "quality/daily-2026-09-11",
   "done": false,
   "research": {
@@ -43,16 +43,22 @@
       "ankara-500km-cankiri-akhasan-baraj-golu",
       "ulusal-karabuk-arac-cayi"
     ],
-    "newCandidatesReviewed": 8,
+    "newCandidatesReviewed": 14,
     "newCandidates": [
-      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"promising-deep-review"},
-      {"name":"Kalecik Barajı","province":"Osmaniye","status":"promising-access-review"},
-      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"promising-sensitive-review"},
+      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"rejected-duplicate-existing-route"},
+      {"name":"Kalecik Barajı","province":"Osmaniye","status":"rejected-existing-record"},
+      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"rejected-duplicate-and-aquaculture"},
       {"name":"Tahtaköprü Barajı","province":"Gaziantep","status":"hold-sensitive-enforcement-access"},
       {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-aquaculture"},
       {"name":"Özlüce Baraj Gölü","province":"Bingöl/Elazığ","status":"hold-active-aquaculture"},
       {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-active-aquaculture"},
-      {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-aquaculture-hes"}
+      {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-aquaculture-hes"},
+      {"name":"Mercan Göleti","province":"Eskişehir","status":"selected-C"},
+      {"name":"Günyüzü-2 Göleti","province":"Eskişehir","status":"selected-C-general-location-only"},
+      {"name":"Bahçecik Göleti","province":"Eskişehir","status":"selected-C"},
+      {"name":"Oğlakçı Göleti","province":"Eskişehir","status":"rejected-duplicate-existing-C"},
+      {"name":"Kaymaz Göleti","province":"Eskişehir","status":"rejected-existing-D"},
+      {"name":"Okçu Göleti/Barajı","province":"Eskişehir","status":"rejected-current-industrial-land-risk"}
     ]
   },
   "stage2": {
@@ -93,7 +99,17 @@
     "pendingSlugs": [],
     "notes": "17 gerçek D->C+ hedefi tamamlandı. Son üç yükseltme Kavşakkaya, Eğrekkaya ve Yenice Baraj Gölleridir. Kavşakkaya'da ASKİ kimliği + Tarım ve Orman SYGM rota-özel koruma planı + ABB/Ankara Üniversitesi tür saha kaydı; Eğrekkaya'da ASKİ kimliği + Kızılcahamam Kaymakamlığı genel yaklaşım + ABB/Ankara Üniversitesi rota-özel tür kaydı; Yenice'de hakemli rezervuar kimliği + Nallıhan genel yaklaşım kaydı + ABB/Ankara Üniversitesi rota-özel tür kaydı kullanıldı. Üçünde de locationPrecision=Genel bölge, navigationVerified=false; HES/içme suyu/koruma ve mikro erişim kısıtları açık bırakıldı."
   },
-  "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
+  "stage3": {
+    "status": "completed",
+    "newCPlusTarget": 3,
+    "newCPlusCount": 3,
+    "newSlugs": [
+      "eskisehir-gunyuzu-mercan-goleti",
+      "eskisehir-gunyuzu-gunyuzu-2-goleti",
+      "eskisehir-sivrihisar-bahcecik-goleti"
+    ],
+    "notes": "Tam 3 yeni Güven C rota eklendi; üçü de Ege/Marmara dışındadır. Mercan, Günyüzü-2 ve Bahçecik için Eskişehir İl Tarımın rota-özel sazan balıklandırmaları ile Eskişehir Valiliği/İl Çevre Durum Raporundaki bağımsız sulama göleti kimliği çaprazlandı. Bahçecik için 2021 kurumsal yüzey suyu izleme koordinatı kullanıldı; Mercan için OSM yalnız ikincil genel konum desteğidir. Günyüzü-2 kesin su koordinatı doğrulanamadığı için pin özellikle Günyüzü ilçe ölçekli planlama başlangıcı olarak etiketlendi, navigationVerified=false tutuldu. Üçünde de locationPrecision=Genel bölge; özel parsel, son kıyı cebi, park, sedde/savak ve teknik işletme alanları açık kabul edilmedi. Rota-özel akademik çalışma bulunamadığı için akademik kanıt uydurulmadı; iki bağımsız resmî kaynak ailesi + ikincil konum desteği kullanıldı."
+  },
   "stage4": {"status":"not_started"},
   "promotedSlugs": [
     "ankara-500km-cankiri-alpsari-goleti",
@@ -114,8 +130,25 @@
     "ankara-500km-ankara-egrekkaya-baraj-golu",
     "ankara-500km-ankara-yenice-baraj-golu"
   ],
-  "newSlugs": [],
-  "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
+  "newSlugs": [
+    "eskisehir-gunyuzu-mercan-goleti",
+    "eskisehir-gunyuzu-gunyuzu-2-goleti",
+    "eskisehir-sivrihisar-bahcecik-goleti"
+  ],
+  "mgmAudit": {
+    "status": "completed",
+    "checkedAt": "2026-09-11T16:56:47+03:00",
+    "officialStatus": "pending",
+    "representativeSlugs": [
+      "kefken-cebeci-kiyilari",
+      "ankara-500km-ankara-eymir-golu",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "sivas-golova-baraj-golu"
+    ],
+    "warnings": [],
+    "notes": "MGM Türkiye/bölgesel tahmin, il-merkez tahmin ve deniz bültenleri 11 Eylül için tam bir kez denetlendi. Temsilî set deniz, göl/baraj ve akarsu tiplerini ve farklı bölgeleri kapsıyor. MGM deniz bülteni fırtına beklemiyor; Batı Karadeniz 3-5 kuvvet ve 1-2 m dalga, Marmara akşam 4-6 kuvvet ve yer yer 2 m dalga bildiriyor. Türkiye bülteninde Van doğusunda yerel sağanak/gök gürültülü sağanak dışında çoğunlukla açık/parçalı bulutlu görünüm var; incelenen güncel bültende aktif il uyarısı tespit edilmedi. Çalışma ortamından oltaatlasi.com /api/weather noktasal model yanıtı güvenilir biçimde alınamadığı için sıcaklık/rüzgâr/yağış-hadise ve uyarı karşılaştırması tamamlanamadı. Bu yüzden weather-official-audit.json status=pending bırakıldı; resmî teyit iddiası üretilmedi."
+  },
   "ci": {"status":"not_started"},
   "pr": {"status":"not_started"},
   "merge": {"status":"not_started"},
