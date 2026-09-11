@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-11",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
+  "stage": 3,
   "branch": "quality/daily-2026-09-11",
   "done": false,
   "research": {
@@ -13,7 +13,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Trafik sinyali confidence kanıtı değildir. 10 Eylül dalındaki 13 kanıt paketi main'e birleşmediği ve main SHA değişmediği için 11 Eylül başlangıcında bu kayıtlar hâlâ gerçek Güven D idi; kanıt paketleri bugünkü dala taşındı.",
+    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Trafik sinyali confidence kanıtı değildir. 10 Eylül dalındaki kanıt paketleri main'e birleşmediği ve main SHA değişmediği için 11 Eylül başlangıcında bu kayıtlar hâlâ gerçek Güven D idi; kanıt paketleri bugünkü dala taşındı.",
     "dCandidatesReviewed": 26,
     "dCandidates": [
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
@@ -56,10 +56,10 @@
     ]
   },
   "stage2": {
-    "status": "in_progress",
+    "status": "completed",
     "targetPromotions": 17,
-    "promotedCount": 14,
-    "remainingNeeded": 3,
+    "promotedCount": 17,
+    "remainingNeeded": 0,
     "promotedSlugs": [
       "ankara-500km-cankiri-alpsari-goleti",
       "ankara-500km-cankiri-bozoglu-goleti",
@@ -74,7 +74,10 @@
       "ulusal-cankiri-karadere-baraj-golu-cankiri",
       "ulusal-karabuk-arac-cayi",
       "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ankara-500km-ankara-eymir-golu"
+      "ankara-500km-ankara-eymir-golu",
+      "ankara-500km-ankara-kavsakkaya-baraj-golu",
+      "ankara-500km-ankara-egrekkaya-baraj-golu",
+      "ankara-500km-ankara-yenice-baraj-golu"
     ],
     "heldSlugs": [
       "ulusal-bayburt-lori-deresi",
@@ -83,14 +86,12 @@
       "ankara-500km-adiyaman-cataltepe-goleti",
       "ulusal-erzurum-olur-baraj-golu",
       "ankara-500km-ankara-cubuk-i-baraj-golu",
-      "ankara-500km-ankara-egrekkaya-baraj-golu",
-      "ankara-500km-ankara-kavsakkaya-baraj-golu",
       "ankara-500km-ankara-kizilca-goleti",
-      "ankara-500km-ankara-yenice-baraj-golu",
-      "ankara-500km-ankara-eyrez-goleti"
+      "ankara-500km-ankara-eyrez-goleti",
+      "ankara-500km-ankara-sakarya-nehri"
     ],
-    "pendingSlugs": ["ankara-500km-ankara-sakarya-nehri"],
-    "notes": "Main 5 Eylül SHA'sında değişmediği için önceki birleşmemiş dalda hazırlanmış 13 kayıt 11 Eylül başlangıcında hâlâ gerçek D idi ve aynı D->C önkoşullarıyla bugünkü dala taşındı. 14. yükseltme Eymir Gölü oldu: ODTÜ resmî kuralları kontrollü balık avını ve erişim rejimini doğrudan düzenliyor; ODTÜ EKOSAM yıllık balık örneklemesini doğruluyor; TÜBİTAK hakemli çalışma sazan ve kadifeyi rota özelinde kaydediyor. locationPrecision=Genel bölge, navigationVerified=false. Kalan hedef 3 gerçek D->C+ yükseltmedir."
+    "pendingSlugs": [],
+    "notes": "17 gerçek D->C+ hedefi tamamlandı. Son üç yükseltme Kavşakkaya, Eğrekkaya ve Yenice Baraj Gölleridir. Kavşakkaya'da ASKİ kimliği + Tarım ve Orman SYGM rota-özel koruma planı + ABB/Ankara Üniversitesi tür saha kaydı; Eğrekkaya'da ASKİ kimliği + Kızılcahamam Kaymakamlığı genel yaklaşım + ABB/Ankara Üniversitesi rota-özel tür kaydı; Yenice'de hakemli rezervuar kimliği + Nallıhan genel yaklaşım kaydı + ABB/Ankara Üniversitesi rota-özel tür kaydı kullanıldı. Üçünde de locationPrecision=Genel bölge, navigationVerified=false; HES/içme suyu/koruma ve mikro erişim kısıtları açık bırakıldı."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "stage4": {"status":"not_started"},
@@ -108,7 +109,10 @@
     "ulusal-cankiri-karadere-baraj-golu-cankiri",
     "ulusal-karabuk-arac-cayi",
     "ulusal-hakkari-zap-suyu-hakkari-hatti",
-    "ankara-500km-ankara-eymir-golu"
+    "ankara-500km-ankara-eymir-golu",
+    "ankara-500km-ankara-kavsakkaya-baraj-golu",
+    "ankara-500km-ankara-egrekkaya-baraj-golu",
+    "ankara-500km-ankara-yenice-baraj-golu"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":"not_started","representativeSlugs":[],"warnings":[],"notes":""},
