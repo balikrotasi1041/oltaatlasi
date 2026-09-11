@@ -1,12 +1,9 @@
 {
   "version": 1,
-  "checkedAt": "2026-09-05T14:03:07+03:00",
+  "checkedAt": "2026-09-11T16:56:47+03:00",
   "status": "pending",
   "source": "Meteoroloji Genel Müdürlüğü (MGM)",
-  "sourceUrl": "https://www.mgm.gov.tr/site/ihbar-degerlendirme.aspx",
-  "message": "5 Eylül 2026 tek günlük resmî MGM denetiminde MeteoUYARI/meteorolojik uyarılar, günlük-bölgesel tahminler, il/ilçe tahminleri ve deniz tahminleri kontrol edildi. Temsilî set: Kefken-Cebeci/Kocaeli deniz kıyısı, Ankara Mogan Gölü, Ardahan Posof Çayı, Diyarbakır Ergani Baraj Gölü ve Eskişehir Kızılcaören Göleti. MGM'nin güncel uyarı sayfasında 4 Eylül tarihli Rize ve Artvin için yerel kuvvetli yağış uyarısı aktiftir. 5 Eylül Türkiye tahmininde Rize ve Artvin çevrelerinde yerel kuvvetli yağış; Marmara'nın güneybatısı ile Kuzey Ege'de akşam saatlerine kadar kuvvetli kuzeyli rüzgâr bildirilmektedir. Deniz raporlarında ilgili deniz bölgeleri ayrıca kontrol edilmiştir. Çalışma ortamından oltaatlasi.com /api/weather noktasal model yanıtlarına DNS erişimi sağlanamadığı için sıcaklık, rüzgâr, yağış/hadise ve uyarı bazındaki model-MGM karşılaştırması tamamlanamadı. Bu nedenle status verified yapılmadı; resmî teyit iddiası üretilmiyor ve MGM aktif uyarısı türetilmiş saha puanının üzerinde tutuluyor.",
-  "warnings": {
-    "Rize": "Yerel kuvvetli yağış uyarısı",
-    "Artvin": "Yerel kuvvetli yağış uyarısı"
-  }
+  "sourceUrl": "https://www.mgm.gov.tr/tahmin/gunluk-tahmin.aspx",
+  "message": "11 Eylül 2026 tek günlük resmî MGM denetiminde Türkiye/bölgesel tahminler, il-merkez tahminleri ve deniz tahminleri kontrol edildi. Temsilî set: Kefken-Cebeci/Kocaeli deniz kıyısı, Ankara Eymir Gölü, Zonguldak Filyos Nehri, Hakkâri Zap Suyu ve Sivas Gölova Baraj Gölü. MGM 11 Eylül deniz bülteninde fırtına beklenmediğini; Batı Karadeniz'de doğu-kuzeydoğudan 3-5 kuvvetinde rüzgâr ve 1-2 m dalga, Marmara'da akşam 4-6 kuvvetinde rüzgâr ve yer yer 2 m dalga öngördüğünü bildiriyor. Türkiye tahmininde yurdun kuzey ve doğusu parçalı bulutlu, Van'ın doğusu yerel sağanak/gök gürültülü sağanak, diğer yerler çoğunlukla açık; incelenen güncel bültende il bazlı aktif meteorolojik uyarı bulunmadı. Olta Atlası /api/weather noktasal model yanıtı bu çalışma ortamından güvenilir biçimde alınamadığı için sıcaklık, rüzgâr, yağış/hadise ve uyarı bazındaki model-MGM karşılaştırması tamamlanamadı. Bu nedenle status verified yapılmadı; resmî teyit iddiası üretilmiyor ve MGM uyarısı varsa türetilmiş saha puanının üzerinde tutulmalıdır.",
+  "warnings": {}
 }
