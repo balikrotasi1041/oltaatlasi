@@ -4,6 +4,7 @@ import { meralar, retiredRouteSlugs } from "../src/data/meralar-tumu.ts";
 const errors = [];
 const warnings = [];
 let unresolvedCoordinateCount = 0;
+let generalizedWithoutPinCount = 0;
 const nationalVisualEndpoint = "src/pages/images/meralar/ulusal/[slug].svg.ts";
 if (!existsSync(nationalVisualEndpoint)) errors.push("Ulusal rota görsellerini üreten SVG uç noktası eksik.");
 const activeSlugs = new Set(meralar.map((route) => route.slug));
@@ -28,8 +29,10 @@ for (const route of meralar) {
   const hasCoordinates = [route.lat, route.lng].every((value) => Number.isFinite(Number(value)));
   if (!hasCoordinates) {
     unresolvedCoordinateCount += 1;
-    if (route.confidence !== "D") errors.push(`${route.slug}: çözülmemiş koordinat D dışında yayımlanıyor.`);
-    if (!/çözül|genel|başlangıç|doğrulan/i.test(`${route.navigationNote} ${route.transport}`)) errors.push(`${route.slug}: çözülmemiş koordinat uyarısı eksik.`);
+    const explicitGeneralRegion = route.confidence === "C" && route.locationPrecision === "Genel bölge" && route.navigationVerified === false && /genel|kesin|koordinat|başlangıç|doğrulan/i.test(`${route.navigationNote} ${route.transport}`) && (route.accessEvidence?.length || 0) > 0;
+    if (explicitGeneralRegion) generalizedWithoutPinCount += 1;
+    else if (route.confidence !== "D") errors.push(`${route.slug}: çözülmemiş koordinat, açık Genel bölge güvenlik profili olmadan D dışında yayımlanıyor.`);
+    if (!/çözül|genel|başlangıç|doğrulan|kesin/i.test(`${route.navigationNote} ${route.transport}`)) errors.push(`${route.slug}: çözülmemiş koordinat uyarısı eksik.`);
   }
   if (!route.image?.includes(route.slug) || !route.socialImage?.includes(route.slug)) errors.push(`${route.slug}: image/socialImage slug ile uyuşmuyor.`);
   const usesGeneratedVisual=route.image===`/images/meralar/ulusal/${route.slug}.svg`;
@@ -54,8 +57,7 @@ for (const route of meralar) {
 }
 
 const confidence = Object.fromEntries(["A", "B", "C", "D"].map((level) => [level, meralar.filter((route) => route.confidence === level).length]));
-console.log(`Bakım taraması: ${meralar.length} rota; confidence A/B/C/D = ${confidence.A}/${confidence.B}/${confidence.C}/${confidence.D}; ${unresolvedCoordinateCount} çözülmemiş D pini; ${errors.length} hata, ${warnings.length} uyarı.`);
+console.log(`Bakım taraması: ${meralar.length} rota; confidence A/B/C/D = ${confidence.A}/${confidence.B}/${confidence.C}/${confidence.D}; ${unresolvedCoordinateCount} çözülmemiş pin (${generalizedWithoutPinCount} açık Genel bölge C); ${errors.length} hata, ${warnings.length} uyarı.`);
 for (const warning of warnings) console.warn(`UYARI: ${warning}`);
 for (const error of errors) console.error(`HATA: ${error}`);
 if (errors.length) process.exit(1);
-
