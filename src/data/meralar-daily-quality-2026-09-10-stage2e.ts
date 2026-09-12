@@ -48,6 +48,7 @@ export const applyDailyQuality20260910Stage2E=(routeMap:Map<string,EnrichedMera>
     locationPrecision:"Genel bölge",
     navigationVerified:false,
     summary:"Araç Çayı'nın Karabük'teki su varlığı ve genel güzergâhı iki ayrı resmî kamu kaynağıyla, sucul habitatı akademik saha çalışmasıyla ve mevcut rota-özel tür kanıtlarıyla çaprazlandı. Güven C mikro kıyı, park veya av garantisi değildir.",
+    longIntro:["Araç Çayı, Karabük içindeki akarsu kimliği iki ayrı resmî kurumla ve sucul habitatı akademik saha çalışmasıyla çaprazlanmış Güven C düzeyinde bir genel bölge rotasıdır.","Bu güven seviyesi belirli bir kıyı cebinin sürekli açık, kamusal veya güvenli olduğu anlamına gelmez. Taşkın yapıları, özel parseller, akım koşulları, güncel mevzuat ve saha tabelaları hareket günü ayrıca kontrol edilmelidir."],
     verification:`2026-09-10 Stage 2 çok kaynaklı araştırma tamamlandı; Güven C. ${risk}`,
     updatedAt:"2026-09-10",
     researchedAt:"2026-09-10",
