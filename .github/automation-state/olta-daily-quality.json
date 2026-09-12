@@ -4,7 +4,7 @@
   "timezone": "Europe/Istanbul",
   "stage": 4,
   "branch": "quality-2026-09-12",
-  "done": false,
+  "done": true,
   "research": {
     "status": "completed",
     "mainShaAtStart": "ecc958ca1cbd91d59ca3def4fc1d0b90ffe0d6c5",
@@ -39,7 +39,8 @@
     "remainingNeeded": 0,
     "promotedSlugs": ["ankara-500km-cankiri-alpsari-goleti","ankara-500km-cankiri-bozoglu-goleti","ankara-500km-ankara-kurtbogazi-baraj-golu","ankara-500km-ankara-doganozu-baraj-golu","ankara-500km-ankara-karagol","ankara-500km-ankara-yukari-cavundur-goleti","ankara-500km-yozgat-divanli-goleti","ankara-500km-cankiri-akhasan-baraj-golu","ankara-500km-ankara-anadolu-goleti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-karabuk-arac-cayi","ulusal-hakkari-zap-suyu-hakkari-hatti","ankara-500km-ankara-eymir-golu","ankara-500km-ankara-kavsakkaya-baraj-golu","ankara-500km-ankara-egrekkaya-baraj-golu","ankara-500km-ankara-yenice-baraj-golu"],
     "heldSlugs": ["ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu","ankara-500km-ankara-cubuk-i-baraj-golu","ankara-500km-ankara-kizilca-goleti","ankara-500km-ankara-eyrez-goleti","ankara-500km-ankara-sakarya-nehri"],
-    "pendingSlugs": []
+    "pendingSlugs": [],
+    "remainingDTotalAfter": 1171
   },
   "stage3": {
     "status": "completed",
@@ -49,7 +50,7 @@
     "notes": "Tam 3 yeni Güven C rota eklendi. Mercan ve Bahçecik rota-özel resmî sazan balıklandırma kayıtları ile bağımsız kurumsal sulama/yüzey suyu kayıtlarıyla; Ahurköy ise 2015, 2016, 2017 ve 2019 rota-özel İl Tarım balıklandırmaları ile yerel yerleşim bağlamıyla desteklendi. Üçünde de locationPrecision=Genel bölge ve navigationVerified=false. Günyüzü-2, duplicate radarın Günyüzü-1 ile 0.86 km ve %100 ad benzerliği blokajı nedeniyle yayımdan çıkarıldı. Ahurköy kesin gölet pini doğrulanmadığı için yerleşim ölçekli planlama noktasıyla açıkça etiketlendi. Özgün SVG image/socialImage standardı korundu."
   },
   "stage4": {
-    "status": "ci_in_progress",
+    "status": "completed",
     "prNumber": 133,
     "ctrNotes": "Toplu title/meta şablonu uygulanmadı; URL/slug/canonical değiştirilmedi. Yalnız gerçek kullanıcı faydası olan konum hassasiyeti, erişim/risk anlatısı ve Güven C anlatı tutarlılıkları düzeltildi.",
     "technicalFixes": ["Ankara 500 km audit'i 7/8/11 Eylül kanıt yükseltmelerini tanıyacak şekilde güncellendi.","Günyüzü-2 duplicate nedeniyle çıkarılıp Ahurköy ile değiştirildi.","Bakım auditi, yalnız açık Genel bölge + navigationVerified=false + accessEvidence koşuluyla koordinatsız Güven C rotaları kabul edecek şekilde politika ile hizalandı.","Araç Çayı ve Zap Suyu stale Güven D anlatıları Güven C ile uyumlu hale getirildi.","Kavşakkaya, Eğrekkaya ve Yenice waterType değeri şema uyumlu Baraj olarak düzeltildi."]
@@ -64,8 +65,8 @@
     "warnings": [],
     "notes": "MGM 12 Eylül için bugün yalnız bir kez denetlendi. Ana sayfada aktif meteorolojik uyarı bulunmadığı görüldü. Deniz raporunda Batı Karadeniz ve Marmara için fırtına beklenmiyor. Türkiye/bölgesel tahmin ile deniz tahminleri karşılaştırıldı. Çalışma ortamından oltaatlasi.com /api/weather noktasal model yanıtı güvenilir biçimde alınamadığından model-MGM sıcaklık/rüzgâr/yağış-hadise karşılaştırması tamamlanamadı; weather-official-audit.json bu nedenle pending bırakıldı."
   },
-  "ci": {"status":"in_progress","latestHeadSha":"b6ab3f1eccb8d5ae726a12046493caf441c87a1f","qualityCheckRun":34698721889,"qualityGateRun":34698721875},
-  "pr": {"status":"open","number":133},
-  "merge": {"status":"not_started"},
-  "deploy": {"status":"not_started"}
+  "ci": {"status":"success","prHeadSha":"8d1b382eb870c1aef434ebe2dfe3faf6ac5d8d4d","qualityCheckRun":34698772120,"qualityGateRun":34698772162},
+  "pr": {"status":"merged","number":133,"mergeMethod":"squash"},
+  "merge": {"status":"success","contentMergeSha":"5a73f6afbc0a853d78e63218ac8be73dae688fb6"},
+  "deploy": {"status":"success","workflowRun":34698842924,"verifiedContentSha":"5a73f6afbc0a853d78e63218ac8be73dae688fb6","exactReleaseVerified":true}
 }
