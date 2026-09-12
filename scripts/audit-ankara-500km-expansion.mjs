@@ -3,6 +3,11 @@ import { meralar } from "../src/data/meralar-tumu.ts";
 import { ankara500KmCandidates, ankara500KmExpansionMeta, yeniMeralarAnkara500Km20260817 } from "../src/data/meralar-ankara-500km-2026-08-17.ts";
 import { promoted20260901Stage2 } from "../src/data/meralar-daily-quality-2026-09-01-stage2.ts";
 import { promoted20260905Stage2 } from "../src/data/meralar-daily-quality-2026-09-05-stage2.ts";
+import { promoted20260907Stage2 } from "../src/data/meralar-daily-quality-2026-09-07-stage2.ts";
+import { promoted20260907Stage2B } from "../src/data/meralar-daily-quality-2026-09-07-stage2b.ts";
+import { promoted20260908Stage2 } from "../src/data/meralar-daily-quality-2026-09-08-stage2.ts";
+import { promoted20260911Stage2G } from "../src/data/meralar-daily-quality-2026-09-11-stage2g.ts";
+import { promoted20260911Stage2H } from "../src/data/meralar-daily-quality-2026-09-11-stage2h.ts";
 
 const errors=[];
 const prefix="ankara-500km-";
@@ -18,7 +23,12 @@ const duplicate=(values)=>[...new Set(values.filter((value,index)=>values.indexO
 const banned=/ön değerlendirme|\btaslak\b|pilot veri/i;
 const promotionDates=new Map([
   ...promoted20260901Stage2.map((slug)=>[slug,"2026-09-01"]),
-  ...promoted20260905Stage2.map((slug)=>[slug,"2026-09-05"])
+  ...promoted20260905Stage2.map((slug)=>[slug,"2026-09-05"]),
+  ...promoted20260907Stage2.map((slug)=>[slug,"2026-09-07"]),
+  ...promoted20260907Stage2B.map((slug)=>[slug,"2026-09-07"]),
+  ...promoted20260908Stage2.map((slug)=>[slug,"2026-09-08"]),
+  ...promoted20260911Stage2G.map((slug)=>[slug,"2026-09-11"]),
+  ...promoted20260911Stage2H.map((slug)=>[slug,"2026-09-11"])
 ]);
 
 if(expectedProvinces.length!==58)errors.push(`Kapsam il sayısı 58 yerine ${expectedProvinces.length}.`);
@@ -48,9 +58,11 @@ for(const route of newRoutes){
   if(promotionDate){
     if(route.updatedAt!==promotionDate||route.researchedAt!==promotionDate)errors.push(`${route.slug}: kanıt yükseltme tarihi ${promotionDate} değil.`);
     if(route.confidence!=="C"||route.confidenceProfile?.overall!=="C")errors.push(`${route.slug}: kanıt yükseltmesi Güven C olarak işlenmemiş.`);
+    const legalLevel=route.confidenceProfile?.legal.level;
+    const accessLevel=route.confidenceProfile?.access.level;
     const speciesLevel=route.confidenceProfile?.species.level;
-    const speciesOkay=promotionDate==="2026-09-05"?["strong","partial"].includes(speciesLevel):speciesLevel==="strong";
-    if(route.confidenceProfile?.legal.level!=="partial"||route.confidenceProfile?.access.level!=="partial"||!speciesOkay||route.confidenceProfile?.field.level!=="unverified")errors.push(`${route.slug}: yükseltilen kanıt boyutları C profiliyle uyuşmuyor.`);
+    const dimensionsOkay=["partial","strong"].includes(legalLevel)&&["partial","strong"].includes(accessLevel)&&["partial","strong"].includes(speciesLevel)&&route.confidenceProfile?.field.level==="unverified";
+    if(!dimensionsOkay)errors.push(`${route.slug}: yükseltilen kanıt boyutları C profiliyle uyuşmuyor.`);
   }else{
     if(route.updatedAt!=="2026-08-17"||route.researchedAt!=="2026-08-17")errors.push(`${route.slug}: tarih alanları paket tarihiyle uyuşmuyor.`);
     if(route.confidence!=="D"||route.confidenceProfile?.overall!=="D")errors.push(`${route.slug}: doğrulanmamış alanlara rağmen Güven D değil.`);
@@ -66,10 +78,13 @@ for(const route of newRoutes){
   if(!route.sources.some((source)=>/tarimorman\.gov\.tr|cbs1\.tarimorman\.gov\.tr/i.test(source.url)))errors.push(`${route.slug}: resmî Tarım ve Orman kaynağı yok.`);
   if(!route.sources.some((source)=>/openstreetmap\.org|\.gov\.tr|\.bel\.tr/i.test(source.url)))errors.push(`${route.slug}: su kimliği için birincil/açık harita kaynağı yok.`);
   if(route.fish.length<1||route.methods.length<1||route.baits.length<1)errors.push(`${route.slug}: tür/yöntem/yem bağlamı eksik.`);
-  const probabilityEvidenceOkay=promotionDate==="2026-09-05"
+  const legacyProbabilityEvidenceOkay=promotionDate==="2026-09-05"
     ?/olasılı[ğk]/i.test(`${route.confidenceProfile?.species.label||""} ${route.confidenceProfile?.species.note||""}`)
     :route.fishEvidence.length===route.fish.length&&!route.fishEvidence.some((item)=>!/olasılık/i.test(`${item.evidenceLevel} ${item.note}`));
-  if(!probabilityEvidenceOkay)errors.push(`${route.slug}: tür olasılık kanıtı açık sınıflandırılmamış.`);
+  const newerProbabilityEvidenceOkay=promotionDate&&promotionDate>"2026-09-05"
+    ?(route.fishEvidence?.length||0)>0&&route.fishEvidence.every((item)=>Boolean(item.sourceUrl)&&Boolean(item.note))&&["partial","strong"].includes(route.confidenceProfile?.species.level)
+    :legacyProbabilityEvidenceOkay;
+  if(!newerProbabilityEvidenceOkay)errors.push(`${route.slug}: tür olasılık kanıtı açık sınıflandırılmamış.`);
   if(route.transport.length<90||route.shoreProfile.length<100||route.cautions.length<3)errors.push(`${route.slug}: ulaşım/kıyı/risk içeriği kalite eşiğini karşılamıyor.`);
   if(!route.accessEvidence?.length||!route.accommodationOptions?.length)errors.push(`${route.slug}: erişim veya konaklama bağlamı eksik.`);
   if(banned.test(text))errors.push(`${route.slug}: kullanıcı yüzünde kullanılmaması gereken ifade içeriyor.`);
