@@ -16,7 +16,7 @@
     "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum niyetinde pozisyon 3-15, düşük/sıfır CTR ve hub bağlantısı öncelik sinyali olarak kullanıldı; trafik confidence kanıtı yapılmadı.",
     "dCandidatesReviewed": 26,
     "dCandidates": ["ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu","ankara-500km-ankara-cubuk-i-baraj-golu","ankara-500km-ankara-sakarya-nehri","ankara-500km-ankara-doganozu-baraj-golu","ankara-500km-ankara-egrekkaya-baraj-golu","ankara-500km-ankara-kavsakkaya-baraj-golu","ankara-500km-ankara-kurtbogazi-baraj-golu","ankara-500km-ankara-eymir-golu","ankara-500km-ankara-karagol","ankara-500km-ankara-kizilca-goleti","ankara-500km-ankara-yenice-baraj-golu","ankara-500km-ankara-anadolu-goleti","ankara-500km-ankara-eyrez-goleti","ankara-500km-ankara-yukari-cavundur-goleti","ankara-500km-cankiri-bozoglu-goleti","ankara-500km-cankiri-alpsari-goleti","ankara-500km-yozgat-divanli-goleti","ankara-500km-cankiri-akhasan-baraj-golu","ulusal-karabuk-arac-cayi"],
-    "newCandidatesReviewed": 11,
+    "newCandidatesReviewed": 12,
     "newCandidates": [
       {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"rejected-duplicate-existing-route"},
       {"name":"Kalecik Barajı","province":"Osmaniye","status":"rejected-existing-record"},
@@ -27,8 +27,9 @@
       {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-active-aquaculture"},
       {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-aquaculture-hes"},
       {"name":"Mercan Göleti","province":"Eskişehir","status":"selected-C"},
-      {"name":"Günyüzü-2 Göleti","province":"Eskişehir","status":"selected-C-general-location-only"},
-      {"name":"Bahçecik Göleti","province":"Eskişehir","status":"selected-C"}
+      {"name":"Günyüzü-2 Göleti","province":"Eskişehir","status":"rejected-duplicate-0.86km-gunyuzu1"},
+      {"name":"Bahçecik Göleti","province":"Eskişehir","status":"selected-C"},
+      {"name":"Ahurköy Göleti","province":"Eskişehir","status":"selected-C-replacement"}
     ]
   },
   "stage2": {
@@ -44,12 +45,17 @@
     "status": "completed",
     "newCPlusTarget": 3,
     "newCPlusCount": 3,
-    "newSlugs": ["eskisehir-gunyuzu-mercan-goleti","eskisehir-gunyuzu-gunyuzu-2-goleti","eskisehir-sivrihisar-bahcecik-goleti"],
-    "notes": "Tam 3 yeni Güven C rota eklendi. Eskişehir İl Tarım rota-özel sazan balıklandırma kayıtları ile bağımsız kurumsal sulama/yüzey suyu kayıtları çaprazlandı. Üçünde de locationPrecision=Genel bölge ve navigationVerified=false. Günyüzü-2 kesin gölet koordinatı doğrulanamadığı için yalnız ilçe ölçekli planlama başlangıcı yayımlandı. Özgün SVG image/socialImage eklendi."
+    "newSlugs": ["eskisehir-gunyuzu-mercan-goleti","eskisehir-mihaliccik-ahurkoy-goleti","eskisehir-sivrihisar-bahcecik-goleti"],
+    "notes": "Tam 3 yeni Güven C rota eklendi. Mercan ve Bahçecik rota-özel resmî sazan balıklandırma kayıtları ile bağımsız kurumsal sulama/yüzey suyu kayıtlarıyla; Ahurköy ise 2015, 2016, 2017 ve 2019 rota-özel İl Tarım balıklandırmaları ile yerel yerleşim bağlamıyla desteklendi. Üçünde de locationPrecision=Genel bölge ve navigationVerified=false. Günyüzü-2, duplicate radarın Günyüzü-1 ile 0.86 km ve %100 ad benzerliği blokajı nedeniyle yayımdan çıkarıldı. Ahurköy kesin gölet pini doğrulanmadığı için yerleşim ölçekli planlama noktasıyla açıkça etiketlendi. Özgün SVG image/socialImage standardı korundu."
   },
-  "stage4": {"status":"not_started"},
+  "stage4": {
+    "status": "ci_in_progress",
+    "prNumber": 133,
+    "ctrNotes": "Toplu title/meta şablonu uygulanmadı; URL/slug/canonical değiştirilmedi. Yalnız gerçek kullanıcı faydası olan konum hassasiyeti, erişim/risk anlatısı ve Güven C anlatı tutarlılıkları düzeltildi.",
+    "technicalFixes": ["Ankara 500 km audit'i 7/8/11 Eylül kanıt yükseltmelerini tanıyacak şekilde güncellendi.","Günyüzü-2 duplicate nedeniyle çıkarılıp Ahurköy ile değiştirildi.","Bakım auditi, yalnız açık Genel bölge + navigationVerified=false + accessEvidence koşuluyla koordinatsız Güven C rotaları kabul edecek şekilde politika ile hizalandı.","Araç Çayı ve Zap Suyu stale Güven D anlatıları Güven C ile uyumlu hale getirildi.","Kavşakkaya, Eğrekkaya ve Yenice waterType değeri şema uyumlu Baraj olarak düzeltildi."]
+  },
   "promotedSlugs": ["ankara-500km-cankiri-alpsari-goleti","ankara-500km-cankiri-bozoglu-goleti","ankara-500km-ankara-kurtbogazi-baraj-golu","ankara-500km-ankara-doganozu-baraj-golu","ankara-500km-ankara-karagol","ankara-500km-ankara-yukari-cavundur-goleti","ankara-500km-yozgat-divanli-goleti","ankara-500km-cankiri-akhasan-baraj-golu","ankara-500km-ankara-anadolu-goleti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-karabuk-arac-cayi","ulusal-hakkari-zap-suyu-hakkari-hatti","ankara-500km-ankara-eymir-golu","ankara-500km-ankara-kavsakkaya-baraj-golu","ankara-500km-ankara-egrekkaya-baraj-golu","ankara-500km-ankara-yenice-baraj-golu"],
-  "newSlugs": ["eskisehir-gunyuzu-mercan-goleti","eskisehir-gunyuzu-gunyuzu-2-goleti","eskisehir-sivrihisar-bahcecik-goleti"],
+  "newSlugs": ["eskisehir-gunyuzu-mercan-goleti","eskisehir-mihaliccik-ahurkoy-goleti","eskisehir-sivrihisar-bahcecik-goleti"],
   "mgmAudit": {
     "status": "completed",
     "checkedAt": "2026-09-12T14:05:02+03:00",
@@ -58,8 +64,8 @@
     "warnings": [],
     "notes": "MGM 12 Eylül için bugün yalnız bir kez denetlendi. Ana sayfada aktif meteorolojik uyarı bulunmadığı görüldü. Deniz raporunda Batı Karadeniz ve Marmara için fırtına beklenmiyor. Türkiye/bölgesel tahmin ile deniz tahminleri karşılaştırıldı. Çalışma ortamından oltaatlasi.com /api/weather noktasal model yanıtı güvenilir biçimde alınamadığından model-MGM sıcaklık/rüzgâr/yağış-hadise karşılaştırması tamamlanamadı; weather-official-audit.json bu nedenle pending bırakıldı."
   },
-  "ci": {"status":"not_started"},
-  "pr": {"status":"not_started"},
+  "ci": {"status":"in_progress","latestHeadSha":"b6ab3f1eccb8d5ae726a12046493caf441c87a1f","qualityCheckRun":34698721889,"qualityGateRun":34698721875},
+  "pr": {"status":"open","number":133},
   "merge": {"status":"not_started"},
   "deploy": {"status":"not_started"}
 }
