@@ -32,6 +32,7 @@ export const applyDailyQuality20260910Stage2F=(routeMap:Map<string,EnrichedMera>
     navigationVerified:false,
     fish:[...new Set([...(previous.fish||[]),"Sazan","Alabalık"])],
     summary:"Zap Suyu'nun Hakkâri içindeki ana akarsu koridoru resmî kaynaklarla, su ürünleri/tür olasılığı akademik-kurumsal çalışmayla ve 2026 fiilî balıkçılık kaydıyla çaprazlandı. Güven C, mikro kıyı veya av garantisi değildir.",
+    longIntro:["Zap Suyu, Hakkâri içindeki genel akarsu koridoru iki resmî kurum kaynağıyla, balık/tür olasılığı akademik-kurumsal çalışma ve güncel saha kullanımıyla desteklenen Güven C düzeyinde bir genel bölge rotasıdır.","Güven C belirli bir kıyı cebinin güvenli veya sürekli erişilebilir olduğu anlamına gelmez. Hızlı akım, taşkın, yol şevi, özel parsel, güvenlik kısıtları ve güncel saha kararları hareket günü ayrıca kontrol edilmelidir."],
     verification:`2026-09-10 Stage 2 çok kaynaklı araştırma tamamlandı; Güven C. ${risk}`,
     researchedAt:"2026-09-10",
     updatedAt:"2026-09-10",
