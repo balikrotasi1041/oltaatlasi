@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-09-13",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
+  "stage": 2,
   "branch": "quality-2026-09-13",
   "done": false,
   "research": {
@@ -13,7 +13,7 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum niyetinde gösterim, 3-15 pozisyon, düşük/sıfır CTR ve güçlü hub bağlantısı öncelik sinyali olarak kullanıldı; trafik confidence kanıtı yapılmadı. Yeni tarihli bir GSC exportu repoda bulunmadığından eski veri yalnız sıralama önceliği olarak kullanıldı.",
+    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Trafik verisi yalnız önceliklendirme sinyali olarak kullanıldı; confidence kanıtı yapılmadı.",
     "dCandidatesReviewed": 25,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
@@ -42,21 +42,28 @@
       "ankara-500km-gaziantep-alleben-goleti",
       "ankara-500km-giresun-kilickaya-baraji-golu"
     ],
-    "candidateEvidenceNotes": {
-      "ulusal-erzincan-karasu-nehri-erzincan-hatti": "Resmî/kurumsal su koridoru + DergiPark/üniversite Karasu saha çalışmaları mevcut; erişim mikro ölçekte açıkça belirsiz bırakılmalı.",
-      "ulusal-ardahan-kura-nehri-ardahan-hatti": "Ardahan İl Kültür ve Turizm Müdürlüğü rota kimliği + Ardahan Üniversitesi ihtiyofauna + DergiPark alan-kullanım çalışması ile çok aileli kanıt güçlü.",
-      "ulusal-erzincan-firat-nehri-kemaliye-hatti": "Yerel resmî coğrafya/kamu kaydı + Kemaliye/Keban havzası akademik balık çalışmaları kullanılabilir; mikro kıyı kesinleştirilmeyecek.",
-      "ulusal-erzurum-kuzgun-baraj-golu": "Aziziye Kaymakamlığı yerel kamu kaydı + doğrudan Kuzgun Baraj Gölü balık faunası akademik çalışması güçlü aday oluşturuyor.",
-      "ulusal-erzurum-demirdoven-baraj-golu": "DSİ/İl Çevre Durum Raporu kimlik katmanı var; ikinci bağımsız biyolojik/yerel aile araştırması sürdürülerek ancak eşik geçerse yükseltilecek.",
-      "ulusal-aksaray-ciftevi-baraj-golu": "İl Tarım rota-özel 10 bin sazan balıklandırması güçlü tür kanıtı; kimlik/erişim için ikinci bağımsız kurumsal aile ile çaprazlama gerekli.",
-      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu": "İl Tarım rota-özel 20 bin sazan balıklandırması güçlü tür kanıtı; DSİ/yerel kamu kimlik ailesi ile çaprazlama gerekli.",
-      "ulusal-samsun-altinkaya-baraj-golu": "Resmî avlak/denetim ailesi + akademik sazan çalışması mevcut; Şahinkaya koruma/turizm alanları nedeniyle mikro erişim özellikle dar tutulmalı.",
-      "ankara-500km-ankara-cubuk-i-baraj-golu": "Ankara Valiliği baraj kimliği güncel; balık/tür ve güncel amatör kullanım için ikinci bağımsız rota-özel aile olmadan yükseltilmeyecek.",
-      "ankara-500km-ankara-kizilca-goleti": "2025 kuruma/balık ölümü karşı kanıtı ile 2026 su restorasyonu birlikte değerlendirildi; türün güncel devamlılığı ayrıca kanıtlanmadan yükseltilmeyecek.",
-      "ankara-500km-giresun-kilickaya-baraji-golu": "Kılıçkaya'nın güçlü kamu/tür kanıtı Sivas-Suşehri ekseninde; Giresun slugının il/ilçe kimlik eşleşmesi yeniden çözülmeden yükseltme yapılmayacak.",
-      "ankara-500km-gaziantep-alleben-goleti": "Gaziantep yerel kamu olta bağlamı + 2019 resmî sazan balıklandırması var; kentsel kullanım/işletme ve mikro erişim güncelliği ayrıca kontrol edilecek."
-    },
-    "priorityReadyForStage2": [
+    "newCandidatesReviewed": 8,
+    "newCandidates": [
+      {"name":"Tahtaköprü Barajı","province":"Gaziantep/Hatay sınır bağlamı","status":"hold-low-water-and-operational-context"},
+      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-aquaculture-and-operational-context"},
+      {"name":"Özlüce Baraj Gölü","province":"Bingöl/Elazığ","status":"hold-active-aquaculture"},
+      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"reject-current-aquaculture-expansion"},
+      {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-hes-aquaculture-context"},
+      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"reject-duplicate-existing-route"},
+      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"reject-duplicate-existing-route"},
+      {"name":"Günyüzü-2 Göleti","province":"Eskişehir","status":"reject-near-duplicate"}
+    ]
+  },
+  "stage2": {
+    "status": "in_progress",
+    "targetPromotions": 17,
+    "promotedCount": 2,
+    "remainingNeeded": 15,
+    "promotedSlugs": [
+      "ulusal-bingol-murat-nehri-bingol-hatti",
+      "ulusal-bingol-kigi-baraj-golu"
+    ],
+    "heldSlugs": [
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
       "ulusal-ardahan-kura-nehri-ardahan-hatti",
       "ulusal-erzincan-firat-nehri-kemaliye-hatti",
@@ -66,40 +73,21 @@
       "ulusal-samsun-altinkaya-baraj-golu",
       "ankara-500km-gaziantep-alleben-goleti"
     ],
-    "needsMoreEvidence": [
-      "ulusal-amasya-destek-baraj-golu",
-      "ulusal-bayburt-lori-deresi",
-      "ulusal-bolu-caykoy-baraj-golu-bolu",
+    "pendingSlugs": [
+      "ulusal-bingol-gulbahar-baraj-golu",
       "ulusal-erzurum-olur-baraj-golu",
-      "ulusal-sivas-delice-baraj-golu-sivas",
-      "ulusal-erzurum-demirdoven-baraj-golu",
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ankara-500km-adiyaman-cataltepe-goleti",
-      "ankara-500km-ankara-cubuk-i-baraj-golu",
-      "ankara-500km-ankara-kizilca-goleti",
-      "ankara-500km-ankara-eyrez-goleti",
-      "ankara-500km-ankara-sakarya-nehri",
-      "ankara-500km-adiyaman-ataturk-baraj-golu",
-      "ankara-500km-adiyaman-karahuyuk-goleti",
-      "ankara-500km-adiyaman-sirimtas-baraj-golu",
-      "ankara-500km-giresun-kilickaya-baraji-golu"
+      "ulusal-giresun-ingolu-baraj-golu",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
     ],
-    "newCandidatesReviewed": 8,
-    "newCandidates": [
-      {"name":"Tahtaköprü Barajı","province":"Gaziantep/Hatay sınır bağlamı","status":"hold-low-water-and-operational-context","evidence":"DSİ sulama kimliği + Tarım resmî sazan balıklandırması + 2025 çok düşük su seviyesi karşı kanıtı"},
-      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-aquaculture-and-operational-context","evidence":"Akademik zooplankton/su gövdesi çalışması + kamu baraj kimliği; güncel güvenli amatör kıyı gerekir"},
-      {"name":"Özlüce Baraj Gölü","province":"Bingöl/Elazığ","status":"hold-active-aquaculture","evidence":"Doğrudan akademik Capoeta trutta çalışması + kamu su yapısı/işletme bağlamı; yetiştiricilik alanları nedeniyle mikro konum yayımlanmaz"},
-      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"reject-current-aquaculture-expansion","evidence":"İl Tarım avlak/stok kaydı güçlü ancak 2026 Bakanlık yetiştiricilik bölgesi tahsisi aktif; yeni genel rota şimdilik yayımlanmaz"},
-      {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-hes-aquaculture-context","evidence":"Kamu su yapısı + bilimsel/yerel balıkçılık izleri; işletme ve yetiştiricilik sınırı ayrıca çözülmeli"},
-      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"reject-duplicate-existing-route","evidence":"Doğrudan akademik 12 takson balık faunası çok güçlü; ancak mevcut rota ile duplicate olduğu için yeni slug üretme"},
-      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"reject-duplicate-existing-route","evidence":"Kültür Portalı/İl KTB doğrudan balık türleri ve ulaşım kaydı güçlü; mevcut rota/duplicate nedeniyle yeni kayıt açma"},
-      {"name":"Günyüzü-2 Göleti","province":"Eskişehir","status":"reject-near-duplicate","evidence":"2014 ve 2016 İl Tarım resmî sazan balıklandırması güçlü; Günyüzü-1 ile çok yakın/duplicate radar riski nedeniyle yeni rota yayımlanmaz"}
-    ]
+    "notes": "Aşama 1 havuzundaki bazı kayıtların baz D listesinde görünmesine rağmen önceki günlük kalite yamaları uygulandıktan sonra mevcut birleşik routeMap'te zaten C olduğu saptandı. Bunlar 13 Eylül kotasına sayılmadı. Bugünkü yama previous.confidence === 'D' koruması kullanıyor; yalnız gerçek D→C geçişi kabul ediliyor. Sünnet Gölü güncel resmî kaynakta balık avı yasaklandığı için yükseltme adayı yapılmadı."
   },
-  "stage2": {"status":"not_started","targetPromotions":17,"promotedCount":0,"remainingNeeded":17,"promotedSlugs":[],"heldSlugs":[],"pendingSlugs":[]},
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
-  "promotedSlugs": [],
+  "promotedSlugs": [
+    "ulusal-bingol-murat-nehri-bingol-hatti",
+    "ulusal-bingol-kigi-baraj-golu"
+  ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":null,"representativeSlugs":[],"warnings":[]},
   "ci": {"status":"not_started"},
