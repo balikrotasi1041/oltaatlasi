@@ -14,7 +14,7 @@
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
     "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Trafik verisi yalnız önceliklendirme sinyali olarak kullanıldı; confidence kanıtı yapılmadı.",
-    "dCandidatesReviewed": 25,
+    "dCandidatesReviewed": 29,
     "dCandidates": [
       "ulusal-amasya-destek-baraj-golu",
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
@@ -40,7 +40,11 @@
       "ankara-500km-adiyaman-sirimtas-baraj-golu",
       "ulusal-samsun-altinkaya-baraj-golu",
       "ankara-500km-gaziantep-alleben-goleti",
-      "ankara-500km-giresun-kilickaya-baraji-golu"
+      "ankara-500km-giresun-kilickaya-baraji-golu",
+      "ulusal-bingol-murat-nehri-bingol-hatti",
+      "ulusal-bingol-kigi-baraj-golu",
+      "ulusal-bingol-gulbahar-baraj-golu",
+      "ulusal-giresun-ingolu-baraj-golu"
     ],
     "newCandidatesReviewed": 8,
     "newCandidates": [
@@ -57,21 +61,29 @@
   "stage2": {
     "status": "in_progress",
     "targetPromotions": 17,
-    "promotedCount": 2,
-    "remainingNeeded": 15,
+    "promotedCount": 6,
+    "remainingNeeded": 11,
     "promotedSlugs": [
       "ulusal-bingol-murat-nehri-bingol-hatti",
-      "ulusal-bingol-kigi-baraj-golu"
+      "ulusal-bingol-kigi-baraj-golu",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ankara-500km-ankara-kizilca-goleti",
+      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu"
     ],
     "heldSlugs": [
       "ulusal-erzincan-karasu-nehri-erzincan-hatti",
-      "ulusal-ardahan-kura-nehri-ardahan-hatti",
       "ulusal-erzincan-firat-nehri-kemaliye-hatti",
       "ulusal-erzurum-kuzgun-baraj-golu",
       "ulusal-aksaray-ciftevi-baraj-golu",
-      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
       "ulusal-samsun-altinkaya-baraj-golu",
-      "ankara-500km-gaziantep-alleben-goleti"
+      "ankara-500km-gaziantep-alleben-goleti",
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-bayburt-lori-deresi",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ankara-500km-ankara-cubuk-i-baraj-golu",
+      "ankara-500km-ankara-eyrez-goleti",
+      "ankara-500km-ankara-sakarya-nehri"
     ],
     "pendingSlugs": [
       "ulusal-bingol-gulbahar-baraj-golu",
@@ -79,14 +91,19 @@
       "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
       "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
       "ulusal-giresun-ingolu-baraj-golu",
-      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti"
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ulusal-bolu-caykoy-baraj-golu-bolu"
     ],
-    "notes": "Aşama 1 havuzundaki bazı kayıtların baz D listesinde görünmesine rağmen önceki günlük kalite yamaları uygulandıktan sonra mevcut birleşik routeMap'te zaten C olduğu saptandı. Bunlar 13 Eylül kotasına sayılmadı. Bugünkü yama previous.confidence === 'D' koruması kullanıyor; yalnız gerçek D→C geçişi kabul ediliyor. Sünnet Gölü güncel resmî kaynakta balık avı yasaklandığı için yükseltme adayı yapılmadı."
+    "notes": "Bugünkü kotaya yalnız çalıştırma anında gerçekten D olan kayıtlar alınır. Bu çalıştırmada Demirdöven, Kura, Kızılca ve Çiğdem rota özelinde yeni çapraz kanıtla C'ye yükseltildi. Demirdöven'de resmî DSİ/çevre kaydı ile 2026 AA saha ve balıkçılık kullanımı; Kura'da resmî il coğrafyası ile Ardahan Üniversitesi ihtiyofaunası; Kızılca'da ABB 2026 restorasyonu ile 2025 DHA balık ölümü kaydı; Çiğdem'de Devrekâni Kaymakamlığı, İl Tarım balıklandırması ve AA kuraklık/balık kurtarma kaydı birlikte kullanıldı. Mikro kıyı erişimleri genel bölge olarak tutuldu. Kızılca için 2025 kuruma ve 2026 yeniden su tutma birlikte risk bağlamına işlendi."
   },
   "stage3": {"status":"not_started","newCPlusTarget":3,"newCPlusCount":0,"newSlugs":[]},
   "promotedSlugs": [
     "ulusal-bingol-murat-nehri-bingol-hatti",
-    "ulusal-bingol-kigi-baraj-golu"
+    "ulusal-bingol-kigi-baraj-golu",
+    "ulusal-erzurum-demirdoven-baraj-golu",
+    "ulusal-ardahan-kura-nehri-ardahan-hatti",
+    "ankara-500km-ankara-kizilca-goleti",
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu"
   ],
   "newSlugs": [],
   "mgmAudit": {"status":"not_started","checkedAt":null,"officialStatus":null,"representativeSlugs":[],"warnings":[]},
