@@ -4,12 +4,12 @@
   "timezone": "Europe/Istanbul",
   "stage": 4,
   "branch": "quality-2026-09-14",
-  "done": false,
-  "regionalMixCompletedDays": 0,
+  "done": true,
+  "regionalMixCompletedDays": 1,
   "regionalMixTargetDays": 30,
   "regionalMixTargetToday": {"Ege": 2, "Marmara": 1},
   "regionalMixStage3QualifiedToday": true,
-  "regionalMixCounterPendingProduction": true,
+  "regionalMixCounterPendingProduction": false,
   "research": {
     "status": "completed",
     "mainShaAtStart": "9d56e26059b706fee3619f79f4a806b94e3bbb43",
@@ -29,6 +29,7 @@
     "targetPromotions": 17,
     "promotedCount": 17,
     "totalDReviewedThroughStage2": 37,
+    "remainingDTotalAfter": 1154,
     "promotedSlugs": [
       "ankara-500km-eskisehir-kanlipinar-goleti",
       "ankara-500km-eskisehir-karaoren-goleti",
@@ -107,15 +108,25 @@
       "modelComparison": "Çalışma ortamından /api/weather noktasal model yanıtı güvenilir biçimde alınamadı; sıcaklık, rüzgâr, yağış/hadise ve uyarı bazlı karşılaştırma tamamlanmış sayılmadı.",
       "auditFile": "public/data/weather-official-audit.json"
     },
-    "regionalCounterNote": "Tam 2 Ege + 1 Marmara Stage 3 kalite eşiğini geçti; regionalMixCompletedDays ancak Stage 4 CI/merge/production doğrulaması başarıyla tamamlanırsa 0'dan 1'e çıkarılacak."
+    "regionalCounterNote": "Tam 2 Ege + 1 Marmara Stage 3 kalite eşiğini geçti ve Stage 4 CI, squash merge ve exact production doğrulaması başarıyla tamamlandı; sayaç 1/30'a yükseltildi."
   },
   "publication": {
-    "ctrTechnicalReview": "pending-stage4",
-    "ci": "pending",
-    "pr": "pending",
-    "merge": "pending",
-    "deploy": "pending",
-    "productionVerified": false,
-    "mainShaAfterMerge": null
+    "ctrTechnicalReview": "completed",
+    "ctrTechnicalNotes": "17 yükseltilen + 3 yeni rotada URL/slug/canonical korunarak title/meta/H1/ilk paragraf, il/ilçe, genel konum, ulaşım, risk ve iç bağlantı etkileri gözden geçirildi. Kanıta dayanmayan toplu title/meta şablonu veya keyword stuffing uygulanmadı; yalnız rota veri paketlerindeki gerçek kullanıcı faydası taşıyan kanıt/konum/erişim açıklamaları korundu.",
+    "ci": "success",
+    "ciHeadSha": "333b9eefc59d6676c413a1b237e7e8f7b3b9da71",
+    "qualityCheckRun": 1118,
+    "qualityGateRun": 1326,
+    "pr": "#134 merged",
+    "merge": "success",
+    "mergeMethod": "squash",
+    "contentMergeSha": "934e33b450fc8e198e554b4cd864a21a1ece57ce",
+    "deploy": "success",
+    "deployRun": 403,
+    "productionVerified": true,
+    "productionVerifiedSha": "934e33b450fc8e198e554b4cd864a21a1ece57ce",
+    "mainShaAfterMerge": "934e33b450fc8e198e554b4cd864a21a1ece57ce",
+    "regionalMixCounterIncremented": true,
+    "stage4Fixes": ["Ankara 500 km kalite auditi 2026-09-14 Stage 2 promotion tarihlerini tanıyacak şekilde güncellendi; ilk CI hatası giderildi ve yeniden çalıştırılan tüm gate'ler yeşil geçti."]
   }
 }
