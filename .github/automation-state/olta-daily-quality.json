@@ -1,72 +1,121 @@
 {
-  "version": 1,
-  "date": "2026-09-12",
+  "version": 2,
+  "date": "2026-09-14",
   "timezone": "Europe/Istanbul",
   "stage": 4,
-  "branch": "quality-2026-09-12",
-  "done": true,
+  "branch": "quality-2026-09-14",
+  "done": false,
+  "regionalMixCompletedDays": 0,
+  "regionalMixTargetDays": 30,
+  "regionalMixTargetToday": {"Ege": 2, "Marmara": 1},
+  "regionalMixStage3QualifiedToday": true,
+  "regionalMixCounterPendingProduction": true,
   "research": {
     "status": "completed",
-    "mainShaAtStart": "ecc958ca1cbd91d59ca3def4fc1d0b90ffe0d6c5",
+    "mainShaAtStart": "9d56e26059b706fee3619f79f4a806b94e3bbb43",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repodaki son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Konum niyetinde pozisyon 3-15, düşük/sıfır CTR ve hub bağlantısı öncelik sinyali olarak kullanıldı; trafik confidence kanıtı yapılmadı.",
-    "dCandidatesReviewed": 26,
-    "dCandidates": ["ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-cankiri-karadere-baraj-golu-cankiri","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu","ankara-500km-ankara-cubuk-i-baraj-golu","ankara-500km-ankara-sakarya-nehri","ankara-500km-ankara-doganozu-baraj-golu","ankara-500km-ankara-egrekkaya-baraj-golu","ankara-500km-ankara-kavsakkaya-baraj-golu","ankara-500km-ankara-kurtbogazi-baraj-golu","ankara-500km-ankara-eymir-golu","ankara-500km-ankara-karagol","ankara-500km-ankara-kizilca-goleti","ankara-500km-ankara-yenice-baraj-golu","ankara-500km-ankara-anadolu-goleti","ankara-500km-ankara-eyrez-goleti","ankara-500km-ankara-yukari-cavundur-goleti","ankara-500km-cankiri-bozoglu-goleti","ankara-500km-cankiri-alpsari-goleti","ankara-500km-yozgat-divanli-goleti","ankara-500km-cankiri-akhasan-baraj-golu","ulusal-karabuk-arac-cayi"],
-    "newCandidatesReviewed": 12,
-    "newCandidates": [
-      {"name":"Uzunçayır Baraj Gölü","province":"Tunceli","status":"rejected-duplicate-existing-route"},
-      {"name":"Kalecik Barajı","province":"Osmaniye","status":"rejected-existing-record"},
-      {"name":"Gölova Baraj Gölü","province":"Sivas","status":"rejected-duplicate-and-aquaculture"},
-      {"name":"Tahtaköprü Barajı","province":"Gaziantep","status":"hold-sensitive-enforcement-access"},
-      {"name":"Karkamış Baraj Gölü","province":"Gaziantep","status":"hold-aquaculture"},
-      {"name":"Özlüce Baraj Gölü","province":"Bingöl/Elazığ","status":"hold-active-aquaculture"},
-      {"name":"Beyhan-1 Baraj Gölü","province":"Elazığ","status":"hold-active-aquaculture"},
-      {"name":"Çamlıgöze Baraj Gölü","province":"Sivas","status":"hold-aquaculture-hes"},
-      {"name":"Mercan Göleti","province":"Eskişehir","status":"selected-C"},
-      {"name":"Günyüzü-2 Göleti","province":"Eskişehir","status":"rejected-duplicate-0.86km-gunyuzu1"},
-      {"name":"Bahçecik Göleti","province":"Eskişehir","status":"selected-C"},
-      {"name":"Ahurköy Göleti","province":"Eskişehir","status":"selected-C-replacement"}
-    ]
+    "searchConsoleNotes": "Repoda erişilebilir son somut Search Console fırsat seti 23 Ağustos 2026 exportudur; trafik yalnız öncelik sinyali olarak kullanıldı, confidence kanıtı yapılmadı.",
+    "regionalQualityPolicy": "Ege ve Marmara dahil tüm Türkiye D→C+ kalite havuzunda eşit değerlendirildi.",
+    "dCandidatesReviewedStage1": 25,
+    "newCandidatesReviewedStage1": {"Ege": 8, "Marmara": 5},
+    "newCandidatePolicyNotes": "regionalMixCompletedDays=0/30 iken 2 Ege + 1 Marmara hedefi için kalite eşiği düşürülmedi."
   },
   "stage2": {
     "status": "completed",
     "targetPromotions": 17,
     "promotedCount": 17,
-    "remainingNeeded": 0,
-    "promotedSlugs": ["ankara-500km-cankiri-alpsari-goleti","ankara-500km-cankiri-bozoglu-goleti","ankara-500km-ankara-kurtbogazi-baraj-golu","ankara-500km-ankara-doganozu-baraj-golu","ankara-500km-ankara-karagol","ankara-500km-ankara-yukari-cavundur-goleti","ankara-500km-yozgat-divanli-goleti","ankara-500km-cankiri-akhasan-baraj-golu","ankara-500km-ankara-anadolu-goleti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-karabuk-arac-cayi","ulusal-hakkari-zap-suyu-hakkari-hatti","ankara-500km-ankara-eymir-golu","ankara-500km-ankara-kavsakkaya-baraj-golu","ankara-500km-ankara-egrekkaya-baraj-golu","ankara-500km-ankara-yenice-baraj-golu"],
-    "heldSlugs": ["ulusal-bayburt-lori-deresi","ulusal-amasya-destek-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ankara-500km-adiyaman-cataltepe-goleti","ulusal-erzurum-olur-baraj-golu","ankara-500km-ankara-cubuk-i-baraj-golu","ankara-500km-ankara-kizilca-goleti","ankara-500km-ankara-eyrez-goleti","ankara-500km-ankara-sakarya-nehri"],
-    "pendingSlugs": [],
-    "remainingDTotalAfter": 1171
+    "totalDReviewedThroughStage2": 37,
+    "promotedSlugs": [
+      "ankara-500km-eskisehir-kanlipinar-goleti",
+      "ankara-500km-eskisehir-karaoren-goleti",
+      "ankara-500km-eskisehir-kaymaz-goleti",
+      "ankara-500km-eskisehir-yukarikartal-baraj-golu",
+      "ankara-500km-eskisehir-kuzfindik-baraj-golu",
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-eskisehir-mamuca-goleti",
+      "ankara-500km-duzce-kurugol",
+      "ankara-500km-duzce-camlipinar",
+      "ankara-500km-denizli-esen-goleti",
+      "ankara-500km-denizli-cindere-baraj-golu",
+      "ankara-500km-denizli-vali-recep-yazicioglu-baraj-golu",
+      "ankara-500km-nevsehir-ayhan-baraj-golu",
+      "ankara-500km-nevsehir-karaburna-goleti",
+      "ankara-500km-canakkale-tasoluk-baraj-golu",
+      "ulusal-kutahya-cavdarhisar-baraj-golu",
+      "ulusal-kutahya-beskaris-baraj-golu"
+    ],
+    "egePromotedSlugs": [
+      "ankara-500km-denizli-esen-goleti",
+      "ankara-500km-denizli-cindere-baraj-golu",
+      "ankara-500km-denizli-vali-recep-yazicioglu-baraj-golu",
+      "ulusal-kutahya-cavdarhisar-baraj-golu",
+      "ulusal-kutahya-beskaris-baraj-golu"
+    ],
+    "marmaraPromotedSlugs": ["ankara-500km-canakkale-tasoluk-baraj-golu"],
+    "heldCount": 20,
+    "notes": "Yalnız gerçekten D olan benzersiz kayıtlar sayıldı; mikro erişim kesinleştirilmeden locationPrecision=Genel bölge ve navigationVerified=false korundu."
   },
   "stage3": {
     "status": "completed",
-    "newCPlusTarget": 3,
+    "targetNewCPlus": 3,
     "newCPlusCount": 3,
-    "newSlugs": ["eskisehir-gunyuzu-mercan-goleti","eskisehir-mihaliccik-ahurkoy-goleti","eskisehir-sivrihisar-bahcecik-goleti"],
-    "notes": "Tam 3 yeni Güven C rota eklendi. Mercan ve Bahçecik rota-özel resmî sazan balıklandırma kayıtları ile bağımsız kurumsal sulama/yüzey suyu kayıtlarıyla; Ahurköy ise 2015, 2016, 2017 ve 2019 rota-özel İl Tarım balıklandırmaları ile yerel yerleşim bağlamıyla desteklendi. Üçünde de locationPrecision=Genel bölge ve navigationVerified=false. Günyüzü-2, duplicate radarın Günyüzü-1 ile 0.86 km ve %100 ad benzerliği blokajı nedeniyle yayımdan çıkarıldı. Ahurköy kesin gölet pini doğrulanmadığı için yerleşim ölçekli planlama noktasıyla açıkça etiketlendi. Özgün SVG image/socialImage standardı korundu."
+    "regionalMix": {"Ege": 2, "Marmara": 1},
+    "newSlugs": [
+      "mugla-ula-ula-goleti",
+      "kutahya-merkez-eskiyuregil-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti"
+    ],
+    "newMeras": [
+      {"slug":"mugla-ula-ula-goleti","province":"Muğla","district":"Ula","region":"Ege","confidence":"C","locationPrecision":"Genel bölge","navigationVerified":false,"evidenceFamilies":["Muğla Büyükşehir Belediyesi rota-özel sazan ve balık tutma kullanımı","Muğla Büyükşehir Ulaşım Ana Planı","MEB/EBA kamusal mesire kimliği"]},
+      {"slug":"kutahya-merkez-eskiyuregil-goleti","province":"Kütahya","district":"Merkez","region":"Ege","confidence":"C","locationPrecision":"Genel bölge","navigationVerified":false,"evidenceFamilies":["Kütahya Valiliği amatör balıkçılık ve sazan balıklandırması","Kütahya İl Tarım rota-özel balıklandırma","Kütahya İl Özel İdaresi sulama tesisi kimliği"]},
+      {"slug":"balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti","province":"Balıkesir","district":"Altıeylül","region":"Marmara","confidence":"C","locationPrecision":"Genel bölge","navigationVerified":false,"evidenceFamilies":["Balıkesir İl Tarım 2024 rota-özel sazan balıklandırması","DSİ 25. Bölge işletmedeki gölet kimliği","Balıkesir İl Tarım amatör balıkçıları destekleme amacı"]}
+    ],
+    "candidateOutcomes": [
+      {"name":"Ula Göleti","status":"published-C"},
+      {"name":"Eskiyüreğil Göleti","status":"published-C"},
+      {"name":"Bayat Göleti / Bayat Şehit Aydın Nazillioğlu","status":"published-C"},
+      {"name":"Aşağıokçular Göleti","status":"not-selected-duplicate-risk"},
+      {"name":"Kozağaç Göleti","status":"hold-access-law-final-check"},
+      {"name":"Akçadere Göleti","status":"hold-second-family"},
+      {"name":"Akköprü Baraj Gölü","status":"hold-duplicate-operation"},
+      {"name":"Yortanlı Baraj Gölü","status":"rejected-active-commercial-fishery"},
+      {"name":"Işıklı Gölü","status":"hold-duplicate-commercial"},
+      {"name":"Kadın Azmağı","status":"rejected-sensitive-ecology"},
+      {"name":"Kayalar Göleti","status":"hold-second-family"},
+      {"name":"Yeni Ziraatlı Göleti","status":"hold-second-family"},
+      {"name":"Ardıçtepe Baraj Gölü","status":"hold-operation"}
+    ],
+    "svgAssets": [
+      "public/images/meralar/ulusal/mugla-ula-ula-goleti.svg",
+      "public/images/meralar/ulusal/kutahya-merkez-eskiyuregil-goleti.svg",
+      "public/images/meralar/ulusal/balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti.svg"
+    ],
+    "mgmAudit": {
+      "status": "completed",
+      "performedOnceToday": true,
+      "checkedAt": "2026-09-14T14:05:00+03:00",
+      "officialAuditStatus": "pending",
+      "source": "Meteoroloji Genel Müdürlüğü (MGM)",
+      "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
+      "representativeMeras": ["Kefken-Cebeci/Kocaeli deniz kıyısı","Eymir Gölü/Ankara","Filyos Nehri/Zonguldak","Zap Suyu/Hakkâri","Ula Göleti/Muğla"],
+      "activeWarningProvinces": [],
+      "mgmFindings": "MeteoUYARI denetim anında aktif sarı/turuncu/kırmızı il göstermedi. 14 Eylül deniz bülteninde Karadeniz için fırtınamsı rüzgâr, Batı Karadeniz'de 4-6 yer yer 7 ve 2-3 m dalga; Marmara'da sağanak/gök gürültülü sağanak, 3-5 ve 0.5-1.5 m; Ege'de 3-5 yer yer 6 ve yer yer 2.5 m dalga öngörülüyor.",
+      "modelComparison": "Çalışma ortamından /api/weather noktasal model yanıtı güvenilir biçimde alınamadı; sıcaklık, rüzgâr, yağış/hadise ve uyarı bazlı karşılaştırma tamamlanmış sayılmadı.",
+      "auditFile": "public/data/weather-official-audit.json"
+    },
+    "regionalCounterNote": "Tam 2 Ege + 1 Marmara Stage 3 kalite eşiğini geçti; regionalMixCompletedDays ancak Stage 4 CI/merge/production doğrulaması başarıyla tamamlanırsa 0'dan 1'e çıkarılacak."
   },
-  "stage4": {
-    "status": "completed",
-    "prNumber": 133,
-    "ctrNotes": "Toplu title/meta şablonu uygulanmadı; URL/slug/canonical değiştirilmedi. Yalnız gerçek kullanıcı faydası olan konum hassasiyeti, erişim/risk anlatısı ve Güven C anlatı tutarlılıkları düzeltildi.",
-    "technicalFixes": ["Ankara 500 km audit'i 7/8/11 Eylül kanıt yükseltmelerini tanıyacak şekilde güncellendi.","Günyüzü-2 duplicate nedeniyle çıkarılıp Ahurköy ile değiştirildi.","Bakım auditi, yalnız açık Genel bölge + navigationVerified=false + accessEvidence koşuluyla koordinatsız Güven C rotaları kabul edecek şekilde politika ile hizalandı.","Araç Çayı ve Zap Suyu stale Güven D anlatıları Güven C ile uyumlu hale getirildi.","Kavşakkaya, Eğrekkaya ve Yenice waterType değeri şema uyumlu Baraj olarak düzeltildi."]
-  },
-  "promotedSlugs": ["ankara-500km-cankiri-alpsari-goleti","ankara-500km-cankiri-bozoglu-goleti","ankara-500km-ankara-kurtbogazi-baraj-golu","ankara-500km-ankara-doganozu-baraj-golu","ankara-500km-ankara-karagol","ankara-500km-ankara-yukari-cavundur-goleti","ankara-500km-yozgat-divanli-goleti","ankara-500km-cankiri-akhasan-baraj-golu","ankara-500km-ankara-anadolu-goleti","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-cankiri-karadere-baraj-golu-cankiri","ulusal-karabuk-arac-cayi","ulusal-hakkari-zap-suyu-hakkari-hatti","ankara-500km-ankara-eymir-golu","ankara-500km-ankara-kavsakkaya-baraj-golu","ankara-500km-ankara-egrekkaya-baraj-golu","ankara-500km-ankara-yenice-baraj-golu"],
-  "newSlugs": ["eskisehir-gunyuzu-mercan-goleti","eskisehir-mihaliccik-ahurkoy-goleti","eskisehir-sivrihisar-bahcecik-goleti"],
-  "mgmAudit": {
-    "status": "completed",
-    "checkedAt": "2026-09-12T14:05:02+03:00",
-    "officialStatus": "pending",
-    "representativeSlugs": ["kefken-cebeci-kiyilari","ankara-500km-ankara-eymir-golu","ulusal-zonguldak-filyos-nehri-zonguldak-hatti","ulusal-hakkari-zap-suyu-hakkari-hatti","sivas-golova-baraj-golu"],
-    "warnings": [],
-    "notes": "MGM 12 Eylül için bugün yalnız bir kez denetlendi. Ana sayfada aktif meteorolojik uyarı bulunmadığı görüldü. Deniz raporunda Batı Karadeniz ve Marmara için fırtına beklenmiyor. Türkiye/bölgesel tahmin ile deniz tahminleri karşılaştırıldı. Çalışma ortamından oltaatlasi.com /api/weather noktasal model yanıtı güvenilir biçimde alınamadığından model-MGM sıcaklık/rüzgâr/yağış-hadise karşılaştırması tamamlanamadı; weather-official-audit.json bu nedenle pending bırakıldı."
-  },
-  "ci": {"status":"success","prHeadSha":"8d1b382eb870c1aef434ebe2dfe3faf6ac5d8d4d","qualityCheckRun":34698772120,"qualityGateRun":34698772162},
-  "pr": {"status":"merged","number":133,"mergeMethod":"squash"},
-  "merge": {"status":"success","contentMergeSha":"5a73f6afbc0a853d78e63218ac8be73dae688fb6"},
-  "deploy": {"status":"success","workflowRun":34698842924,"verifiedContentSha":"5a73f6afbc0a853d78e63218ac8be73dae688fb6","exactReleaseVerified":true}
+  "publication": {
+    "ctrTechnicalReview": "pending-stage4",
+    "ci": "pending",
+    "pr": "pending",
+    "merge": "pending",
+    "deploy": "pending",
+    "productionVerified": false,
+    "mainShaAfterMerge": null
+  }
 }
