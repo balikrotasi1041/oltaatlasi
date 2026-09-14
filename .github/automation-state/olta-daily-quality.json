@@ -2,15 +2,14 @@
   "version": 2,
   "date": "2026-09-14",
   "timezone": "Europe/Istanbul",
-  "stage": 3,
+  "stage": 4,
   "branch": "quality-2026-09-14",
   "done": false,
   "regionalMixCompletedDays": 0,
   "regionalMixTargetDays": 30,
-  "regionalMixTargetToday": {
-    "Ege": 2,
-    "Marmara": 1
-  },
+  "regionalMixTargetToday": {"Ege": 2, "Marmara": 1},
+  "regionalMixStage3QualifiedToday": true,
+  "regionalMixCounterPendingProduction": true,
   "research": {
     "status": "completed",
     "mainShaAtStart": "9d56e26059b706fee3619f79f4a806b94e3bbb43",
@@ -19,83 +18,17 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repoda erişilebilir son somut Search Console fırsat seti 23 Ağustos 2026 exportudur ve performans 21 Ağustos'a kadar gelir. Pozisyon 3-15, düşük/sıfır CTR, konum niyeti ve güçlü hub bağlantısı yalnız öncelik sinyali olarak yeniden kullanıldı; trafik confidence kanıtı yapılmadı ve daha güncel veri varmış gibi davranılmadı.",
-    "regionalQualityPolicy": "Ege ve Marmara dahil tüm Türkiye D→C+ ve kalite güncelleme havuzunda eşit değerlendirildi; bölgesel dışlama uygulanmadı.",
-    "dCandidatesReviewed": 25,
-    "dCandidates": [
-      "ulusal-bayburt-lori-deresi",
-      "ulusal-amasya-destek-baraj-golu",
-      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
-      "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-erzurum-olur-baraj-golu",
-      "ankara-500km-ankara-cubuk-i-baraj-golu",
-      "ankara-500km-ankara-kizilca-goleti",
-      "ankara-500km-ankara-eyrez-goleti",
-      "ankara-500km-ankara-sakarya-nehri",
-      "ankara-500km-eskisehir-yagri-baraj-golu",
-      "ankara-500km-mugla-saricay",
-      "ankara-500km-canakkale-ayazma-deresi",
-      "ankara-500km-canakkale-tasoluk-baraj-golu",
-      "ankara-500km-yalova-karakus-deresi",
-      "ankara-500km-yalova-abbas-dere",
-      "ankara-500km-yalova-ulu-dere",
-      "ankara-500km-amasya-tersakan-cayi",
-      "ulusal-adiyaman-cat-baraj-golu",
-      "ankara-500km-denizli-yenidere-baraj-golu",
-      "ankara-500km-denizli-cindere-baraj-golu",
-      "ankara-500km-denizli-esen-goleti",
-      "ankara-500km-denizli-vali-recep-yazicioglu-baraj-golu",
-      "ankara-500km-amasya-borabay-golu",
-      "ankara-500km-amasya-gediksaray-goleti",
-      "ankara-500km-nevsehir-ayhan-baraj-golu"
-    ],
-    "egeMarmaraDCandidates": [
-      "ankara-500km-mugla-saricay",
-      "ankara-500km-canakkale-ayazma-deresi",
-      "ankara-500km-canakkale-tasoluk-baraj-golu",
-      "ankara-500km-yalova-karakus-deresi",
-      "ankara-500km-yalova-abbas-dere",
-      "ankara-500km-yalova-ulu-dere",
-      "ankara-500km-denizli-yenidere-baraj-golu",
-      "ankara-500km-denizli-cindere-baraj-golu",
-      "ankara-500km-denizli-esen-goleti",
-      "ankara-500km-denizli-vali-recep-yazicioglu-baraj-golu"
-    ],
-    "dCandidateEvidenceNotes": [
-      {"slug":"ankara-500km-mugla-saricay","status":"hold-insufficient-access-law","notes":"Rota-özel akademik tür kanıtı güçlü ancak güncel kamusal genel erişim/hukuk ailesi bu aşamada C eşiğine taşınmadı."},
-      {"slug":"ankara-500km-canakkale-tasoluk-baraj-golu","status":"promoted-stage2","notes":"DSİ su yapısı kimliği + hakemli Squalius cephalus saha çalışması + işletme risklerini dışlayan genel bölge yaklaşımıyla C."},
-      {"slug":"ankara-500km-denizli-yenidere-baraj-golu","status":"hold-operation-check","notes":"Akuakültür taşıma kapasitesi/işletme bağlamı nedeniyle amatör genel erişim netleşmeden D bırakıldı."},
-      {"slug":"ankara-500km-canakkale-ayazma-deresi","status":"hold-insufficient-route-specific-evidence","notes":"Aynı adlı başka su varlıkları öne çıkıyor; rota-özel tür/hukuk kanıtı yetersiz."},
-      {"slug":"ankara-500km-yalova-karakus-deresi","status":"hold-insufficient-species-evidence","notes":"Rota-özel güçlü tür kanıtı bulunamadı."},
-      {"slug":"ankara-500km-yalova-abbas-dere","status":"hold-insufficient-species-evidence","notes":"Rota-özel güçlü tür kanıtı bulunamadı."},
-      {"slug":"ankara-500km-yalova-ulu-dere","status":"hold-insufficient-species-evidence","notes":"Rota-özel güçlü tür kanıtı bulunamadı."}
-    ],
-    "newCandidatesReviewed": 13,
-    "newCandidates": {
-      "Ege": [
-        {"name":"Kozağaç Göleti","province":"Muğla","district":"Menteşe","status":"promising","notes":"2025 İl Tarım rota-özel sazan balıklandırması + kurumsal sulama göleti kimliği; Stage 3 duplicate/erişim/hukuk kontrolü gerekli."},
-        {"name":"Akçadere Göleti","province":"Muğla","district":"Ula","status":"promising-needs-second-family","notes":"Rota-özel sazan balıklandırması güçlü; ikinci bağımsız kurumsal kimlik/erişim ailesi tamamlanmalı."},
-        {"name":"Ula Göleti","province":"Muğla","district":"Ula","status":"strong-candidate","notes":"Resmî balıklandırma + belediye/GEKA kamusal mesire ve balık tutma kullanım kaydı; Stage 3 duplicate ve güncel kısıt kontrolü gerekli."},
-        {"name":"Akköprü Baraj Gölü","province":"Muğla","district":"Köyceğiz","status":"hold-duplicate-operation-check","notes":"Rota-özel sazan balıklandırması var; büyük rezervuar işletmesi ve olası mevcut rota tekrarı nedeniyle beklemede."},
-        {"name":"Eskiyüreğil Göleti","province":"Kütahya","district":"Merkez","status":"promising","notes":"Rota-özel sazan balıklandırması ve amatör balıkçı derneği katılımı; güncel rota kimliği/erişim ve duplicate teyidi gerekli."},
-        {"name":"Yortanlı Baraj Gölü","province":"İzmir","district":"Bergama","status":"rejected-active-commercial-fishery","notes":"Resmî balıkçılık hakkı kiralama/aktif ticari kullanım sinyali nedeniyle yeni amatör mera adayı olarak elendi."},
-        {"name":"Işıklı Gölü","province":"Denizli","district":"Çivril","status":"hold-duplicate-commercial-check","notes":"Resmî sazan balıklandırması var; mevcut rota, yoğun ticari kullanım ve koruma/işletme bağlamı ayrıca kontrol edilmeli."},
-        {"name":"Kadın Azmağı","province":"Muğla","district":"Ula/Akyaka","status":"rejected-sensitive-ecology","notes":"Hassas ekolojik mikro-habitat niteliği nedeniyle yeni mera yayın havuzundan çıkarıldı."}
-      ],
-      "Marmara": [
-        {"name":"Aşağıokçular Göleti","province":"Çanakkale","district":"Merkez","status":"promising","notes":"İl Tarım rota-özel balıklandırma ve amatör balıkçılık amacı + açık harita/yerleşim desteği; Stage 3 duplicate/kamu erişimi/kısıt kontrolü gerekli."},
-        {"name":"Bayat Göleti","province":"Balıkesir","district":"TBD","status":"promising-needs-second-family","notes":"Rota-özel sazan kaydı var; bağımsız ilçe/DSİ/yerel kimlik ve erişim ailesi gerekli."},
-        {"name":"Kayalar Göleti","province":"Balıkesir","district":"TBD","status":"promising-needs-second-family","notes":"Rota-özel sazan kaydı var; bağımsız kimlik/erişim ailesi gerekli."},
-        {"name":"Yeni Ziraatlı Göleti","province":"Balıkesir","district":"TBD","status":"promising-needs-second-family","notes":"Rota-özel sazan kaydı var; ilçe/DSİ/yerel kimlik ve erişim doğrulaması gerekli."},
-        {"name":"Ardıçtepe Baraj Gölü","province":"Balıkesir","district":"TBD","status":"hold-operation-check","notes":"Rota-özel sazan kaydı var; baraj işletmesi, kamusal erişim ve duplicate kontrolü tamamlanmalı."}
-      ]
-    },
-    "newCandidatePolicyNotes": "Bölgesel sayaç 0/30. Ege'de 8, Marmara'da 5 yeni aday tarandı; kalite eşiği bölgesel hedef için düşürülmedi."
+    "searchConsoleNotes": "Repoda erişilebilir son somut Search Console fırsat seti 23 Ağustos 2026 exportudur; trafik yalnız öncelik sinyali olarak kullanıldı, confidence kanıtı yapılmadı.",
+    "regionalQualityPolicy": "Ege ve Marmara dahil tüm Türkiye D→C+ kalite havuzunda eşit değerlendirildi.",
+    "dCandidatesReviewedStage1": 25,
+    "newCandidatesReviewedStage1": {"Ege": 8, "Marmara": 5},
+    "newCandidatePolicyNotes": "regionalMixCompletedDays=0/30 iken 2 Ege + 1 Marmara hedefi için kalite eşiği düşürülmedi."
   },
   "stage2": {
     "status": "completed",
     "targetPromotions": 17,
     "promotedCount": 17,
+    "totalDReviewedThroughStage2": 37,
     "promotedSlugs": [
       "ankara-500km-eskisehir-kanlipinar-goleti",
       "ankara-500km-eskisehir-karaoren-goleti",
@@ -115,21 +48,6 @@
       "ulusal-kutahya-cavdarhisar-baraj-golu",
       "ulusal-kutahya-beskaris-baraj-golu"
     ],
-    "additionalDCandidatesReviewed": [
-      "ankara-500km-eskisehir-kanlipinar-goleti",
-      "ankara-500km-eskisehir-karaoren-goleti",
-      "ankara-500km-eskisehir-kaymaz-goleti",
-      "ankara-500km-eskisehir-yukarikartal-baraj-golu",
-      "ankara-500km-eskisehir-kuzfindik-baraj-golu",
-      "ulusal-eskisehir-musaozu-baraj-golu",
-      "ankara-500km-eskisehir-mamuca-goleti",
-      "ankara-500km-duzce-kurugol",
-      "ankara-500km-duzce-camlipinar",
-      "ankara-500km-nevsehir-karaburna-goleti",
-      "ulusal-kutahya-cavdarhisar-baraj-golu",
-      "ulusal-kutahya-beskaris-baraj-golu"
-    ],
-    "totalDReviewedThroughStage2": 37,
     "egePromotedSlugs": [
       "ankara-500km-denizli-esen-goleti",
       "ankara-500km-denizli-cindere-baraj-golu",
@@ -137,69 +55,67 @@
       "ulusal-kutahya-cavdarhisar-baraj-golu",
       "ulusal-kutahya-beskaris-baraj-golu"
     ],
-    "marmaraPromotedSlugs": [
-      "ankara-500km-canakkale-tasoluk-baraj-golu"
-    ],
-    "heldSlugs": [
-      "ulusal-bayburt-lori-deresi",
-      "ulusal-amasya-destek-baraj-golu",
-      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
-      "ankara-500km-adiyaman-cataltepe-goleti",
-      "ulusal-erzurum-olur-baraj-golu",
-      "ankara-500km-ankara-cubuk-i-baraj-golu",
-      "ankara-500km-ankara-kizilca-goleti",
-      "ankara-500km-ankara-eyrez-goleti",
-      "ankara-500km-ankara-sakarya-nehri",
-      "ankara-500km-eskisehir-yagri-baraj-golu",
-      "ankara-500km-mugla-saricay",
-      "ankara-500km-canakkale-ayazma-deresi",
-      "ankara-500km-yalova-karakus-deresi",
-      "ankara-500km-yalova-abbas-dere",
-      "ankara-500km-yalova-ulu-dere",
-      "ankara-500km-amasya-tersakan-cayi",
-      "ulusal-adiyaman-cat-baraj-golu",
-      "ankara-500km-denizli-yenidere-baraj-golu",
-      "ankara-500km-amasya-borabay-golu",
-      "ankara-500km-amasya-gediksaray-goleti"
-    ],
-    "pendingSlugs": [],
-    "notes": "17 benzersiz kaydın aktif veri zincirinde önceki confidence değeri D olma koşulu kodla zorunlu tutuldu. Her kayıtta locationPrecision=Genel bölge ve navigationVerified=false; mikro park/yol/kıyı kesinleştirilmedi. Geçmiş balıklandırma tür olasılığı olarak kullanıldı, av garantisi yapılmadı. Ege/Marmara yükseltmeleri bölgesel kota uygulanmadan aynı kalite havuzunda seçildi."
+    "marmaraPromotedSlugs": ["ankara-500km-canakkale-tasoluk-baraj-golu"],
+    "heldCount": 20,
+    "notes": "Yalnız gerçekten D olan benzersiz kayıtlar sayıldı; mikro erişim kesinleştirilmeden locationPrecision=Genel bölge ve navigationVerified=false korundu."
   },
   "stage3": {
-    "status": "pending",
-    "newCPlusTarget": 3,
-    "targetMix": {"Ege":2,"Marmara":1},
-    "newCPlusCount": 0,
-    "newSlugs": []
+    "status": "completed",
+    "targetNewCPlus": 3,
+    "newCPlusCount": 3,
+    "regionalMix": {"Ege": 2, "Marmara": 1},
+    "newSlugs": [
+      "mugla-ula-ula-goleti",
+      "kutahya-merkez-eskiyuregil-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti"
+    ],
+    "newMeras": [
+      {"slug":"mugla-ula-ula-goleti","province":"Muğla","district":"Ula","region":"Ege","confidence":"C","locationPrecision":"Genel bölge","navigationVerified":false,"evidenceFamilies":["Muğla Büyükşehir Belediyesi rota-özel sazan ve balık tutma kullanımı","Muğla Büyükşehir Ulaşım Ana Planı","MEB/EBA kamusal mesire kimliği"]},
+      {"slug":"kutahya-merkez-eskiyuregil-goleti","province":"Kütahya","district":"Merkez","region":"Ege","confidence":"C","locationPrecision":"Genel bölge","navigationVerified":false,"evidenceFamilies":["Kütahya Valiliği amatör balıkçılık ve sazan balıklandırması","Kütahya İl Tarım rota-özel balıklandırma","Kütahya İl Özel İdaresi sulama tesisi kimliği"]},
+      {"slug":"balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti","province":"Balıkesir","district":"Altıeylül","region":"Marmara","confidence":"C","locationPrecision":"Genel bölge","navigationVerified":false,"evidenceFamilies":["Balıkesir İl Tarım 2024 rota-özel sazan balıklandırması","DSİ 25. Bölge işletmedeki gölet kimliği","Balıkesir İl Tarım amatör balıkçıları destekleme amacı"]}
+    ],
+    "candidateOutcomes": [
+      {"name":"Ula Göleti","status":"published-C"},
+      {"name":"Eskiyüreğil Göleti","status":"published-C"},
+      {"name":"Bayat Göleti / Bayat Şehit Aydın Nazillioğlu","status":"published-C"},
+      {"name":"Aşağıokçular Göleti","status":"not-selected-duplicate-risk"},
+      {"name":"Kozağaç Göleti","status":"hold-access-law-final-check"},
+      {"name":"Akçadere Göleti","status":"hold-second-family"},
+      {"name":"Akköprü Baraj Gölü","status":"hold-duplicate-operation"},
+      {"name":"Yortanlı Baraj Gölü","status":"rejected-active-commercial-fishery"},
+      {"name":"Işıklı Gölü","status":"hold-duplicate-commercial"},
+      {"name":"Kadın Azmağı","status":"rejected-sensitive-ecology"},
+      {"name":"Kayalar Göleti","status":"hold-second-family"},
+      {"name":"Yeni Ziraatlı Göleti","status":"hold-second-family"},
+      {"name":"Ardıçtepe Baraj Gölü","status":"hold-operation"}
+    ],
+    "svgAssets": [
+      "public/images/meralar/ulusal/mugla-ula-ula-goleti.svg",
+      "public/images/meralar/ulusal/kutahya-merkez-eskiyuregil-goleti.svg",
+      "public/images/meralar/ulusal/balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti.svg"
+    ],
+    "mgmAudit": {
+      "status": "completed",
+      "performedOnceToday": true,
+      "checkedAt": "2026-09-14T14:05:00+03:00",
+      "officialAuditStatus": "pending",
+      "source": "Meteoroloji Genel Müdürlüğü (MGM)",
+      "sourceUrl": "https://www.mgm.gov.tr/meteouyari/turkiye.aspx",
+      "representativeMeras": ["Kefken-Cebeci/Kocaeli deniz kıyısı","Eymir Gölü/Ankara","Filyos Nehri/Zonguldak","Zap Suyu/Hakkâri","Ula Göleti/Muğla"],
+      "activeWarningProvinces": [],
+      "mgmFindings": "MeteoUYARI denetim anında aktif sarı/turuncu/kırmızı il göstermedi. 14 Eylül deniz bülteninde Karadeniz için fırtınamsı rüzgâr, Batı Karadeniz'de 4-6 yer yer 7 ve 2-3 m dalga; Marmara'da sağanak/gök gürültülü sağanak, 3-5 ve 0.5-1.5 m; Ege'de 3-5 yer yer 6 ve yer yer 2.5 m dalga öngörülüyor.",
+      "modelComparison": "Çalışma ortamından /api/weather noktasal model yanıtı güvenilir biçimde alınamadı; sıcaklık, rüzgâr, yağış/hadise ve uyarı bazlı karşılaştırma tamamlanmış sayılmadı.",
+      "auditFile": "public/data/weather-official-audit.json"
+    },
+    "regionalCounterNote": "Tam 2 Ege + 1 Marmara Stage 3 kalite eşiğini geçti; regionalMixCompletedDays ancak Stage 4 CI/merge/production doğrulaması başarıyla tamamlanırsa 0'dan 1'e çıkarılacak."
   },
-  "mgmAudit": {
-    "status": "not-started",
-    "officialStatus": "not-started",
-    "representativeSlugs": [],
-    "warnings": []
-  },
-  "ci": {"status":"not-started"},
-  "pr": {"status":"not-started"},
-  "merge": {"status":"not-started"},
-  "deploy": {"status":"not-started"},
-  "promotedSlugs": [
-    "ankara-500km-eskisehir-kanlipinar-goleti",
-    "ankara-500km-eskisehir-karaoren-goleti",
-    "ankara-500km-eskisehir-kaymaz-goleti",
-    "ankara-500km-eskisehir-yukarikartal-baraj-golu",
-    "ankara-500km-eskisehir-kuzfindik-baraj-golu",
-    "ulusal-eskisehir-musaozu-baraj-golu",
-    "ankara-500km-eskisehir-mamuca-goleti",
-    "ankara-500km-duzce-kurugol",
-    "ankara-500km-duzce-camlipinar",
-    "ankara-500km-denizli-esen-goleti",
-    "ankara-500km-denizli-cindere-baraj-golu",
-    "ankara-500km-denizli-vali-recep-yazicioglu-baraj-golu",
-    "ankara-500km-nevsehir-ayhan-baraj-golu",
-    "ankara-500km-nevsehir-karaburna-goleti",
-    "ankara-500km-canakkale-tasoluk-baraj-golu",
-    "ulusal-kutahya-cavdarhisar-baraj-golu",
-    "ulusal-kutahya-beskaris-baraj-golu"
-  ],
-  "newSlugs": []
+  "publication": {
+    "ctrTechnicalReview": "pending-stage4",
+    "ci": "pending",
+    "pr": "pending",
+    "merge": "pending",
+    "deploy": "pending",
+    "productionVerified": false,
+    "mainShaAfterMerge": null
+  }
 }
