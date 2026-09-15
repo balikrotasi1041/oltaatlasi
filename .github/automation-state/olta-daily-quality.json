@@ -2,7 +2,7 @@
   "version": 2,
   "date": "2026-09-15",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
+  "stage": 2,
   "branch": "quality-2026-09-15",
   "done": false,
   "regionalMixCompletedDays": 1,
@@ -18,65 +18,19 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "searchConsoleNotes": "Repoda erişilebilir somut CTR fırsat setleri ve mevcut D araştırma kuyruğu öncelik sinyali olarak incelendi; trafik/confidence birbirine karıştırılmadı. 21 Ağustos setinde Sarımsaklı, Yamula, Gümüşören, Şeyhli, Nergizlik, Kapıkaya/Malatya, Kozan ve Sarıyar gibi konum-yol tarifi niyetli düşük CTR örnekleri bulunuyor.",
-    "regionalQualityPolicy": "Ege ve Marmara dahil tüm Türkiye D→C+ kalite havuzunda eşit değerlendirilecek; bölgesel kota yalnız yeni mera Stage 3 hedefinde uygulanacak.",
     "dCandidatesReviewedStage1": 25,
-    "dCandidatePool": [
-      "ulusal-erzurum-demirdoven-baraj-golu",
-      "ulusal-erzurum-kuzgun-baraj-golu",
-      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
-      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
-      "ulusal-erzurum-olur-baraj-golu",
-      "ulusal-hakkari-zap-suyu-hakkari-hatti",
-      "ulusal-bayburt-lori-deresi",
-      "ulusal-sivas-delice-baraj-golu-sivas",
-      "ulusal-bolu-caykoy-baraj-golu-bolu",
-      "sarimsakli-baraji-genel-amator-kiyi",
-      "yamula-baraji-resmi-amator-balikcilik-alani",
-      "gumusoren-baraji-genel-amator-kiyi",
-      "seyhli-goleti-genel-amator-kiyi",
-      "ulusal-adana-nergizlik-baraj-golu",
-      "ulusal-malatya-kapikaya-baraj-golu-malatya",
-      "ulusal-adana-kozan-baraj-golu",
-      "sariyar-baraji-softabogazi-amator-alani",
-      "ulusal-erzurum-tortum-golu",
-      "ulusal-erzurum-tortum-selalesi-hatti",
-      "ulusal-sivas-kizilirmak-sivas-hatti",
-      "ulusal-bolu-golkoy-baraj-golu",
-      "ulusal-duzce-melen-cayi",
-      "ulusal-kocaeli-ketenciler-goleti",
-      "ulusal-canakkale-atikhisar-baraj-golu",
-      "ulusal-denizli-isikli-golu"
-    ],
     "newCandidatesReviewedStage1": {"Ege": 8, "Marmara": 5},
-    "newCandidatePool": {
-      "Ege": [
-        {"name":"Akçadere Göleti","province":"Muğla","status":"strong-next-check","evidence":"Muğla İl Tarım 2025 rota-özel 7.000 sazan balıklandırması; ikinci bağımsız su-yapısı/erişim ailesi Stage 3 öncesi tamamlanmalı."},
-        {"name":"Kozağaç Göleti","province":"Muğla","status":"strong-next-check","evidence":"Muğla İl Tarım 2025 rota-özel 7.000 sazan balıklandırması; kamusal genel erişim ve su kimliği ikinci aileyle teyit edilmeli."},
-        {"name":"Akköprü Baraj Gölü","province":"Muğla","status":"hold-duplicate-operation","evidence":"Muğla İl Tarım 2025 rota-özel 191.000 sazan kaydı güçlü; mevcut rota/işletme ve duplicate riski kontrol edilmeli."},
-        {"name":"Sofular Göleti","province":"Kütahya","status":"identity-strong-species-needed","evidence":"DSİ 3. Bölge 8 Ocak 2024 su tutma ve sulama tesisi kimliğini doğruluyor; tür/amatör kullanım için bağımsız güçlü kanıt eksik."},
-        {"name":"Işıklı Gölü","province":"Denizli","status":"hold-commercial-duplicate","evidence":"Denizli 2025 il geneli balıklandırma programı destekleyici; rota-özel tür ve ticari/amatör kullanım ayrımı gerekir."},
-        {"name":"Beydağ Baraj Gölü","province":"İzmir","status":"rejected-commercial-operation","evidence":"İzmir İl Tarım 2025 su ürünleri istihsal hakkı kiralama kaydı aktif ticari işletme riski gösteriyor."},
-        {"name":"Kestel Baraj Gölü","province":"İzmir","status":"rejected-commercial-operation","evidence":"İzmir İl Tarım kiralama duyurusunda ticari istihsal bağlamı var; yeni amatör rota için uygun değil."},
-        {"name":"Esen/Çindere çevresi alternatifleri","province":"Denizli","status":"hold-duplicate","evidence":"2025 Denizli balıklandırması güçlü il sinyali; mevcut yayımlanmış rotalarla çakışmayan rota-özel aday gerekli."}
-      ],
-      "Marmara": [
-        {"name":"Osmanlı Köyü Göleti","province":"Edirne","status":"strong-next-check","evidence":"Edirne İl Tarım 29 Ağustos 2025 balıklandırma etkinliği rota-özel ve amatör balıkçılığı yaygınlaştırma amacını açıkça destekliyor; su kimliği/erişim ikinci aileyle tamamlanmalı."},
-        {"name":"Çanakkale 2025 balıklandırılan gölet havuzu","province":"Çanakkale","status":"strong-pool-needs-route-list","evidence":"Çanakkale İl Tarım 7 Ağustos 2025: 8 baraj + 14 gölet, 2 milyon aynalı sazan ve bu suların ticari avcılığa kapalı, amatöre açık olduğu belirtiliyor; rota adları ayrıştırılmalı."},
-        {"name":"Kocaeli 2025 balıklandırılan gölet havuzu","province":"Kocaeli","status":"supporting-pool","evidence":"Kocaeli İl Tarım 21 Temmuz 2025 yaklaşık 650 bin sazan ve amatör balıkçılığı canlandırma amacı; rota-özel dağılım eksik."},
-        {"name":"Bursa belediye göletleri havuzu","province":"Bursa","status":"supporting-pool","evidence":"Bursa İl Tarım 12 Eylül 2025 2,182 milyon sazan ve sportif avcılık alanları hedefi; tekil gölet adı ve ikinci aile gerekir."},
-        {"name":"Sakarya 2025 balıklandırma havuzu","province":"Sakarya","status":"supporting-pool","evidence":"Bolu Gölköy üretim istasyonu 2025 programı Sakarya dahil 9 il/56 su kaynağını doğruluyor; rota-özel isim ve bağımsız aile gerekir."}
-      ]
-    },
-    "sourceFamiliesChecked": [
-      "Tarım ve Orman İl Müdürlükleri / BSGM",
-      "DSİ bölge kayıtları",
-      "mevcut repo confidence-v2 ve araştırma kayıtları",
-      "mevcut Search Console/CTR fırsat setleri"
-    ],
-    "stage1Decision": "Stage 2 için 25 D adaylık havuz hazırlandı. Yeni mera tarafında Ege 8 + Marmara 5 tarandı; Akçadere, Kozağaç ve Osmanlı Köyü Göleti ilk güçlü adaylar, fakat Stage 3 öncesi her biri için ikinci bağımsız rota-özel aile ve duplicate/erişim kontrolü zorunlu. Kalite eşiği düşürülmedi."
+    "newCandidateNotes": ["Muğla Akçadere Göleti","Muğla Kozağaç Göleti","Muğla Akköprü Baraj Gölü","Kütahya Sofular Göleti","Denizli Işıklı Gölü","İzmir Beydağ Baraj Gölü","İzmir Kestel Baraj Gölü","Denizli Eşen/Çindere alternatifleri","Edirne Osmanlı Köyü Göleti","Çanakkale balıklandırılan gölet havuzu","Kocaeli balıklandırılan gölet havuzu","Bursa belediye göletleri havuzu","Sakarya balıklandırma havuzu"]
   },
-  "stage2": {"status":"pending","targetPromotions":17,"promotedCount":0,"promotedSlugs":[]},
+  "stage2": {
+    "status": "in_progress",
+    "targetPromotions": 17,
+    "reviewedSlugs": ["ulusal-erzurum-demirdoven-baraj-golu","ulusal-erzurum-kuzgun-baraj-golu","ulusal-erzurum-kapikaya-baraj-golu-erzurum","ulusal-erzurum-koycegiz-baraj-golu-erzurum","ulusal-erzurum-olur-baraj-golu","ulusal-hakkari-zap-suyu-hakkari-hatti","ulusal-bayburt-lori-deresi","ulusal-sivas-delice-baraj-golu-sivas","ulusal-bolu-caykoy-baraj-golu-bolu","sarimsakli-baraji-genel-amator-kiyi","yamula-baraji-resmi-amator-balikcilik-alani","gumusoren-baraji-genel-amator-kiyi","seyhli-goleti-genel-amator-kiyi","ulusal-adana-nergizlik-baraj-golu","ulusal-malatya-kapikaya-baraj-golu-malatya","ulusal-adana-kozan-baraj-golu","sariyar-baraji-softabogazi-amator-alani","ulusal-erzurum-tortum-golu","ulusal-erzurum-tortum-selalesi-hatti","ulusal-sivas-kizilirmak-sivas-hatti","ulusal-bolu-golkoy-baraj-golu","ulusal-duzce-melen-cayi","ulusal-kocaeli-ketenciler-goleti","ulusal-canakkale-atikhisar-baraj-golu","ulusal-denizli-isikli-golu"],
+    "promotedCount": 0,
+    "promotedSlugs": [],
+    "integrityAudit": "Stage 1 aday listesi güncel birleşik veri katmanına karşı yeniden kontrol edildi. Önceki günlük katmanlarda yükseltilmiş kayıtların tarihsel D listelerinden yeniden adaylaşabildiği doğrulandı; örneğin ulusal-hakkari-zap-suyu-hakkari-hatti 2026-09-10 Stage2F içinde zaten D→C önkoşuluyla yükseltilmiş. 2026-09-14 Stage2 de 17 ayrı D→C yükseltme uyguluyor. Bu nedenle 25 Stage1 slugının bugünkü gerçek D statüsü tek tek kanıtlanmadan kota yazılmayacak. Sırf 17 sayısını doldurmak için confidence yükseltilmedi.",
+    "nextAction": "Birleşik son routeMap çıktısından confidence=D olan güncel kayıtları çıkar; tarihsel yükseltme katmanlarında daha önce C/B/A olmuşları dışla; en az iki bağımsız kaynak ailesi bulunan 17 benzersiz gerçek D kaydı yükselt."
+  },
   "stage3": {"status":"pending","targetNewCPlus":3,"newCPlusCount":0,"newSlugs":[],"mgmAudit":{"status":"pending","performedOnceToday":false}},
   "publication": {"ctrTechnicalReview":"pending","ci":"pending","pr":"pending","merge":"pending","deploy":"pending","productionVerified":false}
 }
