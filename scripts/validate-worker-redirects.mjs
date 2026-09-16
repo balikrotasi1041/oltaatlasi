@@ -8,6 +8,8 @@ const cases = [
   ["https://oltaatlasi.com/meralar/maltepe-sahili/", "https://oltaatlasi.com/meralar/maltepe-orhangazi-sehir-parki-kiyisi/"],
   ["https://oltaatlasi.com/meralar/pendik-sahili/", "https://oltaatlasi.com/meralar/pendik-sahil-parki-kamusal-kiyi/"],
   ["https://oltaatlasi.com/meralar/basiskele-sahili/", "https://oltaatlasi.com/meralar/basiskele-kamusal-sahil-hatti/"],
+  ["https://oltaatlasi.com/iletisim/null", "https://oltaatlasi.com/iletisim/"],
+  ["https://oltaatlasi.com/iletisim/null?utm_source=internal", "https://oltaatlasi.com/iletisim/?utm_source=internal"],
 ];
 for (const [source, expected] of cases) {
   const response = await worker.fetch(new Request(source), { ASSETS: assets }, {});
