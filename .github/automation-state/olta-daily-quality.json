@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "date": "2026-09-15",
+  "date": "2026-09-16",
   "timezone": "Europe/Istanbul",
   "stage": 1,
-  "branch": "quality-2026-09-15",
+  "branch": "quality-2026-09-16",
   "done": false,
   "regionalMixCompletedDays": 1,
   "regionalMixTargetDays": 30,
@@ -18,9 +18,9 @@
     "indexPolicyChecked": true,
     "searchConsoleUsed": false,
     "dCandidatesReviewedStage1": 0,
-    "newCandidatesReviewedStage1": {"Ege": 3, "Marmara": 5},
-    "newCandidateNotes": ["Muğla Akçadere Göleti","Muğla Kozağaç Göleti","Muğla Akköprü Baraj Gölü","Edirne Tayakadın Köyü Göleti","Edirne İpsala Karaağaç Göleti","Edirne Havsa Osmanlı Köyü Göleti","Çanakkale 2026 balıklandırılan su kaynakları","Bursa 2026 balıklandırılan su kaynakları"],
-    "notes": "2026-09-15 günlük döngüsü başlatıldı. Önceki state main üzerinde 2026-09-14 done=true ve regionalMixCompletedDays=1 idi. Güncel birleşik D havuzu henüz 25 gerçek D aday düzeyinde doğrulanmadığı için Stage 1 tamamlanmış sayılmadı. GitHub branch oluşturma eylemi güvenlik katmanında engellendi; branch alanı hedef adı olarak kaydedildi ancak branch oluşturuldu kabul edilmedi."
+    "newCandidatesReviewedStage1": {"Ege": 0, "Marmara": 0},
+    "newCandidateNotes": [],
+    "notes": "2026-09-16 günlük döngüsü başlatıldı. 2026-09-15 state tamamlanmamış olduğundan yeni Istanbul günü gereği yeni döngü açıldı; regionalMixCompletedDays=1 korundu. Güncel kod aramasında D kayıtlarının nihai confidence değerinin meralar-tumu birleşik katmanında üretildiği ve D sayfalarının noindex politikasında tutulduğu yeniden doğrulandı. quality-2026-09-16 branch oluşturma çağrısı güvenlik katmanında engellendi; branch alanı hedef addır, oluşturulmuş kabul edilmez. Stage 1 için güncel birleşik D havuzundan 25 gerçek aday ve yeni mera için 8 Ege + 5 Marmara araştırması henüz tamamlanmadı."
   },
   "stage2": {"status":"pending","targetPromotions":17,"promotedCount":0,"promotedSlugs":[]},
   "stage3": {"status":"pending","targetNewCPlus":3,"newCPlusCount":0,"newSlugs":[],"mgmAudit":{"status":"pending","performedOnceToday":false}},
