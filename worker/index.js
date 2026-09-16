@@ -8,6 +8,7 @@ const PERMANENT_PATH_REDIRECTS = new Map([
   ["/meralar/maltepe-sahili", "/meralar/maltepe-orhangazi-sehir-parki-kiyisi/"],
   ["/meralar/pendik-sahili", "/meralar/pendik-sahil-parki-kamusal-kiyi/"],
   ["/meralar/basiskele-sahili", "/meralar/basiskele-kamusal-sahil-hatti/"],
+  ["/iletisim/null", "/iletisim/"],
 ]);
 const ADMIN_PREFIX = "/admin";
 const GOOGLE_SNAPSHOT_TTL_SECONDS = 7 * 24 * 60 * 60;
