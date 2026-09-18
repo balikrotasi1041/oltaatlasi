@@ -10,6 +10,8 @@ const cases = [
   ["https://oltaatlasi.com/meralar/basiskele-sahili/", "https://oltaatlasi.com/meralar/basiskele-kamusal-sahil-hatti/"],
   ["https://oltaatlasi.com/iletisim/null", "https://oltaatlasi.com/iletisim/"],
   ["https://oltaatlasi.com/iletisim/null?utm_source=internal", "https://oltaatlasi.com/iletisim/?utm_source=internal"],
+  ["https://oltaatlasi.com/iller/sivas/il-geneli/", "https://oltaatlasi.com/iller/sivas/"],
+  ["https://oltaatlasi.com/iller/usak/il-geneli/?utm_source=gsc", "https://oltaatlasi.com/iller/usak/?utm_source=gsc"],
 ];
 for (const [source, expected] of cases) {
   const response = await worker.fetch(new Request(source), { ASSETS: assets }, {});

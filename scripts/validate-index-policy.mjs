@@ -10,7 +10,7 @@ const normalSitemapXml=sitemapFiles
   .filter((name)=>name!=="sitemap-index.xml"&&name!=="sitemap-images.xml")
   .map((name)=>readFileSync(`dist/${name}`,"utf8")).join("\n");
 const imageSitemapXml=existsSync("dist/sitemap-images.xml")?readFileSync("dist/sitemap-images.xml","utf8"):"";
-let preliminaryCount=0,indexableCount=0;
+let preliminaryCount=0,indexHoldCount=0,indexableCount=0;
 
 const htmlPathFor=(url)=>{
   const pathname=new URL(url).pathname;
@@ -118,11 +118,13 @@ for(const route of meralar){
   const html=readFileSync(`dist/meralar/${route.slug}/index.html`,"utf8");
   const pathname=`/meralar/${route.slug}/`;
   const url=`https://oltaatlasi.com${pathname}`;
-  if(route.confidence==="D"){
-    preliminaryCount+=1;
-    if(!runtimeNoindex(pathname))errors.push(`${route.slug}: Güven D Worker noindex politikasında yok.`);
-    if(normalSitemapXml.includes(url))errors.push(`${route.slug}: Güven D sayfası normal sitemap içinde olmamalı.`);
-    if(imageSitemapXml.includes(url))errors.push(`${route.slug}: Güven D sayfası görsel sitemap içinde olmamalı.`);
+  const indexHeld=route.indexing==="hold";
+  if(route.confidence==="D"||indexHeld){
+    if(route.confidence==="D") preliminaryCount+=1;
+    else indexHoldCount+=1;
+    if(!runtimeNoindex(pathname))errors.push(`${route.slug}: ${route.confidence==="D"?"Güven D":"C+ index hold"} Worker noindex politikasında yok.`);
+    if(normalSitemapXml.includes(url))errors.push(`${route.slug}: ${route.confidence==="D"?"Güven D":"C+ index hold"} sayfası normal sitemap içinde olmamalı.`);
+    if(imageSitemapXml.includes(url))errors.push(`${route.slug}: ${route.confidence==="D"?"Güven D":"C+ index hold"} sayfası görsel sitemap içinde olmamalı.`);
   }else{
     indexableCount+=1;
     if(runtimeNoindex(pathname)||htmlNoindex(html))errors.push(`${route.slug}: Güven ${route.confidence} sayfası yanlışlıkla noindex.`);
@@ -147,7 +149,7 @@ for(const province of [...new Set(meralar.map((route)=>route.province))]){
     const districtPath=`${provincePath}${slugifyTr(district)}/`;
     const districtHtml=readFileSync(`dist${districtPath}index.html`,"utf8");
     const districtUrl=`https://oltaatlasi.com${districtPath}`;
-    const verifiedCount=districtRoutes.filter((route)=>route.confidence!=="D").length;
+    const verifiedCount=districtRoutes.filter((route)=>route.confidence!=="D"&&route.indexing!=="hold").length;
     const shouldIndex=district!=="İl geneli"&&verifiedCount>=2;
     if(shouldIndex){
       if(htmlNoindex(districtHtml)||runtimeNoindex(districtPath))errors.push(`${province}/${district}: güçlü ilçe sayfası yanlışlıkla noindex.`);
@@ -159,7 +161,7 @@ for(const province of [...new Set(meralar.map((route)=>route.province))]){
   }
 }
 
-console.log(`İndeks politikası: ${sitemapUrls.length} sitemap URL'si; ${indexableCount} C+ rota indekslenebilir, ${preliminaryCount} Güven D noindex,follow; ${nofollowNoindexLinks} nofollow bağlantı; ${errors.length} hata.`);
+console.log(`İndeks politikası: ${sitemapUrls.length} sitemap URL'si; ${indexableCount} C+ rota indekslenebilir, ${indexHoldCount} C+ rota aşamalı yayın için hold, ${preliminaryCount} Güven D noindex,follow; ${nofollowNoindexLinks} nofollow bağlantı; ${errors.length} hata.`);
 for(const error of errors.slice(0,200))console.error(`HATA: ${error}`);
 if(errors.length>200)console.error(`HATA: ${errors.length-200} ek hata daha var.`);
 if(errors.length)process.exit(1);

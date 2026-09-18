@@ -20,7 +20,7 @@ const rememberLastModified = (pathname, routes) => {
 for (const route of meralar) {
   const pathname = `/meralar/${route.slug}/`;
   rememberLastModified(pathname, [route]);
-  if (route.confidence === "D") nonIndexablePaths.add(pathname);
+  if (route.confidence === "D" || route.indexing === "hold") nonIndexablePaths.add(pathname);
   else sitemapPriorityByPath.set(pathname, seoDemandTargets[pathname]?.priority || (route.confidence === "A" ? 0.9 : route.confidence === "B" ? 0.8 : 0.7));
 }
 
@@ -35,7 +35,7 @@ for (const province of [...new Set(meralar.map((route) => route.province))]) {
     if (districtRoutes.length < 2) continue;
     const districtPath = `${provincePath}${slugifyTr(district)}/`;
     rememberLastModified(districtPath, districtRoutes);
-    const verifiedDistrictRoutes = districtRoutes.filter((route) => route.confidence !== "D");
+    const verifiedDistrictRoutes = districtRoutes.filter((route) => route.confidence !== "D" && route.indexing !== "hold");
     if (district === "İl geneli" || verifiedDistrictRoutes.length < 2) nonIndexablePaths.add(districtPath);
     else sitemapPriorityByPath.set(districtPath, 0.65);
   }

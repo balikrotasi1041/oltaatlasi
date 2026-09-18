@@ -554,6 +554,13 @@ export default {
       url.pathname = redirectPath;
       shouldRedirect = true;
     }
+
+    const provinceWideMatch = normalizedPath.match(/^\/iller\/([^/]+)\/il-geneli$/);
+    if (provinceWideMatch) {
+      url.pathname = `/iller/${provinceWideMatch[1]}/`;
+      shouldRedirect = true;
+    }
+
     if (shouldRedirect) return Response.redirect(url.toString(), 301);
 
     if (isAdminPath(url.pathname)) {

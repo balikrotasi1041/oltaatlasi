@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-18",
+  "basis": "Google Search Console 2026-09-18 coverage + performance, GA4 2026-08-19..2026-09-16, Cloudflare 2026-09-15..2026-09-16",
+  "qualityWork": {
+    "dailyQualityPromotionsTarget": 17,
+    "dailyNewRoutesTarget": 3,
+    "qualityMustNotBeLoweredForQuota": true
+  },
+  "indexRelease": {
+    "decoupledFromConfidence": true,
+    "routeField": "indexing",
+    "holdValue": "hold",
+    "releaseValue": "index",
+    "snapshot": {
+      "discoveredCurrentlyNotIndexed": 211,
+      "crawledCurrentlyNotIndexed": 5,
+      "processableQueue": 216
+    },
+    "bands": [
+      {"max": 75, "mode": "normal"},
+      {"min": 76, "max": 150, "mode": "cautious"},
+      {"min": 151, "max": 250, "mode": "throttle", "maxDailyCPlusIndexReleases": 5},
+      {"min": 251, "mode": "strong-throttle", "maxDailyCPlusIndexReleases": 3}
+    ],
+    "currentMode": "throttle",
+    "currentMaxDailyCPlusIndexReleases": 5,
+    "rule": "D→C+ kalite yükseltmesi ile index açılışı aynı işlem değildir. Kuyruk 151-250 aralığındayken en fazla 5 C+ rota/gün indexe salınır; diğer yeni C+ kayıtlar indexing=hold ile noindex,follow kalır."
+  },
+  "legacyNoindex": {
+    "rule": "Arama talebi veya geçmiş performansı olan noindex URL önce replacement denetiminden geçer.",
+    "ifEquivalentReplacementExists": "301",
+    "ifNoReplacementAndQualityAtLeastCPlus": "index",
+    "otherwise": "noindex-follow"
+  },
+  "ctr": {
+    "bulkTitleTemplatesForbidden": true,
+    "controlledPagesPerWeekMin": 3,
+    "controlledPagesPerWeekMax": 5,
+    "priority": "high impressions + low CTR + average position 3-15"
+  },
+  "crawlHygiene": {
+    "contactCanonicalPath": "/iletisim/",
+    "staticContactQueryLinksForbidden": true,
+    "legacyProvinceWidePattern": "/iller/{province}/il-geneli/",
+    "legacyProvinceWideAction": "301-to-province-hub"
+  },
+  "mobile": {
+    "primary": true,
+    "testWidths": [390, 393, 414, 430],
+    "iosSafariRequired": true
+  },
+  "weather": {
+    "apiPath": "/api/weather",
+    "noindex": true,
+    "cacheRequired": true,
+    "staleFallbackPreferred": true,
+    "mgmOfficialWarningsOverrideDerivedScore": true,
+    "doNotChangeAllRouteLastmodsForWeather": true
+  },
+  "measurement": {
+    "keyEventCandidates": ["map_location_click", "directions_click", "route_open", "feedback_positive"]
+  }
+}
