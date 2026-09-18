@@ -7,6 +7,7 @@ export type Mera = {
   vehicleAccess: "Kolay" | "Orta" | "Zor" | "Kontrol edilmeli"; amenities: string[]; cautions: string[];
   lat: number; lng: number; locationPrecision: "Yaklaşık" | "Genel bölge" | "Tam";
   verification: string; updatedAt: string; publishedAt: string; confidence: "A" | "B" | "C" | "D";
+  indexing?: "hold" | "index";
   image: string; socialImage: string; navigationNote: string; shoreProfile:string;
   transport:string; crowdNote:string; longIntro:string[]; planningNotes:string[]; seasonalNotes:string[];
   sources: SourceLink[];
