@@ -5,7 +5,7 @@ import { slugifyTr } from "../src/utils/slug.ts";
 const noindexPaths=new Set();
 
 for(const route of meralar){
-  if(route.confidence==="D") noindexPaths.add(`/meralar/${route.slug}/`);
+  if(route.confidence==="D"||route.indexing==="hold") noindexPaths.add(`/meralar/${route.slug}/`);
 }
 
 for(const province of [...new Set(meralar.map((route)=>route.province))]){
@@ -13,7 +13,7 @@ for(const province of [...new Set(meralar.map((route)=>route.province))]){
   for(const district of [...new Set(provinceRoutes.map((route)=>route.district))]){
     const districtRoutes=provinceRoutes.filter((route)=>route.district===district);
     if(districtRoutes.length<2) continue;
-    const verifiedCount=districtRoutes.filter((route)=>route.confidence!=="D").length;
+    const verifiedCount=districtRoutes.filter((route)=>route.confidence!=="D"&&route.indexing!=="hold").length;
     if(district==="İl geneli"||verifiedCount<2){
       noindexPaths.add(`/iller/${slugifyTr(province)}/${slugifyTr(district)}/`);
     }
