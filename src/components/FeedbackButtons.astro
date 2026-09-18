@@ -1,7 +1,7 @@
 ---
 import SeoOpportunityPanel from "./SeoOpportunityPanel.astro";
 const { title, contentKey, path } = Astro.props as { title: string; contentKey: string; path: string };
-const reportUrl = `/iletisim/?sayfa=${encodeURIComponent(title)}&url=${encodeURIComponent(path)}`;
+const reportUrl = "/iletisim/";
 const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
 ---
 <section class="feedback-panel" data-feedback data-feedback-key={contentKey}>
@@ -13,7 +13,7 @@ const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
   <div class="feedback-actions" role="group" aria-label="İçerik geri bildirimi">
     <button class="feedback-button" type="button" data-vote="like" aria-pressed="false"><span aria-hidden="true">👍</span> Beğendim</button>
     <button class="feedback-button" type="button" data-vote="dislike" aria-pressed="false"><span aria-hidden="true">👎</span> Beğenmedim</button>
-    <a class="button button-ghost button-small" href={reportUrl}>Hata bildir</a>
+    <a class="button button-ghost button-small" href={reportUrl} data-report-link data-report-page={title} data-report-path={path}>Hata bildir</a>
   </div>
   <p class="feedback-status" data-feedback-status aria-live="polite"></p>
 </section>
@@ -86,6 +86,18 @@ const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
 
       if (target.closest(".related-fish-grid") && sameOriginPath.startsWith("/baliklar/")) {
         trackMeraEvent("fish_species_click", { target_path: sameOriginPath });
+        return;
+      }
+
+      if (target.matches("[data-report-link]")) {
+        event.preventDefault();
+        const reportUrl = new URL("/iletisim/", window.location.origin);
+        const reportPage = target.dataset.reportPage || document.title;
+        const reportPath = target.dataset.reportPath || window.location.pathname;
+        if (reportPage) reportUrl.searchParams.set("sayfa", reportPage);
+        if (reportPath) reportUrl.searchParams.set("url", reportPath);
+        trackMeraEvent("report_issue_click", { content_type: "mera" });
+        window.location.assign(reportUrl.toString());
         return;
       }
 
