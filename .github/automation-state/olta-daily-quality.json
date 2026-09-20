@@ -17,8 +17,30 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": true,
-    "dCandidatesReviewedStage1": 0,
-    "reviewedDSlugs": [],
+    "dCandidatesReviewedStage1": 21,
+    "reviewedDSlugs": [
+      "ulusal-amasya-destek-baraj-golu",
+      "ulusal-aksaray-ciftevi-baraj-golu",
+      "ulusal-erzincan-karasu-nehri-erzincan-hatti",
+      "ulusal-ardahan-kura-nehri-ardahan-hatti",
+      "ulusal-kastamonu-cigdem-baraj-golu-kastamonu",
+      "ulusal-zonguldak-filyos-nehri-zonguldak-hatti",
+      "ulusal-erzurum-kapikaya-baraj-golu-erzurum",
+      "ulusal-cankiri-karadere-baraj-golu-cankiri",
+      "ulusal-erzincan-firat-nehri-kemaliye-hatti",
+      "ulusal-bolu-caykoy-baraj-golu-bolu",
+      "ulusal-sivas-delice-baraj-golu-sivas",
+      "ulusal-hakkari-zap-suyu-hakkari-hatti",
+      "ulusal-bayburt-lori-deresi",
+      "ankara-500km-adiyaman-ataturk-baraj-golu",
+      "ankara-500km-adiyaman-karahuyuk-goleti",
+      "ankara-500km-adiyaman-sirimtas-baraj-golu",
+      "ankara-500km-adiyaman-cataltepe-goleti",
+      "ulusal-erzurum-demirdoven-baraj-golu",
+      "ulusal-erzurum-kuzgun-baraj-golu",
+      "ulusal-erzurum-koycegiz-baraj-golu-erzurum",
+      "ulusal-erzurum-olur-baraj-golu"
+    ],
     "newCandidatesReviewedStage1": {"Ege": 8, "Marmara": 13},
     "newCandidateNotes": [
       "Ege/Muğla: Akköprü Baraj Gölü — resmi balıklandırma kaydı bulunan güçlü aday; duplicate ve koruma/erişim taraması gerekli.",
@@ -47,7 +69,8 @@
       "20.09.2026 exportu fırsat sıralamasında Yamula Barajı, Sarımsaklı Barajı, Şeyhli Göleti, Kayalı Barajı, Kirazlıyalı Sahili ve Kavaklı Sahili yüksek gösterim/düşük CTR sinyali veriyor; bunlar güncel confidence D doğrulanmadan D→C+ kotasına sayılmayacak.",
       "Coverage exportunda discovered-currently-not-indexed 211 olduğundan mevcut indeks salım freni korunacak; kalite yükseltmesi ile index promotion birbirinden ayrılacak."
     ],
-    "notes": "20.09.2026 döngüsü branch üzerinde kalıcı olarak başlatıldı. Güncel main 800d72afa9bfea27ff3cfd14f41c9cea5e9f0875. audit-confidence-debt.mjs aktif veri kümesindeki tüm D kayıtlarını D-ROUTE olarak üretmek üzere doğrulandı. Ancak 20.09 scheduled Quality check aynı main SHA daha önce doğrulandığı için Node/install/build/dry-deploy adımlarını skip etti ve güncel D-ROUTE çıktısı üretmedi. Branch için de workflow run yok. Bu nedenle tarihsel D listeleri bugünün 25 gerçek D taraması diye sayılmadı. Search Console fırsat verisi işlendi; 8 Ege + 13 Marmara yeni aday alt eşiği korunuyor. Stage 1, güncel birleşik D havuzundan en az 25 kayıt doğrulanana kadar tamamlanmış değildir."
+    "notes": "20.09.2026 Stage 1 devamı: aktif veri zincirinde geçmişte D olarak açıkça doğrulanmış 21 benzersiz rota kaynak dosyalarından yeniden tarandı. 20 Ağustos günlük bakım dosyası 17 hedefin o noktada D olduğunu assertion ile doğruluyor; 21 Ağustos stabilizasyonu dört ek Erzurum rotasını D havuzunda doğruluyor. Ancak daha sonraki kalite katmanları bu kayıtların bir bölümünü yükseltmiş olabilir; bu nedenle 21 kayıt Stage 2 kotasına otomatik aday/yükseltme olarak sayılmayacak ve Stage 1 tamamlanmış değildir. audit-confidence-debt.mjs güncel birleşik veri üzerinde tüm D-ROUTE satırlarını üretir, fakat bu connector koşusunda betiği çalıştıran yeni workflow çıktısı yok. En az 4 ek güncel D doğrulanmadan 25 eşiği tamamlanmış sayılmayacak.",
+    "currentConfidenceCaveat": "21 kayıt tarihsel D assertionlarıyla tarandı; güncel birleşik confidence sonucu ayrıca doğrulanmalıdır."
   },
   "stage2": {"status":"pending","targetPromotions":17,"promotedCount":0,"promotedSlugs":[]},
   "stage3": {"status":"pending","targetNewCPlus":3,"newCPlusCount":0,"newSlugs":[],"mgmAudit":{"status":"pending","performedOnceToday":false}},
