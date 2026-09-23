@@ -1,11 +1,22 @@
 {
-  "version": 1,
-  "updatedAt": "2026-09-18",
-  "basis": "Google Search Console 2026-09-18 coverage + performance, GA4 2026-08-19..2026-09-16, Cloudflare 2026-09-15..2026-09-16",
+  "version": 2,
+  "updatedAt": "2026-09-23",
+  "basis": "Google Search Console 2026-09-20 + Cloudflare 2026-09-13..2026-09-20 + user quality directive 2026-09-23",
   "qualityWork": {
     "dailyQualityPromotionsTarget": 17,
-    "dailyNewRoutesTarget": 3,
-    "qualityMustNotBeLoweredForQuota": true
+    "dailyNewRoutesTarget": 2,
+    "qualityMustNotBeLoweredForQuota": true,
+    "regionalBPlusNewRoutes": {
+      "separateFromQualityPromotions": true,
+      "minimumConfidence": "B",
+      "dailyTarget": 2,
+      "distribution": {
+        "Ege": 1,
+        "Marmara": 1
+      },
+      "publishFewerIfThresholdNotMet": true,
+      "rule": "Her gün kalite yükseltmelerinden ayrı 1 Ege + 1 Marmara yeni rota hedeflenir. Her biri en az Güven B olmalı; kanıt, erişim veya mevzuat eşiği karşılanmazsa sayı doldurulmaz."
+    }
   },
   "indexRelease": {
     "decoupledFromConfidence": true,
@@ -18,14 +29,30 @@
       "processableQueue": 216
     },
     "bands": [
-      {"max": 75, "mode": "normal"},
-      {"min": 76, "max": 150, "mode": "cautious"},
-      {"min": 151, "max": 250, "mode": "throttle", "maxDailyCPlusIndexReleases": 5},
-      {"min": 251, "mode": "strong-throttle", "maxDailyCPlusIndexReleases": 3}
+      {
+        "max": 75,
+        "mode": "normal"
+      },
+      {
+        "min": 76,
+        "max": 150,
+        "mode": "cautious"
+      },
+      {
+        "min": 151,
+        "max": 250,
+        "mode": "throttle",
+        "maxDailyCPlusIndexReleases": 5
+      },
+      {
+        "min": 251,
+        "mode": "strong-throttle",
+        "maxDailyCPlusIndexReleases": 3
+      }
     ],
     "currentMode": "throttle",
     "currentMaxDailyCPlusIndexReleases": 5,
-    "rule": "D→C+ kalite yükseltmesi ile index açılışı aynı işlem değildir. Kuyruk 151-250 aralığındayken en fazla 5 C+ rota/gün indexe salınır; diğer yeni C+ kayıtlar indexing=hold ile noindex,follow kalır."
+    "rule": "Günlük en az 17 gerçek D→C/B/A kalite yükseltmesi hedeflenir; kalite yükseltmesi ile index açılışı aynı işlem değildir. Bir günde en fazla 5 D/noindex→C+/index salımı yapılır. Diğer gerçekten C+ kayıtlar indexing=hold ile noindex,follow bekleyebilir. Bölgesel yeni B+ rotalar bu 17 yükseltmeden ayrı tutulur."
   },
   "legacyNoindex": {
     "rule": "Arama talebi veya geçmiş performansı olan noindex URL önce replacement denetiminden geçer.",
@@ -47,7 +74,12 @@
   },
   "mobile": {
     "primary": true,
-    "testWidths": [390, 393, 414, 430],
+    "testWidths": [
+      390,
+      393,
+      414,
+      430
+    ],
     "iosSafariRequired": true
   },
   "weather": {
@@ -59,6 +91,11 @@
     "doNotChangeAllRouteLastmodsForWeather": true
   },
   "measurement": {
-    "keyEventCandidates": ["map_location_click", "directions_click", "route_open", "feedback_positive"]
+    "keyEventCandidates": [
+      "map_location_click",
+      "directions_click",
+      "route_open",
+      "feedback_positive"
+    ]
   }
 }
