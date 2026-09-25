@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-23",
+  "updatedAt": "2026-09-25",
   "basis": "Google Search Console 2026-09-20 + Cloudflare 2026-09-13..2026-09-20 + user quality directive 2026-09-23",
   "qualityWork": {
     "dailyQualityPromotionsTarget": 17,
@@ -97,5 +97,15 @@
       "route_open",
       "feedback_positive"
     ]
-  }
+  },
+  "manualIndexReleaseExceptions": [
+    {
+      "date": "2026-09-25",
+      "scope": "5 İstanbul + 5 Kocaeli yeni C+ rota",
+      "requestedIndexReleases": 10,
+      "noindexAllowed": false,
+      "oneTime": true,
+      "reason": "Kullanıcının 25 Eylül 2026 tarihli açık manuel talebi. Günlük kalıcı max-5 salım politikası değişmez; bu yalnız bugünkü manuel batch için istisnadır."
+    }
+  ]
 }

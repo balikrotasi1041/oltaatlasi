@@ -18,6 +18,7 @@ import { yeniMeralar20260818 } from "./meralar-gunluk-yeni-2026-08-18";
 import { applyGunlukSonuc20260818 } from "./meralar-gunluk-sonuc-2026-08-18";
 import { yeniMeralar20260901 } from "./meralar-gunluk-yeni-2026-09-01";
 import { yeniRegionalBPlus20260923, regionalBPlusStats20260923 } from "./meralar-regional-bplus-2026-09-23";
+import { yeniIstanbulKocaeli20260925, istanbulKocaeliBatchStats20260925 } from "./meralar-istanbul-kocaeli-2026-09-25";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -169,6 +170,11 @@ for(const route of yeniRegionalBPlus20260923){
   routeMap.set(route.slug,route);
 }
 if(regionalBPlusStats20260923.total!==2||regionalBPlusStats20260923.ege!==1||regionalBPlusStats20260923.marmara!==1)throw new Error(`23 Eylül bölgesel B+ dağılımı bozuk: ${JSON.stringify(regionalBPlusStats20260923)}`);
+for(const route of yeniIstanbulKocaeli20260925){
+  if(routeMap.has(route.slug))throw new Error(`25 Eylül İstanbul/Kocaeli rotası mevcut slug ile çakışıyor: ${route.slug}`);
+  routeMap.set(route.slug,route);
+}
+if(istanbulKocaeliBatchStats20260925.total!==10||istanbulKocaeliBatchStats20260925.istanbul!==5||istanbulKocaeliBatchStats20260925.kocaeli!==5)throw new Error(`25 Eylül İstanbul/Kocaeli dağılımı bozuk: ${JSON.stringify(istanbulKocaeliBatchStats20260925)}`);
 
 const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
@@ -187,6 +193,9 @@ if(publishedToday0901.length!==3)throw new Error(`1 Eylül günlük yeni kayıt 
 const publishedToday0923=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-09-23");
 if(publishedToday0923.length!==2)throw new Error(`23 Eylül bölgesel yeni kayıt hedefi 2 olmalı: ${publishedToday0923.length}`);
 if(publishedToday0923.some((route)=>!["A","B"].includes(route.confidence)))throw new Error("23 Eylül yeni rotaları B+ olmalı.");
+const publishedToday0925=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-09-25");
+if(publishedToday0925.length!==10)throw new Error(`25 Eylül manuel İstanbul/Kocaeli batch hedefi 10 olmalı: ${publishedToday0925.length}`);
+if(publishedToday0925.some((route)=>route.confidence==="D"||route.indexing==="hold"))throw new Error("25 Eylül manuel batch rotalarının tamamı C+ ve indexlenebilir olmalı.");
 
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];

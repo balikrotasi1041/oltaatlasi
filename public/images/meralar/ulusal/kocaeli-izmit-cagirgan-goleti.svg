@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 640" role="img" aria-labelledby="t d">
+<title id="t">Çağırgan Göleti</title><desc id="d">İzmit • Kocaeli için Olta Atlası özgün rota görseli. Harita ekran görüntüsü değildir.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f4ef"/><stop offset="1" stop-color="#d7e7f2"/></linearGradient></defs>
+<rect width="1024" height="640" rx="42" fill="url(#g)"/>
+<path d="M 90 410 C 240 290, 370 520, 520 390 S 760 260, 930 400" fill="none" stroke="#2d5f66" stroke-width="18" stroke-linecap="round"/>
+<path d="M 90 410 C 240 290, 370 520, 520 390 S 760 260, 930 400" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+<circle cx="520" cy="370" r="18" fill="#173f49"/><circle cx="520" cy="370" r="7" fill="#ffffff"/>
+<g fill="#173f49" font-family="system-ui, sans-serif"><text x="72" y="92" font-size="42" font-weight="700">Çağırgan Göleti</text><text x="72" y="136" font-size="24">İzmit • Kocaeli</text><text x="72" y="574" font-size="20">40.9072 • 29.9614 • Genel planlama görseli</text></g>
+<path d="M820 90c42 0 76 26 76 58 0 38-45 66-94 46-16-7-29-18-36-31 11 2 23 0 31-7-17-8-27-22-27-37 0-16 19-29 50-29z" fill="#7ea7aa" opacity=".75"/>
+</svg>
