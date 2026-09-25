@@ -151,7 +151,7 @@ export const yeniIstanbulKocaeli20260925:EnrichedMera[]=[
 {
   ...base,slug:"kocaeli-korfez-sipahiler-goleti",name:"Sipahiler Göleti",district:"Körfez",province:"Kocaeli",zone:"Sipahiler genel bölgesi",waterType:"Gölet",region:"Marmara",
   summary:"Sipahiler Göleti, 2025 resmî balıklandırması, KBB tarımsal sulama göleti envanteri ve Kocaeli tabiat turizmi planıyla doğrulanan Güven C Körfez içsu rotasıdır.",
-  amenities:["Sipahiler Mahallesi genel yaklaşım referansı","Körfez/İzmit temel ihtiyaç seçenekleri"],cautions:["Sulama göleti teknik yapılarına yaklaşma.","Dar kırsal yollarda araç bırakma.","Özel/tarımsal parsellere izinsiz girme.","Sazan balıklandırması av garantisi değildir."],
+  amenities:["Sipahiler Mahallesi genel yaklaşım referansı","Körfez ilçe merkezi ve İzmit temel ihtiyaç seçenekleri"],cautions:["Sulama göleti teknik yapılarına yaklaşma.","Dar kırsal yollarda araç bırakma.","Özel/tarımsal parsellere izinsiz girme.","Sazan balıklandırması av garantisi değildir."],
   lat:40.8712,lng:29.79598,locationPrecision:"Genel bölge",verification:"2026-09-25 masa başı doğrulaması: Kocaeli İl Tarım 2025 balıklandırması + KBB sulama göleti envanteri + tabiat turizmi envanteri + açık harita su varlığı eşleşmesi. Güven C.",updatedAt:date,publishedAt:date,confidence:"C",
   image:"/images/meralar/ulusal/kocaeli-korfez-sipahiler-goleti.svg",socialImage:"/images/meralar/ulusal/kocaeli-korfez-sipahiler-goleti.svg",
   navigationNote:"Pin göletin genel su varlığı konumudur; park veya kıyı giriş hakkı değildir. Son yaklaşımda özel parsel, sulama tesisi ve yol açıklığı kontrol edilmelidir.",
