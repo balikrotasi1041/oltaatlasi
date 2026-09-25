@@ -1,0 +1,25 @@
+import type { EnrichedMera, ConfidenceProfile, ResearchSource, FishEvidence, AccessEvidence } from "./meralar-tumu-core";
+
+const date="2026-09-25";
+const s=(label:string,url:string,note:string):ResearchSource=>({label,url,note});
+const brif=s("Manisa İl Tarım ve Orman Müdürlüğü - 2023 Brifingi","https://manisa.tarimorman.gov.tr/Belgeler/Brifing%202023/Brifing2023.pdf","Sevişler Baraj Gölünü Soma/Sevişler'de tanımlar ve su ürünleri avlak sahasının amatör balıkçı sahası olarak değerlendirildiğini kaydeder.");
+const levha=s("Manisa İl Tarım ve Orman Müdürlüğü - Su Ürünleri Avcılığında Farkındalık Çalışması","https://manisa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=d59be594-0585-4d66-8a17-00217dd913d6&TermSetId=51c21c3c-cdd9-4e02-8fb2-bd268f69bdcc&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=898%2FSu-Urunleri-Avciliginda-Farkindalik-Calismasi","19 Aralık 2024 resmî çalışması Sevişler Barajına üç bilgilendirme levhası yerleştirildiğini ve alanın yoğun kullanılan içsular arasında olduğunu kaydeder.");
+const stock=s("Soma İlçe Tarım ve Orman Müdürlüğü - 2026 balıklandırma saha kaydı (İHA aktarımı)","https://yerel-haberler.haberturk.com/manisa-haberleri/somada-baraj-ve-goletlere-250-bin-yavru-sazan-birakildi-119101411","13 Ağustos 2026 saha haberi Sevişler Barajı başta olmak üzere Soma içsularına pullu sazan yavrusu bırakıldığını aktarır; ikincil kaynaktır.");
+const teblig=s("Tarım ve Orman Bakanlığı - 6/2 amatör balıkçılık mevzuatı","https://www.tarimorman.gov.tr/BSGM/Haber/332/Su-Urunleri-Avciligini-Duzenleyen-Ticari-Ve-Amator-Tebliglerde-Yapilan-Onemli-Degisiklikler-Resmi-Gazetede-Yayimlanarak-Yururluge-Girdi","Güncel genel mevzuat çerçevesidir; rota özelindeki kullanım kanıtının yerine geçmez.");
+const fishEvidence:FishEvidence={name:"Sazan",scientificName:"Cyprinus carpio",evidenceLevel:"Güçlü olasılık · 2026 rota-özel balıklandırma",sourceLabel:stock.label,sourceUrl:stock.url,note:"2026 kaydı Sevişler Barajını özellikle adlandırır; av garantisi değildir.",recordCount:null,distanceKm:null};
+const accessEvidence:AccessEvidence={label:"Resmî amatör kullanım",value:"Sevişler Barajı amatör balıkçı sahası",sourceUrl:brif.url,note:"Belirli kıyı cebinin veya işletme çevresinin kamusal erişime açık olduğu anlamına gelmez."};
+const profile:ConfidenceProfile={model:"evidence-v1",overall:"B",identity:{level:"strong",label:"Resmî rota kimliği",note:"İl Tarım brifingi rota kimliğini doğrular."},legal:{level:"strong",label:"Resmî amatör kullanım",note:"2023 brifingi ve 2024 levha çalışması rota düzeyinde amatör kullanım bağlamını destekler."},access:{level:"partial",label:"Genel kullanım bağlamı",note:"Son park, özel parsel, yetiştiricilik ve teknik tesis sınırı saha teyitli değildir."},species:{level:"strong",label:"Rota özelinde sazan",note:"2026 balıklandırma kaydı sazan olasılığını destekler; av garantisi değildir."},field:{level:"unverified",label:"Saha doğrulaması yok",note:"Güncel kıyı koşulları yerinde kontrol edilmelidir."},reviewedAt:date};
+
+export const kaliteYukseltmeleri20260925=[{slug:"ulusal-manisa-sevisler-baraj-golu",patch:{
+  fish:["Sazan"],confidence:"B" as const,indexing:"index" as const,researchedAt:date,updatedAt:date,
+  summary:"Sevişler Baraj Gölü, resmî amatör kullanım kaydı, güncel bilgilendirme levhaları ve 2026 sazan balıklandırmasıyla çaprazlanan Güven B planlama rotasıdır.",
+  verification:"25 Eylül 2026: resmî amatör kullanım, 2024 bilgilendirme çalışması ve 2026 sazan balıklandırması çaprazlandı. Mikro kıyı ve işletme alanları saha teyitli değildir.",
+  researchStatus:"Rota özelinde resmî amatör kullanım + güncel bilgilendirme + sazan balıklandırması çaprazlandı.",
+  researchSummary:"Sevişler Barajı resmî amatör kullanım bağlamına sahiptir; sazan olasılığı 2026 balıklandırmasıyla güçlenmiştir. Yetiştiricilik ve teknik alanlar rota dışıdır.",
+  transport:"Soma ilçe merkezi ile Sevişler yerleşimi genel yaklaşım koridorudur. Pin genel su gövdesini gösterir; son kıyı yolu, park, özel parsel, yetiştiricilik ve teknik tesis sınırı yerinde doğrulanmalıdır.",
+  shoreProfile:"Sevişler Baraj Gölünde su kotu değişebilir. Yetiştiricilik sahaları, baraj gövdesi ve teknik tesisler dışlanarak yalnız stabil ve kamusal olduğu sahada görülen genel kıyılar değerlendirilmelidir.",
+  cautions:["Yetiştiricilik ve teknik işletme alanları rota dışıdır.","Resmî kullanım kaydı belirli kıyı cebine giriş hakkı vermez.","2026 balıklandırması av garantisi değildir; güncel mevzuat ve saha tabelaları uygulanır."],
+  planningNotes:["İlk ziyareti gündüz yap ve yalnız kamusal olduğu açıkça görülen kıyıları değerlendir.","Yetiştiricilik ve teknik işletme alanlarını rota dışında bırak.","Hareket günü Manisa İl Tarım duyuruları ile güncel 6/2 kurallarını kontrol et."],
+  sources:[brif,levha,stock,teblig],fishEvidence:[fishEvidence],accessEvidence:[accessEvidence],navigationVerified:false,confidenceProfile:profile,
+}}] as const;
+export const kaliteYukseltmeStats20260925={target:17,completed:1,indexReleased:1,hold:0};
