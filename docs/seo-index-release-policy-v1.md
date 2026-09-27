@@ -65,3 +65,7 @@ Davranış kalitesini izlemek için öncelikli GA4 olayları:
 - `feedback_positive`
 
 GA4 tarafında Key Event işaretlemesi hesap/yönetim düzeyinde ayrıca yapılmalıdır.
+
+## 27 Eylül 2026 uygulama eki
+
+Kalite ve salım ayrı günlük sayaçlardır: en az 17 kanıtlı kalite yükseltmesi hedeflenir; hedef bir confidence kotası değildir. Günlük D/noindex → C+/index tavanı 5, mevcut 219 discovered / 24 crawled-not-indexed verisinde operasyonel tavan 3 (hedef 2–3) uygulanır. Repo/GSC daha düşük sınır belirlerse en küçüğü geçerlidir. Önceki aynı gün salımları dahil edilir. Daha yüksek kaliteye ulaşmış ancak salınmayan kayıt `indexing=hold` ve `noindex,follow` kalır. Günlük başlangıç snapshot'ı değiştirilmeden gerçek veri farkı kontrol edilir; yeni gün için yeni tarihli snapshot ve ledger açılır. Kanıt ailelerinin bağımsızlığı editoryal inceleme gerektirir; URL adedi yeterli değildir. Hedef eksikliği `done=false` ve açık eksik sayı ile raporlanır. Yeni Ege/Marmara kayıtları ancak B/A ve güvenli genel kullanım kanıtıyla açılır.

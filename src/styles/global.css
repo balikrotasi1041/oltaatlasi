@@ -459,3 +459,14 @@ h3 { font-size: 1.3rem; }
 .zone-columns{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.zone-columns>div{padding:22px;border:1px solid var(--line);border-radius:16px;background:white}.zone-columns ul{columns:2}.pill-link{text-decoration:none}.v4-filters{grid-template-columns:repeat(6,minmax(0,1fr))}
 @media(max-width:1050px){.v4-filters{grid-template-columns:repeat(3,1fr)}.district-link-grid{grid-template-columns:repeat(2,1fr)}.city-summary-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.breadcrumb,.on-page-nav{display:flex!important}.on-page-nav{align-items:flex-start}.city-entry-grid,.province-grid,.zone-columns,.three-feature-grid,.confidence-dimension-grid{grid-template-columns:1fr}.district-link-grid{grid-template-columns:1fr}.city-summary-grid{grid-template-columns:repeat(2,1fr)}.v4-filters{grid-template-columns:1fr}.sticky-card{position:static}.article-byline{gap:6px 12px}.article-prose{font-size:1rem}.source-box{padding:21px}.zone-columns ul{columns:1}}
+
+/* Compact decision facts ahead of long research notes on route pages. */
+.route-first-look{display:grid;gap:.4rem;margin:1rem 0;padding:.8rem;border:1px solid #b9d2d6;border-radius:12px;background:#f2f8f8;font-size:.9rem;line-height:1.4}
+.route-first-look>div{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:.5rem}
+.route-first-look dt{font-weight:700}.route-first-look dd{margin:0;overflow-wrap:anywhere}
+@media(min-width:900px){.route-first-look{max-width:48rem}}
+.route-first-look{color:#143740}
+.route-first-look dt{color:#42616a}
+.route-first-look a{color:#075a70;text-decoration:underline}
+.detail-content>.content-main,.detail-content>.content-aside{min-width:0;overflow-wrap:anywhere}
+.route-responsibility summary{cursor:pointer}

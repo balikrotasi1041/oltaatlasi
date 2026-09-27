@@ -1,3 +1,4 @@
+import { kaliteYukseltmeleri20260927 } from "./meralar-daily-quality-2026-09-27";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -177,6 +178,7 @@ for(const route of yeniIstanbulKocaeli20260925){
 }
 if(istanbulKocaeliBatchStats20260925.total!==10||istanbulKocaeliBatchStats20260925.istanbul!==5||istanbulKocaeliBatchStats20260925.kocaeli!==5)throw new Error(`25 Eylül İstanbul/Kocaeli dağılımı bozuk: ${JSON.stringify(istanbulKocaeliBatchStats20260925)}`);
 for(const {slug,patch} of kaliteYukseltmeleri20260926)applyPatch(slug,patch);
+for(const {slug,patch} of kaliteYukseltmeleri20260927)applyPatch(slug,patch);
 if(kaliteYukseltmeStats20260926.completed>kaliteYukseltmeStats20260926.target)throw new Error("26 Eylül kalite yükseltme sayısı hedefi aşamaz.");
 if(kaliteYukseltmeStats20260926.indexReleased>5)throw new Error("26 Eylül index salımı günlük 5 sınırını aşamaz.");
 

@@ -89,18 +89,6 @@ const isMeraDetail=/^\/meralar\/[^/]+\/?$/.test(path);
         return;
       }
 
-      if (target.matches("[data-report-link]")) {
-        event.preventDefault();
-        const reportUrl = new URL("/iletisim/", window.location.origin);
-        const reportPage = target.dataset.reportPage || document.title;
-        const reportPath = target.dataset.reportPath || window.location.pathname;
-        if (reportPage) reportUrl.searchParams.set("sayfa", reportPage);
-        if (reportPath) reportUrl.searchParams.set("url", reportPath);
-        trackMeraEvent("report_issue_click", { content_type: "mera" });
-        window.location.assign(reportUrl.toString());
-        return;
-      }
-
       if (sameOriginPath.startsWith("/iletisim/")) {
         trackMeraEvent("report_issue_click", { content_type: "mera" });
         return;
