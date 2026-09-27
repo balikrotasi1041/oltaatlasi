@@ -19,6 +19,7 @@ import { applyGunlukSonuc20260818 } from "./meralar-gunluk-sonuc-2026-08-18";
 import { yeniMeralar20260901 } from "./meralar-gunluk-yeni-2026-09-01";
 import { yeniRegionalBPlus20260923, regionalBPlusStats20260923 } from "./meralar-regional-bplus-2026-09-23";
 import { yeniIstanbulKocaeli20260925, istanbulKocaeliBatchStats20260925 } from "./meralar-istanbul-kocaeli-2026-09-25";
+import { kaliteYukseltmeleri20260926, kaliteYukseltmeStats20260926 } from "./meralar-daily-quality-2026-09-26";
 
 const routeMap=new Map<string,EnrichedMera>(coreMeralar.map((route)=>[route.slug,route]));
 const uniqueSources=(values:ResearchSource[]=[]):ResearchSource[]=>[...new Map(values.filter((source)=>source?.url&&source?.label).map((source)=>[source.url,source])).values()];
@@ -175,6 +176,9 @@ for(const route of yeniIstanbulKocaeli20260925){
   routeMap.set(route.slug,route);
 }
 if(istanbulKocaeliBatchStats20260925.total!==10||istanbulKocaeliBatchStats20260925.istanbul!==5||istanbulKocaeliBatchStats20260925.kocaeli!==5)throw new Error(`25 Eylül İstanbul/Kocaeli dağılımı bozuk: ${JSON.stringify(istanbulKocaeliBatchStats20260925)}`);
+for(const {slug,patch} of kaliteYukseltmeleri20260926)applyPatch(slug,patch);
+if(kaliteYukseltmeStats20260926.completed>kaliteYukseltmeStats20260926.target)throw new Error("26 Eylül kalite yükseltme sayısı hedefi aşamaz.");
+if(kaliteYukseltmeStats20260926.indexReleased>5)throw new Error("26 Eylül index salımı günlük 5 sınırını aşamaz.");
 
 const publishedToday11=[...routeMap.values()].filter((route)=>route.publishedAt==="2026-08-11");
 if(publishedToday11.length>10)throw new Error(`11 Ağustos günlük yeni kayıt sınırı aşıldı: ${publishedToday11.length}`);
