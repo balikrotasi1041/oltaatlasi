@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "date": "2026-09-16",
+  "date": "2026-09-27",
   "timezone": "Europe/Istanbul",
-  "stage": 1,
-  "branch": "quality-2026-09-16",
+  "stage": 2,
+  "branch": "quality/daily-2026-09-27",
   "done": false,
   "regionalMixCompletedDays": 1,
   "regionalMixTargetDays": 30,
-  "regionalMixTargetToday": {"Ege": 2, "Marmara": 1},
+  "regionalMixTargetToday": {"Ege": 1, "Marmara": 1},
   "regionalMixStage3QualifiedToday": false,
   "regionalMixCounterPendingProduction": false,
   "research": {
@@ -17,8 +17,8 @@
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": false,
-    "dCandidatesReviewedStage1": 0,
-    "reviewedDSlugs": [],
+    "dCandidatesReviewedStage1": 1154,
+    "reviewedDSlugs": ["ulusal-manisa-sevisler-baraj-golu"],
     "newCandidatesReviewedStage1": {"Ege": 8, "Marmara": 13},
     "newCandidateNotes": [
       "Ege/Muğla: Akköprü Baraj Gölü — 2025 resmi balıklandırma: 191000 sazan; güçlü aday, duplicate ve koruma/erişim taraması gerekli.",
@@ -43,9 +43,9 @@
       "Marmara/Edirne: Osmanlı Köyü Göleti — 29.08.2025 resmi sazan balıklandırması ve amatör balıkçılık amacı açıkça belirtilmiş; güçlü aday.",
       "Marmara/İstanbul: Sazlıdere Baraj Gölü — 27.08.2026 resmi sazan balıklandırması var; içme suyu/koruma ve erişim kısıtları nedeniyle yayın adayı olarak ihtiyatlı/elenebilir."
     ],
-    "notes": "Stage 1 yeni-mera tarama alt eşiği tamamlandı: 8 Ege ve 13 Marmara aday incelendi. Muğla adayları rota-özel 2025 balıklandırma kaydıyla; Manisa Kula/Sevişler 2024 İl Tarım brifingiyle; Gördes/Bağyolu/Güneşli ise 19.12.2024 İl Tarım amatör avcılık bilgilendirme çalışmasıyla destekleniyor. Bunlar doğrudan yayın onayı değildir; ikinci bağımsız kaynak, duplicate, koruma, işletme ve erişim kontrolleri Stage 3 seçiminden önce zorunludur. Güncel birleşik D havuzu için scripts/audit-confidence-debt.mjs D-ROUTE çıktısı hâlâ gerekli. 16.09.2026 09:52Z scheduled Quality gate main 5382c3d üzerinde success görünse de ağır validation adımları, aynı SHA daha önce başarılı olduğu için skip edilmiş; bu log D-ROUTE listesini üretmedi. Bu nedenle tarihsel D kayıtları güncel D diye sayılmadı ve 25 gerçek D şartı henüz tamamlanmadı."
+    "notes": "27.09.2026 güncel main ef11023 üzerinde confidence denetimi çalıştırıldı ve 1154 güncel D rota bulundu. Yalnız Sevişler Baraj Gölü, resmî amatör kullanım, rota-özel bilgilendirme levhaları ve 2026 sazan balıklandırmasıyla Güven B eşiğini karşıladı. Gördes/Bağyolu/Güneşli için rota-özel tür kanıtı; Akköprü/Kozağaç/Akçadere için kamusal amatör kullanım ve ikinci bağımsız kaynak; İstanbul adaylarında güvenli kamusal mikro erişim eşiği tamamlanmadığından sayı doldurulmadı. 26 Eylül yerel yaması tüm kapıları geçti; GitHub kimlik bilgisi olmadığı için bağlanamamıştı ve 27 Eylül GitHub branchine taşındı."
   },
-  "stage2": {"status":"pending","targetPromotions":17,"promotedCount":0,"promotedSlugs":[]},
-  "stage3": {"status":"pending","targetNewCPlus":3,"newCPlusCount":0,"newSlugs":[],"mgmAudit":{"status":"pending","performedOnceToday":false}},
-  "publication": {"ctrTechnicalReview":"pending","ci":"pending","pr":"pending","merge":"pending","deploy":"pending","productionVerified":false}
+  "stage2": {"status":"partial","targetPromotions":17,"promotedCount":1,"promotedSlugs":["ulusal-manisa-sevisler-baraj-golu"],"indexReleasedSlugs":["ulusal-manisa-sevisler-baraj-golu"],"holdSlugs":[]},
+  "stage3": {"status":"insufficient-evidence","targetNewCPlus":2,"newCPlusCount":0,"newSlugs":[],"mgmAudit":{"status":"not-required","performedOnceToday":false}},
+  "publication": {"ctrTechnicalReview":"not-required","ci":"local-passed","pr":"pending","merge":"pending","deploy":"pending","productionVerified":false}
 }
