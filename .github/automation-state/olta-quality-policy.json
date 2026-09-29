@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-25",
+  "updatedAt": "2026-09-29",
   "basis": "Google Search Console 2026-09-20 + Cloudflare 2026-09-13..2026-09-20 + user quality directive 2026-09-23",
   "qualityWork": {
     "dailyQualityPromotionsTarget": 17,
@@ -106,6 +106,14 @@
       "noindexAllowed": false,
       "oneTime": true,
       "reason": "Kullanıcının 25 Eylül 2026 tarihli açık manuel talebi. Günlük kalıcı max-5 salım politikası değişmez; bu yalnız bugünkü manuel batch için istisnadır."
+    },
+    {
+      "date": "2026-09-29",
+      "scope": "3 İstanbul + 3 Ankara + 1 İzmir yeni C+ rota",
+      "requestedIndexReleases": 7,
+      "noindexAllowed": false,
+      "oneTime": true,
+      "reason": "Kullanıcının 29 Eylül 2026 tarihli açık manuel talebi. Kalıcı günlük D/noindex→C+/index max-5 salım politikası değişmez; bu 7 kayıt yeni rota ve bu manuel batch için tek seferlik index istisnasıdır."
     }
   ]
 }
