@@ -183,9 +183,9 @@ const websiteSchema = {
     {isMeraDetail && (
       <aside aria-label="Bilgilendirme ve sorumluluk" style="background:#fff5ed;border-bottom:1px solid #f0cfb8;">
         <div class="container" style="padding-block:18px;">
-          <strong>Bilgilendirme ve sorumluluk:</strong>
+          <details class="route-responsibility"><summary><strong>Bilgilendirme ve sorumluluk</strong> · Güncel erişim ve av kurallarını kontrol et</summary>
           <span> Bu rota bilgileri kamuya açık kaynaklardan derlenmiş, tavsiye niteliğinde bilgilerdir. Fiziki koşullar, coğrafi kısıtlar, özel mülkiyet, koruma alanları, geçici kapatmalar ve hukuki yasaklar değişebilir. Yola çıkmadan önce güncel resmî kaynakları ve saha koşullarını ayrıca kontrol edin. Belirtilen konuma gitme, alana giriş ve avlanma kararı kullanıcının kendi değerlendirmesi ve sorumluluğundadır. Olta Atlası erişim veya av yapılabilirliği garanti etmez. </span>
-          <a href="/sorumluluk-ve-kullanim/" style="font-weight:800;">Ayrıntılı açıklama</a>
+          <a href="/sorumluluk-ve-kullanim/" style="font-weight:800;">Ayrıntılı açıklama</a></details>
         </div>
       </aside>
     )}
@@ -200,6 +200,9 @@ const websiteSchema = {
       <div class="container footer-bottom">© {new Date().getFullYear()} Olta Atlası · Rota seçimi, alana giriş ve avlanma kullanıcının kendi sorumluluğundadır · Doğayı bulduğundan temiz bırak.</div>
     </footer>
     <aside class="consent-banner" id="consent-banner" hidden aria-label="Analitik tercihleri" aria-live="polite"><div><strong>Analitik tercihi</strong><p>Siteyi geliştirmek için Google Analytics ve Yandex.Metrica kullanıyoruz. İzin vermeden analitik etiketleri yüklenmez. Harita açıldığında OpenStreetMap karo sunucularına bağlantı kurulur.</p><a href="/gizlilik/">Ayrıntıları oku</a></div><div class="consent-actions"><button class="button button-small" id="consent-accept" type="button">Analitiğe izin ver</button><button class="button button-small button-ghost consent-reject" id="consent-reject" type="button">Yalnızca gerekli</button></div></aside>
+    <script>
+      import "../scripts/contact-links";
+    </script>
     <script is:inline>
       const toggle = document.querySelector(".menu-toggle");
       const navigation = document.querySelector("#main-navigation");
