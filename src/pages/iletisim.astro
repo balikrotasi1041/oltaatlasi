@@ -27,7 +27,7 @@ const contactEmail = "balikrotasi1041@gmail.com";
         <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
       </div>
 
-      <form class="report-form contact-form" id="contact-form">
+      <form class="report-form contact-form" id="contact-form" method="post" action="/iletisim/">
         <label>
           <span>Bildirim türü</span>
           <select name="type" required>
@@ -37,6 +37,8 @@ const contactEmail = "balikrotasi1041@gmail.com";
             <option value="Yasak / mevzuat güncellemesi">Yasak / mevzuat güncellemesi</option>
             <option value="Görsel sorunu">Görsel sorunu</option>
             <option value="Teknik sorun">Teknik sorun</option>
+            <option value="Telif ve içerik kaldırma talebi">Telif ve içerik kaldırma talebi</option>
+            <option value="Gizlilik ve veri talebi">Gizlilik ve veri talebi</option>
             <option value="Diğer">Diğer</option>
           </select>
         </label>
@@ -69,10 +71,11 @@ const contactEmail = "balikrotasi1041@gmail.com";
         </label>
 
         <div class="form-submit-row">
-          <button class="button" type="submit">E-posta taslağını oluştur</button>
+          <button class="button" type="submit" disabled>E-posta taslağını oluştur</button>
           <p class="form-submit-note">Gönderim, cihazındaki e-posta uygulamasından tamamlanır.</p>
         </div>
       </form>
+      <noscript>Form için JavaScript gerekir. Yukarıdaki doğrudan e-posta bağlantısını kullanabilirsin.</noscript>
 
       <div class="report-output" id="mail-preview" hidden aria-live="polite">
         <h2>Taslak hazırlandı</h2>
@@ -106,7 +109,12 @@ const contactEmail = "balikrotasi1041@gmail.com";
     const form = document.querySelector("#contact-form");
     const pageInput = form?.querySelector('[name="page"]');
     const urlInput = form?.querySelector('[name="url"]');
-    const params = new URLSearchParams(window.location.search);
+    // Legacy query links still prefill; new links use fragments only.
+    const params = new URLSearchParams(window.location.hash.slice(1) || window.location.search);
+    const typeInput = form?.querySelector('[name="type"]');
+    const topic = params.get("konu")?.replace("Konum veya navigasyon hatası", "Konum / navigasyon hatası");
+    if (typeInput && [...typeInput.options].some(option => option.value === topic)) typeInput.value = topic;
+    form?.querySelector('[type="submit"]')?.removeAttribute("disabled");
     const trackReportEvent = (name, eventParams = {}) => {
       if (typeof window.gtag === "function") window.gtag("event", name, eventParams);
     };

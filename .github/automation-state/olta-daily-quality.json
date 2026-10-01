@@ -1,51 +1,157 @@
 {
-  "version": 2,
-  "date": "2026-09-27",
+  "version": 3,
+  "date": "2026-10-01",
   "timezone": "Europe/Istanbul",
   "stage": 2,
-  "branch": "quality/daily-2026-09-27",
+  "branch": "quality/daily-2026-10-01",
   "done": false,
   "regionalMixCompletedDays": 1,
   "regionalMixTargetDays": 30,
-  "regionalMixTargetToday": {"Ege": 1, "Marmara": 1},
+  "regionalMixTargetToday": {
+    "Ege": 1,
+    "Marmara": 1
+  },
   "regionalMixStage3QualifiedToday": false,
   "regionalMixCounterPendingProduction": false,
   "research": {
-    "status": "in_progress",
+    "status": "partial-quality-threshold-enforced",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
-    "searchConsoleUsed": false,
-    "dCandidatesReviewedStage1": 1154,
-    "reviewedDSlugs": ["ulusal-manisa-sevisler-baraj-golu"],
-    "newCandidatesReviewedStage1": {"Ege": 8, "Marmara": 13},
-    "newCandidateNotes": [
-      "Ege/Muğla: Akköprü Baraj Gölü — 2025 resmi balıklandırma: 191000 sazan; güçlü aday, duplicate ve koruma/erişim taraması gerekli.",
-      "Ege/Muğla: Kozağaç Göleti — 2025 resmi balıklandırma: 7000 sazan; güçlü aday, ikinci bağımsız kaynak ailesi gerekli.",
-      "Ege/Muğla: Akçadere Göleti — 2025 resmi balıklandırma: 7000 sazan; güçlü aday, ikinci bağımsız kaynak ailesi gerekli.",
-      "Ege/Manisa: Kula Göleti — İl Tarım 2024 brifingi amatör balıkçılık sahası olarak tanımlıyor; ikinci kaynak/duplicate/işletme etkisi kontrolü gerekli.",
-      "Ege/Manisa: Sevişler Barajı — İl Tarım 2024 brifingi amatör balıkçılık sahası olarak tanımlıyor; yetiştiricilik işletmesi nedeniyle mikro-konum yayımlanmamalı, duplicate kontrolü gerekli.",
-      "Ege/Manisa: Gördes Barajı — İl Tarım 19.12.2024 amatör avcılık bilgilendirme levhası konan yoğun avcılık alanları arasında; ikinci kaynak ve duplicate kontrolü gerekli.",
-      "Ege/Manisa: Bağyolu Barajı — İl Tarım 19.12.2024 amatör avcılık bilgilendirme levhası konan alanlar arasında; ikinci kaynak ve duplicate kontrolü gerekli.",
-      "Ege/Manisa: Güneşli Barajı — İl Tarım 19.12.2024 amatör avcılık bilgilendirme levhası konan alanlar arasında; ikinci kaynak ve duplicate kontrolü gerekli.",
-      "Marmara/İstanbul: Durusu Park Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Bolluca Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: İmrahor Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Yeniköy Gölü — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Çakıl Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Kısırkaya Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Sayalar Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Çayırdere Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Küçüksinekli Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Değirmenköy Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/İstanbul: Geredeli Göleti — 27.08.2026 resmi sazan balıklandırması; aday.",
-      "Marmara/Edirne: Osmanlı Köyü Göleti — 29.08.2025 resmi sazan balıklandırması ve amatör balıkçılık amacı açıkça belirtilmiş; güçlü aday.",
-      "Marmara/İstanbul: Sazlıdere Baraj Gölü — 27.08.2026 resmi sazan balıklandırması var; içme suyu/koruma ve erişim kısıtları nedeniyle yayın adayı olarak ihtiyatlı/elenebilir."
+    "searchConsoleUsed": true,
+    "dCandidatesReviewedStage1": 1153,
+    "reviewedDSlugs": [
+      "ankara-500km-balikesir-karacepis-goleti",
+      "ankara-500km-aydin-topcam-baraji",
+      "ankara-500km-edirne-altinyazi-baraji",
+      "ankara-500km-kutahya-kureysler-baraji"
     ],
-    "notes": "27.09.2026 güncel main ef11023 üzerinde confidence denetimi çalıştırıldı ve 1154 güncel D rota bulundu. Yalnız Sevişler Baraj Gölü, resmî amatör kullanım, rota-özel bilgilendirme levhaları ve 2026 sazan balıklandırmasıyla Güven B eşiğini karşıladı. Gördes/Bağyolu/Güneşli için rota-özel tür kanıtı; Akköprü/Kozağaç/Akçadere için kamusal amatör kullanım ve ikinci bağımsız kaynak; İstanbul adaylarında güvenli kamusal mikro erişim eşiği tamamlanmadığından sayı doldurulmadı. 26 Eylül yerel yaması tüm kapıları geçti; GitHub kimlik bilgisi olmadığı için bağlanamamıştı ve 27 Eylül GitHub branchine taşındı."
+    "newCandidatesReviewedStage1": {
+      "Ege": 9,
+      "Marmara": 14
+    },
+    "newCandidateNotes": [
+      "Ege/Aliağa Ağapark: belediye turnuvası belgeli; şartname tür listesi gerçekleşmiş rota-özel tür kanıtı değildir. Bağımsız tür kanıtı yetersiz, yayımlanmadı.",
+      "Ege/Manisa Gevenlik Barajı: DSİ kimliği, İl Tarım avcılık levhası ve 2026 sazan balıklandırma haberi bulundu; güvenli kamusal kıyı yaklaşımı bağımsız olarak kesinleştirilemedi, yayımlanmadı.",
+      "Ege/Aydın Topçam: doğrudan bilimsel tür kaydı var; kamusal erişim ile kooperatif/işletme sınırı yeterince doğrulanmadı, D korundu.",
+      "Marmara/Kandıra Uzunkum: belediye yarışmasında minekop kaydı var; kum zambağı ve tabiat parkı hassasiyeti dışında güvenli genel yaklaşım sınırı kesinleşmedi, yayımlanmadı.",
+      "Marmara/Edirne İpsala Karaağaç Göleti: DSİ kimliği ve 2026 resmî sazan balıklandırması var; güncel kamusal kıyı girişi bağımsız olarak doğrulanmadı, yayımlanmadı.",
+      "Marmara/Edirne Altınyazı: rota-özel bilimsel tür ve ağır metal çalışması var; güncel erişim ve güvenli kullanım kanıtı eksik, D korundu.",
+      "Kütahya Kureyşler: resmî balıklandırma var; kamusal kıyı erişimi ve arkeolojik alan sınırı yetersiz, D korundu.",
+      "Kula ve Osmanlı mevcut B kayıtlar; Sevişler ve Akköprü mevcut kayıtlar. Yeni slug ile çoğaltılmadı.",
+      "Gördes, Sazlıdere ve Durusu Park koruma/işletme erişim belirsizliği; Kozağaç, Akçadere, Bağyolu ve Güneşli eksik bağımsız kanıt nedeniyle yayımlanmadı."
+    ],
+    "notes": "1 Ekim başlangıç main 495e26f: Sevişler ve 29 Eylül yedi manuel yeni rota baseline'a dahil edildi, yeniden sayılmadı. Bu çalışmada yalnız Karaçepiş resmî tür ve belediye kullanım kanıtıyla D→C/hold oldu. Günlük 17 hedefi sağlanmadı; kota için güven artırılmadı."
   },
-  "stage2": {"status":"partial","targetPromotions":17,"promotedCount":1,"promotedSlugs":["ulusal-manisa-sevisler-baraj-golu"],"indexReleasedSlugs":["ulusal-manisa-sevisler-baraj-golu"],"holdSlugs":[]},
-  "stage3": {"status":"insufficient-evidence","targetNewCPlus":2,"newCPlusCount":0,"newSlugs":[],"mgmAudit":{"status":"not-required","performedOnceToday":false}},
-  "publication": {"ctrTechnicalReview":"not-required","ci":"local-passed","pr":"pending","merge":"pending","deploy":"pending","productionVerified":false}
+  "stage2": {
+    "status": "partial",
+    "targetPromotions": 17,
+    "promotedCount": 1,
+    "promotedSlugs": [
+      "ankara-500km-balikesir-karacepis-goleti"
+    ],
+    "indexReleasedSlugs": [],
+    "holdSlugs": [
+      "ankara-500km-balikesir-karacepis-goleti"
+    ]
+  },
+  "stage3": {
+    "status": "insufficient-evidence",
+    "targetNewCPlus": 2,
+    "targetNewBPlus": 2,
+    "newCPlusCount": 0,
+    "newSlugs": [],
+    "mgmAudit": {
+      "status": "not-required",
+      "performedOnceToday": false
+    }
+  },
+  "publication": {
+    "ci": "local-passed",
+    "pr": "pending",
+    "merge": "pending",
+    "deploy": "pending",
+    "productionVerified": false
+  },
+  "analytics": {
+    "source": "Kullanıcının Cloudflare PDF ve GSC ZIP dosyaları",
+    "receivedAt": "2026-09-27",
+    "coverageThrough": "2026-09-21",
+    "performanceThrough": "2026-09-24",
+    "discovered": 219,
+    "crawledNotIndexed": 24,
+    "notFound": 6,
+    "redirect": 1,
+    "alternateCanonical": 100,
+    "visits": 672,
+    "mobileVisits": 575,
+    "pageViews": 1432,
+    "mobilePageViews": 1216
+  },
+  "dailyPolicy": {
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-01.json",
+    "qualityUpgradesTarget": 17,
+    "indexReleaseHardCap": 5,
+    "indexReleaseOperationalTarget": [2, 3],
+    "indexReleaseOperationalCap": 3,
+    "repositoryCap": 3,
+    "gscCap": 3,
+    "priorTodayUpgradedSlugs": [],
+    "priorTodayReleasedSlugs": [],
+    "qualityUpgradedSlugs": [
+      "ankara-500km-balikesir-karacepis-goleti"
+    ],
+    "releasedSlugs": [],
+    "holdSlugs": [
+      "ankara-500km-balikesir-karacepis-goleti"
+    ],
+    "newSlugs": [],
+    "evidence": [
+      {
+        "slug": "ankara-500km-balikesir-karacepis-goleti",
+        "families": [
+          "Balıkesir İl Tarım",
+          "Balıkesir Büyükşehir Belediyesi",
+          "OpenStreetMap"
+        ],
+        "sources": [
+          "https://balikesir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=f7a29156-478a-418e-9de7-76b55bec8937&TermSetId=84520646-651b-43db-b791-d9fdc230a613&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=115",
+          "https://balikesir.bel.tr/haberler/akindan-amator-balikcilara-mujde-karacepis-goleti-ozel-avlak-sahasi-oluyor",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "https://www.openstreetmap.org/way/113609712"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "reviewedAt": "2026-09-27",
+        "publicationReviewAt": "2026-10-01"
+      }
+    ]
+  },
+  "maintenance": {
+    "report": "docs/olta-maintenance-2026-09-27.json",
+    "reviewedOnCurrentMain": "2026-10-01",
+    "crawledNotIndexed": {
+      "total": 24,
+      "contactQueryVariants": 6,
+      "intentionalNoindex": 12,
+      "indexableSelfCanonical": 6
+    },
+    "notFound": {
+      "total": 6,
+      "kept404": 6
+    },
+    "redirect": {
+      "total": 1,
+      "verified301": 1
+    },
+    "separateFromQuality": true
+  }
 }

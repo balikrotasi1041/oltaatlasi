@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {meralar} from '../src/data/meralar-tumu.ts';
+import {validateDailyQuality} from './daily-quality-policy.mjs';
+const state=JSON.parse(readFileSync('.github/automation-state/olta-daily-quality.json','utf8'));
+const baseline=JSON.parse(readFileSync(state.dailyPolicy.baselineFile,'utf8'));
+assert.deepEqual(validateDailyQuality(state,baseline,meralar),[]);
+const s=()=>structuredClone(state);
+const existingIndexable=meralar.find(r=>r.confidence!=='D'&&r.indexing!=='hold')?.slug;
+assert(existingIndexable,'Regresyon testi için indekslenebilir rota gerekli.');
+let x=s();x.dailyPolicy.repositoryCap=0;x.dailyPolicy.priorTodayReleasedSlugs=[existingIndexable];x.stage2.indexReleasedSlugs=[existingIndexable];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('en sıkı')));
+x=s();x.dailyPolicy.priorTodayReleasedSlugs=[existingIndexable];x.dailyPolicy.releasedSlugs=[existingIndexable];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('yeniden sayıldı')));
+x=s();x.done=true;assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('Hedef eksikken')));
+const changed=structuredClone(meralar);const d=changed.find(r=>r.confidence==='D');d.confidence='C';d.indexing='index';assert(validateDailyQuality(state,baseline,changed).some(e=>e.includes('gerçek noindex')));
+x=s();x.dailyPolicy.evidence[0].families=['tek'];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('iki bağımsız')));
+x=s();x.analytics.discovered=251;x.dailyPolicy.indexReleaseOperationalCap=5;assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('operasyonel')));
+console.log('Günlük politika: gerçek değişiklik, çift sayım, dar tavan, kanıt ve eksik hedef regresyonları geçti.');

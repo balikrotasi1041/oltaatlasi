@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-29",
-  "basis": "Google Search Console 2026-09-20 + Cloudflare 2026-09-13..2026-09-20 + user quality directive 2026-09-23",
+  "updatedAt": "2026-10-01",
+  "basis": "Google Search Console coverage through 2026-09-21 + performance through 2026-09-24 + Cloudflare 2026-09-20..2026-09-27 + user quality directive",
   "qualityWork": {
     "dailyQualityPromotionsTarget": 17,
     "dailyNewRoutesTarget": 2,
@@ -24,9 +24,9 @@
     "holdValue": "hold",
     "releaseValue": "index",
     "snapshot": {
-      "discoveredCurrentlyNotIndexed": 211,
-      "crawledCurrentlyNotIndexed": 5,
-      "processableQueue": 216
+      "discoveredCurrentlyNotIndexed": 219,
+      "crawledCurrentlyNotIndexed": 24,
+      "processableQueue": 243
     },
     "bands": [
       {
@@ -51,7 +51,7 @@
       }
     ],
     "currentMode": "throttle",
-    "currentMaxDailyCPlusIndexReleases": 5,
+    "currentMaxDailyCPlusIndexReleases": 3,
     "rule": "Günlük en az 17 gerçek D→C/B/A kalite yükseltmesi hedeflenir; kalite yükseltmesi ile index açılışı aynı işlem değildir. Bir günde en fazla 5 D/noindex→C+/index salımı yapılır. Diğer gerçekten C+ kayıtlar indexing=hold ile noindex,follow bekleyebilir. Bölgesel yeni B+ rotalar bu 17 yükseltmeden ayrı tutulur."
   },
   "legacyNoindex": {
