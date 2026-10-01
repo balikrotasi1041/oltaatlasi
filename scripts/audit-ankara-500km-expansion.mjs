@@ -1,3 +1,4 @@
+import { kaliteYukseltmeleri20260927 } from "../src/data/meralar-daily-quality-2026-09-27.ts";
 import { readFileSync } from "node:fs";
 import { meralar } from "../src/data/meralar-tumu.ts";
 import { ankara500KmCandidates, ankara500KmExpansionMeta, yeniMeralarAnkara500Km20260817 } from "../src/data/meralar-ankara-500km-2026-08-17.ts";
@@ -23,6 +24,7 @@ const identity=(route)=>normalize(route.name).split(/\s+/).filter((token)=>token
 const duplicate=(values)=>[...new Set(values.filter((value,index)=>values.indexOf(value)!==index))];
 const banned=/ön değerlendirme|\btaslak\b|pilot veri/i;
 const promotionDates=new Map([
+  ...kaliteYukseltmeleri20260927.map(({slug,patch})=>[slug,patch.researchedAt]),
   ...promoted20260901Stage2.map((slug)=>[slug,"2026-09-01"]),
   ...promoted20260905Stage2.map((slug)=>[slug,"2026-09-05"]),
   ...promoted20260907Stage2.map((slug)=>[slug,"2026-09-07"]),
