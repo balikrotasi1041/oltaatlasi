@@ -10,6 +10,8 @@ const normalSitemapXml=sitemapFiles
   .filter((name)=>name!=="sitemap-index.xml"&&name!=="sitemap-images.xml")
   .map((name)=>readFileSync(`dist/${name}`,"utf8")).join("\n");
 const imageSitemapXml=existsSync("dist/sitemap-images.xml")?readFileSync("dist/sitemap-images.xml","utf8"):"";
+const contactHtml=readFileSync("dist/iletisim/index.html","utf8");
+if(!/<form[^>]+method="post"[^>]+action="\/iletisim\/"/i.test(contactHtml))errors.push("İletişim formu GET parametreleri üretmemeli.");
 let preliminaryCount=0,indexHoldCount=0,indexableCount=0;
 
 const htmlPathFor=(url)=>{
@@ -99,13 +101,14 @@ for(const [pathname,target] of Object.entries(seoDemandTargets)){
 
 let nofollowNoindexLinks=0;
 for(const source of recordsByPath.values()){
-  if(source.noindex)continue;
   for(const match of source.html.matchAll(/<a\b([^>]*?)href="([^"]+)"([^>]*)>/gi)){
     const href=match[2];
     if(!href||href.startsWith("#")||/^(?:mailto:|tel:|javascript:)/i.test(href))continue;
     let target;
     try{target=new URL(href,source.url);}catch{continue;}
     if(target.origin!=="https://oltaatlasi.com")continue;
+    if(target.pathname==="/iletisim/"&&target.search)errors.push(`${source.pathname||source.url}: taranabilir parametreli iletişim bağlantısı: ${href}`);
+    if(source.noindex)continue;
     const pathname=normalizePath(target.pathname);
     const targetRecord=recordsByPath.get(pathname);
     if(!targetRecord?.noindex)continue;
