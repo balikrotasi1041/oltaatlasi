@@ -1,0 +1,5798 @@
+{
+  "mainSha": "495e26f315d7f95c1f0cdb8369066bf29e1536aa",
+  "baselineDate": "2026-10-01",
+  "routes": {
+    "izmit-korfezi-sahil-bandi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "karamursel-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "eskihisar-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bayramoglu-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kerpe-kiyilari": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kefken-cebeci-kiyilari": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ketenciler-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "galata-koprusu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ataturk-unkapani-koprusu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "sarayburnu-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "yenikapi-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bakirkoy-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "buyukcekmece-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "silivri-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "tarabya-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istinye-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "rumeli-kavagi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "uskudar-salacak-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kadikoy-moda-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bostanci-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kartal-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "anadolu-kavagi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "sarkoy-merkez-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "hoskoy-kamusal-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "akcakoca-cuhalli-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "cinarcik-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "karasu-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "guzelyali-mudanya-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "emirgan-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bebek-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "arnavutkoy-besiktas-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ortakoy-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kurukcesme-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "pasabahce-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kanlica-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kucuksu-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "beylerbeyi-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "tuzla-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "degirmendere-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "halidere-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulasli-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "hereke-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "yalova-merkez-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "armutlu-merkez-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "mudanya-mutareke-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "gemlik-manastir-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kocaali-merkez-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "tavsancil-balik-tutma-iskeleleri": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "altinova-kamusal-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "diliskelesi-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "beykoz-merkez-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "cubuklu-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "anadolu-hisari-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "tutunciftlik-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "derince-harikalar-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "cengelkoy-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "hirfanli-baraji-kale-mevki-bala": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "inkumu-kamusal-sahil-bandi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "cakirli-iznik-golu-piknik-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "sariyar-baraji-softabogazi-amator-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "koyunbaba-baraji-demirci-oyumigde-amator-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "yamula-baraji-resmi-amator-balikcilik-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "bahcelik-baraji-resmi-amator-balikcilik-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "bayramhacili-baraji-amator-balikcilik-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "sarimsakli-baraji-genel-amator-kiyi": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "gumusoren-baraji-genel-amator-kiyi": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "akkoy-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kovali-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "agcasar-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "pasali-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "darili-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "zincidere-goleti-mesire-genel-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "seyhli-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "caddebostan-kamusal-sahil-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "maltepe-orhangazi-sehir-parki-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "pendik-sahil-parki-kamusal-kiyi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "darica-sehit-gokhan-huseyinoglu-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "darica-balyanoz-koyu-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "basiskele-kamusal-sahil-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kizilbayir-hirfanli-baraji-bala": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kucukburun-hirfanli-baraji-bala": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "gecitli-hirfanli-baraji-sereflikochisar": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "gulhuyuk-hirfanli-baraji-sereflikochisar": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kacarli-hirfanli-baraji-sereflikochisar": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kizilocak-hirfanli-baraji-evren": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "boztepe-hirfanli-baraji-evren": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ilgin-hirfanli-baraji-evren": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "bozyazi-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "esmedere-koyunbaba-baraji-cubuk": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "bozyazi-koy-onu-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "akyar-kafasi-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "usakbuku-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "buyukyer-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kumbet-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "laklak-kiri-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kayikbasi-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kandilli-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "eskisehir-gokpinar-baraj-golu-amator": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "keskin-75-yil-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "oglakci-goleti-sivrihisar": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "cukurhisar-goleti-eskisehir": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "yarimca-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kirazliyali-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-adana-catalan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-adana-kozan-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-adana-nergizlik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-adana-seyhan-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-adiyaman-camgazi-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-adiyaman-cat-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-adiyaman-gozebasi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-adiyaman-hasancik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-adiyaman-incesu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-afyonkarahisar-akdegirmen-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-afyonkarahisar-bayat-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-afyonkarahisar-erkmen-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-afyonkarahisar-karacaoren-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-afyonkarahisar-kayabelen-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-agri-patnos-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-agri-yazici-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-agri-baskoy-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-agri-balik-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-agri-murat-nehri-agri-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aksaray-balci-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aksaray-bozkir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aksaray-ciftevi-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-aksaray-esmekaya-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aksaray-guzelyurt-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-amasya-ayvali-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-amasya-bayirli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-amasya-citli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-amasya-destek-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-amasya-dogantepe-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ankara-akyar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ankara-asartepe-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-ankara-camlidere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ankara-hirfanli-baraj-golu-ankara-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-ankara-kesikkopru-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-antalya-alakir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-antalya-caybogazi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-antalya-dim-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-antalya-oymapinar-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-antalya-korkuteli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ardahan-beyler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ardahan-cildir-golu-ardahan-kiyisi": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-ardahan-aktas-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-ardahan-kura-nehri-ardahan-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-ardahan-posof-cayi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-artvin-borcka-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-artvin-deriner-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-artvin-muratli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-artvin-yusufeli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-artvin-coruh-nehri-artvin-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aydin-kemer-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aydin-yaylakavak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aydin-akcaova-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aydin-catak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-aydin-topcam-baraj-golu-aydin": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-balikesir-camkoy-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-balikesir-caygoren-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-balikesir-ikizcetepeler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-balikesir-madra-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-balikesir-saribeyler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bartin-kirazlikopru-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bartin-bartin-irmagi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bartin-ulus-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bartin-kurucasile-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bartin-amasra-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-batman-ceffan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-batman-kirkat-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-batman-batman-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-batman-ilisu-baraj-golu-batman-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-batman-batman-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bayburt-demirozu-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-bayburt-coruh-nehri-bayburt-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bayburt-masat-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bayburt-lori-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bayburt-kop-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bilecik-borcak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bilecik-dodurga-baraj-golu-bilecik": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bilecik-gunyurdu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bilecik-kizildamlar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bilecik-sakarya-nehri-bilecik-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bingol-gayt-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bingol-ozluce-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bingol-gulbahar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bingol-kigi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bingol-murat-nehri-bingol-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bitlis-nemrut-krater-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bitlis-nazik-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-bitlis-aygir-golu-bitlis": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-bitlis-arin-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bitlis-van-golu-tatvan-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-bolu-caykoy-baraj-golu-bolu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-bolu-golkoy-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-bolu-hasanlar-baraj-golu-bolu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bolu-abant-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bolu-golcuk-golu-bolu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-burdur-bademli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-burdur-belenli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-burdur-belkaya-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-burdur-cavdar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-burdur-karacaoren-1-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bursa-akalan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bursa-babasultan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bursa-bogazkoy-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bursa-burcun-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-bursa-buyukorhan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-canakkale-atikhisar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-canakkale-bakacak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-canakkale-bayramic-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-canakkale-gokceada-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-canakkale-gonen-baraj-golu-canakkale": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-cankiri-demircioren-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-cankiri-dumanli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-cankiri-gurgenlik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-cankiri-karadere-baraj-golu-cankiri": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-corum-aksu-baraj-golu-corum": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-corum-bozdogan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-corum-ecvi-yenikisla-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-corum-geven-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-corum-geykoca-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-denizli-adiguzel-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-denizli-buldan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-denizli-gokpinar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-denizli-tavas-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-denizli-isikli-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-diyarbakir-batman-baraj-golu-diyarbakir-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-diyarbakir-devegecidi-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-diyarbakir-dicle-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-diyarbakir-goksu-baraj-golu-diyarbakir": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-diyarbakir-karakaya-baraj-golu-diyarbakir-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-duzce-hasanlar-baraj-golu-duzce": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-duzce-efteni-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-duzce-buyuk-melen-cayi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-duzce-kucuk-melen-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-duzce-akcakoca-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-edirne-altinyazi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-edirne-basagil-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-edirne-beykonak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-edirne-bulbuldere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-edirne-cavuskoy-baraj-golu-edirne": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-elazig-cip-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-elazig-kalecik-baraj-golu-elazig": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-elazig-keban-baraj-golu-elazig-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-elazig-isiktepe-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-elazig-tadim-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-erzincan-erzincan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-erzincan-tercan-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-erzincan-mercan-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-erzurum-demirdoven-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-erzurum-kapikaya-baraj-golu-erzurum": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-erzurum-koycegiz-baraj-golu-erzurum": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-erzurum-kuzgun-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-erzurum-olur-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-eskisehir-catoren-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-eskisehir-gokcekaya-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-eskisehir-kunduzlar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-eskisehir-musaozu-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-eskisehir-porsuk-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-gaziantep-birecik-baraj-golu-gaziantep-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-gaziantep-dumluca-baraj-golu-gaziantep": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-gaziantep-hancagiz-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-gaziantep-kayacik-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-gaziantep-tahtakopru-baraj-golu-gaziantep": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-giresun-ingolu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-giresun-toplukonak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-giresun-aksu-deresi-giresun": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-giresun-harsit-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-giresun-giresun-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-gumushane-koruluk-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-gumushane-kurtun-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-gumushane-kizlarkalesi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-gumushane-kose-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-gumushane-torul-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hakkari-dilimli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hakkari-zap-suyu-hakkari-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-hakkari-semdinli-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hakkari-nehil-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hakkari-sat-golleri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hatay-yarseli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hatay-yayladag-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hatay-karamanli-baraj-golu-hatay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hatay-asi-nehri-hatay-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-hatay-arsuz-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-igdir-aras-nehri-tuzluca-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-igdir-aras-nehri-karakoyunlu-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-igdir-aras-nehri-aralik-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-igdir-karasu-cayi-igdir": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-igdir-bulakbasi-sulak-alani": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-isparta-atabey-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-isparta-bagarasi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-isparta-barla-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-isparta-dedecam-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-isparta-hisarardi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-istanbul-alibey-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-istanbul-buyukcekmece-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-istanbul-darlik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-istanbul-omerli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-istanbul-sazlidere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-izmir-alacati-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-izmir-balcova-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-izmir-guzelhisar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-izmir-kestel-baraj-golu-izmir": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-izmir-seferihisar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kahramanmaras-kartalkaya-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kahramanmaras-menzelet-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kahramanmaras-sir-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kahramanmaras-adatepe-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kahramanmaras-kilavuzlu-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-karabuk-kadikoy-baraj-golu-karabuk": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karabuk-bostancilar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karabuk-ortakcilar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karabuk-filyos-cayi-karabuk-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karabuk-arac-cayi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-karaman-ayranci-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karaman-delicay-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karaman-dokuzyol-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karaman-godet-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-karaman-ibrala-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kars-arpacay-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kars-bayburt-baraj-golu-kars": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kars-cildir-golu-kars-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kars-kars-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kars-aras-nehri-kagizman-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kastamonu-bezirgan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kastamonu-germectepe-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kastamonu-kabalar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kastamonu-karacomak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kayseri-agcasar-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kayseri-akkoy-baraj-golu-kayseri": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kayseri-bahcelik-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kayseri-sarimsakli-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kayseri-sarioglan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirikkale-kapulukaya-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kirikkale-ahili-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirikkale-danaci-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirikkale-kizilirmak-yahsihan-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kirklareli-armagan-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kirklareli-kayali-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirklareli-ahmetbey-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirklareli-saricaali-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirklareli-sofuhalil-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirsehir-cogun-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kirsehir-karaova-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirsehir-kultepe-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirsehir-siddikli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kirsehir-hirfanli-baraj-golu-kirsehir-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kilis-balikli-baraj-golu-kilis": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kilis-seve-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kilis-afrin-cayi-kilis-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kilis-sabun-suyu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kilis-sinnep-suyu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kocaeli-bayraktar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kocaeli-bickidere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kocaeli-kirazdere-yuvacik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kocaeli-kurtdere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kocaeli-sahinler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-konya-akoren-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-konya-altinapa-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-konya-apa-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-konya-aydogmus-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-konya-bulcuk-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-kutahya-cavdarhisar-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kutahya-enne-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kutahya-kayabogazi-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-kutahya-beskaris-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-kutahya-certe-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-malatya-boztepe-baraj-golu-malatya": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-malatya-guzelyurt-baraj-golu-malatya": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-malatya-kapikaya-baraj-golu-malatya": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-malatya-medik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-malatya-polat-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-manisa-afsar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-manisa-demirkopru-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-manisa-gordes-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-manisa-sevisler-baraj-golu": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-manisa-gediz-nehri-manisa-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mardin-serifbaba-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mardin-ilisu-baraj-golu-dargecit-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mardin-cag-cag-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mardin-beyazsu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mardin-savur-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mersin-berdan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mersin-gezende-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mersin-pamukluk-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mersin-goksu-nehri-silifke-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mersin-aydincik-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mugla-geyik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mugla-mumcular-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mugla-kazan-baraj-golu-mugla": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mugla-koycegiz-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mugla-bafa-golu-mugla-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mus-alparslan-1-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mus-alparslan-2-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mus-murat-nehri-mus-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mus-hacli-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-mus-akdogan-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-nevsehir-damsa-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-nevsehir-doyduk-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-nevsehir-kumtepe-baraj-golu-nevsehir": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-nigde-akkaya-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-nigde-altinhisar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-nigde-gebere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-nigde-gumusler-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-nigde-kovali-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ordu-persembe-yaylasi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ordu-topcam-baraj-golu-ordu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-ordu-melet-irmagi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ordu-bolaman-irmagi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-ordu-ordu-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-osmaniye-ariklikas-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-osmaniye-aslantas-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-osmaniye-kalecik-baraj-golu-osmaniye": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-osmaniye-kesiksuyu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-osmaniye-berke-baraj-golu-osmaniye-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-rize-firtina-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-rize-iyidere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-rize-buyukdere-rize": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-rize-salarha-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-rize-rize-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sakarya-sapanca-golu-sakarya-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sakarya-sakarya-nehri-sakarya-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sakarya-cark-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sakarya-poyrazlar-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sakarya-melen-cayi-sakarya-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-samsun-altinkaya-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-samsun-cakmak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-samsun-derbent-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-samsun-derekoy-baraj-golu-samsun": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-samsun-derinoz-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-siirt-ilisu-baraj-golu-siirt-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-siirt-botan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-siirt-basur-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-siirt-kezer-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-siirt-garzan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sinop-cemallettin-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sinop-dodurga-baraj-golu-sinop": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sinop-duragan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sinop-edil-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sinop-erfelek-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sivas-avcipinar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sivas-bogazdere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sivas-camligoze-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sivas-delice-baraj-golu-sivas": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-sivas-deliilyas-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sanliurfa-ataturk-baraj-golu-sanliurfa-kiyisi": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-sanliurfa-hacihidir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sanliurfa-karkamis-baraj-golu-sanliurfa-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sanliurfa-birecik-baraj-golu-sanliurfa-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sanliurfa-firat-nehri-halfeti-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sirnak-sirnak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sirnak-silopi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sirnak-dicle-nehri-cizre-hatti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sirnak-hezil-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-sirnak-nerdus-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tekirdag-karaidemir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tekirdag-bayramsah-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tekirdag-biyikali-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tekirdag-inanli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tekirdag-turkmenli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tokat-almus-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-tokat-alpu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tokat-artova-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tokat-atakoy-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-trabzon-atasu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-trabzon-uzungol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-trabzon-sera-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-trabzon-solakli-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-trabzon-degirmendere-trabzon": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tunceli-uzuncayir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tunceli-keban-baraj-golu-tunceli-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tunceli-munzur-nehri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tunceli-pulumur-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-tunceli-keban-baraj-golu-pertek-kiyisi": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ulusal-usak-kucukler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-usak-ahmetler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-usak-altintas-mesudiye-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-usak-guneykoy-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-usak-karaagac-baraj-golu-usak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-van-emek-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-van-kockopru-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-van-morgedik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-van-sarimehmet-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-van-zernek-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-yalova-armutlu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yalova-gokce-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yalova-esenkoy-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yalova-tesvikiye-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yalova-ciftlikkoy-sahili": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yozgat-fehimli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yozgat-gelingulu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yozgat-kanlidere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-yozgat-sureyyabey-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ulusal-yozgat-uzunlu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-zonguldak-derekoy-baraj-golu-zonguldak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-zonguldak-guluc-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-zonguldak-kizilcapinar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-zonguldak-kozlu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ulusal-zonguldak-filyos-nehri-zonguldak-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "fenerbahce-parki-kamusal-sahil": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "balat-halic-kamusal-sahil-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "zeytinburnu-kazlicesme-kamusal-sahil": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "sekapark-kamusal-sahil-hatti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kavakli-sahil-parki-golcuk": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "darica-millet-bahcesi-balik-iskeleleri": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kutahya-porsuk-baraji-sofca": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kutahya-enne-baraji": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kutahya-kurucay-goleti": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kutahya-kayabogazi-baraji": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "bilecik-pelitozu-goleti": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "bilecik-kizildamlar-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bilecik-bozcaarmut-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bilecik-kucukelmali-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bilecik-kurtkoy-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bilecik-cerkesli-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bilecik-yenipazar-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kirklareli-baraji": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kirklareli-kayali-baraji": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kirklareli-uskup-goleti": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "kirklareli-saricaali-goleti": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "duzce-topuk-yaylasi-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "duzce-torkul-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "duzce-korugol-tabiat-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bolu-yenicaga-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bolu-cubuk-golu-goynuk": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bolu-saraycik-yaylasi-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "bolu-seben-tasliyayla-goleti": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "bolu-aladag-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "karabuk-ovacik-karagol": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "corum-obruk-baraj-golu-oguzlar": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "gumushane-kurtun-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ordu-aybasti-persembe-yaylasi-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-mogan-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-cubuk-i-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-sakarya-nehri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-doganozu-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-egrekkaya-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-kavsakkaya-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-kurtbogazi-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-eymir-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-karagol": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-gokcekaya-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-kizilca-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-yenice-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-anadolu-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-eyrez-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ankara-yukari-cavundur-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-irmak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-mahmutlar-sarklisi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-hasandede-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-inegazili-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-postal-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-kilicozu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-aciozu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-acisu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-saz-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-acicay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-devrez-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-terme-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-bakkal-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-guldurcek-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-akhasan-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-akcay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-alpsari-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-gerede-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-gumerdigin-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-gurpinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-melan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-yukarioz-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-alanpinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-cankiri-bozoglu-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-sille-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-kopek-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-beysehir-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-carsamba-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-sugla-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-ivriz-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-bagbasi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-may-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-bardas-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-beykavagi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-cukurcimen-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-damlapinar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-destigin-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-duden-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-konya-erenkaya-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-karabogaz-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-kesikkopru-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-sariomerli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-aksakli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-bayramozu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-dariozu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-dulkadirli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-gokesme-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-karkin-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-yukari-ciftlik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-degirmenozu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-golcuk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-ayvali-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-cagirkan-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirsehir-harmanalti-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-devrek-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-koprubasi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-suluklu-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-sunnet-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-ulu-cay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-ulusu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-egriova-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-yumrukaya-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-alanhimmetler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-buyukgol": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-deringol": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-gokbuladan-goeti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-hacilar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-karagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bolu-karamurat-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-kanlipinar-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-kuzfindik-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-erten-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-karaoren-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-kaymaz-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-mamuca-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-tarpak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-ilica-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-bahtiyar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-coraklik-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-dereyalak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-ozdenk-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-yagri-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-yayikli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-eskisehir-yukarikartal-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-soganli-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-gokgoz-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-egriova-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-esencik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-ortakci-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-gerede-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-saricicek-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-eskipazar-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-ova-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-bedil-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-eflani-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-incecay-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-malagoz-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-bulak-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-kochisar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-elekci-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-agcakoyun-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-devrez-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-meydan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-hatap-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-ibrahimkoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-incesu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-laloglu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-sincan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-yenihayat-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-ahmetoglan-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-alacahoyuk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-alembeyli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-corum-catak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-delice-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-kanak-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-gelingullu-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-musabeyli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-barakli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-divanli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-gurden-celal-atik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-hosumlu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-huyukkisla-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-nohutlu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-yenipazar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-halikoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-sarimbey-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-altinsu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yozgat-derbent-baraj-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-devrekani-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-gokirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-beyler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-kulaksizlar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-aydos-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-karasu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-karadere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-abdalhasan-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-buk-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-catak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-kucuksu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-taslica-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-tuzakli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-elmayazi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kastamonu-incesu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-mamasun-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-melendiz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-balikli-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-catin-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-helvadere-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-camili-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-kayi-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-altinkaya-beldesi-asma-baraj-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-karasu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-pecenek-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-karaagac-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-incesu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-bolu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-pences-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-akguney-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-aydinlar-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-kantar-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-cuma-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-dombay-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-guney-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-kizlar-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-kocaman-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-sali-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-ulutan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-donbay-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-kisla-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-zonguldak-kiyicak-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-eber-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-karamik-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-akarcay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-duzagac-akdegirmen-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-selevir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-seyitler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-emre-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-orenkaya-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-akyuva-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-bektes-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-boyali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-cepni-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-dutagaci-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-goynuk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-afyonkarahisar-kali-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-aksu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-koprubasi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-kurugol": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-maden-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-sultaniye-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-yayakbasi-saridere-buyuk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-camlipinar": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-kuyuduzu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-saridere-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-yayakbasi-saridere-kucuk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-yayakbasi-saridere-orta-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-yaylagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-yeni-vakif-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-sariyayla-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-duzce-sarma-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-filyos-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-kozcagiz-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-guney-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-amastris-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-merhum-mehmet-arslan-balik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-arit-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-gegen-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-gemileryani-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-guneyoren-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-koca-gokirmak-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-kocanaz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-horhor-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-ulus-eldes-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-dalbukoy-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bartin-doruca-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-ayhan-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-karaburna-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-yalintas-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-ozbek-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-ozkonak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-sarilar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-tatlarin-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-tuzkoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-kizilirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-karasu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-derinoz-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-haremocagi-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-karaagac-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-kiziloz-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nevsehir-kurucay-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-taskisigi-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-mudurnu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-akgol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-lahna-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-akcay-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-cilekli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-huseyinli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-okcular-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-sekiharman-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-acelle-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-anagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-aslanlar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-besevler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-hasanfaki-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sakarya-karagol-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-daridere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-zemzemiye-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-calti-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-aglan-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-buyukelmali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-goksu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-karasu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-bakras-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-degurmen-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-goynuk-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-kocacay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-sarisu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-sogut-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-gediksaray-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-tersakan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-borabay-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-cekerek-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-yedikir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-yaprak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-baglica-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-gok-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-imirler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-kizgulduren-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-degirmendere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-derinoz-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-hirka-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-sarayozu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-amasya-ziyaret-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-boyabat-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-gazi-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-gokirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-sarikum-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-kanli-cay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-karasu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-cemalettin-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-isaoglu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-bektas-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-akgol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-bektasaga-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-boyali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-kizilirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-karagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sinop-muhsinli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-bahcecik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-zamanti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-abdi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-seker-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-hurmetci-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-camlica-ii-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-camlica-iii-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-cerkezsogutlu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-corekdere-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-ebulhayir-baraji": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-goktas-i-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-hazersah-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-karasu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-kayapinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kayseri-kepic-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-kovada-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-golcuk-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-hoyran-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-bagkonak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-cariksaraylar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-darideresi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-direkli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-ilegi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-ileydagi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-kasimlar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-kirkbas-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-kizilcik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-koprukoy-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-korkuler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-isparta-misirli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-pazarlar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-belkavak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-doglusah-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-kizilkoltuk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-kokar-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-kusu-sulama-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-pullar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-senlik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-tahtali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-yenice-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-yunuslar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-hasanlar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-kicir-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-kureysler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kutahya-ayvali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-engiz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-mert-irmagi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-gernek-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-simenit-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-suat-ugurlu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-kizilirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-yesilirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-asaginarli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-battalli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-durucay-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-ereli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-findicak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-yukarinarli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-19-mayis-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-samsun-akgol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-asbamaion": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-karagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-narli-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-cayhan-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-ciftehan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-murtaza-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-postalli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-uluagac-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-alagolbasi-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-alisar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-bitli-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-cayirli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-ciftekoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-ciniligol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-nigde-dipsiz-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-cekerek-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-kizilirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-yesilirmak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-hasan-ugurlu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-zinav-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-omala-baraji-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-tepekisla-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-ucoluk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-bedirkale-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-delice-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-guzelce-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-kelkit-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-canakci-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-akin-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tokat-belkaya-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-namazgah-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-sipahiler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-tahtali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-sarisu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-dilderesi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-kocacay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-cumakoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-denizli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-ariklar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-toramanlar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-utuk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-cinarli-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-cinarlidere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-ihsaniye-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kocaeli-sevindikli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-cinarcik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-uluabat-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-mustafakemalpasa-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-doganci-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-nilufer-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-kazanci-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-kozluoren-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-arapciftligi-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-dalyan-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-simav-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-cinarli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-demirtas-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-goksu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-hasanaga-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bursa-inkaya-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-gezende-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-ermenek-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-balkusan-baraji-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-gokcay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-goksu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-agiloguz-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-divle-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-goktepe-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-kamis-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-kucuk-cay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-ulu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-tatli-cay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-calti-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-kelkit-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-kesrik-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-nih-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-yapialtin-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-dorteylul-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-gokpinar-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-todurge-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-gazibey-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-pusat-ozen-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-dipsiz-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-kanli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-mursal-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-sivas-tecer-irmagi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-ahat-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-banaz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-dumenler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-gogem-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-gullubag-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-karaahmetli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-kizilhisar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-ucpinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-bahadir-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-gedikler-derbent-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-poslu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-yelegen-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-yesilkavak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-alahabali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-usak-isalar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-elmali-2-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-durugol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-kucukcekmece-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-binkilic-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-goksu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-kagithane-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-karasu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-riva-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-ayamama-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-mahmut-sevket-pasa-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-pasamandira-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-sakligol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-aydos-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-bahcesehir-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-istanbul-kemer-country-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-yalak-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-ortaburun-baraji": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-kordere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-selimandira-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-eglek-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-kilic-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-balaban-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-bulbul-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-caglayan-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-elmali-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-karakus-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-karpuz-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-nacakli-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-ulu-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-yalova-abbas-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-akcay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-dalaman-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-vali-recep-yazicioglu-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-yenidere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-cindere-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-esen-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-yayla-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-aydogdu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-curuksu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-kufu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-sogut-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-aydinlar-akbas-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-tavas-akyar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-beylerbey-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-denizli-camrak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-manavgat-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-alara-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-bickici-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-boga-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-karaman-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-kargi-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-karpuz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-koprucay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-manavgat-nehri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-duden-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-naras-baraji-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-avlan-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-sorgun-titreyengol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-kibris-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-antalya-cevizli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-cakit-suyu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-eglence-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-goksu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-korkun-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-yedigoze-sanibey-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-gokdere-kopru-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-kavsak-bendi-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-menge-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-sariz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-zamanti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-akpinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-ayvalik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-bagdere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-buyukkandak-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adana-catalcam-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-aksu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-akgol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-karatas-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-karacal-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-yaprakli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-askeriye-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-boz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-bugduz-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-camlik-baraji": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-elmacik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-gokcebag-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-hisarkoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-ibecik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-kozluca-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-burdur-kaymakci-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-karakiz-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-degirmendere-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-akgol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-ermenek-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-limonlu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-kirca-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-cemilli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-degnek-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-kadincik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-kizilbag-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-tomuk-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-alakopru-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-sorgun-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-akpinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mersin-aydinlar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-manyas-kusgolu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-kocacay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-simav-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-manyas-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-sahinburgaz-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-yukariyapici-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-sove-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-eskimanyas-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-ikizce-tepeler-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-korpeagac-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-cataldag-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-balat-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-carkaca-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-emet-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-balikesir-karacepis-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-guzelhisar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-marmara-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-gunesli-baraji": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-maldan-sarisu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-yuntdagi-koseler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-camonu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-hanya-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-karabeyler-sulama-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-kenger-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-suluklu-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-tepegol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-bagyolu-baraji-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-hacimehmetler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-kazikli-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-manisa-tarim-alani-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-elekci-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-gaga-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-sahsene-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-cepekli-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-gok-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-ulugol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-durugol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-akcaova-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-akcay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-budak-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-ceviz-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-curi-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-calis-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-degirmen-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-ordu-golkoy-irmagi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-aksu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-ceyhan": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-ayvali-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-berke-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-dagdelen-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-goksun-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-kandil-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-sariguzel-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-sogutlu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-cardak-korkmaz-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-dongel-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-dsi-caglayancerit-zorkun-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-dsi-merk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-hurman-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kahramanmaras-incecik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-akcasu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-kesiksu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-sabun-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-sumbas-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-kalealti-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-savrun-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-ceyhan": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-karasu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-baliklagi-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-karacay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-bugdaycik": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-cicekli-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-halepli-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-orucbey-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-osmaniye-sarinc-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-bafa-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-buyuk-menderes": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-saricay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-ikizdere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-akcay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-mericler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-dandalaz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-eskicine-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-hidirbeyli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-kavsit-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-seferler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-senkoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-azap-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-cariklar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aydin-yagsilar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-surgu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-tohma-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-beylerderesi-baraj-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-ayvalitohma-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-baliklitohma-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-hasar-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-kara-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-kesikkopru-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-kurucay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-maryap-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-orduzu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-sultansuyu-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-isakoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-kaldirim-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-malatya-firat": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-tahtali-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-gebekirse-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-alacati-kutlu-aktas-baraji": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-bakircay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-kucuk-menderes": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-madra-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-urkmez-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-meles-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-yortanli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-catal-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-golcuk": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-karagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-ahirkuyu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-dalyan-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-izmir-arikbasi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-azmak-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-esen-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-adnan-menderes-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-akkopru-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-akgedik-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-saricay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-kocagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-derince-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-namnam-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-yuvarlak": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-bayir-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-boranda-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-cukur-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-ikiz-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-mugla-kartal-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-karasu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-buyuk-karacay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-golbasi-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-gorentas-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-reyhanli-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-yaylica-karamanli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-afrin-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-beyazcay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-delicay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-gokpinar-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-hanna-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-kureysi-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-kucuk-karacay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-el-fellit-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-hatay-phyrminos-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-ergene": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-kocadere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-cokal-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-kadikoy-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-naipkoy-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-kazak-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-buzagi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-cay-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-cinaralti-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-hanoglu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-ikiz-goller-1-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-inanli-100-yil-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-karacahalil-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-karamehmet-baraji": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-tekirdag-karayahsi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-bulanik-dere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-mutludere-rezve-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-kazandere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-ergene": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-mert-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-ahmetbey-belediyesi-sulama-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-akandere-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-ayvali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-birinci-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-celaliye-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-cavuskoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-emirali-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-evciler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-karacaoglan-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirklareli-kavakdere-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-kilickaya-baraji-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-kocak-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-yaglidere-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-batlama-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-aladerecam-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-tamdere-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-catal-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-donencay-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-fevzi-cakmak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-karagol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-turpcu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-avutmus-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-cavuslu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-cobanli-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-giresun-comlekci-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-karkamis-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-doganpinar-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-sacir-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-burc-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-haciarslan-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-karasu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-zulfikar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-hamidiye-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-kuzoluk-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-firat": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-alleben-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-alleben-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-aynifar-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-ardil-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-gaziantep-sabun-suyu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-biga-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-karamenderes-nehri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-tuzla-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-ayitdere-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-bayramdere-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-tasoluk-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-kalkim-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-umurbey-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-sirinkoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-ahiler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-akcakecili-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-alemsah-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-asagiokcular-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-ayazma-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-canakkale-calkoy-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-ataturk-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-goksu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-sayoren-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-ardil-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-cendere-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-degirmen-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-kahtacay": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-cataltepe-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-mulk-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-karahuyuk-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-menzil-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-sirimtas-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-azapli-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-inekli-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-adiyaman-kinik-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-bagistas-1-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-tuzla-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-besgoze-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-balikli-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-kadigolu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-kalkanci-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-turnacayiri-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-ardos-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-cennetpinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-koc-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-polat-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-ardicli-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-aygir-agu-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-eksisu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-erzincan-gelensi-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-konak-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-ucpinar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-aslan-suyu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-domuz-dami": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-karakaya-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-hazar-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-suluklu-gol": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-seyrantepe-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-firat-nehri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-hamzabey-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-kepektasi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-murat-nehri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-peri-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-dicle-nehri": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-kozluk-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-kuscu-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-merivan-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-hosruk-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-elazig-gul-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-ceritmuminli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-delice-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-coruhozu-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-okun-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-balaban-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kirikkale-sarilioz-cayi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karabuk-konari-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-kutuklu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-kalebalta-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-aksaray-balci-kepir-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-akcay-baraji": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-bilecik-rizapasa-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-basyayla-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-yukaricaglar-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-esentepe-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-karaman-sarivadi-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-sapkanli-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-demirciler-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-uzunlu-goleti": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-balik-suyu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-sogutludere-yapay-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-bakircan-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-karadere": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-hasanke-deresi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-oruclu-seve-baraji-dogu-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-yukari-afrin-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "ankara-500km-kilis-kupluce-seve-baraji-kuzey-kiyisi": {
+      "confidence": "D",
+      "indexing": "index"
+    },
+    "kars-digor-sirinkoy-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "siirt-kurtalan-ekinli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "osmaniye-duzici-karacaoren-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "tunceli-uzuncayir-kanoglu-resmi-amator-kiyisi": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "tunceli-keban-7-goktepe-temurtaht-resmi-amator-kiyisi": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "elazig-karakocan-ozluce-demirtas-resmi-amator-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "sivas-golova-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "siirt-kurtalan-yayikli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "siirt-kurtalan-cayirli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "diyarbakir-ergani-ergani-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "eskisehir-beylikova-kizilcaoren-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "eskisehir-gunyuzu-gunyuzu-1-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "eskisehir-gunyuzu-mercan-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "eskisehir-mihaliccik-ahurkoy-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "eskisehir-sivrihisar-bahcecik-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "mugla-ula-ula-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kutahya-merkez-eskiyuregil-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "mardin-derik-dumluca-baraj-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "sirnak-idil-dirsekli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "mus-malazgirt-kaz-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "burdur-tefenni-cayli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "burdur-karamanli-karamanli-baraj-golu": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "mus-korkut-korkut-sulama-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "manisa-kula-kula-goleti": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "edirne-havsa-osmanli-koyu-goleti": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "istanbul-silivri-cayirdere-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istanbul-silivri-sayalar-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istanbul-silivri-degirmenkoy-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istanbul-silivri-kucuksinekli-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istanbul-silivri-gumusyaka-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kocaeli-korfez-atalar-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kocaeli-kandira-seyrek-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kocaeli-kandira-bagirganli-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kocaeli-kandira-kumcagiz-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "kocaeli-izmit-cagirgan-goleti": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istanbul-fatih-balat-sair-nedim-parki-sahili": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istanbul-beyoglu-haskoy-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "istanbul-avcilar-avcilar-sahil-parki": {
+      "confidence": "C",
+      "indexing": "index"
+    },
+    "ankara-kalecik-koyunbaba-mahallesi-amator-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ankara-kalecik-koyunbaba-karahaci-amator-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "ankara-kalecik-koyunbaba-karamusa-amator-alani": {
+      "confidence": "B",
+      "indexing": "index"
+    },
+    "izmir-narlidere-sahilevleri-kiyi-bandi": {
+      "confidence": "C",
+      "indexing": "index"
+    }
+  }
+}
