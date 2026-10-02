@@ -12,6 +12,13 @@ let x=s();x.dailyPolicy.repositoryCap=0;x.dailyPolicy.priorTodayReleasedSlugs=[e
 x=s();x.dailyPolicy.priorTodayReleasedSlugs=[existingIndexable];x.dailyPolicy.releasedSlugs=[existingIndexable];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('yeniden sayıldı')));
 x=s();x.done=true;assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('Hedef eksikken')));
 const changed=structuredClone(meralar);const d=changed.find(r=>r.confidence==='D');d.confidence='C';d.indexing='index';assert(validateDailyQuality(state,baseline,changed).some(e=>e.includes('gerçek noindex')));
-x=s();x.dailyPolicy.evidence[0].families=['tek'];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('iki bağımsız')));
+x=s();
+x.dailyPolicy.qualityUpgradedSlugs=[d.slug];
+x.dailyPolicy.releasedSlugs=[d.slug];
+x.stage2.promotedSlugs=[d.slug];
+x.stage2.promotedCount=1;
+x.stage2.indexReleasedSlugs=[d.slug];
+x.dailyPolicy.evidence=[{slug:d.slug,families:['tek'],sources:[],coverage:[]}];
+assert(validateDailyQuality(x,baseline,changed).some(e=>e.includes('iki bağımsız')));
 x=s();x.analytics.discovered=251;x.dailyPolicy.indexReleaseOperationalCap=5;assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('operasyonel')));
 console.log('Günlük politika: gerçek değişiklik, çift sayım, dar tavan, kanıt ve eksik hedef regresyonları geçti.');
