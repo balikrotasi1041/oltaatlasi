@@ -1,3 +1,5 @@
+> **4 Ekim 2026 bağlayıcı güncelleme:** Günlük toplam yeni indeks salımı sabit en fazla **2**. Repo, hukuk veya operasyon daha sıkıysa 0/1 uygulanır. Eski 3/5 tavanları tarihsel metindir ve artık uygulanmaz. Önceki aynı gün salımları dahildir. `confidence=C` tek başına C+ değildir. Yeni salım için yapılandırılmış `qualityGrade` ve `expanded-v2` kanıt değerlendirmesi zorunludur. Ayrıntı: [genişletilmiş standart](expanded-quality-standard.md).
+
 # Olta Atlası SEO ve indeks salım standardı v1
 
 Tarih: 18 Eylül 2026
@@ -21,8 +23,8 @@ Kuyruk bandı:
 
 - 0-75: normal
 - 76-150: dikkatli
-- 151-250: throttle, günlük en fazla 5 yeni C+ index salımı
-- 251+: strong-throttle, günlük en fazla 3 yeni C+ index salımı
+- 151-250: throttle, günlük en fazla 2 yeni C+ index salımı
+- 251+: strong-throttle, günlük en fazla 2 yeni C+ index salımı; gerekirse daha düşük
 
 C+ olup bekletilecek rota `indexing: "hold"` ile yayımlanır. Bu rota kullanıcıya açık kalır fakat normal ve görsel sitemap dışında tutulur ve Worker üzerinden `noindex,follow` alır. Salım günü `indexing: "index"` yapılır veya hold alanı kaldırılır.
 
@@ -68,4 +70,4 @@ GA4 tarafında Key Event işaretlemesi hesap/yönetim düzeyinde ayrıca yapılm
 
 ## 27 Eylül 2026 uygulama eki
 
-Kalite ve salım ayrı günlük sayaçlardır: en az 17 kanıtlı kalite yükseltmesi hedeflenir; hedef bir confidence kotası değildir. Günlük D/noindex → C+/index tavanı 5, mevcut 219 discovered / 24 crawled-not-indexed verisinde operasyonel tavan 3 (hedef 2–3) uygulanır. Repo/GSC daha düşük sınır belirlerse en küçüğü geçerlidir. Önceki aynı gün salımları dahil edilir. Daha yüksek kaliteye ulaşmış ancak salınmayan kayıt `indexing=hold` ve `noindex,follow` kalır. Günlük başlangıç snapshot'ı değiştirilmeden gerçek veri farkı kontrol edilir; yeni gün için yeni tarihli snapshot ve ledger açılır. Kanıt ailelerinin bağımsızlığı editoryal inceleme gerektirir; URL adedi yeterli değildir. Hedef eksikliği `done=false` ve açık eksik sayı ile raporlanır. Yeni Ege/Marmara kayıtları ancak B/A ve güvenli genel kullanım kanıtıyla açılır.
+Kalite ve salım ayrı günlük sayaçlardır: en az 17 kanıtlı kalite yükseltmesi hedeflenir; hedef bir confidence kotası değildir. Günlük D/noindex → C+/index tavanı sabit 2dir; eski 219 discovered / 24 crawled-not-indexed verisi yeni ölçüm diye sunulmaz. Operasyonel hedef 0–2dir. Repo/GSC daha düşük sınır belirlerse en küçüğü geçerlidir. Önceki aynı gün salımları dahil edilir. Daha yüksek kaliteye ulaşmış ancak salınmayan kayıt `indexing=hold` ve `noindex,follow` kalır. Günlük başlangıç snapshot'ı değiştirilmeden gerçek veri farkı kontrol edilir; yeni gün için yeni tarihli snapshot ve ledger açılır. Kanıt ailelerinin bağımsızlığı editoryal inceleme gerektirir; URL adedi yeterli değildir. Hedef eksikliği `done=false` ve açık eksik sayı ile raporlanır. Yeni Ege/Marmara kayıtları ancak B/A ve güvenli genel kullanım kanıtıyla açılır.

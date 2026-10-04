@@ -4,6 +4,8 @@ const PERMANENT_REDIRECT_HOSTS = new Set([
   "balik-rotasi.balikrotasi1041.workers.dev",
 ]);
 const PERMANENT_PATH_REDIRECTS = new Map([
+  ["/meralar/ulusal-bilecik-dodurga-baraj-golu-bilecik", "/meralar/ankara-500km-bilecik-daridere-baraj-golu/"],
+  ["/meralar/ulusal-bolu-hasanlar-baraj-golu-bolu", "/meralar/ulusal-duzce-hasanlar-baraj-golu-duzce/"],
   ["/meralar/cubuklu-beykoz-sahili", "/meralar/cubuklu-sahili/"],
   ["/meralar/maltepe-sahili", "/meralar/maltepe-orhangazi-sehir-parki-kiyisi/"],
   ["/meralar/pendik-sahili", "/meralar/pendik-sahil-parki-kamusal-kiyi/"],

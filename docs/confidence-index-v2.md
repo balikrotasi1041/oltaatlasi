@@ -1,3 +1,5 @@
+> **4 Ekim 2026 bağlayıcı güncelleme:** Günlük toplam yeni indeks salımı sabit en fazla **2**. Repo, hukuk veya operasyon daha sıkıysa 0/1 uygulanır. Eski 3/5 tavanları tarihsel metindir ve artık uygulanmaz. Önceki aynı gün salımları dahildir. `confidence=C` tek başına C+ değildir. Yeni salım için yapılandırılmış `qualityGrade` ve `expanded-v2` kanıt değerlendirmesi zorunludur. Ayrıntı: [genişletilmiş standart](expanded-quality-standard.md).
+
 # Güven endeksi v2 · olasılık-temelli doğrulama
 
 Olta Atlası güven endeksi, bir avlakta balığın kesin yakalanacağını değil, yayımlanan rota ve tür bilgilerinin ne kadar güçlü kanıtlarla desteklendiğini gösterir. Balıkçılık doğası gereği olasılığa dayandığı için tür bulunma ihtimali, güncel avlanma izni, kıyı erişimi ve saha koşulları ayrı boyutlar olarak değerlendirilir.

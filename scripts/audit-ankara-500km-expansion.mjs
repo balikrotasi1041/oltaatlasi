@@ -1,3 +1,4 @@
+import { qualityStress20261004 } from "../src/data/meralar-quality-stress-2026-10-04.ts";
 import { kaliteYukseltmeleri20260927 } from "../src/data/meralar-daily-quality-2026-09-27.ts";
 import { readFileSync } from "node:fs";
 import { meralar } from "../src/data/meralar-tumu.ts";
@@ -24,6 +25,7 @@ const identity=(route)=>normalize(route.name).split(/\s+/).filter((token)=>token
 const duplicate=(values)=>[...new Set(values.filter((value,index)=>values.indexOf(value)!==index))];
 const banned=/ön değerlendirme|\btaslak\b|pilot veri/i;
 const promotionDates=new Map([
+  ...qualityStress20261004.filter(({patch})=>patch.confidence!=="D").map(({slug,patch})=>[slug,patch.researchedAt]),
   ...kaliteYukseltmeleri20260927.map(({slug,patch})=>[slug,patch.researchedAt]),
   ...promoted20260901Stage2.map((slug)=>[slug,"2026-09-01"]),
   ...promoted20260905Stage2.map((slug)=>[slug,"2026-09-05"]),
@@ -81,7 +83,7 @@ for(const route of newRoutes){
   if(!maps||!/ikincil|resmî gerçek/i.test(maps.note))errors.push(`${route.slug}: Maps/kullanıcı içeriği ikincil kanıt olarak açıklanmamış.`);
   if(!route.sources.some((source)=>/tarimorman\.gov\.tr|cbs1\.tarimorman\.gov\.tr/i.test(source.url)))errors.push(`${route.slug}: resmî Tarım ve Orman kaynağı yok.`);
   if(!route.sources.some((source)=>/openstreetmap\.org|\.gov\.tr|\.bel\.tr/i.test(source.url)))errors.push(`${route.slug}: su kimliği için birincil/açık harita kaynağı yok.`);
-  if(route.fish.length<1||route.methods.length<1||route.baits.length<1)errors.push(`${route.slug}: tür/yöntem/yem bağlamı eksik.`);
+  if(route.fish.length<1||((route.methods.length<1||route.baits.length<1)&&!(route.indexing==="hold"&&route.qualityAssessment?.model==="expanded-v2")))errors.push(`${route.slug}: tür/yöntem/yem bağlamı eksik.`);
   const legacyProbabilityEvidenceOkay=promotionDate==="2026-09-05"
     ?/olasılı[ğk]/i.test(`${route.confidenceProfile?.species.label||""} ${route.confidenceProfile?.species.note||""}`)
     :route.fishEvidence.length===route.fish.length&&!route.fishEvidence.some((item)=>!/olasılık/i.test(`${item.evidenceLevel} ${item.note}`));

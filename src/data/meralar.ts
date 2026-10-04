@@ -8,6 +8,13 @@ export type Mera = {
   lat: number; lng: number; locationPrecision: "Yaklaşık" | "Genel bölge" | "Tam";
   verification: string; updatedAt: string; publishedAt: string; confidence: "A" | "B" | "C" | "D";
   indexing?: "hold" | "index";
+  qualityGrade?: "A" | "B" | "C+" | "C" | "D";
+  qualityAssessment?: {
+    model: "expanded-v2"; reviewedAt: string; identityVerified: boolean;
+    speciesRouteSpecific: boolean; currentLawResolved: boolean; safePublicAccessVerified: boolean;
+    independentStrongFamilies: string[]; localContentVerified: boolean;
+    fieldOrEquivalentVerified: boolean; unresolvedRisks: string[];
+  };
   image: string; socialImage: string; navigationNote: string; shoreProfile:string;
   transport:string; crowdNote:string; longIntro:string[]; planningNotes:string[]; seasonalNotes:string[];
   sources: SourceLink[];
@@ -2221,4 +2228,3 @@ export const districtRouteCounts = Object.fromEntries(
     meralar.filter((m) => m.province === province && m.district === district).length,
   ]))
 );
-

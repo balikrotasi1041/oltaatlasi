@@ -13,7 +13,7 @@
     "validate:security": "node scripts/validate-security-posture.mjs",
     "validate:guides": "node --import tsx scripts/validate-guide-quality.ts",
     "validate:maintenance": "node --import tsx scripts/audit-route-maintenance.mjs && npm run validate:confidence && node scripts/validate-worker-redirects.mjs && npm run validate:admin-data-flow && npm run validate:security",
-    "validate:data": "npm run validate:routes && npm run validate:ankara-500km && npm run validate:duplicates && npm run validate:maintenance && npm run validate:guides",
+    "validate:data": "npm run validate:routes && npm run validate:ankara-500km && npm run validate:duplicates && npm run validate:maintenance && npm run validate:guides && npm run validate:stress-quality",
     "audit:sources": "tsx scripts/audit-source-health.mjs",
     "validate:research": "node scripts/run-with-node-data-imports.mjs scripts/validate-national-research.mjs",
     "validate:index-policy": "npm run validate:daily-quality && node --import tsx scripts/validate-index-policy.mjs",
@@ -27,7 +27,8 @@
     "generate:image-sitemap": "node scripts/generate-image-sitemap.mjs",
     "deploy": "wrangler deploy",
     "deploy:dry": "wrangler deploy --dry-run",
-    "validate:daily-quality": "node --import tsx scripts/validate-daily-quality.mjs && node --import tsx scripts/test-daily-quality-policy.mjs"
+    "validate:daily-quality": "node --import tsx scripts/validate-daily-quality.mjs && node --import tsx scripts/test-daily-quality-policy.mjs",
+    "validate:stress-quality": "node --import tsx scripts/validate-quality-stress.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
