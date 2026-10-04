@@ -15,3 +15,6 @@ worker/index-policy-routes.js
 *.pfx
 *service-account*.json
 *credentials*.json
+
+# Generated from the actual checkout in every build, including Cloudflare hooks.
+public/__deploy/version.txt

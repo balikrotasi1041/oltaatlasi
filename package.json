@@ -20,7 +20,7 @@
     "geocode:national": "node scripts/geocode-national-routes.mjs",
     "research:national": "node scripts/run-with-node-data-imports.mjs scripts/enrich-national-routes-fast.mjs",
     "generate:index-policy-data": "node --import tsx scripts/generate-index-policy-data.mjs",
-    "build": "npm run generate:index-policy-data && npm run validate:data && npm run validate:research && npm run generate:robots && astro check && astro build && npm run generate:image-sitemap && npm run validate:index-policy",
+    "build": "npm run stamp:release && npm run generate:index-policy-data && npm run validate:data && npm run validate:research && npm run generate:robots && astro check && astro build && npm run generate:image-sitemap && npm run validate:index-policy",
     "preview": "astro preview",
     "check": "astro check",
     "generate:robots": "node --import tsx scripts/generate-robots.mjs",
@@ -28,7 +28,8 @@
     "deploy": "wrangler deploy",
     "deploy:dry": "wrangler deploy --dry-run",
     "validate:daily-quality": "node --import tsx scripts/validate-daily-quality.mjs && node --import tsx scripts/test-daily-quality-policy.mjs",
-    "validate:stress-quality": "node --import tsx scripts/validate-quality-stress.mjs"
+    "validate:stress-quality": "node --import tsx scripts/validate-quality-stress.mjs",
+    "stamp:release": "node scripts/stamp-release.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
