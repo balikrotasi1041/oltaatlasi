@@ -164,7 +164,7 @@ for(const province of [...new Set(meralar.map((route)=>route.province))]){
   }
 }
 
-console.log(`İndeks politikası: ${sitemapUrls.length} sitemap URL'si; ${indexableCount} C+ rota indekslenebilir, ${indexHoldCount} C+ rota aşamalı yayın için hold, ${preliminaryCount} Güven D noindex,follow; ${nofollowNoindexLinks} nofollow bağlantı; ${errors.length} hata.`);
+console.log(`İndeks politikası: ${sitemapUrls.length} sitemap URL'si; ${indexableCount} legacy veya doğrulanmış rota indekslenebilir, ${indexHoldCount} C/B/A rota kanıt veya salım için hold, ${preliminaryCount} Güven D noindex,follow; ${nofollowNoindexLinks} nofollow bağlantı; ${errors.length} hata.`);
 for(const error of errors.slice(0,200))console.error(`HATA: ${error}`);
 if(errors.length>200)console.error(`HATA: ${errors.length-200} ek hata daha var.`);
 if(errors.length)process.exit(1);

@@ -1,0 +1,1348 @@
+{
+  "date": "2026-10-04",
+  "baselineSha": "574aebb81d33f2c9e9f7d3e87c58f20ecb71c0f6",
+  "selection": "Kullanıcının sabit 25 adayı; ikame yok. Marmara/Batı Karadeniz örneklemi ulusal temsili değildir.",
+  "candidates": [
+    {
+      "slug": "ulusal-bilecik-borcak-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "dsi3",
+        "borcak"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "Güncel izinli ve güvenli genel kıyı erişimi",
+      "localNote": "Söğüt Borçak Göleti kimliği ve 2018 sazan salımı belgeli. Balıklandırma bugün yetişkin stok veya av garantisi değildir.",
+      "district": "Söğüt",
+      "name": "Borçak Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "İl Tarım"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 3. Bölge tesis envanteri",
+          "url": "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
+          "note": "Resmî su yapısı kimliği; kıyı giriş izni değildir."
+        },
+        {
+          "label": "Bilecik İl Tarım, 29.06.2018",
+          "url": "https://bilecik.tarimorman.gov.tr/Haber/677/",
+          "note": "Söğüt Borçak: 15.000 sazan yavrusu. Tarihsel olasılık kanıtı; güncel stok bilinmiyor."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bilecik-dodurga-baraj-golu-bilecik",
+      "after": "301",
+      "sourceIds": [
+        "dsi3",
+        "dodurga"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "Yükseltme yerine Darıdere/Dodurga konsolidasyonu",
+      "localNote": "2024 Bilecik çevre raporunda Darıdere (Dodurga) aynı su varlığıdır. Eski Dodurga slugı mevcut Darıdere sayfasına 301 olur; kanıt ve temizlenmiş tür listesi kanonik sayfaya aktarılır.",
+      "district": "Bozüyük",
+      "name": "Dodurga (Darıdere) Baraj Gölü",
+      "waterType": null,
+      "before": "D",
+      "decision": "301",
+      "families": [
+        "DSİ",
+        "İl Tarım"
+      ],
+      "sources": [
+        {
+          "label": "Bilecik 2024 İl Çevre Durum Raporu",
+          "url": "https://webdosya.csb.gov.tr/db/ced/icerikler/b-lec-k_-cdr2024-20250806094037.pdf",
+          "note": "Darıdere (Dodurga) tek baraj olarak listelenir."
+        },
+        {
+          "label": "DSİ 3. Bölge tesis envanteri",
+          "url": "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
+          "note": "Resmî su yapısı kimliği; kıyı giriş izni değildir."
+        },
+        {
+          "label": "Bilecik İl Tarım, 21.08.2015 istihsal ihalesi",
+          "url": "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=145",
+          "note": "Dodurga stok tablosunda sazan ve Carassius sp.; ticari ihale amatör kıyı izni değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ],
+      "redirectTo": "ankara-500km-bilecik-daridere-baraj-golu"
+    },
+    {
+      "slug": "ulusal-bilecik-gunyurdu-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "dsi3",
+        "gunstock",
+        "gunaccess"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "Güncel yer yasağı ve işletme erişim koşullarının rota düzeyinde teyidi",
+      "localNote": "Pazaryeri Günyurdu (Mustafa Eldemir) için DSİ balıklandırması ile Kültür Portalı mesire/olta kaydı birlikte bulunuyor. Eski ticari yasak metni bugünün 6/2 hükmü sayılmadı; güncel ekler ve yerel kullanım kesinleştirilmedi.",
+      "district": "Pazaryeri",
+      "name": "Günyurdu (Mustafa Eldemir) Baraj Gölü",
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "Kültür ve Turizm"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 3. Bölge tesis envanteri",
+          "url": "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
+          "note": "Resmî su yapısı kimliği; kıyı giriş izni değildir."
+        },
+        {
+          "label": "DSİ 2013 istatistik bülteni, Ek Çizelge 19-10 sıra 43",
+          "url": "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2013-yili-hib-kitabi.pdf",
+          "note": "PDF s.646: Günyurdu/Bilecik, 10.000 pullu sazan; güncel stok sayısı değildir."
+        },
+        {
+          "label": "Kültür Portalı, Günyurdu Göleti",
+          "url": "https://www.kulturportali.gov.tr/turkiye/bilecik/gezilecekyer/gunyurdu-golet",
+          "note": "2021 güncellemeli mesire ve olta kullanımı; bugün bütün kıyılara açık giriş garantisi değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bilecik-sakarya-nehri-bilecik-hatti",
+      "after": "D",
+      "sourceIds": [
+        "bileciksak",
+        "dsi3"
+      ],
+      "fish": [],
+      "primaryMissing": "Bilecik kesimine ait istasyonlu tür kaydı",
+      "localNote": "Osmaneli coğrafi çalışması nehir kimliğini destekler; Sakarya ilindeki aşağı havza avları Bilecik hattına taşınamaz.",
+      "district": null,
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Üniversite",
+        "DSİ"
+      ],
+      "sources": [
+        {
+          "label": "Bilecik Şeyh Edebali Üniversitesi, Sakarya ve Osmaneli",
+          "url": "https://avesis.bilecik.edu.tr/yayin/4f9f862e-e74f-4994-82ef-d3d971f1463b/sakarya-nehri-ve-osmaneli",
+          "note": "Osmaneli hattının coğrafi bağlamı; Aşağı Sakarya türleri bu hatta taşınmadı."
+        },
+        {
+          "label": "DSİ 3. Bölge tesis envanteri",
+          "url": "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
+          "note": "Resmî su yapısı kimliği; kıyı giriş izni değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bolu-hasanlar-baraj-golu-bolu",
+      "after": "301",
+      "sourceIds": [
+        "hasanlar",
+        "duzcefauna"
+      ],
+      "fish": [],
+      "primaryMissing": "Yükseltme uygulanmaz; tek kanonik rota",
+      "localNote": "Hasanlar Yığılca/Düzce su varlığıdır. Bolu legacy kaydı aktif listeden çıkarılıp mevcut Düzce Hasanlar rotasına 301 yönlendirilir.",
+      "district": null,
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "301",
+      "families": [
+        "Kültür ve Turizm",
+        "Üniversite / ulusal biyolojik çeşitlilik saha projesi"
+      ],
+      "sources": [
+        {
+          "label": "Kültür Portalı, Düzce olta balıkçılığı",
+          "url": "https://beta.kulturportali.gov.tr/turkiye/duzce/turizmaktiviteleri/olta-balikciligi-3",
+          "note": "Hasanlar Düzce su varlığıdır; Bolu kaydı aynı suyu yanlış ilde yineliyor."
+        },
+        {
+          "label": "Güçlü 2020, Düzce ihtiyofaunası",
+          "url": "https://dergipark.org.tr/tr/download/article-file/1121775",
+          "note": "2016 örneklemesi; Şekil 1 ve Tablo 1 birlikte okundu. Küçük Melen 21/24/25 istasyonları; Efteni türleri aktarılmadı."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ],
+      "redirectTo": "ulusal-duzce-hasanlar-baraj-golu-duzce"
+    },
+    {
+      "slug": "ulusal-bolu-golcuk-golu-bolu",
+      "after": "D",
+      "sourceIds": [
+        "golcuk",
+        "ekotaban",
+        "golcukgov"
+      ],
+      "fish": [],
+      "primaryMissing": "Bolu Gölcüke özgü birincil tür envanteri",
+      "localNote": "DKMP park ve olta iskelelerini doğrular. Çok göllü turizm listesi ve Ödemiş/Isparta Gölcük araştırmaları tür kanıtı sayılmadı. Temmuz 2026 balık ölümü haberinin resmî sonuç teyidi de eksik.",
+      "district": "Merkez",
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DKMP",
+        "Valilik / turizm derlemesi"
+      ],
+      "sources": [
+        {
+          "label": "DKMP 9. Bölge, Bolu Gölcük Tabiat Parkı",
+          "url": "https://bolge9.tarimorman.gov.tr/Menu/55/Bolu-Golcuk-Tabiat-Parki",
+          "note": "Kamusal park, ana giriş, araç bariyeri ve olta iskeleleri belgeli; metinde rota-özel balık listesi yok."
+        },
+        {
+          "label": "DKMP EkoTaban, alan 374",
+          "url": "https://ekotaban.tarimorman.gov.tr/alan/374",
+          "note": "Alan detay metni okundu; 9. Bölge metniyle aynı kaynak ailesi, ikinci bağımsız kanıt sayılmadı."
+        },
+        {
+          "label": "Bolu Valiliği, Gölcük Tabiat Parkı",
+          "url": "https://www.bolu.gov.tr/golcuk-ormanici-dinlenme-yeri",
+          "note": "Belirli dönemlerde ücretli sportif olta kullanımı; tür listesi ve güncel işletme koşulu yerine geçmez."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bursa-akalan-baraj-golu",
+      "after": "D",
+      "sourceIds": [
+        "dsi1"
+      ],
+      "fish": [],
+      "primaryMissing": "Akalan/Orhaneliye özgü balıklandırma veya örnekleme",
+      "localNote": "DSİ Orhaneli Akalan sulama göleti kimliğini destekler. İzmir veya Denizlideki adaş Akalan kayıtları elendi.",
+      "district": "Orhaneli",
+      "name": "Akalan Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bursa-babasultan-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "dsi1",
+        "baba"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "İl Tarımın güncel amatör kıyı alanı ve erişim kaydı",
+      "localNote": "Kestel Babasultan sazan stok tahmini ticari ihale bağlamındadır. Yakındaki kafes işletmesi yabani kıyı stok kanıtı sayılmadı.",
+      "district": "Kestel",
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "İl Tarım"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "Bursa İl Tarım, Babasultan istihsal ihalesi",
+          "url": "https://bursa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=1bcf954e-b36a-404b-bf17-6d58f011ccb4&TermSetId=fd637a8b-77fd-4102-823a-4a88a7156368&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=254%2FBabasultan-Baraj-Golu-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi",
+          "note": "2017 Kestel Babasultan sazan stok tablosu; kiralama kıyıdan amatör av izni değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bursa-bogazkoy-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "dsi1",
+        "bogaz"
+      ],
+      "fish": [
+        "Yayın"
+      ],
+      "primaryMissing": "İzinli ve güvenli genel kıyı yaklaşımı",
+      "localNote": "İnegöl Boğazköyde 2024 yayın yakalaması resmî ceza açıklamasında belgeli. Olay av serbestliği değil, tür kaydı ve dönem yasağı uyarısıdır.",
+      "district": "İnegöl",
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "İl Tarım denetimi"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "Bursa İl Tarım, 06.06.2024 denetim açıklaması",
+          "url": "https://bursa.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1900",
+          "note": "İnegöl Boğazköyde 01.06.2024 yayın avı ve ceza: türün varlığını destekler, av iznini desteklemez. Haberin 5/2 hukuku güncel kabul edilmedi."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bursa-burcun-baraj-golu",
+      "after": "D",
+      "sourceIds": [
+        "dsi1"
+      ],
+      "fish": [],
+      "primaryMissing": "Burcun su varlığına özgü tür örneklemesi",
+      "localNote": "Yenişehir Burcun için tesis kimliği, tür ve güvenli kamusal kıyı kanıtından ayrıldı. Başka Bursa göletlerinin sazanları aktarılmadı.",
+      "district": "Yenişehir",
+      "name": "Burcun Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-bursa-buyukorhan-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "dsi1",
+        "cuma"
+      ],
+      "fish": [
+        "Sazan",
+        "Tatlısu kefali",
+        "Kızılkanat"
+      ],
+      "primaryMissing": "2026 kiralama durumu ve amatöre ayrılmış kıyı alanı",
+      "localNote": "Büyükorhan (Cuma) 2020 stok tablosu üç balığı destekler. Beş yıllık ihale süresinden 2026da serbest giriş sonucu çıkarılamaz.",
+      "district": "Büyükorhan",
+      "name": "Büyükorhan (Cuma) Baraj Gölü",
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "İl Tarım"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "Bursa İl Tarım, 09.09.2020 Büyükorhan Cuma ihalesi",
+          "url": "https://bursa.tarimorman.gov.tr/Duyuru/456/Buyukorhan-_-Cuma_-Baraj-Golu-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi-Hakkinda-Duyuru",
+          "note": "Sazan, tatlısu kefali, kızılkanat stokları; beş yıllık ihale duyurusu 2026 kira statüsü değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-duzce-kucuk-melen-cayi",
+      "after": "C",
+      "sourceIds": [
+        "duzcefauna",
+        "dsi1"
+      ],
+      "fish": [
+        "Tatlısu kefali"
+      ],
+      "primaryMissing": "Örnekleme kesimiyle eşleşen güvenli kamusal kıyı yaklaşımı",
+      "localNote": "2016 örneklemesinin Şekil 1 ve Tablo 1inde Küçük Melen 21/24/25 istasyonlarında Squalius pursakensis kaydı vardır. Büyük Melen/Kocaali hattına taşınmaz; çalışma güncel stok ölçümü değildir.",
+      "district": null,
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Üniversite / ulusal biyolojik çeşitlilik saha projesi",
+        "Çevre envanteri"
+      ],
+      "sources": [
+        {
+          "label": "Güçlü 2020, Düzce ihtiyofaunası",
+          "url": "https://dergipark.org.tr/tr/download/article-file/1121775",
+          "note": "2016 örneklemesi; Şekil 1 ve Tablo 1 birlikte okundu. Küçük Melen 21/24/25 istasyonları; Efteni türleri aktarılmadı."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        },
+        {
+          "label": "Düzce 2011 İl Çevre Durum Raporu",
+          "url": "https://webdosya.csb.gov.tr/db/ced/editordosya/duzce_icdr2011.pdf",
+          "note": "Küçük Melen su kimliği ve tarihsel kullanım bağlamı. Güncel güvenli kıyı izni değildir."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-duzce-akcakoca-sahili",
+      "after": "D",
+      "sourceIds": [
+        "akca",
+        "akcatrawl",
+        "akcasafe"
+      ],
+      "fish": [],
+      "primaryMissing": "Kıyıya özgü tür ve konum içeren gözlem/yarışma tutanağı",
+      "localNote": "Amatör etkinlik kullanım bağlamı var. 30–110 m açık deniz trol örnekleri ve balıkçı satışları kıyı türü sayılmadı; mendirek ve aktif liman güvenli olta noktası olarak sunulmadı.",
+      "district": "Akçakoca",
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "GSB",
+        "Üniversite",
+        "Mülki idare / güvenlik"
+      ],
+      "sources": [
+        {
+          "label": "Düzce Gençlik Spor, kıyı temizliği ve balık etkinliği",
+          "url": "https://duzce.gsb.gov.tr/HaberDetaylari/1/30/212100/once-temizlik-yaptilar-sonra-balik-tuttular.aspx",
+          "note": "Geçmiş amatör etkinlik kullanım bağlamı; tür adı ve bugünkü alan sınırı eksik."
+        },
+        {
+          "label": "Öğreden ve Yağlıoğlu, Akçakoca dip trolü örneklemesi",
+          "url": "https://dergipark.org.tr/tr/download/article-file/386229",
+          "note": "2014–2015, 30–110 m derinlikte örnekleme; kıyı rotası tür listesine aktarılmadı."
+        },
+        {
+          "label": "Akçakoca Kaymakamlığı, suda boğulmayı önleme kararı",
+          "url": "https://www.akcakoca.gov.tr/ilce-suda-bogulma-olaylarini-onleme-komisyonu-karari",
+          "note": "Liman, mendirek ve deniz tehlikeleri. Yüzme yasağı otomatik olarak kıyı olta yasağı diye yorumlanmadı."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-kocaeli-bayraktar-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "dsi1",
+        "kocstock"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "Güvenli ve izinli genel kıyı erişimi",
+      "localNote": "Bayraktar için 2022 İl Tarım kaydı 20.000 sazan yavrusu salımı bildirir. Kıyı girişine ilişkin yetkili kullanım belgesi bulunmadı.",
+      "district": null,
+      "name": "Bayraktar Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "İl Tarım"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "Kocaeli İl Tarım, 2022 balıklandırması",
+          "url": "https://kocaeli.tarimorman.gov.tr/Haber/454/318-250-Adet-Sazan-Baligi-Yavrusu-Sularimiza-Birakildi",
+          "note": "Bayraktar 20.000, Şahinler 28.000 sazan yavrusu. Çayırköy kaydı Bıçkıdere ile birleştirilmedi."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-kocaeli-bickidere-baraj-golu",
+      "after": "D",
+      "sourceIds": [
+        "dsi1",
+        "kocenv"
+      ],
+      "fish": [],
+      "primaryMissing": "Bıçkıdere adına özgü balıklandırma/örnekleme",
+      "localNote": "Bıçkıdere Göleti ile Çayırköy selkapanı ayrı tesislerdir. Çayırköy sazan salımı Bıçkıdereye taşınmadı.",
+      "district": null,
+      "name": "Bıçkıdere Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "Çevre envanteri / DSİ girdisi"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "Kocaeli 2018 İl Çevre Durum Raporu",
+          "url": "https://webdosya.csb.gov.tr/db/ced/icerikler/kocael-_2018_-cdr_rev-ze-20190808154550.pdf",
+          "note": "Bıçkıdere göleti ile Çayırköy selkapanı ayrı tesislerdir; isim benzerliği tür aktarımı gerekçesi olamaz."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-kocaeli-kirazdere-yuvacik-baraj-golu",
+      "after": "D",
+      "sourceIds": [
+        "yuvacik",
+        "dsi1"
+      ],
+      "fish": [],
+      "primaryMissing": "İSU tarafından açılmış olta cebinin güncel konum ve izin kaydı",
+      "localNote": "Yuvacık içme suyu rezervuarıdır. Özel hükümlerde olta ceplerinden söz edilmesi gerçekleşmiş açık kıyı kanıtı değildir; rota-özel balık listesi de teyit edilemedi.",
+      "district": "Başiskele",
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Su idaresi / havza koruma",
+        "DSİ"
+      ],
+      "sources": [
+        {
+          "label": "İSU, Yuvacık Barajı özel hükümleri",
+          "url": "https://www.isu.gov.tr/component/GetFiles.ashx?FileName=9b7e6d33-ed6a-41bc-bd01-80a9e62e94db.pdf&t=2",
+          "note": "63 ve 116. hükümler kontrollü olta ceplerini düzenler; böyle bir cebin bugün yapılıp açıldığını kanıtlamaz."
+        },
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-kocaeli-kurtdere-baraj-golu",
+      "after": "D",
+      "sourceIds": [
+        "dsi1",
+        "kocenv"
+      ],
+      "fish": [],
+      "primaryMissing": "Kurtdere adına eşleşen doğrudan tür kaydı",
+      "localNote": "Kurtdere adı başka gölet adıyla kanıtsız eşleştirilmedi. Kimlik envanteri, güncel balık ve kıyı kullanımını tek başına doğrulamaz.",
+      "district": null,
+      "name": "Kurtdere Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "Çevre envanteri / DSİ girdisi"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "Kocaeli 2018 İl Çevre Durum Raporu",
+          "url": "https://webdosya.csb.gov.tr/db/ced/icerikler/kocael-_2018_-cdr_rev-ze-20190808154550.pdf",
+          "note": "Bıçkıdere göleti ile Çayırköy selkapanı ayrı tesislerdir; isim benzerliği tür aktarımı gerekçesi olamaz."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-kocaeli-sahinler-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "dsi1",
+        "kocstock"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "Güvenli ve izinli genel kıyı erişimi",
+      "localNote": "Şahinler için 2022 İl Tarım kaydı 28.000 sazan yavrusu salımı bildirir. Gölet çevresindeki parsellerin serbest geçiş verdiği doğrulanmadı.",
+      "district": null,
+      "name": "Şahinler Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "DSİ",
+        "İl Tarım"
+      ],
+      "sources": [
+        {
+          "label": "DSİ 1. Bölge tesis envanteri",
+          "url": "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "note": "Resmî tesis kimliği; balık ve serbest erişim kanıtı değildir."
+        },
+        {
+          "label": "Kocaeli İl Tarım, 2022 balıklandırması",
+          "url": "https://kocaeli.tarimorman.gov.tr/Haber/454/318-250-Adet-Sazan-Baligi-Yavrusu-Sularimiza-Birakildi",
+          "note": "Bayraktar 20.000, Şahinler 28.000 sazan yavrusu. Çayırköy kaydı Bıçkıdere ile birleştirilmedi."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+      "after": "C",
+      "sourceIds": [
+        "sakhydro",
+        "sakfish"
+      ],
+      "fish": [
+        "Yayın",
+        "Turna"
+      ],
+      "primaryMissing": "Tür kaydıyla örtüşen kamusal ve güvenli kıyı kesimi",
+      "localNote": "2020 Aşağı Sakarya çalışması yayın ve turna yakalamalarını belgeler. Ticari paraketa çalışması amatör yöntem veya kıyı izni değildir; tek pin bütün Sakarya Nehrini temsil etmez.",
+      "district": null,
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Üniversite / coğrafya",
+        "Üniversite"
+      ],
+      "sources": [
+        {
+          "label": "Sakarya Üniversitesi Şehir Hafızası, Hidrografya",
+          "url": "https://sehirhafizasi.sakarya.edu.tr/hidrografya/",
+          "note": "Sakarya, Çark ve Melen coğrafi kimliği; tek başına tür veya erişim kanıtı değildir."
+        },
+        {
+          "label": "Reis ve Cerim 2020, Aşağı Sakarya balıkçılığı",
+          "url": "https://dergipark.org.tr/tr/pub/limnofish/article/635248",
+          "note": "Yayın ve turna yakalamaları bildirilir. Ticari paraketa amatör yöntem önerisi değildir; Bilecik hattına genellenmedi."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-sakarya-cark-deresi",
+      "after": "C",
+      "sourceIds": [
+        "sakhydro",
+        "cark"
+      ],
+      "fish": [
+        "Sazan",
+        "Turna",
+        "Yayın"
+      ],
+      "primaryMissing": "Yazlık kesiminde güncel güvenli ve izinli kıyı alanı",
+      "localNote": "Yazlık Kavşak çevresel planında Çark Deresine özgü türler bulunur. Şantiye, dere ıslahı ve su kalitesi dikkate alınmadan bütün dere avlak olarak sunulamaz.",
+      "district": null,
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Üniversite / coğrafya",
+        "Çevresel değerlendirme"
+      ],
+      "sources": [
+        {
+          "label": "Sakarya Üniversitesi Şehir Hafızası, Hidrografya",
+          "url": "https://sehirhafizasi.sakarya.edu.tr/hidrografya/",
+          "note": "Sakarya, Çark ve Melen coğrafi kimliği; tek başına tür veya erişim kanıtı değildir."
+        },
+        {
+          "label": "İLBANK, Yazlık Kavşak çevresel sosyal yönetim planı",
+          "url": "https://www.ilbank.gov.tr/storage/uploads/uidb/iads_sakarya_buyuksehir_belediyesi_yazlik_kavsak_projesi_csyp_final_cc_1761927987.pdf",
+          "note": "PDF s.34 / basılı s.18, Çark Deresine özgü sazan, turna ve yayın dahil tür listesi; proje çevresi, bütün dere boyunca av izni değil."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-sakarya-melen-cayi-sakarya-hatti",
+      "after": "D",
+      "sourceIds": [
+        "sakhydro",
+        "melen"
+      ],
+      "fish": [],
+      "primaryMissing": "Sakarya/Kocaali Melen kesimine özgü tür kaydı",
+      "localNote": "2026 ortak denetiminde av araçları raporlanıyor, tür adı verilmiyor. Akarsu sınırın iki tarafına uzanır; Düzce kaydıyla özdeş kıyı kanıtı olmadan otomatik 301 yapılmadı.",
+      "district": "Kocaali",
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Üniversite / coğrafya",
+        "İl Tarım denetimi"
+      ],
+      "sources": [
+        {
+          "label": "Sakarya Üniversitesi Şehir Hafızası, Hidrografya",
+          "url": "https://sehirhafizasi.sakarya.edu.tr/hidrografya/",
+          "note": "Sakarya, Çark ve Melen coğrafi kimliği; tek başına tür veya erişim kanıtı değildir."
+        },
+        {
+          "label": "Düzce İl Tarım, Melen kaçak av denetimi 2026",
+          "url": "https://duzce.tarimorman.gov.tr/Haber/1511/Melen-Cayinda-Kacak-Av-Denetimi",
+          "note": "Kocaali–Akçakoca ortak denetimi ve pinterler; tür adı yok, Küçük Melen bulguları buraya aktarılmadı."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-tekirdag-bayramsah-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "irap",
+        "kiyi",
+        "baylease"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "Projeli yetiştiricilik statüsünün güncel resmî açıklaması",
+      "localNote": "Hayrabolu Bayramşah (Sinekli) için sazan yetiştiriciliği ve 2014 başlangıçlı on beş yıllık kiralama kaydı var. 6/2 13/12-c nedeniyle serbest amatör av varsayılmadı.",
+      "district": "Hayrabolu",
+      "name": "Bayramşah (Sinekli) Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Resmî risk planı",
+        "Çevre planı / İl Tarım girdisi",
+        "İl Tarım"
+      ],
+      "sources": [
+        {
+          "label": "Tekirdağ İl Risk Azaltma Planı",
+          "url": "https://tekirdag.tarimorman.gov.tr/BelgelerArsiv/Duyuru/%C4%B0RAP.pdf",
+          "note": "Bayramşah ve Bıyıkali sulama, Türkmenli sulama/içme suyu işlevi; mülkiyet ve kıyı izni yerine geçmez."
+        },
+        {
+          "label": "Tekirdağ kıyı yapıları uzman değerlendirme raporu",
+          "url": "https://webdosya.csb.gov.tr/db/mpgm/icerikler/kiyi-yapilari-uzman-degerlendirme-raporu-20230329102326.pdf",
+          "note": "Bayramşah ve Bıyıkali sazan üretim bağlamı; üretim sahasının serbest amatör avlak olduğu sonucu çıkarılamaz."
+        },
+        {
+          "label": "Tekirdağ İl Tarım 2018 raporu",
+          "url": "https://tekirdag.tarimorman.gov.tr/Belgeler/TarimRaporlari/GTHB59_2018.pdf",
+          "note": "Bayramşah 2014 başlangıçlı 15 yıllık yarı entansif sazan yetiştiriciliği kaydı; fesih/değişiklik teyidi olmadan serbest erişim kurulamaz."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-tekirdag-biyikali-baraj-golu",
+      "after": "C",
+      "sourceIds": [
+        "irap",
+        "kiyi"
+      ],
+      "fish": [
+        "Sazan"
+      ],
+      "primaryMissing": "Güncel kira/işletme durumu ve izinli genel kıyı erişimi",
+      "localNote": "Süleymanpaşa Bıyıkali için sazan üretim geçmişi bulunur. Kiralama geçmişi veya sürenin bitmesi kamusal av erişimi kanıtı değildir.",
+      "district": "Süleymanpaşa",
+      "name": "Bıyıkali Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Resmî risk planı",
+        "Çevre planı / İl Tarım girdisi"
+      ],
+      "sources": [
+        {
+          "label": "Tekirdağ İl Risk Azaltma Planı",
+          "url": "https://tekirdag.tarimorman.gov.tr/BelgelerArsiv/Duyuru/%C4%B0RAP.pdf",
+          "note": "Bayramşah ve Bıyıkali sulama, Türkmenli sulama/içme suyu işlevi; mülkiyet ve kıyı izni yerine geçmez."
+        },
+        {
+          "label": "Tekirdağ kıyı yapıları uzman değerlendirme raporu",
+          "url": "https://webdosya.csb.gov.tr/db/mpgm/icerikler/kiyi-yapilari-uzman-degerlendirme-raporu-20230329102326.pdf",
+          "note": "Bayramşah ve Bıyıkali sazan üretim bağlamı; üretim sahasının serbest amatör avlak olduğu sonucu çıkarılamaz."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        },
+        {
+          "label": "Tekirdağ İl Tarım 2017 raporu",
+          "url": "https://tekirdag.tarimorman.gov.tr/Belgeler/TarimRaporlari/GTHB59_2017.pdf",
+          "note": "Bıyıkali 2013 başlangıçlı sazan yetiştiriciliği kaydı; güncel kira ve izin bilinmiyor."
+        },
+        {
+          "label": "Süleymanpaşa Kent Konseyi, Bıyıkali",
+          "url": "https://kentkonseyi.suleymanpasa.bel.tr/biyikali-mahallesi",
+          "note": "Piknik ve balık tutma bağlamı var; güncel işletme ve güvenli kıyı alanı sınırı belirtilmiyor."
+        },
+        {
+          "label": "MEB okul dışı öğrenme, Bıyıkali",
+          "url": "https://okuldisiogrenme-cdn-large.eba.gov.tr/mekan-detay/suleymanpasa-biyikali-goleti-5547",
+          "note": "Ziyarette kurum izni ve yasaklı kıyı/gövde sınırlarına uyma gereği; açık amatör kıyı izni değildir."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-tekirdag-turkmenli-baraj-golu",
+      "after": "D",
+      "sourceIds": [
+        "irap"
+      ],
+      "fish": [],
+      "primaryMissing": "TESKİ içme suyu koruma sınırı ve izinli kıyı kararı",
+      "localNote": "Türkmenli sulama ve içme suyu işleviyle kayıtlıdır. Tür forumlarından serbest erişim veya koruma istisnası çıkarılmadı.",
+      "district": null,
+      "name": "Türkmenli Göleti",
+      "waterType": "Gölet",
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Resmî risk planı"
+      ],
+      "sources": [
+        {
+          "label": "Tekirdağ İl Risk Azaltma Planı",
+          "url": "https://tekirdag.tarimorman.gov.tr/BelgelerArsiv/Duyuru/%C4%B0RAP.pdf",
+          "note": "Bayramşah ve Bıyıkali sulama, Türkmenli sulama/içme suyu işlevi; mülkiyet ve kıyı izni yerine geçmez."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    },
+    {
+      "slug": "ulusal-yalova-esenkoy-sahili",
+      "after": "D",
+      "sourceIds": [
+        "esen",
+        "esenwrong"
+      ],
+      "fish": [],
+      "primaryMissing": "Esenköy kıyısına özgü tür gözlemi",
+      "localNote": "Esenköy Belediyesi haberindeki sezon açılışı Armutlu Kapaklıda yapılmıştır. Yayınlayan kurumun adına bakılarak Esenköyde tür veya kıyı av izni türetilmedi.",
+      "district": "Çınarcık",
+      "name": null,
+      "waterType": null,
+      "before": "D",
+      "decision": "hold",
+      "families": [
+        "Belediye"
+      ],
+      "sources": [
+        {
+          "label": "Esenköy Belediyesi, coğrafi yapı",
+          "url": "https://www.esenkoy.bel.tr/sayfa/cografi-yapisi",
+          "note": "Kıyı yerleşimi ve deniz ulaşımı bağlamı; liman işletmesi ve yüzme sahası olta erişimi sayılmaz."
+        },
+        {
+          "label": "Esenköy Belediyesi, 2026–2027 sezon açılışı",
+          "url": "https://esenkoy.bel.tr/haberler/esenkoy-belediye-baskanimiz-mehmet-temel-2026-2027-balikcilik-av-sezonu-acilis-programina-katildi",
+          "note": "Etkinlik Armutlu Kapaklıdadır. Yayıncı Esenköy Belediyesi diye Esenköy kıyısına tür kanıtı taşınmadı."
+        },
+        {
+          "label": "6/2 ana tebliğ, 2024/21",
+          "url": "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "note": "Ana metin; ekler ayrıca doğrulanmalı. 13/8 su alma noktasına 300 m, 13/10 DSİ güvenlik alanı, 13/12 kiralık istihsal hükümleri."
+        },
+        {
+          "label": "BSGM, 16.04.2025 değişiklik duyurusu (2025/12)",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "Amatör değişiklik ticari 6/1 değişikliğiyle karıştırılmaz; sualtı tüfeği belgesi 01.01.2026 itibarıyla."
+        },
+        {
+          "label": "6/2 değişikliği, 2026/26, 16.09.2026",
+          "url": "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "note": "Korunan türler, yüzer adalar ve bölgesel dönem güncellemesi; tekne ruhsatının 01.09.2027 yürürlüğü bugüne çekilmez."
+        }
+      ],
+      "additionalMissing": [
+        "Güncel 6/2 Ek-4/Ek-5 ve rota özelindeki kararların tam eşleştirmesi",
+        "Saha teyidi yok; su kotu, tabela ve işletme koşulları güncel ölçülmedi"
+      ]
+    }
+  ],
+  "canonicalUpdates": [
+    {
+      "slug": "ankara-500km-bilecik-daridere-baraj-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "reason": "Dodurga kanıtları aynı suyun mevcut kanonik sayfasına konsolide edildi; 26. test adayı değildir."
+    }
+  ]
+}

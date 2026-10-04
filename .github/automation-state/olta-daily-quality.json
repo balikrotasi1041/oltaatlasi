@@ -1,9 +1,9 @@
 {
   "version": 3,
-  "date": "2026-10-02",
+  "date": "2026-10-04",
   "timezone": "Europe/Istanbul",
   "stage": 2,
-  "branch": "quality/daily-2026-10-02",
+  "branch": "quality/stress-test-25-2026-10-04",
   "done": false,
   "regionalMixCompletedDays": 1,
   "regionalMixTargetDays": 30,
@@ -14,42 +14,81 @@
   "regionalMixStage3QualifiedToday": false,
   "regionalMixCounterPendingProduction": false,
   "research": {
-    "status": "insufficient-evidence-quality-threshold-enforced",
+    "status": "second-25-reviewed-no-index-release",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
-    "searchConsoleUsed": true,
-    "dCandidatesReviewedStage1": 1150,
+    "searchConsoleUsed": false,
     "reviewedDSlugs": [
-      "ulusal-ordu-persembe-yaylasi-goleti",
-      "ulusal-aydin-topcam-baraj-golu-aydin",
-      "ulusal-balikesir-ikizcetepeler-baraj-golu",
-      "ulusal-bingol-ozluce-baraj-golu",
-      "ulusal-bolu-abant-golu",
-      "ulusal-mus-alparslan-1-baraj-golu",
-      "ulusal-mus-alparslan-2-baraj-golu"
+      "ulusal-bilecik-borcak-baraj-golu",
+      "ulusal-bilecik-dodurga-baraj-golu-bilecik",
+      "ulusal-bilecik-gunyurdu-baraj-golu",
+      "ulusal-bilecik-sakarya-nehri-bilecik-hatti",
+      "ulusal-bolu-hasanlar-baraj-golu-bolu",
+      "ulusal-bolu-golcuk-golu-bolu",
+      "ulusal-bursa-akalan-baraj-golu",
+      "ulusal-bursa-babasultan-baraj-golu",
+      "ulusal-bursa-bogazkoy-baraj-golu",
+      "ulusal-bursa-burcun-baraj-golu",
+      "ulusal-bursa-buyukorhan-baraj-golu",
+      "ulusal-duzce-kucuk-melen-cayi",
+      "ulusal-duzce-akcakoca-sahili",
+      "ulusal-kocaeli-bayraktar-baraj-golu",
+      "ulusal-kocaeli-bickidere-baraj-golu",
+      "ulusal-kocaeli-kirazdere-yuvacik-baraj-golu",
+      "ulusal-kocaeli-kurtdere-baraj-golu",
+      "ulusal-kocaeli-sahinler-baraj-golu",
+      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+      "ulusal-sakarya-cark-deresi",
+      "ulusal-sakarya-melen-cayi-sakarya-hatti",
+      "ulusal-tekirdag-bayramsah-baraj-golu",
+      "ulusal-tekirdag-biyikali-baraj-golu",
+      "ulusal-tekirdag-turkmenli-baraj-golu",
+      "ulusal-yalova-esenkoy-sahili"
     ],
-    "newCandidatesReviewedStage1": {
-      "Ege": 1,
-      "Marmara": 1
-    },
-    "newCandidateNotes": [
-      "Ege/Manisa Gevenlik Barajı: resmî tesis, avcılık levhası ve sazan balıklandırma katmanları bulunuyor; güvenli kamusal kıyı yaklaşımı bağımsız kaynakla doğrulanamadığı için yayımlanmadı.",
-      "Marmara/Edirne İpsala Karaağaç Göleti: DSİ kimliği ve 2026 rota-özel sazan balıklandırması bulunuyor; güncel kamusal kıyı girişi ve güvenli genel yaklaşım ikinci aileyle doğrulanamadığı için yayımlanmadı."
-    ],
-    "notes": "2 Ekim başlangıç main 0e2f1a4. 1 Ekim Karaçepiş yükseltmesi baseline'a dahildir ve yeniden sayılmadı. Güncellenen otomatik araştırma önbelleğindeki 1.150 D kayıt sıkı eşiklerle tarandı; rota-özel tür kanıtı ile anlamlı kamusal erişim bağlamını iki bağımsız aileyle birlikte sağlayan kayıt çıkmadı. Kota için güven artırılmadı."
+    "dCandidatesReviewedStage1": 25,
+    "notes": "Sabit 25 aday: 12 C/hold, 11 D/hold, 2 adet 301. Dodurga kanıtları mevcut Darıdere kanoniğine taşındı; bu ilave aday değildir ve ayrı bir C/hold veri güncellemesidir. Toplam gerçek yükseltme 13/17; tamamlandı denmedi. Güncel GSC ölçülmedi.",
+    "report": "docs/quality-stress-2026-10-04.json"
   },
   "stage2": {
-    "status": "insufficient-evidence",
+    "status": "13-evidence-upgrades-all-hold",
     "targetPromotions": 17,
-    "promotedCount": 0,
-    "promotedSlugs": [],
+    "promotedCount": 13,
+    "promotedSlugs": [
+      "ulusal-bilecik-borcak-baraj-golu",
+      "ankara-500km-bilecik-daridere-baraj-golu",
+      "ulusal-bilecik-gunyurdu-baraj-golu",
+      "ulusal-bursa-babasultan-baraj-golu",
+      "ulusal-bursa-bogazkoy-baraj-golu",
+      "ulusal-bursa-buyukorhan-baraj-golu",
+      "ulusal-duzce-kucuk-melen-cayi",
+      "ulusal-kocaeli-bayraktar-baraj-golu",
+      "ulusal-kocaeli-sahinler-baraj-golu",
+      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+      "ulusal-sakarya-cark-deresi",
+      "ulusal-tekirdag-bayramsah-baraj-golu",
+      "ulusal-tekirdag-biyikali-baraj-golu"
+    ],
     "indexReleasedSlugs": [],
-    "holdSlugs": []
+    "holdSlugs": [
+      "ulusal-bilecik-borcak-baraj-golu",
+      "ankara-500km-bilecik-daridere-baraj-golu",
+      "ulusal-bilecik-gunyurdu-baraj-golu",
+      "ulusal-bursa-babasultan-baraj-golu",
+      "ulusal-bursa-bogazkoy-baraj-golu",
+      "ulusal-bursa-buyukorhan-baraj-golu",
+      "ulusal-duzce-kucuk-melen-cayi",
+      "ulusal-kocaeli-bayraktar-baraj-golu",
+      "ulusal-kocaeli-sahinler-baraj-golu",
+      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+      "ulusal-sakarya-cark-deresi",
+      "ulusal-tekirdag-bayramsah-baraj-golu",
+      "ulusal-tekirdag-biyikali-baraj-golu"
+    ]
   },
   "stage3": {
-    "status": "insufficient-evidence",
+    "status": "not-in-this-fixed-existing-route-test",
     "targetNewCPlus": 2,
     "targetNewBPlus": 2,
     "newCPlusCount": 0,
@@ -82,23 +121,375 @@
     "mobilePageViews": 1216
   },
   "dailyPolicy": {
-    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-02.json",
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-04.json",
     "qualityUpgradesTarget": 17,
-    "indexReleaseHardCap": 5,
+    "indexReleaseHardCap": 2,
     "indexReleaseOperationalTarget": [
-      2,
-      3
+      0,
+      2
     ],
-    "indexReleaseOperationalCap": 3,
-    "repositoryCap": 3,
-    "gscCap": 3,
+    "indexReleaseOperationalCap": 2,
+    "repositoryCap": 2,
+    "gscCap": 2,
     "priorTodayUpgradedSlugs": [],
     "priorTodayReleasedSlugs": [],
-    "qualityUpgradedSlugs": [],
+    "qualityUpgradedSlugs": [
+      "ulusal-bilecik-borcak-baraj-golu",
+      "ankara-500km-bilecik-daridere-baraj-golu",
+      "ulusal-bilecik-gunyurdu-baraj-golu",
+      "ulusal-bursa-babasultan-baraj-golu",
+      "ulusal-bursa-bogazkoy-baraj-golu",
+      "ulusal-bursa-buyukorhan-baraj-golu",
+      "ulusal-duzce-kucuk-melen-cayi",
+      "ulusal-kocaeli-bayraktar-baraj-golu",
+      "ulusal-kocaeli-sahinler-baraj-golu",
+      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+      "ulusal-sakarya-cark-deresi",
+      "ulusal-tekirdag-bayramsah-baraj-golu",
+      "ulusal-tekirdag-biyikali-baraj-golu"
+    ],
     "releasedSlugs": [],
-    "holdSlugs": [],
+    "holdSlugs": [
+      "ulusal-bilecik-borcak-baraj-golu",
+      "ankara-500km-bilecik-daridere-baraj-golu",
+      "ulusal-bilecik-gunyurdu-baraj-golu",
+      "ulusal-bursa-babasultan-baraj-golu",
+      "ulusal-bursa-bogazkoy-baraj-golu",
+      "ulusal-bursa-buyukorhan-baraj-golu",
+      "ulusal-duzce-kucuk-melen-cayi",
+      "ulusal-kocaeli-bayraktar-baraj-golu",
+      "ulusal-kocaeli-sahinler-baraj-golu",
+      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+      "ulusal-sakarya-cark-deresi",
+      "ulusal-tekirdag-bayramsah-baraj-golu",
+      "ulusal-tekirdag-biyikali-baraj-golu"
+    ],
     "newSlugs": [],
-    "evidence": []
+    "evidence": [
+      {
+        "slug": "ulusal-bilecik-borcak-baraj-golu",
+        "families": [
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
+          "https://bilecik.tarimorman.gov.tr/Haber/677/",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ankara-500km-bilecik-daridere-baraj-golu",
+        "families": [
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
+          "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=145",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "https://www.openstreetmap.org/way/74344860",
+          "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/7",
+          "https://www.google.com/maps/search/?api=1&query=Dar%C4%B1dere%20Baraj%20G%C3%B6l%C3%BC%2C%20Boz%C3%BCy%C3%BCk%2C%20Bilecik%2C%20T%C3%BCrkiye",
+          "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+          "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-bilecik-gunyurdu-baraj-golu",
+        "families": [
+          "DSİ",
+          "Kültür ve Turizm"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
+          "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2013-yili-hib-kitabi.pdf",
+          "https://www.kulturportali.gov.tr/turkiye/bilecik/gezilecekyer/gunyurdu-golet",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-bursa-babasultan-baraj-golu",
+        "families": [
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "https://bursa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=1bcf954e-b36a-404b-bf17-6d58f011ccb4&TermSetId=fd637a8b-77fd-4102-823a-4a88a7156368&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=254%2FBabasultan-Baraj-Golu-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-bursa-bogazkoy-baraj-golu",
+        "families": [
+          "DSİ",
+          "İl Tarım denetimi"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "https://bursa.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1900",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-bursa-buyukorhan-baraj-golu",
+        "families": [
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "https://bursa.tarimorman.gov.tr/Duyuru/456/Buyukorhan-_-Cuma_-Baraj-Golu-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi-Hakkinda-Duyuru",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-duzce-kucuk-melen-cayi",
+        "families": [
+          "Üniversite / ulusal biyolojik çeşitlilik saha projesi",
+          "Çevre envanteri"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://dergipark.org.tr/tr/download/article-file/1121775",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "https://webdosya.csb.gov.tr/db/ced/editordosya/duzce_icdr2011.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-kocaeli-bayraktar-baraj-golu",
+        "families": [
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "https://kocaeli.tarimorman.gov.tr/Haber/454/318-250-Adet-Sazan-Baligi-Yavrusu-Sularimiza-Birakildi",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-kocaeli-sahinler-baraj-golu",
+        "families": [
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
+          "https://kocaeli.tarimorman.gov.tr/Haber/454/318-250-Adet-Sazan-Baligi-Yavrusu-Sularimiza-Birakildi",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+        "families": [
+          "Üniversite / coğrafya",
+          "Üniversite"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://sehirhafizasi.sakarya.edu.tr/hidrografya/",
+          "https://dergipark.org.tr/tr/pub/limnofish/article/635248",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-sakarya-cark-deresi",
+        "families": [
+          "Üniversite / coğrafya",
+          "Çevresel değerlendirme"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://sehirhafizasi.sakarya.edu.tr/hidrografya/",
+          "https://www.ilbank.gov.tr/storage/uploads/uidb/iads_sakarya_buyuksehir_belediyesi_yazlik_kavsak_projesi_csyp_final_cc_1761927987.pdf",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-tekirdag-bayramsah-baraj-golu",
+        "families": [
+          "Resmî risk planı",
+          "Çevre planı / İl Tarım girdisi",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://tekirdag.tarimorman.gov.tr/BelgelerArsiv/Duyuru/%C4%B0RAP.pdf",
+          "https://webdosya.csb.gov.tr/db/mpgm/icerikler/kiyi-yapilari-uzman-degerlendirme-raporu-20230329102326.pdf",
+          "https://tekirdag.tarimorman.gov.tr/Belgeler/TarimRaporlari/GTHB59_2018.pdf",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      },
+      {
+        "slug": "ulusal-tekirdag-biyikali-baraj-golu",
+        "families": [
+          "Resmî risk planı",
+          "Çevre planı / İl Tarım girdisi"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://tekirdag.tarimorman.gov.tr/BelgelerArsiv/Duyuru/%C4%B0RAP.pdf",
+          "https://webdosya.csb.gov.tr/db/mpgm/icerikler/kiyi-yapilari-uzman-degerlendirme-raporu-20230329102326.pdf",
+          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+          "https://tekirdag.tarimorman.gov.tr/Belgeler/TarimRaporlari/GTHB59_2017.pdf",
+          "https://kentkonseyi.suleymanpasa.bel.tr/biyikali-mahallesi",
+          "https://okuldisiogrenme-cdn-large.eba.gov.tr/mekan-detay/suleymanpasa-biyikali-goleti-5547"
+        ],
+        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+      }
+    ]
   },
   "maintenance": {
     "report": "docs/olta-maintenance-2026-09-27.json",
@@ -118,5 +509,16 @@
       "verified301": 1
     },
     "separateFromQuality": true
+  },
+  "stressTest": {
+    "report": "docs/quality-stress-2026-10-04.json",
+    "reviewed": 25,
+    "upgraded": 12,
+    "indexReady": 0,
+    "released": 0,
+    "retired": 2,
+    "retainedD": 11,
+    "productionVerified": false,
+    "canonicalAdditionalUpgrades": 1
   }
 }

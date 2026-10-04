@@ -2,6 +2,9 @@ import worker from "../worker/index.js";
 
 const assets = { fetch: async () => new Response("asset", { status: 200 }) };
 const cases = [
+  ["https://oltaatlasi.com/meralar/ulusal-bilecik-dodurga-baraj-golu-bilecik/", "https://oltaatlasi.com/meralar/ankara-500km-bilecik-daridere-baraj-golu/"],
+  ["https://oltaatlasi.com/meralar/ulusal-bolu-hasanlar-baraj-golu-bolu/", "https://oltaatlasi.com/meralar/ulusal-duzce-hasanlar-baraj-golu-duzce/"],
+  ["https://oltaatlasi.com/meralar/ulusal-bolu-hasanlar-baraj-golu-bolu?utm_source=test", "https://oltaatlasi.com/meralar/ulusal-duzce-hasanlar-baraj-golu-duzce/?utm_source=test"],
   ["https://oltaatlasi.com/meralar/cubuklu-beykoz-sahili/", "https://oltaatlasi.com/meralar/cubuklu-sahili/"],
   ["https://oltaatlasi.com/meralar/cubuklu-beykoz-sahili?utm_source=test", "https://oltaatlasi.com/meralar/cubuklu-sahili/?utm_source=test"],
   ["https://www.oltaatlasi.com/meralar/cubuklu-beykoz-sahili/", "https://oltaatlasi.com/meralar/cubuklu-sahili/"],

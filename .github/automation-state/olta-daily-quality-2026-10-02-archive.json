@@ -1,0 +1,122 @@
+{
+  "version": 3,
+  "date": "2026-10-02",
+  "timezone": "Europe/Istanbul",
+  "stage": 2,
+  "branch": "quality/daily-2026-10-02",
+  "done": false,
+  "regionalMixCompletedDays": 1,
+  "regionalMixTargetDays": 30,
+  "regionalMixTargetToday": {
+    "Ege": 1,
+    "Marmara": 1
+  },
+  "regionalMixStage3QualifiedToday": false,
+  "regionalMixCounterPendingProduction": false,
+  "research": {
+    "status": "insufficient-evidence-quality-threshold-enforced",
+    "schemaAndPolicyChecked": true,
+    "confidenceAuditChecked": true,
+    "duplicatePolicyChecked": true,
+    "indexPolicyChecked": true,
+    "searchConsoleUsed": true,
+    "dCandidatesReviewedStage1": 1150,
+    "reviewedDSlugs": [
+      "ulusal-ordu-persembe-yaylasi-goleti",
+      "ulusal-aydin-topcam-baraj-golu-aydin",
+      "ulusal-balikesir-ikizcetepeler-baraj-golu",
+      "ulusal-bingol-ozluce-baraj-golu",
+      "ulusal-bolu-abant-golu",
+      "ulusal-mus-alparslan-1-baraj-golu",
+      "ulusal-mus-alparslan-2-baraj-golu"
+    ],
+    "newCandidatesReviewedStage1": {
+      "Ege": 1,
+      "Marmara": 1
+    },
+    "newCandidateNotes": [
+      "Ege/Manisa Gevenlik Barajı: resmî tesis, avcılık levhası ve sazan balıklandırma katmanları bulunuyor; güvenli kamusal kıyı yaklaşımı bağımsız kaynakla doğrulanamadığı için yayımlanmadı.",
+      "Marmara/Edirne İpsala Karaağaç Göleti: DSİ kimliği ve 2026 rota-özel sazan balıklandırması bulunuyor; güncel kamusal kıyı girişi ve güvenli genel yaklaşım ikinci aileyle doğrulanamadığı için yayımlanmadı."
+    ],
+    "notes": "2 Ekim başlangıç main 0e2f1a4. 1 Ekim Karaçepiş yükseltmesi baseline'a dahildir ve yeniden sayılmadı. Güncellenen otomatik araştırma önbelleğindeki 1.150 D kayıt sıkı eşiklerle tarandı; rota-özel tür kanıtı ile anlamlı kamusal erişim bağlamını iki bağımsız aileyle birlikte sağlayan kayıt çıkmadı. Kota için güven artırılmadı."
+  },
+  "stage2": {
+    "status": "insufficient-evidence",
+    "targetPromotions": 17,
+    "promotedCount": 0,
+    "promotedSlugs": [],
+    "indexReleasedSlugs": [],
+    "holdSlugs": []
+  },
+  "stage3": {
+    "status": "insufficient-evidence",
+    "targetNewCPlus": 2,
+    "targetNewBPlus": 2,
+    "newCPlusCount": 0,
+    "newSlugs": [],
+    "mgmAudit": {
+      "status": "not-required",
+      "performedOnceToday": false
+    }
+  },
+  "publication": {
+    "ci": "local-passed",
+    "pr": "pending",
+    "merge": "pending",
+    "deploy": "pending",
+    "productionVerified": false
+  },
+  "analytics": {
+    "source": "Kullanıcının Cloudflare PDF ve GSC ZIP dosyaları",
+    "receivedAt": "2026-09-27",
+    "coverageThrough": "2026-09-21",
+    "performanceThrough": "2026-09-24",
+    "discovered": 219,
+    "crawledNotIndexed": 24,
+    "notFound": 6,
+    "redirect": 1,
+    "alternateCanonical": 100,
+    "visits": 672,
+    "mobileVisits": 575,
+    "pageViews": 1432,
+    "mobilePageViews": 1216
+  },
+  "dailyPolicy": {
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-02.json",
+    "qualityUpgradesTarget": 17,
+    "indexReleaseHardCap": 5,
+    "indexReleaseOperationalTarget": [
+      2,
+      3
+    ],
+    "indexReleaseOperationalCap": 3,
+    "repositoryCap": 3,
+    "gscCap": 3,
+    "priorTodayUpgradedSlugs": [],
+    "priorTodayReleasedSlugs": [],
+    "qualityUpgradedSlugs": [],
+    "releasedSlugs": [],
+    "holdSlugs": [],
+    "newSlugs": [],
+    "evidence": []
+  },
+  "maintenance": {
+    "report": "docs/olta-maintenance-2026-09-27.json",
+    "reviewedOnCurrentMain": "2026-10-02",
+    "crawledNotIndexed": {
+      "total": 24,
+      "contactQueryVariants": 6,
+      "intentionalNoindex": 12,
+      "indexableSelfCanonical": 6
+    },
+    "notFound": {
+      "total": 6,
+      "kept404": 6
+    },
+    "redirect": {
+      "total": 1,
+      "verified301": 1
+    },
+    "separateFromQuality": true
+  }
+}

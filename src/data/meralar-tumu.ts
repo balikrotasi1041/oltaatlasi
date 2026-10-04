@@ -1,4 +1,5 @@
 import { kaliteYukseltmeleri20260927 } from "./meralar-daily-quality-2026-09-27";
+import { qualityStress20261004, retiredStressSlugs } from "./meralar-quality-stress-2026-10-04";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -212,6 +213,8 @@ const publishedToday0929=[...routeMap.values()].filter((route)=>route.publishedA
 if(publishedToday0929.length!==7)throw new Error(`29 Eylül manuel batch hedefi 7 olmalı: ${publishedToday0929.length}`);
 if(publishedToday0929.some((route)=>route.confidence==="D"||route.indexing==="hold"))throw new Error("29 Eylül manuel batch rotalarının tamamı C+ ve indexlenebilir olmalı.");
 
+for(const {slug,patch} of qualityStress20261004)applyPatch(slug,patch);
+for(const slug of retiredStressSlugs)if(!routeMap.delete(slug))throw new Error(`Legacy kayıt bulunamadı: ${slug}`);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
