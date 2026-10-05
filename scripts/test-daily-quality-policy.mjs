@@ -10,8 +10,8 @@ const existingIndexable=meralar.find(r=>r.confidence!=='D'&&r.indexing!=='hold')
 assert(existingIndexable,'Regresyon testi için indekslenebilir rota gerekli.');
 let x=s();x.dailyPolicy.repositoryCap=0;x.dailyPolicy.priorTodayReleasedSlugs=[existingIndexable];x.stage2.indexReleasedSlugs=[existingIndexable];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('en sıkı')));
 x=s();x.dailyPolicy.priorTodayReleasedSlugs=[existingIndexable];x.dailyPolicy.releasedSlugs=[existingIndexable];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('yeniden sayıldı')));
-x=s();x.done=true;assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('Hedef eksikken')));
-const changed=structuredClone(meralar);const d=changed.find(r=>r.confidence==='D');d.confidence='C';d.indexing='index';assert(validateDailyQuality(state,baseline,changed).some(e=>e.includes('gerçek noindex')));
+x=s();x.done=true;x.stage2.resultCount=16;x.dailyPolicy.qualityResultSlugs=x.dailyPolicy.qualityResultSlugs.slice(0,16);x.dailyPolicy.materiallyImprovedSlugs=x.dailyPolicy.materiallyImprovedSlugs.slice(0,16);assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('Hedef eksikken')));
+const changed=structuredClone(meralar);const d=changed.find(r=>baseline.routes[r.slug]?.confidence==='D');assert(d);d.confidence='C';d.indexing='index';assert(validateDailyQuality(state,baseline,changed).some(e=>e.includes('gerçek noindex')));
 x=s();
 x.dailyPolicy.qualityUpgradedSlugs=[d.slug];
 x.dailyPolicy.releasedSlugs=[d.slug];

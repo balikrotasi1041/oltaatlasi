@@ -1,105 +1,96 @@
 {
-  "version": 3,
-  "date": "2026-10-04",
+  "version": 4,
+  "date": "2026-10-05",
   "timezone": "Europe/Istanbul",
-  "stage": 2,
-  "branch": "quality/stress-test-25-2026-10-04",
+  "branch": "quality/daily-2026-10-05",
   "done": false,
-  "regionalMixCompletedDays": 1,
-  "regionalMixTargetDays": 30,
-  "regionalMixTargetToday": {
-    "Ege": 1,
-    "Marmara": 1
-  },
-  "regionalMixStage3QualifiedToday": false,
-  "regionalMixCounterPendingProduction": false,
   "research": {
-    "status": "second-25-reviewed-no-index-release",
+    "status": "expanded-chain-17-results",
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "searchConsoleUsed": false,
-    "reviewedDSlugs": [
-      "ulusal-bilecik-borcak-baraj-golu",
-      "ulusal-bilecik-dodurga-baraj-golu-bilecik",
-      "ulusal-bilecik-gunyurdu-baraj-golu",
-      "ulusal-bilecik-sakarya-nehri-bilecik-hatti",
-      "ulusal-bolu-hasanlar-baraj-golu-bolu",
-      "ulusal-bolu-golcuk-golu-bolu",
-      "ulusal-bursa-akalan-baraj-golu",
-      "ulusal-bursa-babasultan-baraj-golu",
-      "ulusal-bursa-bogazkoy-baraj-golu",
-      "ulusal-bursa-burcun-baraj-golu",
-      "ulusal-bursa-buyukorhan-baraj-golu",
-      "ulusal-duzce-kucuk-melen-cayi",
-      "ulusal-duzce-akcakoca-sahili",
-      "ulusal-kocaeli-bayraktar-baraj-golu",
-      "ulusal-kocaeli-bickidere-baraj-golu",
-      "ulusal-kocaeli-kirazdere-yuvacik-baraj-golu",
-      "ulusal-kocaeli-kurtdere-baraj-golu",
-      "ulusal-kocaeli-sahinler-baraj-golu",
-      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
-      "ulusal-sakarya-cark-deresi",
-      "ulusal-sakarya-melen-cayi-sakarya-hatti",
-      "ulusal-tekirdag-bayramsah-baraj-golu",
-      "ulusal-tekirdag-biyikali-baraj-golu",
-      "ulusal-tekirdag-turkmenli-baraj-golu",
-      "ulusal-yalova-esenkoy-sahili"
+    "reviewedSlugs": [
+      "ketenciler-goleti",
+      "cakirli-iznik-golu-piknik-sahili",
+      "akkoy-baraji-genel-amator-kiyi",
+      "kovali-baraji-genel-amator-kiyi",
+      "agcasar-baraji-genel-amator-kiyi",
+      "pasali-goleti-genel-amator-kiyi",
+      "darili-goleti-genel-amator-kiyi",
+      "zincidere-goleti-mesire-genel-kiyi",
+      "bilecik-bozcaarmut-baraj-goleti",
+      "bilecik-kucukelmali-baraj-goleti",
+      "bilecik-kurtkoy-baraj-goleti",
+      "bilecik-cerkesli-baraj-goleti",
+      "bilecik-yenipazar-baraj-goleti",
+      "mugla-ula-ula-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti",
+      "burdur-tefenni-cayli-goleti",
+      "burdur-karamanli-karamanli-baraj-golu"
     ],
-    "dCandidatesReviewedStage1": 25,
-    "notes": "Sabit 25 aday: 12 C/hold, 11 D/hold, 2 adet 301. Dodurga kanıtları mevcut Darıdere kanoniğine taşındı; bu ilave aday değildir ve ayrı bir C/hold veri güncellemesidir. Toplam gerçek yükseltme 13/17; tamamlandı denmedi. Güncel GSC ölçülmedi.",
-    "report": "docs/quality-stress-2026-10-04.json"
+    "notes": "17 gerçek kalite sonucu: 2 C+, 15 C/HOLD. Confidence yükselişi yok; tüm 17 kayıt expanded-v2 ile maddi olarak iyileştirildi. İki C+ zaten index olduğundan salım 0.",
+    "report": "docs/olta-daily-quality-2026-10-05.json"
   },
   "stage2": {
-    "status": "13-evidence-upgrades-all-hold",
-    "targetPromotions": 17,
-    "promotedCount": 13,
-    "promotedSlugs": [
-      "ulusal-bilecik-borcak-baraj-golu",
-      "ankara-500km-bilecik-daridere-baraj-golu",
-      "ulusal-bilecik-gunyurdu-baraj-golu",
-      "ulusal-bursa-babasultan-baraj-golu",
-      "ulusal-bursa-bogazkoy-baraj-golu",
-      "ulusal-bursa-buyukorhan-baraj-golu",
-      "ulusal-duzce-kucuk-melen-cayi",
-      "ulusal-kocaeli-bayraktar-baraj-golu",
-      "ulusal-kocaeli-sahinler-baraj-golu",
-      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
-      "ulusal-sakarya-cark-deresi",
-      "ulusal-tekirdag-bayramsah-baraj-golu",
-      "ulusal-tekirdag-biyikali-baraj-golu"
+    "status": "17-material-improvements-2-cplus-15-hold",
+    "targetResults": 17,
+    "resultCount": 17,
+    "materiallyImprovedCount": 17,
+    "reviewedUnchangedCount": 0,
+    "promotedCount": 0,
+    "promotedSlugs": [],
+    "cPlusSlugs": [
+      "bilecik-cerkesli-baraj-goleti",
+      "mugla-ula-ula-goleti"
+    ],
+    "cSlugs": [
+      "ketenciler-goleti",
+      "cakirli-iznik-golu-piknik-sahili",
+      "akkoy-baraji-genel-amator-kiyi",
+      "kovali-baraji-genel-amator-kiyi",
+      "agcasar-baraji-genel-amator-kiyi",
+      "pasali-goleti-genel-amator-kiyi",
+      "darili-goleti-genel-amator-kiyi",
+      "zincidere-goleti-mesire-genel-kiyi",
+      "bilecik-bozcaarmut-baraj-goleti",
+      "bilecik-kucukelmali-baraj-goleti",
+      "bilecik-kurtkoy-baraj-goleti",
+      "bilecik-yenipazar-baraj-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti",
+      "burdur-tefenni-cayli-goleti",
+      "burdur-karamanli-karamanli-baraj-golu"
     ],
     "indexReleasedSlugs": [],
     "holdSlugs": [
-      "ulusal-bilecik-borcak-baraj-golu",
-      "ankara-500km-bilecik-daridere-baraj-golu",
-      "ulusal-bilecik-gunyurdu-baraj-golu",
-      "ulusal-bursa-babasultan-baraj-golu",
-      "ulusal-bursa-bogazkoy-baraj-golu",
-      "ulusal-bursa-buyukorhan-baraj-golu",
-      "ulusal-duzce-kucuk-melen-cayi",
-      "ulusal-kocaeli-bayraktar-baraj-golu",
-      "ulusal-kocaeli-sahinler-baraj-golu",
-      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
-      "ulusal-sakarya-cark-deresi",
-      "ulusal-tekirdag-bayramsah-baraj-golu",
-      "ulusal-tekirdag-biyikali-baraj-golu"
+      "ketenciler-goleti",
+      "cakirli-iznik-golu-piknik-sahili",
+      "akkoy-baraji-genel-amator-kiyi",
+      "kovali-baraji-genel-amator-kiyi",
+      "agcasar-baraji-genel-amator-kiyi",
+      "pasali-goleti-genel-amator-kiyi",
+      "darili-goleti-genel-amator-kiyi",
+      "zincidere-goleti-mesire-genel-kiyi",
+      "bilecik-bozcaarmut-baraj-goleti",
+      "bilecik-kucukelmali-baraj-goleti",
+      "bilecik-kurtkoy-baraj-goleti",
+      "bilecik-yenipazar-baraj-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti",
+      "burdur-tefenni-cayli-goleti",
+      "burdur-karamanli-karamanli-baraj-golu"
     ]
   },
   "stage3": {
-    "status": "not-in-this-fixed-existing-route-test",
-    "targetNewCPlus": 2,
+    "status": "no-new-bplus-evidence-threshold-not-met",
     "targetNewBPlus": 2,
-    "newCPlusCount": 0,
+    "newCount": 0,
     "newSlugs": [],
-    "mgmAudit": {
-      "status": "not-required",
-      "performedOnceToday": false
-    }
+    "egeCount": 0,
+    "marmaraCount": 0
   },
   "publication": {
-    "ci": "local-passed",
+    "ci": "local-quality-gates-passed",
     "pr": "pending",
     "merge": "pending",
     "deploy": "pending",
@@ -121,7 +112,8 @@
     "mobilePageViews": 1216
   },
   "dailyPolicy": {
-    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-04.json",
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-05.json",
+    "qualityResultsTarget": 17,
     "qualityUpgradesTarget": 17,
     "indexReleaseHardCap": 2,
     "indexReleaseOperationalTarget": [
@@ -133,44 +125,71 @@
     "gscCap": 2,
     "priorTodayUpgradedSlugs": [],
     "priorTodayReleasedSlugs": [],
-    "qualityUpgradedSlugs": [
-      "ulusal-bilecik-borcak-baraj-golu",
-      "ankara-500km-bilecik-daridere-baraj-golu",
-      "ulusal-bilecik-gunyurdu-baraj-golu",
-      "ulusal-bursa-babasultan-baraj-golu",
-      "ulusal-bursa-bogazkoy-baraj-golu",
-      "ulusal-bursa-buyukorhan-baraj-golu",
-      "ulusal-duzce-kucuk-melen-cayi",
-      "ulusal-kocaeli-bayraktar-baraj-golu",
-      "ulusal-kocaeli-sahinler-baraj-golu",
-      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
-      "ulusal-sakarya-cark-deresi",
-      "ulusal-tekirdag-bayramsah-baraj-golu",
-      "ulusal-tekirdag-biyikali-baraj-golu"
+    "qualityUpgradedSlugs": [],
+    "qualityResultSlugs": [
+      "ketenciler-goleti",
+      "cakirli-iznik-golu-piknik-sahili",
+      "akkoy-baraji-genel-amator-kiyi",
+      "kovali-baraji-genel-amator-kiyi",
+      "agcasar-baraji-genel-amator-kiyi",
+      "pasali-goleti-genel-amator-kiyi",
+      "darili-goleti-genel-amator-kiyi",
+      "zincidere-goleti-mesire-genel-kiyi",
+      "bilecik-bozcaarmut-baraj-goleti",
+      "bilecik-kucukelmali-baraj-goleti",
+      "bilecik-kurtkoy-baraj-goleti",
+      "bilecik-cerkesli-baraj-goleti",
+      "bilecik-yenipazar-baraj-goleti",
+      "mugla-ula-ula-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti",
+      "burdur-tefenni-cayli-goleti",
+      "burdur-karamanli-karamanli-baraj-golu"
     ],
+    "materiallyImprovedSlugs": [
+      "ketenciler-goleti",
+      "cakirli-iznik-golu-piknik-sahili",
+      "akkoy-baraji-genel-amator-kiyi",
+      "kovali-baraji-genel-amator-kiyi",
+      "agcasar-baraji-genel-amator-kiyi",
+      "pasali-goleti-genel-amator-kiyi",
+      "darili-goleti-genel-amator-kiyi",
+      "zincidere-goleti-mesire-genel-kiyi",
+      "bilecik-bozcaarmut-baraj-goleti",
+      "bilecik-kucukelmali-baraj-goleti",
+      "bilecik-kurtkoy-baraj-goleti",
+      "bilecik-cerkesli-baraj-goleti",
+      "bilecik-yenipazar-baraj-goleti",
+      "mugla-ula-ula-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti",
+      "burdur-tefenni-cayli-goleti",
+      "burdur-karamanli-karamanli-baraj-golu"
+    ],
+    "reviewedUnchangedSlugs": [],
     "releasedSlugs": [],
     "holdSlugs": [
-      "ulusal-bilecik-borcak-baraj-golu",
-      "ankara-500km-bilecik-daridere-baraj-golu",
-      "ulusal-bilecik-gunyurdu-baraj-golu",
-      "ulusal-bursa-babasultan-baraj-golu",
-      "ulusal-bursa-bogazkoy-baraj-golu",
-      "ulusal-bursa-buyukorhan-baraj-golu",
-      "ulusal-duzce-kucuk-melen-cayi",
-      "ulusal-kocaeli-bayraktar-baraj-golu",
-      "ulusal-kocaeli-sahinler-baraj-golu",
-      "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
-      "ulusal-sakarya-cark-deresi",
-      "ulusal-tekirdag-bayramsah-baraj-golu",
-      "ulusal-tekirdag-biyikali-baraj-golu"
+      "ketenciler-goleti",
+      "cakirli-iznik-golu-piknik-sahili",
+      "akkoy-baraji-genel-amator-kiyi",
+      "kovali-baraji-genel-amator-kiyi",
+      "agcasar-baraji-genel-amator-kiyi",
+      "pasali-goleti-genel-amator-kiyi",
+      "darili-goleti-genel-amator-kiyi",
+      "zincidere-goleti-mesire-genel-kiyi",
+      "bilecik-bozcaarmut-baraj-goleti",
+      "bilecik-kucukelmali-baraj-goleti",
+      "bilecik-kurtkoy-baraj-goleti",
+      "bilecik-yenipazar-baraj-goleti",
+      "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti",
+      "burdur-tefenni-cayli-goleti",
+      "burdur-karamanli-karamanli-baraj-golu"
     ],
     "newSlugs": [],
     "evidence": [
       {
-        "slug": "ulusal-bilecik-borcak-baraj-golu",
+        "slug": "ketenciler-goleti",
         "families": [
-          "DSİ",
-          "İl Tarım"
+          "İl Tarım",
+          "Belediye/ulaşım"
         ],
         "coverage": [
           "identity",
@@ -182,18 +201,19 @@
           "species"
         ],
         "sources": [
-          "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
-          "https://bilecik.tarimorman.gov.tr/Haber/677/",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+          "https://kocaeli.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=454",
+          "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+          "https://www.kocaeli.bel.tr/kartepe.html",
+          "https://www.kocaeli.bel.tr/hatlar//KM19/ketenciler-kirazoglu-izmit-otobus-sefer-saatleri-ve-duraklari",
           "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Toplu taşıma durağından sonra izinli ve güvenli genel kıyı erişimi; Kızılkanat için rota-özel güçlü kanıt bulunmaması"
       },
       {
-        "slug": "ankara-500km-bilecik-daridere-baraj-golu",
+        "slug": "cakirli-iznik-golu-piknik-sahili",
         "families": [
-          "DSİ",
+          "Belediye",
           "İl Tarım"
         ],
         "coverage": [
@@ -206,23 +226,19 @@
           "species"
         ],
         "sources": [
-          "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
-          "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=145",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
-          "https://www.openstreetmap.org/way/74344860",
-          "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/7",
-          "https://www.google.com/maps/search/?api=1&query=Dar%C4%B1dere%20Baraj%20G%C3%B6l%C3%BC%2C%20Boz%C3%BCy%C3%BCk%2C%20Bilecik%2C%20T%C3%BCrkiye",
-          "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
-          "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi"
+          "https://orhangazi.bel.tr/haberler/cakirli-piknik-alaninda-duzenlemeler-tamamlandi",
+          "https://www.bursa.bel.tr/haber/iznik-golu-kiyisina-kis-bakimi-25409",
+          "https://bursa.tarimorman.gov.tr/Haber/450/500-Bin-Yavru-Sazan-Iznik-Golu-Ile-Bulustu",
+          "https://bursa.tarimorman.gov.tr/Duyuru/528/Iznik-Golu-3-Nolu-Avlak-Sahasi-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi-Hakkinda-Duyuru",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Ticari 3 No'lu avlakla çakışmadığı doğrulanmış amatör kıyı bölümü; Piknik alanında geri atış ve ortak kullanım güvenliği"
       },
       {
-        "slug": "ulusal-bilecik-gunyurdu-baraj-golu",
+        "slug": "akkoy-baraji-genel-amator-kiyi",
         "families": [
-          "DSİ",
+          "İl Tarım",
           "Kültür ve Turizm"
         ],
         "coverage": [
@@ -235,20 +251,20 @@
           "species"
         ],
         "sources": [
-          "https://bolge03.dsi.gov.tr/Sayfa/Detay/898",
-          "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2013-yili-hib-kitabi.pdf",
-          "https://www.kulturportali.gov.tr/turkiye/bilecik/gezilecekyer/gunyurdu-golet",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://kayseri.tarimorman.gov.tr/Haber/1617/Ilimizde-Drone-Ile-Su-Urunleri-Denetimleri-Yapilmaya-Baslandi",
+          "https://kayseri.tarimorman.gov.tr/Haber/551/265-Bin-Sazan-Baligi-Yavrusu-Goletlerimize-Birakildi",
+          "https://kayseri.ktb.gov.tr/TR-55138/av-turizmi-ve-balikcilik.html",
+          "https://kayseri.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=29edea52-6e3d-4ddd-8bf0-2b9c3938b32c&TermSetId=2fcd0a6e-29e6-4155-91b3-67f2140f7189&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=599%2FAmator-Balikcilarimizin-Dikkatine",
+          "https://mus.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=316",
           "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Denetlenen faaliyetin dışında güvenli ve kamusal genel kıyı sınırı; Güncel teknik işletme ve özel geçiş sınırları"
       },
       {
-        "slug": "ulusal-bursa-babasultan-baraj-golu",
+        "slug": "kovali-baraji-genel-amator-kiyi",
         "families": [
-          "DSİ",
-          "İl Tarım"
+          "İl Tarım",
+          "Kültür ve Turizm"
         ],
         "coverage": [
           "identity",
@@ -260,19 +276,21 @@
           "species"
         ],
         "sources": [
-          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
-          "https://bursa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=1bcf954e-b36a-404b-bf17-6d58f011ccb4&TermSetId=fd637a8b-77fd-4102-823a-4a88a7156368&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=254%2FBabasultan-Baraj-Golu-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://kayseri.tarimorman.gov.tr/Haber/1617/Ilimizde-Drone-Ile-Su-Urunleri-Denetimleri-Yapilmaya-Baslandi",
+          "https://kayseri.tarimorman.gov.tr/Haber/551/265-Bin-Sazan-Baligi-Yavrusu-Goletlerimize-Birakildi",
+          "https://kayseri.ktb.gov.tr/TR-55138/av-turizmi-ve-balikcilik.html",
+          "https://kayseri.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=29edea52-6e3d-4ddd-8bf0-2b9c3938b32c&TermSetId=2fcd0a6e-29e6-4155-91b3-67f2140f7189&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=599%2FAmator-Balikcilarimizin-Dikkatine",
+          "https://mus.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=316",
           "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Denetim alanı ile izinli kamusal kıyının güncel eşleştirmesi; Baraj işletme ve özel geçiş sınırları"
       },
       {
-        "slug": "ulusal-bursa-bogazkoy-baraj-golu",
+        "slug": "agcasar-baraji-genel-amator-kiyi",
         "families": [
-          "DSİ",
-          "İl Tarım denetimi"
+          "İl Tarım",
+          "Kültür ve Turizm",
+          "Sulama Birliği"
         ],
         "coverage": [
           "identity",
@@ -284,42 +302,20 @@
           "species"
         ],
         "sources": [
-          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
-          "https://bursa.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1900",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://kayseri.tarimorman.gov.tr/Haber/1617/Ilimizde-Drone-Ile-Su-Urunleri-Denetimleri-Yapilmaya-Baslandi",
+          "https://kayseri.ktb.gov.tr/TR-55138/av-turizmi-ve-balikcilik.html",
+          "https://www.agcasarsulama.gov.tr/",
+          "https://kayseri.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=29edea52-6e3d-4ddd-8bf0-2b9c3938b32c&TermSetId=2fcd0a6e-29e6-4155-91b3-67f2140f7189&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=599%2FAmator-Balikcilarimizin-Dikkatine",
+          "https://mus.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=316",
           "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Aktif sulama işletmesinden ayrılmış güncel kamusal kıyı; İşletme güvenlik alanı ve mikro erişim"
       },
       {
-        "slug": "ulusal-bursa-buyukorhan-baraj-golu",
+        "slug": "pasali-goleti-genel-amator-kiyi",
         "families": [
           "DSİ",
-          "İl Tarım"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
-          "https://bursa.tarimorman.gov.tr/Duyuru/456/Buyukorhan-_-Cuma_-Baraj-Golu-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi-Hakkinda-Duyuru",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
-      },
-      {
-        "slug": "ulusal-duzce-kucuk-melen-cayi",
-        "families": [
-          "Üniversite / ulusal biyolojik çeşitlilik saha projesi",
+          "İl Tarım",
           "Çevre envanteri"
         ],
         "coverage": [
@@ -332,16 +328,220 @@
           "species"
         ],
         "sources": [
-          "https://dergipark.org.tr/tr/download/article-file/1121775",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
-          "https://webdosya.csb.gov.tr/db/ced/editordosya/duzce_icdr2011.pdf"
+          "https://bolge12.dsi.gov.tr/Haber/Detay/10060",
+          "https://kayseri.tarimorman.gov.tr/Haber/551/265-Bin-Sazan-Baligi-Yavrusu-Goletlerimize-Birakildi",
+          "https://webdosya.csb.gov.tr/db/ced/icerikler/kayser-_cdr_2018_son-20191028091140.pdf",
+          "https://kayseri.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=29edea52-6e3d-4ddd-8bf0-2b9c3938b32c&TermSetId=2fcd0a6e-29e6-4155-91b3-67f2140f7189&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=599%2FAmator-Balikcilarimizin-Dikkatine",
+          "https://mus.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=316",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Aktif sulama tesisi dışında izinli ve güvenli kamusal kıyı; Son yol, bariyer ve mülkiyet teyidi"
       },
       {
-        "slug": "ulusal-kocaeli-bayraktar-baraj-golu",
+        "slug": "darili-goleti-genel-amator-kiyi",
+        "families": [
+          "Valilik",
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.kayseri.gov.tr/felahiye",
+          "https://bolge12.dsi.gov.tr/Sayfa/Detay/1141",
+          "https://webdosya.csb.gov.tr/db/kayseri/menu/kayseri-cdr-2016_20180205015334.pdf",
+          "https://kayseri.tarimorman.gov.tr/Haber/551/265-Bin-Sazan-Baligi-Yavrusu-Goletlerimize-Birakildi",
+          "https://mus.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=316",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; Gölet çevresindeki güncel kamusal kıyı girişi; Sulama işletmesi, özel parsel ve saha tabelası"
+      },
+      {
+        "slug": "zincidere-goleti-mesire-genel-kiyi",
+        "families": [
+          "Belediye",
+          "DSİ",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.talas.bel.tr/haber/zincidere-goletinde-calismalar-hizlandi",
+          "https://www.talas.bel.tr/haber/zincidere-goleti-maksimum-seviyede-su-tuttu",
+          "https://bolge12.dsi.gov.tr/Sayfa/Detay/1141",
+          "https://kayseri.tarimorman.gov.tr/Haber/551/265-Bin-Sazan-Baligi-Yavrusu-Goletlerimize-Birakildi",
+          "https://mus.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=316",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; Mesire alanında balıkçılığa ayrılmış güncel güvenli kıyı; Ortak kullanıcı güvenliği ve alan işletme kuralları"
+      },
+      {
+        "slug": "bilecik-bozcaarmut-baraj-goleti",
+        "families": [
+          "Valilik",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.bilecik.gov.tr/bozcaarmut-baraj-goleti",
+          "https://bilecik.tarimorman.gov.tr/Haber/677/",
+          "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+          "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9dd361f8-0534-4fe1-96ce-d6e05897a59d&TermSetId=8959c25a-943f-4356-a302-d1ffcbba1757&UrlSuffix=572%2F6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_teblig-No-2024_21_de-Degisiklik-Yapilmasina-Dair-Teblig-_teblig-No-2025_12_",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; Orman yolundan sonraki güncel kamusal kıyı girişi; Yangın dönemi orman erişimi ve baraj işletme sınırı"
+      },
+      {
+        "slug": "bilecik-kucukelmali-baraj-goleti",
+        "families": [
+          "Valilik",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.bilecik.gov.tr/kucukelmali-baraj-goleti",
+          "https://bilecik.tarimorman.gov.tr/Haber/677/",
+          "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+          "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9dd361f8-0534-4fe1-96ce-d6e05897a59d&TermSetId=8959c25a-943f-4356-a302-d1ffcbba1757&UrlSuffix=572%2F6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_teblig-No-2024_21_de-Degisiklik-Yapilmasina-Dair-Teblig-_teblig-No-2025_12_",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; Mesire alanında güncel ve açıkça izinli olta kullanım bölümü; Giriş saatleri, ortak kullanım güvenliği ve olta mikro alanı"
+      },
+      {
+        "slug": "bilecik-kurtkoy-baraj-goleti",
+        "families": [
+          "Valilik",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.bilecik.gov.tr/kurtkoy-baraj-goleti",
+          "https://bilecik.tarimorman.gov.tr/Haber/812/Ilimizdeki-10-Golete-Eszamanli-Olarak-64-Bin-Adet-Balik-Birakildi",
+          "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+          "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9dd361f8-0534-4fe1-96ce-d6e05897a59d&TermSetId=8959c25a-943f-4356-a302-d1ffcbba1757&UrlSuffix=572%2F6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_teblig-No-2024_21_de-Degisiklik-Yapilmasina-Dair-Teblig-_teblig-No-2025_12_",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; Sulama işletmesi ve özel tarla sınırlarından ayrılmış kamusal kıyı; Güncel bariyer, tabela ve su kotu"
+      },
+      {
+        "slug": "bilecik-cerkesli-baraj-goleti",
+        "families": [
+          "Valilik",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.bilecik.gov.tr/cerkesli-baraj-goleti",
+          "https://bilecik.tarimorman.gov.tr/Sayfalar/AlbumDetay.aspx?OgeId=1202",
+          "https://bilecik.tarimorman.gov.tr/Haber/812/Ilimizdeki-10-Golete-Eszamanli-Olarak-64-Bin-Adet-Balik-Birakildi",
+          "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+          "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9dd361f8-0534-4fe1-96ce-d6e05897a59d&TermSetId=8959c25a-943f-4356-a302-d1ffcbba1757&UrlSuffix=572%2F6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_teblig-No-2024_21_de-Degisiklik-Yapilmasina-Dair-Teblig-_teblig-No-2025_12_",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C+/INDEX; C+ eşiği sağlandı"
+      },
+      {
+        "slug": "bilecik-yenipazar-baraj-goleti",
+        "families": [
+          "Valilik",
+          "İl Tarım"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.bilecik.gov.tr/yenipazar-baraj-goleti",
+          "https://bilecik.tarimorman.gov.tr/Haber/812/Ilimizdeki-10-Golete-Eszamanli-Olarak-64-Bin-Adet-Balik-Birakildi",
+          "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+          "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9dd361f8-0534-4fe1-96ce-d6e05897a59d&TermSetId=8959c25a-943f-4356-a302-d1ffcbba1757&UrlSuffix=572%2F6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_teblig-No-2024_21_de-Degisiklik-Yapilmasina-Dair-Teblig-_teblig-No-2025_12_",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C/HOLD; Orman içindeki son kıyı girişinin güncel kamusal kullanım teyidi; Yangın dönemi erişimi ve baraj işletme sınırı"
+      },
+      {
+        "slug": "mugla-ula-ula-goleti",
+        "families": [
+          "Belediye saha/planlama",
+          "MEB kamusal mekân"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.mugla.bel.tr/haber/ula-goletine-birakilan-sazanlarin-boyu-50-santimetreye-ulasti",
+          "https://mugla.bel.tr/uploads/komisyonraportr/Ek-1%20MUAP%20RAPOR%201.pdf",
+          "https://www.mugla.bel.tr/haber/buyuksehirden-ula-goletinde-kapsamli-cevre-temizligi",
+          "https://okuldisiogrenme.eba.gov.tr/mekan-detay/ula-goleti-2547",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+        ],
+        "decision": "C+/INDEX; C+ eşiği sağlandı"
+      },
+      {
+        "slug": "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti",
         "families": [
           "DSİ",
           "İl Tarım"
@@ -356,18 +556,18 @@
           "species"
         ],
         "sources": [
-          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
-          "https://kocaeli.tarimorman.gov.tr/Haber/454/318-250-Adet-Sazan-Baligi-Yavrusu-Sularimiza-Birakildi",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://balikesir.tarimorman.gov.tr/Haber/1290/%E2%80%8Bbaraj-Ve-Goletlerimize-1-Milyon-324-Bin-Yavru-Sazan-Baligi-Birakiyoruz",
+          "https://bolge25.dsi.gov.tr/Sayfa/Detay/943",
+          "https://balikesir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=f7a29156-478a-418e-9de7-76b55bec8937&TermSetId=84520646-651b-43db-b791-d9fdc230a613&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=954%2F%E2%80%8Bbalikesirde-Tum-Zamanlarin-Baliklandirma-Rekoru-Kirildi",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
           "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Sulama işletmesinden ayrılmış güncel ve güvenli amatör kıyı bölümü; Kiralama, özel parsel, bariyer ve mikro park alanı"
       },
       {
-        "slug": "ulusal-kocaeli-sahinler-baraj-golu",
+        "slug": "burdur-tefenni-cayli-goleti",
         "families": [
-          "DSİ",
+          "Bakanlık su yapısı",
           "İl Tarım"
         ],
         "coverage": [
@@ -380,67 +580,18 @@
           "species"
         ],
         "sources": [
-          "https://bolge01.dsi.gov.tr/Sayfa/Detay/879",
-          "https://kocaeli.tarimorman.gov.tr/Haber/454/318-250-Adet-Sazan-Baligi-Yavrusu-Sularimiza-Birakildi",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://burdur.tarimorman.gov.tr/Haber/567/2026-Yili-Baliklandirma-Faaliyetimiz-Gerceklestirildi",
+          "https://cdniys.tarimorman.gov.tr/api/File/GetGaleriFile/425/DosyaGaleri/1010/106.pdf",
+          "https://www.haritatr.com/cayli-koyu-haritasi-m26cd",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
           "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Çaylı yerleşiminden sonra güncel ve izinli kamusal kıyı girişi; Sulama işletmesi, kiralama, bariyer ve mikro park alanı"
       },
       {
-        "slug": "ulusal-sakarya-sakarya-nehri-sakarya-hatti",
+        "slug": "burdur-karamanli-karamanli-baraj-golu",
         "families": [
-          "Üniversite / coğrafya",
-          "Üniversite"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://sehirhafizasi.sakarya.edu.tr/hidrografya/",
-          "https://dergipark.org.tr/tr/pub/limnofish/article/635248",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
-      },
-      {
-        "slug": "ulusal-sakarya-cark-deresi",
-        "families": [
-          "Üniversite / coğrafya",
-          "Çevresel değerlendirme"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://sehirhafizasi.sakarya.edu.tr/hidrografya/",
-          "https://www.ilbank.gov.tr/storage/uploads/uidb/iads_sakarya_buyuksehir_belediyesi_yazlik_kavsak_projesi_csyp_final_cc_1761927987.pdf",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
-      },
-      {
-        "slug": "ulusal-tekirdag-bayramsah-baraj-golu",
-        "families": [
-          "Resmî risk planı",
-          "Çevre planı / İl Tarım girdisi",
+          "Kaymakamlık",
           "İl Tarım"
         ],
         "coverage": [
@@ -453,72 +604,15 @@
           "species"
         ],
         "sources": [
-          "https://tekirdag.tarimorman.gov.tr/BelgelerArsiv/Duyuru/%C4%B0RAP.pdf",
-          "https://webdosya.csb.gov.tr/db/mpgm/icerikler/kiyi-yapilari-uzman-degerlendirme-raporu-20230329102326.pdf",
-          "https://tekirdag.tarimorman.gov.tr/Belgeler/TarimRaporlari/GTHB59_2018.pdf",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "https://www.karamanli.gov.tr/baraj",
+          "https://burdur.tarimorman.gov.tr/Haber/500/Karamanli-Baraj-Golu-Stok-Tespit-Calismasi",
+          "https://burdur.tarimorman.gov.tr/Haber/567/2026-Yili-Baliklandirma-Faaliyetimiz-Gerceklestirildi",
+          "https://mapcarta.com/12964696",
+          "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
           "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
-      },
-      {
-        "slug": "ulusal-tekirdag-biyikali-baraj-golu",
-        "families": [
-          "Resmî risk planı",
-          "Çevre planı / İl Tarım girdisi"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://tekirdag.tarimorman.gov.tr/BelgelerArsiv/Duyuru/%C4%B0RAP.pdf",
-          "https://webdosya.csb.gov.tr/db/mpgm/icerikler/kiyi-yapilari-uzman-degerlendirme-raporu-20230329102326.pdf",
-          "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
-          "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
-          "https://tekirdag.tarimorman.gov.tr/Belgeler/TarimRaporlari/GTHB59_2017.pdf",
-          "https://kentkonseyi.suleymanpasa.bel.tr/biyikali-mahallesi",
-          "https://okuldisiogrenme-cdn-large.eba.gov.tr/mekan-detay/suleymanpasa-biyikali-goleti-5547"
-        ],
-        "decision": "C/HOLD; C+ koşulları sağlanmadı"
+        "decision": "C/HOLD; Stok tespiti ve olası istihsal programıyla uyumlu güncel amatör kıyı sınırı; Kiralama/işletme durumu ve mikro erişim"
       }
     ]
-  },
-  "maintenance": {
-    "report": "docs/olta-maintenance-2026-09-27.json",
-    "reviewedOnCurrentMain": "2026-10-02",
-    "crawledNotIndexed": {
-      "total": 24,
-      "contactQueryVariants": 6,
-      "intentionalNoindex": 12,
-      "indexableSelfCanonical": 6
-    },
-    "notFound": {
-      "total": 6,
-      "kept404": 6
-    },
-    "redirect": {
-      "total": 1,
-      "verified301": 1
-    },
-    "separateFromQuality": true
-  },
-  "stressTest": {
-    "report": "docs/quality-stress-2026-10-04.json",
-    "reviewed": 25,
-    "upgraded": 12,
-    "indexReady": 0,
-    "released": 0,
-    "retired": 2,
-    "retainedD": 11,
-    "productionVerified": false,
-    "canonicalAdditionalUpgrades": 1
   }
 }
