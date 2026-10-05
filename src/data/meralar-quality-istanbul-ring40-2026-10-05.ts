@@ -542,7 +542,7 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
     }
   },
   {
-    "slug": "ankara-500km-yalova-tesvikiye-sahili",
+    "slug": "ulusal-yalova-tesvikiye-sahili",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -565,14 +565,14 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
       "updatedAt": "2026-10-05",
       "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
       "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-yalova-tesvikiye-sahili: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
+      "summary": "ulusal-yalova-tesvikiye-sahili: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
       "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-yalova-ciftlikkoy-sahili",
+    "slug": "ulusal-yalova-ciftlikkoy-sahili",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -595,7 +595,7 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
       "updatedAt": "2026-10-05",
       "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
       "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-yalova-ciftlikkoy-sahili: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
+      "summary": "ulusal-yalova-ciftlikkoy-sahili: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
       "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
@@ -1754,8 +1754,8 @@ export const istanbulRing40Slugs20261005 = [
   "ankara-500km-sakarya-acelle-goleti",
   "ankara-500km-sakarya-anagol",
   "ankara-500km-sakarya-karagol-goleti",
-  "ankara-500km-yalova-tesvikiye-sahili",
-  "ankara-500km-yalova-ciftlikkoy-sahili",
+  "ulusal-yalova-tesvikiye-sahili",
+  "ulusal-yalova-ciftlikkoy-sahili",
   "ankara-500km-yalova-yalak-deresi",
   "ankara-500km-yalova-ortaburun-baraji",
   "ankara-500km-yalova-selimandira-deresi",
