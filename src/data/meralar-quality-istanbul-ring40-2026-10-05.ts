@@ -2,7 +2,7 @@ import type { EnrichedMera } from "./meralar-tumu-core";
 
 export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedMera>}[] = [
   {
-    "slug": "ankara-500km-istanbul-elmali-2-baraj-golu",
+    "slug": "ulusal-balikesir-camkoy-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -18,51 +18,111 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-istanbul-elmali-2-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-istanbul-aydos-goleti",
+    "slug": "ulusal-balikesir-ikizcetepeler-baraj-golu",
     "patch": {
-      "confidence": "D",
+      "confidence": "C",
       "indexing": "hold",
-      "qualityGrade": "D",
+      "qualityGrade": "C",
       "qualityAssessment": {
         "model": "expanded-v2",
         "reviewedAt": "2026-10-05",
-        "identityVerified": false,
-        "speciesRouteSpecific": false,
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
         "currentLawResolved": false,
         "safePublicAccessVerified": false,
-        "independentStrongFamilies": [],
-        "localContentVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım stocking",
+          "İl Tarım denetim"
+        ],
+        "localContentVerified": true,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi",
+          "Balıklandırma ve denetim kayıtları belirli kıyının serbest olduğu anlamına gelmez"
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-istanbul-aydos-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde tarihli resmî kayıt",
+          "sourceLabel": "Balıkesir İl Tarım - 2024 balıklandırma",
+          "sourceUrl": "https://balikesir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=f7a29156-478a-418e-9de7-76b55bec8937&TermSetId=84520646-651b-43db-b791-d9fdc230a613&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=1290%2F%E2%80%8Bbaraj-Ve-Goletlerimize-1-Milyon-324-Bin-Yavru-Sazan-Baligi-Birakiyoruz",
+          "note": "İkizcetepeler Baraj Gölü'ne 2024'te 300.000 yavru sazan bırakıldığı rota özelinde kaydedilir."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Balıkesir İl Tarım - 2024 balıklandırma",
+          "url": "https://balikesir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=f7a29156-478a-418e-9de7-76b55bec8937&TermSetId=84520646-651b-43db-b791-d9fdc230a613&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=1290%2F%E2%80%8Bbaraj-Ve-Goletlerimize-1-Milyon-324-Bin-Yavru-Sazan-Baligi-Birakiyoruz",
+          "note": "İkizcetepeler Baraj Gölü'ne 2024'te 300.000 yavru sazan bırakıldığı rota özelinde kaydedilir."
+        },
+        {
+          "label": "Balıkesir İl Tarım - 2015 kaçak av denetimi",
+          "url": "https://balikesir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=f7a29156-478a-418e-9de7-76b55bec8937&TermSetId=84520646-651b-43db-b791-d9fdc230a613&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=97%2FBaraj-Gollerinde-Kacak-Av-Denetimi",
+          "note": "İkizcetepeler adıyla su ürünleri denetimi; yasal amatör kıyı izni değildir."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D→C. Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D→C / HOLD",
+      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "İkizcetepeler Baraj Gölü'ne 2024'te 300.000 yavru sazan bırakıldığı rota özelinde kaydedilir."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
     }
   },
   {
-    "slug": "ankara-500km-istanbul-bahcesehir-goleti",
+    "slug": "ulusal-balikesir-madra-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -78,21 +138,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-istanbul-bahcesehir-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-istanbul-kagithane-deresi",
+    "slug": "ulusal-balikesir-saribeyler-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -108,81 +165,204 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-istanbul-kagithane-deresi: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-istanbul-kemer-country-goleti",
+    "slug": "ulusal-canakkale-atikhisar-baraj-golu",
     "patch": {
-      "confidence": "D",
+      "confidence": "C",
       "indexing": "hold",
-      "qualityGrade": "D",
+      "qualityGrade": "C",
       "qualityAssessment": {
         "model": "expanded-v2",
         "reviewedAt": "2026-10-05",
-        "identityVerified": false,
-        "speciesRouteSpecific": false,
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
         "currentLawResolved": false,
         "safePublicAccessVerified": false,
-        "independentStrongFamilies": [],
-        "localContentVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım 2026",
+          "İl Tarım 2022"
+        ],
+        "localContentVerified": true,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı",
+          "2022 dönemsel açıklaması güncel mikro erişim garantisi değildir"
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-istanbul-kemer-country-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde tarihli resmî kayıt",
+          "sourceLabel": "Çanakkale İl Tarım - 2026 balıklandırma",
+          "sourceUrl": "https://canakkale.tarimorman.gov.tr/Haber/869/Canakkale-Ilimizde-11-Farkli-Su-Kaynagina-955-Bin-Yavru-Sazan-Baligi-Birakildi",
+          "note": "26 Ağustos 2026'da Atikhisar Barajı'na 348.000 yavru sazan bırakıldığı resmî kayıttır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Çanakkale İl Tarım - 2026 balıklandırma",
+          "url": "https://canakkale.tarimorman.gov.tr/Haber/869/Canakkale-Ilimizde-11-Farkli-Su-Kaynagina-955-Bin-Yavru-Sazan-Baligi-Birakildi",
+          "note": "26 Ağustos 2026'da Atikhisar Barajı'na 348.000 yavru sazan bırakıldığı resmî kayıttır."
+        },
+        {
+          "label": "Çanakkale İl Tarım - 2022 balıklandırma ve amatör kullanım açıklaması",
+          "url": "https://canakkale.tarimorman.gov.tr/Haber/557/",
+          "note": "Atikhisar'daki programı ve balıklandırılan baraj/göletlerin ticari avcılığa kapalı, amatör avcılığa açık olduğuna ilişkin dönemsel kurumsal açıklamayı içerir."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D→C. İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D→C / HOLD",
+      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "26 Ağustos 2026'da Atikhisar Barajı'na 348.000 yavru sazan bırakıldığı resmî kayıttır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
     }
   },
   {
-    "slug": "ankara-500km-kocaeli-sarisu-cayi",
+    "slug": "ulusal-canakkale-bakacak-baraj-golu",
     "patch": {
-      "confidence": "D",
+      "confidence": "C",
       "indexing": "hold",
-      "qualityGrade": "D",
+      "qualityGrade": "C",
       "qualityAssessment": {
         "model": "expanded-v2",
         "reviewedAt": "2026-10-05",
-        "identityVerified": false,
-        "speciesRouteSpecific": false,
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
         "currentLawResolved": false,
         "safePublicAccessVerified": false,
-        "independentStrongFamilies": [],
-        "localContentVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım stok/istihsal",
+          "İl Tarım balıklandırma"
+        ],
+        "localContentVerified": true,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi",
+          "Kamusal güvenli kıyı girişi güncel olarak doğrulanmadı"
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-kocaeli-sarisu-cayi: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde tarihli resmî kayıt",
+          "sourceLabel": "Çanakkale İl Tarım - Bakacak teknik şartnamesi",
+          "sourceUrl": "https://canakkale.tarimorman.gov.tr/Lists/Duyuru/Attachments/383/Teknik%20%C5%9Eartname%20-%20Bakacak%20Baraj%20G%C3%B6l%C3%BC.pdf",
+          "note": "Bakacak Baraj Gölü için Cyprinus carpio ve 12.000 kg/yıl avlanabilir stok belirtilir; ticari istihsal amatör kıyı izni değildir."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Çanakkale İl Tarım - Bakacak teknik şartnamesi",
+          "url": "https://canakkale.tarimorman.gov.tr/Lists/Duyuru/Attachments/383/Teknik%20%C5%9Eartname%20-%20Bakacak%20Baraj%20G%C3%B6l%C3%BC.pdf",
+          "note": "Bakacak Baraj Gölü için Cyprinus carpio ve 12.000 kg/yıl avlanabilir stok belirtilir; ticari istihsal amatör kıyı izni değildir."
+        },
+        {
+          "label": "Çanakkale İl Tarım - 2022 balıklandırma açıklaması",
+          "url": "https://canakkale.tarimorman.gov.tr/Haber/557/",
+          "note": "İldeki balıklandırılan baraj/göletlerin amatör kullanım bağlamını tarihli olarak açıklar; güncel kira/alan sınırları ayrıca uygulanır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D→C. Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D→C / HOLD",
+      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "Bakacak Baraj Gölü için Cyprinus carpio ve 12.000 kg/yıl avlanabilir stok belirtilir; ticari istihsal amatör kıyı izni değildir."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
     }
   },
   {
-    "slug": "ankara-500km-kocaeli-dilderesi",
+    "slug": "ulusal-canakkale-bayramic-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -198,21 +378,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-kocaeli-dilderesi: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-kocaeli-kocacay",
+    "slug": "ulusal-canakkale-gokceada-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -228,21 +405,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-kocaeli-kocacay: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-kocaeli-cumakoy-goleti",
+    "slug": "ulusal-canakkale-gonen-baraj-golu-canakkale",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -258,21 +432,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-kocaeli-cumakoy-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-kocaeli-toramanlar-goleti",
+    "slug": "ulusal-edirne-altinyazi-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -288,21 +459,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-kocaeli-toramanlar-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-mudurnu-cayi",
+    "slug": "ulusal-edirne-basagil-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -318,21 +486,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-mudurnu-cayi: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-akgol",
+    "slug": "ulusal-edirne-beykonak-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -348,21 +513,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-akgol: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-akcay-baraj-golu",
+    "slug": "ulusal-edirne-bulbuldere-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -378,21 +540,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-akcay-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-cilekli-goleti",
+    "slug": "ulusal-edirne-cavuskoy-baraj-golu-edirne",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -408,21 +567,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-cilekli-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-okcular-goleti",
+    "slug": "ulusal-eskisehir-kunduzlar-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -438,21 +594,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-okcular-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-acelle-goleti",
+    "slug": "ulusal-karabuk-kadikoy-baraj-golu-karabuk",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -468,21 +621,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-acelle-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-anagol",
+    "slug": "ulusal-karabuk-bostancilar-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -498,21 +648,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-anagol: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-sakarya-karagol-goleti",
+    "slug": "ulusal-karabuk-ortakcilar-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -528,17 +675,247 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-sakarya-karagol-goleti: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+    }
+  },
+  {
+    "slug": "ulusal-karabuk-filyos-cayi-karabuk-hatti",
+    "patch": {
+      "confidence": "D",
+      "indexing": "hold",
+      "qualityGrade": "D",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": false,
+        "speciesRouteSpecific": false,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [],
+        "localContentVerified": false,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+        ]
+      },
+      "fish": [],
+      "fishEvidence": [],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+    }
+  },
+  {
+    "slug": "ulusal-kirklareli-kayali-baraj-golu",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım stocking/denetim",
+          "İl Tarım istihsal"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı",
+          "Güncel güvenli ve kamusal kıyı erişimi doğrulanmadı"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde tarihli resmî kayıt",
+          "sourceLabel": "Kırklareli İl Tarım - 2023 balıklandırma",
+          "sourceUrl": "https://kirklareli.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9543d25f-58cf-413e-a1bf-f11661a02e91&UrlSuffix=2383",
+          "note": "Kayalı Barajı'na yavru sazan bırakıldığı resmî rota-özel kayıttır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Kırklareli İl Tarım - 2023 balıklandırma",
+          "url": "https://kirklareli.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9543d25f-58cf-413e-a1bf-f11661a02e91&UrlSuffix=2383",
+          "note": "Kayalı Barajı'na yavru sazan bırakıldığı resmî rota-özel kayıttır."
+        },
+        {
+          "label": "Kırklareli İl Tarım - 2020 Kayalı denetimi",
+          "url": "https://kirklareli.tarimorman.gov.tr/Haber/1435/Kayali-Barajinda-Su-Urunleri-Denetimlerimiz-Devam-Ediyor",
+          "note": "Kayalı Barajı'nda sazan ve diğer canlıların denetim sırasında kaydedildiği güncel saha bağlamı."
+        },
+        {
+          "label": "Kırklareli İl Tarım - Kayalı istihsal kiralama",
+          "url": "https://kirklareli.tarimorman.gov.tr/Duyuru/105/Kayali-Baraj-Golunun-Su-Urunleri-Istihsal-Hakkinin-Kiraya-Verilmesi",
+          "note": "Pullu sazan ve havuz balığı stokları ticari istihsal bağlamında verilir; amatör kıyı izni değildir."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D→C. Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D→C / HOLD",
+      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "Kayalı Barajı'na yavru sazan bırakıldığı resmî rota-özel kayıttır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "ulusal-kirklareli-ahmetbey-baraj-golu",
+    "patch": {
+      "confidence": "D",
+      "indexing": "hold",
+      "qualityGrade": "D",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": false,
+        "speciesRouteSpecific": false,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [],
+        "localContentVerified": false,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "DSİ kayıtlarında Ahmetbey su yapısı doğrulansa da rota-özel güncel tür ve amatör kıyı kullanım zinciri kurulamadı."
+        ]
+      },
+      "fish": [],
+      "fishEvidence": [],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. DSİ kayıtlarında Ahmetbey su yapısı doğrulansa da rota-özel güncel tür ve amatör kıyı kullanım zinciri kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "DSİ kayıtlarında Ahmetbey su yapısı doğrulansa da rota-özel güncel tür ve amatör kıyı kullanım zinciri kurulamadı."
+    }
+  },
+  {
+    "slug": "ulusal-kirklareli-saricaali-baraj-golu",
+    "patch": {
+      "confidence": "D",
+      "indexing": "hold",
+      "qualityGrade": "D",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": false,
+        "speciesRouteSpecific": false,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [],
+        "localContentVerified": false,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+        ]
+      },
+      "fish": [],
+      "fishEvidence": [],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+    }
+  },
+  {
+    "slug": "ulusal-kirklareli-sofuhalil-baraj-golu",
+    "patch": {
+      "confidence": "D",
+      "indexing": "hold",
+      "qualityGrade": "D",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": false,
+        "speciesRouteSpecific": false,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [],
+        "localContentVerified": false,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+        ]
+      },
+      "fish": [],
+      "fishEvidence": [],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+    }
+  },
+  {
+    "slug": "ulusal-kutahya-certe-baraj-golu",
+    "patch": {
+      "confidence": "D",
+      "indexing": "hold",
+      "qualityGrade": "D",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": false,
+        "speciesRouteSpecific": false,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [],
+        "localContentVerified": false,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+        ]
+      },
+      "fish": [],
+      "fishEvidence": [],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
@@ -558,17 +935,14 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ulusal-yalova-tesvikiye-sahili: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
@@ -588,21 +962,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ulusal-yalova-ciftlikkoy-sahili: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-yalova-yalak-deresi",
+    "slug": "ulusal-zonguldak-derekoy-baraj-golu-zonguldak",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -618,119 +989,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-yalova-yalak-deresi: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-yalova-ortaburun-baraji",
-    "patch": {
-      "confidence": "D",
-      "indexing": "hold",
-      "qualityGrade": "D",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": false,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "Resmî kurum"
-        ],
-        "localContentVerified": false,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-yalova-ortaburun-baraji: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı.",
-      "sources": [
-        {
-          "label": "Tarım ve Orman Bakanlığı / Yalova 2026 yatırımları",
-          "url": "https://www.tarimorman.gov.tr/",
-          "note": "Çınarcık Ortaburun sulama yatırımı güncel su yapısı kimliğini destekler; balık türü veya amatör av izni değildir."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ankara-500km-yalova-selimandira-deresi",
-    "patch": {
-      "confidence": "D",
-      "indexing": "hold",
-      "qualityGrade": "D",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": false,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "Resmî kurum"
-        ],
-        "localContentVerified": false,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-yalova-selimandira-deresi: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı.",
-      "sources": [
-        {
-          "label": "Tarım ve Orman Bakanlığı / Yalova 2026 yatırımları",
-          "url": "https://www.tarimorman.gov.tr/",
-          "note": "Selimandıra Deresi rehabilitasyonunu doğrular; balık türü ve amatör av uygunluğu kanıtlanmadı."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ankara-500km-bursa-cinarcik-baraj-golu",
+    "slug": "ulusal-zonguldak-guluc-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -746,21 +1016,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-bursa-cinarcik-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-bursa-mustafakemalpasa-cayi",
+    "slug": "ulusal-zonguldak-kizilcapinar-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -776,21 +1043,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-bursa-mustafakemalpasa-cayi: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-bursa-doganci-baraj-golu",
+    "slug": "ulusal-zonguldak-kozlu-baraj-golu",
     "patch": {
       "confidence": "D",
       "indexing": "hold",
@@ -806,326 +1070,18 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": false,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-bursa-doganci-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
       "fish": [],
       "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      "verification": "5 Ekim 2026 genişletilmiş-v2 denetimi: D / HOLD. Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı.",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: D / HOLD",
+      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
     }
   },
   {
-    "slug": "ankara-500km-bursa-hasanaga-baraj-golu",
-    "patch": {
-      "confidence": "D",
-      "indexing": "hold",
-      "qualityGrade": "D",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": false,
-        "speciesRouteSpecific": false,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [],
-        "localContentVerified": false,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-bursa-hasanaga-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-    }
-  },
-  {
-    "slug": "ankara-500km-tekirdag-cokal-baraj-golu",
-    "patch": {
-      "confidence": "D",
-      "indexing": "hold",
-      "qualityGrade": "D",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": false,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "Resmî kurum"
-        ],
-        "localContentVerified": false,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-tekirdag-cokal-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı.",
-      "sources": [
-        {
-          "label": "Tekirdağ Tarım/çevre planlama kayıtları",
-          "url": "https://tekirdag.tarimorman.gov.tr/",
-          "note": "Çokal Barajı su ürünleri/ticari istihsal bağlamı bulunmakla birlikte rota-özel amatör kıyı ve tür zinciri bu turda C eşiğine taşınamadı."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ankara-500km-tekirdag-kadikoy-baraj-golu",
-    "patch": {
-      "confidence": "D",
-      "indexing": "hold",
-      "qualityGrade": "D",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": false,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "Resmî kurum"
-        ],
-        "localContentVerified": false,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "DSİ güncel tesis envanteri Kadıköy Barajı'nı Tekirdağ değil Kırklareli Merkez altında gösteriyor; idari sınıflandırma çözülmeden kalite yükseltilemez."
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-tekirdag-kadikoy-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "DSİ güncel tesis envanteri Kadıköy Barajı'nı Tekirdağ değil Kırklareli Merkez altında gösteriyor; idari sınıflandırma çözülmeden kalite yükseltilemez.",
-      "sources": [
-        {
-          "label": "DSİ 11. Bölge - inşa halindeki barajlar",
-          "url": "https://bolge11.dsi.gov.tr/Sayfa/Detay/1089",
-          "note": "Merkez Kadıköy Barajı Kırklareli altında listelenir; mevcut Tekirdağ slug'ıyla idari çelişki vardır."
-        },
-        {
-          "label": "DSİ 11. Bölge - inşa halindeki sulamalar",
-          "url": "https://bolge11.dsi.gov.tr/Sayfa/Detay/1090",
-          "note": "Merkez Kadıköy Barajı Sulaması Kırklareli altında listelenir."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ankara-500km-tekirdag-naipkoy-baraj-golu",
-    "patch": {
-      "confidence": "D",
-      "indexing": "hold",
-      "qualityGrade": "D",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": false,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "Resmî kurum"
-        ],
-        "localContentVerified": false,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-tekirdag-naipkoy-baraj-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı.",
-      "sources": [
-        {
-          "label": "DSİ 11. Bölge - işletmedeki barajlar",
-          "url": "https://bolge11.dsi.gov.tr/Sayfa/Detay/1084",
-          "note": "Tekirdağ Naipköy Barajı kimliğini ve işletme durumunu doğrular; tür veya amatör kıyı izni kanıtı değildir."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ankara-500km-tekirdag-kazak-golu",
-    "patch": {
-      "confidence": "D",
-      "indexing": "hold",
-      "qualityGrade": "D",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": false,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "Resmî kurum"
-        ],
-        "localContentVerified": false,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: D / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite D. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "ankara-500km-tekirdag-kazak-golu: bu turda rota-özel tür, güncel hukuk ve güvenli kamusal erişim zinciri birlikte kurulamadığı için Güven D / HOLD korunur.",
-      "fish": [],
-      "fishEvidence": [],
-      "researchSummary": "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı.",
-      "sources": [
-        {
-          "label": "Kapaklı Belediyesi - Kazak Gölü Mesire Alanı",
-          "url": "https://www.kapakli.bel.tr/",
-          "note": "Kamusal rekreasyon alanını destekler; rota-özel balık türü ve amatör av izni bulunmadı."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ankara-500km-istanbul-kucukcekmece-golu",
-    "patch": {
-      "confidence": "C",
-      "indexing": "hold",
-      "qualityGrade": "C",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "İBB",
-          "Akademik"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Güncel rota-özel tür örneklemesi eski; bugünkü stok kesinliği yok",
-          "Amatör balıkçılığa açık güvenli kıyı bölümü ve yerel koruma hükümleri güncel olarak çözülmedi"
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Küçükçekmece Gölü: rota-özel kanıtlarla kalite C seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Mugil cephalus",
-        "Esox lucius"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Mugil cephalus",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "İstanbul Üniversitesi tarihsel Küçükçekmece balık faunası çalışmaları",
-          "sourceUrl": "https://tez.yok.gov.tr/",
-          "note": "Küçükçekmece Gölü için tarihsel rota-özel fauna kaydı; güncel stok kesinliği değildir."
-        },
-        {
-          "name": "Esox lucius",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "İstanbul Üniversitesi tarihsel Küçükçekmece balık faunası çalışmaları",
-          "sourceUrl": "https://tez.yok.gov.tr/",
-          "note": "Küçükçekmece Gölü için tarihsel rota-özel fauna kaydı; güncel stok kesinliği değildir."
-        }
-      ],
-      "sources": [
-        {
-          "label": "İBB Küçükçekmece Sosyal Tesisi",
-          "url": "https://tesislerimiz.ibb.istanbul/kucukcekmece-sosyal-tesisi/",
-          "note": "Göl kıyısında güncel kamusal kullanım bağlamı; amatör av izni değildir."
-        },
-        {
-          "label": "DKMP 2026 Küçükçekmece saha faaliyeti",
-          "url": "https://bolge1.tarimorman.gov.tr/",
-          "note": "Gölün güncel ekolojik/koruma bağlamını destekler; balıkçılık izni yerine geçmez."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Güncel rota-özel tür örneklemesi eski; bugünkü stok kesinliği yok"
-    }
-  },
-  {
-    "slug": "ankara-500km-kocaeli-sipahiler-goleti",
+    "slug": "duzce-topuk-yaylasi-goleti",
     "patch": {
       "confidence": "C",
       "indexing": "hold",
@@ -1143,584 +1099,844 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
         "localContentVerified": true,
         "fieldOrEquivalentVerified": false,
         "unresolvedRisks": [
-          "Güncel ve açıkça izinli kamusal kıyı erişimi doğrulanmadı",
-          "Balıklandırma amatör av izni değildir"
+          "Gölet çevresindeki güncel kamusal/özel kullanım sınırı ve izinli amatör kıyı net değil"
         ]
       },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Sipahiler Göleti: rota-özel kanıtlarla kalite C seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
       "fish": [
         "Sazan"
       ],
       "fishEvidence": [
         {
           "name": "Sazan",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "sourceUrl": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Sipahiler Göleti için 2025 yılında 18.000 yavru sazan balıklandırması; güncel av garantisi değildir."
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "Düzce İl Tarım 2025 Faaliyet Raporu",
+          "sourceUrl": "https://duzce.tarimorman.gov.tr/Belgeler/PLANVERAPOR/Duzce_Faaliyet_Raporu-2025.pdf",
+          "note": "2025'te Topuk Yaylası Göleti'ne 110.000 yavru sazan salımı; güncel kamusal amatör kıyı erişimini tek başına kanıtlamaz."
         }
       ],
       "sources": [
         {
-          "label": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "url": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Rota-özel balıklandırma kaydı."
+          "label": "Düzce İl Tarım 2025 Faaliyet Raporu",
+          "url": "https://duzce.tarimorman.gov.tr/Belgeler/PLANVERAPOR/Duzce_Faaliyet_Raporu-2025.pdf",
+          "note": "2025'te Topuk Yaylası Göleti'ne 110.000 yavru sazan salımı; güncel kamusal amatör kıyı erişimini tek başına kanıtlamaz."
         },
         {
           "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
           "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
         },
         {
           "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
           "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
         }
       ],
-      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Güncel ve açıkça izinli kamusal kıyı erişimi doğrulanmadı"
-    }
-  },
-  {
-    "slug": "ankara-500km-kocaeli-denizli-goleti",
-    "patch": {
-      "confidence": "C",
-      "indexing": "hold",
-      "qualityGrade": "C",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "İl Tarım",
-          "Belediye/planlama"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Koruma/planlama sınırları ile izinli amatör kıyı bölümü eşleştirilmedi",
-          "Son kıyı girişi ve saha tabelaları doğrulanmadı"
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Denizli Göleti: rota-özel kanıtlarla kalite C seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Sazan"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Sazan",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "sourceUrl": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Denizli Göleti için 2025 yılında 175.000 yavru sazan balıklandırması."
-        }
-      ],
-      "sources": [
-        {
-          "label": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "url": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Rota-özel balıklandırma kaydı."
-        },
-        {
-          "label": "Kocaeli planlama kayıtları - Denizli Göleti koruma alanı",
-          "url": "https://www.kocaeli.bel.tr/",
-          "note": "Göletin planlama/koruma bağlamını destekler; kıyı av izni değildir."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Koruma/planlama sınırları ile izinli amatör kıyı bölümü eşleştirilmedi"
-    }
-  },
-  {
-    "slug": "ankara-500km-kocaeli-ariklar-baraj-golu",
-    "patch": {
-      "confidence": "C",
-      "indexing": "hold",
-      "qualityGrade": "C",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "İl Tarım",
-          "Belediye"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "İzinli ve güvenli amatör kıyı erişimi güncel resmî kayıtta açık değil",
-          "Balıklandırma tek başına av izni değildir"
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Arıklar Göleti: rota-özel kanıtlarla kalite C seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Sazan"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Sazan",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "sourceUrl": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Arıklar Göleti için 2025 yılında 90.000 yavru sazan balıklandırması."
-        }
-      ],
-      "sources": [
-        {
-          "label": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "url": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Rota-özel balıklandırma kaydı."
-        },
-        {
-          "label": "Kocaeli Büyükşehir Kandıra tanıtımı",
-          "url": "https://www.kocaeli.bel.tr/kandira.html",
-          "note": "Arıklar su alanının ilçe/kamusal coğrafya bağlamını destekler; av izni değildir."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: İzinli ve güvenli amatör kıyı erişimi güncel resmî kayıtta açık değil"
-    }
-  },
-  {
-    "slug": "ankara-500km-kocaeli-sevindikli-goleti",
-    "patch": {
-      "confidence": "C",
-      "indexing": "hold",
-      "qualityGrade": "C",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "İl Tarım"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Kamusal ve güvenli son kıyı erişimi doğrulanmadı",
-          "Yerel işletme/mülkiyet sınırı güncel olarak çözülmedi"
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Sevindikli Göleti: rota-özel kanıtlarla kalite C seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Sazan"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Sazan",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "sourceUrl": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Sevindikli Göleti için 2025 yılında 19.000 yavru sazan balıklandırması."
-        }
-      ],
-      "sources": [
-        {
-          "label": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "url": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Rota-özel balıklandırma kaydı."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Kamusal ve güvenli son kıyı erişimi doğrulanmadı"
-    }
-  },
-  {
-    "slug": "ankara-500km-sakarya-huseyinli-goleti",
-    "patch": {
-      "confidence": "C",
-      "indexing": "hold",
-      "qualityGrade": "C",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "İl Tarım"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "2020 kaydından sonra güncel stok/erişim teyidi eksik",
-          "Güncel izinli amatör kıyı bölümü doğrulanmadı"
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Hüseyinli Göleti: rota-özel kanıtlarla kalite C seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Sazan"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Sazan",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "Sakarya İl Tarım 2020 Balıklandırma",
-          "sourceUrl": "https://sakarya.tarimorman.gov.tr/Haber/176/2020-Yili-Baliklandirma-Calismasi",
-          "note": "Hüseyinli Göleti rota adıyla yavru sazan bırakıldığı resmî kayıtta yer alır; tarihsel stocking güncel av garantisi değildir."
-        }
-      ],
-      "sources": [
-        {
-          "label": "Sakarya İl Tarım 2020 Balıklandırma",
-          "url": "https://sakarya.tarimorman.gov.tr/Haber/176/2020-Yili-Baliklandirma-Calismasi",
-          "note": "Rota-özel sazan balıklandırma kaydı."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: 2020 kaydından sonra güncel stok/erişim teyidi eksik"
-    }
-  },
-  {
-    "slug": "ankara-500km-bursa-nilufer-cayi",
-    "patch": {
-      "confidence": "C",
-      "indexing": "hold",
-      "qualityGrade": "C",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": false,
-        "safePublicAccessVerified": false,
-        "independentStrongFamilies": [
-          "Akademik",
-          "Bursa Büyükşehir"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": [
-          "Balık faunası istasyon bazında değişiyor; yayımlanan genel pin belirli örnekleme istasyonu değil",
-          "2025 kirlilik çalışmaları nedeniyle tüketim/sağlık ve amatör av uygunluğu ayrıca çözülmeli",
-          "Kamusal park kıyısı balık tutma izni anlamına gelmez"
-        ]
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C / HOLD",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Nilüfer Çayı: rota-özel kanıtlarla kalite C seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Barbus niluferensis",
-        "Squalius cii"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Barbus niluferensis",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "Aksu, Turan & Emiroğlu 2020",
-          "sourceUrl": "https://dergipark.org.tr/en/pub/biodicon/article/836206",
-          "note": "Nilüfer Çayı havzasında 2014-2015 örneklemelerinde kaydedilen en yaygın türlerden; orta/mansapta bazı istasyonlarda balık bulunmamıştır."
-        },
-        {
-          "name": "Squalius cii",
-          "evidenceLevel": "Rota özelinde tarihli resmî veya akademik kayıt",
-          "sourceLabel": "Aksu, Turan & Emiroğlu 2020",
-          "sourceUrl": "https://dergipark.org.tr/en/pub/biodicon/article/836206",
-          "note": "Nilüfer Çayı havzasında rota/havza örneklemesinde kaydedilmiştir; her kıyı kesimi için kesin varlık değildir."
-        }
-      ],
-      "sources": [
-        {
-          "label": "Nilüfer Çayı tatlısu balıkları güncel durumu",
-          "url": "https://dergipark.org.tr/en/pub/biodicon/article/836206",
-          "note": "17 örnekleme noktasında 19 tür; bazı orta/mansap istasyonlarında balık bulunmadığı özellikle dikkate alınır."
-        },
-        {
-          "label": "Bursa Büyükşehir 2026 Hüdavendigar Nilüfer Çayı temizliği",
-          "url": "https://www.bursa.bel.tr/haber/-nilufer-cayi-artik-daha-temiz-akacak-37315",
-          "note": "Hüdavendigar Kent Parkı içindeki bölüm için güncel kamusal kıyı bağlamı; balıkçılık izni değildir."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "researchSummary": "Rota-özel tür kanıtı bulundu; C+ için eksik ana halka: Balık faunası istasyon bazında değişiyor; yayımlanan genel pin belirli örnekleme istasyonu değil"
-    }
-  },
-  {
-    "slug": "ankara-500km-kocaeli-utuk-goleti",
-    "patch": {
-      "confidence": "B",
-      "indexing": "index",
-      "qualityGrade": "B",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": true,
-        "safePublicAccessVerified": true,
-        "independentStrongFamilies": [
-          "İl Tarım",
-          "Kocaeli Büyükşehir/KAMADER"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": []
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: B",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite B. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Ütük Göleti: rota-özel kanıtlarla kalite B seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Sazan",
-        "Turna",
-        "Tatlısu levreği"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Sazan",
-          "evidenceLevel": "Rota özelinde güncel resmî/kurumsal kayıt",
-          "sourceLabel": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "sourceUrl": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Ütük Göleti için 18.000 yavru sazan balıklandırması; stok olasılığı kanıtıdır."
-        },
-        {
-          "name": "Turna",
-          "evidenceLevel": "Rota özelinde güncel resmî/kurumsal kayıt",
-          "sourceLabel": "Kocaeli Büyükşehir 2026 Ütük festivali",
-          "sourceUrl": "https://www.kocaeli.bel.tr/haber/genclerle-gelecege-projesi-bu-festivalde-hayat-buldu-51223.html",
-          "note": "Ütük Göleti'nde 18. Geleneksel Turna ve Tatlısu Levreği Tutma Festivali rota özelinde düzenlenmiştir."
-        },
-        {
-          "name": "Tatlısu levreği",
-          "evidenceLevel": "Rota özelinde güncel resmî/kurumsal kayıt",
-          "sourceLabel": "Kocaeli Büyükşehir 2026 Ütük festivali",
-          "sourceUrl": "https://www.kocaeli.bel.tr/haber/genclerle-gelecege-projesi-bu-festivalde-hayat-buldu-51223.html",
-          "note": "Ütük Göleti'nde rota adıyla sportif olta festivalinin hedef türlerinden biridir."
-        }
-      ],
-      "sources": [
-        {
-          "label": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
-          "url": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
-          "note": "Ütük için güncel rota-özel sazan balıklandırması."
-        },
-        {
-          "label": "Kocaeli Büyükşehir - 2026 Ütük Göleti festivali",
-          "url": "https://www.kocaeli.bel.tr/haber/genclerle-gelecege-projesi-bu-festivalde-hayat-buldu-51223.html",
-          "note": "KAMADER iş birliğinde dört günlük sportif olta etkinliği; güncel kamusal kullanım ve rota-özel turna/tatlısu levreği saha bağlamı."
-        },
-        {
-          "label": "Kocaeli Büyükşehir - Kandıra",
-          "url": "https://www.kocaeli.bel.tr/kandira.html",
-          "note": "Ütük Göleti'nin ilçe içindeki resmî yer/coğrafya bağlamı."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "navigationVerified": true,
-      "researchSummary": "Rota kimliği, tür/stocking, güncel amatör kullanım hukuku ve genel kamusal erişim birlikte doğrulandı; B eşiği sağlandı.",
-      "confidenceProfile": {
-        "model": "evidence-v1",
-        "overall": "B",
-        "reviewedAt": "2026-10-05",
-        "identity": {
-          "level": "strong",
-          "label": "Resmî rota kimliği",
-          "note": "Rota güncel resmî/kurumsal kaynaklarla doğrulandı."
-        },
-        "legal": {
-          "level": "strong",
-          "label": "Güncel amatör kullanım kanıtı",
-          "note": "Genel 6/2 mevzuatı ile rota-özel güncel amatör kullanım kanıtı birlikte değerlendirildi."
-        },
-        "access": {
-          "level": "strong",
-          "label": "Kamusal genel erişim bağlamı",
-          "note": "Resmî/kurumsal güncel kullanım kaydı genel erişim bağlamını doğruluyor; mikro kıyı koşulları yine saha tabelalarına tabidir."
-        },
-        "species": {
-          "level": "strong",
-          "label": "Rota-özel tür kanıtı",
-          "note": "Yayımlanan türlerin tamamı rota-özel güncel resmî/kurumsal kayıtlarla destekleniyor."
-        },
-        "field": {
-          "level": "partial",
-          "label": "Kurumsal saha eşdeğeri",
-          "note": "Kurumsal etkinlik veya saha işletim kaydı vardır; bağımsız fiziksel saha ziyareti yapılmamıştır."
-        }
-      }
-    }
-  },
-  {
-    "slug": "ankara-500km-sakarya-sekiharman-goleti",
-    "patch": {
-      "confidence": "C",
-      "indexing": "index",
-      "qualityGrade": "C+",
-      "qualityAssessment": {
-        "model": "expanded-v2",
-        "reviewedAt": "2026-10-05",
-        "identityVerified": true,
-        "speciesRouteSpecific": true,
-        "currentLawResolved": true,
-        "safePublicAccessVerified": true,
-        "independentStrongFamilies": [
-          "İl Tarım",
-          "Sakarya Büyükşehir/SASKİ"
-        ],
-        "localContentVerified": true,
-        "fieldOrEquivalentVerified": false,
-        "unresolvedRisks": []
-      },
-      "researchedAt": "2026-10-05",
-      "updatedAt": "2026-10-05",
-      "researchStatus": "İstanbul çevresi 40'lı genişletilmiş kalite testi: C+",
-      "verification": "5 Ekim 2026 genişletilmiş-v2 kaynak denetimi; kalite C+. Tür, güncel hukuk ve kamusal kıyı erişimi ayrı kapılar olarak değerlendirildi.",
-      "summary": "Sekiharman Göleti: rota-özel kanıtlarla kalite C+ seviyesinde yeniden değerlendirildi; balık varlığı, av izni ve kıyı erişimi ayrı ayrı ele alındı.",
-      "fish": [
-        "Sazan"
-      ],
-      "fishEvidence": [
-        {
-          "name": "Sazan",
-          "evidenceLevel": "Rota özelinde güncel resmî/kurumsal kayıt",
-          "sourceLabel": "Sakarya İl Tarım 2023 Balıklandırma",
-          "sourceUrl": "https://sakarya.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=87de6dba-6535-4c1c-8fea-201fc94f0f9c&TermSetId=437a85f2-916d-4e39-bda8-0e8eeefefa7b&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=274%2FIlimiz-Goletlerinde-Baliklandirma-Calismalari",
-          "note": "Sekiharman Göleti 2023 sazan balıklandırma listesinde; aynı resmî duyuru bu balıklandırılan göletlerin ticari avcılığa kapalı ve sadece amatör avcılığa açık olduğunu belirtir."
-        }
-      ],
-      "sources": [
-        {
-          "label": "Sakarya İl Tarım - 2023 gölet balıklandırması",
-          "url": "https://sakarya.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=87de6dba-6535-4c1c-8fea-201fc94f0f9c&TermSetId=437a85f2-916d-4e39-bda8-0e8eeefefa7b&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=274%2FIlimiz-Goletlerinde-Baliklandirma-Calismalari",
-          "note": "Sekiharman adıyla sazan stocking ve balıklandırılan göletler için yalnız amatör avcılık kullanım açıklaması."
-        },
-        {
-          "label": "Sakarya İl Tarım - 2020 balıklandırma",
-          "url": "https://sakarya.tarimorman.gov.tr/Haber/176/2020-Yili-Baliklandirma-Calismasi",
-          "note": "Sekiharman için daha eski bağımsız tarihli rota-özel sazan stocking kaydı."
-        },
-        {
-          "label": "Sakarya Büyükşehir / SASKİ saha çalışmaları",
-          "url": "https://www.sakarya.bel.tr/",
-          "note": "Sekiharman'ın belediye tarımsal sulama göleti olarak güncel kamu yönetimi ve erişim bağlamını destekler."
-        },
-        {
-          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
-          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
-          "note": "16 Eylül 2026 tarihli güncel değişiklik; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
-        },
-        {
-          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
-          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
-          "note": "16 Nisan 2025 tarihli amatör avcılık değişiklikleri; rota özelindeki yerel hükümler ayrıca doğrulanır."
-        }
-      ],
-      "navigationVerified": true,
-      "researchSummary": "Rota kimliği, tür/stocking, güncel amatör kullanım hukuku ve genel kamusal erişim birlikte doğrulandı; C+ eşiği sağlandı.",
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Gölet çevresindeki güncel kamusal/özel kullanım sınırı ve izinli amatör kıyı net değil",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Gölet çevresindeki güncel kamusal/özel kullanım sınırı ve izinli amatör kıyı net değil",
       "confidenceProfile": {
         "model": "evidence-v1",
         "overall": "C",
         "reviewedAt": "2026-10-05",
         "identity": {
           "level": "strong",
-          "label": "Resmî rota kimliği",
-          "note": "Rota güncel resmî/kurumsal kaynaklarla doğrulandı."
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
         },
         "legal": {
-          "level": "strong",
-          "label": "Güncel amatör kullanım kanıtı",
-          "note": "Genel 6/2 mevzuatı ile rota-özel güncel amatör kullanım kanıtı birlikte değerlendirildi."
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
         },
         "access": {
-          "level": "strong",
-          "label": "Kamusal genel erişim bağlamı",
-          "note": "Resmî/kurumsal güncel kullanım kaydı genel erişim bağlamını doğruluyor; mikro kıyı koşulları yine saha tabelalarına tabidir."
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Gölet çevresindeki güncel kamusal/özel kullanım sınırı ve izinli amatör kıyı net değil"
         },
         "species": {
           "level": "strong",
-          "label": "Rota-özel tür kanıtı",
-          "note": "Yayımlanan türlerin tamamı rota-özel güncel resmî/kurumsal kayıtlarla destekleniyor."
+          "label": "Tür/stocking kanıtı",
+          "note": "2025'te Topuk Yaylası Göleti'ne 110.000 yavru sazan salımı; güncel kamusal amatör kıyı erişimini tek başına kanıtlamaz."
         },
         "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "bolu-yenicaga-golu",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Su ürünleri istihsal kiralaması ile amatör kıyı kullanım sınırı güncel olarak ayrıştırılmalı"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "Bolu İl Tarım - 2022 Yeniçağa balıklandırması",
+          "sourceUrl": "https://bolu.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=85d441d8-1b52-4085-b7ab-dcd2175585f0&TermSetId=8be51746-23bf-4e90-a865-9d83081e52fc&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=1254%2FUreten-Boludan-4-Milyon-Yavru-Sazan",
+          "note": "Yeniçağa Gölü'ne 350.000 yavru pullu sazan bırakıldığı rota özelinde kaydedilir."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Bolu İl Tarım - 2022 Yeniçağa balıklandırması",
+          "url": "https://bolu.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=85d441d8-1b52-4085-b7ab-dcd2175585f0&TermSetId=8be51746-23bf-4e90-a865-9d83081e52fc&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=1254%2FUreten-Boludan-4-Milyon-Yavru-Sazan",
+          "note": "Yeniçağa Gölü'ne 350.000 yavru pullu sazan bırakıldığı rota özelinde kaydedilir."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Su ürünleri istihsal kiralaması ile amatör kıyı kullanım sınırı güncel olarak ayrıştırılmalı",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Su ürünleri istihsal kiralaması ile amatör kıyı kullanım sınırı güncel olarak ayrıştırılmalı",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
           "level": "partial",
-          "label": "Kurumsal saha eşdeğeri",
-          "note": "Kurumsal etkinlik veya saha işletim kaydı vardır; bağımsız fiziksel saha ziyareti yapılmamıştır."
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Su ürünleri istihsal kiralaması ile amatör kıyı kullanım sınırı güncel olarak ayrıştırılmalı"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "Yeniçağa Gölü'ne 350.000 yavru pullu sazan bırakıldığı rota özelinde kaydedilir."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "bolu-aladag-goleti",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Tür kanıtı gölet bazında ayrıştırılmadığı için C+ rota-özel tür eşiği tam değil",
+          "Güncel mikro kıyı erişimi doğrulanmadı"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "Bolu İl Tarım - tatlı su canlıları ve sportif olta",
+          "sourceUrl": "https://bolu.tarimorman.gov.tr/Sayfalar/Detay.aspx?SayfaId=78",
+          "note": "Aladağ Göleti'ni sportif olta balıkçılığı yapılan Bolu suları arasında sayar; tür listesi toplu il/su grubu bağlamındadır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Bolu İl Tarım - tatlı su canlıları ve sportif olta",
+          "url": "https://bolu.tarimorman.gov.tr/Sayfalar/Detay.aspx?SayfaId=78",
+          "note": "Aladağ Göleti'ni sportif olta balıkçılığı yapılan Bolu suları arasında sayar; tür listesi toplu il/su grubu bağlamındadır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Tür kanıtı gölet bazında ayrıştırılmadığı için C+ rota-özel tür eşiği tam değil",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Tür kanıtı gölet bazında ayrıştırılmadığı için C+ rota-özel tür eşiği tam değil",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Tür kanıtı gölet bazında ayrıştırılmadığı için C+ rota-özel tür eşiği tam değil"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "Aladağ Göleti'ni sportif olta balıkçılığı yapılan Bolu suları arasında sayar; tür listesi toplu il/su grubu bağlamındadır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "bolu-cubuk-golu-goynuk",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Rota-özel tür ayrıştırması ve güncel güvenli kıyı girişi C+ için yetersiz"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "Bolu İl Tarım - tatlı su canlıları ve sportif olta",
+          "sourceUrl": "https://bolu.tarimorman.gov.tr/Sayfalar/Detay.aspx?SayfaId=78",
+          "note": "Çubuk Gölü'nü sportif olta balıkçılığı yapılan Bolu suları arasında sayar; tür listesi toplu bağlamdadır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Bolu İl Tarım - tatlı su canlıları ve sportif olta",
+          "url": "https://bolu.tarimorman.gov.tr/Sayfalar/Detay.aspx?SayfaId=78",
+          "note": "Çubuk Gölü'nü sportif olta balıkçılığı yapılan Bolu suları arasında sayar; tür listesi toplu bağlamdadır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Rota-özel tür ayrıştırması ve güncel güvenli kıyı girişi C+ için yetersiz",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Rota-özel tür ayrıştırması ve güncel güvenli kıyı girişi C+ için yetersiz",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Rota-özel tür ayrıştırması ve güncel güvenli kıyı girişi C+ için yetersiz"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "Çubuk Gölü'nü sportif olta balıkçılığı yapılan Bolu suları arasında sayar; tür listesi toplu bağlamdadır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "istanbul-silivri-cayirdere-goleti",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Güncel ve izinli kamusal son kıyı erişimi doğrulanmadı"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "İstanbul İl Tarım - 2026 balıklandırma",
+          "sourceUrl": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Çayırdere dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "İstanbul İl Tarım - 2026 balıklandırma",
+          "url": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Çayırdere dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Güncel ve izinli kamusal son kıyı erişimi doğrulanmadı",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Güncel ve izinli kamusal son kıyı erişimi doğrulanmadı",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Güncel ve izinli kamusal son kıyı erişimi doğrulanmadı"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "2026'da Çayırdere dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "istanbul-silivri-sayalar-goleti",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Sulama kullanımı ile izinli/güvenli amatör kıyı erişimi netleştirilmedi"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "İstanbul İl Tarım - 2026 balıklandırma",
+          "sourceUrl": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Sayalar dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "İstanbul İl Tarım - 2026 balıklandırma",
+          "url": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Sayalar dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Sulama kullanımı ile izinli/güvenli amatör kıyı erişimi netleştirilmedi",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Sulama kullanımı ile izinli/güvenli amatör kıyı erişimi netleştirilmedi",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Sulama kullanımı ile izinli/güvenli amatör kıyı erişimi netleştirilmedi"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "2026'da Sayalar dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "istanbul-silivri-degirmenkoy-goleti",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Güncel kamusal amatör kıyı girişi ve işletme sınırı doğrulanmadı"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "İstanbul İl Tarım - 2026 balıklandırma",
+          "sourceUrl": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Değirmenköy dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "İstanbul İl Tarım - 2026 balıklandırma",
+          "url": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Değirmenköy dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Güncel kamusal amatör kıyı girişi ve işletme sınırı doğrulanmadı",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Güncel kamusal amatör kıyı girişi ve işletme sınırı doğrulanmadı",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Güncel kamusal amatör kıyı girişi ve işletme sınırı doğrulanmadı"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "2026'da Değirmenköy dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "istanbul-silivri-kucuksinekli-goleti",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "İzinli ve güvenli kamusal kıyı bölümü doğrulanmadı"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "İstanbul İl Tarım - 2026 balıklandırma",
+          "sourceUrl": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Küçüksinekli dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "İstanbul İl Tarım - 2026 balıklandırma",
+          "url": "https://istanbul.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=0069152d-9984-4dd2-a999-f06cd66392fc&TermSetId=013f24a8-4f3b-4247-8a02-33d0fbf2782a&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=3144%2FIstanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+          "note": "2026'da Küçüksinekli dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. İzinli ve güvenli kamusal kıyı bölümü doğrulanmadı",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: İzinli ve güvenli kamusal kıyı bölümü doğrulanmadı",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "İzinli ve güvenli kamusal kıyı bölümü doğrulanmadı"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "2026'da Küçüksinekli dahil Silivri göletlerine yavru sazan bırakılmıştır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "istanbul-silivri-gumusyaka-goleti",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Daha güncel rota-özel stocking/örnekleme ve kamusal kıyı erişimi C+ için yetersiz"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "İstanbul İl Tarım - 2024 balıklandırma",
+          "sourceUrl": "https://istanbul.tarimorman.gov.tr/Haber/2734/Istanbulda-17-Milyon-Sazan-Yavrusu-Goletlerle-Bulustu",
+          "note": "Gümüşyaka Göleti rota adıyla sazan balıklandırma programında yer alır; 2026 listesinde adı geçmediği için güncel stok kesinliği çıkarılmaz."
+        }
+      ],
+      "sources": [
+        {
+          "label": "İstanbul İl Tarım - 2024 balıklandırma",
+          "url": "https://istanbul.tarimorman.gov.tr/Haber/2734/Istanbulda-17-Milyon-Sazan-Yavrusu-Goletlerle-Bulustu",
+          "note": "Gümüşyaka Göleti rota adıyla sazan balıklandırma programında yer alır; 2026 listesinde adı geçmediği için güncel stok kesinliği çıkarılmaz."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Daha güncel rota-özel stocking/örnekleme ve kamusal kıyı erişimi C+ için yetersiz",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Daha güncel rota-özel stocking/örnekleme ve kamusal kıyı erişimi C+ için yetersiz",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Daha güncel rota-özel stocking/örnekleme ve kamusal kıyı erişimi C+ için yetersiz"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "Gümüşyaka Göleti rota adıyla sazan balıklandırma programında yer alır; 2026 listesinde adı geçmediği için güncel stok kesinliği çıkarılmaz."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
+        }
+      }
+    }
+  },
+  {
+    "slug": "kocaeli-izmit-cagirgan-goleti",
+    "patch": {
+      "confidence": "C",
+      "indexing": "hold",
+      "qualityGrade": "C",
+      "qualityAssessment": {
+        "model": "expanded-v2",
+        "reviewedAt": "2026-10-05",
+        "identityVerified": true,
+        "speciesRouteSpecific": true,
+        "currentLawResolved": false,
+        "safePublicAccessVerified": false,
+        "independentStrongFamilies": [
+          "İl Tarım"
+        ],
+        "localContentVerified": true,
+        "fieldOrEquivalentVerified": false,
+        "unresolvedRisks": [
+          "Güncel kamusal ve güvenli amatör kıyı erişimi doğrulanmadı"
+        ]
+      },
+      "fish": [
+        "Sazan"
+      ],
+      "fishEvidence": [
+        {
+          "name": "Sazan",
+          "evidenceLevel": "Rota özelinde resmî kayıt veya açıkça etiketlenmiş kurumsal bağlam",
+          "sourceLabel": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
+          "sourceUrl": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+          "note": "Çağırgan Göleti'ne 2025'te 38.000 yavru sazan bırakıldığı resmî rota-özel kayıttır."
+        }
+      ],
+      "sources": [
+        {
+          "label": "Kocaeli İl Tarım 2025 Faaliyet Raporu",
+          "url": "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+          "note": "Çağırgan Göleti'ne 2025'te 38.000 yavru sazan bırakıldığı resmî rota-özel kayıttır."
+        },
+        {
+          "label": "Tarım ve Orman Bakanlığı - 6/2 Tebliğ 2026/26 değişikliği",
+          "url": "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+          "note": "16 Eylül 2026 değişikliği; ana 2024/21 ve önceki değişikliklerle birlikte uygulanır."
+        },
+        {
+          "label": "BSGM - 6/2 Tebliğ 2025/12 değişiklik duyurusu",
+          "url": "https://www.tarimorman.gov.tr/BSGM/Haber/332/",
+          "note": "16 Nisan 2025 değişikliği; suya ve alana özel güncel hükümler ayrıca doğrulanır."
+        }
+      ],
+      "verification": "5 Ekim 2026 genişletilmiş-v2 yeniden değerlendirmesi: C / HOLD. Güncel kamusal ve güvenli amatör kıyı erişimi doğrulanmadı",
+      "researchStatus": "İstanbul çevresi 40'lı kalite testi: C / HOLD",
+      "researchSummary": "C+ için eksik ana halka: Güncel kamusal ve güvenli amatör kıyı erişimi doğrulanmadı",
+      "confidenceProfile": {
+        "model": "evidence-v1",
+        "overall": "C",
+        "reviewedAt": "2026-10-05",
+        "identity": {
+          "level": "strong",
+          "label": "Rota kimliği",
+          "note": "Rota mevcut veri ve bu turdaki resmî/kurumsal araştırmayla yeniden kontrol edildi."
+        },
+        "legal": {
+          "level": "partial",
+          "label": "Güncel mevzuat incelendi",
+          "note": "6/2 ana çerçeve ve değişiklikler incelendi; rota özelindeki erişim/kiralama/işletme halkası tam çözülmedi."
+        },
+        "access": {
+          "level": "unverified",
+          "label": "Güncel kıyı erişimi teyit bekliyor",
+          "note": "Güncel kamusal ve güvenli amatör kıyı erişimi doğrulanmadı"
+        },
+        "species": {
+          "level": "strong",
+          "label": "Tür/stocking kanıtı",
+          "note": "Çağırgan Göleti'ne 2025'te 38.000 yavru sazan bırakıldığı resmî rota-özel kayıttır."
+        },
+        "field": {
+          "level": "unverified",
+          "label": "Saha teyidi yok",
+          "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
         }
       }
     }
@@ -1728,57 +1944,58 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
 ];
 
 export const istanbulRing40Slugs20261005 = [
-  "ankara-500km-istanbul-elmali-2-baraj-golu",
-  "ankara-500km-istanbul-kucukcekmece-golu",
-  "ankara-500km-istanbul-aydos-goleti",
-  "ankara-500km-istanbul-bahcesehir-goleti",
-  "ankara-500km-istanbul-kagithane-deresi",
-  "ankara-500km-istanbul-kemer-country-goleti",
-  "ankara-500km-kocaeli-sipahiler-goleti",
-  "ankara-500km-kocaeli-sarisu-cayi",
-  "ankara-500km-kocaeli-dilderesi",
-  "ankara-500km-kocaeli-kocacay",
-  "ankara-500km-kocaeli-cumakoy-goleti",
-  "ankara-500km-kocaeli-denizli-goleti",
-  "ankara-500km-kocaeli-ariklar-baraj-golu",
-  "ankara-500km-kocaeli-toramanlar-goleti",
-  "ankara-500km-kocaeli-utuk-goleti",
-  "ankara-500km-kocaeli-sevindikli-goleti",
-  "ankara-500km-sakarya-mudurnu-cayi",
-  "ankara-500km-sakarya-akgol",
-  "ankara-500km-sakarya-akcay-baraj-golu",
-  "ankara-500km-sakarya-cilekli-goleti",
-  "ankara-500km-sakarya-huseyinli-goleti",
-  "ankara-500km-sakarya-okcular-goleti",
-  "ankara-500km-sakarya-sekiharman-goleti",
-  "ankara-500km-sakarya-acelle-goleti",
-  "ankara-500km-sakarya-anagol",
-  "ankara-500km-sakarya-karagol-goleti",
+  "ulusal-balikesir-camkoy-baraj-golu",
+  "ulusal-balikesir-ikizcetepeler-baraj-golu",
+  "ulusal-balikesir-madra-baraj-golu",
+  "ulusal-balikesir-saribeyler-baraj-golu",
+  "ulusal-canakkale-atikhisar-baraj-golu",
+  "ulusal-canakkale-bakacak-baraj-golu",
+  "ulusal-canakkale-bayramic-baraj-golu",
+  "ulusal-canakkale-gokceada-baraj-golu",
+  "ulusal-canakkale-gonen-baraj-golu-canakkale",
+  "ulusal-edirne-altinyazi-baraj-golu",
+  "ulusal-edirne-basagil-baraj-golu",
+  "ulusal-edirne-beykonak-baraj-golu",
+  "ulusal-edirne-bulbuldere-baraj-golu",
+  "ulusal-edirne-cavuskoy-baraj-golu-edirne",
+  "ulusal-eskisehir-kunduzlar-baraj-golu",
+  "ulusal-karabuk-kadikoy-baraj-golu-karabuk",
+  "ulusal-karabuk-bostancilar-baraj-golu",
+  "ulusal-karabuk-ortakcilar-baraj-golu",
+  "ulusal-karabuk-filyos-cayi-karabuk-hatti",
+  "ulusal-kirklareli-kayali-baraj-golu",
+  "ulusal-kirklareli-ahmetbey-baraj-golu",
+  "ulusal-kirklareli-saricaali-baraj-golu",
+  "ulusal-kirklareli-sofuhalil-baraj-golu",
+  "ulusal-kutahya-certe-baraj-golu",
   "ulusal-yalova-tesvikiye-sahili",
   "ulusal-yalova-ciftlikkoy-sahili",
-  "ankara-500km-yalova-yalak-deresi",
-  "ankara-500km-yalova-ortaburun-baraji",
-  "ankara-500km-yalova-selimandira-deresi",
-  "ankara-500km-bursa-cinarcik-baraj-golu",
-  "ankara-500km-bursa-mustafakemalpasa-cayi",
-  "ankara-500km-bursa-doganci-baraj-golu",
-  "ankara-500km-bursa-nilufer-cayi",
-  "ankara-500km-bursa-hasanaga-baraj-golu",
-  "ankara-500km-tekirdag-cokal-baraj-golu",
-  "ankara-500km-tekirdag-kadikoy-baraj-golu",
-  "ankara-500km-tekirdag-naipkoy-baraj-golu",
-  "ankara-500km-tekirdag-kazak-golu"
+  "ulusal-zonguldak-derekoy-baraj-golu-zonguldak",
+  "ulusal-zonguldak-guluc-baraj-golu",
+  "ulusal-zonguldak-kizilcapinar-baraj-golu",
+  "ulusal-zonguldak-kozlu-baraj-golu",
+  "duzce-topuk-yaylasi-goleti",
+  "bolu-yenicaga-golu",
+  "bolu-aladag-goleti",
+  "bolu-cubuk-golu-goynuk",
+  "istanbul-silivri-cayirdere-goleti",
+  "istanbul-silivri-sayalar-goleti",
+  "istanbul-silivri-degirmenkoy-goleti",
+  "istanbul-silivri-kucuksinekli-goleti",
+  "istanbul-silivri-gumusyaka-goleti",
+  "kocaeli-izmit-cagirgan-goleti"
 ];
 
 export const istanbulRing40Stats20261005 = {
   reviewed: 40,
-  baselineEligibleD: 40,
-  actualConfidencePromotions: 9,
-  dToC: 7,
-  dToCPlus: 1,
-  dToB: 1,
-  retainedD: 31,
-  indexReadyQuality: 2,
-  indexingIndex: 2,
-  indexingHold: 38,
+  baselineD: 30,
+  baselineC: 10,
+  actualQualityPromotions: 4,
+  dToC: 4,
+  cToCPlusOrHigher: 0,
+  retainedC: 10,
+  retainedD: 26,
+  indexReadyQuality: 0,
+  indexingIndex: 0,
+  indexingHold: 40,
 } as const;
