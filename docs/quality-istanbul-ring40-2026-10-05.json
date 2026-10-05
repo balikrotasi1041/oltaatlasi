@@ -1,221 +1,297 @@
 {
   "date": "2026-10-05",
-  "scope": "İstanbul çevresi üçüncü kalite stres testi",
-  "baseline": "main 8abd1956ed360ddb7cbeee9ba07ce982530bf411 / 2026-10-04 baseline",
-  "candidateRule": "Yalnız başlangıç confidence D; önceki 50 stres-test adayı ve C+/B/A kayıtları hariç.",
-  "methodology": [
-    "Güncel 6/2 Tebliğ + 2025/12 + 2026/26",
-    "İl Tarım / DSİ / belediye / kamu erişim kayıtları",
-    "TAGEM-DKMP-SYGM-akademik katmanlar uygun olduğunda",
-    "Tür varlığı, amatör av hukuku ve kamusal/güvenli erişim ayrı kapılar",
-    "Stocking av garantisi değildir; ticari av amatör erişim değildir"
-  ],
+  "scope": "İstanbul çevre halkası: Marmara + yakın Batı Karadeniz/İç Batı Anadolu, 40 yeni aday",
+  "candidateRule": "Önceki kalite stres testleri ve 5 Ekim yanlış C+ seçimi dışlandı. Başlangıçta yalnız D veya C<C+ kayıtlar.",
   "stats": {
     "reviewed": 40,
-    "actualConfidencePromotions": 9,
-    "dToC": 7,
-    "dToCPlus": 1,
-    "dToB": 1,
-    "retainedD": 31,
-    "indexQualityReady": 2,
-    "hold": 38
+    "baselineD": 30,
+    "baselineC": 10,
+    "actualQualityPromotions": 4,
+    "dToC": 4,
+    "cToCPlusOrHigher": 0,
+    "retainedC": 10,
+    "retainedD": 26,
+    "indexReady": 0,
+    "hold": 40
   },
-  "candidates": [
+  "decisions": [
     {
-      "slug": "ankara-500km-istanbul-elmali-2-baraj-golu",
+      "slug": "ulusal-balikesir-camkoy-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-istanbul-aydos-goleti",
+      "slug": "ulusal-balikesir-ikizcetepeler-baraj-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi",
+        "Balıklandırma ve denetim kayıtları belirli kıyının serbest olduğu anlamına gelmez"
+      ],
+      "families": [
+        "İl Tarım stocking",
+        "İl Tarım denetim"
+      ]
+    },
+    {
+      "slug": "ulusal-balikesir-madra-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-istanbul-bahcesehir-goleti",
+      "slug": "ulusal-balikesir-saribeyler-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-istanbul-kagithane-deresi",
+      "slug": "ulusal-canakkale-atikhisar-baraj-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı",
+        "2022 dönemsel açıklaması güncel mikro erişim garantisi değildir"
+      ],
+      "families": [
+        "İl Tarım 2026",
+        "İl Tarım 2022"
+      ]
+    },
+    {
+      "slug": "ulusal-canakkale-bakacak-baraj-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi",
+        "Kamusal güvenli kıyı girişi güncel olarak doğrulanmadı"
+      ],
+      "families": [
+        "İl Tarım stok/istihsal",
+        "İl Tarım balıklandırma"
+      ]
+    },
+    {
+      "slug": "ulusal-canakkale-bayramic-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-istanbul-kemer-country-goleti",
+      "slug": "ulusal-canakkale-gokceada-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-kocaeli-sarisu-cayi",
+      "slug": "ulusal-canakkale-gonen-baraj-golu-canakkale",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-kocaeli-dilderesi",
+      "slug": "ulusal-edirne-altinyazi-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-kocaeli-kocacay",
+      "slug": "ulusal-edirne-basagil-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-kocaeli-cumakoy-goleti",
+      "slug": "ulusal-edirne-beykonak-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-kocaeli-toramanlar-goleti",
+      "slug": "ulusal-edirne-bulbuldere-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-mudurnu-cayi",
+      "slug": "ulusal-edirne-cavuskoy-baraj-golu-edirne",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-akgol",
+      "slug": "ulusal-eskisehir-kunduzlar-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-akcay-baraj-golu",
+      "slug": "ulusal-karabuk-kadikoy-baraj-golu-karabuk",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-cilekli-goleti",
+      "slug": "ulusal-karabuk-bostancilar-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-okcular-goleti",
+      "slug": "ulusal-karabuk-ortakcilar-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-acelle-goleti",
+      "slug": "ulusal-karabuk-filyos-cayi-karabuk-hatti",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-anagol",
+      "slug": "ulusal-kirklareli-kayali-baraj-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı",
+        "Güncel güvenli ve kamusal kıyı erişimi doğrulanmadı"
+      ],
+      "families": [
+        "İl Tarım stocking/denetim",
+        "İl Tarım istihsal"
+      ]
+    },
+    {
+      "slug": "ulusal-kirklareli-ahmetbey-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "DSİ kayıtlarında Ahmetbey su yapısı doğrulansa da rota-özel güncel tür ve amatör kıyı kullanım zinciri kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-sakarya-karagol-goleti",
+      "slug": "ulusal-kirklareli-saricaali-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ulusal-kirklareli-sofuhalil-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ulusal-kutahya-certe-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
@@ -226,7 +302,7 @@
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
@@ -237,286 +313,210 @@
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-yalova-yalak-deresi",
+      "slug": "ulusal-zonguldak-derekoy-baraj-golu-zonguldak",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-yalova-ortaburun-baraji",
+      "slug": "ulusal-zonguldak-guluc-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-      ],
-      "families": [
-        "Resmî kurum"
-      ]
-    },
-    {
-      "slug": "ankara-500km-yalova-selimandira-deresi",
-      "before": "D",
-      "after": "D",
-      "indexing": "hold",
-      "promotion": false,
-      "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-      ],
-      "families": [
-        "Resmî kurum"
-      ]
-    },
-    {
-      "slug": "ankara-500km-bursa-cinarcik-baraj-golu",
-      "before": "D",
-      "after": "D",
-      "indexing": "hold",
-      "promotion": false,
-      "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-bursa-mustafakemalpasa-cayi",
+      "slug": "ulusal-zonguldak-kizilcapinar-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-bursa-doganci-baraj-golu",
+      "slug": "ulusal-zonguldak-kozlu-baraj-golu",
       "before": "D",
       "after": "D",
       "indexing": "hold",
       "promotion": false,
       "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + güncel amatör hukuk + güvenli kamusal kıyı erişimi birlikte kurulamadı."
       ],
       "families": []
     },
     {
-      "slug": "ankara-500km-bursa-hasanaga-baraj-golu",
-      "before": "D",
-      "after": "D",
-      "indexing": "hold",
-      "promotion": false,
-      "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-      ],
-      "families": []
-    },
-    {
-      "slug": "ankara-500km-tekirdag-cokal-baraj-golu",
-      "before": "D",
-      "after": "D",
-      "indexing": "hold",
-      "promotion": false,
-      "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-      ],
-      "families": [
-        "Resmî kurum"
-      ]
-    },
-    {
-      "slug": "ankara-500km-tekirdag-kadikoy-baraj-golu",
-      "before": "D",
-      "after": "D",
-      "indexing": "hold",
-      "promotion": false,
-      "missing": [
-        "DSİ güncel tesis envanteri Kadıköy Barajı'nı Tekirdağ değil Kırklareli Merkez altında gösteriyor; idari sınıflandırma çözülmeden kalite yükseltilemez."
-      ],
-      "families": [
-        "Resmî kurum"
-      ]
-    },
-    {
-      "slug": "ankara-500km-tekirdag-naipkoy-baraj-golu",
-      "before": "D",
-      "after": "D",
-      "indexing": "hold",
-      "promotion": false,
-      "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-      ],
-      "families": [
-        "Resmî kurum"
-      ]
-    },
-    {
-      "slug": "ankara-500km-tekirdag-kazak-golu",
-      "before": "D",
-      "after": "D",
-      "indexing": "hold",
-      "promotion": false,
-      "missing": [
-        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
-      ],
-      "families": [
-        "Resmî kurum"
-      ]
-    },
-    {
-      "slug": "ankara-500km-istanbul-kucukcekmece-golu",
-      "before": "D",
+      "slug": "duzce-topuk-yaylasi-goleti",
+      "before": "C",
       "after": "C",
       "indexing": "hold",
-      "promotion": true,
+      "promotion": false,
       "missing": [
-        "Güncel rota-özel tür örneklemesi eski; bugünkü stok kesinliği yok",
-        "Amatör balıkçılığa açık güvenli kıyı bölümü ve yerel koruma hükümleri güncel olarak çözülmedi"
-      ],
-      "families": [
-        "İBB",
-        "Akademik"
-      ]
-    },
-    {
-      "slug": "ankara-500km-kocaeli-sipahiler-goleti",
-      "before": "D",
-      "after": "C",
-      "indexing": "hold",
-      "promotion": true,
-      "missing": [
-        "Güncel ve açıkça izinli kamusal kıyı erişimi doğrulanmadı",
-        "Balıklandırma amatör av izni değildir"
+        "Gölet çevresindeki güncel kamusal/özel kullanım sınırı ve izinli amatör kıyı net değil"
       ],
       "families": [
         "İl Tarım"
       ]
     },
     {
-      "slug": "ankara-500km-kocaeli-denizli-goleti",
-      "before": "D",
+      "slug": "bolu-yenicaga-golu",
+      "before": "C",
       "after": "C",
       "indexing": "hold",
-      "promotion": true,
+      "promotion": false,
       "missing": [
-        "Koruma/planlama sınırları ile izinli amatör kıyı bölümü eşleştirilmedi",
-        "Son kıyı girişi ve saha tabelaları doğrulanmadı"
-      ],
-      "families": [
-        "İl Tarım",
-        "Belediye/planlama"
-      ]
-    },
-    {
-      "slug": "ankara-500km-kocaeli-ariklar-baraj-golu",
-      "before": "D",
-      "after": "C",
-      "indexing": "hold",
-      "promotion": true,
-      "missing": [
-        "İzinli ve güvenli amatör kıyı erişimi güncel resmî kayıtta açık değil",
-        "Balıklandırma tek başına av izni değildir"
-      ],
-      "families": [
-        "İl Tarım",
-        "Belediye"
-      ]
-    },
-    {
-      "slug": "ankara-500km-kocaeli-sevindikli-goleti",
-      "before": "D",
-      "after": "C",
-      "indexing": "hold",
-      "promotion": true,
-      "missing": [
-        "Kamusal ve güvenli son kıyı erişimi doğrulanmadı",
-        "Yerel işletme/mülkiyet sınırı güncel olarak çözülmedi"
+        "Su ürünleri istihsal kiralaması ile amatör kıyı kullanım sınırı güncel olarak ayrıştırılmalı"
       ],
       "families": [
         "İl Tarım"
       ]
     },
     {
-      "slug": "ankara-500km-sakarya-huseyinli-goleti",
-      "before": "D",
+      "slug": "bolu-aladag-goleti",
+      "before": "C",
       "after": "C",
       "indexing": "hold",
-      "promotion": true,
+      "promotion": false,
       "missing": [
-        "2020 kaydından sonra güncel stok/erişim teyidi eksik",
-        "Güncel izinli amatör kıyı bölümü doğrulanmadı"
+        "Tür kanıtı gölet bazında ayrıştırılmadığı için C+ rota-özel tür eşiği tam değil",
+        "Güncel mikro kıyı erişimi doğrulanmadı"
       ],
       "families": [
         "İl Tarım"
       ]
     },
     {
-      "slug": "ankara-500km-bursa-nilufer-cayi",
-      "before": "D",
+      "slug": "bolu-cubuk-golu-goynuk",
+      "before": "C",
       "after": "C",
       "indexing": "hold",
-      "promotion": true,
+      "promotion": false,
       "missing": [
-        "Balık faunası istasyon bazında değişiyor; yayımlanan genel pin belirli örnekleme istasyonu değil",
-        "2025 kirlilik çalışmaları nedeniyle tüketim/sağlık ve amatör av uygunluğu ayrıca çözülmeli",
-        "Kamusal park kıyısı balık tutma izni anlamına gelmez"
+        "Rota-özel tür ayrıştırması ve güncel güvenli kıyı girişi C+ için yetersiz"
       ],
       "families": [
-        "Akademik",
-        "Bursa Büyükşehir"
+        "İl Tarım"
       ]
     },
     {
-      "slug": "ankara-500km-kocaeli-utuk-goleti",
-      "before": "D",
-      "after": "B",
-      "indexing": "index",
-      "promotion": true,
-      "missing": [],
+      "slug": "istanbul-silivri-cayirdere-goleti",
+      "before": "C",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Güncel ve izinli kamusal son kıyı erişimi doğrulanmadı"
+      ],
       "families": [
-        "İl Tarım",
-        "Kocaeli Büyükşehir/KAMADER"
+        "İl Tarım"
       ]
     },
     {
-      "slug": "ankara-500km-sakarya-sekiharman-goleti",
-      "before": "D",
-      "after": "C+",
-      "indexing": "index",
-      "promotion": true,
-      "missing": [],
+      "slug": "istanbul-silivri-sayalar-goleti",
+      "before": "C",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Sulama kullanımı ile izinli/güvenli amatör kıyı erişimi netleştirilmedi"
+      ],
       "families": [
-        "İl Tarım",
-        "Sakarya Büyükşehir/SASKİ"
+        "İl Tarım"
+      ]
+    },
+    {
+      "slug": "istanbul-silivri-degirmenkoy-goleti",
+      "before": "C",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Güncel kamusal amatör kıyı girişi ve işletme sınırı doğrulanmadı"
+      ],
+      "families": [
+        "İl Tarım"
+      ]
+    },
+    {
+      "slug": "istanbul-silivri-kucuksinekli-goleti",
+      "before": "C",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "İzinli ve güvenli kamusal kıyı bölümü doğrulanmadı"
+      ],
+      "families": [
+        "İl Tarım"
+      ]
+    },
+    {
+      "slug": "istanbul-silivri-gumusyaka-goleti",
+      "before": "C",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Daha güncel rota-özel stocking/örnekleme ve kamusal kıyı erişimi C+ için yetersiz"
+      ],
+      "families": [
+        "İl Tarım"
+      ]
+    },
+    {
+      "slug": "kocaeli-izmit-cagirgan-goleti",
+      "before": "C",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Güncel kamusal ve güvenli amatör kıyı erişimi doğrulanmadı"
+      ],
+      "families": [
+        "İl Tarım"
       ]
     }
   ],
-  "notable": [
+  "promoted": [
     {
-      "slug": "ankara-500km-kocaeli-utuk-goleti",
-      "decision": "B/index",
-      "reason": "2025 İl Tarım sazan stocking + 2026 Kocaeli Büyükşehir/KAMADER Turna ve Tatlısu Levreği festivali."
+      "slug": "ulusal-balikesir-ikizcetepeler-baraj-golu",
+      "to": "C/HOLD",
+      "reason": "2024 rota-özel 300.000 sazan stocking + resmî denetim; güncel kıyı erişimi eksik."
     },
     {
-      "slug": "ankara-500km-sakarya-sekiharman-goleti",
-      "decision": "C+/index",
-      "reason": "2023 İl Tarım sazan stocking + resmî açıklamada balıklandırılan göletlerin yalnız amatör avcılığa açık olduğu kaydı + kamu yönetim bağlamı."
+      "slug": "ulusal-canakkale-atikhisar-baraj-golu",
+      "to": "C/HOLD",
+      "reason": "2026 348.000 sazan stocking + 2022 amatör kullanım açıklaması; güncel içme suyu/işletme kıyısı çözülmedi."
     },
     {
-      "slug": "ankara-500km-tekirdag-kadikoy-baraj-golu",
-      "decision": "D/HOLD",
-      "reason": "DSİ 11. Bölge Kadıköy Barajı'nı Kırklareli Merkez altında listeliyor; Tekirdağ slug'ı idari çelişki taşıyor."
+      "slug": "ulusal-canakkale-bakacak-baraj-golu",
+      "to": "C/HOLD",
+      "reason": "Güncel teknik şartnamede rota-özel sazan stoğu; ticari kira ile amatör kıyı sınırı çözülmedi."
+    },
+    {
+      "slug": "ulusal-kirklareli-kayali-baraj-golu",
+      "to": "C/HOLD",
+      "reason": "2023 sazan stocking + 2020 denetim + tarihli stok kaydı; güncel amatör kıyı erişimi eksik."
     }
-  ]
+  ],
+  "indexRelease": {
+    "released": [],
+    "reason": "Bu 40 adaydan hiçbiri C+ eşiğinin dört zorunlu kapısını birlikte geçmedi; günlük max-2 kuralı gereği 0 salım geçerli sonuçtur."
+  }
 }
