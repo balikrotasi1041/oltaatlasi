@@ -1,0 +1,522 @@
+{
+  "date": "2026-10-05",
+  "scope": "İstanbul çevresi üçüncü kalite stres testi",
+  "baseline": "main 8abd1956ed360ddb7cbeee9ba07ce982530bf411 / 2026-10-04 baseline",
+  "candidateRule": "Yalnız başlangıç confidence D; önceki 50 stres-test adayı ve C+/B/A kayıtları hariç.",
+  "methodology": [
+    "Güncel 6/2 Tebliğ + 2025/12 + 2026/26",
+    "İl Tarım / DSİ / belediye / kamu erişim kayıtları",
+    "TAGEM-DKMP-SYGM-akademik katmanlar uygun olduğunda",
+    "Tür varlığı, amatör av hukuku ve kamusal/güvenli erişim ayrı kapılar",
+    "Stocking av garantisi değildir; ticari av amatör erişim değildir"
+  ],
+  "stats": {
+    "reviewed": 40,
+    "actualConfidencePromotions": 9,
+    "dToC": 7,
+    "dToCPlus": 1,
+    "dToB": 1,
+    "retainedD": 31,
+    "indexQualityReady": 2,
+    "hold": 38
+  },
+  "candidates": [
+    {
+      "slug": "ankara-500km-istanbul-elmali-2-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-istanbul-aydos-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-istanbul-bahcesehir-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-istanbul-kagithane-deresi",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-istanbul-kemer-country-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-kocaeli-sarisu-cayi",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-kocaeli-dilderesi",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-kocaeli-kocacay",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-kocaeli-cumakoy-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-kocaeli-toramanlar-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-mudurnu-cayi",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-akgol",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-akcay-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-cilekli-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-okcular-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-acelle-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-anagol",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-sakarya-karagol-goleti",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-yalova-tesvikiye-sahili",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-yalova-ciftlikkoy-sahili",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-yalova-yalak-deresi",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-yalova-ortaburun-baraji",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": [
+        "Resmî kurum"
+      ]
+    },
+    {
+      "slug": "ankara-500km-yalova-selimandira-deresi",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": [
+        "Resmî kurum"
+      ]
+    },
+    {
+      "slug": "ankara-500km-bursa-cinarcik-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-bursa-mustafakemalpasa-cayi",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-bursa-doganci-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-bursa-hasanaga-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": []
+    },
+    {
+      "slug": "ankara-500km-tekirdag-cokal-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": [
+        "Resmî kurum"
+      ]
+    },
+    {
+      "slug": "ankara-500km-tekirdag-kadikoy-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "DSİ güncel tesis envanteri Kadıköy Barajı'nı Tekirdağ değil Kırklareli Merkez altında gösteriyor; idari sınıflandırma çözülmeden kalite yükseltilemez."
+      ],
+      "families": [
+        "Resmî kurum"
+      ]
+    },
+    {
+      "slug": "ankara-500km-tekirdag-naipkoy-baraj-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": [
+        "Resmî kurum"
+      ]
+    },
+    {
+      "slug": "ankara-500km-tekirdag-kazak-golu",
+      "before": "D",
+      "after": "D",
+      "indexing": "hold",
+      "promotion": false,
+      "missing": [
+        "Genişletilmiş kaynak zincirinde rota-özel güncel tür + izinli/güvenli kamusal kıyı kombinasyonu kurulamadı."
+      ],
+      "families": [
+        "Resmî kurum"
+      ]
+    },
+    {
+      "slug": "ankara-500km-istanbul-kucukcekmece-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Güncel rota-özel tür örneklemesi eski; bugünkü stok kesinliği yok",
+        "Amatör balıkçılığa açık güvenli kıyı bölümü ve yerel koruma hükümleri güncel olarak çözülmedi"
+      ],
+      "families": [
+        "İBB",
+        "Akademik"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-sipahiler-goleti",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Güncel ve açıkça izinli kamusal kıyı erişimi doğrulanmadı",
+        "Balıklandırma amatör av izni değildir"
+      ],
+      "families": [
+        "İl Tarım"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-denizli-goleti",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Koruma/planlama sınırları ile izinli amatör kıyı bölümü eşleştirilmedi",
+        "Son kıyı girişi ve saha tabelaları doğrulanmadı"
+      ],
+      "families": [
+        "İl Tarım",
+        "Belediye/planlama"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-ariklar-baraj-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "İzinli ve güvenli amatör kıyı erişimi güncel resmî kayıtta açık değil",
+        "Balıklandırma tek başına av izni değildir"
+      ],
+      "families": [
+        "İl Tarım",
+        "Belediye"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-sevindikli-goleti",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Kamusal ve güvenli son kıyı erişimi doğrulanmadı",
+        "Yerel işletme/mülkiyet sınırı güncel olarak çözülmedi"
+      ],
+      "families": [
+        "İl Tarım"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-huseyinli-goleti",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "2020 kaydından sonra güncel stok/erişim teyidi eksik",
+        "Güncel izinli amatör kıyı bölümü doğrulanmadı"
+      ],
+      "families": [
+        "İl Tarım"
+      ]
+    },
+    {
+      "slug": "ankara-500km-bursa-nilufer-cayi",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "promotion": true,
+      "missing": [
+        "Balık faunası istasyon bazında değişiyor; yayımlanan genel pin belirli örnekleme istasyonu değil",
+        "2025 kirlilik çalışmaları nedeniyle tüketim/sağlık ve amatör av uygunluğu ayrıca çözülmeli",
+        "Kamusal park kıyısı balık tutma izni anlamına gelmez"
+      ],
+      "families": [
+        "Akademik",
+        "Bursa Büyükşehir"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-utuk-goleti",
+      "before": "D",
+      "after": "B",
+      "indexing": "index",
+      "promotion": true,
+      "missing": [],
+      "families": [
+        "İl Tarım",
+        "Kocaeli Büyükşehir/KAMADER"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-sekiharman-goleti",
+      "before": "D",
+      "after": "C+",
+      "indexing": "index",
+      "promotion": true,
+      "missing": [],
+      "families": [
+        "İl Tarım",
+        "Sakarya Büyükşehir/SASKİ"
+      ]
+    }
+  ],
+  "notable": [
+    {
+      "slug": "ankara-500km-kocaeli-utuk-goleti",
+      "decision": "B/index",
+      "reason": "2025 İl Tarım sazan stocking + 2026 Kocaeli Büyükşehir/KAMADER Turna ve Tatlısu Levreği festivali."
+    },
+    {
+      "slug": "ankara-500km-sakarya-sekiharman-goleti",
+      "decision": "C+/index",
+      "reason": "2023 İl Tarım sazan stocking + resmî açıklamada balıklandırılan göletlerin yalnız amatör avcılığa açık olduğu kaydı + kamu yönetim bağlamı."
+    },
+    {
+      "slug": "ankara-500km-tekirdag-kadikoy-baraj-golu",
+      "decision": "D/HOLD",
+      "reason": "DSİ 11. Bölge Kadıköy Barajı'nı Kırklareli Merkez altında listeliyor; Tekirdağ slug'ı idari çelişki taşıyor."
+    }
+  ]
+}
