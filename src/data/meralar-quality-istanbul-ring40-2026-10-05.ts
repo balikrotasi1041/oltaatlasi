@@ -118,7 +118,26 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
           "label": "Saha teyidi yok",
           "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
         }
-      }
+      },
+      "summary": "İkizcetepeler Baraj Gölü, rota-özel resmî tür/stok kanıtı bulunduğu için Güven C düzeyine yükseltilmiştir; güncel amatör kıyı erişimi tam çözülmediğinden indeks beklemededir.",
+      "longIntro": [
+        "İkizcetepeler Baraj Gölü için rota-özel resmî tür veya balıklandırma/stok kaydı doğrulandı. Bu nedenle önceki Güven D ön değerlendirmesi yerine Güven C kullanılır.",
+        "Güven C avlanmaya açık belirli bir kıyı cebi anlamına gelmez. C+ için eksik ana halka: Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi"
+      ],
+      "planningNotes": [
+        "Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi",
+        "Hareket günü yerel tabela, işletme/kiralama, koruma ve erişim kısıtlarını ayrıca kontrol et.",
+        "Tür/stok kaydını günlük av başarısı veya sınırsız amatör av izni olarak yorumlama."
+      ],
+      "seasonalNotes": [
+        "6/2 Tebliğ 2024/21, 2025/12 ve 16.09.2026 tarihli 2026/26 değişikliği birlikte uygulanır.",
+        "Suya/ile özgü dönem, tür, boy, adet ve alan kısıtları hareket günü yeniden doğrulanmalıdır."
+      ],
+      "cautions": [
+        "Güncel ve güvenli kamusal amatör kıyı erişimi rota düzeyinde çözülmedi",
+        "Saha teyidi yoktur; mikro kıyı ve park noktası önerilmez.",
+        "Ticari istihsal veya balıklandırma kaydı serbest amatör kıyı kullanımının tek başına kanıtı değildir."
+      ]
     }
   },
   {
@@ -265,7 +284,26 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
           "label": "Saha teyidi yok",
           "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
         }
-      }
+      },
+      "summary": "Atikhisar Baraj Gölü, rota-özel resmî tür/stok kanıtı bulunduğu için Güven C düzeyine yükseltilmiştir; güncel amatör kıyı erişimi tam çözülmediğinden indeks beklemededir.",
+      "longIntro": [
+        "Atikhisar Baraj Gölü için rota-özel resmî tür veya balıklandırma/stok kaydı doğrulandı. Bu nedenle önceki Güven D ön değerlendirmesi yerine Güven C kullanılır.",
+        "Güven C avlanmaya açık belirli bir kıyı cebi anlamına gelmez. C+ için eksik ana halka: İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı"
+      ],
+      "planningNotes": [
+        "İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı",
+        "Hareket günü yerel tabela, işletme/kiralama, koruma ve erişim kısıtlarını ayrıca kontrol et.",
+        "Tür/stok kaydını günlük av başarısı veya sınırsız amatör av izni olarak yorumlama."
+      ],
+      "seasonalNotes": [
+        "6/2 Tebliğ 2024/21, 2025/12 ve 16.09.2026 tarihli 2026/26 değişikliği birlikte uygulanır.",
+        "Suya/ile özgü dönem, tür, boy, adet ve alan kısıtları hareket günü yeniden doğrulanmalıdır."
+      ],
+      "cautions": [
+        "İçme suyu/işletme ve güncel kıyı güvenliği nedeniyle bugün kullanılabilecek genel kıyı bölümü ayrıca doğrulanmalı",
+        "Saha teyidi yoktur; mikro kıyı ve park noktası önerilmez.",
+        "Ticari istihsal veya balıklandırma kaydı serbest amatör kıyı kullanımının tek başına kanıtı değildir."
+      ]
     }
   },
   {
@@ -358,7 +396,26 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
           "label": "Saha teyidi yok",
           "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
         }
-      }
+      },
+      "summary": "Bakacak Baraj Gölü, rota-özel resmî tür/stok kanıtı bulunduğu için Güven C düzeyine yükseltilmiştir; güncel amatör kıyı erişimi tam çözülmediğinden indeks beklemededir.",
+      "longIntro": [
+        "Bakacak Baraj Gölü için rota-özel resmî tür veya balıklandırma/stok kaydı doğrulandı. Bu nedenle önceki Güven D ön değerlendirmesi yerine Güven C kullanılır.",
+        "Güven C avlanmaya açık belirli bir kıyı cebi anlamına gelmez. C+ için eksik ana halka: Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi"
+      ],
+      "planningNotes": [
+        "Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi",
+        "Hareket günü yerel tabela, işletme/kiralama, koruma ve erişim kısıtlarını ayrıca kontrol et.",
+        "Tür/stok kaydını günlük av başarısı veya sınırsız amatör av izni olarak yorumlama."
+      ],
+      "seasonalNotes": [
+        "6/2 Tebliğ 2024/21, 2025/12 ve 16.09.2026 tarihli 2026/26 değişikliği birlikte uygulanır.",
+        "Suya/ile özgü dönem, tür, boy, adet ve alan kısıtları hareket günü yeniden doğrulanmalıdır."
+      ],
+      "cautions": [
+        "Güncel ticari istihsal/kira alanı ile amatör kıyı kullanımının sınırı çözülmedi",
+        "Saha teyidi yoktur; mikro kıyı ve park noktası önerilmez.",
+        "Ticari istihsal veya balıklandırma kaydı serbest amatör kıyı kullanımının tek başına kanıtı değildir."
+      ]
     }
   },
   {
@@ -807,7 +864,26 @@ export const istanbulRing40Quality20261005: {slug:string;patch:Partial<EnrichedM
           "label": "Saha teyidi yok",
           "note": "Güncel tabela, bariyer, su kotu ve mikro kıyı koşulları yerinde doğrulanmadı."
         }
-      }
+      },
+      "summary": "Kayalı Baraj Gölü, rota-özel resmî tür/stok kanıtı bulunduğu için Güven C düzeyine yükseltilmiştir; güncel amatör kıyı erişimi tam çözülmediğinden indeks beklemededir.",
+      "longIntro": [
+        "Kayalı Baraj Gölü için rota-özel resmî tür veya balıklandırma/stok kaydı doğrulandı. Bu nedenle önceki Güven D ön değerlendirmesi yerine Güven C kullanılır.",
+        "Güven C avlanmaya açık belirli bir kıyı cebi anlamına gelmez. C+ için eksik ana halka: Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı"
+      ],
+      "planningNotes": [
+        "Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı",
+        "Hareket günü yerel tabela, işletme/kiralama, koruma ve erişim kısıtlarını ayrıca kontrol et.",
+        "Tür/stok kaydını günlük av başarısı veya sınırsız amatör av izni olarak yorumlama."
+      ],
+      "seasonalNotes": [
+        "6/2 Tebliğ 2024/21, 2025/12 ve 16.09.2026 tarihli 2026/26 değişikliği birlikte uygulanır.",
+        "Suya/ile özgü dönem, tür, boy, adet ve alan kısıtları hareket günü yeniden doğrulanmalıdır."
+      ],
+      "cautions": [
+        "Ticari istihsal alanı ile güncel amatör kıyı sınırı ayrıştırılmadı",
+        "Saha teyidi yoktur; mikro kıyı ve park noktası önerilmez.",
+        "Ticari istihsal veya balıklandırma kaydı serbest amatör kıyı kullanımının tek başına kanıtı değildir."
+      ]
     }
   },
   {
