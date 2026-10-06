@@ -220,6 +220,7 @@ const openAlexResearch=async(route)=>{
         scientificName:profile.latin[0],
         evidenceLevel:"Rota adıyla eşleşen akademik yayın",
         sourceLabel:title,
+        sourceExcerpt:abstract,
         sourceUrl:landing,
         note:"Yayın başlığı veya özeti rota adıyla ve tür adıyla eşleşmiştir. Tam metindeki örnekleme alanı ve tarih kullanıcı tarafından ayrıca kontrol edilmelidir.",
         recordCount:null,

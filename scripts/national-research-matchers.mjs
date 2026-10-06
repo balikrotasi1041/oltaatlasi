@@ -17,7 +17,7 @@ export const academicEvidenceMatchesRoute=(route,evidence)=>{
   if(!/rota adıyla eşleşen akademik yayın/i.test(evidence?.evidenceLevel||""))return true;
   const tokens=meaningfulRouteTokens(route);
   if(!tokens.length)return false;
-  const haystack=normalizeResearchText(`${evidence?.sourceLabel||""} ${evidence?.note||""}`);
+  const haystack=normalizeResearchText(`${evidence?.sourceLabel||""} ${evidence?.sourceExcerpt||""} ${evidence?.note||""}`);
   const required=tokens.length<=1?1:Math.min(2,tokens.length);
   return tokens.filter((token)=>haystack.includes(token)).length>=required;
 };
