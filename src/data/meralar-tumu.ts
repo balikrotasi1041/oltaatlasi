@@ -1,5 +1,6 @@
 import { kaliteYukseltmeleri20260927 } from "./meralar-daily-quality-2026-09-27";
 import { qualityStress20261004, retiredStressSlugs } from "./meralar-quality-stress-2026-10-04";
+import { applyDailyQuality20261005 } from "./meralar-daily-quality-2026-10-05";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -215,6 +216,7 @@ if(publishedToday0929.some((route)=>route.confidence==="D"||route.indexing==="ho
 
 for(const {slug,patch} of qualityStress20261004)applyPatch(slug,patch);
 for(const slug of retiredStressSlugs)if(!routeMap.delete(slug))throw new Error(`Legacy kayıt bulunamadı: ${slug}`);
+applyDailyQuality20261005(routeMap);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
