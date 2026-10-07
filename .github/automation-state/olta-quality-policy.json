@@ -1,9 +1,16 @@
 {
-  "version": 2,
-  "updatedAt": "2026-10-02",
-  "basis": "Google Search Console coverage through 2026-09-21 + performance through 2026-09-24 + Cloudflare 2026-09-20..2026-09-27 + user quality directive",
+  "version": 4,
+  "updatedAt": "2026-10-07",
+  "basis": "Google Search Console coverage through 2026-09-21 + performance through 2026-09-24 + Cloudflare 2026-09-20..2026-09-27 + 5 October expanded evidence directive",
   "qualityWork": {
-    "dailyQualityPromotionsTarget": 17,
+    "dailyActualConfidencePromotionsTarget": 17,
+    "eligibleCandidateBaselineGrades": ["D", "C"],
+    "excludeBaselineGrades": ["C+", "B", "A"],
+    "requiredSeparateCounters": ["eligibleReviewed", "actualConfidencePromotions", "maintenanceOnly"],
+    "promotionRule": "Yalnız D→C/C+/B/A veya C→C+/B/A gerçek kalite yükseltmesidir; C→C ve C+→C+ yükseltme değildir.",
+    "eligibilityGateRequired": true,
+    "classifyEveryReviewedRoute": ["A/B", "C+", "C", "D/HOLD", "301-consolidation"],
+    "separateReviewedUnchangedFromMaterialUpgrade": true,
     "dailyNewRoutesTarget": 2,
     "qualityMustNotBeLoweredForQuota": true,
     "regionalBPlusNewRoutes": {
@@ -51,8 +58,20 @@
       }
     ],
     "currentMode": "throttle",
-    "currentMaxDailyCPlusIndexReleases": 3,
-    "rule": "Günlük en az 17 gerçek D→C/B/A kalite yükseltmesi hedeflenir; kalite yükseltmesi ile index açılışı aynı işlem değildir. Bir günde en fazla 5 D/noindex→C+/index salımı yapılır. Diğer gerçekten C+ kayıtlar indexing=hold ile noindex,follow bekleyebilir. Bölgesel yeni B+ rotalar bu 17 yükseltmeden ayrı tutulur."
+    "hardMaxDailyIndexReleases": 2,
+    "currentMaxDailyCPlusIndexReleases": 2,
+    "rule": "Kalite yükseltmesi ile index açılışı ayrı sayaçtır. Günlük indeks salımı sabit en fazla 2 sayfadır; daha sıkı teknik veya hukuki sınır uygulanır. Eşiği geçen fakat salınmayan sayfalar indexing=hold ile noindex,follow bekler."
+  },
+  "expandedEvidenceStandard": {
+    "document": "docs/expanded-quality-standard.md",
+    "minimumIndependentFamilies": 2,
+    "preferredPair": "official + academic/institutional",
+    "requiredCoverage": ["identity-admin-water", "general-location", "locationPrecision", "public-safe-access-context", "current-law", "risk", "route-specific-species"],
+    "discoveryLayers": ["official-law", "TAGEM-institutes", "DSI-SYGM-DKMP", "academic", "public-access-property", "enforcement-commercial-indirect", "hydrography-weather", "association-TUDAV", "competition", "GBIF-FishBase-iNaturalist", "social-signal"],
+    "routeSpecificityRequired": true,
+    "stockingIsProbabilityNotGuarantee": true,
+    "publicOwnershipIsNotFreeAccess": true,
+    "commercialCatchIsNotAmateurAccess": true
   },
   "legacyNoindex": {
     "rule": "Arama talebi veya geçmiş performansı olan noindex URL önce replacement denetiminden geçer.",
