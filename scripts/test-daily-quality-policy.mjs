@@ -13,6 +13,11 @@ const changed=structuredClone(meralar);const d=changed.find(r=>r.slug==='ulusal-
 x=s();x.dailyPolicy.evidence.find(e=>e.slug===x.dailyPolicy.actualConfidencePromotionSlugs[0]).families=['tek'];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('iki bağımsız')));
 x=s();x.dailyPolicy.releasedSlugs=[invalid];x.stage2.indexReleasedSlugs=[invalid];assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('başlangıçta zaten indekslenebilir')));
 x=s();x.analytics.discovered=251;x.dailyPolicy.indexReleaseOperationalCap=5;assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('Operasyonel')));
+const withoutAssessment=structuredClone(meralar);
+const promotedWithoutAssessment=withoutAssessment.find(r=>r.slug===state.dailyPolicy.actualConfidencePromotionSlugs[0]);
+assert(promotedWithoutAssessment);
+delete promotedWithoutAssessment.qualityAssessment;
+assert(validateDailyQuality(state,baseline,withoutAssessment).some(e=>e.includes('expanded-v2 değerlendirmesi gerekli')));
 console.log('Günlük politika: eligibility, gerçek confidence terfisi, maintenance ayrımı, release uygunluğu, dar tavan ve kanıt regresyonları geçti.');
 const {validateExpandedQuality}=await import('./expanded-quality-policy.mjs');
 x=s();x.dailyPolicy.indexReleaseHardCap=3;assert(validateDailyQuality(x,baseline,meralar).some(e=>e.includes('sabit 2')));

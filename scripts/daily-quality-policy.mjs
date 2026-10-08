@@ -6,7 +6,7 @@ export function validateDailyQuality(state, baseline, routes) {
   if(!p) return ['Günlük politika eksik.'];
   const fail=(condition,message)=>{if(condition)errors.push(message);};
   const same=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
-  const indexable=r=>r.confidence!=='D'&&r.indexing!=='hold';
+  const indexable=r=>r?.confidence!=='D'&&r?.indexing==='index';
   const rank={D:0,C:1,'C+':2,B:3,A:4};
   const grade=r=>r?.qualityGrade||r?.confidence;
   const current=new Map(routes.map(r=>[r.slug,r]));
@@ -25,7 +25,7 @@ export function validateDailyQuality(state, baseline, routes) {
   fail(p.indexReleaseOperationalCap>2,'Operasyonel tavan sabit 2 sınırını aşamaz.');
   const actualUpgrades=routes.filter(r=>baseline.routes[r.slug]&&rank[grade(r)]>rank[grade(baseline.routes[r.slug])]).map(r=>r.slug);
   const actualReleases=routes.filter(r=>baseline.routes[r.slug]&&indexable(r)&&!indexable(baseline.routes[r.slug])).map(r=>r.slug);
-  for(const r of routes)errors.push(...validateExpandedQuality(r,{requireAssessment:actualReleases.includes(r.slug)}));
+  for(const r of routes)errors.push(...validateExpandedQuality(r,{requireAssessment:actualReleases.includes(r.slug)||actualUpgrades.includes(r.slug)}));
   const actualNew=baseline.routeSlugsSha256?p.newSlugs:routes.filter(r=>!baseline.routes[r.slug]).map(r=>r.slug);
   if(baseline.routeSlugsSha256){
     const priorSlugs=routes.map(r=>r.slug).filter(slug=>!p.newSlugs.includes(slug)).sort();
