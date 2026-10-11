@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">Göksu Parkı Susuz Göleti • Olta Atlası</title><desc id="d">Avlak kimliğini simgeleyen özgün şematik Olta Atlası illüstrasyonu. Resmî harita, saha fotoğrafı veya av konumu değildir.</desc>
+<rect width="1200" height="675" fill="#eef4f1"/>
+<path d="M0 390 Q210 338 400 384 T800 387 T1200 384 L1200 675 H0Z" fill="#a9dce6"/>
+<path d="M0 487 Q230 434 440 488 T860 495 T1200 482" stroke="#e6fbff" stroke-width="14" fill="none"/>
+<path d="M0 409 Q135 313 315 338 T640 362" fill="none" stroke="#58755b" stroke-width="30"/>
+<path d="M0 332 Q182 280 366 313" stroke="#b9bba1" stroke-width="38" fill="none"/>
+<path d="M620 270 L690 240 L760 270 L690 300Z" fill="#f7f7e8"/>
+<path d="M690 240V168" stroke="#235365" stroke-width="8"/>
+<path d="M690 168 Q780 175 840 210" stroke="#235365" stroke-width="7" fill="none"/>
+<circle cx="840" cy="223" r="8" fill="#d99b50"/>
+<g font-family="Arial, sans-serif" fill="#173a48">
+<text x="65" y="90" font-size="37" font-weight="700">Ankara • Etimesgut</text>
+<text x="65" y="145" font-size="42" font-weight="700">Göksu Parkı Susuz Göleti</text>
+<text x="65" y="195" font-size="24">KAYNAKLI GENEL KIYI REHBERİ • C+ / 2026</text>
+<text x="65" y="595" font-size="21">Bu çizim gerçek kıyı sınırı veya avlanma izni göstermez.</text>
+</g></svg>
