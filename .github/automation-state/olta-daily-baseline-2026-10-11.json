@@ -1,0 +1,108 @@
+{
+  "mainSha": "76768fb17e91e977611c213b2700c1b071dd0f8b",
+  "baselineDate": "2026-10-11",
+  "routeCount": 1446,
+  "routeSlugsSha256": "c2705a7c31ce60471b7292f7920ae509b69421b8f2728c1fa99f7ebb807b3d3c",
+  "routes": {
+    "ketenciler-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "cakirli-iznik-golu-piknik-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "akkoy-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "kovali-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "agcasar-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "pasali-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "darili-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "zincidere-goleti-mesire-genel-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "bilecik-bozcaarmut-baraj-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "bilecik-kucukelmali-baraj-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "bilecik-kurtkoy-baraj-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "bilecik-cerkesli-baraj-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index"
+    },
+    "bilecik-yenipazar-baraj-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "mugla-ula-ula-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index"
+    },
+    "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "burdur-tefenni-cayli-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "burdur-karamanli-karamanli-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "ulusal-aydin-topcam-baraj-golu-aydin": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "ulusal-bingol-ozluce-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    },
+    "ulusal-adana-catalan-baraj-golu": {
+      "confidence": "D",
+      "indexing": "index"
+    }
+  },
+  "notes": "11 Ekim main: 5 Ekim tarihli 17 C/HOLD kaydı yeni başlangıçtır; önceki yükseltmeler tekrar sayılmaz."
+}
