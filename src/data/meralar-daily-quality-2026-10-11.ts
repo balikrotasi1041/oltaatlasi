@@ -8,7 +8,7 @@ const dkmp: ResearchSource = {
   note: "Bakanlığın tabiat parkı kaydı, Küçükelmalı Göleti'ni parkın içinde gösterir ve gölet kıyısında sportif olta balıkçılığını izin verilen faaliyetler arasında açıkça sayar. Güncel tesis koşulları, giriş/yer kullanım ücretleri, levhalar ve 6/2 Tebliğ ayrıca uygulanır."
 };
 
-export function applyDailyuality20261011(routeMap: Map<string, EnrichedMera>) {
+export function applyDailyQuality20261011(routeMap: Map<string, EnrichedMera>) {
   const previous = routeMap.get(slug);
   if (!previous) throw new Error(`11 Ekim hedefi bulunamadı: ${slug}`);
   if (previous.confidence !== "C" || previous.qualityGrade !== "C" || previous.indexing !== "hold") {
