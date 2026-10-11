@@ -27,6 +27,12 @@ export function validateDailyQuality(state, baseline, routes) {
   const actualReleases=routes.filter(r=>baseline.routes[r.slug]&&indexable(r)&&!indexable(baseline.routes[r.slug])).map(r=>r.slug);
   for(const r of routes)errors.push(...validateExpandedQuality(r,{requireAssessment:actualReleases.includes(r.slug)}));
   const actualNew=baseline.routeSlugsSha256?p.newSlugs:routes.filter(r=>!baseline.routes[r.slug]).map(r=>r.slug);
+  const manualCPlus=new Set(p.manualCPlusNewSlugs||[]);
+  const indexedNew=actualNew.filter(slug=>indexable(current.get(slug)));
+  fail([...manualCPlus].some(slug=>!actualNew.includes(slug)),'Manuel C+ istisnası yeni rota dışındaki kayda uygulanamaz.');
+  if(Array.isArray(p.newIndexReleasedSlugs))fail(!same(indexedNew,p.newIndexReleasedSlugs),'Yeni manuel rota indeks salımı sayacı eşleşmiyor.');
+  fail(p.priorTodayReleasedSlugs.length+p.releasedSlugs.length+indexedNew.length>Math.min(...caps),'Eski ve yeni rota toplam indeks salımı günlük en sıkı tavanı aşıyor.');
+
   if(baseline.routeSlugsSha256){
     const priorSlugs=routes.map(r=>r.slug).filter(slug=>!p.newSlugs.includes(slug)).sort();
     const priorHash=createHash('sha256').update(priorSlugs.join('\n')).digest('hex');
@@ -67,7 +73,12 @@ export function validateDailyQuality(state, baseline, routes) {
     fail(!r.fishEvidence?.length||!r.accessEvidence?.length,`${slug}: tür/erişim kanıtı eksik.`);
     fail(e?.sources?.some(url=>!r.sources?.some(s=>s.url===url)),`${slug}: kanıt kaynağı rota kaynaklarında yok.`);
     if(actualNew.includes(slug)){
-      fail(!['A','B'].includes(r.confidence),`${slug}: yeni rota en az B olmalı.`);
+      if(manualCPlus.has(slug)){
+        fail(!['C+','B','A'].includes(grade(r)),`${slug}: kullanıcı talepli manuel yeni rota en az C+ olmalı.`);
+      }else{
+        fail(!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
+      }
+
       fail(r.image!==r.socialImage||!r.image.endsWith('.svg'),`${slug}: aynı özgün SVG kullanılmalı.`);
     }
   }
