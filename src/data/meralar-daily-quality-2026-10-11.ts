@@ -8,7 +8,7 @@ const dkmp: ResearchSource = {
   note: "Bakanlığın tabiat parkı kaydı, Küçükelmalı Göleti'ni parkın içinde gösterir ve gölet kıyısında sportif olta balıkçılığını izin verilen faaliyetler arasında açıkça sayar. Güncel tesis koşulları, giriş/yer kullanım ücretleri, levhalar ve 6/2 Tebliğ ayrıca uygulanır."
 };
 
-export function applyDailyQuality20261011(routeMap: Map<string, EnrichedMera>) {
+export function applyDailyuality20261011(routeMap: Map<string, EnrichedMera>) {
   const previous = routeMap.get(slug);
   if (!previous) throw new Error(`11 Ekim hedefi bulunamadı: ${slug}`);
   if (previous.confidence !== "C" || previous.qualityGrade !== "C" || previous.indexing !== "hold") {
@@ -32,7 +32,7 @@ export function applyDailyQuality20261011(routeMap: Map<string, EnrichedMera>) {
     longIntro: [
       permittedActivityNote,
       "2018 İl Tarım balıklandırma kaydındaki sazan bilgisi stoklama geçmişini gösterir, mevcut popülasyon veya av garantisi değildir. Bakanlık listesi her noktada olta kullanımını, giriş hakkını veya ücretsiz kullanımı garanti etmez.",
-      ...(previous.longIntro || []).map(p => p.replace(/C\\/HOLD araştırma dosyası/gi, "kaynaklı araştırma dosyası").replace(/Güven C\\/HOLD düzeyindedir/gi, "Güven C+ düzeyindedir"))
+      ...(previous.longIntro || []).map(p => p.replaceAll("C/HOLD araştırma dosyası", "kaynaklı araştırma dosyası").replaceAll("Güven C/HOLD düzeyindedir", "Güven C+ düzeyindedir"))
     ],
     cautions: [...new Set([...(previous.cautions || []), "Tabiat parkında işletme/giriş koşullarını, avlanılabilecek bölümü ve saha levhalarını girişte kontrol edin; diğer ziyaretçilerle ortak kıyı güvenliğini gözetin."])],
     verification: "11 Ekim 2026: DKMP EkoTaban kaydında gölet kıyısında sportif olta kullanımı açıkça belirtiliyor; 2018 İl Tarım rota-özel sazan balıklandırması ve 6/2 Tebliğ güncel değişiklikleri çaprazlandı. Günlük giriş, ücret ve saha kısıtları ayrıca kontrol edilmelidir.",
