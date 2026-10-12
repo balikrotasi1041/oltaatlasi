@@ -6,7 +6,9 @@ export function validateDailyQuality(state, baseline, routes) {
   if(!p) return ['Günlük politika eksik.'];
   const fail=(condition,message)=>{if(condition)errors.push(message);};
   const same=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
-  const indexable=r=>r.confidence!=='D'&&r.indexing!=='hold';
+  const indexable=r=>!!r&&r.confidence!=='D'&&r.indexing==='index';
+  const baselineNoindex=r=>!!r&&(r.confidence==='D'||r.indexing==='hold');
+  fail(baseline.baselineDate!==state.date,'Baseline tarihi çalışma günüyle eşleşmeli.');
   const rank={D:0,C:1,'C+':2,B:3,A:4};
   const grade=r=>r?.qualityGrade||r?.confidence;
   const current=new Map(routes.map(r=>[r.slug,r]));
@@ -25,11 +27,16 @@ export function validateDailyQuality(state, baseline, routes) {
   fail(p.indexReleaseOperationalCap>2,'Operasyonel tavan sabit 2 sınırını aşamaz.');
   const actualUpgrades=routes.filter(r=>baseline.routes[r.slug]&&rank[grade(r)]>rank[grade(baseline.routes[r.slug])]).map(r=>r.slug);
   const actualReleases=routes.filter(r=>baseline.routes[r.slug]&&indexable(r)&&!indexable(baseline.routes[r.slug])).map(r=>r.slug);
-  for(const r of routes)errors.push(...validateExpandedQuality(r,{requireAssessment:actualReleases.includes(r.slug)}));
+  for(const r of routes){
+    errors.push(...validateExpandedQuality(r,{requireAssessment:actualReleases.includes(r.slug)||actualUpgrades.includes(r.slug)}));
+    const before=baseline.routes[r.slug];
+    if(before&&before.indexing!==r.indexing)fail(!['index','hold'].includes(r.indexing),`${r.slug}: indeks değişikliği açık index veya hold olmalı.`);
+  }
   const actualNew=baseline.routeSlugsSha256?p.newSlugs:routes.filter(r=>!baseline.routes[r.slug]).map(r=>r.slug);
   const manualCPlus=new Set(p.manualCPlusNewSlugs||[]);
   const indexedNew=actualNew.filter(slug=>indexable(current.get(slug)));
-  fail([...manualCPlus].some(slug=>!actualNew.includes(slug)),'Manuel C+ istisnası yeni rota dışındaki kayda uygulanamaz.');
+  fail(manualCPlus.size>0,'Günlük otomasyonda manuel C+ istisnası kullanılamaz.');
+  fail(indexedNew.length>0,'Yeni rota günlük indeks salımı olamaz; indexing=hold gerekli.');
   if(Array.isArray(p.newIndexReleasedSlugs))fail(!same(indexedNew,p.newIndexReleasedSlugs),'Yeni manuel rota indeks salımı sayacı eşleşmiyor.');
   fail(p.priorTodayReleasedSlugs.length+p.releasedSlugs.length+indexedNew.length>Math.min(...caps),'Eski ve yeni rota toplam indeks salımı günlük en sıkı tavanı aşıyor.');
 
@@ -61,7 +68,7 @@ export function validateDailyQuality(state, baseline, routes) {
   for(const slug of p.releasedSlugs){
     fail(!p.actualConfidencePromotionSlugs.includes(slug),`${slug}: yalnız bu batch'te gerçek confidence terfisi alan kayıt salınabilir.`);
     fail(rank[grade(current.get(slug))]<rank['C+'],`${slug}: yeni indeks salımı en az C+ olmalı.`);
-    fail(indexable(baseline.routes[slug]),`${slug}: başlangıçta zaten indekslenebilir olan yüksek kalite kayıt release sayılamaz.`);
+    fail(!baselineNoindex(baseline.routes[slug]),`${slug}: başlangıçta zaten indekslenebilir olan yüksek kalite kayıt release sayılamaz.`);
   }
   const expectedHold=p.eligibleReviewedSlugs.filter(s=>current.get(s)?.indexing==='hold');
   fail(!same(expectedHold,p.holdSlugs),'İncelenen ve hold olan kayıtlar hold listesiyle eşleşmeli.');
@@ -73,11 +80,8 @@ export function validateDailyQuality(state, baseline, routes) {
     fail(!r.fishEvidence?.length||!r.accessEvidence?.length,`${slug}: tür/erişim kanıtı eksik.`);
     fail(e?.sources?.some(url=>!r.sources?.some(s=>s.url===url)),`${slug}: kanıt kaynağı rota kaynaklarında yok.`);
     if(actualNew.includes(slug)){
-      if(manualCPlus.has(slug)){
-        fail(!['C+','B','A'].includes(grade(r)),`${slug}: kullanıcı talepli manuel yeni rota en az C+ olmalı.`);
-      }else{
-        fail(!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
-      }
+      fail(!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
+      fail(r.indexing!=='hold',`${slug}: yeni rota indexing=hold olmalı.`);
 
       fail(r.image!==r.socialImage||!r.image.endsWith('.svg'),`${slug}: aynı özgün SVG kullanılmalı.`);
     }
