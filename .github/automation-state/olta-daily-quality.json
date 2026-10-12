@@ -1,71 +1,58 @@
 {
-  "version": 7,
-  "date": "2026-10-11",
+  "version": 8,
+  "date": "2026-10-12",
   "timezone": "Europe/Istanbul",
-  "branch": "content/six-cplus-2026-10-11",
+  "branch": "quality/2026-10-12-daily-recovery",
   "done": false,
   "research": {
-    "status": "partial-evidence-1-reviewed-1-real-promotion",
+    "status": "partial-1-reviewed-no-promotion",
     "eligibleReviewed": 1,
     "searchConsoleUsed": false,
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
-    "indexPolicyChecked": false,
-    "notes": "11 Ekim'de mevcut 1 gerçek C→C+ terfi korunmuştur. Kullanıcının ayrıca istediği İstanbul/Ankara/İzmir 2'şer manuel C+ rota, sıfır yeni günlük confidence terfisi olarak ve bağımsız sayaçta kaydedilmiştir. Bugünkü 2 indeks salımı tavanı: önceki Küçükelmalı 1 + yeni Kuzguncuk 1. Diğer 5 C+ rota HOLD/noindex.",
-    "report": "docs/olta-daily-quality-2026-10-11.md"
+    "indexPolicyChecked": true,
+    "report": "docs/olta-daily-quality-2026-10-12.md",
+    "notes": "Bozcaarmut resmî turizm/kimlik/balıklandırma kaynakları tekrar incelendi; güncel güvenli kıyı erişimi ve rota hukuku çözülemedi. C/HOLD korunur. 17 terfi ve yeni B+ hedefleri tamamlanmadı."
   },
   "stage2": {
-    "status": "partial-1-reviewed-1-promotion-1-release",
+    "status": "partial-1-reviewed-0-promotions",
     "targetActualConfidencePromotions": 17,
     "eligibleReviewed": 1,
-    "actualConfidencePromotions": 1,
+    "actualConfidencePromotions": 0,
     "maintenanceOnly": 0,
-    "promotedCount": 1,
-    "promotedSlugs": [
-      "bilecik-kucukelmali-baraj-goleti"
-    ],
+    "promotedCount": 0,
+    "promotedSlugs": [],
     "transitionCounts": {
       "dToC": 0,
       "dToCPlus": 0,
       "dToBOrA": 0,
-      "cToCPlusOrHigher": 1
+      "cToCPlusOrHigher": 0
     },
-    "cPlusSlugs": [
-      "bilecik-kucukelmali-baraj-goleti"
+    "cPlusSlugs": [],
+    "cSlugs": [
+      "bilecik-bozcaarmut-baraj-goleti"
     ],
-    "cSlugs": [],
-    "indexReleasedSlugs": [
-      "bilecik-kucukelmali-baraj-goleti"
-    ],
-    "holdSlugs": []
+    "indexReleasedSlugs": [],
+    "holdSlugs": [
+      "bilecik-bozcaarmut-baraj-goleti"
+    ]
   },
   "stage3": {
-    "status": "no-new-B-candidate-published",
+    "status": "not-completed",
     "targetNewBPlus": 2,
     "newCount": 0,
     "newSlugs": [],
     "egeCandidate": null,
-    "marmaraCandidate": null,
-    "manualRequestedCount": 6,
-    "manualNewSlugs": [
-      "istanbul-uskudar-kuzguncuk-kiyi-kesimi",
-      "istanbul-uskudar-semsipasa-cami-kiyisi",
-      "ankara-gudul-sorgun-goleti-tabiat-parki-kiyisi",
-      "ankara-etimesgut-goksu-parki-susuz-goleti-kiyisi",
-      "izmir-karaburun-mordogan-merkez-kiyi-yolu",
-      "izmir-karaburun-merkez-iskele-sahil-yuruyus"
-    ],
-    "manualIndexReleasedSlugs": [
-      "istanbul-uskudar-kuzguncuk-kiyi-kesimi"
-    ]
+    "marmaraCandidate": null
   },
   "publication": {
     "ci": "pending",
     "pr": "pending",
     "merge": "pending",
     "deploy": "pending",
-    "productionVerified": false
+    "productionVerified": false,
+    "localTests": "passed: npm ci, build (data/research/index/security/duplicate/maintenance), daily policy regressions, deploy:dry"
   },
   "analytics": {
     "source": "2026-09-27 GSC/Cloudflare arşivi (güncel değil)",
@@ -83,7 +70,7 @@
     "mobilePageViews": 1216
   },
   "dailyPolicy": {
-    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-11.json",
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-12.json",
     "actualConfidencePromotionsTarget": 17,
     "indexReleaseHardCap": 2,
     "indexReleaseOperationalTarget": [
@@ -96,198 +83,16 @@
     "priorTodayUpgradedSlugs": [],
     "priorTodayReleasedSlugs": [],
     "eligibleReviewedSlugs": [
-      "bilecik-kucukelmali-baraj-goleti"
+      "bilecik-bozcaarmut-baraj-goleti"
     ],
-    "actualConfidencePromotionSlugs": [
-      "bilecik-kucukelmali-baraj-goleti"
-    ],
+    "actualConfidencePromotionSlugs": [],
     "maintenanceOnlySlugs": [],
-    "qualityUpgradedSlugs": [
-      "bilecik-kucukelmali-baraj-goleti"
+    "qualityUpgradedSlugs": [],
+    "releasedSlugs": [],
+    "holdSlugs": [
+      "bilecik-bozcaarmut-baraj-goleti"
     ],
-    "releasedSlugs": [
-      "bilecik-kucukelmali-baraj-goleti"
-    ],
-    "holdSlugs": [],
-    "newSlugs": [
-      "istanbul-uskudar-kuzguncuk-kiyi-kesimi",
-      "istanbul-uskudar-semsipasa-cami-kiyisi",
-      "ankara-gudul-sorgun-goleti-tabiat-parki-kiyisi",
-      "ankara-etimesgut-goksu-parki-susuz-goleti-kiyisi",
-      "izmir-karaburun-mordogan-merkez-kiyi-yolu",
-      "izmir-karaburun-merkez-iskele-sahil-yuruyus"
-    ],
-    "evidence": [
-      {
-        "slug": "bilecik-kucukelmali-baraj-goleti",
-        "families": [
-          "DKMP",
-          "Bilecik İl Tarım",
-          "Bilecik Valiliği"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://www.bilecik.gov.tr/kucukelmali-baraj-goleti",
-          "https://bilecik.tarimorman.gov.tr/Haber/677/",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
-          "https://ekotaban.tarimorman.gov.tr/alan/344"
-        ],
-        "decision": "C/HOLD → C+/INDEX; DKMP EkoTaban açıkça sportif olta balıkçılığını listeliyor; İl Tarım 2018 rota-özel sazan stoklaması; yer kullanım kuralları saklı."
-      },
-      {
-        "slug": "istanbul-uskudar-kuzguncuk-kiyi-kesimi",
-        "families": [
-          "İBB",
-          "Tarım ve Orman Bakanlığı"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "Kullanıcı tarafından talep edilen manuel C+ kayıt; mekân ve tür kanıtı kaynaklara yazıldı. Güncel mikro kıyı kullanım koşulları ve saha levhaları gözlemlenmediği için kamusal genel kıyı bağlamının dışına çıkan kesin izin iddiası yok."
-      },
-      {
-        "slug": "istanbul-uskudar-semsipasa-cami-kiyisi",
-        "families": [
-          "İBB",
-          "Tarım ve Orman Bakanlığı"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "Kullanıcı tarafından talep edilen manuel C+ kayıt; mekân ve tür kanıtı kaynaklara yazıldı. Güncel mikro kıyı kullanım koşulları ve saha levhaları gözlemlenmediği için kamusal genel kıyı bağlamının dışına çıkan kesin izin iddiası yok."
-      },
-      {
-        "slug": "ankara-gudul-sorgun-goleti-tabiat-parki-kiyisi",
-        "families": [
-          "Ankara Büyükşehir Belediyesi",
-          "Güdül Kaymakamlığı"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://www.gudul.gov.tr/sorgun-goleti",
-          "https://www.ankara.bel.tr/haberler/baskent-golleri-balik-uretecek-11563",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "Kullanıcı tarafından talep edilen manuel C+ kayıt; mekân ve tür kanıtı kaynaklara yazıldı. Güncel mikro kıyı kullanım koşulları ve saha levhaları gözlemlenmediği için kamusal genel kıyı bağlamının dışına çıkan kesin izin iddiası yok."
-      },
-      {
-        "slug": "ankara-etimesgut-goksu-parki-susuz-goleti-kiyisi",
-        "families": [
-          "Ankara Büyükşehir Belediyesi balıklandırma",
-          "Ankara Büyükşehir Belediyesi park işletmesi",
-          "Tarım ve Orman Bakanlığı"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://www.ankara.bel.tr/haberler/baskent-te-baliklar-artsin-bereket-cogalsin-12264",
-          "https://www.ankara.bel.tr/files/6715/1323/4013/sosyal-yasam.pdf",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "Kullanıcı tarafından talep edilen manuel C+ kayıt; mekân ve tür kanıtı kaynaklara yazıldı. Güncel mikro kıyı kullanım koşulları ve saha levhaları gözlemlenmediği için kamusal genel kıyı bağlamının dışına çıkan kesin izin iddiası yok."
-      },
-      {
-        "slug": "izmir-karaburun-mordogan-merkez-kiyi-yolu",
-        "families": [
-          "Karaburun Belediyesi",
-          "Ege Üniversitesi",
-          "İzmir Büyükşehir Belediyesi"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://www.karaburun.bel.tr/tr/gezidetay/iskeleler/80",
-          "https://dergipark.org.tr/tr/download/article-file/57800",
-          "https://www.izmir.bel.tr/tr/MekanDetay/72/230",
-          "https://www.karaburun.bel.tr/tr/gezidetay/karaburun-baliklari/881",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "Kullanıcı tarafından talep edilen manuel C+ kayıt; mekân ve tür kanıtı kaynaklara yazıldı. Güncel mikro kıyı kullanım koşulları ve saha levhaları gözlemlenmediği için kamusal genel kıyı bağlamının dışına çıkan kesin izin iddiası yok."
-      },
-      {
-        "slug": "izmir-karaburun-merkez-iskele-sahil-yuruyus",
-        "families": [
-          "Karaburun Belediyesi",
-          "İzmir Büyükşehir Belediyesi"
-        ],
-        "coverage": [
-          "identity",
-          "location",
-          "locationPrecision",
-          "publicAccessContext",
-          "law",
-          "risk",
-          "species"
-        ],
-        "sources": [
-          "https://www.karaburun.bel.tr/tr/gezidetay/iskeleler/80",
-          "https://www.karaburun.bel.tr/tr/gezidetay/karaburun-baliklari/881",
-          "https://www.izmir.bel.tr/tr/MekanDetay/72/230",
-          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-        ],
-        "decision": "Kullanıcı tarafından talep edilen manuel C+ kayıt; mekân ve tür kanıtı kaynaklara yazıldı. Güncel mikro kıyı kullanım koşulları ve saha levhaları gözlemlenmediği için kamusal genel kıyı bağlamının dışına çıkan kesin izin iddiası yok."
-      }
-    ],
-    "manualCPlusNewSlugs": [
-      "istanbul-uskudar-kuzguncuk-kiyi-kesimi",
-      "istanbul-uskudar-semsipasa-cami-kiyisi",
-      "ankara-gudul-sorgun-goleti-tabiat-parki-kiyisi",
-      "ankara-etimesgut-goksu-parki-susuz-goleti-kiyisi",
-      "izmir-karaburun-mordogan-merkez-kiyi-yolu",
-      "izmir-karaburun-merkez-iskele-sahil-yuruyus"
-    ],
-    "newIndexReleasedSlugs": [
-      "istanbul-uskudar-kuzguncuk-kiyi-kesimi"
-    ]
+    "newSlugs": [],
+    "evidence": []
   }
 }

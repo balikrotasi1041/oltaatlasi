@@ -1,6 +1,7 @@
 import { kaliteYukseltmeleri20260927 } from "./meralar-daily-quality-2026-09-27";
 import { qualityStress20261004, retiredStressSlugs } from "./meralar-quality-stress-2026-10-04";
 import { applyDailyQuality20261005 } from "./meralar-daily-quality-2026-10-05";
+import { applyDailyQuality20261012 } from "./meralar-daily-quality-2026-10-12";
 import { applyDailyQuality20261011 } from "./meralar-daily-quality-2026-10-11";
 import { sixManualRoutes20261011, sixManualStats20261011 } from "./meralar-manual-six-cplus-2026-10-11";
 export * from "./meralar-tumu-core";
@@ -225,6 +226,7 @@ for(const route of sixManualRoutes20261011){
  routeMap.set(route.slug,route);
 }
 if(sixManualStats20261011.total!==6||sixManualStats20261011.index.length!==1)throw new Error("11 Ekim manuel C+ kota/indeks kapısı bozuk.");
+applyDailyQuality20261012(routeMap);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
