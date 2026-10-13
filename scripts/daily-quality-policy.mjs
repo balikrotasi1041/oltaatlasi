@@ -80,7 +80,8 @@ export function validateDailyQuality(state, baseline, routes) {
     fail(!r.fishEvidence?.length||!r.accessEvidence?.length,`${slug}: tür/erişim kanıtı eksik.`);
     fail(e?.sources?.some(url=>!r.sources?.some(s=>s.url===url)),`${slug}: kanıt kaynağı rota kaynaklarında yok.`);
     if(actualNew.includes(slug)){
-      fail(!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
+      const oneTimeBatch=(p.oneTimeBatchSlugs||[]).includes(slug);
+      fail(!oneTimeBatch&&!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
       fail(r.indexing!=='hold',`${slug}: yeni rota indexing=hold olmalı.`);
 
       fail(r.image!==r.socialImage||!r.image.endsWith('.svg'),`${slug}: aynı özgün SVG kullanılmalı.`);

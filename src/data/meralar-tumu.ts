@@ -4,6 +4,7 @@ import { applyDailyQuality20261005 } from "./meralar-daily-quality-2026-10-05";
 import { applyDailyQuality20261012 } from "./meralar-daily-quality-2026-10-12";
 import { applyDailyQuality20261011 } from "./meralar-daily-quality-2026-10-11";
 import { sixManualRoutes20261011, sixManualStats20261011 } from "./meralar-manual-six-cplus-2026-10-11";
+import { oneTimeIstanbulKocaeliSakarya20261013, oneTimeIstanbulKocaeliSakaryaStats20261013 } from "./meralar-one-time-istanbul-kocaeli-sakarya-20261013";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -227,6 +228,11 @@ for(const route of sixManualRoutes20261011){
 }
 if(sixManualStats20261011.total!==6||sixManualStats20261011.index.length!==1)throw new Error("11 Ekim manuel C+ kota/indeks kapısı bozuk.");
 applyDailyQuality20261012(routeMap);
+for(const route of oneTimeIstanbulKocaeliSakarya20261013){
+ if(routeMap.has(route.slug))throw new Error(`13 Ekim tek seferlik rota mevcut slug ile çakışıyor: ${route.slug}`);
+ routeMap.set(route.slug,route);
+}
+if(oneTimeIstanbulKocaeliSakaryaStats20261013.total!==6||oneTimeIstanbulKocaeliSakaryaStats20261013.istanbul!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.kocaeli!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.sakarya!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.index.length!==0)throw new Error("13 Ekim tek seferlik il dağılımı veya indeks kapısı bozuk.");
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
