@@ -41,8 +41,8 @@
   "stage3": {
     "status": "not-completed",
     "targetNewBPlus": 2,
-    "newCount": 0,
-    "newSlugs": [],
+    "newCount": 6,
+    "newSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
     "egeCandidate": null,
     "marmaraCandidate": null
   },
@@ -92,7 +92,8 @@
     "holdSlugs": [
       "bilecik-bozcaarmut-baraj-goleti"
     ],
-    "newSlugs": [],
-    "evidence": []
+    "newSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
+    "oneTimeBatchSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
+    "evidence": [{"slug":"istanbul-asiyan-onu-balik-tutma-iskeleleri","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf"]},{"slug":"istanbul-kefelikoy-sahil-parki","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://sariyer.bel.tr/haberler/sariyerin-parklari-sizleri-bekliyor"]},{"slug":"kocaeli-esme-sapanca-golu-kamusal-kiyi","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://kocaeli.tarimorman.gov.tr/Haber/275/12-Ulusal-Ve-Uluslararasi-Sazan-Baligi-Tutma-Yarismasinda-Dereceye-Girenler-Odullerini-Aldi"]},{"slug":"kocaeli-babali-acik-karadeniz-kiyisi","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html"]},{"slug":"sakarya-kucukbogaz-golu-karasu","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://sakarya.ktb.gov.tr/TR-340488/kucukbogaz-golu.html"]},{"slug":"sakarya-buyuk-akgol-golkent","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://bolge1.tarimorman.gov.tr/Menu/48/Sulak-Alanlar"]}]
   }
 }
