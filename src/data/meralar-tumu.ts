@@ -2,6 +2,7 @@ import { kaliteYukseltmeleri20260927 } from "./meralar-daily-quality-2026-09-27"
 import { qualityStress20261004, retiredStressSlugs } from "./meralar-quality-stress-2026-10-04";
 import { applyDailyQuality20261005 } from "./meralar-daily-quality-2026-10-05";
 import { applyDailyQuality20261012 } from "./meralar-daily-quality-2026-10-12";
+import { applyPriority20Research20261014 } from "./meralar-priority20-2026-10-14";
 import { applyDailyQuality20261011 } from "./meralar-daily-quality-2026-10-11";
 import { sixManualRoutes20261011, sixManualStats20261011 } from "./meralar-manual-six-cplus-2026-10-11";
 import { oneTimeIstanbulKocaeliSakarya20261013, oneTimeIstanbulKocaeliSakaryaStats20261013 } from "./meralar-one-time-istanbul-kocaeli-sakarya-20261013";
@@ -233,6 +234,8 @@ for(const route of oneTimeIstanbulKocaeliSakarya20261013){
  routeMap.set(route.slug,route);
 }
 if(oneTimeIstanbulKocaeliSakaryaStats20261013.total!==6||oneTimeIstanbulKocaeliSakaryaStats20261013.istanbul!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.kocaeli!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.sakarya!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.index.length!==0)throw new Error("13 Ekim tek seferlik il dağılımı veya indeks kapısı bozuk.");
+// 14 Ekim: yalnız önceden mevcut 20 C/D rota; C+ terfisi indeks salımı değildir.
+applyPriority20Research20261014(routeMap);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
