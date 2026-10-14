@@ -1,7 +1,7 @@
 {
-  "version": 5,
-  "updatedAt": "2026-10-12",
-  "basis": "Google Search Console coverage through 2026-09-21 + performance through 2026-09-24 + Cloudflare 2026-09-20..2026-09-27 + 5 October expanded evidence directive",
+  "version": 6,
+  "updatedAt": "2026-10-15",
+  "basis": "Expanded evidence standard and 15 October HOLD release-flow correction; source layers are optional research paths, core claims remain evidence based",
   "qualityWork": {
     "dailyActualConfidencePromotionsTarget": 17,
     "eligibleCandidateBaselineGrades": [
@@ -30,16 +30,23 @@
     "separateReviewedUnchangedFromMaterialUpgrade": true,
     "dailyNewRoutesTarget": 2,
     "qualityMustNotBeLoweredForQuota": true,
-    "regionalBPlusNewRoutes": {
+    "regionalNewRoutes": {
       "separateFromQualityPromotions": true,
-      "minimumConfidence": "B",
+      "minimumForIndex": "C+",
+      "holdAllowedAt": [
+        "D",
+        "C",
+        "C+",
+        "B",
+        "A"
+      ],
       "dailyTarget": 2,
       "distribution": {
         "Ege": 1,
         "Marmara": 1
       },
       "publishFewerIfThresholdNotMet": true,
-      "rule": "Her gün kalite yükseltmelerinden ayrı 1 Ege + 1 Marmara yeni rota hedeflenir. Her biri en az Güven B olmalı; kanıt, erişim veya mevzuat eşiği karşılanmazsa sayı doldurulmaz."
+      "rule": "Yeni rotalar araştırma düzeyinde D/C/HOLD olarak da yayımlanabilir. İlk yayında HOLD/noindex kalır; sonraki günün gerçek main baselineında bulunan rota C+ çekirdek eşiği ve günlük toplam iki salım sınırıyla indekse alınabilir. Hedef uğruna sınıf yükseltilmez."
     }
   },
   "indexRelease": {
@@ -79,38 +86,49 @@
     "currentMaxDailyCPlusIndexReleases": 2,
     "rule": "Kalite yükseltmesi ile index açılışı ayrı sayaçtır. Günlük indeks salımı sabit en fazla 2 sayfadır; daha sıkı teknik veya hukuki sınır uygulanır. Eşiği geçen fakat salınmayan sayfalar indexing=hold ile noindex,follow bekler.",
     "requireExplicitIndex": true,
-    "requireSameRunConfidencePromotion": true,
+    "requireSameRunConfidencePromotion": false,
     "requireBaselineNoindex": true,
     "allowNewRouteRelease": false,
+    "newRouteHoldFirst": true,
     "allowManualCPlusExceptionInDailyRun": false
   },
   "expandedEvidenceStandard": {
     "document": "docs/expanded-quality-standard.md",
-    "minimumIndependentFamilies": 2,
+    "minimumIndependentFamiliesForCPlus": 1,
+    "minimumIndependentFamiliesForBOrA": 2,
     "preferredPair": "official + academic/institutional",
-    "requiredCoverage": [
-      "identity-admin-water",
+    "requiredReleaseCoverage": [
+      "identity",
+      "publicAccessContext",
+      "law",
+      "species"
+    ],
+    "optionalResearchCoverage": [
       "general-location",
       "locationPrecision",
-      "public-safe-access-context",
-      "current-law",
       "risk",
-      "route-specific-species"
+      "protected-area-if-relevant",
+      "property-if-ambiguous",
+      "current-water-level-if-relevant"
     ],
     "discoveryLayers": [
       "official-law",
       "TAGEM-institutes",
       "DSI-SYGM-DKMP",
-      "academic",
+      "TUCBS-USBS-geospatial",
+      "ePlan-coast-cadastre-municipal-CBS",
+      "DSI-facility-operation",
+      "academic-YOK-theses-DergiPark-CED",
       "public-access-property",
       "enforcement-commercial-indirect",
-      "hydrography-weather",
+      "hydrography-weather-satellite-field",
       "association-TUDAV",
       "competition",
       "GBIF-FishBase-iNaturalist",
       "social-signal"
     ],
     "routeSpecificityRequired": true,
+    "sourceUseRule": "Yeni kaynak aileleri ilgili iddiayı doğrulamak için seçeneklerdir; her rotada hepsini bulmak şart değildir. C+ bir güçlü rota-özel kaynak ailesiyle mümkün olabilir. B/A iki bağımsız güçlü aile ister.",
     "stockingIsProbabilityNotGuarantee": true,
     "publicOwnershipIsNotFreeAccess": true,
     "commercialCatchIsNotAmateurAccess": true

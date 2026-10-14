@@ -10,6 +10,7 @@ const rows=report.candidates;
 const previous=['mahmut-sevket','pasamandira','karamandere','riva-deresi','agva-goksu','alibey','buyukcekmece','darlik','omerli','sazlidere','namazgah','tahtali','ihsaniye','sapanca','poyrazlar','taskisigi','gokce-baraj','sarpdere','uluabat','demirtas','karaidemir','inanli','efteni','abant','kizildamlar'];
 fail(rows.length!==25||new Set(rows.map(r=>r.slug)).size!==25,'Tam 25 farklı mevcut aday gerekli.');
 const by=new Map(meralar.map(r=>[r.slug,r]));
+const rank={D:0,C:1,'C+':2,B:3,A:4};
 for(const r of rows){
  fail(previous.some(p=>r.slug.includes(p)),`${r.slug}: önceki 25 ile çakışma.`);
  fail(baseline.routes[r.slug]?.confidence!==r.before,`${r.slug}: önce sınıfı baseline ile uyuşmuyor.`);
@@ -20,7 +21,8 @@ for(const r of rows){
   fail(response.status!==301||response.headers.get('location')!==`https://oltaatlasi.com/meralar/${r.redirectTo}/`,`${r.slug}: 301 yanlış.`);
  }else{
   const route=by.get(r.slug);
-  fail(!route||route.qualityGrade!==r.after||route.indexing!=='hold',`${r.slug}: rapor/veri uyuşmazlığı.`);
+  // The 4 October result is a historical floor; a later reviewed promotion and release may supersede it.
+  fail(!route||rank[route.qualityGrade||route.confidence]<rank[r.after]||!['hold','index'].includes(route.indexing),`${r.slug}: tarihsel rapor/veri uyuşmazlığı.`);
   if(route)errors.push(...validateExpandedQuality(route));
  }
 }

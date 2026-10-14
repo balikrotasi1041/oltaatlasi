@@ -7,7 +7,7 @@ const liveBaseline=JSON.parse(readFileSync(liveState.dailyPolicy.baselineFile,'u
 assert.deepEqual(validateDailyQuality(liveState,liveBaseline,meralar),[]);
 // Stable synthetic fixtures keep regression coverage independent of today's promotion count.
 const reviewedAt='2026-10-12';
-const route=(slug,grade,indexing)=>({slug,confidence:grade==='C+'?'C':grade,qualityGrade:grade,indexing,lat:40,lng:30,fish:['Sazan'],fishEvidence:[{name:'Sazan'}],accessEvidence:[{}],sources:[{url:'https://example.org/evidence'}],image:'/test.svg',socialImage:'/test.svg',qualityAssessment:{model:'expanded-v2',reviewedAt,identityVerified:true,speciesRouteSpecific:true,currentLawResolved:grade==='C+',safePublicAccessVerified:grade==='C+',unresolvedRisks:grade==='C+'?[]:['access unresolved']}});
+const route=(slug,grade,indexing)=>({slug,confidence:grade==='C+'?'C':grade,qualityGrade:grade,indexing,lat:40,lng:30,fish:['Sazan'],fishEvidence:[{name:'Sazan',sourceUrl:'https://example.org/evidence'}],accessEvidence:[{sourceUrl:'https://example.org/evidence'}],sources:[{url:'https://example.org/evidence'}],image:'/test.svg',socialImage:'/test.svg',qualityAssessment:{model:'expanded-v2',reviewedAt,identityVerified:true,speciesRouteSpecific:true,currentLawResolved:grade==='C+',safePublicAccessVerified:grade==='C+',independentStrongFamilies:['official'],unresolvedRisks:grade==='C+'?[]:['access unresolved']}});
 const routes=[route('promoted','C+','index'),route('held','C','hold'),route('bilecik-cerkesli-baraj-goleti','C+','index'),route('mugla-ula-ula-goleti','C+','index')];
 const baseline={baselineDate:reviewedAt,routes:Object.fromEntries(routes.map(r=>[r.slug,{confidence:r.confidence,qualityGrade:r.qualityGrade,indexing:r.indexing}]))};
 baseline.routes.promoted={confidence:'C',qualityGrade:'C',indexing:'hold'};
@@ -23,7 +23,8 @@ for(const invalid of ['bilecik-cerkesli-baraj-goleti','mugla-ula-ula-goleti']){
  x=s();x.dailyPolicy.releasedSlugs=[invalid];assert(errors(x).some(e=>e.includes('başlangıçta zaten indekslenebilir')));
 }
 x=s();x.done=true;assert(errors(x).some(e=>e.includes('terfi hedefi eksikken')));
-x=s();x.dailyPolicy.evidence[0].families=['tek'];assert(errors(x).some(e=>e.includes('iki bağımsız')));
+x=s();x.dailyPolicy.evidence[0].families=[];assert(errors(x).some(e=>e.includes('kaynak ailesi')));
+x=s();x.dailyPolicy.evidence[0].families=['tek'];assert.deepEqual(errors(x),[]);
 x=s();x.dailyPolicy.indexReleaseOperationalCap=5;assert(errors(x).some(e=>e.includes('Operasyonel')));
 for(const value of [undefined,'noindex','unexpected']){
  const changed=structuredClone(routes);changed[0].indexing=value;
@@ -38,14 +39,28 @@ const unknownBaseline=structuredClone(baseline);delete unknownBaseline.routes.pr
 assert(errors(state,unknownBaseline).some(e=>e.includes('başlangıçta zaten indekslenebilir')));
 x=s();x.dailyPolicy.newSlugs=['new'];x.dailyPolicy.manualCPlusNewSlugs=['new'];x.dailyPolicy.evidence.push(evidence('new'));
 assert(errors(x,baseline,[...routes,route('new','C+','index')]).some(e=>e.includes('manuel C+ istisnası')));
-assert(errors(x,baseline,[...routes,route('new','C+','index')]).some(e=>e.includes('Yeni rota günlük indeks')));
+x=s();x.dailyPolicy.newSlugs=['research'];const newResearch=route('research','D','hold');newResearch.fish=[];newResearch.fishEvidence=[];assert.deepEqual(errors(x,baseline,[...routes,newResearch]),[]);
+const unsupportedResearch=structuredClone(newResearch);unsupportedResearch.fish=['Sazan'];assert(errors(x,baseline,[...routes,unsupportedResearch]).some(e=>e.includes('kanıtsız tür')));
+x=s();x.dailyPolicy.newSlugs=['new'];x.dailyPolicy.newIndexReleasedSlugs=['new'];x.dailyPolicy.evidence.push({...evidence('new'),families:['tek']});x.stage2.indexReleasedSlugs.push('new');
+assert(errors(x,baseline,[...routes,route('new','C+','index')]).some(e=>e.includes('önce HOLD/noindex')));
+const priorHeld=route('prior-held','C+','index');
+const priorBaseline=structuredClone(baseline);
+priorBaseline.routes['prior-held']={confidence:'C',qualityGrade:'C+',indexing:'hold'};
+x=s();x.dailyPolicy.releasedSlugs.push('prior-held');x.dailyPolicy.releaseReviewedSlugs=['prior-held'];x.dailyPolicy.evidence.push({...evidence('prior-held'),families:['tek']});x.stage2.indexReleasedSlugs.push('prior-held');
+assert.deepEqual(errors(x,priorBaseline,[...routes,priorHeld]),[]);
+const sourceFree=structuredClone(x);sourceFree.dailyPolicy.evidence.find(e=>e.slug==='prior-held').sources=[];
+assert(errors(sourceFree,priorBaseline,[...routes,priorHeld]).some(e=>e.includes('kaynak URL')));
+const uncited=structuredClone(priorHeld);uncited.fishEvidence[0].sourceUrl='';uncited.accessEvidence[0].sourceUrl='';
+assert(errors(x,priorBaseline,[...routes,uncited]).some(e=>e.includes('rota kaynağına')));
+priorHeld.qualityAssessment.reviewedAt='2026-10-11';
+assert(errors(x,priorBaseline,[...routes,priorHeld]).some(e=>e.includes('salım günü yeniden')));
 x=s();x.dailyPolicy.priorTodayReleasedSlugs=['bilecik-cerkesli-baraj-goleti','mugla-ula-ula-goleti'];assert(errors(x).some(e=>e.includes('tavanı aşıyor')));
 assert(errors(state,{...baseline,baselineDate:'2026-10-11'}).some(e=>e.includes('Baseline tarihi')));
 const october5=JSON.parse(readFileSync('docs/olta-daily-quality-2026-10-05.json','utf8'));
 assert.equal(october5.summary.actualConfidencePromotions,2);
 assert.equal(october5.summary.eligibleReviewed,17);
 assert.deepEqual(october5.invalidCandidatesRemoved.map(r=>r.slug).sort(),['bilecik-cerkesli-baraj-goleti','mugla-ula-ula-goleti']);
-console.log('Günlük politika: açık index, manuel istisna, yeni rota, baseline, gerçek terfi, iki salım tavanı ve 5 Ekim regresyonları geçti.');
+console.log('Günlük politika: C+/HOLD sonraki gün salımı, yeni HOLD, kaynak bağı ve iki salım tavanı ile 5 Ekim regresyonları geçti.');
 const {validateExpandedQuality}=await import('./expanded-quality-policy.mjs');
 x=s();x.dailyPolicy.indexReleaseHardCap=3;assert(validateDailyQuality(x,baseline,routes).some(e=>e.includes('sabit 2')));
 const reviewed=meralar.find(r=>r.qualityAssessment&&r.confidence==='C');assert(reviewed);

@@ -1,0 +1,149 @@
+{
+  "version": 8,
+  "date": "2026-10-14",
+  "timezone": "Europe/Istanbul",
+  "branch": "quality/priority20-20261014",
+  "done": false,
+  "research": {
+    "status": "partial-next60-screened-1-new-promotion",
+    "eligibleReviewed": 2,
+    "searchConsoleUsed": false,
+    "schemaAndPolicyChecked": true,
+    "confidenceAuditChecked": true,
+    "duplicatePolicyChecked": true,
+    "indexPolicyChecked": true,
+    "report": "docs/quality-next60-audit-2026-10-14.md",
+    "notes": "14 Ekim: Önceki 20'den farklı 60 mevcut C avlak yeniden kaynak/kısıt eşleştirmesine alındı. Bu ikinci grupta yalnız Kurugöl C→C+ ve 59 C/HOLD veya önceki indeks statüsünde C bakım; günün toplam iki gerçek terfisi (Musaözü + Kurugöl). Yerel erişim delili eksik kalanlar yükseltilmedi.",
+    "screenedThisBatch": 60,
+    "screenedAllToday": 80
+  },
+  "stage2": {
+    "status": "partial-80-screened-2-confirmed-promotions",
+    "targetActualConfidencePromotions": 17,
+    "eligibleReviewed": 2,
+    "actualConfidencePromotions": 2,
+    "maintenanceOnly": 0,
+    "promotedCount": 2,
+    "promotedSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
+    ],
+    "transitionCounts": {
+      "dToC": 0,
+      "dToCPlus": 0,
+      "dToBOrA": 0,
+      "cToCPlusOrHigher": 2
+    },
+    "cPlusSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
+    ],
+    "cSlugs": [],
+    "indexReleasedSlugs": [],
+    "holdSlugs": []
+  },
+  "stage3": {
+    "status": "not-completed",
+    "targetNewBPlus": 2,
+    "newCount": 0,
+    "newSlugs": [],
+    "egeCandidate": null,
+    "marmaraCandidate": null
+  },
+  "publication": {
+    "ci": "pending",
+    "pr": "pending",
+    "merge": "pending",
+    "deploy": "pending",
+    "productionVerified": false,
+    "localTests": "GitHub Actions validation pending"
+  },
+  "analytics": {
+    "source": "2026-09-27 GSC/Cloudflare arşivi (güncel değil)",
+    "receivedAt": "2026-09-27",
+    "coverageThrough": "2026-09-21",
+    "performanceThrough": "2026-09-24",
+    "discovered": 219,
+    "crawledNotIndexed": 24,
+    "notFound": 6,
+    "redirect": 1,
+    "alternateCanonical": 100,
+    "visits": 672,
+    "mobileVisits": 575,
+    "pageViews": 1432,
+    "mobilePageViews": 1216
+  },
+  "dailyPolicy": {
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-14.json",
+    "actualConfidencePromotionsTarget": 17,
+    "indexReleaseHardCap": 2,
+    "indexReleaseOperationalTarget": [
+      0,
+      2
+    ],
+    "indexReleaseOperationalCap": 2,
+    "repositoryCap": 2,
+    "gscCap": 2,
+    "priorTodayUpgradedSlugs": [],
+    "priorTodayReleasedSlugs": [],
+    "eligibleReviewedSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
+    ],
+    "actualConfidencePromotionSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
+    ],
+    "maintenanceOnlySlugs": [],
+    "qualityUpgradedSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
+    ],
+    "releasedSlugs": [],
+    "holdSlugs": [],
+    "newSlugs": [],
+    "oneTimeBatchSlugs": [],
+    "evidence": [
+      {
+        "slug": "ulusal-eskisehir-musaozu-baraj-golu",
+        "families": [
+          "DKMP protected-area and access management",
+          "Eskişehir İl Tarım fisheries field records"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://ekotaban.tarimorman.gov.tr/alan/376",
+          "https://eskisehir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=c32a3e27-a550-4938-81fb-8261f1786260&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=429"
+        ]
+      },
+      {
+        "slug": "ankara-500km-duzce-kurugol",
+        "families": [
+          "Düzce İl Kültür ve Turizm (sportif olta/park)",
+          "Düzce İl Tarım ve Orman (2022 rota-özel sazan salımı)"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.kulturportali.gov.tr/turkiye/duzce/turizmaktiviteleri/kurugol",
+          "https://duzce.tarimorman.gov.tr/Haber/960/"
+        ]
+      }
+    ]
+  }
+}

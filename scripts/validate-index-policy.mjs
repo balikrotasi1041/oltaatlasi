@@ -126,6 +126,7 @@ for(const route of meralar){
     if(route.confidence==="D") preliminaryCount+=1;
     else indexHoldCount+=1;
     if(!runtimeNoindex(pathname))errors.push(`${route.slug}: ${route.confidence==="D"?"Güven D":"C+ index hold"} Worker noindex politikasında yok.`);
+    if(indexHeld&&!/name="robots" content="noindex,follow"/i.test(html))errors.push(`${route.slug}: HOLD sayfası HTML içinde noindex,follow taşımalı.`);
     if(normalSitemapXml.includes(url))errors.push(`${route.slug}: ${route.confidence==="D"?"Güven D":"C+ index hold"} sayfası normal sitemap içinde olmamalı.`);
     if(imageSitemapXml.includes(url))errors.push(`${route.slug}: ${route.confidence==="D"?"Güven D":"C+ index hold"} sayfası görsel sitemap içinde olmamalı.`);
   }else{
