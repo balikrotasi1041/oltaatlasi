@@ -5,34 +5,38 @@
   "branch": "quality/priority20-20261014",
   "done": false,
   "research": {
-    "status": "partial-20-screened-1-confirmed-promotion",
-    "eligibleReviewed": 1,
+    "status": "partial-next60-screened-1-new-promotion",
+    "eligibleReviewed": 2,
     "searchConsoleUsed": false,
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
-    "report": "docs/priority20-quality-research-2026-10-14.md",
-    "notes": "20 mevcut C/D avlak resmî kaynaklarla tarandı, 1 C→C+ terfi ve 19 sınıfı değişmeyen kanıt bakım kaydı. Tam expanded-v2 incelemesi ve gerçek kalite terfi sayacına yalnız Musaözü dahildir. 17 hedefine ulaşılamadı. Eski 6 kayıt yeni gün kotasına eklenmedi."
+    "report": "docs/quality-next60-audit-2026-10-14.md",
+    "notes": "14 Ekim: Önceki 20'den farklı 60 mevcut C avlak yeniden kaynak/kısıt eşleştirmesine alındı. Bu ikinci grupta yalnız Kurugöl C→C+ ve 59 C/HOLD veya önceki indeks statüsünde C bakım; günün toplam iki gerçek terfisi (Musaözü + Kurugöl). Yerel erişim delili eksik kalanlar yükseltilmedi.",
+    "screenedThisBatch": 60,
+    "screenedAllToday": 80
   },
   "stage2": {
-    "status": "partial-20-screened-1-confirmed-promotion",
+    "status": "partial-80-screened-2-confirmed-promotions",
     "targetActualConfidencePromotions": 17,
-    "eligibleReviewed": 1,
-    "actualConfidencePromotions": 1,
+    "eligibleReviewed": 2,
+    "actualConfidencePromotions": 2,
     "maintenanceOnly": 0,
-    "promotedCount": 1,
+    "promotedCount": 2,
     "promotedSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu"
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
     ],
     "transitionCounts": {
       "dToC": 0,
       "dToCPlus": 0,
       "dToBOrA": 0,
-      "cToCPlusOrHigher": 1
+      "cToCPlusOrHigher": 2
     },
     "cPlusSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu"
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
     ],
     "cSlugs": [],
     "indexReleasedSlugs": [],
@@ -48,11 +52,11 @@
   },
   "publication": {
     "ci": "pending",
-    "pr": "open #155",
+    "pr": "pending",
     "merge": "pending",
     "deploy": "pending",
     "productionVerified": false,
-    "localTests": "not run locally; GitHub Actions verification required"
+    "localTests": "GitHub Actions validation pending"
   },
   "analytics": {
     "source": "2026-09-27 GSC/Cloudflare arşivi (güncel değil)",
@@ -83,14 +87,17 @@
     "priorTodayUpgradedSlugs": [],
     "priorTodayReleasedSlugs": [],
     "eligibleReviewedSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu"
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
     ],
     "actualConfidencePromotionSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu"
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
     ],
     "maintenanceOnlySlugs": [],
     "qualityUpgradedSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu"
+      "ulusal-eskisehir-musaozu-baraj-golu",
+      "ankara-500km-duzce-kurugol"
     ],
     "releasedSlugs": [],
     "holdSlugs": [],
@@ -115,6 +122,26 @@
         "sources": [
           "https://ekotaban.tarimorman.gov.tr/alan/376",
           "https://eskisehir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=c32a3e27-a550-4938-81fb-8261f1786260&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=429"
+        ]
+      },
+      {
+        "slug": "ankara-500km-duzce-kurugol",
+        "families": [
+          "Düzce İl Kültür ve Turizm (sportif olta/park)",
+          "Düzce İl Tarım ve Orman (2022 rota-özel sazan salımı)"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://www.kulturportali.gov.tr/turkiye/duzce/turizmaktiviteleri/kurugol",
+          "https://duzce.tarimorman.gov.tr/Haber/960/"
         ]
       }
     ]
