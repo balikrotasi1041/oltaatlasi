@@ -1,6 +1,6 @@
 # 14 Ekim 2026: en olası 20 mevcut avlak yükseltme denemesi
 
-Başlangıç: 14 Ekim araştırması sırasında main HEAD üzerindeki 12 Ekim baseline ve mevcut `src/data/meralar-tumu.ts` bileşimi. Yeni rota yaratılmadı. Önceden C+/B/A kaliteye yükseltilmiş hiçbir kayıt hedef seçilmedi. Eski 6 C+/HOLD kayıt bu 20 adayın **dışındadır**.
+Başlangıç: 14 Ekim main HEAD'den alınan 1.458 rotalık yeni baseline ve mevcut `src/data/meralar-tumu.ts` bileşimi. Yeni rota yaratılmadı. Önceden C+/B/A kaliteye yükseltilmiş hiçbir kayıt hedef seçilmedi. Eski 6 C+/HOLD kayıt bu 20 adayın **dışındadır**.
 
 ## Ölçülebilir sonuç
 
@@ -15,7 +15,7 @@ Başlangıç: 14 Ekim araştırması sırasında main HEAD üzerindeki 12 Ekim b
 
 | Öncelik | Depodaki mevcut slug | Sınıf | Ek kanıt | Eksik |
 |---:|---|---|---|---|
-| 1 | `ulusal-eskisehir-musaozu-baraj-golu` | C → **C+** | [s2026](https://eskisehir.tarimorman.gov.tr/Haber/1745/Eskisehirde-11-Ilcedeki-30-Su-Kaynagina-686-Bin-Sazan-Yavrusu-Birakildi), [musaPark](https://ekotaban.tarimorman.gov.tr/alan/376), [musaTournament](https://eskisehir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=c32a3e27-a550-4938-81fb-8261f1786260&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=429), [musaYayin](https://eskisehir.tarimorman.gov.tr/Haber/1731/Eskisehirde-Su-Kaynaklarina-2-500-Yayin-Baligi-Yavrusu) | İşletmenin güncel kullanım sınırı ve levhası yerinde kontrol edilmeli; geçişte HOLD korunur. |
+| 1 | `ulusal-eskisehir-musaozu-baraj-golu` | C → **C+** | [s2026](https://eskisehir.tarimorman.gov.tr/Haber/1745/Eskisehirde-11-Ilcedeki-30-Su-Kaynagina-686-Bin-Sazan-Yavrusu-Birakildi), [musaPark](https://ekotaban.tarimorman.gov.tr/alan/376), [musaTournament](https://eskisehir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=c32a3e27-a550-4938-81fb-8261f1786260&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=429), [musaYayin](https://eskisehir.tarimorman.gov.tr/Haber/1731/Eskisehirde-Su-Kaynaklarina-2-500-Yayin-Baligi-Yavrusu) | İşletmenin güncel kullanım sınırı ve levhası yerinde kontrol edilmeli; eski indeksleme durumu korunur. |
 | 2 | `ankara-500km-eskisehir-kanlipinar-goleti` | C → **C** | [s2026](https://eskisehir.tarimorman.gov.tr/Haber/1745/Eskisehirde-11-Ilcedeki-30-Su-Kaynagina-686-Bin-Sazan-Yavrusu-Birakildi), [s2022](https://eskisehir.tarimorman.gov.tr/Haber/1045/) | Tabiat parkı kullanım bölgesi ve güncel kıyı erişimi teyitsiz. |
 | 3 | `ankara-500km-eskisehir-kaymaz-goleti` | C → **C** | [s2026](https://eskisehir.tarimorman.gov.tr/Haber/1745/Eskisehirde-11-Ilcedeki-30-Su-Kaynagina-686-Bin-Sazan-Yavrusu-Birakildi), [s2022](https://eskisehir.tarimorman.gov.tr/Haber/1045/) | Güncel kamusal kıyı, işletme sınırı ve park yeri teyitsiz. |
 | 4 | `ankara-500km-eskisehir-ozdenk-goleti` | C → **C** | [s2026](https://eskisehir.tarimorman.gov.tr/Haber/1745/Eskisehirde-11-Ilcedeki-30-Su-Kaynagina-686-Bin-Sazan-Yavrusu-Birakildi), [s2022](https://eskisehir.tarimorman.gov.tr/Haber/1045/) | Güncel güvenli amatör kıyı ve sulama statüsü teyitsiz. |
@@ -44,6 +44,6 @@ Başlangıç: 14 Ekim araştırması sırasında main HEAD üzerindeki 12 Ekim b
 
 ## Yeniden test / yayın kararı
 
-Tam CI'nin geçmesi gerekir; dosya içindeki sayılar CI testi yerine geçmez. Halihazırdaki günlük state 12 Ekim tarihli olduğundan, yeni çalışmanın 14 Ekim baseline ve durum dosyaları ayrıca doğru biçimde oluşturulmalıdır. Tarihsel state üstüne 17 gerçek terfi yazılarak sahte geçiş yapılmamalı. Günlük indeks salım tavanı en fazla iki ve güncel durumdaki release sayısı burada sıfırdır.
+Tam CI'nin geçmesi gerekir; dosya içindeki sayılar CI testi yerine geçmez. 12 Ekim state'i değiştirilmeden arşivlendi; 14 Ekim başlangıç main SHA ve 1.458 mevcut rota üzerinden yeni baseline ve gerçek 1 terfi sayacı oluşturuldu. Tarihsel state üstüne 17 gerçek terfi yazılarak sahte geçiş yapılmamalı. Günlük indeks salım tavanı en fazla iki ve güncel durumdaki release sayısı burada sıfırdır.
 
 16 Eylül [6/2 2026/26 değişikliği](https://www.tarimorman.gov.tr/HHGM/Haber/267/) 2024/21 ana metin ve diğer değişikliklerle beraber uygulanmalıdır.
