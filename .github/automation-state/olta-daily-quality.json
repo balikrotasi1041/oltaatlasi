@@ -1,58 +1,58 @@
 {
   "version": 8,
-  "date": "2026-10-12",
+  "date": "2026-10-14",
   "timezone": "Europe/Istanbul",
-  "branch": "quality/2026-10-12-daily-recovery",
+  "branch": "quality/priority20-20261014",
   "done": false,
   "research": {
-    "status": "partial-1-reviewed-no-promotion",
+    "status": "partial-20-screened-1-confirmed-promotion",
     "eligibleReviewed": 1,
     "searchConsoleUsed": false,
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
-    "report": "docs/olta-daily-quality-2026-10-12.md",
-    "notes": "Bozcaarmut resmî turizm/kimlik/balıklandırma kaynakları tekrar incelendi; güncel güvenli kıyı erişimi ve rota hukuku çözülemedi. C/HOLD korunur. 17 terfi ve yeni B+ hedefleri tamamlanmadı."
+    "report": "docs/priority20-quality-research-2026-10-14.md",
+    "notes": "20 mevcut C/D avlak resmî kaynaklarla tarandı, 1 C→C+ terfi ve 19 sınıfı değişmeyen kanıt bakım kaydı. Tam expanded-v2 incelemesi ve gerçek kalite terfi sayacına yalnız Musaözü dahildir. 17 hedefine ulaşılamadı. Eski 6 kayıt yeni gün kotasına eklenmedi."
   },
   "stage2": {
-    "status": "partial-1-reviewed-0-promotions",
+    "status": "partial-20-screened-1-confirmed-promotion",
     "targetActualConfidencePromotions": 17,
     "eligibleReviewed": 1,
-    "actualConfidencePromotions": 0,
+    "actualConfidencePromotions": 1,
     "maintenanceOnly": 0,
-    "promotedCount": 0,
-    "promotedSlugs": [],
+    "promotedCount": 1,
+    "promotedSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu"
+    ],
     "transitionCounts": {
       "dToC": 0,
       "dToCPlus": 0,
       "dToBOrA": 0,
-      "cToCPlusOrHigher": 0
+      "cToCPlusOrHigher": 1
     },
-    "cPlusSlugs": [],
-    "cSlugs": [
-      "bilecik-bozcaarmut-baraj-goleti"
+    "cPlusSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu"
     ],
+    "cSlugs": [],
     "indexReleasedSlugs": [],
-    "holdSlugs": [
-      "bilecik-bozcaarmut-baraj-goleti"
-    ]
+    "holdSlugs": []
   },
   "stage3": {
     "status": "not-completed",
     "targetNewBPlus": 2,
-    "newCount": 6,
-    "newSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
+    "newCount": 0,
+    "newSlugs": [],
     "egeCandidate": null,
     "marmaraCandidate": null
   },
   "publication": {
     "ci": "pending",
-    "pr": "pending",
+    "pr": "open #155",
     "merge": "pending",
     "deploy": "pending",
     "productionVerified": false,
-    "localTests": "passed: npm ci, build (data/research/index/security/duplicate/maintenance), daily policy regressions, deploy:dry"
+    "localTests": "not run locally; GitHub Actions verification required"
   },
   "analytics": {
     "source": "2026-09-27 GSC/Cloudflare arşivi (güncel değil)",
@@ -70,7 +70,7 @@
     "mobilePageViews": 1216
   },
   "dailyPolicy": {
-    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-12.json",
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-14.json",
     "actualConfidencePromotionsTarget": 17,
     "indexReleaseHardCap": 2,
     "indexReleaseOperationalTarget": [
@@ -83,17 +83,40 @@
     "priorTodayUpgradedSlugs": [],
     "priorTodayReleasedSlugs": [],
     "eligibleReviewedSlugs": [
-      "bilecik-bozcaarmut-baraj-goleti"
+      "ulusal-eskisehir-musaozu-baraj-golu"
     ],
-    "actualConfidencePromotionSlugs": [],
+    "actualConfidencePromotionSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu"
+    ],
     "maintenanceOnlySlugs": [],
-    "qualityUpgradedSlugs": [],
-    "releasedSlugs": [],
-    "holdSlugs": [
-      "bilecik-bozcaarmut-baraj-goleti"
+    "qualityUpgradedSlugs": [
+      "ulusal-eskisehir-musaozu-baraj-golu"
     ],
-    "newSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
-    "oneTimeBatchSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
-    "evidence": [{"slug":"istanbul-asiyan-onu-balik-tutma-iskeleleri","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf"]},{"slug":"istanbul-kefelikoy-sahil-parki","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://sariyer.bel.tr/haberler/sariyerin-parklari-sizleri-bekliyor"]},{"slug":"kocaeli-esme-sapanca-golu-kamusal-kiyi","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://kocaeli.tarimorman.gov.tr/Haber/275/12-Ulusal-Ve-Uluslararasi-Sazan-Baligi-Tutma-Yarismasinda-Dereceye-Girenler-Odullerini-Aldi"]},{"slug":"kocaeli-babali-acik-karadeniz-kiyisi","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html"]},{"slug":"sakarya-kucukbogaz-golu-karasu","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://sakarya.ktb.gov.tr/TR-340488/kucukbogaz-golu.html"]},{"slug":"sakarya-buyuk-akgol-golkent","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://bolge1.tarimorman.gov.tr/Menu/48/Sulak-Alanlar"]}]
+    "releasedSlugs": [],
+    "holdSlugs": [],
+    "newSlugs": [],
+    "oneTimeBatchSlugs": [],
+    "evidence": [
+      {
+        "slug": "ulusal-eskisehir-musaozu-baraj-golu",
+        "families": [
+          "DKMP protected-area and access management",
+          "Eskişehir İl Tarım fisheries field records"
+        ],
+        "coverage": [
+          "identity",
+          "location",
+          "locationPrecision",
+          "publicAccessContext",
+          "law",
+          "risk",
+          "species"
+        ],
+        "sources": [
+          "https://ekotaban.tarimorman.gov.tr/alan/376",
+          "https://eskisehir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=c32a3e27-a550-4938-81fb-8261f1786260&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=429"
+        ]
+      }
+    ]
   }
 }
