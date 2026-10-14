@@ -1,0 +1,1 @@
+Diagnostic write test on isolated branch. No production impact.
