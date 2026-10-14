@@ -34,6 +34,12 @@ export function validateDailyQuality(state, baseline, routes) {
   }
   const actualNew=baseline.routeSlugsSha256?p.newSlugs:routes.filter(r=>!baseline.routes[r.slug]).map(r=>r.slug);
   const manualCPlus=new Set(p.manualCPlusNewSlugs||[]);
+  fail(actualNew.length>2,'Günlük yeni avlak sayısı en fazla 2 olmalı.');
+  if(actualNew.length){
+    const regions=actualNew.map(slug=>String(current.get(slug)?.region||current.get(slug)?.bolge||'').toLocaleLowerCase('tr-TR'));
+    fail(regions.some(x=>!x.includes('ege')&&!x.includes('marmara')),'Yeni avlaklar Ege veya Marmara bölgesinden olmalı.');
+    fail(regions.filter(x=>x.includes('ege')).length>1||regions.filter(x=>x.includes('marmara')).length>1,'Her bölgeden en fazla bir yeni avlak olabilir.');
+  }
   const indexedNew=actualNew.filter(slug=>indexable(current.get(slug)));
   fail(manualCPlus.size>0,'Günlük otomasyonda manuel C+ istisnası kullanılamaz.');
   fail(indexedNew.length>0,'Yeni rota günlük indeks salımı olamaz; indexing=hold gerekli.');
@@ -80,8 +86,7 @@ export function validateDailyQuality(state, baseline, routes) {
     fail(!r.fishEvidence?.length||!r.accessEvidence?.length,`${slug}: tür/erişim kanıtı eksik.`);
     fail(e?.sources?.some(url=>!r.sources?.some(s=>s.url===url)),`${slug}: kanıt kaynağı rota kaynaklarında yok.`);
     if(actualNew.includes(slug)){
-      const oneTimeBatch=(p.oneTimeBatchSlugs||[]).includes(slug);
-      fail(!oneTimeBatch&&!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
+      fail(!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
       fail(r.indexing!=='hold',`${slug}: yeni rota indexing=hold olmalı.`);
 
       fail(r.image!==r.socialImage||!r.image.endsWith('.svg'),`${slug}: aynı özgün SVG kullanılmalı.`);
