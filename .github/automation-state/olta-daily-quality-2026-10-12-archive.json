@@ -1,0 +1,99 @@
+{
+  "version": 8,
+  "date": "2026-10-12",
+  "timezone": "Europe/Istanbul",
+  "branch": "quality/2026-10-12-daily-recovery",
+  "done": false,
+  "research": {
+    "status": "partial-1-reviewed-no-promotion",
+    "eligibleReviewed": 1,
+    "searchConsoleUsed": false,
+    "schemaAndPolicyChecked": true,
+    "confidenceAuditChecked": true,
+    "duplicatePolicyChecked": true,
+    "indexPolicyChecked": true,
+    "report": "docs/olta-daily-quality-2026-10-12.md",
+    "notes": "Bozcaarmut resmî turizm/kimlik/balıklandırma kaynakları tekrar incelendi; güncel güvenli kıyı erişimi ve rota hukuku çözülemedi. C/HOLD korunur. 17 terfi ve yeni B+ hedefleri tamamlanmadı."
+  },
+  "stage2": {
+    "status": "partial-1-reviewed-0-promotions",
+    "targetActualConfidencePromotions": 17,
+    "eligibleReviewed": 1,
+    "actualConfidencePromotions": 0,
+    "maintenanceOnly": 0,
+    "promotedCount": 0,
+    "promotedSlugs": [],
+    "transitionCounts": {
+      "dToC": 0,
+      "dToCPlus": 0,
+      "dToBOrA": 0,
+      "cToCPlusOrHigher": 0
+    },
+    "cPlusSlugs": [],
+    "cSlugs": [
+      "bilecik-bozcaarmut-baraj-goleti"
+    ],
+    "indexReleasedSlugs": [],
+    "holdSlugs": [
+      "bilecik-bozcaarmut-baraj-goleti"
+    ]
+  },
+  "stage3": {
+    "status": "not-completed",
+    "targetNewBPlus": 2,
+    "newCount": 6,
+    "newSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
+    "egeCandidate": null,
+    "marmaraCandidate": null
+  },
+  "publication": {
+    "ci": "pending",
+    "pr": "pending",
+    "merge": "pending",
+    "deploy": "pending",
+    "productionVerified": false,
+    "localTests": "passed: npm ci, build (data/research/index/security/duplicate/maintenance), daily policy regressions, deploy:dry"
+  },
+  "analytics": {
+    "source": "2026-09-27 GSC/Cloudflare arşivi (güncel değil)",
+    "receivedAt": "2026-09-27",
+    "coverageThrough": "2026-09-21",
+    "performanceThrough": "2026-09-24",
+    "discovered": 219,
+    "crawledNotIndexed": 24,
+    "notFound": 6,
+    "redirect": 1,
+    "alternateCanonical": 100,
+    "visits": 672,
+    "mobileVisits": 575,
+    "pageViews": 1432,
+    "mobilePageViews": 1216
+  },
+  "dailyPolicy": {
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-12.json",
+    "actualConfidencePromotionsTarget": 17,
+    "indexReleaseHardCap": 2,
+    "indexReleaseOperationalTarget": [
+      0,
+      2
+    ],
+    "indexReleaseOperationalCap": 2,
+    "repositoryCap": 2,
+    "gscCap": 2,
+    "priorTodayUpgradedSlugs": [],
+    "priorTodayReleasedSlugs": [],
+    "eligibleReviewedSlugs": [
+      "bilecik-bozcaarmut-baraj-goleti"
+    ],
+    "actualConfidencePromotionSlugs": [],
+    "maintenanceOnlySlugs": [],
+    "qualityUpgradedSlugs": [],
+    "releasedSlugs": [],
+    "holdSlugs": [
+      "bilecik-bozcaarmut-baraj-goleti"
+    ],
+    "newSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
+    "oneTimeBatchSlugs": ["istanbul-asiyan-onu-balik-tutma-iskeleleri","istanbul-kefelikoy-sahil-parki","kocaeli-esme-sapanca-golu-kamusal-kiyi","kocaeli-babali-acik-karadeniz-kiyisi","sakarya-kucukbogaz-golu-karasu","sakarya-buyuk-akgol-golkent"],
+    "evidence": [{"slug":"istanbul-asiyan-onu-balik-tutma-iskeleleri","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf"]},{"slug":"istanbul-kefelikoy-sahil-parki","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://sariyer.bel.tr/haberler/sariyerin-parklari-sizleri-bekliyor"]},{"slug":"kocaeli-esme-sapanca-golu-kamusal-kiyi","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://kocaeli.tarimorman.gov.tr/Haber/275/12-Ulusal-Ve-Uluslararasi-Sazan-Baligi-Tutma-Yarismasinda-Dereceye-Girenler-Odullerini-Aldi"]},{"slug":"kocaeli-babali-acik-karadeniz-kiyisi","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html"]},{"slug":"sakarya-kucukbogaz-golu-karasu","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://sakarya.ktb.gov.tr/TR-340488/kucukbogaz-golu.html"]},{"slug":"sakarya-buyuk-akgol-golkent","families":["route identity/species","access/municipal"],"coverage":["identity","location","locationPrecision","publicAccessContext","law","risk","species"],"sources":["https://bolge1.tarimorman.gov.tr/Menu/48/Sulak-Alanlar"]}]
+  }
+}
