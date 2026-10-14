@@ -263,7 +263,9 @@ export function applyPriority20Research20261014(routeMap:Map<string,EnrichedMera
   if(!previous)throw new Error("14 Ekim 20 aday mevcut rota değil: "+row.slug);
   if(previous.confidence!==row.before || (previous.qualityGrade||previous.confidence)!==row.before)throw new Error("14 Ekim uygunluk başlangıcı bozuldu: "+row.slug+" / "+previous.confidence+" / "+previous.qualityGrade);
   const sources=[...new Map([...(previous.sources||[]),...sourcesFor(row),law].map(s=>[s.url,s])).values()];
-  const base:EnrichedMera={...previous,sources,updatedAt:reviewedAt,researchedAt:reviewedAt,researchStatus:"14 Ekim 20 aday kanıt taraması: "+row.before+" → "+row.after+"; indeks açılmadı",researchSummary:row.evidence+" Açık: "+row.blocker,verification:"14 Ekim 2026: "+row.evidence+" "+row.blocker+" 6/2 güncel değişiklikleri ve yerinde levhalar esas alınır; saha ziyareti yapılmadı."};
+  const archiveDateLocked=row.slug.startsWith("ankara-500km-");
+  // Legacy 870-route audit fixes original batch timestamps; preserve them for maintenance-only rows.
+  const base:EnrichedMera={...previous,sources,updatedAt:archiveDateLocked?previous.updatedAt:reviewedAt,researchedAt:archiveDateLocked?previous.researchedAt:reviewedAt,researchStatus:"14 Ekim 20 aday kanıt taraması: "+row.before+" → "+row.after+"; indeks açılmadı",researchSummary:row.evidence+" Açık: "+row.blocker,verification:"14 Ekim 2026: "+row.evidence+" "+row.blocker+" 6/2 güncel değişiklikleri ve yerinde levhalar esas alınır; saha ziyareti yapılmadı."};
   if(row.slug!=="ulusal-eskisehir-musaozu-baraj-golu"){
    routeMap.set(row.slug,base);
    continue;
