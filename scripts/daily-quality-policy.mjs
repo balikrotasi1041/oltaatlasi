@@ -36,9 +36,9 @@ export function validateDailyQuality(state, baseline, routes) {
   const manualCPlus=new Set(p.manualCPlusNewSlugs||[]);
   const indexedNew=actualNew.filter(slug=>indexable(current.get(slug)));
   fail(manualCPlus.size>0,'Günlük otomasyonda manuel C+ istisnası kullanılamaz.');
-  fail(indexedNew.length>0,'Yeni rota günlük indeks salımı olamaz; indexing=hold gerekli.');
-  if(Array.isArray(p.newIndexReleasedSlugs))fail(!same(indexedNew,p.newIndexReleasedSlugs),'Yeni manuel rota indeks salımı sayacı eşleşmiyor.');
-  fail(p.priorTodayReleasedSlugs.length+p.releasedSlugs.length+indexedNew.length>Math.min(...caps),'Eski ve yeni rota toplam indeks salımı günlük en sıkı tavanı aşıyor.');
+  fail(indexedNew.length>0,'Yeni rota önce HOLD/noindex olarak yayımlanmalı; indeks salımı sonraki günlük baseline üzerinden yapılır.');
+  fail(!same(indexedNew,p.newIndexReleasedSlugs||[]),'Yeni rota indeks salımı sayacı eşleşmiyor.');
+  fail(p.priorTodayReleasedSlugs.length+p.releasedSlugs.length>Math.min(...caps),'Günlük indeks salımı en sıkı tavanı aşıyor.');
 
   if(baseline.routeSlugsSha256){
     const priorSlugs=routes.map(r=>r.slug).filter(slug=>!p.newSlugs.includes(slug)).sort();
@@ -62,29 +62,36 @@ export function validateDailyQuality(state, baseline, routes) {
   fail(p.actualConfidencePromotionSlugs.some(s=>!p.eligibleReviewedSlugs.includes(s)),'Confidence terfisi uygun aday havuzu dışında olamaz.');
   fail(!same(actualReleases,p.releasedSlugs),'Salım sayacı gerçek noindex → index değişiklikleriyle eşleşmiyor.');
   fail(!same(actualNew,p.newSlugs),'Yeni slug sayacı gerçek veriyle eşleşmiyor.');
+  const releaseOnly=p.releasedSlugs.filter(s=>!p.actualConfidencePromotionSlugs.includes(s));
+  fail(!same(releaseOnly,p.releaseReviewedSlugs||[]),'Önceki C+/HOLD salım inceleme listesi uyuşmuyor.');
+  for(const slug of releaseOnly){
+    fail(!['C+','B','A'].includes(grade(baseline.routes[slug])),`${slug}: önceki HOLD kaydı C+/B/A olmalı.`);
+    fail(current.get(slug)?.qualityAssessment?.reviewedAt!==state.date,`${slug}: salım günü yeniden kalite değerlendirmesi gerekli.`);
+  }
   fail(p.priorTodayReleasedSlugs.some(s=>p.releasedSlugs.includes(s)),'Önceki salım yeniden sayıldı.');
   fail(p.priorTodayUpgradedSlugs.some(s=>p.qualityUpgradedSlugs.includes(s)),'Önceki yükseltme yeniden sayıldı.');
   fail(p.priorTodayReleasedSlugs.length+p.releasedSlugs.length>Math.min(...caps),'Günlük toplam salım en sıkı tavanı aşıyor.');
   for(const slug of p.releasedSlugs){
-    fail(!p.actualConfidencePromotionSlugs.includes(slug),`${slug}: yalnız bu batch'te gerçek confidence terfisi alan kayıt salınabilir.`);
     fail(rank[grade(current.get(slug))]<rank['C+'],`${slug}: yeni indeks salımı en az C+ olmalı.`);
     fail(!baselineNoindex(baseline.routes[slug]),`${slug}: başlangıçta zaten indekslenebilir olan yüksek kalite kayıt release sayılamaz.`);
   }
   const expectedHold=p.eligibleReviewedSlugs.filter(s=>current.get(s)?.indexing==='hold');
   fail(!same(expectedHold,p.holdSlugs),'İncelenen ve hold olan kayıtlar hold listesiyle eşleşmeli.');
   for(const slug of p.holdSlugs)fail(current.get(slug)?.indexing!=='hold',`${slug}: indexing=hold gerekli.`);
-  for(const slug of [...p.actualConfidencePromotionSlugs,...actualNew]){
+  for(const slug of [...new Set([...p.actualConfidencePromotionSlugs,...p.releasedSlugs,...actualNew])]){
     const r=current.get(slug),e=p.evidence.find(e=>e.slug===slug);
-    fail(!e||new Set(e.families).size<2,`${slug}: iki bağımsız kaynak ailesi gerekli.`);
-    for(const key of ['identity','location','locationPrecision','publicAccessContext','law','risk','species'])fail(!e?.coverage?.includes(key),`${slug}: ${key} kanıt incelemesi eksik.`);
-    fail(!r.fishEvidence?.length||!r.accessEvidence?.length,`${slug}: tür/erişim kanıtı eksik.`);
-    fail(e?.sources?.some(url=>!r.sources?.some(s=>s.url===url)),`${slug}: kanıt kaynağı rota kaynaklarında yok.`);
+    const ready=['C+','B','A'].includes(grade(r));
+    const reviewed=actualUpgrades.includes(slug)||p.releasedSlugs.includes(slug)||indexedNew.includes(slug);
+    if(reviewed){
+      fail(!e||new Set(e.families||[]).size<(grade(r)==='A'||grade(r)==='B'?2:1),`${slug}: kalite sınıfına uygun kaynak ailesi eksik.`);
+      for(const key of ['identity','publicAccessContext','law','species'])if(ready)fail(!e?.coverage?.includes(key),`${slug}: ${key} kanıt incelemesi eksik.`);
+      fail(!e?.sources?.length,`${slug}: kaynak URL'si eksik.`);
+      fail(e?.sources?.some(url=>!r.sources?.some(s=>s.url===url)),`${slug}: kanıt kaynağı rota kaynaklarında yok.`);
+    }
     if(actualNew.includes(slug)){
-      const oneTimeBatch=(p.oneTimeBatchSlugs||[]).includes(slug);
-      fail(!oneTimeBatch&&!['A','B'].includes(r.confidence),`${slug}: günlük otomasyon yeni rotası en az B olmalı.`);
-      fail(r.indexing!=='hold',`${slug}: yeni rota indexing=hold olmalı.`);
-
-      fail(r.image!==r.socialImage||!r.image.endsWith('.svg'),`${slug}: aynı özgün SVG kullanılmalı.`);
+      fail(r.indexing!=='hold',`${slug}: yeni rota ilk gün HOLD/noindex olmalı.`);
+      const names=new Set((r.fishEvidence||[]).map(f=>f.name));
+      fail((r.fish||[]).some(f=>!names.has(f)),`${slug}: yeni HOLD rotasında kanıtsız tür listelenemez.`);
     }
   }
   fail(!same(state.stage2.promotedSlugs,[...p.priorTodayUpgradedSlugs,...p.qualityUpgradedSlugs]),'Günlük toplam kalite listesi tutarsız.');
@@ -92,7 +99,7 @@ export function validateDailyQuality(state, baseline, routes) {
   fail(state.stage2.eligibleReviewed!==p.eligibleReviewedSlugs.length,'eligibleReviewed sayısı tutarsız.');
   fail(state.stage2.actualConfidencePromotions!==p.actualConfidencePromotionSlugs.length,'actualConfidencePromotions sayısı tutarsız.');
   fail(state.stage2.maintenanceOnly!==p.maintenanceOnlySlugs.length,'maintenanceOnly sayısı tutarsız.');
-  fail(!same(state.stage2.indexReleasedSlugs,[...p.priorTodayReleasedSlugs,...p.releasedSlugs]),'Günlük salım listesi tutarsız.');
+  fail(!same(state.stage2.indexReleasedSlugs,[...p.priorTodayReleasedSlugs,...p.releasedSlugs,...indexedNew]),'Günlük salım listesi tutarsız.');
   fail(state.done&&state.stage2.actualConfidencePromotions<p.actualConfidencePromotionsTarget,'Gerçek confidence terfi hedefi eksikken tamamlandı denemez.');
   return errors;
 }

@@ -1,49 +1,49 @@
 {
-  "version": 8,
-  "date": "2026-10-14",
+  "version": 9,
+  "date": "2026-10-15",
   "timezone": "Europe/Istanbul",
-  "branch": "quality/priority20-20261014",
+  "branch": "fix/pragmatic-quality-release-20261014",
   "done": false,
   "research": {
-    "status": "partial-next60-screened-1-new-promotion",
-    "eligibleReviewed": 2,
-    "searchConsoleUsed": false,
+    "status": "one-promotion-two-releases-after-prior-80-screening",
+    "eligibleReviewed": 1,
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
-    "report": "docs/quality-next60-audit-2026-10-14.md",
-    "notes": "14 Ekim: Önceki 20'den farklı 60 mevcut C avlak yeniden kaynak/kısıt eşleştirmesine alındı. Bu ikinci grupta yalnız Kurugöl C→C+ ve 59 C/HOLD veya önceki indeks statüsünde C bakım; günün toplam iki gerçek terfisi (Musaözü + Kurugöl). Yerel erişim delili eksik kalanlar yükseltilmedi.",
-    "screenedThisBatch": 60,
-    "screenedAllToday": 80
+    "report": "docs/olta-daily-quality-2026-10-15.md",
+    "notes": "14 Ekim ana dalındaki 80 aday taraması ve iki gerçek terfi korundu. 15 Ekim ana dal başlangıcında Küçükboğaz C+/HOLD yeniden incelenip terfi sayılmadan salındı; Günyurdu C/HOLD C+/index oldu. Bugün iki indeks salımı kullanıldı. Diğer belirsiz sayfalar HOLD kaldı.",
+    "priorDayScreened": 80,
+    "priorDayActualConfidencePromotions": 2
   },
   "stage2": {
-    "status": "partial-80-screened-2-confirmed-promotions",
+    "status": "one-promotion-two-releases",
     "targetActualConfidencePromotions": 17,
-    "eligibleReviewed": 2,
-    "actualConfidencePromotions": 2,
-    "maintenanceOnly": 0,
-    "promotedCount": 2,
+    "eligibleReviewed": 1,
+    "actualConfidencePromotions": 1,
+    "maintenanceOnly": 1,
+    "promotedCount": 1,
     "promotedSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu",
-      "ankara-500km-duzce-kurugol"
+      "ulusal-bilecik-gunyurdu-baraj-golu"
     ],
     "transitionCounts": {
       "dToC": 0,
       "dToCPlus": 0,
       "dToBOrA": 0,
-      "cToCPlusOrHigher": 2
+      "cToCPlusOrHigher": 1
     },
     "cPlusSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu",
-      "ankara-500km-duzce-kurugol"
+      "ulusal-bilecik-gunyurdu-baraj-golu"
     ],
     "cSlugs": [],
-    "indexReleasedSlugs": [],
+    "indexReleasedSlugs": [
+      "sakarya-kucukbogaz-golu-karasu",
+      "ulusal-bilecik-gunyurdu-baraj-golu"
+    ],
     "holdSlugs": []
   },
   "stage3": {
-    "status": "not-completed",
+    "status": "no-new-route-today",
     "targetNewBPlus": 2,
     "newCount": 0,
     "newSlugs": [],
@@ -55,95 +55,88 @@
     "pr": "pending",
     "merge": "pending",
     "deploy": "pending",
-    "productionVerified": false,
-    "localTests": "GitHub Actions validation pending"
+    "productionVerified": false
   },
   "analytics": {
-    "source": "2026-09-27 GSC/Cloudflare arşivi (güncel değil)",
-    "receivedAt": "2026-09-27",
-    "coverageThrough": "2026-09-21",
-    "performanceThrough": "2026-09-24",
-    "discovered": 219,
-    "crawledNotIndexed": 24,
-    "notFound": 6,
-    "redirect": 1,
-    "alternateCanonical": 100,
-    "visits": 672,
-    "mobileVisits": 575,
-    "pageViews": 1432,
-    "mobilePageViews": 1216
+    "source": "Son arşiv ayrı; bu indeks kararı güncel kaynak ve sayfa kanıtına dayanır",
+    "searchConsoleUsed": false
   },
   "dailyPolicy": {
-    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-14.json",
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-15.json",
     "actualConfidencePromotionsTarget": 17,
     "indexReleaseHardCap": 2,
-    "indexReleaseOperationalTarget": [
-      0,
-      2
-    ],
     "indexReleaseOperationalCap": 2,
     "repositoryCap": 2,
     "gscCap": 2,
     "priorTodayUpgradedSlugs": [],
     "priorTodayReleasedSlugs": [],
     "eligibleReviewedSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu",
-      "ankara-500km-duzce-kurugol"
+      "ulusal-bilecik-gunyurdu-baraj-golu"
     ],
     "actualConfidencePromotionSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu",
-      "ankara-500km-duzce-kurugol"
+      "ulusal-bilecik-gunyurdu-baraj-golu"
     ],
-    "maintenanceOnlySlugs": [],
+    "maintenanceOnlySlugs": [
+      "sakarya-kucukbogaz-golu-karasu"
+    ],
     "qualityUpgradedSlugs": [
-      "ulusal-eskisehir-musaozu-baraj-golu",
-      "ankara-500km-duzce-kurugol"
+      "ulusal-bilecik-gunyurdu-baraj-golu"
     ],
-    "releasedSlugs": [],
+    "releasedSlugs": [
+      "sakarya-kucukbogaz-golu-karasu",
+      "ulusal-bilecik-gunyurdu-baraj-golu"
+    ],
+    "releaseReviewedSlugs": [
+      "sakarya-kucukbogaz-golu-karasu"
+    ],
     "holdSlugs": [],
     "newSlugs": [],
-    "oneTimeBatchSlugs": [],
+    "newIndexReleasedSlugs": [],
     "evidence": [
       {
-        "slug": "ulusal-eskisehir-musaozu-baraj-golu",
+        "slug": "sakarya-kucukbogaz-golu-karasu",
         "families": [
-          "DKMP protected-area and access management",
-          "Eskişehir İl Tarım fisheries field records"
+          "Sakarya İl Kültür ve Turizm Müdürlüğü",
+          "Atatürk Üniversitesi 2019-20 saha çalışması"
         ],
         "coverage": [
           "identity",
-          "location",
-          "locationPrecision",
           "publicAccessContext",
           "law",
-          "risk",
           "species"
         ],
         "sources": [
-          "https://ekotaban.tarimorman.gov.tr/alan/376",
-          "https://eskisehir.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=c32a3e27-a550-4938-81fb-8261f1786260&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=429"
+          "https://sakarya.ktb.gov.tr/TR-340488/kucukbogaz-golu.html",
+          "https://earsiv.atauni.edu.tr/xmlui/bitstream/handle/123456789/1467/Erdin%C3%A7%20AYDIN_0225982.pdf?isAllowed=y&sequence=1",
+          "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_"
         ]
       },
       {
-        "slug": "ankara-500km-duzce-kurugol",
+        "slug": "ulusal-bilecik-gunyurdu-baraj-golu",
         "families": [
-          "Düzce İl Kültür ve Turizm (sportif olta/park)",
-          "Düzce İl Tarım ve Orman (2022 rota-özel sazan salımı)"
+          "Pazaryeri Belediyesi",
+          "DSİ 2013 Günyurdu balıklandırması"
         ],
         "coverage": [
           "identity",
-          "location",
-          "locationPrecision",
           "publicAccessContext",
           "law",
-          "risk",
           "species"
         ],
         "sources": [
-          "https://www.kulturportali.gov.tr/turkiye/duzce/turizmaktiviteleri/kurugol",
-          "https://duzce.tarimorman.gov.tr/Haber/960/"
+          "https://www.pazaryeri.bel.tr/sayfa/turizm/",
+          "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2013-yili-hib-kitabi.pdf",
+          "https://bilecik.tarimorman.gov.tr/Duyuru/681/Ilimiz-Ic-Sularinda-Av-Yasagi-Sona-Erdi",
+          "https://bilecik.tarimorman.gov.tr/Lists/Duyuru/Attachments/685/Ek-1.pdf"
         ]
       }
     ]
+  },
+  "progress": {
+    "targetNewlyIndexable": 20,
+    "newlyIndexableSinceThisRelease": 2,
+    "remaining": 18,
+    "priorDayActualConfidencePromotions": 2,
+    "currentDayActualConfidencePromotions": 1
   }
 }

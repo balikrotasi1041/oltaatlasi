@@ -1,0 +1,18 @@
+{
+  "baselineDate": "2026-10-15",
+  "mainSha": "ac1e2afc161a4352b921751f3c34dd9504be415c",
+  "routeCount": 1458,
+  "routeSlugsSha256": "c15220469dbca7e8cb9e26bbab399878cc92a628777511b7c22226af3cdd57bd",
+  "routes": {
+    "sakarya-kucukbogaz-golu-karasu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold"
+    },
+    "ulusal-bilecik-gunyurdu-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold"
+    }
+  }
+}

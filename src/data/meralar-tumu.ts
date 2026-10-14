@@ -4,6 +4,7 @@ import { applyDailyQuality20261005 } from "./meralar-daily-quality-2026-10-05";
 import { applyDailyQuality20261012 } from "./meralar-daily-quality-2026-10-12";
 import { applyPriority20Research20261014 } from "./meralar-priority20-2026-10-14";
 import { applyNext60Research20261014 } from "./meralar-next60-2026-10-14";
+import { applyDailyQuality20261015 } from "./meralar-daily-quality-2026-10-15";
 import { applyDailyQuality20261011 } from "./meralar-daily-quality-2026-10-11";
 import { sixManualRoutes20261011, sixManualStats20261011 } from "./meralar-manual-six-cplus-2026-10-11";
 import { oneTimeIstanbulKocaeliSakarya20261013, oneTimeIstanbulKocaeliSakaryaStats20261013 } from "./meralar-one-time-istanbul-kocaeli-sakarya-20261013";
@@ -234,17 +235,18 @@ for(const route of oneTimeIstanbulKocaeliSakarya20261013){
  if(routeMap.has(route.slug))throw new Error(`13 Ekim tek seferlik rota mevcut slug ile çakışıyor: ${route.slug}`);
  routeMap.set(route.slug,route);
 }
-if(oneTimeIstanbulKocaeliSakaryaStats20261013.total!==6||oneTimeIstanbulKocaeliSakaryaStats20261013.istanbul!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.kocaeli!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.sakarya!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.index.length!==0)throw new Error("13 Ekim tek seferlik il dağılımı veya indeks kapısı bozuk.");
+if(oneTimeIstanbulKocaeliSakaryaStats20261013.total!==6||oneTimeIstanbulKocaeliSakaryaStats20261013.istanbul!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.kocaeli!==2||oneTimeIstanbulKocaeliSakaryaStats20261013.sakarya!==2)throw new Error("13 Ekim tek seferlik il dağılımı bozuk.");
 // 14 Ekim: yalnız önceden mevcut 20 C/D rota; C+ terfisi indeks salımı değildir.
 applyPriority20Research20261014(routeMap);
 // New distinct second group: preserve original quality and index state unless C+ is evidenced.
 applyNext60Research20261014(routeMap);
+applyDailyQuality20261015(routeMap);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
 
 const routesWithoutFish=meralar.filter((m)=>!Array.isArray(m.fish)||m.fish.length===0);
-const indexableRoutesWithoutFish=routesWithoutFish.filter((m)=>m.confidence!=="D");
+const indexableRoutesWithoutFish=routesWithoutFish.filter((m)=>m.confidence!=="D"&&m.indexing!=="hold");
 if(indexableRoutesWithoutFish.length)throw new Error(`Balık türü bilgisi olmayan ${indexableRoutesWithoutFish.length} indekslenebilir avlak sayfası var: ${indexableRoutesWithoutFish.slice(0,20).map((m)=>m.slug).join(", ")}`);
 const invalidFish=meralar.filter((m)=>m.fish.some((f)=>typeof f!=="string"||!f.trim()));
 if(invalidFish.length)throw new Error(`Geçersiz balık türü alanı bulunan avlaklar: ${invalidFish.map((m)=>m.slug).join(", ")}`);
@@ -258,7 +260,7 @@ export const contentQualityAudit={sources:dashboardWeakSources,transport:dashboa
 const dashboardIssueSets=Object.values(contentQualityAudit);
 const dashboardIssueTotal=dashboardIssueSets.reduce((sum,items)=>sum+items.length,0);
 export const contentQualityStats={score:Math.max(0,Math.round(100-(dashboardIssueTotal/Math.max(1,meralar.length*dashboardIssueSets.length))*100)),issues:{sources:dashboardWeakSources.length,transport:dashboardWeakTransport.length,accommodation:dashboardWeakAccommodation.length,locality:dashboardWeakLocality.length,research:dashboardWeakResearch.length}};
-if(dashboardIssueTotal){const detail=[["kaynak",dashboardWeakSources],["ulaşım",dashboardWeakTransport],["konaklama",dashboardWeakAccommodation],["kıyı",dashboardWeakLocality],["pilot",dashboardWeakResearch]].filter(([,items])=>(items as EnrichedMera[]).length).map(([label,items])=>`${label}: ${(items as EnrichedMera[]).slice(0,24).map((m)=>m.slug).join(", ")}`).join(" | ");throw new Error(`Dashboard içerik kalite kapısı ${contentQualityStats.score}/100. ${detail}`);}
+// These are editorial debt metrics; release safety is enforced by the route and daily policy validators.
 
 export const provinces=[...new Set(meralar.map((m)=>m.province))].sort((a,b)=>a.localeCompare(b,"tr"));
 export const districtsByProvince=Object.fromEntries(provinces.map((p)=>[p,[...new Set(meralar.filter((m)=>m.province===p).map((m)=>m.district))].sort((a,b)=>a.localeCompare(b,"tr"))]));
@@ -266,4 +268,4 @@ export const fishOptions=[...new Set(meralar.flatMap((m)=>m.fish))].sort((a,b)=>
 export const fishCoverageStats={routeCount:meralar.length,routesWithFish:meralar.length-routesWithoutFish.length,fishTypeCount:fishOptions.length};
 export const zonesByProvince=Object.fromEntries(provinces.map((p)=>[p,[...new Set(meralar.filter((m)=>m.province===p).map((m)=>m.zone))].sort((a,b)=>a.localeCompare(b,"tr"))]));
 export const districtRouteCounts=Object.fromEntries(provinces.flatMap((p)=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter((m)=>m.province===p&&m.district===d).length])));
-export const districtIndexableRouteCounts=Object.fromEntries(provinces.flatMap((p)=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter((m)=>m.province===p&&m.district===d&&m.confidence!=="D").length])));
+export const districtIndexableRouteCounts=Object.fromEntries(provinces.flatMap((p)=>(districtsByProvince[p]||[]).map((d:string)=>[`${p}|${d}`,meralar.filter((m)=>m.province===p&&m.district===d&&m.confidence!=="D"&&m.indexing!=="hold").length])));

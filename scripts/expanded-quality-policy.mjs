@@ -13,6 +13,11 @@ export function validateExpandedQuality(route, { requireAssessment = false } = {
     fail(!Array.isArray(q.unresolvedRisks)||q.unresolvedRisks.length>0,'hukuk/erişim riskleri çözülmeden C+ olamaz.');
     fail(!route.fishEvidence?.length||!route.fish?.length,'rota-özel tür kanıtı gerekli.');
     fail(!route.accessEvidence?.length,'erişim kanıtı gerekli.');
+    fail(new Set(q.independentStrongFamilies||[]).size<1,'güçlü rota-özel kaynak ailesi gerekli.');
+    const sourceUrls=new Set((route.sources||[]).map(s=>s.url).filter(Boolean));
+    fail(sourceUrls.size<1,'kaynak URL\'si gerekli.');
+    fail((route.fishEvidence||[]).some(e=>!e.sourceUrl||!sourceUrls.has(e.sourceUrl)),'tür kanıtı rota kaynağına bağlanmalı.');
+    fail(!(route.accessEvidence||[]).some(e=>e.sourceUrl&&sourceUrls.has(e.sourceUrl)),'erişim kanıtı rota kaynağına bağlanmalı.');
     fail(!Number.isFinite(route.lat)||!Number.isFinite(route.lng),'genel su konumu doğrulanmalı.');
   }
   if(['A','B'].includes(grade)){

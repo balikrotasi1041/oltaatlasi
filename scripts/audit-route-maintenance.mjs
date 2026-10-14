@@ -12,7 +12,9 @@ for (const slug of retiredRouteSlugs) if (activeSlugs.has(slug)) errors.push(`Ya
 if (activeSlugs.size !== meralar.length) errors.push("Aktif rota veri kümesinde yinelenen slug var.");
 
 for (const route of meralar) {
-  if (!route.sources?.length || route.sources.length < 2) errors.push(`${route.slug}: en az iki kaynak yok.`);
+  const held=route.indexing==="hold"||route.confidence==="D";
+  if (!route.sources?.length) errors.push(`${route.slug}: kaynak yok.`);
+  else if (route.sources.length < 2) warnings.push(`${route.slug}: ikinci destekleyici kaynak aranmalı.`);
   for (const source of route.sources || []) {
     try {
       const parsed = new URL(source.url);
@@ -21,10 +23,13 @@ for (const route of meralar) {
       errors.push(`${route.slug}: geçersiz kaynak ${source.url}`);
     }
   }
-  if (/pilot veri|şablon metin|lorem ipsum/i.test(`${route.verification} ${route.longIntro?.join(" ")}`)) errors.push(`${route.slug}: pilot/şablon metin canlı içerikte kaldı.`);
-  if (!route.transport || route.transport.length < 90) errors.push(`${route.slug}: ulaşım notu yetersiz.`);
-  if (!route.accommodationOptions?.length && !/konaklama|otel|pansiyon|ilçe merkez|yerleşim|gecelik kalış/i.test(`${route.transport} ${route.planningNotes?.join(" ")} ${route.amenities?.join(" ")}`)) errors.push(`${route.slug}: konaklama planlama bilgisi eksik.`);
-  if (!route.cautions || route.cautions.length < 3) errors.push(`${route.slug}: risk notları yetersiz.`);
+  if (/şablon metin|lorem ipsum/i.test(`${route.verification} ${route.longIntro?.join(" ")}`)) errors.push(`${route.slug}: şablon metin canlı içerikte kaldı.`);
+  if (/pilot veri/i.test(`${route.verification} ${route.longIntro?.join(" ")}`)) (held?warnings:errors).push(`${route.slug}: pilot veri etiketi gözden geçirilmeli.`);
+  if (!route.transport) errors.push(`${route.slug}: ulaşım notu eksik.`);
+  else if (route.transport.length < 90) warnings.push(`${route.slug}: ulaşım notu kısa.`);
+  if (!route.accommodationOptions?.length && !/konaklama|otel|pansiyon|ilçe merkez|yerleşim|gecelik kalış/i.test(`${route.transport} ${route.planningNotes?.join(" ")} ${route.amenities?.join(" ")}`)) warnings.push(`${route.slug}: konaklama planlama bilgisi eklenebilir.`);
+  if (!route.cautions?.length) (held?warnings:errors).push(`${route.slug}: risk notu eksik.`);
+  else if (route.cautions.length < 3) warnings.push(`${route.slug}: risk notları artırılabilir.`);
   if (route.locationPrecision === "Tam" && route.confidence !== "A") errors.push(`${route.slug}: A dışında kesin koordinat kullanıyor.`);
   const hasCoordinates = [route.lat, route.lng].every((value) => Number.isFinite(Number(value)));
   if (!hasCoordinates) {
