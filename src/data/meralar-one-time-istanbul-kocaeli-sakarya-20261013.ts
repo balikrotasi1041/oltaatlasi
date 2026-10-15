@@ -12,7 +12,7 @@ const specs=[
 ] as const;
 
 const make=(spec:typeof specs[number],base:EnrichedMera):EnrichedMera=>{
- const released=spec.slug==="sakarya-kucukbogaz-golu-karasu";
+ const released=false; // Previously C+/HOLD, not a new daily confidence promotion.
  const sources=[...spec.sources,law];
  const fishEvidence:FishEvidence[]=spec.fish.map(name=>({name,scientificName:null,evidenceLevel:"Rota-su düzeyinde kurumsal veya akademik kanıt; günlük av garantisi değildir",sourceLabel:spec.sources[0].label,sourceUrl:spec.sources[0].url,note:`${spec.name} kaynağı bu türü su/yer adıyla listeler.`}));
  const accessSource=released?spec.sources[0]:spec.sources[1];
