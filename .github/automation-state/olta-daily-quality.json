@@ -5,23 +5,23 @@
   "branch": "quality/2026-10-16-two-hold-releases",
   "done": false,
   "research": {
-    "status": "two-existing-c-plus-hold-releases-after-fresh-baseline",
+    "status": "two-existing-c-plus-hold-releases-and-one-hold-content-repair",
     "eligibleReviewed": 0,
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
     "report": "docs/olta-daily-quality-2026-10-16.md",
-    "notes": "16 Ekim başlangıcında zaten C+/HOLD olan Kefeliköy ile Şemsi Paşa, tarihli İBB rota/tür kaydı ve kamusal kıyı bağlamıyla yeniden incelendi. Bu taslakta iki indeks salımı vardır; gerçek confidence terfisi yoktur. Özel/işletme alanı, levha, şamandıralı yüzme alanı ve güvenli atış koşulları yerinde kontrol edilmelidir. Yayın/production teyidi beklenir.",
+    "notes": "16 Ekim başlangıcında zaten C+/HOLD olan Kefeliköy ile Şemsi Paşa yeniden incelenip iki indeks salımı yapıldı; production SHA 5f649ee0094eaca56d5f57a53dd6bcfa74c91379 doğrulandı. Aynı gün Babalı C+/HOLD sayfasında başka rotadan taşınmış gölet, kano, bölge ve içsu hukuk metinleri kaynaklı biçimde düzeltildi; indeks açılmadı. Gerçek confidence terfisi yoktur. Yeni Babalı içerik düzeltmesinin yayın/production teyidi ayrı PR ile beklenir.",
     "priorDayScreened": 2,
     "priorDayActualConfidencePromotions": 1
   },
   "stage2": {
-    "status": "two-existing-c-plus-hold-releases-pending-publication",
+    "status": "two-existing-c-plus-hold-releases-and-babali-hold-maintenance",
     "targetActualConfidencePromotions": 17,
     "eligibleReviewed": 0,
     "actualConfidencePromotions": 0,
-    "maintenanceOnly": 2,
+    "maintenanceOnly": 3,
     "promotedCount": 0,
     "promotedSlugs": [],
     "transitionCounts": {
@@ -70,7 +70,8 @@
     "actualConfidencePromotionSlugs": [],
     "maintenanceOnlySlugs": [
       "istanbul-kefelikoy-sahil-parki",
-      "istanbul-uskudar-semsipasa-cami-kiyisi"
+      "istanbul-uskudar-semsipasa-cami-kiyisi",
+      "kocaeli-babali-acik-karadeniz-kiyisi"
     ],
     "qualityUpgradedSlugs": [],
     "releasedSlugs": [
