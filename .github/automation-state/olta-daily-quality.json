@@ -1,44 +1,40 @@
 {
   "version": 9,
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "timezone": "Europe/Istanbul",
-  "branch": "fix/pragmatic-quality-release-20261014",
+  "branch": "quality/2026-10-16-two-hold-releases",
   "done": false,
   "research": {
-    "status": "one-promotion-two-releases-after-prior-80-screening",
-    "eligibleReviewed": 1,
+    "status": "two-existing-c-plus-hold-releases-after-fresh-baseline",
+    "eligibleReviewed": 0,
     "schemaAndPolicyChecked": true,
     "confidenceAuditChecked": true,
     "duplicatePolicyChecked": true,
     "indexPolicyChecked": true,
-    "report": "docs/olta-daily-quality-2026-10-15.md",
-    "notes": "14 Ekim ana dalındaki 80 aday taraması ve iki gerçek terfi korundu. 15 Ekim ana dal başlangıcında Küçükboğaz C+/HOLD yeniden incelenip terfi sayılmadan salındı; Günyurdu C/HOLD C+/index oldu. Bugün iki indeks salımı kullanıldı. Diğer belirsiz sayfalar HOLD kaldı.",
-    "priorDayScreened": 80,
-    "priorDayActualConfidencePromotions": 2
+    "report": "docs/olta-daily-quality-2026-10-16.md",
+    "notes": "16 Ekim başlangıcında zaten C+/HOLD olan Kefeliköy ile Şemsi Paşa, tarihli İBB rota/tür kaydı ve kamusal kıyı bağlamıyla yeniden incelendi. Bu taslakta iki indeks salımı vardır; gerçek confidence terfisi yoktur. Özel/işletme alanı, levha, şamandıralı yüzme alanı ve güvenli atış koşulları yerinde kontrol edilmelidir. Yayın/production teyidi beklenir.",
+    "priorDayScreened": 2,
+    "priorDayActualConfidencePromotions": 1
   },
   "stage2": {
-    "status": "one-promotion-two-releases",
+    "status": "two-existing-c-plus-hold-releases-pending-publication",
     "targetActualConfidencePromotions": 17,
-    "eligibleReviewed": 1,
-    "actualConfidencePromotions": 1,
-    "maintenanceOnly": 1,
-    "promotedCount": 1,
-    "promotedSlugs": [
-      "ulusal-bilecik-gunyurdu-baraj-golu"
-    ],
+    "eligibleReviewed": 0,
+    "actualConfidencePromotions": 0,
+    "maintenanceOnly": 2,
+    "promotedCount": 0,
+    "promotedSlugs": [],
     "transitionCounts": {
       "dToC": 0,
       "dToCPlus": 0,
       "dToBOrA": 0,
-      "cToCPlusOrHigher": 1
+      "cToCPlusOrHigher": 0
     },
-    "cPlusSlugs": [
-      "ulusal-bilecik-gunyurdu-baraj-golu"
-    ],
+    "cPlusSlugs": [],
     "cSlugs": [],
     "indexReleasedSlugs": [
-      "sakarya-kucukbogaz-golu-karasu",
-      "ulusal-bilecik-gunyurdu-baraj-golu"
+      "istanbul-kefelikoy-sahil-parki",
+      "istanbul-uskudar-semsipasa-cami-kiyisi"
     ],
     "holdSlugs": []
   },
@@ -62,7 +58,7 @@
     "searchConsoleUsed": false
   },
   "dailyPolicy": {
-    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-15.json",
+    "baselineFile": ".github/automation-state/olta-daily-baseline-2026-10-16.json",
     "actualConfidencePromotionsTarget": 17,
     "indexReleaseHardCap": 2,
     "indexReleaseOperationalCap": 2,
@@ -70,34 +66,30 @@
     "gscCap": 2,
     "priorTodayUpgradedSlugs": [],
     "priorTodayReleasedSlugs": [],
-    "eligibleReviewedSlugs": [
-      "ulusal-bilecik-gunyurdu-baraj-golu"
-    ],
-    "actualConfidencePromotionSlugs": [
-      "ulusal-bilecik-gunyurdu-baraj-golu"
-    ],
+    "eligibleReviewedSlugs": [],
+    "actualConfidencePromotionSlugs": [],
     "maintenanceOnlySlugs": [
-      "sakarya-kucukbogaz-golu-karasu"
+      "istanbul-kefelikoy-sahil-parki",
+      "istanbul-uskudar-semsipasa-cami-kiyisi"
     ],
-    "qualityUpgradedSlugs": [
-      "ulusal-bilecik-gunyurdu-baraj-golu"
-    ],
+    "qualityUpgradedSlugs": [],
     "releasedSlugs": [
-      "sakarya-kucukbogaz-golu-karasu",
-      "ulusal-bilecik-gunyurdu-baraj-golu"
+      "istanbul-kefelikoy-sahil-parki",
+      "istanbul-uskudar-semsipasa-cami-kiyisi"
     ],
     "releaseReviewedSlugs": [
-      "sakarya-kucukbogaz-golu-karasu"
+      "istanbul-kefelikoy-sahil-parki",
+      "istanbul-uskudar-semsipasa-cami-kiyisi"
     ],
     "holdSlugs": [],
     "newSlugs": [],
     "newIndexReleasedSlugs": [],
     "evidence": [
       {
-        "slug": "sakarya-kucukbogaz-golu-karasu",
+        "slug": "istanbul-kefelikoy-sahil-parki",
         "families": [
-          "Sakarya İl Kültür ve Turizm Müdürlüğü",
-          "Atatürk Üniversitesi 2019-20 saha çalışması"
+          "İBB 2017 Kefeli Köy olta ve tür rehberi",
+          "Sarıyer Belediyesi kamusal park envanteri"
         ],
         "coverage": [
           "identity",
@@ -106,16 +98,17 @@
           "species"
         ],
         "sources": [
-          "https://sakarya.ktb.gov.tr/TR-340488/kucukbogaz-golu.html",
-          "https://earsiv.atauni.edu.tr/xmlui/bitstream/handle/123456789/1467/Erdin%C3%A7%20AYDIN_0225982.pdf?isAllowed=y&sequence=1",
-          "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_"
+          "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+          "https://sariyer.bel.tr/ckuploads/ckfiles/SARIYER%20YASAM%20REHBERI-09.05.2024.pdf?time=1715233947652",
+          "https://www.lexpera.com.tr/resmi-gazete/metin/6-2-numarali-amator-amacli-su-urunleri-avciliginin-duzenlenmesi-hakkinda-teblig-no-2024-21-32629",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ]
       },
       {
-        "slug": "ulusal-bilecik-gunyurdu-baraj-golu",
+        "slug": "istanbul-uskudar-semsipasa-cami-kiyisi",
         "families": [
-          "Pazaryeri Belediyesi",
-          "DSİ 2013 Günyurdu balıklandırması"
+          "İBB 2017 Şemsi Paşa olta ve tür rehberi",
+          "Üsküdar Belediyesi kıyı konumu"
         ],
         "coverage": [
           "identity",
@@ -124,19 +117,20 @@
           "species"
         ],
         "sources": [
-          "https://www.pazaryeri.bel.tr/sayfa/turizm/",
-          "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2013-yili-hib-kitabi.pdf",
-          "https://bilecik.tarimorman.gov.tr/Duyuru/681/Ilimiz-Ic-Sularinda-Av-Yasagi-Sona-Erdi",
-          "https://bilecik.tarimorman.gov.tr/Lists/Duyuru/Attachments/685/Ek-1.pdf"
+          "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+          "https://www.uskudar.bel.tr/tr/main/pages/semsi-pasa-camii/40",
+          "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulun-kiyilari-yenileniyor",
+          "https://www.lexpera.com.tr/resmi-gazete/metin/6-2-numarali-amator-amacli-su-urunleri-avciliginin-duzenlenmesi-hakkinda-teblig-no-2024-21-32629",
+          "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
         ]
       }
     ]
   },
   "progress": {
     "targetNewlyIndexable": 20,
-    "newlyIndexableSinceThisRelease": 2,
-    "remaining": 18,
-    "priorDayActualConfidencePromotions": 2,
-    "currentDayActualConfidencePromotions": 1
+    "newlyIndexableSinceThisRelease": 4,
+    "remaining": 16,
+    "priorDayActualConfidencePromotions": 1,
+    "currentDayActualConfidencePromotions": 0
   }
 }

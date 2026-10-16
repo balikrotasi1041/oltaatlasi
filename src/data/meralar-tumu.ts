@@ -5,6 +5,7 @@ import { applyDailyQuality20261012 } from "./meralar-daily-quality-2026-10-12";
 import { applyPriority20Research20261014 } from "./meralar-priority20-2026-10-14";
 import { applyNext60Research20261014 } from "./meralar-next60-2026-10-14";
 import { applyDailyQuality20261015 } from "./meralar-daily-quality-2026-10-15";
+import { applyDailyQuality20261016 } from "./meralar-daily-quality-2026-10-16";
 import { applyDailyQuality20261011 } from "./meralar-daily-quality-2026-10-11";
 import { sixManualRoutes20261011, sixManualStats20261011 } from "./meralar-manual-six-cplus-2026-10-11";
 import { oneTimeIstanbulKocaeliSakarya20261013, oneTimeIstanbulKocaeliSakaryaStats20261013 } from "./meralar-one-time-istanbul-kocaeli-sakarya-20261013";
@@ -241,6 +242,7 @@ applyPriority20Research20261014(routeMap);
 // New distinct second group: preserve original quality and index state unless C+ is evidenced.
 applyNext60Research20261014(routeMap);
 applyDailyQuality20261015(routeMap);
+applyDailyQuality20261016(routeMap);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
