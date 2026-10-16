@@ -1,5 +1,5 @@
 import {readFileSync} from 'node:fs';
-import {execFileSync,spawnSync} from 'node:child_process';
+import {execFileSync} from 'node:child_process';
 import {meralar} from '../src/data/meralar-tumu.ts';
 import {validateDailyQuality} from './daily-quality-policy.mjs';
 const state=JSON.parse(readFileSync('.github/automation-state/olta-daily-quality.json','utf8'));
@@ -13,12 +13,11 @@ if(process.env.GITHUB_EVENT_NAME==='pull_request'){
     const git=process.env.OLTA_GIT_BIN||'git';
     execFileSync(git,['fetch','--no-tags','--depth=1','origin','main'],{stdio:'pipe'});
     const object=`FETCH_HEAD:${baselineFile}`;
-    const found=spawnSync(git,['cat-file','-e',object],{encoding:'utf8'});
-    if(found.error)throw found.error;
-    if(found.status===0){
+    const found=execFileSync(git,['ls-tree','--name-only','FETCH_HEAD','--',baselineFile],{encoding:'utf8'}).trim()===baselineFile;
+    if(found){
       const committed=execFileSync(git,['show',object],{encoding:'utf8'});
       if(committed!==baselineText)errors.push('Günlük baseline main üzerinde zaten var; aynı gün değiştirilemez.');
-    }else if(found.status!==1)throw new Error(found.stderr||`git cat-file çıkışı ${found.status}`);
+    }
   }catch(error){errors.push(`Main baseline bütünlük denetimi başarısız: ${error.message}`);}
 }
 for(const e of errors)console.error(e);
