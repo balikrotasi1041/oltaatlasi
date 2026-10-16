@@ -6,11 +6,14 @@ const state=r=>[r.slug,r.confidence??null,r.qualityGrade??null,r.indexing??null]
 const same=(a,b)=>JSON.stringify([...a].sort())===JSON.stringify([...b].sort());
 const indexable=r=>!!r&&r.confidence!=='D'&&r.indexing==='index';
 const grade=r=>r?.qualityGrade||r?.confidence;
+const distanceKm=r=>Math.hypot((r.lat-41.0082)*111,(r.lng-28.9784)*84);
 
 export function validateGrowthProgram(ledger,baseline,routes){
   const errors=[];
   const fail=(condition,message)=>{if(condition)errors.push(message);};
   fail(ledger.program!=='istanbul-centered-growth-v1','Büyüme programı kimliği geçersiz.');
+  fail(!['İstanbul','Türkiye'].includes(ledger.scopePhase),'Coğrafi tarama aşaması gerekli.');
+  fail(ledger.scopePhase==='Türkiye'&&!ledger.istanbulExhaustedEvidence,'Türkiye aşaması için İstanbul taramasının neden tükendiği belgelenmeli.');
   fail(ledger.date!==baseline.date,'Büyüme baseline günü uyuşmuyor.');
   fail(ledger.baselineMainSha!==baseline.mainSha,'Büyüme baseline main SHA uyuşmuyor.');
   fail(baseline.routeCount!==Object.keys(baseline.routes).length,'Büyüme baseline rota sayısı uyuşmuyor.');
@@ -28,6 +31,7 @@ export function validateGrowthProgram(ledger,baseline,routes){
   if(!Array.isArray(ledger.newIndexableSlugs)||!Array.isArray(ledger.newHoldSlugs)||!Array.isArray(ledger.existingReleasedSlugs))return errors;
   fail(new Set(ledger.newIndexableSlugs).size!==ledger.newIndexableSlugs.length,'Yeni slug çift sayıldı.');
   fail(new Set(ledger.newHoldSlugs).size!==ledger.newHoldSlugs.length,'Yeni HOLD slug çift sayıldı.');
+  fail(ledger.newHoldSlugs.length>0,'Yeni D/C/HOLD sayfası bu büyüme programında oluşturulamaz.');
   fail(ledger.newHoldSlugs.some(slug=>ledger.newIndexableSlugs.includes(slug)),'Yeni slug hem HOLD hem index sayılamaz.');
   fail(new Set(ledger.existingReleasedSlugs).size!==ledger.existingReleasedSlugs.length,'Eski salım çift sayıldı.');
   const shortfall=ledger.shortfall;
@@ -46,13 +50,16 @@ export function validateGrowthProgram(ledger,baseline,routes){
   for(const slug of ledger.newIndexableSlugs){
     const r=current.get(slug);
     if(!r){errors.push(`${slug}: yeni rota yok.`);continue;}
-    fail(r.province!=='İstanbul',`${slug}: yeni rota İstanbul'da olmalı.`);
+    fail(ledger.scopePhase==='İstanbul'&&r.province!=='İstanbul',`${slug}: İstanbul aşamasında yeni rota İstanbul'da olmalı.`);
     fail(!['C+','B','A'].includes(grade(r))||!indexable(r),`${slug}: yeni rota C+ veya üstü index olmalı.`);
     fail(r.qualityAssessment?.reviewedAt!==ledger.date,`${slug}: aynı gün çekirdek kanıt incelemesi gerekli.`);
     errors.push(...validateExpandedQuality(r,{requireAssessment:true}));
     const decision=ledger.decisions?.find(d=>d.slug===slug&&d.kind==='new');
     fail(!decision||!decision.identityAndSpecies||!decision.access||!decision.law,`${slug}: editoryal karar/kapsam eksik.`);
     fail(!decision?.sources?.every(url=>r.sources?.some(source=>source.url===url)),`${slug}: karar kaynağı rota sayfasında yok.`);
+    fail(!Number.isFinite(decision?.distanceKmFromIstanbulCenter),`${slug}: İstanbul merkezinden mesafe kaydı eksik.`);
+    fail(Number.isFinite(decision?.distanceKmFromIstanbulCenter)&&Math.abs(decision.distanceKmFromIstanbulCenter-distanceKm(r))>1,`${slug}: İstanbul mesafesi koordinatla uyuşmuyor.`);
+    fail(decision?.baselineGrade!==null||decision?.previousIndexing!==null||decision?.finalGrade!==grade(r)||decision?.publishedIndexing!==r.indexing,`${slug}: yeni rota önce/sonra durum kaydı uyuşmuyor.`);
   }
   for(const slug of ledger.newHoldSlugs){
     const r=current.get(slug);
@@ -72,7 +79,15 @@ export function validateGrowthProgram(ledger,baseline,routes){
     const decision=ledger.decisions?.find(d=>d.slug===slug&&d.kind==='existing-noindex-release');
     fail(!decision||!decision.identityAndSpecies||!decision.access||!decision.law,`${slug}: editoryal karar/kapsam eksik.`);
     fail(!decision?.sources?.every(url=>r.sources?.some(source=>source.url===url)),`${slug}: karar kaynağı rota sayfasında yok.`);
+    fail(!Number.isFinite(decision?.distanceKmFromIstanbulCenter),`${slug}: İstanbul merkezinden mesafe kaydı eksik.`);
+    fail(Number.isFinite(decision?.distanceKmFromIstanbulCenter)&&Math.abs(decision.distanceKmFromIstanbulCenter-distanceKm(r))>1,`${slug}: İstanbul mesafesi koordinatla uyuşmuyor.`);
+    fail(decision?.baselineGrade!==grade(before)||decision?.previousIndexing!==before.indexing||decision?.finalGrade!==grade(r)||decision?.publishedIndexing!==r.indexing,`${slug}: eski rota önce/sonra durum kaydı uyuşmuyor.`);
   }
   fail(ledger.publication?.verified===true&&!ledger.publication.liveSha,'Canlı teslim SHA olmadan doğrulanmış sayılamaz.');
+  if(ledger.publication?.verified===true){
+    fail(ledger.publication.liveSha!==ledger.publication.mergedMainSha,'Teslimde main ve canlı tam SHA eşleşmeli.');
+    fail(ledger.publication.newRoutesPublished!==actualNewIndexable.length,'Canlı yeni rota sayacı gerçek listeyle eşleşmiyor.');
+    fail(ledger.publication.existingRoutesReleased!==actualReleased.length,'Canlı eski rota sayacı gerçek listeyle eşleşmiyor.');
+  }else fail((ledger.publication?.newRoutesPublished||0)>0||(ledger.publication?.existingRoutesReleased||0)>0,'Canlı doğrulama olmadan teslim sayacı artırılamaz.');
   return errors;
 }

@@ -24,7 +24,9 @@
     ],
     "actualConfidencePromotionRule": "Yalnız mevcut baseline D→C/C+/B/A veya C→C+/B/A; yeni sayfa ve C+/HOLD→index terfi değildir.",
     "qualityMustNotBeLoweredForQuota": true,
-    "shortfallRule": "Kanıt eşiği karşılanmazsa eksik hedefi ve HOLD nedenini dürüstçe kaydet; sahte sayfa veya uydurma tür üretme."
+    "shortfallRule": "Kanıt eşiği karşılanmazsa eksik hedefi ve HOLD nedenini dürüstçe kaydet; sahte sayfa veya uydurma tür üretme.",
+    "newRouteHoldAllowed": false,
+    "expandNationwideWhenIstanbulExhausted": true
   },
   "indexRelease": {
     "routeField": "indexing",
@@ -37,7 +39,8 @@
     "requireBaselineNoindexForExistingRelease": true,
     "allowExistingCRelease": true,
     "denyDRelease": true,
-    "rule": "Yeni İstanbul C+/B/A sayfası ilk gün kaynaklı olarak index olabilir. Baseline C/C+/B/A mevcut HOLD sayfa aynı gün çekirdek kanıt yeniden incelenirse salınabilir. Genel kamusal erişim yeterlidir; açık yasak, yanlış su/tür ve belirsiz erişim iddiası HOLD kalır. Google fiili indekslenmesi ayrı ölçülür."
+    "rule": "Yeni İstanbul C+/B/A sayfası ilk gün kaynaklı olarak index olabilir. Baseline C/C+/B/A mevcut HOLD sayfa aynı gün çekirdek kanıt yeniden incelenirse salınabilir. Genel kamusal erişim yeterlidir; açık yasak, yanlış su/tür ve belirsiz erişim iddiası HOLD kalır. Google fiili indekslenmesi ayrı ölçülür.",
+    "allowNewHoldPages": false
   },
   "expandedEvidenceStandard": {
     "document": "docs/expanded-quality-standard.md",
@@ -150,6 +153,8 @@
     "dailyMinimumExistingReleased": 1,
     "baselinePattern": ".github/automation-state/olta-growth-baseline-YYYY-MM-DD.json",
     "ledgerPattern": ".github/automation-state/olta-growth-daily-YYYY-MM-DD.json",
-    "historicalPolicy": ".github/automation-state/archive/olta-quality-policy-through-2026-10-16.json"
+    "historicalPolicy": ".github/automation-state/archive/olta-quality-policy-through-2026-10-16.json",
+    "initialPhase": "İstanbul",
+    "expandNationwideWhenIstanbulExhausted": true
   }
 }
