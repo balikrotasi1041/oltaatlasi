@@ -8,6 +8,7 @@
     "istanbul-beyoglu-findikli-parki-acik-kiyi",
     "istanbul-uskudar-pasalimani-parki-acik-kiyi"
   ],
+  "newHoldSlugs": [],
   "existingReleasedSlugs": ["kocaeli-babali-acik-karadeniz-kiyisi"],
   "eligibleReviewed": 0,
   "actualConfidencePromotions": 0,

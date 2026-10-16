@@ -1,10 +1,9 @@
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
 import {meralar} from '../src/data/meralar-tumu.ts';
 import {validateGrowthProgram} from './growth-program-policy.mjs';
+import {loadLatestGrowthLedger} from './load-growth-ledger.mjs';
 
-const ledger=JSON.parse(readFileSync('.github/automation-state/olta-growth-daily-2026-10-16.json','utf8'));
-const baseline=JSON.parse(readFileSync(ledger.baselineFile,'utf8'));
+const {ledger,baseline}=loadLatestGrowthLedger();
 assert.deepEqual(validateGrowthProgram(ledger,baseline,meralar),[]);
 const check=(mutate,needle)=>{
   const l=structuredClone(ledger),b=structuredClone(baseline),r=structuredClone(meralar);
