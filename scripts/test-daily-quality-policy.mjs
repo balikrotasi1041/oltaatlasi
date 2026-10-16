@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {meralar} from '../src/data/meralar-tumu.ts';
+import {legacyQualitySnapshotMeralar as meralar} from '../src/data/meralar-tumu.ts';
 import {routeStatesSha256,validateDailyQuality} from './daily-quality-policy.mjs';
 const liveState=JSON.parse(readFileSync('.github/automation-state/olta-daily-quality.json','utf8'));
 const liveBaseline=JSON.parse(readFileSync(liveState.dailyPolicy.baselineFile,'utf8'));

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Paşalimanı Parkı Açık Kıyısı</title>
+  <desc id="desc">Boğaz kıyısını simgeleyen çizim; gerçek kıyı fotoğrafı veya izinli olta noktası haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#102b42"/>
+  <path d="M0 295 Q260 250 520 300 T1200 310 V630 H0Z" fill="#19748c"/>
+  <path d="M0 350 Q260 330 520 355 T1200 370" fill="none" stroke="#a0dee3" stroke-width="5" opacity=".75"/>
+  <path d="M0 525 H1200" stroke="#b6ad8d" stroke-width="95"/>
+  <circle cx="1040" cy="115" r="49" fill="#f0d895"/>
+  <text x="70" y="95" fill="#d2f2ec" font-family="sans-serif" font-size="27">İSTANBUL · ÜSKÜDAR</text>
+  <text x="70" y="175" fill="white" font-family="sans-serif" font-size="56" font-weight="700">Paşalimanı Parkı</text>
+  <text x="70" y="225" fill="#d2f2ec" font-family="sans-serif" font-size="31">Açık Kıyısı · Boğaz</text>
+  <text x="70" y="595" fill="#102b42" font-family="sans-serif" font-size="25">Genel park konumu · iskele ve tekne alanlarından uzak durun</text>
+</svg>

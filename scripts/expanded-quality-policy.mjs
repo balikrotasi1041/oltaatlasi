@@ -1,5 +1,5 @@
 // Evidence truth is editorial; this gate prevents incomplete reviews from authorizing release.
-export function validateExpandedQuality(route, { requireAssessment = false } = {}) {
+export function validateExpandedQuality(route, { requireAssessment = false, allowCIndex = false } = {}) {
   const errors=[];
   const q=route.qualityAssessment, grade=route.qualityGrade;
   if(!q){if(requireAssessment)errors.push(`${route.slug}: expanded-v2 değerlendirmesi gerekli.`);return errors;}
@@ -25,7 +25,14 @@ export function validateExpandedQuality(route, { requireAssessment = false } = {
     fail(q.localContentVerified!==true,'özgün yerel içerik gerekli.');
   }
   if(grade==='A')fail(q.fieldOrEquivalentVerified!==true,'saha veya eşdeğer olağanüstü kanıt gerekli.');
-  fail(!ready&&route.indexing!=='hold','C/D kaydı C+ eşiği olmadan hold kalmalı.');
+  if(grade==='C'&&route.indexing==='index'&&allowCIndex){
+    for(const key of ['identityVerified','speciesRouteSpecific','currentLawResolved','safePublicAccessVerified'])fail(q[key]!==true,`C salımı: ${key} eksik.`);
+    fail(!Array.isArray(q.unresolvedRisks)||q.unresolvedRisks.length>0,'C salımı: açık hukuk/erişim riski var.');
+    fail(!route.fishEvidence?.length||!route.accessEvidence?.length,'C salımı: tür/erişim kanıtı gerekli.');
+    const urls=new Set((route.sources||[]).map(s=>s.url).filter(Boolean));
+    fail((route.fishEvidence||[]).some(e=>!e.sourceUrl||!urls.has(e.sourceUrl)),'C salımı: tür kanıtı kaynağa bağlı olmalı.');
+    fail(!(route.accessEvidence||[]).some(e=>e.sourceUrl&&urls.has(e.sourceUrl)),'C salımı: erişim kanıtı kaynağa bağlı olmalı.');
+  }else fail(!ready&&route.indexing!=='hold','C/D kaydı C+ eşiği olmadan hold kalmalı.');
   const names=new Set((route.fishEvidence||[]).map(e=>e.name));
   fail((route.fish||[]).some(f=>!names.has(f)),'kanıtsız tür listede kalamaz.');
   return errors;

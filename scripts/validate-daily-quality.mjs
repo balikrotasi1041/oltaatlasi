@@ -1,12 +1,12 @@
 import {readFileSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
-import {meralar} from '../src/data/meralar-tumu.ts';
+import {legacyQualitySnapshotMeralar} from '../src/data/meralar-tumu.ts';
 import {validateDailyQuality} from './daily-quality-policy.mjs';
 const state=JSON.parse(readFileSync('.github/automation-state/olta-daily-quality.json','utf8'));
 const baselineFile=state.dailyPolicy.baselineFile;
 const baselineText=readFileSync(baselineFile,'utf8');
 const baseline=JSON.parse(baselineText);
-const errors=validateDailyQuality(state,baseline,meralar);
+const errors=validateDailyQuality(state,baseline,legacyQualitySnapshotMeralar);
 if(process.env.GITHUB_EVENT_NAME==='pull_request'){
   if(!/^\.github\/automation-state\/olta-daily-baseline-\d{4}-\d{2}-\d{2}\.json$/.test(baselineFile))errors.push('Günlük baseline dosya yolu geçersiz.');
   else try{

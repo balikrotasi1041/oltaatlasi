@@ -1,96 +1,43 @@
 {
-  "version": 6,
-  "updatedAt": "2026-10-15",
-  "basis": "Expanded evidence standard and 15 October HOLD release-flow correction; source layers are optional research paths, core claims remain evidence based",
+  "version": 7,
+  "updatedAt": "2026-10-16",
+  "basis": "İstanbul merkezli günlük büyüme programı; eski 17 terfi, yeni HOLD-first ve günlük iki salım tavanı 16 Ekim 2026 sonrasında yürürlükte değildir. Tarihsel politika archive dosyasında korunur.",
   "qualityWork": {
-    "dailyActualConfidencePromotionsTarget": 17,
-    "eligibleCandidateBaselineGrades": [
-      "D",
-      "C"
-    ],
-    "excludeBaselineGrades": [
+    "dailyNewIstanbulIndexableMinimum": 2,
+    "dailyExistingNoindexReleaseMinimum": 1,
+    "geographicOrder": "İstanbul merkezinden erişim sırasına göre kanıt araştırması; atlanan yakın adayın sebebini kaydet.",
+    "eligibleExistingBaselineGrades": [
+      "C",
       "C+",
       "B",
       "A"
     ],
+    "excludeExistingBaselineGrades": [
+      "D"
+    ],
     "requiredSeparateCounters": [
+      "newPagesCreated",
+      "noindexToIndex",
       "eligibleReviewed",
       "actualConfidencePromotions",
       "maintenanceOnly"
     ],
-    "promotionRule": "Yalnız D→C/C+/B/A veya C→C+/B/A gerçek kalite yükseltmesidir; C→C ve C+→C+ yükseltme değildir.",
-    "eligibilityGateRequired": true,
-    "classifyEveryReviewedRoute": [
-      "A/B",
-      "C+",
-      "C",
-      "D/HOLD",
-      "301-consolidation"
-    ],
-    "separateReviewedUnchangedFromMaterialUpgrade": true,
-    "dailyNewRoutesTarget": 2,
+    "actualConfidencePromotionRule": "Yalnız mevcut baseline D→C/C+/B/A veya C→C+/B/A; yeni sayfa ve C+/HOLD→index terfi değildir.",
     "qualityMustNotBeLoweredForQuota": true,
-    "regionalNewRoutes": {
-      "separateFromQualityPromotions": true,
-      "minimumForIndex": "C+",
-      "holdAllowedAt": [
-        "D",
-        "C",
-        "C+",
-        "B",
-        "A"
-      ],
-      "dailyTarget": 2,
-      "distribution": {
-        "Ege": 1,
-        "Marmara": 1
-      },
-      "publishFewerIfThresholdNotMet": true,
-      "rule": "Yeni rotalar araştırma düzeyinde D/C/HOLD olarak da yayımlanabilir. İlk yayında HOLD/noindex kalır; sonraki günün gerçek main baselineında bulunan rota C+ çekirdek eşiği ve günlük toplam iki salım sınırıyla indekse alınabilir. Hedef uğruna sınıf yükseltilmez."
-    }
+    "shortfallRule": "Kanıt eşiği karşılanmazsa eksik hedefi ve HOLD nedenini dürüstçe kaydet; sahte sayfa veya uydurma tür üretme."
   },
   "indexRelease": {
-    "decoupledFromConfidence": true,
     "routeField": "indexing",
     "holdValue": "hold",
     "releaseValue": "index",
-    "snapshot": {
-      "discoveredCurrentlyNotIndexed": 219,
-      "crawledCurrentlyNotIndexed": 24,
-      "processableQueue": 243
-    },
-    "bands": [
-      {
-        "max": 75,
-        "mode": "normal"
-      },
-      {
-        "min": 76,
-        "max": 150,
-        "mode": "cautious"
-      },
-      {
-        "min": 151,
-        "max": 250,
-        "mode": "throttle",
-        "maxDailyCPlusIndexReleases": 5
-      },
-      {
-        "min": 251,
-        "mode": "strong-throttle",
-        "maxDailyCPlusIndexReleases": 3
-      }
-    ],
-    "currentMode": "throttle",
-    "hardMaxDailyIndexReleases": 2,
-    "currentMaxDailyCPlusIndexReleases": 2,
-    "rule": "Kalite yükseltmesi ile index açılışı ayrı sayaçtır. Günlük indeks salımı sabit en fazla 2 sayfadır; daha sıkı teknik veya hukuki sınır uygulanır. Eşiği geçen fakat salınmayan sayfalar indexing=hold ile noindex,follow bekler.",
-    "requireExplicitIndex": true,
-    "requireSameRunConfidencePromotion": false,
-    "requireBaselineNoindex": true,
-    "allowNewRouteRelease": false,
-    "newRouteHoldFirst": true,
-    "allowManualCPlusExceptionInDailyRun": false
+    "dailyNewIndexableMinimum": 2,
+    "dailyExistingNoindexReleaseMinimum": 1,
+    "hardDailyMaximum": null,
+    "firstDayNewIndexAllowed": true,
+    "requireBaselineNoindexForExistingRelease": true,
+    "allowExistingCRelease": true,
+    "denyDRelease": true,
+    "rule": "Yeni İstanbul C+/B/A sayfası ilk gün kaynaklı olarak index olabilir. Baseline C/C+/B/A mevcut HOLD sayfa aynı gün çekirdek kanıt yeniden incelenirse salınabilir. Genel kamusal erişim yeterlidir; açık yasak, yanlış su/tür ve belirsiz erişim iddiası HOLD kalır. Google fiili indekslenmesi ayrı ölçülür."
   },
   "expandedEvidenceStandard": {
     "document": "docs/expanded-quality-standard.md",
@@ -128,10 +75,11 @@
       "social-signal"
     ],
     "routeSpecificityRequired": true,
-    "sourceUseRule": "Yeni kaynak aileleri ilgili iddiayı doğrulamak için seçeneklerdir; her rotada hepsini bulmak şart değildir. C+ bir güçlü rota-özel kaynak ailesiyle mümkün olabilir. B/A iki bağımsız güçlü aile ister.",
+    "sourceUseRule": "C+ için bir güçlü rota-özel kaynak ailesi yeterlidir; B/A iki bağımsız güçlü aile ister. C mevcut kaydın salımında kaynaklı rota/tür, güncel hukuk ve genel kamusal erişim doğrulanır; güçlü aile sayısı tek başına engel değildir. İlgisiz tüm kaynak aileleri istenmez.",
     "stockingIsProbabilityNotGuarantee": true,
     "publicOwnershipIsNotFreeAccess": true,
-    "commercialCatchIsNotAmateurAccess": true
+    "commercialCatchIsNotAmateurAccess": true,
+    "minimumIndependentFamiliesForC": 0
   },
   "legacyNoindex": {
     "rule": "Arama talebi veya geçmiş performansı olan noindex URL önce replacement denetiminden geçer.",
@@ -194,5 +142,14 @@
       "oneTime": true,
       "reason": "Kullanıcının 29 Eylül 2026 tarihli açık manuel talebi. Kalıcı günlük D/noindex→C+/index max-5 salım politikası değişmez; bu 7 kayıt yeni rota ve bu manuel batch için tek seferlik index istisnasıdır."
     }
-  ]
+  ],
+  "growthProgram": {
+    "startedAt": "2026-10-16",
+    "timezone": "Europe/Istanbul",
+    "dailyMinimumNewIstanbul": 2,
+    "dailyMinimumExistingReleased": 1,
+    "baselinePattern": ".github/automation-state/olta-growth-baseline-YYYY-MM-DD.json",
+    "ledgerPattern": ".github/automation-state/olta-growth-daily-YYYY-MM-DD.json",
+    "historicalPolicy": ".github/automation-state/archive/olta-quality-policy-through-2026-10-16.json"
+  }
 }
