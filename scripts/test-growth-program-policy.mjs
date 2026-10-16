@@ -21,6 +21,10 @@ check((l,b,r)=>{r.find(route=>route.slug===l.newIndexableSlugs[1]).fishEvidence=
 check((l,b,r)=>{r.find(route=>route.slug===l.newIndexableSlugs[0]).indexing='hold'},'index olmalı');
 check((l,b,r)=>{r.find(route=>route.slug===l.existingReleasedSlugs[0]).qualityAssessment.reviewedAt='2026-10-15'},'salım günü');
 check((l,b,r)=>{r.find(route=>route.slug===l.existingReleasedSlugs[0]).qualityGrade='B'},'confidence terfisi');
+check((l)=>{l.newHoldSlugs=['unverified-new']},'Yeni D/C/HOLD');
+check((l)=>{l.publication.newRoutesPublished=3},'Canlı yeni rota sayacı');
+check((l)=>{l.publication.liveSha='wrong'},'tam SHA');
+check((l)=>{l.decisions[0].distanceKmFromIstanbulCenter=999},'mesafesi koordinatla');
 const short=structuredClone(ledger);short.newIndexableSlugs=[];short.existingReleasedSlugs=[];short.shortfall={newReason:'Kaynaklı yeni aday bulunmadı.',existingReason:'Erişim teyidi bekleniyor.'};
 assert(validateGrowthProgram(short,baseline,meralar).some(e=>e.includes('gerçek farkla')));
 console.log('Büyüme politikası: baseline, gerçek fark, tür/hukuk/erişim, sayım ve sahte salım regresyonları geçti.');

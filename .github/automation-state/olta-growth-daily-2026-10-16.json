@@ -9,14 +9,26 @@
     "istanbul-uskudar-pasalimani-parki-acik-kiyi"
   ],
   "newHoldSlugs": [],
-  "existingReleasedSlugs": ["kocaeli-babali-acik-karadeniz-kiyisi"],
+  "existingReleasedSlugs": [
+    "kocaeli-babali-acik-karadeniz-kiyisi"
+  ],
   "eligibleReviewed": 0,
   "actualConfidencePromotions": 0,
   "maintenanceOnly": 1,
   "newPagesCreated": 2,
   "noindexToIndex": 1,
   "technicalIndexableGain": 3,
-  "publication": {"verified": false, "mergedMainSha": null, "liveSha": null},
+  "publication": {
+    "verified": true,
+    "verifiedAt": "2026-10-16T19:30:00Z",
+    "pullRequest": "https://github.com/balikrotasi1041/oltaatlasi/pull/161",
+    "mergedMainSha": "552997c2a1f2c9304d8a68571fce7c86af29e3cf",
+    "liveSha": "552997c2a1f2c9304d8a68571fce7c86af29e3cf",
+    "newRoutesPublished": 2,
+    "existingRoutesReleased": 1,
+    "productionStatus": "success",
+    "liveRoutesChecked": 3
+  },
   "decisions": [
     {
       "slug": "istanbul-beyoglu-findikli-parki-acik-kiyi",
@@ -32,7 +44,12 @@
         "https://istanbulseninhaber.ibb.istanbul/haber-detay/kabatas-transfer-merkezi-aciliyor",
         "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "distanceKmFromIstanbulCenter": 2.8,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
     },
     {
       "slug": "istanbul-uskudar-pasalimani-parki-acik-kiyi",
@@ -47,7 +64,12 @@
         "https://depremzemin.ibb.istanbul/uploads/prefix-uskudar-tsunami-666af3ab7ecb7.pdf",
         "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "distanceKmFromIstanbulCenter": 4.6,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
     },
     {
       "slug": "kocaeli-babali-acik-karadeniz-kiyisi",
@@ -64,12 +86,28 @@
         "https://www.kocaeli.gov.tr/suda-bogulma-olaylarini-onleme-huzur-ve-sukunu-bozacak-sekilde-gurultuye-neden-olmak-karavan-park-ve-alkol-kullanilmasi-ile-ilgili-yasaklama-karari",
         "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "distanceKmFromIstanbulCenter": 115.1,
+      "baselineGrade": "C+",
+      "finalGrade": "C+",
+      "previousIndexing": "hold",
+      "publishedIndexing": "index"
     }
   ],
   "deferredExisting": [
-    {"slug": "istanbul-asiyan-onu-balik-tutma-iskeleleri", "reason": "İskele işletme ve güncel olta izin sınırı belirsiz."},
-    {"slug": "kocaeli-esme-sapanca-golu-kamusal-kiyi", "reason": "Su alma yapısı 300 m koruma sınırı ve pin çakışması çözülmedi."},
-    {"slug": "sakarya-buyuk-akgol-golkent", "reason": "Amatör erişim ve kiralama kapsamı netleşmedi."}
-  ]
+    {
+      "slug": "istanbul-asiyan-onu-balik-tutma-iskeleleri",
+      "reason": "İskele işletme ve güncel olta izin sınırı belirsiz."
+    },
+    {
+      "slug": "kocaeli-esme-sapanca-golu-kamusal-kiyi",
+      "reason": "Su alma yapısı 300 m koruma sınırı ve pin çakışması çözülmedi."
+    },
+    {
+      "slug": "sakarya-buyuk-akgol-golkent",
+      "reason": "Amatör erişim ve kiralama kapsamı netleşmedi."
+    }
+  ],
+  "scopePhase": "İstanbul",
+  "istanbulExhaustedEvidence": null
 }
