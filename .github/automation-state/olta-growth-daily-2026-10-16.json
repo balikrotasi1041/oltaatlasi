@@ -1,0 +1,75 @@
+{
+  "program": "istanbul-centered-growth-v1",
+  "date": "2026-10-16",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-16.json",
+  "baselineMainSha": "1dd8ee3176c2e4b4c1a60b05520fdf9439c1458a",
+  "newIndexableSlugs": [
+    "istanbul-beyoglu-findikli-parki-acik-kiyi",
+    "istanbul-uskudar-pasalimani-parki-acik-kiyi"
+  ],
+  "newHoldSlugs": [],
+  "existingReleasedSlugs": ["kocaeli-babali-acik-karadeniz-kiyisi"],
+  "eligibleReviewed": 0,
+  "actualConfidencePromotions": 0,
+  "maintenanceOnly": 1,
+  "newPagesCreated": 2,
+  "noindexToIndex": 1,
+  "technicalIndexableGain": 3,
+  "publication": {"verified": false, "mergedMainSha": null, "liveSha": null},
+  "decisions": [
+    {
+      "slug": "istanbul-beyoglu-findikli-parki-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "İstavrit",
+      "identityAndSpecies": "İBB olta rehberi Fındıklı Parkı'nı ve istavriti yer adıyla listeler.",
+      "access": "İBB 2025 park düzenlemesi ve transfer merkezi açılışı kamusal park/yaya kıyısını destekler; iskele/işletme/şantiye alanı hariç.",
+      "law": "6/2 ana tebliğ ve 2026/26 değişiklik; yüzme alanı, trafik, yaya ve yerel levha sınırları belirtilir.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/kabatas-findikli-parki-cevre-duzenlemesi",
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/kabatas-transfer-merkezi-aciliyor",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-uskudar-pasalimani-parki-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "İstavrit",
+      "identityAndSpecies": "İBB olta rehberi Paşalimanı Parkı'nı ayrı olta yeri ve istavriti tür olarak listeler.",
+      "access": "İBB park envanteri ve kamusal park kıyısı; Kıyı Emniyeti iskelesi/tekne alanı hariç. Pin park merkezidir.",
+      "law": "6/2 ana tebliğ ve 2026/26 değişiklik; yüzme alanı, trafik, yaya ve yerel levha sınırları belirtilir.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://depremzemin.ibb.istanbul/uploads/prefix-uskudar-tsunami-666af3ab7ecb7.pdf",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "kocaeli-babali-acik-karadeniz-kiyisi",
+      "kind": "existing-noindex-release",
+      "grade": "C+",
+      "fish": "Lüfer",
+      "identityAndSpecies": "Kocaeli Büyükşehir rota ve tür kaydı; Kandıra Belediyesi kıyı kimliği.",
+      "access": "Kamuya açık kuru kumsal genel bağlamı; sit/mağara, yüksek kaya, işaretli yüzme ve su sporu kesimleri hariç.",
+      "law": "6/2 ana tebliğ ve 2026/26 değişiklik; Valilik 2025/1 ve 3 Temmuz 2026 kıyı kararları.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html",
+        "https://www.kandira.bel.tr/icerik/dogal-guzellikler",
+        "https://www.kocaeli.gov.tr/suda-bogulma-olaylari-ile-ilgili-genel-emir-2025-1",
+        "https://www.kocaeli.gov.tr/suda-bogulma-olaylarini-onleme-huzur-ve-sukunu-bozacak-sekilde-gurultuye-neden-olmak-karavan-park-ve-alkol-kullanilmasi-ile-ilgili-yasaklama-karari",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "deferredExisting": [
+    {"slug": "istanbul-asiyan-onu-balik-tutma-iskeleleri", "reason": "İskele işletme ve güncel olta izin sınırı belirsiz."},
+    {"slug": "kocaeli-esme-sapanca-golu-kamusal-kiyi", "reason": "Su alma yapısı 300 m koruma sınırı ve pin çakışması çözülmedi."},
+    {"slug": "sakarya-buyuk-akgol-golkent", "reason": "Amatör erişim ve kiralama kapsamı netleşmedi."}
+  ]
+}

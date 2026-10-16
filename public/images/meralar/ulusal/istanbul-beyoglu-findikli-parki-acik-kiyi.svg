@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Fındıklı Parkı Açık Kıyısı</title>
+  <desc id="desc">İstanbul Boğazı kıyısını simgeleyen çizim; gerçek kıyı fotoğrafı veya izinli olta noktası haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#09263a"/>
+  <path d="M0 290 Q220 260 450 300 T900 290 T1200 305 V630 H0Z" fill="#176b83"/>
+  <path d="M0 330 Q220 310 450 340 T900 330 T1200 348" fill="none" stroke="#94d5dc" stroke-width="5" opacity=".8"/>
+  <path d="M0 530 H1200" stroke="#b8a983" stroke-width="95"/>
+  <circle cx="1050" cy="120" r="52" fill="#f2d596"/>
+  <text x="70" y="95" fill="#d0f5ef" font-family="sans-serif" font-size="27">İSTANBUL · BEYOĞLU</text>
+  <text x="70" y="175" fill="white" font-family="sans-serif" font-size="56" font-weight="700">Fındıklı Parkı</text>
+  <text x="70" y="225" fill="#d0f5ef" font-family="sans-serif" font-size="31">Açık Kıyısı · Boğaz</text>
+  <text x="70" y="595" fill="#09263a" font-family="sans-serif" font-size="25">Genel park konumu · güvenli kıyı ve levhayı yerinde kontrol edin</text>
+</svg>
