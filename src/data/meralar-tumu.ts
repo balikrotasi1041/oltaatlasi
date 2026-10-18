@@ -11,6 +11,8 @@ import { sixManualRoutes20261011, sixManualStats20261011 } from "./meralar-manua
 import { oneTimeIstanbulKocaeliSakarya20261013, oneTimeIstanbulKocaeliSakaryaStats20261013 } from "./meralar-one-time-istanbul-kocaeli-sakarya-20261013";
 import { applyBabaliHoldMaintenance20261016 } from "./meralar-babali-hold-maintenance-2026-10-16";
 import { growthNewRoutes20261016, applyGrowthExistingRelease20261016 } from "./meralar-growth-2026-10-16";
+import { growthNewRoutes20261018 } from "./meralar-growth-new-2026-10-18";
+import { applyGrowthExistingRelease20261018 } from "./meralar-growth-existing-2026-10-18";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -253,6 +255,11 @@ for(const route of growthNewRoutes20261016){
  routeMap.set(route.slug,route);
 }
 applyGrowthExistingRelease20261016(routeMap);
+for(const route of growthNewRoutes20261018){
+ if(routeMap.has(route.slug))throw new Error(`18 Ekim büyüme rotası mevcut slug ile çakışıyor: ${route.slug}`);
+ routeMap.set(route.slug,route);
+}
+applyGrowthExistingRelease20261018(routeMap);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
