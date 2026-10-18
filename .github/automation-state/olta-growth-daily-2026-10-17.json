@@ -1,0 +1,44 @@
+{
+  "program": "istanbul-centered-growth-v1",
+  "date": "2026-10-17",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-17.json",
+  "baselineMainSha": "90f27725b56c0becdd90bf4df0d618b09a4b46e3",
+  "newIndexableSlugs": [],
+  "newHoldSlugs": [],
+  "existingReleasedSlugs": [],
+  "eligibleReviewed": 0,
+  "actualConfidencePromotions": 0,
+  "maintenanceOnly": 0,
+  "newPagesCreated": 0,
+  "noindexToIndex": 0,
+  "technicalIndexableGain": 0,
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0
+  },
+  "decisions": [],
+  "deferredNew": [
+    {
+      "name": "Vaniköy Parkı Açık Kıyısı",
+      "reason": "İBB rota/tür ve park kıyısı kaynakları bulundu; mükerrerlik, güncel kıyı erişimi ve yayın denetimi tamamlanamadı."
+    },
+    {
+      "name": "Dragos Sahili",
+      "reason": "İBB rota/tür kaynağı bulundu; Kartal Sahili kaydından sınır ayrımı ve güncel kamusal kıyı denetimi tamamlanamadı."
+    }
+  ],
+  "deferredExisting": [
+    {
+      "slug": "bilecik-bozcaarmut-baraj-goleti",
+      "reason": "Güncel içsu yasakları ve kamusal kıyı erişimi yayın öncesi kesinleştirilemedi."
+    }
+  ],
+  "shortfall": {
+    "newReason": "17 Ekim araştırması ve yayın akışı araç bağlantısının kesilmesiyle tamamlanamadı; sıfır yeni rota canlı doğrulandı.",
+    "existingReason": "17 Ekim'de mevcut HOLD kayıt için mevzuat/erişim denetimi ve canlı yayın tamamlanamadı."
+  },
+  "scopePhase": "İstanbul",
+  "istanbulExhaustedEvidence": null
+}

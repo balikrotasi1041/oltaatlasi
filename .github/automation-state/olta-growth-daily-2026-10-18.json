@@ -1,0 +1,107 @@
+{
+  "program": "istanbul-centered-growth-v1",
+  "date": "2026-10-18",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-18.json",
+  "baselineMainSha": "65a0b47a1659be5c3abd4927cede545fb90b64b2",
+  "newIndexableSlugs": [
+    "istanbul-uskudar-vanikoy-parki-acik-kiyi",
+    "istanbul-kartal-dragos-sahili-acik-kiyi"
+  ],
+  "newHoldSlugs": [],
+  "existingReleasedSlugs": [
+    "bilecik-bozcaarmut-baraj-goleti"
+  ],
+  "eligibleReviewed": 0,
+  "actualConfidencePromotions": 0,
+  "maintenanceOnly": 1,
+  "newPagesCreated": 2,
+  "noindexToIndex": 1,
+  "technicalIndexableGain": 3,
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0
+  },
+  "decisions": [
+    {
+      "slug": "istanbul-uskudar-vanikoy-parki-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "İstavrit",
+      "identityAndSpecies": "İBB olta rehberi Vaniköy'ü Kandilli'den ayrı rota olarak adlandırır ve istavrit bildirir; 2025-2029 kıyı planı parkın ayrı 201 m kıyısını tanımlar.",
+      "access": "İBB park envanteri ve güncel kıyı temizlik planı kamusal parkın genel açık kıyısını destekler; Kandilli iskelesi, özel yalılı kıyı, Selvi Burnu askerî alanı ve güvenli atış bulunmayan kesimler dışarıdadır.",
+      "law": "6/2 ana tebliğ ve 2026/26 değişikliği, Boğaz trafik güvenliği ve yerel levhalarla birlikte uygulanır.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://webdosya.csb.gov.tr/db/cygm/icerikler/istanbul-dcep-2025-2029-20250324133942.pdf",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://ktbs.uab.gov.tr/mevzuatlar/limanlar_yonetmeligi.pdf"
+      ],
+      "distanceKmFromIstanbulCenter": 9.4,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
+    },
+    {
+      "slug": "istanbul-kartal-dragos-sahili-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "İstavrit",
+      "identityAndSpecies": "İBB'nin 2025 Dragos kıyı avcılığı kaydı istavriti yer adıyla belirtir; strateji belgesi Dragos'u Kartal Kordon ve Orhangazi'den ayrı alan olarak gösterir.",
+      "access": "Kamusal Dragos gezinti kıyısı İBB/Kartal duyurularında yer alır; aktif su sporları merkezi, marina, tekne yaklaşımı ve yüzme alanı dışındadır.",
+      "law": "6/2 ve 2026/26 değişikliği ile Limanlar Yönetmeliği'nin kıyı tesisi yaklaşım/bağlama yasakları uygulanır.",
+      "sources": [
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle",
+        "https://sportesisleri.ibb.istanbul/acik-alan-egzersizleri",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://ktbs.uab.gov.tr/mevzuatlar/limanlar_yonetmeligi.pdf"
+      ],
+      "distanceKmFromIstanbulCenter": 17.9,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
+    },
+    {
+      "slug": "bilecik-bozcaarmut-baraj-goleti",
+      "kind": "existing-noindex-release",
+      "grade": "C",
+      "fish": "Sazan",
+      "identityAndSpecies": "Valilik gölet su kimliği/konumunu, İl Tarım 2018 Bozcaarmut'a özgü sazan balıklandırmasını doğrular.",
+      "access": "İl Kültür ve Turizm Müdürlüğü genel olta uygunluğunu, Valilik köyden gölete ziyaret yolunu bildirir; baraj gövdesi, tesis ve kapalı orman yolu dışlanır.",
+      "law": "2026 İl Tarım sezon duyurusu tam yasaklı Bilecik suyu olarak Selöz'ü adlandırır; 6/2 ana tebliğ, 2026/26 ve saha levhası uygulanır.",
+      "sources": [
+        "https://bilecik.gov.tr/bozcaarmut-baraj-goleti",
+        "https://www.kulturportali.gov.tr/turkiye/bilecik/gezilecekyer/bozcaarmut-golet",
+        "https://bilecik.tarimorman.gov.tr/Haber/677/",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/267/"
+      ],
+      "distanceKmFromIstanbulCenter": 134.6,
+      "baselineGrade": "C",
+      "finalGrade": "C",
+      "previousIndexing": "hold",
+      "publishedIndexing": "index"
+    }
+  ],
+  "deferredExisting": [
+    {
+      "slug": "istanbul-asiyan-onu-balik-tutma-iskeleleri",
+      "reason": "İskele işletme ve güncel amatör olta izin sınırı belirsiz."
+    },
+    {
+      "slug": "kocaeli-esme-sapanca-golu-kamusal-kiyi",
+      "reason": "Su alma yapısı koruma sınırı ve mevcut pin çakışması çözülmedi."
+    },
+    {
+      "slug": "sakarya-buyuk-akgol-golkent",
+      "reason": "Kiralama ve amatör kıyı sektörü henüz doğrulanmadı."
+    }
+  ],
+  "scopePhase": "İstanbul",
+  "istanbulExhaustedEvidence": null
+}
