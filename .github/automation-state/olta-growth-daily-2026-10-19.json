@@ -18,16 +18,16 @@
   "noindexToIndex": 1,
   "technicalIndexableGain": 2,
   "publication": {
-    "verified": false,
-    "verifiedAt": null,
-    "pullRequest": null,
-    "mergedMainSha": null,
-    "liveSha": null,
-    "newRoutesPublished": 0,
-    "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "productionRun": null,
-    "liveRoutesChecked": 0
+    "verified": true,
+    "verifiedAt": "2026-10-19T11:32:13Z",
+    "pullRequest": "https://github.com/balikrotasi1041/oltaatlasi/pull/165",
+    "mergedMainSha": "7c1e78634ad1e7b03faf906a5494b70ea4418e51",
+    "liveSha": "7c1e78634ad1e7b03faf906a5494b70ea4418e51",
+    "newRoutesPublished": 1,
+    "existingRoutesReleased": 1,
+    "productionStatus": "success",
+    "productionRun": "https://github.com/balikrotasi1041/oltaatlasi/actions/runs/39245041734",
+    "liveRoutesChecked": 2
   },
   "decisions": [
     {
