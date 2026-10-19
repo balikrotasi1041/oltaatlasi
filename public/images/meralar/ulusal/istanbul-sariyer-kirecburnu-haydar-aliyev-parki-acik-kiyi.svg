@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Kireçburnu Haydar Aliyev Parkı Açık Kıyısı</title>
+  <desc id="desc">Boğaz kıyısını simgeleyen çizim; gerçek park fotoğrafı veya izinli olta noktası haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#102b42"/>
+  <path d="M0 290 Q240 250 480 295 T960 300 T1200 295 V630 H0Z" fill="#19748c"/>
+  <path d="M0 360 Q250 330 500 360 T1000 355 T1200 360" fill="none" stroke="#a0dee3" stroke-width="5" opacity=".75"/>
+  <path d="M0 525 H1200" stroke="#b6ad8d" stroke-width="95"/>
+  <circle cx="1040" cy="115" r="49" fill="#f0d895"/>
+  <text x="70" y="95" fill="#d2f2ec" font-family="sans-serif" font-size="27">İSTANBUL · SARIYER</text>
+  <text x="70" y="175" fill="white" font-family="sans-serif" font-size="50" font-weight="700">Kireçburnu Haydar Aliyev Parkı</text>
+  <text x="70" y="225" fill="#d2f2ec" font-family="sans-serif" font-size="31">Açık Kıyısı · Boğaz</text>
+  <text x="70" y="595" fill="#102b42" font-family="sans-serif" font-size="25">Genel park konumu · aktif balıkçı iskelesinden uzak durun</text>
+</svg>
