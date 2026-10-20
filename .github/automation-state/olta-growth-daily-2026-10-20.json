@@ -14,16 +14,16 @@
   "noindexToIndex": 0,
   "technicalIndexableGain": 1,
   "publication": {
-    "verified": false,
-    "verifiedAt": null,
-    "pullRequest": null,
-    "mergedMainSha": null,
-    "liveSha": null,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "verifiedAt": "2026-10-20T19:19:32Z",
+    "pullRequest": "https://github.com/balikrotasi1041/oltaatlasi/pull/167",
+    "mergedMainSha": "88e8f18a072c3782f18b95bfe88a03fcd45addc2",
+    "liveSha": "88e8f18a072c3782f18b95bfe88a03fcd45addc2",
+    "newRoutesPublished": 1,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "productionRun": null,
-    "liveRoutesChecked": 0
+    "productionStatus": "success",
+    "productionRun": "https://github.com/balikrotasi1041/oltaatlasi/actions/runs/39482176941",
+    "liveRoutesChecked": 1
   },
   "decisions": [
     {
@@ -57,9 +57,13 @@
   "deferredExisting": [
     {"slug": "ankara-etimesgut-goksu-parki-susuz-goleti-kiyisi", "reason": "Tarihsel olta iskelesinin bir bölümü kafeye dönüştü; 2025/2026 güncel balık tutma yasağı veya alan kısıtı haberleri var. Güncel yetkili izin alanı belgesi gerekli."},
     {"slug": "istanbul-asiyan-onu-balik-tutma-iskeleleri", "reason": "Aktif iskele işletmesi ve güncel amatör olta izin sınırı belirsiz."},
+    {"slug": "cakirli-iznik-golu-piknik-sahili", "reason": "İznik Gölü 3. Bölge istihsal kiralaması sonrası amatör kıyı sektörünün Çakırlı'yı içerdiği doğrulanmadı."},
     {"slug": "kocaeli-esme-sapanca-golu-kamusal-kiyi", "reason": "Su alma yapısı koruma sınırı ve pin çakışması çözülmedi."},
     {"slug": "sakarya-buyuk-akgol-golkent", "reason": "Kiralama ve amatör kıyı sektörü doğrulanmadı."},
-    {"slug": "izmir-karaburun-merkez-iskele-sahil-yuruyus", "reason": "Mevcut C+ kalite için iskele/plaj dışı açık kıyıda rota-özel tür kanıtı ve güncel kamusal olta alanı eksik."}
+    {"slug": "izmir-karaburun-merkez-iskele-sahil-yuruyus", "reason": "Mevcut C+ kalite için iskele/plaj dışı açık kıyıda rota-özel tür kanıtı ve güncel kamusal olta alanı eksik."},
+    {"slug": "burdur-karamanli-karamanli-baraj-golu", "reason": "2026 av dönemi ve sazan kanıtı olumlu; mevcut pin baraj gövdesinde, 300 m teknik yapı sınırı dışındaki kamusal olta kıyısı doğrulanmadı."},
+    {"slug": "ulusal-bursa-bogazkoy-baraj-golu", "reason": "Rota türü kanıtlı, fakat kamusal Hamzabey Millet Bahçesi kıyısı 2026'da kapalı şantiye."},
+    {"slug": "ankara-gudul-sorgun-goleti-tabiat-parki-kiyisi", "reason": "Ankara İl Tarım yasak listelerinde Sorgun Göleti bulunuyor; güncel kaldırma belgesi yok."}
   ],
   "scopePhase": "İstanbul",
   "istanbulExhaustedEvidence": null
