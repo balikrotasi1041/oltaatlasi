@@ -1,0 +1,66 @@
+{
+  "program": "istanbul-centered-growth-v1",
+  "date": "2026-10-20",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-20.json",
+  "baselineMainSha": "a86347df4ce458646917428415e94f5d27a0b738",
+  "newIndexableSlugs": ["istanbul-beylikduzu-gurpinar-sahil-acik-kiyi"],
+  "newHoldSlugs": [],
+  "existingReleasedSlugs": [],
+  "eligibleReviewed": 0,
+  "actualConfidencePromotions": 0,
+  "maintenanceOnly": 0,
+  "newPagesCreated": 1,
+  "noindexToIndex": 0,
+  "technicalIndexableGain": 1,
+  "publication": {
+    "verified": false,
+    "verifiedAt": null,
+    "pullRequest": null,
+    "mergedMainSha": null,
+    "liveSha": null,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending",
+    "productionRun": null,
+    "liveRoutesChecked": 0
+  },
+  "decisions": [
+    {
+      "slug": "istanbul-beylikduzu-gurpinar-sahil-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "Kırlangıç",
+      "identityAndSpecies": "Beylikdüzü Belediyesi Gürpınar Stadı–Balık Hali kamusal sahil aksındaki 2018 olta yarışmasında 41,5 cm kırlangıç avını doğrudan kaydeder; 2024 yarışması ayrı doğrulamadır. Mevcut kayıtlarda bu açık kıyının adı, suyu veya piniyle çakışan rota bulunmadı.",
+      "access": "2018 halka açık olta etkinliği, 2026 kamusal sahil etkinliği ve park haritası genel erişimi destekler. Dalyan Caddesi pini yalnız karasal yaklaşım içindir; balık hali, barınak, iskele, faal çalışma bariyeri ve şamandıralı yüzme alanı dışlanır.",
+      "law": "6/2 ana tebliği, 2026/26 değişikliği, yüzme alanı ve Limanlar Yönetmeliği kıyı tesisi sınırı birlikte incelendi; o günkü levha ve güvenli atış koridoru geçerlidir.",
+      "sources": [
+        "https://www.beylikduzu.istanbul/haber/907/200-olta-balikcisi-beylikduzu-sahilinde-yaristi",
+        "https://www.beylikduzu.istanbul/haber/2405/6-olta-balikciligi-yarismasi-renkli-goruntulere-sahne-oldu",
+        "https://www.beylikduzu.istanbul/duyurular/pedallar-saglikli-yasam-icin-donuyor-913",
+        "https://www.openstreetmap.org/way/218591012",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://ktbs.uab.gov.tr/mevzuatlar/limanlar_yonetmeligi.pdf"
+      ],
+      "distanceKmFromIstanbulCenter": 32.0,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
+    }
+  ],
+  "shortfall": {
+    "newReason": "İkinci ayrı İstanbul avlağı için rota-özel tür, doğru açık kıyı ve güncel kamusal/hukuki erişim birlikte doğrulanamadı. Nakkaştepe mevcut Kuzguncuk rotasıyla çakışabilir; Karaköy tür kaydı iskeleye aittir; Çubuklu iskele parkı mevcut Çubuklu kıyısına çok yakındır; Yalıköy'de yüzme sınırı, Selvi Burnu'nda erişim ve Akıntıburnu'nda süren kıyı çalışması belirsizdir. Sayı için sayfa açılmadı.",
+    "existingReason": "Yakın C ve üstü HOLD adayları tek tek değerlendirildi. Göksu Parkı için 2013 olta kaydı güncel izin kanıtı değil; 2025/2026 yasak haberleriyle çeliştiği için HOLD. Aşiyan iskele, Eşme su alma yapısı, Büyük Akgöl kiralama ve Karaburun merkezde rota-özel tür/erişim sınırı çözülemedi. Doğrulanmamış eski sayfanın indeksi açılmadı."
+  },
+  "deferredExisting": [
+    {"slug": "ankara-etimesgut-goksu-parki-susuz-goleti-kiyisi", "reason": "Tarihsel olta iskelesinin bir bölümü kafeye dönüştü; 2025/2026 güncel balık tutma yasağı veya alan kısıtı haberleri var. Güncel yetkili izin alanı belgesi gerekli."},
+    {"slug": "istanbul-asiyan-onu-balik-tutma-iskeleleri", "reason": "Aktif iskele işletmesi ve güncel amatör olta izin sınırı belirsiz."},
+    {"slug": "kocaeli-esme-sapanca-golu-kamusal-kiyi", "reason": "Su alma yapısı koruma sınırı ve pin çakışması çözülmedi."},
+    {"slug": "sakarya-buyuk-akgol-golkent", "reason": "Kiralama ve amatör kıyı sektörü doğrulanmadı."},
+    {"slug": "izmir-karaburun-merkez-iskele-sahil-yuruyus", "reason": "Mevcut C+ kalite için iskele/plaj dışı açık kıyıda rota-özel tür kanıtı ve güncel kamusal olta alanı eksik."}
+  ],
+  "scopePhase": "İstanbul",
+  "istanbulExhaustedEvidence": null
+}
