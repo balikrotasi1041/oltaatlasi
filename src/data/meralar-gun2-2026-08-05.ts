@@ -1,6 +1,6 @@
 import type { Mera } from "./meralar";
 
-const tebligUrl="https://mus.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=316";
+const tebligUrl="https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241";
 const kayseriKuralUrl="https://kayseri.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=29edea52-6e3d-4ddd-8bf0-2b9c3938b32c&TermSetId=2fcd0a6e-29e6-4155-91b3-67f2140f7189&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=599%2FAmator-Balikcilarimizin-Dikkatine";
 const baliklandirma2015="https://kayseri.tarimorman.gov.tr/Haber/551/265-Bin-Sazan-Baligi-Yavrusu-Goletlerimize-Birakildi";
 const dsiListe="https://bolge12.dsi.gov.tr/Sayfa/Detay/1141";

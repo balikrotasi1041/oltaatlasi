@@ -2,7 +2,7 @@
 import { meralar, nationalCoordinateStats } from "../data/meralar-tumu";
 import { routeLocationOverrides20260815 } from "../data/route-location-overrides-2026-08-15";
 const mapData = meralar
-  .map(({slug,name,province,district,zone,lat,lng,waterType,fish,confidence,locationPrecision})=>{
+  .map(({slug,name,province,district,zone,lat,lng,waterType,fish,confidence,qualityGrade,locationPrecision})=>{
     const override=routeLocationOverrides20260815[slug];
     return {
       slug,name,province,district,zone,
@@ -11,6 +11,7 @@ const mapData = meralar
       waterType,
       fish:[...new Set((fish||[]).map((item)=>String(item).trim()).filter(Boolean))],
       confidence,
+      publicGrade:qualityGrade||confidence,
       locationPrecision:override?.precision??locationPrecision,
       locationLabel:override?.label||"",
       preliminary:confidence==="D"
@@ -56,7 +57,7 @@ const startMap=()=>{
       : L.marker([item.lat,item.lng]);
     const fishText=item.fish.length?item.fish.slice(0,4).map(escapeHtml).join(", "):"Tür bilgisi kaynak doğrulaması bekliyor";
     const locationText=item.locationLabel?escapeHtml(item.locationLabel):(item.preliminary?"Genel su konumu; erişim pini değildir":escapeHtml(item.locationPrecision));
-    marker.bindPopup(`<strong>${escapeHtml(item.name)}</strong><br>${escapeHtml(item.province)} · ${escapeHtml(item.district)} · ${escapeHtml(item.zone)}<br><small>${fishText} · Güven ${escapeHtml(item.confidence)}</small><br><small>${locationText}</small><br><a href="/meralar/${encodeURIComponent(item.slug)}/">Konum ve rota rehberini aç</a>`);
+    marker.bindPopup(`<strong>${escapeHtml(item.name)}</strong><br>${escapeHtml(item.province)} · ${escapeHtml(item.district)} · ${escapeHtml(item.zone)}<br><small>${fishText} · Kalite ${escapeHtml(item.publicGrade)}</small><br><small>${locationText}</small><br><a href="/meralar/${encodeURIComponent(item.slug)}/">Konum ve rota rehberini aç</a>`);
     markers[item.slug]=marker;
     return marker;
   };
