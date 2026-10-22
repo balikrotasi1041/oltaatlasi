@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      force:
+        description: Redeploy even when the live release already matches main
+        type: boolean
+        default: false
   schedule:
     - cron: "*/5 * * * *"
 
@@ -33,7 +38,7 @@ jobs:
           needs_deploy=true
           # Quality gate also dispatches this workflow after a push. Check both
           # scheduled and dispatched runs so the same live SHA is not deployed twice.
-          if [ "${{ github.event_name }}" != "push" ]; then
+          if [ "${{ github.event_name }}" != "push" ] && [ "${{ inputs.force || false }}" != "true" ]; then
             statuses=$(curl --fail --silent --show-error \
               -H "Authorization: Bearer ${GH_TOKEN}" \
               -H "Accept: application/vnd.github+json" \
