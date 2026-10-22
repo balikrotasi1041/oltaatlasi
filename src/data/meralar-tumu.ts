@@ -16,6 +16,8 @@ import { applyGrowthExistingRelease20261018 } from "./meralar-growth-existing-20
 import { applyGrowthExistingRelease20261019 } from "./meralar-growth-existing-2026-10-19";
 import { growthKirecburnuRoute20261019 } from "./meralar-growth-kirecburnu-2026-10-19";
 import { growthGurpinarRoute20261020 } from "./meralar-growth-gurpinar-2026-10-20";
+import { growthKuleliRoute20261022 } from "./meralar-growth-kuleli-2026-10-22";
+import { growthIstanbulRoutes20261022 } from "./meralar-growth-istanbul-2026-10-22";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -268,6 +270,18 @@ routeMap.set(growthKirecburnuRoute20261019.slug,growthKirecburnuRoute20261019);
 applyGrowthExistingRelease20261019(routeMap);
 if(routeMap.has(growthGurpinarRoute20261020.slug))throw new Error(`20 Ekim yeni rota mevcut slug ile çakışıyor: ${growthGurpinarRoute20261020.slug}`);
 routeMap.set(growthGurpinarRoute20261020.slug,growthGurpinarRoute20261020);
+// The legacy Avcılar park page pointed into Ambarlı. Correct its location before
+// adding the separately sourced Ambarlı shore route.
+applyPatch("istanbul-avcilar-avcilar-sahil-parki",{
+  lat:40.9765125,lng:28.747378,
+  navigationNote:"Pin Denizköşkler Mahallesi'ndeki Avcılar Sahil Parkı-2'nin genel merkezidir. Ambarlı yaklaşık 3 km batıda ayrı bir sahildir; iskele, plaj ve yoğun etkinlik alanları av noktası değildir.",
+  verification:"22 Ekim 2026 konum bakımı: OpenStreetMap'in Denizköşkler Avcılar Sahil Parkı-2 poligonuyla önceki Ambarlı yakını pini karşılaştırıldı ve pin düzeltildi. 29 Eylül kaynaklı tür ve kalite sınıfı değişmedi.",
+  sources:[...(routeMap.get("istanbul-avcilar-avcilar-sahil-parki")?.sources||[]),{label:"OpenStreetMap – Denizköşkler Avcılar Sahil Parkı-2",url:"https://www.openstreetmap.org/relation/16035107",note:"40.9765125, 28.747378 park poligonu merkezi; Avcılar Sahil Parkı-1 ve Ambarlı kıyısından ayrı bir Denizköşkler referansı. OpenStreetMap contributors, ODbL 1.0."}]
+});
+for(const route of [growthKuleliRoute20261022,...growthIstanbulRoutes20261022]){
+ if(routeMap.has(route.slug))throw new Error(`22 Ekim yeni İstanbul rotası mevcut slug ile çakışıyor: ${route.slug}`);
+ routeMap.set(route.slug,route);
+}
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);
