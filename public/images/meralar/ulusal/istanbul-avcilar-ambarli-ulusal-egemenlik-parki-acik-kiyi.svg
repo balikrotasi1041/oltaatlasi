@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Ambarlı Ulusal Egemenlik Parkı Açık Kıyısı</title>
+  <desc id="desc">Ambarlı'da park ve Marmara kıyısını simgeleyen çizim; gerçek av yeri veya izin haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#14324a"/>
+  <path d="M0 295 Q240 272 500 304 T1200 293 V630 H0Z" fill="#207a91"/>
+  <path d="M0 405 Q260 380 600 412 T1200 402" fill="none" stroke="#a8dcde" stroke-width="5" opacity=".75"/>
+  <path d="M0 515 H1200" stroke="#d5c49d" stroke-width="90"/>
+  <path d="M905 475 V380 M905 410 L851 350 M905 410 L962 350" stroke="#6e956f" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="1030" cy="118" r="52" fill="#efd38f"/>
+  <text x="68" y="92" fill="#d9eff0" font-family="sans-serif" font-size="27">İSTANBUL · AVCILAR</text>
+  <text x="68" y="164" fill="#fff" font-family="sans-serif" font-size="45" font-weight="700">Ambarlı Ulusal Egemenlik Parkı</text>
+  <text x="68" y="220" fill="#d9eff0" font-family="sans-serif" font-size="29">Açık kıyı · Marmara</text>
+  <text x="68" y="596" fill="#17324a" font-family="sans-serif" font-size="23">Liman, iskele ve yüzme alanları rota dışıdır</text>
+</svg>

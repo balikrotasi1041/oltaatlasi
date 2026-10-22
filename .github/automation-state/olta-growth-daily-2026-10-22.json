@@ -1,0 +1,100 @@
+{
+  "program": "istanbul-centered-growth-v1",
+  "date": "2026-10-22",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-22.json",
+  "baselineMainSha": "c0081fa18e9fdd89a4c9aea11c5b44a25ef6bcf1",
+  "newIndexableSlugs": [
+    "istanbul-uskudar-kuleli-sahili-acik-kiyi",
+    "istanbul-sariyer-rumelihisari-hisaronu-acik-kiyi",
+    "istanbul-avcilar-ambarli-ulusal-egemenlik-parki-acik-kiyi"
+  ],
+  "newHoldSlugs": [],
+  "existingReleasedSlugs": [],
+  "eligibleReviewed": 0,
+  "actualConfidencePromotions": 0,
+  "maintenanceOnly": 0,
+  "newPagesCreated": 3,
+  "noindexToIndex": 0,
+  "technicalIndexableGain": 3,
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending",
+    "liveRoutesChecked": 0
+  },
+  "decisions": [
+    {
+      "slug": "istanbul-uskudar-kuleli-sahili-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "İstavrit",
+      "identityAndSpecies": "İBB'nin 2025 Kuleli önü olta/istavrit kaydı ve 2017 rehberi, ÇŞİDB'nin Çengelköy ve Vaniköy'den ayrı Kuleli kıyı satırlarıyla karşılaştırıldı. Eski askerî okulun arazisi rota dışındadır.",
+      "access": "İBB'nin olta kıyısı olarak adlandırdığı okul dışı açık yaya kıyısı. Belediye sahil düzenleme hedefi güncel kapama ilanı sayılmadı; bariyer ve güvenlik sınırı av günü belirleyicidir.",
+      "law": "6/2 ana tebliği, 16 Eylül 2026 değişikliği, işaretli yüzme alanı ve okul güvenlik sınırları incelendi.",
+      "sources": [
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle",
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://webdosya.csb.gov.tr/db/cygm/icerikler/istanbul-dcep-2025-2029-20250324133942.pdf",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ],
+      "distanceKmFromIstanbulCenter": 8.4,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
+    },
+    {
+      "slug": "istanbul-sariyer-rumelihisari-hisaronu-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "İstavrit",
+      "identityAndSpecies": "İBB 2017 olta rehberi Hisarönü adıyla istavrit bildirir; Bakanlık Rumeli Hisarı konumunu, İBB ayrı kıyı yürüyüş hattını doğrular. Bebek, Aşiyan ve Emirgan kayıtlarından ayrı Hisarönü kesimidir.",
+      "access": "İBB'nin olta balıkçılarıyla tarif ettiği kamusal Rumelihisarı yürüyüş kıyısı; müze, özel işletme, eski iskele ve tekne yanaşma alanı hariç.",
+      "law": "6/2 ana tebliği, 2026/26 değişikliği, Limanlar Yönetmeliği madde 21 ve yerel levha/saha sınırları incelendi.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/en-guzel-istanbul-manzarasina-sahip-10-yer",
+        "https://kvmgm.ktb.gov.tr/tr-44097/istanbul-hisarlar-muze-mudurlugu.html",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://ktbs.uab.gov.tr/mevzuatlar/limanlar_yonetmeligi.pdf"
+      ],
+      "distanceKmFromIstanbulCenter": 10.8,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
+    },
+    {
+      "slug": "istanbul-avcilar-ambarli-ulusal-egemenlik-parki-acik-kiyi",
+      "kind": "new",
+      "grade": "C+",
+      "fish": "İspari",
+      "identityAndSpecies": "İBB 2017 Avcılar–Ambarlı sahilinde oltayla ispari kaydeder; 2025 İBB içeriği Ambarlı'yı Avcılar sahilinden ayrı anar. Belediye ve harita Ulusal Egemenlik Parkı'nı Ambarlı Marmara kıyısında gösterir.",
+      "access": "Belediyenin kamusal Ulusal Egemenlik Parkı ve açık kıyı çevresi; küçük tekne limanı, İDO iskelesi, yanaşma ve yüzme alanları hariç. 2026 yüzme suyu uygunsuzluğu tüketim güvencesi sayılmadı.",
+      "law": "6/2 ana tebliği, 2026/26 değişikliği, 1 Nisan–15 Kasım işaretli yüzme alanı ve Limanlar Yönetmeliği madde 21 incelendi.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle",
+        "https://avcilar.bel.tr/park/ulusal-egemenlik-parki",
+        "https://www.openstreetmap.org/way/1183800507",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://ktbs.uab.gov.tr/mevzuatlar/limanlar_yonetmeligi.pdf"
+      ],
+      "distanceKmFromIstanbulCenter": 22.5,
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "publishedIndexing": "index"
+    }
+  ],
+  "shortfall": {
+    "existingReason": "Bu, duraklatılmış günlük otomasyonu başlatmayan tek seferlik üç yeni İstanbul avlağı isteğidir. Kullanıcı bu çalışmada eski HOLD kaydı salımı istemedi; mevcut kayıtların indeksi açılmadı."
+  },
+  "scopePhase": "İstanbul",
+  "istanbulExhaustedEvidence": null
+}
