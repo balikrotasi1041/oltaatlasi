@@ -31,7 +31,9 @@ jobs:
         run: |
           set -euo pipefail
           needs_deploy=true
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          # Quality gate also dispatches this workflow after a push. Check both
+          # scheduled and dispatched runs so the same live SHA is not deployed twice.
+          if [ "${{ github.event_name }}" != "push" ]; then
             statuses=$(curl --fail --silent --show-error \
               -H "Authorization: Bearer ${GH_TOKEN}" \
               -H "Accept: application/vnd.github+json" \
@@ -42,7 +44,7 @@ jobs:
               "https://oltaatlasi.com/__deploy/version.txt?sync-check=${GITHUB_SHA}-${GITHUB_RUN_ID}" || true)
             if [ "$latest_state" = "success" ] && [ "$live_sha" = "$GITHUB_SHA" ]; then
               needs_deploy=false
-              echo "Current main SHA has successful Cloudflare status and matches the live release marker; scheduled retry skipped."
+              echo "Current main SHA has successful Cloudflare status and matches the live release marker; redundant deploy skipped."
             else
               echo "Production sync requires verification or repair (status=${latest_state}, live=${live_sha:-unavailable}, expected=${GITHUB_SHA})."
             fi
