@@ -1,31 +1,6 @@
 name: Research national routes
 
 on:
-  push:
-    branches: [main, "quality/research-all-routes"]
-    paths:
-      - "scripts/enrich-national-routes.mjs"
-      - "scripts/validate-national-research.mjs"
-      - "src/data/meralar-ulusal.js"
-      - "src/data/meralar-ulusal-koordinatlar.js"
-      - "src/data/meralar-ulusal-manuel-arastirma.js"
-      - "src/data/meralar-ulusal-otomatik-arastirma.js"
-      - ".github/workflows/research-national-routes.yml"
-      - "package.json"
-  pull_request:
-    branches: [main]
-    paths:
-      - "scripts/enrich-national-routes.mjs"
-      - "scripts/validate-national-research.mjs"
-      - "src/data/meralar-ulusal.js"
-      - "src/data/meralar-ulusal-koordinatlar.js"
-      - "src/data/meralar-ulusal-manuel-arastirma.js"
-      - "src/data/meralar-ulusal-otomatik-arastirma.js"
-      - ".github/workflows/research-national-routes.yml"
-      - "package.json"
-  schedule:
-    # 06:17 Europe/Istanbul; GitHub may start scheduled runs later.
-    - cron: "17 3 * * *"
   workflow_dispatch:
 
 permissions:
