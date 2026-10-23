@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Karaköy Sahil Parkı Haliç Kıyısı</title>
+  <desc id="desc">Karaköy parkı ve Haliç'i simgeleyen çizim; kesin av noktası veya izin haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#173047"/>
+  <path d="M0 330 Q250 298 570 330 T1200 307 V630 H0Z" fill="#277992"/>
+  <path d="M0 425 Q290 398 640 425 T1200 410" fill="none" stroke="#b8dfe0" stroke-width="5" opacity=".75"/>
+  <path d="M0 510 H1200" stroke="#d9c6a7" stroke-width="115"/>
+  <path d="M745 322 V236 H789 V201 H827 V234 H865 V280 H908 V322Z" fill="#c3b18e"/>
+  <circle cx="1040" cy="106" r="50" fill="#efd18d"/>
+  <text x="66" y="91" fill="#d8eeee" font-family="sans-serif" font-size="27">İSTANBUL · BEYOĞLU</text>
+  <text x="66" y="160" fill="#fff" font-family="sans-serif" font-size="43" font-weight="700">Karaköy Sahil Parkı</text>
+  <text x="66" y="215" fill="#d8eeee" font-family="sans-serif" font-size="28">Haliç açık yaya kıyısı</text>
+  <text x="66" y="593" fill="#173047" font-family="sans-serif" font-size="22">Liman, iskele ve bağlı tekne alanları rota dışıdır</text>
+</svg>

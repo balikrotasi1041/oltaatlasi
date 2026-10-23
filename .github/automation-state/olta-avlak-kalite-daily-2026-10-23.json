@@ -9,11 +9,29 @@
   "searchRadiusKm": 35,
   "istanbulExhaustedEvidence": null,
   "indexReleaseCap": 2,
-  "newRouteSlugs": [],
-  "promotionSlugs": ["sarayburnu-sahili", "emirgan-sahili", "tarabya-sahili"],
-  "indexReleaseSlugs": [],
+  "newRouteSlugs": [
+    "istanbul-beyoglu-karakoy-sahil-parki-halic-kiyisi",
+    "istanbul-fatih-eminonu-halic-acik-sahil-seridi"
+  ],
+  "promotionSlugs": [
+    "sarayburnu-sahili",
+    "emirgan-sahili",
+    "tarabya-sahili"
+  ],
+  "indexReleaseSlugs": [
+    "istanbul-beyoglu-karakoy-sahil-parki-halic-kiyisi",
+    "istanbul-fatih-eminonu-halic-acik-sahil-seridi"
+  ],
   "maintenanceOnlySlugs": [],
-  "eligibleReviewedSlugs": ["sarayburnu-sahili", "emirgan-sahili", "tarabya-sahili", "yenikapi-sahili", "uskudar-salacak-sahili", "istanbul-kefelikoy-sahil-parki", "istanbul-sariyer-kirecburnu-haydar-aliyev-parki-acik-kiyi"],
+  "eligibleReviewedSlugs": [
+    "sarayburnu-sahili",
+    "emirgan-sahili",
+    "tarabya-sahili",
+    "yenikapi-sahili",
+    "uskudar-salacak-sahili",
+    "istanbul-kefelikoy-sahil-parki",
+    "istanbul-sariyer-kirecburnu-haydar-aliyev-parki-acik-kiyi"
+  ],
   "decisions": [
     {
       "slug": "sarayburnu-sahili",
@@ -62,6 +80,40 @@
         "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ]
+    },
+    {
+      "slug": "istanbul-beyoglu-karakoy-sahil-parki-halic-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 1.882,
+      "identityAndSpecies": "İBB 2026 alternatif kamusal olta haritası Karaköy Sahil Parkı’nı Karaköy iskelesi, Galata Köprüsü ve karşı kıyıdan ayrı gösterir. İstanbul Valiliği kıyılı parkı listeler. Akademik çalışma aynı Galata–Unkapanı Haliç suyunda tarihsel istavrit avını bildirir; 2017 iskele güneyi lüfer kaydı taşınmadı.",
+      "access": "İBB haritasında kamusal park olta alanı; yalnız açık yaya cephesi, liman/tekne ve çalışma bariyerleri hariç.",
+      "law": "6/2 ana tebliği ve 16 Eylül 2026 tarihli 2026/26 değişikliği ile Limanlar Yönetmeliği incelendi; aktif kıyı tesisi ve yerel kapama rota dışında.",
+      "sources": [
+        "https://webapi.ibb.istanbul/uploads/Unkapani_Ataturk_Koprusu_CSYP_ILBANK_TR_02022026_clean_8001e507c6.pdf",
+        "https://dergipark.org.tr/en/download/article-file/480632",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://ktbs.uab.gov.tr/mevzuatlar/limanlar_yonetmeligi.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-fatih-eminonu-halic-acik-sahil-seridi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 1.938,
+      "identityAndSpecies": "İBB 2026 alternatif kamusal olta haritası Fatih yakası Eminönü Sahil Şeridi’ni iki köprü ve Karaköy parkından ayrı gösterir. Akademik Galata–Unkapanı su kesimi istavrit kaydı tarihsel tür kanıtıdır.",
+      "access": "İBB haritasında açık Fatih yakası yaya kıyısı; köprü üstü, aktif iskele, bağlı tekne ve bariyerli kısımlar hariç.",
+      "law": "6/2 ana tebliği ve 16 Eylül 2026 tarihli 2026/26 değişikliği ile Limanlar Yönetmeliği incelendi; aktif kıyı tesisi ve yerel kapama rota dışında.",
+      "sources": [
+        "https://webapi.ibb.istanbul/uploads/Unkapani_Ataturk_Koprusu_CSYP_ILBANK_TR_02022026_clean_8001e507c6.pdf",
+        "https://dergipark.org.tr/en/download/article-file/480632",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://ktbs.uab.gov.tr/mevzuatlar/limanlar_yonetmeligi.pdf"
+      ]
     }
   ],
   "candidateQueue": "docs/quality-daily-candidates-2026-10-23.md",
@@ -72,7 +124,7 @@
     "productionStatus": "pending"
   },
   "shortfall": {
-    "newReason": "23 Ekim yeni avlak kanıt araştırması sürüyor; henüz iki yeni C+ kayıt doğrulanıp yayımlanmadı.",
+    "newReason": null,
     "promotionReason": null
   }
 }

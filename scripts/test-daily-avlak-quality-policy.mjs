@@ -14,7 +14,7 @@ const check = (mutate, message) => {
 check((l) => { l.indexReleaseCap = 4; }, 'ortak indeks kotası yanlış');
 check((l) => { l.baselineMainSha = 'wrong'; }, 'main SHA');
 check((l) => { l.publication = { verified: true, liveSha: 'wrong', mergedMainSha: 'main', newRoutesPublished: 0, existingRoutesReleased: 0 }; }, 'tam SHA');
-check((l) => { l.shortfall = {}; }, 'eksik nedeni');
+check((l) => { l.newRouteSlugs = l.newRouteSlugs.slice(0, 1); l.shortfall = {}; }, 'eksik nedeni');
 check((l, b) => { b.routeCount += 1; }, 'Baseline rota sayısı');
 if (ledger.newRouteSlugs.length) check((l) => { l.newRouteSlugs = []; }, 'gerçek baseline farkıyla');
 if (ledger.promotionSlugs.length) check((l) => { l.promotionSlugs = []; }, 'baseline farkıyla');
