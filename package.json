@@ -27,9 +27,10 @@
     "generate:image-sitemap": "node scripts/generate-image-sitemap.mjs",
     "deploy": "wrangler deploy",
     "deploy:dry": "wrangler deploy --dry-run",
-    "validate:daily-quality": "node --import tsx scripts/validate-daily-quality.mjs && node --import tsx scripts/test-daily-quality-policy.mjs && node --import tsx scripts/validate-growth-program.mjs && node --import tsx scripts/test-growth-program-policy.mjs",
+    "validate:daily-quality": "node --import tsx scripts/validate-daily-quality.mjs && node --import tsx scripts/test-daily-quality-policy.mjs && node --import tsx scripts/validate-daily-avlak-quality.mjs && node --import tsx scripts/test-daily-avlak-quality-policy.mjs",
     "validate:stress-quality": "node --import tsx scripts/validate-quality-stress.mjs",
-    "stamp:release": "node scripts/stamp-release.mjs"
+    "stamp:release": "node scripts/stamp-release.mjs",
+    "validate:historical-growth": "node --import tsx scripts/validate-growth-program.mjs && node --import tsx scripts/test-growth-program-policy.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

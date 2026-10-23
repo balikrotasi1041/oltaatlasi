@@ -1,0 +1,46 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-10-23",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-23.json",
+  "baselineMainSha": "71ee52d7ddd91506e05faea7ded0595e52e2da3c",
+  "startingLiveSha": "71ee52d7ddd91506e05faea7ded0595e52e2da3c",
+  "scopePhase": "İstanbul",
+  "searchRadiusKm": 35,
+  "istanbulExhaustedEvidence": null,
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [],
+  "promotionSlugs": ["sarayburnu-sahili"],
+  "indexReleaseSlugs": [],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": ["sarayburnu-sahili", "yenikapi-sahili", "uskudar-salacak-sahili", "istanbul-kefelikoy-sahil-parki", "istanbul-sariyer-kirecburnu-haydar-aliyev-parki-acik-kiyi"],
+  "decisions": [
+    {
+      "slug": "sarayburnu-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 1.079,
+      "identityAndSpecies": "İBB olta rehberi Sarayburnu adını ve istavrit, lüfer, palamut türlerini birlikte verir; zargana kaynakta bulunmadığından sayfadan çıkarıldı.",
+      "access": "İBB Sarayburnu Parkı ve kıyı yürüyüş yolunu kamusal alan olarak kaydeder; liman/iskele ve etkinlik bariyerleri hariç.",
+      "law": "6/2 ana metin ile 16 Eylül 2026 tarihli 2026/26 değişikliği okundu; açık özel yasak saptanmadı, saha tabelası üstün.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://icraat.ibb.istanbul/proje-detay/fatih-sarayburnu-parki-duzenlemesi-acilisini-yaptik/56981d6c-f41f-4fb2-92f9-cacb22d7c836",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "candidateQueue": "docs/quality-daily-candidates-2026-10-23.md",
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending"
+  },
+  "shortfall": {
+    "newReason": "23 Ekim yeni avlak kanıt araştırması sürüyor; henüz iki yeni C+ kayıt doğrulanıp yayımlanmadı.",
+    "promotionReason": "Sarayburnu C→C+ doğrulandı. İncelenen Yenikapı ve Salacak kaynakları aynı rota adıyla tür kanıtı sağlamadı; Kefeliköy ve Kireçburnu için ikinci bağımsız güçlü rota/tür ailesi B eşiğine ulaşmadı. Kalan iki terfi sayıyı doldurmak için yapılmadı."
+  }
+}

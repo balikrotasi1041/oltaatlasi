@@ -1,19 +1,17 @@
 {
-  "version": 7,
-  "updatedAt": "2026-10-16",
-  "basis": "İstanbul merkezli günlük büyüme programı; eski 17 terfi, yeni HOLD-first ve günlük iki salım tavanı 16 Ekim 2026 sonrasında yürürlükte değildir. Tarihsel politika archive dosyasında korunur.",
+  "version": 8,
+  "updatedAt": "2026-10-23",
+  "basis": "23 Ekim 2026 İstanbul merkezli avlak ve gerçek kalite terfisi programı. Önceki kurallar tarihsel defterlerde korunur; güncel iş için günlük iki yeni C+ avlak, üç gerçek terfi ve ortak 2/4 indeks kotası geçerlidir.",
   "qualityWork": {
-    "dailyNewIstanbulIndexableMinimum": 2,
-    "dailyExistingNoindexReleaseMinimum": 1,
     "geographicOrder": "İstanbul merkezinden erişim sırasına göre kanıt araştırması; atlanan yakın adayın sebebini kaydet.",
     "eligibleExistingBaselineGrades": [
+      "D",
       "C",
       "C+",
-      "B",
-      "A"
+      "B"
     ],
     "excludeExistingBaselineGrades": [
-      "D"
+      "A"
     ],
     "requiredSeparateCounters": [
       "newPagesCreated",
@@ -22,25 +20,30 @@
       "actualConfidencePromotions",
       "maintenanceOnly"
     ],
-    "actualConfidencePromotionRule": "Yalnız mevcut baseline D→C/C+/B/A veya C→C+/B/A; yeni sayfa ve C+/HOLD→index terfi değildir.",
+    "actualConfidencePromotionRule": "Mevcut baseline ile karşılaştırılan gerçek sınıf artışı: D→C/C+/B/A, C→C+/B/A, C+→B/A veya B→A. Bakım ve yeniden onay terfi değildir.",
     "qualityMustNotBeLoweredForQuota": true,
     "shortfallRule": "Kanıt eşiği karşılanmazsa eksik hedefi ve HOLD nedenini dürüstçe kaydet; sahte sayfa veya uydurma tür üretme.",
-    "newRouteHoldAllowed": false,
-    "expandNationwideWhenIstanbulExhausted": true
+    "newRouteHoldAllowed": "Yalnız ortak indeks kotası dolduğunda, çekirdek C+ kanıtı tamamlanmış yeni sayfa noindex bekleyebilir.",
+    "expandNationwideWhenIstanbulExhausted": true,
+    "dailyNewCPlusRouteTarget": 2,
+    "dailyActualConfidencePromotionTarget": 3
   },
   "indexRelease": {
     "routeField": "indexing",
     "holdValue": "hold",
     "releaseValue": "index",
-    "dailyNewIndexableMinimum": 2,
-    "dailyExistingNoindexReleaseMinimum": 1,
-    "hardDailyMaximum": null,
+    "hardDailyMaximum": {
+      "wednesday": 4,
+      "thursday": 4,
+      "otherDays": 2,
+      "timezone": "Europe/Istanbul"
+    },
     "firstDayNewIndexAllowed": true,
     "requireBaselineNoindexForExistingRelease": true,
     "allowExistingCRelease": true,
     "denyDRelease": true,
-    "rule": "Yeni İstanbul C+/B/A sayfası ilk gün kaynaklı olarak index olabilir. Baseline C/C+/B/A mevcut HOLD sayfa aynı gün çekirdek kanıt yeniden incelenirse salınabilir. Genel kamusal erişim yeterlidir; açık yasak, yanlış su/tür ve belirsiz erişim iddiası HOLD kalır. Google fiili indekslenmesi ayrı ölçülür.",
-    "allowNewHoldPages": false
+    "rule": "Yeni ve mevcut kayıttan ilk kez index açılan avlaklar aynı günlük kota sayılır. Çarşamba/perşembe en fazla dört, diğer günler en fazla iki. Zaten index olan sayfanın sınıf terfisi salım sayılmaz. Canlı exact SHA sonrası teslim sayılır.",
+    "allowNewHoldPages": "Yalnız ortak kota dolduğunda kanıtlı yeni C+ sayfa HOLD olabilir."
   },
   "expandedEvidenceStandard": {
     "document": "docs/expanded-quality-standard.md",
@@ -155,6 +158,27 @@
     "ledgerPattern": ".github/automation-state/olta-growth-daily-YYYY-MM-DD.json",
     "historicalPolicy": ".github/automation-state/archive/olta-quality-policy-through-2026-10-16.json",
     "initialPhase": "İstanbul",
-    "expandNationwideWhenIstanbulExhausted": true
+    "expandNationwideWhenIstanbulExhausted": true,
+    "supersededAt": "2026-10-23"
+  },
+  "dailyAvlakQualityProgram": {
+    "startedAt": "2026-10-23",
+    "timezone": "Europe/Istanbul",
+    "runAt": "09:00",
+    "center": {
+      "lat": 41.0082,
+      "lng": 28.9784
+    },
+    "dailyNewCPlusTarget": 2,
+    "dailyTruePromotionTarget": 3,
+    "sharedIndexReleaseMaximum": {
+      "wednesday": 4,
+      "thursday": 4,
+      "otherDays": 2
+    },
+    "baselinePattern": ".github/automation-state/olta-growth-baseline-YYYY-MM-DD.json",
+    "ledgerPattern": ".github/automation-state/olta-avlak-kalite-daily-YYYY-MM-DD.json",
+    "previousProgramHistorical": true,
+    "publicationRule": "PR kontrolleri, squash merge, production exact SHA ve canlı index/canonical/sitemap teyidi sonrası say."
   }
 }
