@@ -10,10 +10,10 @@
   "istanbulExhaustedEvidence": null,
   "indexReleaseCap": 2,
   "newRouteSlugs": [],
-  "promotionSlugs": ["sarayburnu-sahili"],
+  "promotionSlugs": ["sarayburnu-sahili", "emirgan-sahili", "tarabya-sahili"],
   "indexReleaseSlugs": [],
   "maintenanceOnlySlugs": [],
-  "eligibleReviewedSlugs": ["sarayburnu-sahili", "yenikapi-sahili", "uskudar-salacak-sahili", "istanbul-kefelikoy-sahil-parki", "istanbul-sariyer-kirecburnu-haydar-aliyev-parki-acik-kiyi"],
+  "eligibleReviewedSlugs": ["sarayburnu-sahili", "emirgan-sahili", "tarabya-sahili", "yenikapi-sahili", "uskudar-salacak-sahili", "istanbul-kefelikoy-sahil-parki", "istanbul-sariyer-kirecburnu-haydar-aliyev-parki-acik-kiyi"],
   "decisions": [
     {
       "slug": "sarayburnu-sahili",
@@ -30,6 +30,38 @@
         "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ]
+    },
+    {
+      "slug": "emirgan-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 12.584,
+      "identityAndSpecies": "İBB 2017 olta rehberi Emirgan adıyla istavrit, mezgit ve sardalyayı listeler; sayfadaki kanıtsız kefal, zargana ve izmarit kaldırıldı.",
+      "access": "İBB'nin 2026 Emirgan Sahili yürüyüş kaydı kamusal kuru kıyıyı destekler; aktif iskele ve bağlı tekne alanları dışarıda.",
+      "law": "6/2 ana tebliğ ve 2026/26 değişikliği incelendi; ilan edilmiş rota-özel yasak bulunmadı, yerel tabela üstün.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulun-ask-duraklari",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "tarabya-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 15.671,
+      "identityAndSpecies": "İBB 2017 olta rehberi Tarabya adıyla istavrit, mezgit ve sardalyayı listeler; sayfadaki kanıtsız lüfer, palamut ve zargana kaldırıldı.",
+      "access": "İBB Tarabya–Rumeli Kavağı koşu güzergâhı genel kamusal sahil erişimini destekler; marina ve tekne parkları dışarıda.",
+      "law": "6/2 ana tebliğ ve 2026/26 değişikliği incelendi; ilan edilmiş rota-özel yasak bulunmadı, yerel tabela üstün.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbul-kosu-rotalari",
+        "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     }
   ],
   "candidateQueue": "docs/quality-daily-candidates-2026-10-23.md",
@@ -41,6 +73,6 @@
   },
   "shortfall": {
     "newReason": "23 Ekim yeni avlak kanıt araştırması sürüyor; henüz iki yeni C+ kayıt doğrulanıp yayımlanmadı.",
-    "promotionReason": "Sarayburnu C→C+ doğrulandı. İncelenen Yenikapı ve Salacak kaynakları aynı rota adıyla tür kanıtı sağlamadı; Kefeliköy ve Kireçburnu için ikinci bağımsız güçlü rota/tür ailesi B eşiğine ulaşmadı. Kalan iki terfi sayıyı doldurmak için yapılmadı."
+    "promotionReason": null
   }
 }
