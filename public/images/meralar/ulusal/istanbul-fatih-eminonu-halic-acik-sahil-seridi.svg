@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Eminönü Haliç Açık Sahil Şeridi</title>
+  <desc id="desc">Eminönü yaya kıyısı ve Haliç'i simgeleyen çizim; kesin av noktası veya izin haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#25334d"/>
+  <path d="M0 302 Q280 340 590 308 T1200 322 V630 H0Z" fill="#2b7392"/>
+  <path d="M0 410 Q300 432 600 408 T1200 421" fill="none" stroke="#bce0e2" stroke-width="5" opacity=".7"/>
+  <path d="M0 522 H1200" stroke="#e1cba5" stroke-width="110"/>
+  <path d="M760 315 V253 H808 V225 H852 V260 H896 V315Z" fill="#c5ad8d"/>
+  <path d="M720 255 H970" stroke="#c5ad8d" stroke-width="14"/>
+  <circle cx="1040" cy="106" r="49" fill="#efce87"/>
+  <text x="66" y="91" fill="#d8eeee" font-family="sans-serif" font-size="27">İSTANBUL · FATİH</text>
+  <text x="66" y="160" fill="#fff" font-family="sans-serif" font-size="43" font-weight="700">Eminönü Haliç Kıyısı</text>
+  <text x="66" y="215" fill="#d8eeee" font-family="sans-serif" font-size="28">Köprüler arası açık sahil şeridi</text>
+  <text x="66" y="593" fill="#25334d" font-family="sans-serif" font-size="22">Köprü, iskele ve tekne işletmesi rota dışıdır</text>
+</svg>
