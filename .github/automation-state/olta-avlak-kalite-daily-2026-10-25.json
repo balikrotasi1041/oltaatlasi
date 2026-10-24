@@ -1,0 +1,57 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-10-25",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-25.json",
+  "baselineMainSha": "4da654ccab3d061c6beccb2c498e7559a1579d46",
+  "startingLiveSha": "4da654ccab3d061c6beccb2c498e7559a1579d46",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 141,
+  "istanbulExhaustedEvidence": "25 Ekim geçişi: İstanbul merkez ve yakın Marmara adaylarında ikinci eşik-geçer, mükerrer olmayan yeni rota bulunamadı; Adalar erişimi, Akıntıburnu şantiyesi, Aşiyan iskele ve Balat/Tuzla park çakışmaları özel kuyrukta kaldı. İstanbul'un bütünü tüketildiği iddia edilmiyor; yeni kanıtla yeniden bakılacak. Yarıçap 35 km'den 141 km'ye açıldı.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": ["istanbul-tuzla-itu-yani-acik-kiyi", "sakarya-karasu-yenimahalle-deniz-agzi-olta-alani"],
+  "promotionSlugs": ["beylerbeyi-sahili", "bebek-sahili", "anadolu-kavagi"],
+  "indexReleaseSlugs": ["istanbul-tuzla-itu-yani-acik-kiyi", "sakarya-karasu-yenimahalle-deniz-agzi-olta-alani"],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": ["beylerbeyi-sahili", "bebek-sahili", "anadolu-kavagi", "arnavutkoy-besiktas-sahili", "kucuksu-sahili", "tuzla-sahil-parki", "karasu-sahili"],
+  "decisions": [
+    {
+      "slug": "beylerbeyi-sahili", "baselineGrade": "C", "finalGrade": "C+", "previousIndexing": "index", "distanceKmFromIstanbulCenter": 6.456,
+      "identityAndSpecies": "İBB 2025 Beylerbeyi adını istavrit, izmarit, kefal ve zargana ile birlikte kaydeder; kanıtsız lüfer çıkarıldı.",
+      "access": "İBB 2017 Beylerbeyi kıyı olta kaydı genel açık kullanımı destekler; aktif iskele/barınak ve tekneler hariç.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; yerel levha üstündür.",
+      "sources": ["https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle", "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf", "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "bebek-sahili", "baselineGrade": "C", "finalGrade": "C+", "previousIndexing": "index", "distanceKmFromIstanbulCenter": 9.431,
+      "identityAndSpecies": "İBB 2025 Bebek sahilinde istavrit, lüfer ve zargana kaydeder; kanıtsız kefal ve izmarit çıkarıldı.",
+      "access": "İBB Bebek Parkı kamusal kullanımını kaydeder; Akıntıburnu şantiyesi, aktif iskele, bağlı tekne dışarıda.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; 2026 kıyı çalışması sınırı ayrıca geçerlidir.",
+      "sources": ["https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle", "https://yesil.istanbul/haber_bebek-parki-acildi", "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "anadolu-kavagi", "baselineGrade": "C", "finalGrade": "C+", "previousIndexing": "index", "distanceKmFromIstanbulCenter": 20.637,
+      "identityAndSpecies": "İBB 2025 Anadolu Kavağı kıyısından istavrit, kefal ve zargana kaydeder; kanıtsız lüfer, palamut ve mezgit çıkarıldı.",
+      "access": "İBB aynı kıyıyı amatör olta yeri olarak tanımlar; aktif vapur iskelesi, tekne ve güvenlik alanları hariç.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; Boğaz seyir ve yerel uyarıları geçerli.",
+      "sources": ["https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle", "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "istanbul-tuzla-itu-yani-acik-kiyi", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null, "distanceKmFromIstanbulCenter": 34.198,
+      "identityAndSpecies": "Tuzla Belediyesi 2026 olta etkinliğini İTÜ Yanı adıyla bildirir; İBB lüferi Tuzla kıyı sektörü düzeyinde kaydeder, mikro nokta örneği değildir.",
+      "access": "Belediye İTÜ yanındaki kıyıyı kamusal kullanıma açtığını, İstanbul Valiliği ayrı yürüyüş kıyısını kaydeder; kampüs/deniz eğitimi/park başka alanlar.",
+      "law": "6/2, 2026/26 ve Limanlar Yönetmeliği incelendi; eğitim suyu, aktif iskele ve şamandıralı yüzme alanı dışlandı.",
+      "sources": ["https://www.tuzla.bel.tr/guncel/etkinlikler/balik-tutma-yarismasi-oltani-al-gel", "https://www.tuzla.bel.tr/Files/pdf/proje-2024-bizim-isimiz.pdf", "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle", "https://webdosya.csb.gov.tr/db/istanbul/icerikler/den-z-copler--eylem-plan_-son-1-20250106094748.pdf", "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "sakarya-karasu-yenimahalle-deniz-agzi-olta-alani", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null, "distanceKmFromIstanbulCenter": 140.655,
+      "identityAndSpecies": "Belediyenin tamamlanmış Yenimahalle nehir ağzı olta alanı; hakemli araştırmada aynı ağızdan tarihsel Mugil cephalus örneği.",
+      "access": "Sakarya Büyükşehir olta platformu ve kamusal düzenleme; İl Kültür Müdürlüğü Karadeniz cephesinde sportif oltayı bildirir. Karasu merkez genel kumsalından farklıdır.",
+      "law": "6/2, 2026/26 ve Limanlar Yönetmeliği incelendi; nehir içi tekne bağlama ve akıntı riskleri dışlandı.",
+      "sources": ["https://www.sakarya.bel.tr/1/Haber/nehrin-ve-denizin-bulustugu-yer-karadenizin-cazibe-merkezi-olacak/24780", "https://www.sakarya.bel.tr/uploads/files/TurizmBrosur2025.pdf", "https://sakarya.ktb.gov.tr/TR-340487/yenimahalle-sakarya-nehrinin-denize-dokuldugu-yer.html", "https://pubmed.ncbi.nlm.nih.gov/25339526/", "https://trabzon.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=241", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    }
+  ],
+  "candidateQueue": "docs/quality-daily-candidates-2026-10-25.md",
+  "publication": { "verified": false, "newRoutesPublished": 0, "existingRoutesReleased": 0, "productionStatus": "pending" },
+  "shortfall": { "newReason": null, "promotionReason": null }
+}
