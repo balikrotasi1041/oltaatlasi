@@ -1,9 +1,14 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { meralar } from '../src/data/meralar-tumu.ts';
 import { validateDailyAvlakQuality } from './daily-avlak-quality-policy.mjs';
 
-const ledger = JSON.parse(readFileSync('.github/automation-state/olta-avlak-kalite-daily-2026-10-23.json', 'utf8'));
+const directory = '.github/automation-state';
+const files = readdirSync(directory)
+  .filter(name => /^olta-avlak-kalite-daily-\d{4}-\d{2}-\d{2}\.json$/.test(name))
+  .sort();
+assert(files.length > 0, 'Günlük avlak/kalite kaydı bulunamadı.');
+const ledger = JSON.parse(readFileSync(`${directory}/${files.at(-1)}`, 'utf8'));
 const baseline = JSON.parse(readFileSync(ledger.baselineFile, 'utf8'));
 assert.deepEqual(validateDailyAvlakQuality(ledger, baseline, meralar), []);
 const check = (mutate, message) => {
