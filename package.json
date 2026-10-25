@@ -11,7 +11,7 @@
     "validate:admin-data-flow": "node scripts/validate-admin-data-flow.mjs",
     "validate:confidence": "node --import tsx scripts/audit-confidence-debt.mjs",
     "validate:security": "node scripts/validate-security-posture.mjs",
-    "validate:guides": "node --import tsx scripts/validate-guide-quality.ts",
+    "validate:guides": "node --import tsx scripts/validate-guide-quality.ts && node --import tsx scripts/validate-fish-species-standard.mjs",
     "validate:maintenance": "node --import tsx scripts/audit-route-maintenance.mjs && npm run validate:confidence && node scripts/validate-worker-redirects.mjs && npm run validate:admin-data-flow && npm run validate:security",
     "validate:data": "npm run validate:routes && npm run validate:ankara-500km && npm run validate:duplicates && npm run validate:maintenance && npm run validate:guides && npm run validate:stress-quality",
     "audit:sources": "tsx scripts/audit-source-health.mjs",
