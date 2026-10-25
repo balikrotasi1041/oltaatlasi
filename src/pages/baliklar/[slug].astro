@@ -2,20 +2,43 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import FeedbackButtons from "../../components/FeedbackButtons.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { balikContentUpdatedAt } from "../../data/baliklar";
 import { baliklar, rehberler } from "../../data/content-katalogu";
+import { balikTurDetaylari } from "../../data/balik-tur-detaylari";
 import { meralar } from "../../data/meralar-tumu";
 import { slugifyTr } from "../../utils/slug";
 
 export function getStaticPaths(){return baliklar.map((balik)=>({params:{slug:balik.slug},props:{balik}}));}
 const {balik}=Astro.props;
+const details=balikTurDetaylari[balik.slug];
+if(!details)throw new Error(`${balik.slug}: tür profili eksik`);
 const extendedBalik=balik as any;
-const fishSources=Array.isArray(extendedBalik.sources)?extendedBalik.sources:[];
+const fishSources=[...(Array.isArray(extendedBalik.sources)?extendedBalik.sources:[]),details.biologySource,...(details.supportingSources||[])];
+const nutritionExamples:Record<string,{label:string;url:string}>={
+  istavrit:{label:"İstavrit",url:"https://turkomp.tarimorman.gov.tr/food-istavrit-83"},
+  mezgit:{label:"Mezgit",url:"https://turkomp.tarimorman.gov.tr/food-mezgit-90"},
+  zargana:{label:"Zargana",url:"https://turkomp.tarimorman.gov.tr/food-97"},
+  cipura:{label:"Yetiştirme çipura",url:"https://turkomp.tarimorman.gov.tr/food-cipura-yetistirme-511"},
+  levrek:{label:"Yetiştirme levrek",url:"https://turkomp.tarimorman.gov.tr/food-levrek-yetistirme-85"},
+  lufer:{label:"Lüfer",url:"https://turkomp.tarimorman.gov.tr/food-lufer-88"},
+  palamut:{label:"Palamut",url:"https://turkomp.tarimorman.gov.tr/food-palamut-84"},
+  barbun:{label:"Barbunya (barbun)",url:"https://turkomp.tarimorman.gov.tr/food-barbunya-barbun-91"},
+  kalkan:{label:"Kalkan",url:"https://turkomp.tarimorman.gov.tr/food-kalkan-96"},
+  alabalik:{label:"Yetiştirme gökkuşağı alabalığı",url:"https://turkomp.tarimorman.gov.tr/food-alabalik-gokkusagi-yetistirme-513"},
+  kefal:{label:"Sarı kulak kefal örneği",url:"https://turkomp.tarimorman.gov.tr/food-kefal-sari-kulak-92"},
+};
+const nutritionExample=nutritionExamples[balik.slug];
 const scientificName=typeof extendedBalik.scientificName==="string"?extendedBalik.scientificName:"";
 const fishQuality=typeof extendedBalik.qualityLevel==="string"?extendedBalik.qualityLevel:"";
 const confidenceScore:Record<string,number>={A:4,B:3,C:2,D:0};
 const provincePriority=(province:string)=>province==="İstanbul"||province==="Kocaeli"?2:0;
-const relatedAll=meralar.filter((m)=>m.confidence!=="D"&&m.fish.includes(balik.name));
+const normalizeFish=(name:string)=>name.toLocaleLowerCase("tr-TR").replace(/\s+/g,"");
+const fishAliases:Record<string,string[]>={
+  sazan:["Pullu sazan","Aynalı sazan"],
+  lufer:["Çinekop","Çinakop"],
+  alabalik:["Gökkuşağı Alabalığı"],
+};
+const acceptedNames=new Set([balik.name,...(fishAliases[balik.slug]||[])].map(normalizeFish));
+const relatedAll=meralar.filter((m)=>m.confidence!=="D"&&m.fish.some((name)=>acceptedNames.has(normalizeFish(name))));
 const related=[...relatedAll].sort((a,b)=>{
   const aScore=provincePriority(a.province)*10+(confidenceScore[a.confidence]||0)*3;
   const bScore=provincePriority(b.province)*10+(confidenceScore[b.confidence]||0)*3;
@@ -35,7 +58,7 @@ const guideScore=(guide:any)=>{
 };
 const relatedGuides=rehberler.map((guide)=>({guide,score:guideScore(guide)})).filter(({score})=>score>5).sort((a,b)=>b.score-a.score||b.guide.updatedAt.localeCompare(a.guide.updatedAt)).slice(0,6).map(({guide})=>guide);
 const pagePath=`/baliklar/${balik.slug}/`;const pageUrl=new URL(pagePath,Astro.site).href;
-const publishedAt=fishSources.length?"2026-08-23":"2026-07-18";const modifiedAt=fishSources.length?"2026-08-23":balikContentUpdatedAt;
+const publishedAt=Array.isArray(extendedBalik.sources)?"2026-08-23":"2026-07-18";const modifiedAt="2026-10-25";
 const environmentText=balik.water.includes("İç")
  ? `${balik.name} için su seviyesi, kıyı bitkileri, dip yapısı ve iç suya özgü kapalı dönemler birlikte değerlendirilmelidir. Aynı gölün iki farklı kıyısı bile güneş, rüzgâr ve insan baskısı nedeniyle farklı sonuç verebilir.`
  : `${balik.name} avında akıntı, dalga, yem balığı hareketi ve kıyı derinliği birlikte okunmalıdır. Deniz kıyısında sabit bir “en iyi saat” yerine, türün kıyıya yaklaşmasını sağlayan koşulları izlemek daha sağlıklı bir yaklaşım olur.`;
@@ -50,15 +73,19 @@ if(fishSources.length)schema.citation=fishSources.map((source:any)=>source.url);
 <section class="detail-hero"><div class="container detail-grid"><div><Breadcrumbs items={[{label:"Ana sayfa",href:"/"},{label:"Balıklar",href:"/baliklar/"},{label:balik.name}]}/><div class="eyebrow-row"><span class="pill">{balik.water}</span>{fishQuality&&<span class="pill pill-muted">Kaynak kalitesi {fishQuality}</span>}</div><h1>{balik.name} Balıkçılık Rehberi</h1>{scientificName&&<p class="microcopy" style="color:rgba(255,255,255,.84);font-weight:800;">Bilimsel ad: <em>{scientificName}</em></p>}<p class="lead">{balik.habitat}</p><div class="article-byline"><span>Olta Atlası Editörlüğü</span><span>Son güncelleme: {modifiedAt.split("-").reverse().join(".")}</span></div></div><aside class="status-card image-status"><img src={balik.image} alt={`${balik.name} özgün vektör illüstrasyonu`} width="960" height="540"/><p class="microcopy">İllüstrasyon tanıtım amaçlıdır; tür teşhisinde fotoğraf veya bilimsel anahtar yerine kullanılmamalıdır.</p></aside></div></section>
 <section class="container section detail-content"><article class="content-main article-prose">
 <section class="article-intro"><p>{balik.habitat}</p><p>{environmentText}</p></section>
-<nav class="on-page-nav"><strong>Bu dosyada</strong><a href="#yontem">Yöntem</a><a href="#yem">Yem</a><a href="#davranis">Davranış</a><a href="#rotalar">Rotalar</a>{provinceCounts.length>0&&<a href="#bolgeler">Bölgeler</a>}{relatedGuides.length>0&&<a href="#rehberler">Rehberler</a>}<a href="#kaynaklar">Kaynaklar</a></nav>
+<nav class="on-page-nav"><strong>Bu dosyada</strong><a href="#kimlik">Tür kimliği</a><a href="#yontem">Yöntem</a><a href="#yem">Yem</a><a href="#beslenme">Beslenme</a><a href="#guvenlik">Diş ve takım</a><a href="#mutfak">Besin ve mutfak</a><a href="#rotalar">Rotalar</a><a href="#kaynaklar">Kaynaklar</a></nav>
+<section class="info-block" id="kimlik"><span class="kicker">Tür kimliği ve kapsam</span><h2>{balik.name} nasıl bir balıktır?</h2><p>{details.identity}</p><p>{balik.habitat}</p></section>
 <section class="info-block" id="yontem"><span class="kicker">Takım seçimi</span><h2>{balik.name} hangi yöntemlerle avlanır?</h2><p>{methodText}</p><div class="tag-row large-tags">{balik.methods.map((x)=><span>{x}</span>)}</div></section>
 <section class="info-block" id="yem"><span class="kicker">Yem ve sunum</span><h2>Hangi yemler değerlendirilebilir?</h2><p>{baitText}</p><div class="tag-row large-tags">{balik.baits.map((x)=><span>{x}</span>)}</div></section>
+<section class="info-block" id="beslenme"><span class="kicker">Doğal beslenme</span><h2>Bitkisel mi, canlı yem mi; yemi nasıl alır?</h2><p>{details.diet}</p><p>{details.feeding}</p><p class="microcopy">Doğal besin, oltaya takılan yem ve yemi alma hareketi farklı bilgilerdir. Tür düzeyinde kanıt yoksa emme/ısırma ayrımı kesinleştirilmez.</p></section>
 <section class="info-block" id="davranis"><span class="kicker">Mevsim ve davranış</span><h2>Sahada neyi izlemek gerekir?</h2><p>{balik.seasonNote}</p><p>Tek bir av günündeki sonuç türün o merada sürekli bulunduğunu kanıtlamaz. Su koşulları, göç, üreme dönemi ve besin hareketi değerlendirilmeden eski bir rapor güncel gerçek gibi kullanılmamalıdır.</p></section>
+<section class="info-block" id="guvenlik"><span class="kicker">Diş, direnç ve güvenlik</span><h2>Olta takımını zorlar mı; avcıya tehlikesi var mı?</h2><h3>Diş ve ağız</h3><p>{details.teeth}</p><h3>Takım ve misina</h3><p>{details.tackle}</p><h3>Avcı güvenliği</h3><p>{details.handling}</p></section>
+<section class="info-block" id="mutfak"><span class="kicker">Besin ve mutfak</span><h2>Besin değeri, kılçık ve yemek seçenekleri</h2><h3>Vitaminler ve besin öğeleri</h3><p>Yenilebilir balık eti protein içerir. Bu dosyada {balik.name} için av/yetiştirme biçimi ve yenilebilir kısım eşleşmiş sayısal vitamin, omega-3 veya kalori değeri yayımlanmıyor. Aynı ortak ad farklı biyolojik türleri veya farklı ürünleri kapsayabilir.</p>{nutritionExample?<p><a href={nutritionExample.url} target="_blank" rel="noreferrer">TürKomp: {nutritionExample.label} besin bileşimi →</a> Bu örnek ürünün vitamin ve mineral satırlarını gösterir; avladığın her balığın ölçümü değildir.</p>:<p><a href="https://turkomp.tarimorman.gov.tr/database" target="_blank" rel="noreferrer">TürKomp gıda veri tabanında</a> bilimsel tür ve ürün karşılığını kontrol et; bu dosyada doğrulanmış birebir eşleşme yok.</p>}<h3>Kılçık</h3><p>{details.bones}</p><h3>Başlıca hazırlama biçimleri</h3>{details.dishes.length?<p>{details.dishes.join(", ")} düşünülebilir. Bunlar tarif veya gıda güvenliği garantisi değildir; balığı uygun şekilde temizle ve pişir.</p>:<p>Bu tür için kaynakla doğrulanmış bir yemek önerisi eklenmedi. Avlandığı suyun tüketim uygunluğunu ve yerel kuralları ayrıca kontrol et.</p>}</section>
 <section class="warning-box"><h2>Güvenlik ve mevzuat</h2><p>{balik.caution}</p><p>Boy, adet, dönem ve yöntem kuralları değişebileceği için av öncesinde güncel 6/2 Tebliği ve il müdürlüğü duyuruları kontrol edilmelidir.</p></section>
 <section class="info-block" id="rotalar"><span class="kicker">Doğrulanabilir veri kümesinden ilişkili rotalar</span><h2>{balik.name} raporlanan mera dosyaları</h2><p>Aşağıdaki bağlantılar yalnızca Güven A, B veya C düzeyindeki rota dosyalarını kullanır. Tür eşleşmesi günlük av garantisi değildir; Güven D araştırma başlangıçları bu sayının ve bağlantı ağının dışında tutulur.</p>{related.length?<div class="link-list">{related.map((m)=><a href={`/meralar/${m.slug}/`}><strong>{m.name}</strong><span>{m.province} · {m.district} · {m.waterType} · Güven {m.confidence}</span></a>)}</div>:<p>Henüz bu türle eşleştirilmiş doğrulanabilir mera kaydı yok.</p>}{relatedAll.length>related.length&&<p class="microcopy">Toplam {relatedAll.length} doğrulanabilir eşleşmeden güven ve İstanbul/Kocaeli önceliğiyle {related.length} rota gösteriliyor. İl sayfalarından diğer rotalara ulaşılabilir.</p>}</section>
 {provinceCounts.length>0&&<section class="info-block" id="bolgeler"><span class="kicker">İl kümeleri</span><h2>{balik.name} için bölgesel rota merkezleri</h2><p>Bir türün aynı ilde birden fazla rota dosyasında geçmesi, o ilin ilgili avlaklarını birlikte incelemeyi kolaylaştırır.</p><div class="link-list">{provinceCounts.map((item)=><a href={`/iller/${slugifyTr(item.province)}/`}><strong>{item.province} avlakları</strong><span>{item.count} ilişkili rota</span></a>)}</div></section>}
 {relatedGuides.length>0&&<section class="info-block" id="rehberler"><span class="kicker">İlgili bilgi düğümleri</span><h2>{balik.name} için yararlı rehberler</h2><div class="link-list">{relatedGuides.map((guide)=><a href={`/rehberler/${guide.slug}/`}><strong>{guide.title}</strong><span>{guide.category} · {guide.difficulty} · {guide.readingTime} dk</span></a>)}</div></section>}
-{fishSources.length?<section class="source-box" id="kaynaklar"><span class="kicker">Kaynaklar ve kanıt sınırı</span><h2>{balik.name} dosyası hangi kaynaklara dayanıyor?</h2><p>Bilimsel kaynaklar türün kayıtlı dağılımı, örneklenmesi veya biyolojisi için kullanılır; listelenen pratik yem ve takım seçenekleri ise editoryal saha başlangıçlarıdır ve akademik kaynakların birebir önerisi olarak sunulmaz.</p><ul>{fishSources.map((source:any)=><li><a href={source.url} target="_blank" rel="noreferrer"><strong>{source.label}</strong></a><span>{source.note}</span></li>)}</ul></section>:<section class="source-box" id="kaynaklar"><span class="kicker">Kaynak yöntemi</span><h2>Bilgi nasıl kullanılmalı?</h2><p>Olta Atlası tür dosyaları, genel balıkçılık bilgilerini mera kayıtlarıyla ilişkilendirir. Tür teşhisi, yasal limit ve kapalı dönem için Tarım ve Orman Bakanlığı kaynakları esas alınmalıdır.</p><a class="text-link" href="https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi" target="_blank" rel="noreferrer">Güncel su ürünleri avcılığı kaynaklarını aç →</a></section>}
+<section class="source-box" id="kaynaklar"><span class="kicker">Kaynaklar ve kanıt sınırı</span><h2>{balik.name} dosyası hangi kaynaklara dayanıyor?</h2><p>Tür kimliği ve doğal beslenme için aşağıdaki kaynaklar incelenmiştir. Yem, takım ve yemek seçenekleri editoryal başlangıç önerileridir; kaynağın birebir av veya tarif tavsiyesi olarak sunulmaz. Besin miktarı için doğrulanmış tür/ürün eşleşmesi yoktur.</p><ul>{fishSources.map((source:any)=><li><a href={source.url} target="_blank" rel="noreferrer"><strong>{source.label}</strong></a><span>{source.note}</span></li>)}</ul><p><a class="text-link" href="https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi" target="_blank" rel="noreferrer">Güncel amatör avcılık kurallarını kontrol et →</a></p></section>
 <FeedbackButtons title={`${balik.name} Balıkçılık Rehberi`} contentKey={`balik:${balik.slug}`} path={pagePath} /></article>
 <aside class="content-aside"><div class="aside-card sticky-card"><h2>Hızlı özet</h2><dl class="compact-dl"><div><dt>Su</dt><dd>{balik.water}</dd></div>{scientificName&&<div><dt>Bilimsel ad</dt><dd><em>{scientificName}</em></dd></div>}<div><dt>Yöntem</dt><dd>{balik.methods[0]}</dd></div><div><dt>Yem</dt><dd>{balik.baits[0]}</dd></div><div><dt>Aktif rota</dt><dd>{relatedAll.length}</dd></div></dl></div><div class="aside-card"><h2>Tür teşhisi</h2><p>Avladığın türü güvenilir fotoğraf anahtarı veya uzman görüşüyle doğrula.</p></div><div class="aside-card"><h2>Keşfet</h2><a href="/meralar/">Tüm avlaklara git</a><br/><a href="/rehberler/">Tüm rehberlere git</a></div></aside></section>
 </BaseLayout>
