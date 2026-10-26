@@ -52,6 +52,15 @@
     }
   ],
   "candidateQueue": "docs/quality-daily-candidates-2026-10-26.md",
-  "publication": { "verified": false, "newRoutesPublished": 0, "existingRoutesReleased": 0, "productionStatus": "pending" },
+  "publication": {
+    "verified": true,
+    "newRoutesPublished": 2,
+    "existingRoutesReleased": 0,
+    "mergedMainSha": "4bddbcf1b56f2aed67e28ad240537e9ba2a2bc84",
+    "liveSha": "4bddbcf1b56f2aed67e28ad240537e9ba2a2bc84",
+    "productionStatus": "success",
+    "productionRunUrl": "https://github.com/balikrotasi1041/oltaatlasi/actions/runs/40368794010",
+    "verifiedAt": "2026-10-26T17:30:34Z"
+  },
   "shortfall": { "newReason": null, "promotionReason": null }
 }
