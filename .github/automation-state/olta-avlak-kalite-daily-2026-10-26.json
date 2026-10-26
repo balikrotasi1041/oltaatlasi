@@ -1,0 +1,57 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-10-26",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-26.json",
+  "baselineMainSha": "0e6150bb818d81368c3f538649843f095a98842c",
+  "startingLiveSha": "0e6150bb818d81368c3f538649843f095a98842c",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 141,
+  "istanbulExhaustedEvidence": "25 Ekim kayıtlı tarama gerekçesi sürüyor: merkez ve yakın İstanbul'da yeni rota için tür, ayrı su kimliği veya kamusal erişim kanıtı eksik. Nakkaştepe sahil parkı ile tepedeki Millet Bahçesi karıştırılmamalı; yeni kanıt gelirse İstanbul kuyruğu yeniden açılacak.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": ["kocaeli-kandira-kumcagiz-deresi-kurtyeri-kiyisi", "kocaeli-kandira-uzunkum-acik-olta-kiyisi"],
+  "promotionSlugs": ["ortakoy-sahili", "kandilli-sahili", "kucuksu-sahili"],
+  "indexReleaseSlugs": ["kocaeli-kandira-kumcagiz-deresi-kurtyeri-kiyisi", "kocaeli-kandira-uzunkum-acik-olta-kiyisi"],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": ["ortakoy-sahili", "kandilli-sahili", "kucuksu-sahili"],
+  "decisions": [
+    {
+      "slug": "ortakoy-sahili", "baselineGrade": "C", "finalGrade": "C+", "previousIndexing": "index", "distanceKmFromIstanbulCenter": 5.995,
+      "identityAndSpecies": "İBB 2017 rehberi Ortaköy–Bebek kıyısı için istavrit, lüfer ve zargana kaydeder; eski kanıtsız kefal/izmarit listeden çıkarıldı.",
+      "access": "İBB açık kıyı olta bağlamı; aktif iskele, tekne ve meydan kalabalığında atış yapılmaz.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi.",
+      "sources": ["https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "kandilli-sahili", "baselineGrade": "C", "finalGrade": "C+", "previousIndexing": "index", "distanceKmFromIstanbulCenter": 10.012,
+      "identityAndSpecies": "İBB 2017 rehberi Kandilli kıyısında istavrit ve lüferi yer adıyla kaydeder; eski kanıtsız kefal/zargana çıkarıldı.",
+      "access": "İBB tarihsel olta kıyısı; aktif vapur iskelesi ve dar yaya kıyısı güvenli değilse av yapılmaz.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi.",
+      "sources": ["https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "kucuksu-sahili", "baselineGrade": "C", "finalGrade": "C+", "previousIndexing": "index", "distanceKmFromIstanbulCenter": 10.715,
+      "identityAndSpecies": "İBB 2017 rehberi Küçüksu kıyısında istavrit, mezgit ve sardalyayı yer adıyla listeler; eski kanıtsız kefal/zargana/lüfer çıkarıldı.",
+      "access": "Genel kamusal sahil; aktif Küçüksu iskelesi, dere ağzı sürüküntüsü ve yüzme alanı dışarıda.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi.",
+      "sources": ["https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "kocaeli-kandira-uzunkum-acik-olta-kiyisi", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null, "distanceKmFromIstanbulCenter": 111.426,
+      "identityAndSpecies": "Kocaeli Büyükşehir 2025 Uzunkum sportif olta yarışmasında 62 cm minekop yakalandığını doğrudan bildirir.",
+      "access": "Resmî yarışma ve 2026 belediye turizm kaydı kamusal Uzunkum kıyısını destekler; şamandıralı yüzme kesimi ve korunan kumul dışarıda.",
+      "law": "6/2, 2026/26 değişikliği ve Kocaeli Valiliği 2025/1 şamandıralı yüzme alanı yasağı incelendi.",
+      "sources": ["https://www.kocaeli.bel.tr/haber/olta-ustalarinin-nefes-kesen-yarisi-49464.html", "https://www.kocaeli.bel.tr/amp/haber/kocaelinin-turizm-rotalari-hayran-birakti-52015.html", "https://www.kocaeli.gov.tr/suda-bogulma-olaylari-ile-ilgili-genel-emir-2025-1", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "kocaeli-kandira-kumcagiz-deresi-kurtyeri-kiyisi", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null, "distanceKmFromIstanbulCenter": 106.178,
+      "identityAndSpecies": "Kocaeli Büyükşehir Ansiklopedisi Kumcağız Deresi'nde sazan için olta imkânını açıkça bildirir; OSM dere su kimliğini deniz plajından ayırır.",
+      "access": "Belediye 2026 Kumcağız kamusal sahil yerleşimini listeler. Dere yaklaşımı yalnız açık yaya kıyısıyla sınırlı; özel parsel ve taşkın bariyeri hariç.",
+      "law": "6/2 içsu sazan dönemi ve 2026/26 değişikliği değerlendirildi; AFAD taşkın riski ve güncel yerel levha üstündür.",
+      "sources": ["https://www.kocaeli.bel.tr/files/uploads/documents/1764854550_kocaeliansiklopedisicilt3-son-04122025pdf.pdf", "https://www.kocaeli.bel.tr/amp/haber/kocaelinin-turizm-rotalari-hayran-birakti-52015.html", "https://www.openstreetmap.org/way/237819153", "https://kocaeli.afad.gov.tr/kurumlar/kocaeli.afad/Kocaeli-IRAP.pdf", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    }
+  ],
+  "candidateQueue": "docs/quality-daily-candidates-2026-10-26.md",
+  "publication": { "verified": false, "newRoutesPublished": 0, "existingRoutesReleased": 0, "productionStatus": "pending" },
+  "shortfall": { "newReason": null, "promotionReason": null }
+}

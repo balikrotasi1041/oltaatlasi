@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Kumcağız Deresi Kurtyeri Kıyısı</title>
+  <desc id="desc">Dere ve yeşil kıyıyı simgeleyen çizim; gerçek av noktası fotoğrafı veya erişim haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#193a39"/>
+  <path d="M0 450 Q180 410 330 445 T630 430 T920 415 T1200 430 V630 H0Z" fill="#4e8d79"/>
+  <path d="M0 530 Q270 470 540 515 T1080 500 T1200 490 V630 H0Z" fill="#277c95"/>
+  <path d="M0 540 Q270 480 540 525 T1080 510 T1200 500" fill="none" stroke="#a9d9df" stroke-width="7"/>
+  <circle cx="1044" cy="126" r="53" fill="#f2d38f"/>
+  <text x="68" y="95" fill="#d5f0ec" font-family="sans-serif" font-size="27">KOCAELİ · KANDIRA</text>
+  <text x="68" y="172" fill="#ffffff" font-family="sans-serif" font-size="47" font-weight="700">Kumcağız Deresi Kurtyeri Kıyısı</text>
+  <text x="68" y="222" fill="#d5f0ec" font-family="sans-serif" font-size="29">Sazan kaydı · akarsu</text>
+  <text x="68" y="596" fill="#17324a" font-family="sans-serif" font-size="24">Taşkın ve özel mülkiyet sınırını kontrol et</text>
+</svg>

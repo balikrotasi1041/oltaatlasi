@@ -22,6 +22,8 @@ import { growthIstanbulRoutes20261023 } from "./meralar-growth-istanbul-2026-10-
 import { applyDailyAvlakQuality20261023 } from "./meralar-daily-avlak-quality-2026-10-23";
 import { applyDailyAvlakQuality20261025 } from "./meralar-daily-avlak-quality-2026-10-25";
 import { growthNearIstanbulRoutes20261025 } from "./meralar-growth-near-istanbul-2026-10-25";
+import { applyDailyAvlakQuality20261026 } from "./meralar-daily-avlak-quality-2026-10-26";
+import { growthRoutes20261026 } from "./meralar-growth-2026-10-26";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -294,6 +296,11 @@ for(const route of growthIstanbulRoutes20261023){
 applyDailyAvlakQuality20261025(routeMap);
 for(const route of growthNearIstanbulRoutes20261025){
  if(routeMap.has(route.slug))throw new Error(`25 Ekim yeni rota mevcut slug ile çakışıyor: ${route.slug}`);
+ routeMap.set(route.slug,route);
+}
+applyDailyAvlakQuality20261026(routeMap);
+for(const route of growthRoutes20261026){
+ if(routeMap.has(route.slug))throw new Error(`26 Ekim yeni rota mevcut slug ile çakışıyor: ${route.slug}`);
  routeMap.set(route.slug,route);
 }
 export const meralar:EnrichedMera[]=[...routeMap.values()];
