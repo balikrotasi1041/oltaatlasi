@@ -74,14 +74,19 @@
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-27.json",
   "publication": {
-    "verified": false,
+    "verified": true,
     "newRoutesPublished": 0,
     "existingRoutesReleased": 0,
-    "mergedMainSha": null,
-    "liveSha": null,
-    "productionStatus": "pending",
-    "productionRunUrl": null,
-    "verifiedAt": null
+    "mergedMainSha": "775d896ff8f23a25be5e1c40103e0b536c71cd05",
+    "liveSha": "775d896ff8f23a25be5e1c40103e0b536c71cd05",
+    "productionStatus": "success",
+    "productionRunUrl": "https://github.com/balikrotasi1041/oltaatlasi/actions/runs/40552403596",
+    "verifiedAt": "2026-10-27T17:40:59Z",
+    "verifiedRouteSlugs": [
+      "istanbul-avcilar-avcilar-sahil-parki",
+      "tuzla-sahil-parki",
+      "degirmendere-sahili"
+    ]
   },
   "shortfall": {
     "newReason": "İstanbul ve 175 km taramada incelenen yeni adaylarda ayrı rota kimliği, güncel kamusal erişim veya rota-özel tür kanıtı eksik; mevcut Değirmendere, Ütük ve Karaidemir kayıtları yeni olarak çift sayılmadı. İki yeni avlak teslim edilmedi.",
