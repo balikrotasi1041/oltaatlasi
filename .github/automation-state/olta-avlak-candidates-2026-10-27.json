@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-27",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 141,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "newRouteQueue": [
+    {
+      "name": "Üsküdar Nakkaştepe Sahil Parkı",
+      "province": "İstanbul",
+      "decision": "duplicate",
+      "reason": "İBB 2017 kıyı anlatımı ve güncel harita Kuzguncuk parkı ile aynı kıyıya çıkıyor; mevcut Kuzguncuk kaydıyla ikinci sayfa olmaz.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://yandex.com.tr/maps/org/nakkastepe_sahil/2607957926/"
+      ]
+    },
+    {
+      "name": "Beykoz Selvi Burnu",
+      "province": "İstanbul",
+      "decision": "evidence_pending",
+      "reason": "İBB 2017 tarihsel tür kaydı var; burnun bugünkü kamusal erişimi ve yakın özel tesis sınırı doğrulanmadı.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://mapcarta.com/13824756"
+      ]
+    },
+    {
+      "name": "Gölcük Değirmendere Yüzbaşılar Sahili",
+      "province": "Kocaeli",
+      "decision": "existing_route_promoted",
+      "reason": "Değirmendere Sahili mevcut rota kapsamı içinde; 2021 yakalama ve 2026 kıyı yarışması yeni sayfa yerine mevcut rota terfisinde kullanıldı.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/haber/yarismada-1240-balik-oltayla-yakalandi-39531.html",
+        "https://www.kocaeli.bel.tr/haber/deniz-festivali-degirmendereyi-renklendirdi-51423.html"
+      ]
+    },
+    {
+      "name": "Ormanya Sportif Olta Göleti",
+      "province": "Kocaeli",
+      "decision": "evidence_pending",
+      "reason": "Belediye erişim/olta alanını doğruluyor; 2024 çalışma sonrası güncel stok ve rota-özel tür kanıtı bulunmadı.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/ormanya.html",
+        "https://www.kocaeli.bel.tr/files/uploads/documents/1744895575_2024-yili-faaliyet-raporu_ek_2024-yili-faaliyet-raporupdf.pdf"
+      ]
+    },
+    {
+      "name": "Ütük Göleti",
+      "province": "Kocaeli",
+      "decision": "existing_route_pending",
+      "reason": "Mevcut D kaydı; 2026 resmî festivalde balık tutulamadığı açıkça bildirildi. Festival adı tür varlığını kanıtlamaz.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/haber/genclerle-gelecege-projesi-bu-festivalde-hayat-buldu-51223.html"
+      ]
+    },
+    {
+      "name": "Karaidemir Baraj Gölü",
+      "province": "Tekirdağ",
+      "decision": "existing_route_pending",
+      "reason": "Mevcut D kaydı; 2019 sazan yarışması tür bağlamı verir, ancak güncel kamusal kıyı ve yerel hukuk incelenmeden yeni sayfa sayılamaz.",
+      "sources": [
+        "https://www.gunhaber.com.tr/haber/malkara-da-balik-tutma-yarismasi/428723/"
+      ]
+    },
+    {
+      "name": "Aşiyan ve Kabataş vapur iskeleleri",
+      "province": "İstanbul",
+      "decision": "access_pending",
+      "reason": "İBB tarihsel tür kaydı var; aktif iskele işletme alanı ve bağımsız güvenli kamu kıyısı ayrımı güncel olarak doğrulanmadı.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf"
+      ]
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "istanbul-avcilar-avcilar-sahil-parki",
+      "decision": "C_to_C_plus"
+    },
+    {
+      "slug": "tuzla-sahil-parki",
+      "decision": "C_to_C_plus"
+    },
+    {
+      "slug": "degirmendere-sahili",
+      "decision": "C_to_C_plus"
+    }
+  ],
+  "nextResearch": "175 km sonrasında yakın Tekirdağ/Sakarya/Yalova kamusal kıyılarında ayrı nokta, yerel av hukuku ve rota-özel tür yakalama kaydı birlikte aranacak; İstanbul kanıt bekleyen adaylar yeni kaynakta yeniden açılacak."
+}

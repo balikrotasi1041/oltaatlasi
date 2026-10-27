@@ -1,0 +1,90 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-10-27",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-27.json",
+  "baselineMainSha": "33968de4afadd753a7a89623a73399b6eef92a2c",
+  "startingLiveSha": "33968de4afadd753a7a89623a73399b6eef92a2c",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 175,
+  "istanbulExhaustedEvidence": "25–26 Ekim İstanbul kapsam notu sürüyor. 27 Ekimde Nakkaştepe sahili mevcut Kuzguncuk kaydıyla çakıştı; Selvi Burnu özel tesis/yalı sınırı, Aşiyan ve Kabataş aktif iskele hukuku nedeniyle yeni C+ sayfası oluşturulmadı. Yeni kaynak geldikçe İstanbul kuyruğu yeniden incelenecek.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [],
+  "promotionSlugs": [
+    "istanbul-avcilar-avcilar-sahil-parki",
+    "tuzla-sahil-parki",
+    "degirmendere-sahili"
+  ],
+  "indexReleaseSlugs": [],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "istanbul-avcilar-avcilar-sahil-parki",
+    "tuzla-sahil-parki",
+    "degirmendere-sahili"
+  ],
+  "decisions": [
+    {
+      "slug": "istanbul-avcilar-avcilar-sahil-parki",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 19.707,
+      "identityAndSpecies": "İBB 2025 Avcılar sahili için istavrit ve kefali yer adıyla listeler; yanlış Ambarlı/pin ve eski lüfer iddiası çıkarıldı.",
+      "access": "İBB Avcılar Sahil Parkı kamusal alanı doğrular; yüzme ve yoğun yaya kesimi dışarıda.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; yerel geçici yasak ve saha levhası av gününde üstündür.",
+      "sources": [
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle",
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/avcilar-sahil-parki-yenilendi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "tuzla-sahil-parki",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 34.398,
+      "identityAndSpecies": "İBB 2025 Tuzla sahili için lüfer ve palamutu listeler; açık denizdeki mercan/çipura park kıyısına taşınmadı.",
+      "access": "İBB Tuzla Sahil Parkı kamusal düzenlemesini doğrular; kano ve çocuk alanı dışarıda.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; yerel geçici yasak ve saha levhası av gününde üstündür.",
+      "sources": [
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle",
+        "https://icraat.ibb.istanbul/proje-detay/tuzla-sahil-parki-acilisini-yaptik/ce90ce27-c5ab-4b72-a679-70d1c5f192f6",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "degirmendere-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 74.548,
+      "identityAndSpecies": "Kocaeli Büyükşehir 2021 Değirmendere Yüzbaşılar sahil yarışında istavrit, izmarit ve ispari yakalandığını bildirir; eski kanıtsız kefal/zargana çıkarıldı.",
+      "access": "Kocaeli Büyükşehir 2026 aynı sahilde kıyıdan LRF yarışmasını doğrular; inşaat, çekek ve tekne alanı dışarıda.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; yerel geçici yasak ve saha levhası av gününde üstündür.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/haber/yarismada-1240-balik-oltayla-yakalandi-39531.html",
+        "https://www.kocaeli.bel.tr/haber/deniz-festivali-degirmendereyi-renklendirdi-51423.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-27.json",
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "mergedMainSha": null,
+    "liveSha": null,
+    "productionStatus": "pending",
+    "productionRunUrl": null,
+    "verifiedAt": null
+  },
+  "shortfall": {
+    "newReason": "İstanbul ve 175 km taramada incelenen yeni adaylarda ayrı rota kimliği, güncel kamusal erişim veya rota-özel tür kanıtı eksik; mevcut Değirmendere, Ütük ve Karaidemir kayıtları yeni olarak çift sayılmadı. İki yeni avlak teslim edilmedi.",
+    "promotionReason": null
+  }
+}
