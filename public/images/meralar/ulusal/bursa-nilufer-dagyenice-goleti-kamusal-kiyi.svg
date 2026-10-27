@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Dağyenice Göleti Kamusal Kıyısı</title>
+  <desc id="desc">Ormanlık gölet kıyısını simgeleyen çizim; gerçek fotoğraf veya izinli atış noktası haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#173847"/>
+  <circle cx="1010" cy="122" r="56" fill="#e9cb88"/>
+  <path d="M0 350 L130 260 L255 352 L420 225 L585 355 L785 274 L980 355 L1200 250 V630 H0Z" fill="#315c54"/>
+  <path d="M0 425 Q210 390 410 425 T850 404 T1200 420 V630 H0Z" fill="#287d8d"/>
+  <path d="M0 505 Q190 475 400 500 T850 490 T1200 492" fill="none" stroke="#a3d6da" stroke-width="7"/>
+  <text x="66" y="91" fill="#ccebe8" font-family="sans-serif" font-size="28">BURSA · NİLÜFER</text>
+  <text x="66" y="165" fill="#ffffff" font-family="sans-serif" font-size="46" font-weight="700">Dağyenice Göleti</text>
+  <text x="66" y="215" fill="#ccebe8" font-family="sans-serif" font-size="27">Kamusal kıyı · yayın kaydı</text>
+  <text x="66" y="587" fill="#ffffff" font-family="sans-serif" font-size="22">Yaya kullanımına ve güncel levhalara uyun</text>
+</svg>
