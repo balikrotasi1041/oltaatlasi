@@ -74,6 +74,25 @@
       "sources": [
         "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf"
       ]
+    },
+    {
+      "name": "Şile Limanı dışındaki kamusal olta kıyısı",
+      "province": "İstanbul",
+      "decision": "access_pending",
+      "reason": "İBB 2025 Şile türlerini ilçe kıyısı düzeyinde sayıyor; eski İSTKA projesi Şile Limanı olta parkurunu anıyor. Güncel liman işletmesi, açık güvenli kıyı ve tam konum doğrulanmadan C+ sayfası açılmaz.",
+      "sources": [
+        "https://istanbulseninhaber.ibb.istanbul/haber-detay/istanbulda-balik-tutulacak-yerle",
+        "https://cpcalendars.yatirimadestek.gov.tr/media/1114/2012-y%C4%B1l%C4%B1-mal%C4%B1-destek-programlar%C4%B1-desteklenen-projeler.pdf"
+      ]
+    },
+    {
+      "name": "Ağva Limanı dışındaki kamusal olta kıyısı",
+      "province": "İstanbul",
+      "decision": "species_access_pending",
+      "reason": "Eski İSTKA projesi Ağva Limanı olta parkurunu sayıyor; güncel açık kıyı erişimi ve bu liman kesimine özgü tür kanıtı henüz bulunmadı.",
+      "sources": [
+        "https://cpcalendars.yatirimadestek.gov.tr/media/1114/2012-y%C4%B1l%C4%B1-mal%C4%B1-destek-programlar%C4%B1-desteklenen-projeler.pdf"
+      ]
     }
   ],
   "existingPromotionQueue": [
