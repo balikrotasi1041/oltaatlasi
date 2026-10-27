@@ -17,7 +17,9 @@ const candidates = [
     sourceNote: "Avcılar sahilini ve mevsimsel istavrit ile kefal kaydını yer adıyla verir; Denizköşkler parkının her metre karesinde av garantisi değildir.",
     accessSource: "https://istanbulseninhaber.ibb.istanbul/haber-detay/avcilar-sahil-parki-yenilendi",
     accessNote: "Kamusal Avcılar Sahil Parkı; plaj, yüzme şamandırası ve yoğun yaya alanı dışlanır.",
-    risk: "Yüzme alanı, park yürüyüş aksı ve kalabalıkta güvenli atış açıklığı yoksa olta açılmaz."
+    risk: "Yüzme alanı, park yürüyüş aksı ve kalabalıkta güvenli atış açıklığı yoksa olta açılmaz.",
+    summary: "Avcılar Sahil Parkı, İBB'nin kamusal park kaydı ve Avcılar sahili için yayımladığı istavrit/kefal tür bilgisiyle C+ düzeyinde doğrulanmış genel kıyı rotasıdır.",
+    intro: "İBB'nin 2025 Avcılar sahili kaydı istavrit ve kefali yer adıyla bildirir. Denizköşkler parkı bu genel sahilin ayrı bir kamusal kıyı kesimidir; Ambarlı liman türleri ve izinleri buraya taşınmaz."
   },
   {
     slug: "tuzla-sahil-parki",
@@ -27,7 +29,9 @@ const candidates = [
     sourceNote: "Tuzla sahilini lüfer ve palamut için adlandırır; açık denizdeki mercan/çipura bilgisi park kıyısına taşınmaz.",
     accessSource: "https://icraat.ibb.istanbul/proje-detay/tuzla-sahil-parki-acilisini-yaptik/ce90ce27-c5ab-4b72-a679-70d1c5f192f6",
     accessNote: "İBB 123 bin m² kamusal parkı doğrular; kano, çocuk oyun, marina ve bağlı tekne bölümleri av yeri değildir.",
-    risk: "Kano, oyun alanı, iskele ve yaya koridorundan uzak açık kıyı bulunmazsa olta açılmaz."
+    risk: "Kano, oyun alanı, iskele ve yaya koridorundan uzak açık kıyı bulunmazsa olta açılmaz.",
+    summary: "Tuzla Sahil Parkı'nın kamusal kıyı kimliği ve Tuzla sahili için İBB'nin lüfer/palamut kaydı C+ düzeyinde kanıtlanmıştır; parkın yoğun kullanım bölümleri av alanı değildir.",
+    intro: "İBB'nin Tuzla sahili tür kaydı lüfer ve palamutu bildirir. Bu bilgi Tuzla park kıyısı için tarihsel/sektör ölçeğindedir; açık deniz için verilen mercan ve çipura bilgisi park kıyısına uygulanmaz."
   },
   {
     slug: "degirmendere-sahili",
@@ -37,7 +41,9 @@ const candidates = [
     sourceNote: "Değirmendere Yüzbaşılar kıyısındaki 2021 yarışmasında yakalanan türleri açıkça listeler; bugünkü stok garantisi değildir.",
     accessSource: degirmendereFestival,
     accessNote: "2026 Deniz Festivali aynı Yüzbaşılar Sahili'nde sportif olta kullanımını kaydeder; geçici çalışma ve işletme sınırları hariçtir.",
-    risk: "2026 kıyı inşaatı, çekek ve tekne operasyonu ile yaya/bisiklet yolunda güvenli açıklık yoksa olta açılmaz."
+    risk: "2026 kıyı inşaatı, çekek ve tekne operasyonu ile yaya/bisiklet yolunda güvenli açıklık yoksa olta açılmaz.",
+    summary: "Değirmendere Yüzbaşılar Sahili'nde belediyenin 2021 yakalama ve 2026 kıyıdan olta yarışı kayıtlarıyla istavrit, izmarit ve ispari doğrulanan C+ düzeyinde kamusal kıyı rotasıdır.",
+    intro: "Belediyenin 2021 yarışma kaydı Değirmendere Yüzbaşılar kesiminde istavrit, izmarit ve ispari yakalandığını bildirir. 2026 sahilden LRF yarışı kamusal kullanım bağlamını günceller; iki kayıt da sürekli serbest erişim veya av garantisi değildir."
   }
 ] as const;
 
@@ -53,6 +59,8 @@ export function applyDailyAvlakQuality20261027(routes: Map<string, EnrichedMera>
     routes.set(old.slug, {
       ...old,
       fish: [...candidate.fish],
+      summary: candidate.summary,
+      longIntro: [candidate.intro, candidate.accessNote],
       qualityGrade: "C+",
       updatedAt: reviewedAt,
       verification: `27 Ekim 2026: ${candidate.sourceLabel} bu rota için ${candidate.fish.join(", ")} türlerini kaydeder. Kayıt tarihsel/bölgesel bağlamdır, güncel av garantisi değildir. 6/2 ve 2026/26 değişikliği incelendi. ${candidate.risk}`,
