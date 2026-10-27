@@ -129,15 +129,21 @@
     ]
   },
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "mergedMainSha": null,
-    "liveSha": null,
-    "productionStatus": "pending",
-    "productionRunUrl": null,
-    "verifiedAt": null,
-    "verifiedRouteSlugs": []
+    "mergedMainSha": "48c8003f54bb5179f27db3fa1c7d0ce37001df87",
+    "liveSha": "48c8003f54bb5179f27db3fa1c7d0ce37001df87",
+    "productionStatus": "success",
+    "productionRunUrl": "https://github.com/balikrotasi1041/oltaatlasi/actions/runs/40556583119",
+    "verifiedAt": "2026-10-27T18:06:54Z",
+    "verifiedRouteSlugs": [
+      "istanbul-avcilar-avcilar-sahil-parki",
+      "tuzla-sahil-parki",
+      "degirmendere-sahili",
+      "bursa-kestel-golbasi-goleti-kamusal-kiyi",
+      "bursa-nilufer-dagyenice-goleti-kamusal-kiyi"
+    ]
   },
   "shortfall": {
     "newReason": null,

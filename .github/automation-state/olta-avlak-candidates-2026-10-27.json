@@ -14,8 +14,8 @@
       "district": "Kestel",
       "slug": "bursa-kestel-golbasi-goleti-kamusal-kiyi",
       "distanceKmFromIstanbulCenter": 92.601,
-      "decision": "publication_pending",
-      "reason": "Ayrı gölet kimliği, kamusal kıyı oltası, 2026 yayın yakalaması, genel konum ve 6/2 incelendi; canlı doğrulama bekleniyor.",
+      "decision": "published_verified",
+      "reason": "Ayrı gölet kimliği, kamusal kıyı oltası, 2026 yayın yakalaması, genel konum ve 6/2 incelendi; PR #183 ve canlı 48c8003f54bb5179f27db3fa1c7d0ce37001df87 doğrulandı.",
       "sources": [
         "https://www.bursa.com.tr/tr/mekan/golbasi-piknik-alani-75/",
         "https://www.bursatv.com.tr/bursada-turna-beklerken-oltaya-13-kiloluk-dev-yayin-baligi-takildi/amp",
@@ -29,8 +29,8 @@
       "district": "Nilüfer",
       "slug": "bursa-nilufer-dagyenice-goleti-kamusal-kiyi",
       "distanceKmFromIstanbulCenter": 97.708,
-      "decision": "publication_pending",
-      "reason": "Ayrı gölet kimliği, kamusal kıyı oltası, 2025 yayın yakalaması, genel konum ve 6/2 incelendi; canlı doğrulama bekleniyor.",
+      "decision": "published_verified",
+      "reason": "Ayrı gölet kimliği, kamusal kıyı oltası, 2025 yayın yakalaması, genel konum ve 6/2 incelendi; PR #183 ve canlı 48c8003f54bb5179f27db3fa1c7d0ce37001df87 doğrulandı.",
       "sources": [
         "https://rota.bursa.com.tr/mekanlar/dagyenice-goleti-70",
         "https://m.bursadabugun.com/haber/bursa-da-dagyenice-de-35-kg-agirliginda-yayin-baligi-yakalandi-1826380.html",
