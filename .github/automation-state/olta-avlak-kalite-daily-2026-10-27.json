@@ -9,13 +9,19 @@
   "searchRadiusKm": 175,
   "istanbulExhaustedEvidence": "25–26 Ekim İstanbul kapsam notu sürüyor. 27 Ekimde Nakkaştepe sahili mevcut Kuzguncuk kaydıyla çakıştı; Selvi Burnu özel tesis/yalı sınırı, Aşiyan ve Kabataş aktif iskele hukuku nedeniyle yeni C+ sayfası oluşturulmadı. Yeni kaynak geldikçe İstanbul kuyruğu yeniden incelenecek.",
   "indexReleaseCap": 2,
-  "newRouteSlugs": [],
+  "newRouteSlugs": [
+    "bursa-kestel-golbasi-goleti-kamusal-kiyi",
+    "bursa-nilufer-dagyenice-goleti-kamusal-kiyi"
+  ],
   "promotionSlugs": [
     "istanbul-avcilar-avcilar-sahil-parki",
     "tuzla-sahil-parki",
     "degirmendere-sahili"
   ],
-  "indexReleaseSlugs": [],
+  "indexReleaseSlugs": [
+    "bursa-kestel-golbasi-goleti-kamusal-kiyi",
+    "bursa-nilufer-dagyenice-goleti-kamusal-kiyi"
+  ],
   "maintenanceOnlySlugs": [],
   "eligibleReviewedSlugs": [
     "istanbul-avcilar-avcilar-sahil-parki",
@@ -70,10 +76,44 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ]
+    },
+    {
+      "slug": "bursa-kestel-golbasi-goleti-kamusal-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 92.601,
+      "identityAndSpecies": "Bursa resmî rehberi göletin kimlik ve genel konumunu, 31 Ağustos 2026 tarihli yakalama haberi aynı gölette yayın balığını doğrular.",
+      "access": "Bursa Büyükşehir turizm portalı Gölbaşı kamusal piknik kıyısında balık tutulabildiğini bildirir; su yapısı ve işaretli kapalı alanlar dışarıda.",
+      "law": "6/2 ve 2026/26 değişikliği incelendi; Bursa içsularında yayın kapalı dönemi, boy/miktar, işletme ve güncel saha levhası uygulanır.",
+      "sources": [
+        "https://www.bursa.com.tr/tr/mekan/golbasi-piknik-alani-75/",
+        "https://www.bursatv.com.tr/bursada-turna-beklerken-oltaya-13-kiloluk-dev-yayin-baligi-takildi/amp",
+        "https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "bursa-nilufer-dagyenice-goleti-kamusal-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 97.708,
+      "identityAndSpecies": "Bursa resmî rehberi göletin kimlik ve genel konumunu, 15 Temmuz 2025 tarihli yakalama haberi aynı gölette yayın balığını doğrular.",
+      "access": "Bursa Büyükşehir turizm portalı Dağyenice Göleti'ni yıl boyu ziyaret edilebilir ve kıyıda balık tutulabilir alan olarak kaydeder; işletme ve kapalı kesimler dışarıda.",
+      "law": "6/2 ve 2026/26 değişikliği incelendi; Bursa içsularında yayın kapalı dönemi, boy/miktar ve güncel saha levhası uygulanır.",
+      "sources": [
+        "https://rota.bursa.com.tr/mekanlar/dagyenice-goleti-70",
+        "https://m.bursadabugun.com/haber/bursa-da-dagyenice-de-35-kg-agirliginda-yayin-baligi-yakalandi-1826380.html",
+        "https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     }
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-27.json",
-  "publication": {
+  "earlierPublication": {
     "verified": true,
     "newRoutesPublished": 0,
     "existingRoutesReleased": 0,
@@ -88,8 +128,19 @@
       "degirmendere-sahili"
     ]
   },
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "mergedMainSha": null,
+    "liveSha": null,
+    "productionStatus": "pending",
+    "productionRunUrl": null,
+    "verifiedAt": null,
+    "verifiedRouteSlugs": []
+  },
   "shortfall": {
-    "newReason": "İstanbul ve 175 km taramada incelenen yeni adaylarda ayrı rota kimliği, güncel kamusal erişim veya rota-özel tür kanıtı eksik; mevcut Değirmendere, Ütük ve Karaidemir kayıtları yeni olarak çift sayılmadı. İki yeni avlak teslim edilmedi.",
+    "newReason": null,
     "promotionReason": null
   }
 }

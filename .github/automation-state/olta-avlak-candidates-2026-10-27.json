@@ -9,6 +9,36 @@
   "phase": "Türkiye",
   "newRouteQueue": [
     {
+      "name": "Kestel Gölbaşı Göleti Kamusal Kıyısı",
+      "province": "Bursa",
+      "district": "Kestel",
+      "slug": "bursa-kestel-golbasi-goleti-kamusal-kiyi",
+      "distanceKmFromIstanbulCenter": 92.601,
+      "decision": "publication_pending",
+      "reason": "Ayrı gölet kimliği, kamusal kıyı oltası, 2026 yayın yakalaması, genel konum ve 6/2 incelendi; canlı doğrulama bekleniyor.",
+      "sources": [
+        "https://www.bursa.com.tr/tr/mekan/golbasi-piknik-alani-75/",
+        "https://www.bursatv.com.tr/bursada-turna-beklerken-oltaya-13-kiloluk-dev-yayin-baligi-takildi/amp",
+        "https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513"
+      ]
+    },
+    {
+      "name": "Dağyenice Göleti Kamusal Kıyısı",
+      "province": "Bursa",
+      "district": "Nilüfer",
+      "slug": "bursa-nilufer-dagyenice-goleti-kamusal-kiyi",
+      "distanceKmFromIstanbulCenter": 97.708,
+      "decision": "publication_pending",
+      "reason": "Ayrı gölet kimliği, kamusal kıyı oltası, 2025 yayın yakalaması, genel konum ve 6/2 incelendi; canlı doğrulama bekleniyor.",
+      "sources": [
+        "https://rota.bursa.com.tr/mekanlar/dagyenice-goleti-70",
+        "https://m.bursadabugun.com/haber/bursa-da-dagyenice-de-35-kg-agirliginda-yayin-baligi-yakalandi-1826380.html",
+        "https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513"
+      ]
+    },
+    {
       "name": "Üsküdar Nakkaştepe Sahil Parkı",
       "province": "İstanbul",
       "decision": "duplicate",
@@ -109,5 +139,5 @@
       "decision": "C_to_C_plus"
     }
   ],
-  "nextResearch": "175 km sonrasında yakın Tekirdağ/Sakarya/Yalova kamusal kıyılarında ayrı nokta, yerel av hukuku ve rota-özel tür yakalama kaydı birlikte aranacak; İstanbul kanıt bekleyen adaylar yeni kaynakta yeniden açılacak."
+  "nextResearch": "27 Ekim yeniden taramada 175 km çemberindeki Bursa/Kestel Gölbaşı ve Nilüfer Dağyenice iki ayrı güçlü aday bulundu; önceki eksik rapor düzeltildi. İstanbul kanıt bekleyen adaylar yeni kaynakta yeniden açılacak. Sonraki gün en yakın yeni kanıtlı kıyı/göletlerle yarıçap genişletilecek."
 }
