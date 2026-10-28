@@ -9,30 +9,120 @@
   "searchRadiusKm": 175,
   "istanbulExhaustedEvidence": "25–27 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk rotasıyla çakıştı; Selvi Burnu, Aşiyan, Kabataş, Şile/Ağva liman dışı kıyıları için güncel kamusal av erişimi veya tür kanıtı eksik kaldı. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; yakından uzağa genişleme sürer.",
   "indexReleaseCap": 4,
-  "newRouteSlugs": ["bursa-keles-barakli-goleti-mesire-kiyisi", "bursa-keles-gokoz-goleti-maremsah-kiyisi"],
-  "promotionSlugs": [],
-  "indexReleaseSlugs": ["bursa-keles-barakli-goleti-mesire-kiyisi", "bursa-keles-gokoz-goleti-maremsah-kiyisi"],
+  "newRouteSlugs": [
+    "bursa-keles-barakli-goleti-mesire-kiyisi",
+    "bursa-keles-gokoz-goleti-maremsah-kiyisi"
+  ],
+  "promotionSlugs": [
+    "eskihisar-sahili",
+    "karamursel-sahili",
+    "derince-harikalar-sahili"
+  ],
+  "indexReleaseSlugs": [
+    "bursa-keles-barakli-goleti-mesire-kiyisi",
+    "bursa-keles-gokoz-goleti-maremsah-kiyisi"
+  ],
   "maintenanceOnlySlugs": [],
-  "eligibleReviewedSlugs": [],
+  "eligibleReviewedSlugs": [
+    "eskihisar-sahili",
+    "karamursel-sahili",
+    "derince-harikalar-sahili"
+  ],
   "decisions": [
     {
-      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null,
+      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
       "distanceKmFromIstanbulCenter": 117.979,
       "identityAndSpecies": "Bursa resmî rehberi ayrı Baraklı Göleti'nin kimliğini/koordinatını ve oltayı kaydeder; iki rota-özel turizm kaynağı sazanı listeler. Bunlar güncel stok ölçümü değildir.",
       "access": "Keles Kaymakamlığı 1 Haziran 2026 mesire alanı incelemesi ve Bursa resmî olta rehberi genel kamusal kullanımı destekler; giriş koşulları ve mikro kıyı ayrıca kontrol edilir.",
       "law": "Güncel 6/2 ve 2026/26 incelendi; Bursa sazan kapalı dönemi 15 Mart–15 Haziran, boy/miktar ve sulama/işletme levhaları uygulanır.",
-      "sources": ["https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=", "https://www.keles.gov.tr/kaymakamimiz-sn-burak-bozkurt-gurses-barakli-goleti-mesire-alaninda-incelemelerde-bulundu", "https://turkeyoutdoor.org/bursa-outdoor-sportif-olta-balikciligi/", "https://bursamiz.com/tr/yerler/barakli-goleti-ve-doga-parki", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+      "sources": [
+        "https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=",
+        "https://www.keles.gov.tr/kaymakamimiz-sn-burak-bozkurt-gurses-barakli-goleti-mesire-alaninda-incelemelerde-bulundu",
+        "https://turkeyoutdoor.org/bursa-outdoor-sportif-olta-balikciligi/",
+        "https://bursamiz.com/tr/yerler/barakli-goleti-ve-doga-parki",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     },
     {
-      "slug": "bursa-keles-gokoz-goleti-maremsah-kiyisi", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null,
+      "slug": "bursa-keles-gokoz-goleti-maremsah-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
       "distanceKmFromIstanbulCenter": 119.364,
       "identityAndSpecies": "Bursa resmî rehberi Gököz Göleti'nin ayrı su kimliğini ve koordinatını verir; gölet işletmecisi 2024 yerel röportajında sazan varlığını ve olta kullanımını bildirir.",
       "access": "Bursa Büyükşehir Turizm Portalı ve İl Millî Eğitim Müdürlüğü Maremşah ziyaret alanında olta kullanımını doğrular; işletmenin izinli kıyısı ve güncel koşulları girişte sorulur.",
       "law": "Güncel 6/2 ve 2026/26 incelendi; Bursa sazan kapalı dönemi 15 Mart–15 Haziran, boy/miktar ve işletme levhaları uygulanır.",
-      "sources": ["https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=", "https://www.rota.bursa.com.tr/mekanlar/gokoz-natural-park-381", "https://bursa.meb.gov.tr/meb_iys_dosyalar/2025_10/02142436_turkiyeyuzyilimaarifmodeliokuldisiogrenmeortamlariogretmenelkitabi.pdf", "https://www.inegolonline.com/haber/sehrin-sicagindan-bunalanlar-dogal-klima-gokoz-u-tercih-ediyor-310199", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+      "sources": [
+        "https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=",
+        "https://www.rota.bursa.com.tr/mekanlar/gokoz-natural-park-381",
+        "https://bursa.meb.gov.tr/meb_iys_dosyalar/2025_10/02142436_turkiyeyuzyilimaarifmodeliokuldisiogrenmeortamlariogretmenelkitabi.pdf",
+        "https://www.inegolonline.com/haber/sehrin-sicagindan-bunalanlar-dogal-klima-gokoz-u-tercih-ediyor-310199",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "eskihisar-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 46.009,
+      "identityAndSpecies": "2016 Eskihisar kıyı oltacıları istavrit, kefal ve zarganayı yer adıyla bildirdi; 2026 Gebze Belediyesi olta etkinliği güncel kullanım bağlamıdır.",
+      "access": "Gebze Belediyesi 2026 Eskihisar sahilinde üçüncü kamusal olta etkinliğini düzenledi; feribot/operasyon sınırı rota dışıdır.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; liman/tekne operasyonu ve yerel geçici kısıtlar av gününde üstündür.",
+      "sources": [
+        "https://www.ozgurkocaeli.com.tr/haber/4408733/osmangazi-manzarasinda-balik-tutma-keyfi",
+        "https://www.gebze.bel.tr/haber/baba-cocuk-balik-tutma-keyfi-eskihisar-da-gerceklesti_7393.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "karamursel-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 64.188,
+      "identityAndSpecies": "2025 Karamürsel kıyı oltacısı röportajında istavrit, ispari, izmarit, karagöz ve kırlangıç kaydedildi; desteklenmeyen kefal, zargana, lüfer, mezgit çıkarıldı.",
+      "access": "Kocaeli Büyükşehir Altınkemer–Ereğli sahilinde beş kamusal balık tutma platformunu doğrular; güncel bakım ve levha kontrol edilir.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; liman/tekne operasyonu ve yerel geçici kısıtlar av gününde üstündür.",
+      "sources": [
+        "https://www.kocaeligazetesi.com.tr/haber/25168734/karamurselde-olta-balikcilarinin-balik-mesaisi",
+        "https://www.kocaeli.bel.tr/haber/karamursel-sahili-sekilleniyor-37457.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "derince-harikalar-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 75.33,
+      "identityAndSpecies": "2024 Harikalar Sahili Monnetto önü yakalama haberi istavriti rota adıyla doğrular; desteklenmeyen türler çıkarıldı.",
+      "access": "Kocaeli Büyükşehir Harikalar Sahili kamusal parkını doğrular; çocuk/kafe/tekne alanları av noktası değildir.",
+      "law": "6/2, 2026/26 değişikliği ve Limanlar Yönetmeliği incelendi; liman/tekne operasyonu ve yerel geçici kısıtlar av gününde üstündür.",
+      "sources": [
+        "https://www.kocaelibarisgazetesi.com/haber/20383194/iste-baligin-tutuldugu-mera-kocaelide-balikcilar-su-sira-sinek-avlarken-ayakkabi-boyu-istavriti-paylasti",
+        "https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     }
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-28.json",
-  "publication": { "verified": false, "newRoutesPublished": 0, "existingRoutesReleased": 0, "productionStatus": "pending" },
-  "shortfall": { "newReason": null, "promotionReason": "Mevcut Eskihisar, Karamürsel ve Derince Harikalar kıyıları için kaynak incelemesi sürüyor; bu PR'de sınıf yükseltmesi yapılmadı." }
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending"
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
 }
