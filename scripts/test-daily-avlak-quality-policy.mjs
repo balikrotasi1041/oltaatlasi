@@ -16,7 +16,7 @@ const check = (mutate, message) => {
   mutate(changed, before, routes);
   assert(validateDailyAvlakQuality(changed, before, routes).some(error => error.includes(message)), message);
 };
-check((l) => { l.indexReleaseCap = 4; }, 'ortak indeks kotası yanlış');
+check((l) => { l.indexReleaseCap = l.indexReleaseCap === 4 ? 2 : 4; }, 'ortak indeks kotası yanlış');
 check((l) => { l.baselineMainSha = 'wrong'; }, 'main SHA');
 check((l) => { l.publication = { verified: true, liveSha: 'wrong', mergedMainSha: 'main', newRoutesPublished: 0, existingRoutesReleased: 0 }; }, 'tam SHA');
 check((l) => { l.newRouteSlugs = l.newRouteSlugs.slice(0, 1); l.shortfall = {}; }, 'eksik nedeni');

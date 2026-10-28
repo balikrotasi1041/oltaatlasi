@@ -1,0 +1,38 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-10-28",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-28.json",
+  "baselineMainSha": "cb94ece0f680e6fe7ccef247d8b99edb8bbf2469",
+  "startingLiveSha": "cb94ece0f680e6fe7ccef247d8b99edb8bbf2469",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 175,
+  "istanbulExhaustedEvidence": "25–27 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk rotasıyla çakıştı; Selvi Burnu, Aşiyan, Kabataş, Şile/Ağva liman dışı kıyıları için güncel kamusal av erişimi veya tür kanıtı eksik kaldı. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; yakından uzağa genişleme sürer.",
+  "indexReleaseCap": 4,
+  "newRouteSlugs": ["bursa-keles-barakli-goleti-mesire-kiyisi", "bursa-keles-gokoz-goleti-maremsah-kiyisi"],
+  "promotionSlugs": [],
+  "indexReleaseSlugs": ["bursa-keles-barakli-goleti-mesire-kiyisi", "bursa-keles-gokoz-goleti-maremsah-kiyisi"],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [],
+  "decisions": [
+    {
+      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 117.979,
+      "identityAndSpecies": "Bursa resmî rehberi ayrı Baraklı Göleti'nin kimliğini/koordinatını ve oltayı kaydeder; iki rota-özel turizm kaynağı sazanı listeler. Bunlar güncel stok ölçümü değildir.",
+      "access": "Keles Kaymakamlığı 1 Haziran 2026 mesire alanı incelemesi ve Bursa resmî olta rehberi genel kamusal kullanımı destekler; giriş koşulları ve mikro kıyı ayrıca kontrol edilir.",
+      "law": "Güncel 6/2 ve 2026/26 incelendi; Bursa sazan kapalı dönemi 15 Mart–15 Haziran, boy/miktar ve sulama/işletme levhaları uygulanır.",
+      "sources": ["https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=", "https://www.keles.gov.tr/kaymakamimiz-sn-burak-bozkurt-gurses-barakli-goleti-mesire-alaninda-incelemelerde-bulundu", "https://turkeyoutdoor.org/bursa-outdoor-sportif-olta-balikciligi/", "https://bursamiz.com/tr/yerler/barakli-goleti-ve-doga-parki", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    },
+    {
+      "slug": "bursa-keles-gokoz-goleti-maremsah-kiyisi", "baselineGrade": null, "finalGrade": "C+", "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 119.364,
+      "identityAndSpecies": "Bursa resmî rehberi Gököz Göleti'nin ayrı su kimliğini ve koordinatını verir; gölet işletmecisi 2024 yerel röportajında sazan varlığını ve olta kullanımını bildirir.",
+      "access": "Bursa Büyükşehir Turizm Portalı ve İl Millî Eğitim Müdürlüğü Maremşah ziyaret alanında olta kullanımını doğrular; işletmenin izinli kıyısı ve güncel koşulları girişte sorulur.",
+      "law": "Güncel 6/2 ve 2026/26 incelendi; Bursa sazan kapalı dönemi 15 Mart–15 Haziran, boy/miktar ve işletme levhaları uygulanır.",
+      "sources": ["https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=", "https://www.rota.bursa.com.tr/mekanlar/gokoz-natural-park-381", "https://bursa.meb.gov.tr/meb_iys_dosyalar/2025_10/02142436_turkiyeyuzyilimaarifmodeliokuldisiogrenmeortamlariogretmenelkitabi.pdf", "https://www.inegolonline.com/haber/sehrin-sicagindan-bunalanlar-dogal-klima-gokoz-u-tercih-ediyor-310199", "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513", "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"]
+    }
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-28.json",
+  "publication": { "verified": false, "newRoutesPublished": 0, "existingRoutesReleased": 0, "productionStatus": "pending" },
+  "shortfall": { "newReason": null, "promotionReason": "Mevcut Eskihisar, Karamürsel ve Derince Harikalar kıyıları için kaynak incelemesi sürüyor; bu PR'de sınıf yükseltmesi yapılmadı." }
+}
