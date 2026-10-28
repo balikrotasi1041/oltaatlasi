@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-28", "center": { "lat": 41.0082, "lng": 28.9784 }, "previousRadiusKm": 175, "currentRadiusKm": 175, "phase": "Türkiye",
+  "newRouteQueue": [
+    { "name": "Baraklı Göleti Mesire Kıyısı", "province": "Bursa", "district": "Keles", "slug": "bursa-keles-barakli-goleti-mesire-kiyisi", "distanceKmFromIstanbulCenter": 117.979, "decision": "publication_pending", "reason": "Resmî gölet/olta/koordinat ve 2026 mesire kaydı; rota-özel sazan kaynakları; su kotu ve giriş koşulları sahada değişebilir." },
+    { "name": "Gököz Göleti Maremşah Kıyısı", "province": "Bursa", "district": "Keles", "slug": "bursa-keles-gokoz-goleti-maremsah-kiyisi", "distanceKmFromIstanbulCenter": 119.364, "decision": "publication_pending", "reason": "Resmî gölet/olta/erişim kaydı ve işletmeci sazan röportajı; işletmece izinli mikro kıyı av gününde sorulur." },
+    { "name": "Gürsu Ericek Göleti", "province": "Bursa", "decision": "species_pending", "reason": "Resmî kaynaklar olta ve kamusal ziyareti doğruluyor; güvenilir rota-özel balık türü kaydı bulunamadı." },
+    { "name": "Marmaraereğlisi Arka Deniz", "province": "Tekirdağ", "decision": "species_pending", "reason": "29 Ekim 2026 belediye olta yarışması güncel erişimi doğruluyor; Arka Deniz kesimine özgü tür kanıtı eksik." },
+    { "name": "Karacabey Kurşunlu Halk Plajı", "province": "Bursa", "decision": "law_pending", "reason": "Halk plajı kamusal fakat 1 Nisan–15 Kasım işaretli yüzme alanı av yasağı nedeniyle güvenli açık olta kesimi doğrulanmadı." }
+  ],
+  "existingPromotionQueue": [
+    { "slug": "eskihisar-sahili", "decision": "research_in_progress", "reason": "2016 kıyı tür röportajı ve 2026 belediye olta etkinliği inceleniyor." },
+    { "slug": "karamursel-sahili", "decision": "research_in_progress", "reason": "2025 kıyı balıkçı röportajı ve resmî olta platformları inceleniyor." },
+    { "slug": "derince-harikalar-sahili", "decision": "research_in_progress", "reason": "2024 istavrit yakalama ve resmî kamusal park kaydı inceleniyor." }
+  ],
+  "nextResearch": "İki yeni avlak canlıda doğrulandıktan sonra mevcut üç kıyının kanıtlı C→C+ terfisi tamamlanacak; başka günün sayaçlarına taşınmayacak."
+}
