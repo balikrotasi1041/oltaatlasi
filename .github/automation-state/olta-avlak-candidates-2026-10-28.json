@@ -14,7 +14,7 @@
       "district": "Gemlik",
       "slug": "bursa-gemlik-kursunlu-rekreasyon-iskeleleri",
       "distanceKmFromIstanbulCenter": 71.63,
-      "decision": "publication_pending",
+      "decision": "live_verified",
       "reason": "Belediye/Bakanlık planlarında rekreasyon iskelesi ve olta; 2024 ilk el istavrit/iskorpit avı; 2026 kamusal sahil kullanımı; barınak ve işaretli yüzme alanı hariç."
     },
     {
@@ -23,7 +23,7 @@
       "district": "Keles",
       "slug": "bursa-keles-gokoz-goleti-maremsah-kiyisi",
       "distanceKmFromIstanbulCenter": 119.364,
-      "decision": "publication_pending",
+      "decision": "live_verified",
       "reason": "Resmî gölet/olta/erişim kaydı ve işletmeci sazan röportajı; işletmece izinli mikro kıyı av gününde sorulur."
     },
     {
@@ -88,5 +88,5 @@
       ]
     }
   ],
-  "nextResearch": "Baraklı sayfası yeni resmî erişim/su kanıtı bulunana kadar geri çekildi. Kurşunlu rekreasyon iskeleleri yerine geçti; iki yeni sayfa ve üç terfi PR/CI/canlı doğrulama bekliyor."
+  "nextResearch": "28 Ekim iki yeni C+ rota (Gököz, Kurşunlu) ve üç mevcut C→C+ terfi canlı SHA 07231b2 ile doğrulandı; Baraklı 404 ve sitemap dışında. Yeni gün İstanbul merkezli yarıçap kuyruğundan devam edilir."
 }
