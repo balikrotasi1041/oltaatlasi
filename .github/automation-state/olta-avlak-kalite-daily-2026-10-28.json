@@ -116,10 +116,23 @@
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-28.json",
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending"
+    "productionStatus": "success",
+    "mergedMainSha": "07231b2d1df61480f141ef2e551618e7ccc8ba73",
+    "liveSha": "07231b2d1df61480f141ef2e551618e7ccc8ba73",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/186",
+    "productionRunId": 40765433593,
+    "verifiedAt": "2026-10-28T20:44:00Z",
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "withdrawnBarakli404": true,
+      "promotionPages200": true
+    }
   },
   "shortfall": {
     "newReason": null,
@@ -133,7 +146,8 @@
         "https://sayistay.gov.tr/reports/download/k2oe0EKYne-bursa-su-ve-kanalizasyon-idaresi-genel-mudurlugu-buski",
         "https://www.inegolonline.com/haber/uludag-in-goletleri-kuruyor-251794",
         "https://www.keles.gov.tr/kaymakamimiz-sn-burak-bozkurt-gurses-barakli-goleti-mesire-alaninda-incelemelerde-bulundu"
-      ]
+      ],
+      "correctedLiveSha": "07231b2d1df61480f141ef2e551618e7ccc8ba73"
     }
   ]
 }
