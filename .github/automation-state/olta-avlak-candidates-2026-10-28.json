@@ -1,16 +1,92 @@
 {
-  "date": "2026-10-28", "center": { "lat": 41.0082, "lng": 28.9784 }, "previousRadiusKm": 175, "currentRadiusKm": 175, "phase": "Türkiye",
+  "date": "2026-10-28",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
   "newRouteQueue": [
-    { "name": "Baraklı Göleti Mesire Kıyısı", "province": "Bursa", "district": "Keles", "slug": "bursa-keles-barakli-goleti-mesire-kiyisi", "distanceKmFromIstanbulCenter": 117.979, "decision": "publication_pending", "reason": "Resmî gölet/olta/koordinat ve 2026 mesire kaydı; rota-özel sazan kaynakları; su kotu ve giriş koşulları sahada değişebilir." },
-    { "name": "Gököz Göleti Maremşah Kıyısı", "province": "Bursa", "district": "Keles", "slug": "bursa-keles-gokoz-goleti-maremsah-kiyisi", "distanceKmFromIstanbulCenter": 119.364, "decision": "publication_pending", "reason": "Resmî gölet/olta/erişim kaydı ve işletmeci sazan röportajı; işletmece izinli mikro kıyı av gününde sorulur." },
-    { "name": "Gürsu Ericek Göleti", "province": "Bursa", "decision": "species_pending", "reason": "Resmî kaynaklar olta ve kamusal ziyareti doğruluyor; güvenilir rota-özel balık türü kaydı bulunamadı." },
-    { "name": "Marmaraereğlisi Arka Deniz", "province": "Tekirdağ", "decision": "species_pending", "reason": "29 Ekim 2026 belediye olta yarışması güncel erişimi doğruluyor; Arka Deniz kesimine özgü tür kanıtı eksik." },
-    { "name": "Karacabey Kurşunlu Halk Plajı", "province": "Bursa", "decision": "law_pending", "reason": "Halk plajı kamusal fakat 1 Nisan–15 Kasım işaretli yüzme alanı av yasağı nedeniyle güvenli açık olta kesimi doğrulanmadı." }
+    {
+      "name": "Kurşunlu Rekreasyon İskeleleri",
+      "province": "Bursa",
+      "district": "Gemlik",
+      "slug": "bursa-gemlik-kursunlu-rekreasyon-iskeleleri",
+      "distanceKmFromIstanbulCenter": 71.63,
+      "decision": "publication_pending",
+      "reason": "Belediye/Bakanlık planlarında rekreasyon iskelesi ve olta; 2024 ilk el istavrit/iskorpit avı; 2026 kamusal sahil kullanımı; barınak ve işaretli yüzme alanı hariç."
+    },
+    {
+      "name": "Gököz Göleti Maremşah Kıyısı",
+      "province": "Bursa",
+      "district": "Keles",
+      "slug": "bursa-keles-gokoz-goleti-maremsah-kiyisi",
+      "distanceKmFromIstanbulCenter": 119.364,
+      "decision": "publication_pending",
+      "reason": "Resmî gölet/olta/erişim kaydı ve işletmeci sazan röportajı; işletmece izinli mikro kıyı av gününde sorulur."
+    },
+    {
+      "name": "Gürsu Ericek Göleti",
+      "province": "Bursa",
+      "decision": "species_pending",
+      "reason": "Resmî kaynaklar olta ve kamusal ziyareti doğruluyor; güvenilir rota-özel balık türü kaydı bulunamadı."
+    },
+    {
+      "name": "Marmaraereğlisi Arka Deniz",
+      "province": "Tekirdağ",
+      "decision": "species_pending",
+      "reason": "29 Ekim 2026 belediye olta yarışması güncel erişimi doğruluyor; Arka Deniz kesimine özgü tür kanıtı eksik."
+    },
+    {
+      "name": "Karacabey Kurşunlu Halk Plajı",
+      "province": "Bursa",
+      "decision": "law_pending",
+      "reason": "Halk plajı kamusal fakat 1 Nisan–15 Kasım işaretli yüzme alanı av yasağı nedeniyle güvenli açık olta kesimi doğrulanmadı."
+    },
+    {
+      "name": "Baraklı Göleti Mesire Kıyısı",
+      "province": "Bursa",
+      "district": "Keles",
+      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi",
+      "decision": "withdrawn_access_and_water_pending",
+      "reason": "BUSKİ parsel kiralama ve geçmiş kuruma kaydı ortaya çıktı; güncel kamusal amatör olta erişimi ve su/tür durumu doğrulanana kadar sayfa geri çekildi."
+    }
   ],
   "existingPromotionQueue": [
-    { "slug": "eskihisar-sahili", "decision": "research_in_progress", "reason": "2016 kıyı tür röportajı ve 2026 belediye olta etkinliği inceleniyor." },
-    { "slug": "karamursel-sahili", "decision": "research_in_progress", "reason": "2025 kıyı balıkçı röportajı ve resmî olta platformları inceleniyor." },
-    { "slug": "derince-harikalar-sahili", "decision": "research_in_progress", "reason": "2024 istavrit yakalama ve resmî kamusal park kaydı inceleniyor." }
+    {
+      "slug": "eskihisar-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "decision": "C_to_C_plus",
+      "reason": "2016 Eskihisar kıyı oltacıları istavrit, kefal ve zarganayı yer adıyla bildirdi; 2026 Gebze Belediyesi olta etkinliği güncel kullanım bağlamıdır.",
+      "sources": [
+        "https://www.ozgurkocaeli.com.tr/haber/4408733/osmangazi-manzarasinda-balik-tutma-keyfi",
+        "https://www.gebze.bel.tr/haber/baba-cocuk-balik-tutma-keyfi-eskihisar-da-gerceklesti_7393.html"
+      ]
+    },
+    {
+      "slug": "karamursel-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "decision": "C_to_C_plus",
+      "reason": "2025 Karamürsel kıyı oltacısı röportajında istavrit, ispari, izmarit, karagöz ve kırlangıç kaydedildi; desteklenmeyen kefal, zargana, lüfer, mezgit çıkarıldı.",
+      "sources": [
+        "https://www.kocaeligazetesi.com.tr/haber/25168734/karamurselde-olta-balikcilarinin-balik-mesaisi",
+        "https://www.kocaeli.bel.tr/haber/karamursel-sahili-sekilleniyor-37457.html"
+      ]
+    },
+    {
+      "slug": "derince-harikalar-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "decision": "C_to_C_plus",
+      "reason": "2024 Harikalar Sahili Monnetto önü yakalama haberi istavriti rota adıyla doğrular; desteklenmeyen türler çıkarıldı.",
+      "sources": [
+        "https://www.kocaelibarisgazetesi.com/haber/20383194/iste-baligin-tutuldugu-mera-kocaelide-balikcilar-su-sira-sinek-avlarken-ayakkabi-boyu-istavriti-paylasti",
+        "https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html"
+      ]
+    }
   ],
-  "nextResearch": "İki yeni avlak canlıda doğrulandıktan sonra mevcut üç kıyının kanıtlı C→C+ terfisi tamamlanacak; başka günün sayaçlarına taşınmayacak."
+  "nextResearch": "Baraklı sayfası yeni resmî erişim/su kanıtı bulunana kadar geri çekildi. Kurşunlu rekreasyon iskeleleri yerine geçti; iki yeni sayfa ve üç terfi PR/CI/canlı doğrulama bekliyor."
 }
