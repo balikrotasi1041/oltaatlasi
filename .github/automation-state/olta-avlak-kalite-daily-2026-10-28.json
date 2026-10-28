@@ -10,7 +10,7 @@
   "istanbulExhaustedEvidence": "25–27 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk rotasıyla çakıştı; Selvi Burnu, Aşiyan, Kabataş, Şile/Ağva liman dışı kıyıları için güncel kamusal av erişimi veya tür kanıtı eksik kaldı. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; yakından uzağa genişleme sürer.",
   "indexReleaseCap": 4,
   "newRouteSlugs": [
-    "bursa-keles-barakli-goleti-mesire-kiyisi",
+    "bursa-gemlik-kursunlu-rekreasyon-iskeleleri",
     "bursa-keles-gokoz-goleti-maremsah-kiyisi"
   ],
   "promotionSlugs": [
@@ -19,7 +19,7 @@
     "derince-harikalar-sahili"
   ],
   "indexReleaseSlugs": [
-    "bursa-keles-barakli-goleti-mesire-kiyisi",
+    "bursa-gemlik-kursunlu-rekreasyon-iskeleleri",
     "bursa-keles-gokoz-goleti-maremsah-kiyisi"
   ],
   "maintenanceOnlySlugs": [],
@@ -30,19 +30,19 @@
   ],
   "decisions": [
     {
-      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi",
+      "slug": "bursa-gemlik-kursunlu-rekreasyon-iskeleleri",
       "baselineGrade": null,
       "finalGrade": "C+",
       "previousIndexing": null,
-      "distanceKmFromIstanbulCenter": 117.979,
-      "identityAndSpecies": "Bursa resmî rehberi ayrı Baraklı Göleti'nin kimliğini/koordinatını ve oltayı kaydeder; iki rota-özel turizm kaynağı sazanı listeler. Bunlar güncel stok ölçümü değildir.",
-      "access": "Keles Kaymakamlığı 1 Haziran 2026 mesire alanı incelemesi ve Bursa resmî olta rehberi genel kamusal kullanımı destekler; giriş koşulları ve mikro kıyı ayrıca kontrol edilir.",
-      "law": "Güncel 6/2 ve 2026/26 incelendi; Bursa sazan kapalı dönemi 15 Mart–15 Haziran, boy/miktar ve sulama/işletme levhaları uygulanır.",
+      "distanceKmFromIstanbulCenter": 71.63,
+      "identityAndSpecies": "Gemlik Belediyesi Kurşunlu sahilindeki balık tutma amaçlı rekreasyon iskelelerini, Bakanlık kıyı planı bunları barınak/plajdan ayrı doğrular; 16 Kasım 2024 birinci el iskele raporu istavrit ve iskorpit yakalaması bildirir.",
+      "access": "2017 belediye planı rekreasyon iskelelerinde olta kullanımını, 2026 sahil haberi genel kamusal erişimi destekler; barınak, yüzme alanı ve kapalı mikro iskele hariç.",
+      "law": "6/2 ve 2026/26 deniz amatör avcılığı, barınak ve işaretli yüzme alanı kısıtları incelendi.",
       "sources": [
-        "https://bursa.ktb.gov.tr/Eklenti/78710%2Cdergi1-turkcepdf.pdf?0=",
-        "https://www.keles.gov.tr/kaymakamimiz-sn-burak-bozkurt-gurses-barakli-goleti-mesire-alaninda-incelemelerde-bulundu",
-        "https://turkeyoutdoor.org/bursa-outdoor-sportif-olta-balikciligi/",
-        "https://bursamiz.com/tr/yerler/barakli-goleti-ve-doga-parki",
+        "https://gemlik.bel.tr/dosyalar/imarplanlari/2019_55_pd_rapor.pdf",
+        "https://webdosya.csb.gov.tr/db/mpgm/editordosya/file/BKAP/BURSA%20BKAP/BKAP_PLAN_ACIKLAMA_RAPORU.pdf",
+        "https://www.baliksevdam.com/konu/bursada-nerede-avlanilir.43992/",
+        "https://www.bursadabugun.com/haber/bursa-da-aksam-keyfi-vatandaslar-sahili-doldurdu-1925466.html",
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ]
@@ -124,5 +124,16 @@
   "shortfall": {
     "newReason": null,
     "promotionReason": null
-  }
+  },
+  "withdrawnAfterReview": [
+    {
+      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi",
+      "reason": "İlk yayından sonra BUSKİ gölet parseli kiralama ve 2020 kuruma kaydı bulundu; 2026 mesire ziyareti güncel su ve kamusal olta iznini doğrulamıyor. C+ kanıt eşiği sağlanmadığı için sayfa geri çekildi.",
+      "sources": [
+        "https://sayistay.gov.tr/reports/download/k2oe0EKYne-bursa-su-ve-kanalizasyon-idaresi-genel-mudurlugu-buski",
+        "https://www.inegolonline.com/haber/uludag-in-goletleri-kuruyor-251794",
+        "https://www.keles.gov.tr/kaymakamimiz-sn-burak-bozkurt-gurses-barakli-goleti-mesire-alaninda-incelemelerde-bulundu"
+      ]
+    }
+  ]
 }

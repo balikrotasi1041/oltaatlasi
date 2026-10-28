@@ -9,13 +9,13 @@
   "phase": "Türkiye",
   "newRouteQueue": [
     {
-      "name": "Baraklı Göleti Mesire Kıyısı",
+      "name": "Kurşunlu Rekreasyon İskeleleri",
       "province": "Bursa",
-      "district": "Keles",
-      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi",
-      "distanceKmFromIstanbulCenter": 117.979,
+      "district": "Gemlik",
+      "slug": "bursa-gemlik-kursunlu-rekreasyon-iskeleleri",
+      "distanceKmFromIstanbulCenter": 71.63,
       "decision": "publication_pending",
-      "reason": "Resmî gölet/olta/koordinat ve 2026 mesire kaydı; rota-özel sazan kaynakları; su kotu ve giriş koşulları sahada değişebilir."
+      "reason": "Belediye/Bakanlık planlarında rekreasyon iskelesi ve olta; 2024 ilk el istavrit/iskorpit avı; 2026 kamusal sahil kullanımı; barınak ve işaretli yüzme alanı hariç."
     },
     {
       "name": "Gököz Göleti Maremşah Kıyısı",
@@ -43,6 +43,14 @@
       "province": "Bursa",
       "decision": "law_pending",
       "reason": "Halk plajı kamusal fakat 1 Nisan–15 Kasım işaretli yüzme alanı av yasağı nedeniyle güvenli açık olta kesimi doğrulanmadı."
+    },
+    {
+      "name": "Baraklı Göleti Mesire Kıyısı",
+      "province": "Bursa",
+      "district": "Keles",
+      "slug": "bursa-keles-barakli-goleti-mesire-kiyisi",
+      "decision": "withdrawn_access_and_water_pending",
+      "reason": "BUSKİ parsel kiralama ve geçmiş kuruma kaydı ortaya çıktı; güncel kamusal amatör olta erişimi ve su/tür durumu doğrulanana kadar sayfa geri çekildi."
     }
   ],
   "existingPromotionQueue": [
@@ -80,5 +88,5 @@
       ]
     }
   ],
-  "nextResearch": "28 Ekim iki yeni Keles göleti ve üç mevcut Kocaeli sahili için kanıt dosyaları tamamlandı; canlı teslim ve sayaç doğrulaması bekleniyor."
+  "nextResearch": "Baraklı sayfası yeni resmî erişim/su kanıtı bulunana kadar geri çekildi. Kurşunlu rekreasyon iskeleleri yerine geçti; iki yeni sayfa ve üç terfi PR/CI/canlı doğrulama bekliyor."
 }
