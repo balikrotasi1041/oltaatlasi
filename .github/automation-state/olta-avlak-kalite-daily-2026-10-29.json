@@ -123,15 +123,28 @@
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-29.json",
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
-    "verifiedAt": null
+    "productionStatus": "success",
+    "mergedMainSha": "878b47a8d41ae4f1ffbbd70ec5893f3f5e7d7929",
+    "liveSha": "878b47a8d41ae4f1ffbbd70ec5893f3f5e7d7929",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/188",
+    "productionRunId": 40862569110,
+    "verifiedAt": "2026-10-29T11:08:06Z",
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/balikesir-erdek-ocaklar-kayalik-kiyisi/",
+      "https://oltaatlasi.com/meralar/balikesir-erdek-narli-acik-kayalik-kiyisi/"
+    ],
+    "indexReleases": 2
   },
   "shortfall": {
     "newReason": null,
