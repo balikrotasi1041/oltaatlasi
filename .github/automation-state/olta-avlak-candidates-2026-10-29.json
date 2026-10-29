@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-29",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "newRouteQueue": [
+    {
+      "name": "Ocaklar Kayalık Kıyısı",
+      "province": "Balıkesir",
+      "district": "Erdek",
+      "slug": "balikesir-erdek-ocaklar-kayalik-kiyisi",
+      "distanceKmFromIstanbulCenter": 120.707,
+      "decision": "prepared_for_review",
+      "reason": "2026 yerel rota-özel karagöz ve tarihsel zargana; resmî kıyı kaydı; yalnız barınak/yüzme alanı dışı."
+    },
+    {
+      "name": "Narlı Açık Kayalık Kıyısı",
+      "province": "Balıkesir",
+      "district": "Erdek",
+      "slug": "balikesir-erdek-narli-acik-kayalik-kiyisi",
+      "distanceKmFromIstanbulCenter": 123.793,
+      "decision": "prepared_for_review",
+      "reason": "2015 birinci el Narlı istavrit/mezgit avı ve 2026 yerel av dosyası; resmî ayrı kıyı kaydı; barınak/yüzme alanı dışı."
+    },
+    {
+      "name": "Gürsu Ericek Göleti",
+      "province": "Bursa",
+      "decision": "species_pending",
+      "reason": "Resmî kamusal olta alanı var; güvenilir rota-özel tür kanıtı henüz yok."
+    },
+    {
+      "name": "Bilecik Gölpazarı Beşgöller",
+      "province": "Bilecik",
+      "decision": "protected_area_pending",
+      "reason": "Valilik beyanı tür ve olta etkinliği bildiriyor; mahalli öneme haiz sulak alanın güncel izinli kıyısı ve pin doğrulaması gerekiyor."
+    },
+    {
+      "name": "Göynük Gökçesaray Göleti",
+      "province": "Bolu",
+      "decision": "fish_and_access_pending",
+      "reason": "2016 sazan yavrusu salımı ve 2026 kamusal gezi var; güncel yetişkin tür ve amatör av erişimi yeterince doğrulanmadı."
+    },
+    {
+      "name": "Sakarya Geyve Kışlaçay",
+      "province": "Sakarya",
+      "decision": "identity_pending",
+      "reason": "2026 balıklandırma haberi var; Kışlaçay/Kışlaköy su kimliği ve kamusal kıyı net değil."
+    },
+    {
+      "name": "Marmaraereğlisi Arka Deniz",
+      "province": "Tekirdağ",
+      "decision": "species_pending",
+      "reason": "29 Ekim belediye olta yarışması erişimi gösteriyor; rota-özel tür kanıtı eksik."
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ankara-500km-kocaeli-sipahiler-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "2025 resmî sazan yavrusu salımı ve yerel kamusal olta bağlamı; yetişkin stok/mikro kıyı henüz doğrulanmadı.",
+      "sources": [
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://korfez.bel.tr/proje-d/14/85/sevindikli-ve-sipahiler-goleti-aktivite-alani",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-sevindikli-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "2025 resmî sazan yavrusu salımı ve yerel kamusal olta bağlamı; yetişkin stok/mikro kıyı henüz doğrulanmadı.",
+      "sources": [
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://korfez.bel.tr/proje-d/14/85/sevindikli-ve-sipahiler-goleti-aktivite-alani",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-utuk-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "2025 resmî sazan yavrusu salımı ve yerel kamusal olta bağlamı; yetişkin stok/mikro kıyı henüz doğrulanmadı.",
+      "sources": [
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://kocaeli.denizticaretodasi.org.tr/tr/slider/yk-baskanimiz-vedat-dogusel-kamader-tarafindan-duzenlenen--18-geleneksel-turna-ve-tatlisu-levregi-tutma-festivaline--istirak-etti-5924",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "nextResearch": "29 Ekim taslak: iki yeni Erdek kıyı rotası ve üç D→C/HOLD mevcut kayıt hazırlandı; test, PR, CI, production ve canlı SHA doğrulaması bekliyor."
+}
