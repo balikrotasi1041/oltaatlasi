@@ -1,0 +1,140 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-10-29",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-10-29.json",
+  "baselineMainSha": "39d36436a154a0be0adef1f6f08ff5fa9204eabc",
+  "startingLiveSha": "39d36436a154a0be0adef1f6f08ff5fa9204eabc",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 175,
+  "istanbulExhaustedEvidence": "25–29 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk ile çakıştı; Selvi Burnu, Aşiyan, Kabataş ve Şile/Ağva liman dışı kıyılarında güncel kamusal av erişimi veya rota-özel tür kanıtı eksik. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; Marmara kıyısında yakından uzağa araştırma sürer.",
+  "indexReleaseCap": 4,
+  "newRouteSlugs": [
+    "balikesir-erdek-ocaklar-kayalik-kiyisi",
+    "balikesir-erdek-narli-acik-kayalik-kiyisi"
+  ],
+  "promotionSlugs": [
+    "ankara-500km-kocaeli-sipahiler-goleti",
+    "ankara-500km-kocaeli-sevindikli-goleti",
+    "ankara-500km-kocaeli-utuk-goleti"
+  ],
+  "indexReleaseSlugs": [
+    "balikesir-erdek-ocaklar-kayalik-kiyisi",
+    "balikesir-erdek-narli-acik-kayalik-kiyisi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ankara-500km-kocaeli-sipahiler-goleti",
+    "ankara-500km-kocaeli-sevindikli-goleti",
+    "ankara-500km-kocaeli-utuk-goleti"
+  ],
+  "decisions": [
+    {
+      "slug": "balikesir-erdek-ocaklar-kayalik-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 120.707,
+      "identityAndSpecies": "Resmî Erdek kıyı kimliği ve harita konumu; 2026 rota-özel kıyı tür anlatımı ile 2015 birinci el av raporu.",
+      "access": "Kamusal Erdek kıyısı; barınma yeri ve 1 Nisan–15 Kasım işaretli yüzme alanı dışındaki açık kayalık kesim yerinde seçilir.",
+      "law": "6/2 ve 2026/26 deniz kuralları; işaretli yüzme alanı ve barınma yeri hariç.",
+      "sources": [
+        "https://balikesir.ktb.gov.tr/TR-65920/dogal-guzellikler-ve-mesire-yerleri.html",
+        "https://www.habersbalikesir.com/marmara-nin-balik-cenneti-erdek-kiyidan-olta-atabileceginiz-en-verimli-noktalar/101492",
+        "https://www.baliksevdam.com/konu/erdek-ocaklar.18356/page-2",
+        "https://cmsapi.balikesir.bel.tr/Media/Dokumanlar/Faaliyet-Rapor/2019-Yili-Faaliyet-Raporu.pdf",
+        "https://www.tarimorman.gov.tr/BSGM/Belgeler/Icerikler/Su%20%C3%9Cr%C3%BCnleri%20Altyap%C4%B1lar%C4%B1/Bal%C4%B1k%C3%A7%C4%B1%20Bar%C4%B1naklar%C4%B1.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "balikesir-erdek-narli-acik-kayalik-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 123.793,
+      "identityAndSpecies": "Resmî Erdek kıyı kimliği ve harita konumu; 2026 rota-özel kıyı tür anlatımı ile 2015 birinci el av raporu.",
+      "access": "Kamusal Erdek kıyısı; barınma yeri ve 1 Nisan–15 Kasım işaretli yüzme alanı dışındaki açık kayalık kesim yerinde seçilir.",
+      "law": "6/2 ve 2026/26 deniz kuralları; işaretli yüzme alanı ve barınma yeri hariç.",
+      "sources": [
+        "https://balikesir.ktb.gov.tr/TR-65920/dogal-guzellikler-ve-mesire-yerleri.html",
+        "https://www.habersbalikesir.com/marmara-nin-balik-cenneti-erdek-kiyidan-olta-atabileceginiz-en-verimli-noktalar/101492",
+        "https://www.baliksevdam.com/konu/erdek-ocaklar.18356/page-2",
+        "https://www.tarimorman.gov.tr/BSGM/Belgeler/Icerikler/Su%20%C3%9Cr%C3%BCnleri%20Altyap%C4%B1lar%C4%B1/Bal%C4%B1k%C3%A7%C4%B1%20Bar%C4%B1naklar%C4%B1.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-sipahiler-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 70.343,
+      "identityAndSpecies": "İl Tarımın 2025 gölet adıyla sazan yavrusu salımı; yetişkin stok garantisi değildir.",
+      "access": "Belediye balık tutma alanı veya 2026 Ütük kurumsal olta etkinliği; güncel mikro kıyı doğrulanmadığı için HOLD.",
+      "law": "6/2 ve 2026/26 içsu kuralları; sazan dönemi, kiralık istihsal ve levha kontrolü.",
+      "sources": [
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://korfez.bel.tr/proje-d/14/85/sevindikli-ve-sipahiler-goleti-aktivite-alani",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-sevindikli-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 66.759,
+      "identityAndSpecies": "İl Tarımın 2025 gölet adıyla sazan yavrusu salımı; yetişkin stok garantisi değildir.",
+      "access": "Belediye balık tutma alanı veya 2026 Ütük kurumsal olta etkinliği; güncel mikro kıyı doğrulanmadığı için HOLD.",
+      "law": "6/2 ve 2026/26 içsu kuralları; sazan dönemi, kiralık istihsal ve levha kontrolü.",
+      "sources": [
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://korfez.bel.tr/proje-d/14/85/sevindikli-ve-sipahiler-goleti-aktivite-alani",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-utuk-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 93.96,
+      "identityAndSpecies": "İl Tarımın 2025 gölet adıyla sazan yavrusu salımı; yetişkin stok garantisi değildir.",
+      "access": "Belediye balık tutma alanı veya 2026 Ütük kurumsal olta etkinliği; güncel mikro kıyı doğrulanmadığı için HOLD.",
+      "law": "6/2 ve 2026/26 içsu kuralları; sazan dönemi, kiralık istihsal ve levha kontrolü.",
+      "sources": [
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://kocaeli.denizticaretodasi.org.tr/tr/slider/yk-baskanimiz-vedat-dogusel-kamader-tarafindan-duzenlenen--18-geleneksel-turna-ve-tatlisu-levregi-tutma-festivaline--istirak-etti-5924",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-29.json",
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending",
+    "mergedMainSha": null,
+    "liveSha": null,
+    "pr": null,
+    "productionRunId": null,
+    "verifiedAt": null
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}
