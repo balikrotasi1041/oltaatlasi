@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-30",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "newRouteQueue": [
+    {
+      "name": "Turanköy Açık Kayalık Kıyısı",
+      "province": "Balıkesir",
+      "district": "Erdek",
+      "slug": "balikesir-erdek-turankoy-acik-kayalik-kiyisi",
+      "distanceKmFromIstanbulCenter": 115.332,
+      "decision": "prepared_for_review",
+      "reason": "Resmî Turanköy kıyı kimliği, 2026 rota-özel kayalık karagöz/eşkina anlatımı; pin mahalle merkezidir."
+    },
+    {
+      "name": "İlhanköy Açık Kayalık Kıyısı",
+      "province": "Balıkesir",
+      "district": "Erdek",
+      "slug": "balikesir-erdek-ilhankoy-acik-kayalik-kiyisi",
+      "distanceKmFromIstanbulCenter": 121.656,
+      "decision": "prepared_for_review",
+      "reason": "Resmî İlhan Köyü kimliği; 2026 İlhanlar kayalık kıyısı karagöz/eşkina anlatımı; pin mahalle merkezidir."
+    },
+    {
+      "name": "Gürsu Ericek Göleti",
+      "province": "Bursa",
+      "decision": "species_pending",
+      "reason": "Resmî kamusal olta alanı var; güvenilir rota-özel tür kanıtı henüz yok."
+    },
+    {
+      "name": "Bilecik Gölpazarı Beşgöller",
+      "province": "Bilecik",
+      "decision": "protected_area_pending",
+      "reason": "Valilik beyanı tür ve olta etkinliği bildiriyor; mahalli öneme haiz sulak alanın güncel izinli kıyısı ve pin doğrulaması gerekiyor."
+    },
+    {
+      "name": "Göynük Gökçesaray Göleti",
+      "province": "Bolu",
+      "decision": "fish_and_access_pending",
+      "reason": "2016 sazan yavrusu salımı ve 2026 kamusal gezi var; güncel yetişkin tür ve amatör av erişimi yeterince doğrulanmadı."
+    },
+    {
+      "name": "Sakarya Geyve Kışlaçay",
+      "province": "Sakarya",
+      "decision": "identity_pending",
+      "reason": "2026 balıklandırma haberi var; Kışlaçay/Kışlaköy su kimliği ve kamusal kıyı net değil."
+    },
+    {
+      "name": "Marmaraereğlisi Arka Deniz",
+      "province": "Tekirdağ",
+      "decision": "species_pending",
+      "reason": "29 Ekim belediye olta yarışması erişimi gösteriyor; rota-özel tür kanıtı eksik."
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ankara-500km-kocaeli-tahtali-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "2026 orman giriş kısıtı ve izinli mikro kıyı doğrulanmadı; C/HOLD.",
+      "sources": [
+        "https://www.openstreetmap.org/way/184257243",
+        "https://www.google.com/maps/search/?api=1&query=Tahtal%C4%B1%20G%C3%B6leti%2C%20Derince%2C%20Kocaeli%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://www.wikidata.org/wiki/Q34929634",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://derince.gov.tr/derince-tahtali-goleti",
+        "https://www.derince.bel.tr/haber/1/6138/istilaci-baliklar-bertaraf-edildi",
+        "https://www.basiskele.gov.tr/kocaeli-ili-orman-yanginlari-ile-mucadele-kurul-kararlari",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-denizli-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "MEB kamusal eğitim ziyareti ve tarihsel olta anlatımı; güncel izinli kıyı belirsiz, C/HOLD.",
+      "sources": [
+        "https://www.openstreetmap.org/relation/20067399",
+        "https://www.google.com/maps/search/?api=1&query=Denizli%20G%C3%B6leti%2C%20Gebze%2C%20Kocaeli%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/gebze-denizli-goleti-8907",
+        "https://galaksidekiizler.blogspot.com/2020/06/gebze-denizli-koyu-ve-goleti.html",
+        "https://www.basiskele.gov.tr/kocaeli-ili-orman-yanginlari-ile-mucadele-kurul-kararlari",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-ariklar-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "Sulama ve orman sınırı ile güncel mikro kıyı belirsiz, C/HOLD.",
+      "sources": [
+        "https://www.openstreetmap.org/way/184281457",
+        "https://www.google.com/maps/search/?api=1&query=Ar%C4%B1klar%20Baraj%20G%C3%B6l%C3%BC%2C%20Kand%C4%B1ra%2C%20Kocaeli%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://www.kocaeli.bel.tr/kandira.html",
+        "https://www.sakaryasondakika.com/haber/28881101/tosun-pasa-diye-sevdilersakaryada-oltaya-dev-yayin-baligi-takildi",
+        "https://www.basiskele.gov.tr/kocaeli-ili-orman-yanginlari-ile-mucadele-kurul-kararlari",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "nextResearch": "30 Ekim: Turanköy ve İlhanköy yeni C+ kıyı rotaları; Tahtalı, Denizli ve Arıklar D→C/HOLD. Önce canlı yayıma ve exact SHA doğrulamasına devam et. İstanbul kanıt bekleyen adayları yeniden incele; yakın Marmara kıyılarını 175 km ve ileri halkalarda araştır."
+}
