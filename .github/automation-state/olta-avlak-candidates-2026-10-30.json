@@ -14,8 +14,10 @@
       "district": "Erdek",
       "slug": "balikesir-erdek-turankoy-acik-kayalik-kiyisi",
       "distanceKmFromIstanbulCenter": 115.332,
-      "decision": "prepared_for_review",
-      "reason": "Resmî Turanköy kıyı kimliği, 2026 rota-özel kayalık karagöz/eşkina anlatımı; pin mahalle merkezidir."
+      "decision": "published_live_verified",
+      "reason": "Resmî Turanköy kıyı kimliği, 2026 rota-özel kayalık karagöz/eşkina anlatımı; pin mahalle merkezidir.",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/190",
+      "liveSha": "00a36c42bdfd494935e3d16a4518cd473d688e62"
     },
     {
       "name": "İlhanköy Açık Kayalık Kıyısı",
@@ -23,8 +25,10 @@
       "district": "Erdek",
       "slug": "balikesir-erdek-ilhankoy-acik-kayalik-kiyisi",
       "distanceKmFromIstanbulCenter": 121.656,
-      "decision": "prepared_for_review",
-      "reason": "Resmî İlhan Köyü kimliği; 2026 İlhanlar kayalık kıyısı karagöz/eşkina anlatımı; pin mahalle merkezidir."
+      "decision": "published_live_verified",
+      "reason": "Resmî İlhan Köyü kimliği; 2026 İlhanlar kayalık kıyısı karagöz/eşkina anlatımı; pin mahalle merkezidir.",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/190",
+      "liveSha": "00a36c42bdfd494935e3d16a4518cd473d688e62"
     },
     {
       "name": "Gürsu Ericek Göleti",
@@ -117,5 +121,5 @@
       ]
     }
   ],
-  "nextResearch": "30 Ekim: Turanköy ve İlhanköy yeni C+ kıyı rotaları; Tahtalı, Denizli ve Arıklar D→C/HOLD. Önce canlı yayıma ve exact SHA doğrulamasına devam et. İstanbul kanıt bekleyen adayları yeniden incele; yakın Marmara kıyılarını 175 km ve ileri halkalarda araştır."
+  "nextResearch": "30 Ekim PR #190 CI ve production başarılı; Turanköy/İlhanköy 200, canonical, index ve sitemap doğrulandı. Tahtalı/Denizli/Arıklar D→C fakat HOLD/noindex. 31 Ekim yeni baseline ve 175 km sonrası halka; İstanbul kanıt bekleyen adayları yeniden değerlendir."
 }
