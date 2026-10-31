@@ -130,18 +130,28 @@
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-10-31.json",
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
-    "verifiedAt": null,
-    "checks": {},
-    "newRouteUrls": [],
-    "indexReleases": 0
+    "productionStatus": "success",
+    "mergedMainSha": "e71b992e8f5b37c5e631d08778cea641f90625da",
+    "liveSha": "e71b992e8f5b37c5e631d08778cea641f90625da",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/192",
+    "productionRunId": 41190459901,
+    "verifiedAt": "2026-10-31T09:55:03Z",
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/balikesir-erdek-merkez-acik-sahil-yuruyus-yolu/",
+      "https://oltaatlasi.com/meralar/balikesir-bandirma-merkez-acik-sahil-bandi/"
+    ],
+    "indexReleases": 2
   },
   "shortfall": {
     "newReason": null,

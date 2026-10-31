@@ -14,7 +14,7 @@
       "district": "Erdek",
       "slug": "balikesir-erdek-merkez-acik-sahil-yuruyus-yolu",
       "distanceKmFromIstanbulCenter": 120.969,
-      "decision": "pr_pending",
+      "decision": "published_live_verified",
       "reason": "Merkez sahil tür ve kamusal yaya kimliği, iskele/yüzme dışlaması ve güncel 6/2 birlikte incelendi.",
       "sources": [
         "https://www.erdek.gov.tr/cografi-yapi",
@@ -22,7 +22,9 @@
         "https://www.e-sehir.com/turkiye-haritasi/erdek-sahili-nerede-nasil-gidilir.html",
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/192",
+      "liveSha": "e71b992e8f5b37c5e631d08778cea641f90625da"
     },
     {
       "name": "Bandırma Merkez Açık Sahil Bandı",
@@ -30,7 +32,7 @@
       "district": "Bandırma",
       "slug": "balikesir-bandirma-merkez-acik-sahil-bandi",
       "distanceKmFromIstanbulCenter": 111.818,
-      "decision": "pr_pending",
+      "decision": "published_live_verified",
       "reason": "Ekim 2026 doğrudan kıyı avı, kamusal yaya hattı, konum ve güncel deniz kuralları çaprazlandı.",
       "sources": [
         "https://www.akdenizgazetesi.com/bandirmada-oltalar-tirsi-baligiyla-doldu",
@@ -39,7 +41,9 @@
         "https://balikesir.ktb.gov.tr/TR-90617/av-turizmi.html",
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/192",
+      "liveSha": "e71b992e8f5b37c5e631d08778cea641f90625da"
     },
     {
       "name": "Gürsu Ericek Göleti",
@@ -128,5 +132,5 @@
       ]
     }
   ],
-  "nextResearch": "31 Ekim iki yeni Marmara merkez kıyı C+ sayfası ve üç D→C/HOLD araştırması; PR/CI/production doğrulaması bekliyor. İstanbul kanıt bekleyen adayları yeni güçlü kanıtla geri değerlendir; 175 km halka sonrası yakın Marmara kıyılarını tara."
+  "nextResearch": "31 Ekim PR #192 CI ve production başarılı; Erdek merkez/Bandırma merkez 200, canonical, index ve sitemap doğrulandı. Ortaburun/Kazak/Hanoğlu D→C fakat HOLD/noindex. 1 Kasım yeni temiz main baseline; 175 km sonrası yakın Marmara halkası ve İstanbul kanıt bekleyen adayların yeni kaynaklarla yeniden taranması."
 }
