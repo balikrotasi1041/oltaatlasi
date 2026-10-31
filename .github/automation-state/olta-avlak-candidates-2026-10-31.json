@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-31",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "newRouteQueue": [
+    {
+      "name": "Erdek Merkez Açık Sahil Yürüyüş Yolu",
+      "province": "Balıkesir",
+      "district": "Erdek",
+      "slug": "balikesir-erdek-merkez-acik-sahil-yuruyus-yolu",
+      "distanceKmFromIstanbulCenter": 120.969,
+      "decision": "pr_pending",
+      "reason": "Merkez sahil tür ve kamusal yaya kimliği, iskele/yüzme dışlaması ve güncel 6/2 birlikte incelendi.",
+      "sources": [
+        "https://www.erdek.gov.tr/cografi-yapi",
+        "https://www.habersbalikesir.com/marmara-nin-balik-cenneti-erdek-kiyidan-olta-atabileceginiz-en-verimli-noktalar/101492",
+        "https://www.e-sehir.com/turkiye-haritasi/erdek-sahili-nerede-nasil-gidilir.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Bandırma Merkez Açık Sahil Bandı",
+      "province": "Balıkesir",
+      "district": "Bandırma",
+      "slug": "balikesir-bandirma-merkez-acik-sahil-bandi",
+      "distanceKmFromIstanbulCenter": 111.818,
+      "decision": "pr_pending",
+      "reason": "Ekim 2026 doğrudan kıyı avı, kamusal yaya hattı, konum ve güncel deniz kuralları çaprazlandı.",
+      "sources": [
+        "https://www.akdenizgazetesi.com/bandirmada-oltalar-tirsi-baligiyla-doldu",
+        "https://www.bandirma.gov.tr/2026-yili-toplanti-ve-gosteri-yuruyusleri-alan-ve-guzergahlari",
+        "https://www.openstreetmap.org/search?query=Band%C4%B1rma%20A%C5%9F%C4%B1klar%20K%C3%B6pr%C3%BCs%C3%BC",
+        "https://balikesir.ktb.gov.tr/TR-90617/av-turizmi.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Gürsu Ericek Göleti",
+      "province": "Bursa",
+      "decision": "species_pending",
+      "reason": "Resmî kamusal olta alanı var; güvenilir rota-özel tür kanıtı henüz yok."
+    },
+    {
+      "name": "Bilecik Gölpazarı Beşgöller",
+      "province": "Bilecik",
+      "decision": "protected_area_pending",
+      "reason": "Valilik beyanı tür ve olta etkinliği bildiriyor; mahalli öneme haiz sulak alanın güncel izinli kıyısı ve pin doğrulaması gerekiyor."
+    },
+    {
+      "name": "Göynük Gökçesaray Göleti",
+      "province": "Bolu",
+      "decision": "fish_and_access_pending",
+      "reason": "2016 sazan yavrusu salımı ve 2026 kamusal gezi var; güncel yetişkin tür ve amatör av erişimi yeterince doğrulanmadı."
+    },
+    {
+      "name": "Sakarya Geyve Kışlaçay",
+      "province": "Sakarya",
+      "decision": "identity_pending",
+      "reason": "2026 balıklandırma haberi var; Kışlaçay/Kışlaköy su kimliği ve kamusal kıyı net değil."
+    },
+    {
+      "name": "Marmaraereğlisi Arka Deniz",
+      "province": "Tekirdağ",
+      "decision": "species_pending",
+      "reason": "29 Ekim belediye olta yarışması erişimi gösteriyor; rota-özel tür kanıtı eksik."
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ankara-500km-yalova-ortaburun-baraji",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "Su alma/sulama yapısı ve izinli kıyı 2026 için belirsiz; C/HOLD.",
+      "sources": [
+        "https://www.openstreetmap.org/way/58896776",
+        "https://www.google.com/maps/search/?api=1&query=Ortaburun%20baraj%C4%B1%2C%20%C3%87%C4%B1narc%C4%B1k%2C%20Yalova%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Haber/947/100-Bin-Adet-Sazan-Baligi-Goletlere-Birakildi",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/yalova-2024-icdr-20251008082821.pdf",
+        "https://www.yalovagazetesi.com/cinarcik-belediyesinden-su-duyurusu",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-tekirdag-kazak-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "Kamusal mesire ziyareti olta izni değildir; güncel izinli kıyı belirsiz; C/HOLD.",
+      "sources": [
+        "https://www.openstreetmap.org/relation/17061748",
+        "https://www.google.com/maps/search/?api=1&query=Kazak%20G%C3%B6l%C3%BC%2C%20Kapakl%C4%B1%2C%20Tekirda%C4%9F%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://www.kapakligazetesi.com.tr/kapakli-belediyesinden-sazan-yatirimi",
+        "https://www.kulturportali.gov.tr/turkiye/tekirdag/gezilecekyer/kapakli-kazak-golu",
+        "https://www.kapakli.bel.tr/guncel/haberler/baskan-cetin-ustyapi-calismalari-ve-kazak-golu-mesire-alaninda-incelemelerde-bulundu",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-tekirdag-hanoglu-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "2026 kira, izinli amatör kıyı ve güncel stok teyitli değil; C/HOLD.",
+      "sources": [
+        "https://www.openstreetmap.org/way/144061959",
+        "https://www.google.com/maps/search/?api=1&query=Hano%C4%9Flu%20G%C3%B6leti%2C%20Muratl%C4%B1%2C%20Tekirda%C4%9F%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://tekirdag.tarimorman.gov.tr/Belgeler/Faaliyet%20Raporlar%C4%B1/2025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://tekirdag.tarimorman.gov.tr/Belgeler/TarimRaporlari/GTHB59_2017.pdf",
+        "https://www.babaeskisozgazetesi.com/balik-yakalama-festivali-basliyor/27868",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "nextResearch": "31 Ekim iki yeni Marmara merkez kıyı C+ sayfası ve üç D→C/HOLD araştırması; PR/CI/production doğrulaması bekliyor. İstanbul kanıt bekleyen adayları yeni güçlü kanıtla geri değerlendir; 175 km halka sonrası yakın Marmara kıyılarını tara."
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Erdek Merkez Açık Sahil Yürüyüş Yolu</title>
+  <desc id="desc">Deniz ve kıyıyı simgeleyen çizim; gerçek fotoğraf veya izinli atış noktası haritası değildir.</desc>
+  <rect width="1200" height="630" fill="#153c4b"/>
+  <circle cx="1010" cy="125" r="58" fill="#ecd098"/>
+  <path d="M0 355 Q180 300 350 350 T720 345 T1200 335 V630 H0Z" fill="#2e6d67"/>
+  <path d="M0 430 Q220 392 420 425 T850 410 T1200 420 V630 H0Z" fill="#2a8391"/>
+  <path d="M0 505 Q200 478 430 510 T890 490 T1200 500" fill="none" stroke="#a9dde0" stroke-width="7"/>
+  <text x="66" y="91" fill="#ccebe8" font-family="sans-serif" font-size="28">BALIKESİR · ERDEK</text>
+  <text x="66" y="165" fill="#ffffff" font-family="sans-serif" font-size="39" font-weight="700">Erdek Merkez Açık Sahil Yürüyüş Yolu</text>
+  <text x="66" y="215" fill="#ccebe8" font-family="sans-serif" font-size="27">Açık yaya kıyısı · kefal, istavrit</text>
+  <text x="66" y="587" fill="#ffffff" font-family="sans-serif" font-size="22">İşaretli yüzme alanı dışında avlanın</text>
+</svg>
