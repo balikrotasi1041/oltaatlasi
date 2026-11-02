@@ -22,7 +22,7 @@
       "district": "Marmaraereğlisi",
       "slug": "tekirdag-marmaraereglisi-acik-kiyi-seridi",
       "distanceKmFromIstanbulCenter": 86.006,
-      "decision": "pr_pending",
+      "decision": "published_live_verified",
       "reason": "Resmî ilçe ölçekli olta/tür kaydı, konum ve güncel 6/2; operasyon/yüzme dışlaması.",
       "sources": [
         "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
@@ -30,7 +30,9 @@
         "https://harita.org/tekirdag/marmaraereglisi/",
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/194",
+      "liveSha": "7836a02076ba8544d429239e740c15762d2a84ed"
     },
     {
       "name": "Marmara Adası Merkez Açık Kıyı Bandı",
@@ -38,7 +40,7 @@
       "district": "Marmara",
       "slug": "balikesir-marmara-adasi-merkez-acik-kiyi-bandi",
       "distanceKmFromIstanbulCenter": 128.497,
-      "decision": "pr_pending",
+      "decision": "published_live_verified",
       "reason": "Resmî/akademik ada olta türleri, belediye kamusal yürüyüş bandı ve 6/2; iskele/yüzme dışlaması.",
       "sources": [
         "https://webdosya.csb.gov.tr/db/mpgm/icerikler/5.4.4.1-su-urunleri-balikcilik-kiyi-yapilari-20201218094951.pdf",
@@ -46,7 +48,9 @@
         "https://dalis.denizde.com.tr/tr/marina-hava-durumu/marmara-adasi-iskelesi",
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/194",
+      "liveSha": "7836a02076ba8544d429239e740c15762d2a84ed"
     },
     {
       "name": "Gürsu Ericek Göleti",
@@ -140,5 +144,5 @@
       ]
     }
   ],
-  "nextResearch": "2 Kasım iki yeni C+ ve üç D→C/HOLD için PR/CI/production bekliyor. 1 Kasım doğrulanmış teslim yok. Marmara 175 km halkası ve İstanbul kanıt bekleyen adaylar sonraki çalışmada yeniden taranır."
+  "nextResearch": "2 Kasım PR #194 CI ve production başarılı; Marmaraereğlisi/Marmara Adası 200, canonical, index ve sitemap doğrulandı. Karaidemir/Çokal/Sapanca D→C fakat HOLD/noindex. 1 Kasım doğrulanmış teslim yok. 3 Kasım yeni temiz main baseline ve İstanbul kanıt bekleyen adayları ile 175 km sonrası halka."
 }
