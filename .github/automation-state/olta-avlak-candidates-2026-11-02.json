@@ -1,0 +1,144 @@
+{
+  "date": "2026-11-02",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "unfulfilledPriorDates": [
+    {
+      "date": "2026-11-01",
+      "newRoutesVerified": 0,
+      "promotionVerified": 0,
+      "reason": "1 Kasım için main üzerinde doğrulanmış günlük ledger veya production teslimi yok; geriye dönük başarı yazılmadı."
+    }
+  ],
+  "newRouteQueue": [
+    {
+      "name": "Marmaraereğlisi Açık Kıyı Şeridi",
+      "province": "Tekirdağ",
+      "district": "Marmaraereğlisi",
+      "slug": "tekirdag-marmaraereglisi-acik-kiyi-seridi",
+      "distanceKmFromIstanbulCenter": 86.006,
+      "decision": "pr_pending",
+      "reason": "Resmî ilçe ölçekli olta/tür kaydı, konum ve güncel 6/2; operasyon/yüzme dışlaması.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://tekirdag.tarimorman.gov.tr/Belgeler/Faaliyet%20Raporlar%C4%B1/2025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://harita.org/tekirdag/marmaraereglisi/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Marmara Adası Merkez Açık Kıyı Bandı",
+      "province": "Balıkesir",
+      "district": "Marmara",
+      "slug": "balikesir-marmara-adasi-merkez-acik-kiyi-bandi",
+      "distanceKmFromIstanbulCenter": 128.497,
+      "decision": "pr_pending",
+      "reason": "Resmî/akademik ada olta türleri, belediye kamusal yürüyüş bandı ve 6/2; iskele/yüzme dışlaması.",
+      "sources": [
+        "https://webdosya.csb.gov.tr/db/mpgm/icerikler/5.4.4.1-su-urunleri-balikcilik-kiyi-yapilari-20201218094951.pdf",
+        "https://www.marmara.bel.tr/storage/3947/6808dd6e8fb54.pdf",
+        "https://dalis.denizde.com.tr/tr/marina-hava-durumu/marmara-adasi-iskelesi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Gürsu Ericek Göleti",
+      "province": "Bursa",
+      "decision": "species_pending",
+      "reason": "Resmî kamusal olta alanı var; güvenilir rota-özel tür kanıtı henüz yok."
+    },
+    {
+      "name": "Bilecik Gölpazarı Beşgöller",
+      "province": "Bilecik",
+      "decision": "protected_area_pending",
+      "reason": "Valilik beyanı tür ve olta etkinliği bildiriyor; mahalli öneme haiz sulak alanın güncel izinli kıyısı ve pin doğrulaması gerekiyor."
+    },
+    {
+      "name": "Göynük Gökçesaray Göleti",
+      "province": "Bolu",
+      "decision": "fish_and_access_pending",
+      "reason": "2016 sazan yavrusu salımı ve 2026 kamusal gezi var; güncel yetişkin tür ve amatör av erişimi yeterince doğrulanmadı."
+    },
+    {
+      "name": "Sakarya Geyve Kışlaçay",
+      "province": "Sakarya",
+      "decision": "identity_pending",
+      "reason": "2026 balıklandırma haberi var; Kışlaçay/Kışlaköy su kimliği ve kamusal kıyı net değil."
+    },
+    {
+      "name": "Marmaraereğlisi Arka Deniz",
+      "province": "Tekirdağ",
+      "decision": "species_pending",
+      "reason": "29 Ekim belediye olta yarışması erişimi gösteriyor; rota-özel tür kanıtı eksik."
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ulusal-tekirdag-karaidemir-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "İzinli kıyı doğrulanmadığından HOLD.",
+      "sources": [
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://api.gbif.org/v1/occurrence/search?taxonKey=204&geoDistance=40.9547574%2C26.9995112%2C12km&country=TR&hasCoordinate=true&hasGeospatialIssue=false&occurrenceStatus=PRESENT&limit=300",
+        "https://www.openstreetmap.org/relation/3893727",
+        "https://www.openstreetmap.org/search?query=Tekirda%C4%9F%20hotel%20T%C3%BCrkiye",
+        "https://turkiyebarajlar.com/envanter",
+        "https://dsi.gov.tr/Sayfa/Detay/2186",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Degisiklik-Yapilmasina-Dair-Teblig-Yayimlanmistir",
+        "https://tekirdag.tarimorman.gov.tr/Belgeler/Faaliyet%20Raporlar%C4%B1/2025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-tekirdag-cokal-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "İzinli kıyı doğrulanmadığından HOLD.",
+      "sources": [
+        "https://www.openstreetmap.org/relation/8804676",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/7",
+        "https://www.google.com/maps/search/?api=1&query=%C3%87okal%20Baraj%20G%C3%B6l%C3%BC%2C%20%C5%9Eark%C3%B6y%2C%20Tekirda%C4%9F%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://tekirdag.tarimorman.gov.tr/Belgeler/Faaliyet%20Raporlar%C4%B1/2025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://tekirdag.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=f231bc2d-a483-49b7-9c96-1ef378bb0796&UrlSuffix=1613%2FCokal-Baraj-Golu-Kiralandi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-sakarya-sapanca-golu-sakarya-kiyisi",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "D_to_C_hold",
+      "reason": "İzinli kıyı doğrulanmadığından HOLD.",
+      "sources": [
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://api.gbif.org/v1/occurrence/search?taxonKey=204&geoDistance=40.7172304%2C30.2420272%2C12km&country=TR&hasCoordinate=true&hasGeospatialIssue=false&occurrenceStatus=PRESENT&limit=300",
+        "https://www.openstreetmap.org/relation/12914685",
+        "https://www.openstreetmap.org/search?query=Sakarya%20hotel%20T%C3%BCrkiye",
+        "https://www.tarimorman.gov.tr/SYGM/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1349",
+        "https://dsi.gov.tr/Sayfa/Detay/2186",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Degisiklik-Yapilmasina-Dair-Teblig-Yayimlanmistir",
+        "https://sakarya.tarimorman.gov.tr/Lists/KutuMenu/Attachments/12/2025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=162",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "nextResearch": "2 Kasım iki yeni C+ ve üç D→C/HOLD için PR/CI/production bekliyor. 1 Kasım doğrulanmış teslim yok. Marmara 175 km halkası ve İstanbul kanıt bekleyen adaylar sonraki çalışmada yeniden taranır."
+}
