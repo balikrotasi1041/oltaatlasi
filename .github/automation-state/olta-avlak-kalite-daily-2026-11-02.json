@@ -134,18 +134,28 @@
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-02.json",
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
-    "verifiedAt": null,
-    "checks": {},
-    "newRouteUrls": [],
-    "indexReleases": 0
+    "productionStatus": "success",
+    "mergedMainSha": "7836a02076ba8544d429239e740c15762d2a84ed",
+    "liveSha": "7836a02076ba8544d429239e740c15762d2a84ed",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/194",
+    "productionRunId": 41504582753,
+    "verifiedAt": "2026-11-02T19:00:10Z",
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/tekirdag-marmaraereglisi-acik-kiyi-seridi/",
+      "https://oltaatlasi.com/meralar/balikesir-marmara-adasi-merkez-acik-kiyi-bandi/"
+    ],
+    "indexReleases": 2
   },
   "shortfall": {
     "newReason": null,
