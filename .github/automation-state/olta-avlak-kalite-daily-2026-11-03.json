@@ -127,24 +127,28 @@
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-03.json",
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
+    "productionStatus": "success",
+    "mergedMainSha": "33845743e93855f6c0ebf7f9f358551c899ea46e",
+    "liveSha": "33845743e93855f6c0ebf7f9f358551c899ea46e",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/196",
+    "productionRunId": 41689932471,
     "checks": {
-      "newPages200": false,
-      "canonical": false,
-      "robotsIndexFollow": false,
-      "sitemap": false,
-      "promotionPages200": false,
-      "promotionPagesNoindex": false
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
     },
-    "newRouteUrls": [],
-    "indexReleases": 0
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/sakarya-adapazari-salmanli-goleti-acik-kiyi/",
+      "https://oltaatlasi.com/meralar/tekirdag-sarkoy-murefte-acik-kiyi-bandi/"
+    ],
+    "indexReleases": 2,
+    "verifiedAt": "2026-11-03T18:09:52Z"
   },
   "shortfall": {
     "newReason": null,

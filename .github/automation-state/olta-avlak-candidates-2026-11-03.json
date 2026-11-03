@@ -22,7 +22,7 @@
       "district": "Adapazarı",
       "slug": "sakarya-adapazari-salmanli-goleti-acik-kiyi",
       "distanceKmFromIstanbulCenter": 111.391,
-      "decision": "ready_for_pr",
+      "decision": "published_live_verified",
       "reason": "Resmî sazan, amatör kullanım ve kıyı erişimi doğrulandı.",
       "sources": [
         "https://sakarya.tarimorman.gov.tr/Haber/237/Sakarya-Ili-2022-Yili-Baliklandirma-Calismasi%E2%80%A6",
@@ -38,7 +38,7 @@
       "district": "Şarköy",
       "slug": "tekirdag-sarkoy-murefte-acik-kiyi-bandi",
       "distanceKmFromIstanbulCenter": 150.782,
-      "decision": "ready_for_pr",
+      "decision": "published_live_verified",
       "reason": "Resmî/akademik sportif olta ve belediye kamusal kıyı kaydı.",
       "sources": [
         "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
@@ -78,7 +78,7 @@
       "slug": "ankara-500km-sakarya-okcular-goleti",
       "baselineGrade": "D",
       "finalGrade": "C+",
-      "decision": "ready_for_pr",
+      "decision": "D_to_Cplus_hold",
       "reason": "Kaynarca Kaymakamlığı mesire alanında balık tutmayı bildirir; günlük kota nedeniyle HOLD.",
       "sources": [
         "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
@@ -94,7 +94,7 @@
       "slug": "ulusal-sakarya-poyrazlar-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "ready_for_pr",
+      "decision": "D_to_C_hold",
       "reason": "DKMP park ziyareti doğrulanır; 2024 doğal koruma statüsü altında olta kıyısı belirsiz, HOLD.",
       "sources": [
         "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
@@ -113,7 +113,7 @@
       "slug": "sarkoy-merkez-sahili",
       "baselineGrade": "C",
       "finalGrade": "C+",
-      "decision": "ready_for_pr",
+      "decision": "C_to_Cplus_hold",
       "reason": "Kamusal kıyı bağlamı; plaj/liman/iskele dışı. Günlük kota nedeniyle HOLD.",
       "sources": [
         "https://www.tekirdag.gov.tr/deniz-turizmi",
