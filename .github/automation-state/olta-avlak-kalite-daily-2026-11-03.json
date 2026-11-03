@@ -1,0 +1,153 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-03",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-03.json",
+  "baselineMainSha": "c0968a0b286ded33c3b08af25b7d1a3401374c4c",
+  "startingLiveSha": "c0968a0b286ded33c3b08af25b7d1a3401374c4c",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 175,
+  "istanbulExhaustedEvidence": "25–29 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk ile çakıştı; Selvi Burnu, Aşiyan, Kabataş ve Şile/Ağva liman dışı kıyılarında güncel kamusal av erişimi veya rota-özel tür kanıtı eksik. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; Marmara kıyısında yakından uzağa araştırma sürer.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "sakarya-adapazari-salmanli-goleti-acik-kiyi",
+    "tekirdag-sarkoy-murefte-acik-kiyi-bandi"
+  ],
+  "promotionSlugs": [
+    "ankara-500km-sakarya-okcular-goleti",
+    "ulusal-sakarya-poyrazlar-golu",
+    "sarkoy-merkez-sahili"
+  ],
+  "indexReleaseSlugs": [
+    "sakarya-adapazari-salmanli-goleti-acik-kiyi",
+    "tekirdag-sarkoy-murefte-acik-kiyi-bandi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ankara-500km-sakarya-okcular-goleti",
+    "ulusal-sakarya-poyrazlar-golu",
+    "sarkoy-merkez-sahili"
+  ],
+  "decisions": [
+    {
+      "slug": "sakarya-adapazari-salmanli-goleti-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 111.391,
+      "identityAndSpecies": "İl Tarım 2022 Salmanlı Göleti sazan salımı; İl Kültür gölet kimliği ve balıkçı gözlemi.",
+      "access": "İl Kültür kamusal gölet yolu; İl Tarım yalnız amatör kullanım. İşletme/su alma/levha dışı.",
+      "law": "6/2, 2026/26 ve yerel içsu levhası.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Haber/237/Sakarya-Ili-2022-Yili-Baliklandirma-Calismasi%E2%80%A6",
+        "https://sakarya.ktb.gov.tr/TR-164458/asirlar-salmanli-eren-baba-turbesi-isiklar-ve-sakligol-.html",
+        "https://sakarya.tarimorman.gov.tr/Haber/274/Ilimiz-Goletlerinde-Baliklandirma-Calismalari",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "tekirdag-sarkoy-murefte-acik-kiyi-bandi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 150.782,
+      "identityAndSpecies": "İl Kültür Şarköy kıyısı türleri; KMÜ Mürefte sportif olta alanı.",
+      "access": "Büyükşehir Mürefte Sevgi Yolu sahil düzenlemesi; liman/iskele/plaj dışı.",
+      "law": "6/2, 2026/26 ve yüzme sahası dönemi.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://iklimdegisikligi.tekirdag.bel.tr/haber/51013",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-okcular-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 113.794,
+      "identityAndSpecies": "Bolu İl Tarım Okçular yetişkin sazan salımı; Sakarya Üniversitesi Reisler-Okçular su kimliği.",
+      "access": "Kaynarca Kaymakamlığı mesire alanında balık tutmayı bildirir; günlük kota nedeniyle HOLD.",
+      "law": "6/2, 2026/26 ve yerel mesire levhası.",
+      "sources": [
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://bolu.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1249",
+        "https://www.kaynarca.gov.tr/kaynarca-goleti",
+        "https://acikerisim.sakarya.edu.tr/bitstream/handle/20.500.12619/93333/T03647.pdf?isAllowed=y&sequence=1",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-sakarya-poyrazlar-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 126.376,
+      "identityAndSpecies": "Valilik ve DKMP göl türleri: sazan, turna, yayın.",
+      "access": "DKMP park ziyareti doğrulanır; 2024 doğal koruma statüsü altında olta kıyısı belirsiz, HOLD.",
+      "law": "6/2, 2026/26 ve doğal koruma alanı koşulları.",
+      "sources": [
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://www.tarimorman.gov.tr/SYGM/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1349",
+        "https://dsi.gov.tr/Sayfa/Detay/2186",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Degisiklik-Yapilmasina-Dair-Teblig-Yayimlanmistir",
+        "https://www.sakarya.gov.tr/poyrazlar-golu",
+        "https://ekotaban.tarimorman.gov.tr/alan/412",
+        "https://sakarya.csb.gov.tr/poyrazlar-golu-dogal-sit-nitelikli-dogal-koruma-alani-tescili-duyuru-474105",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "sarkoy-merkez-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 162.993,
+      "identityAndSpecies": "İl Kültür Şarköy kıyısı olta ve türleri; KMÜ akademik çalışma.",
+      "access": "Kamusal kıyı bağlamı; plaj/liman/iskele dışı. Günlük kota nedeniyle HOLD.",
+      "law": "6/2, 2026/26 ve işaretli yüzme alanı dönemi.",
+      "sources": [
+        "https://www.tekirdag.gov.tr/deniz-turizmi",
+        "https://www.sarkoy.gov.tr/ruzgar-sorfu",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/69/Ticari-Amacli-Su-Urunleri-Ve-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Yayimlanmistir",
+        "https://www.tekirdag.bel.tr/haber/51288",
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-03.json",
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending",
+    "mergedMainSha": null,
+    "liveSha": null,
+    "pr": null,
+    "productionRunId": null,
+    "checks": {
+      "newPages200": false,
+      "canonical": false,
+      "robotsIndexFollow": false,
+      "sitemap": false,
+      "promotionPages200": false,
+      "promotionPagesNoindex": false
+    },
+    "newRouteUrls": [],
+    "indexReleases": 0
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}

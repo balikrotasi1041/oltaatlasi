@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-03",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "unfulfilledPriorDates": [
+    {
+      "date": "2026-11-01",
+      "newRoutesVerified": 0,
+      "promotionVerified": 0,
+      "reason": "1 Kasım için main üzerinde doğrulanmış teslim yok; geriye dönük sayılmadı."
+    }
+  ],
+  "newRouteQueue": [
+    {
+      "name": "Salmanlı Göleti Açık Kıyısı",
+      "province": "Sakarya",
+      "district": "Adapazarı",
+      "slug": "sakarya-adapazari-salmanli-goleti-acik-kiyi",
+      "distanceKmFromIstanbulCenter": 111.391,
+      "decision": "ready_for_pr",
+      "reason": "Resmî sazan, amatör kullanım ve kıyı erişimi doğrulandı.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Haber/237/Sakarya-Ili-2022-Yili-Baliklandirma-Calismasi%E2%80%A6",
+        "https://sakarya.ktb.gov.tr/TR-164458/asirlar-salmanli-eren-baba-turbesi-isiklar-ve-sakligol-.html",
+        "https://sakarya.tarimorman.gov.tr/Haber/274/Ilimiz-Goletlerinde-Baliklandirma-Calismalari",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Mürefte Açık Kıyı Bandı",
+      "province": "Tekirdağ",
+      "district": "Şarköy",
+      "slug": "tekirdag-sarkoy-murefte-acik-kiyi-bandi",
+      "distanceKmFromIstanbulCenter": 150.782,
+      "decision": "ready_for_pr",
+      "reason": "Resmî/akademik sportif olta ve belediye kamusal kıyı kaydı.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://iklimdegisikligi.tekirdag.bel.tr/haber/51013",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Işıklar Göleti",
+      "province": "Sakarya",
+      "decision": "location_pending",
+      "reason": "Resmî sazan ve geçmiş kamu gezi kaydı var; gölet merkezi koordinatı mahalle merkeziyle karıştırılmamalı."
+    },
+    {
+      "name": "Gürsu Ericek Göleti",
+      "province": "Bursa",
+      "decision": "species_pending",
+      "reason": "Kamuya açık olta alanı var; rota-özel tür kaydı eksik."
+    },
+    {
+      "name": "Bilecik Gölpazarı Beşgöller",
+      "province": "Bilecik",
+      "decision": "protected_area_pending",
+      "reason": "Güncel izinli kıyı ve pin belirsiz."
+    },
+    {
+      "name": "Marmaraereğlisi Arka Deniz",
+      "province": "Tekirdağ",
+      "decision": "species_pending",
+      "reason": "Olta yarışı var; kaynaklı tür bilgisi eksik."
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ankara-500km-sakarya-okcular-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "decision": "ready_for_pr",
+      "reason": "Kaynarca Kaymakamlığı mesire alanında balık tutmayı bildirir; günlük kota nedeniyle HOLD.",
+      "sources": [
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://bolu.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1249",
+        "https://www.kaynarca.gov.tr/kaynarca-goleti",
+        "https://acikerisim.sakarya.edu.tr/bitstream/handle/20.500.12619/93333/T03647.pdf?isAllowed=y&sequence=1",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-sakarya-poyrazlar-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "ready_for_pr",
+      "reason": "DKMP park ziyareti doğrulanır; 2024 doğal koruma statüsü altında olta kıyısı belirsiz, HOLD.",
+      "sources": [
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://www.tarimorman.gov.tr/SYGM/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1349",
+        "https://dsi.gov.tr/Sayfa/Detay/2186",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Degisiklik-Yapilmasina-Dair-Teblig-Yayimlanmistir",
+        "https://www.sakarya.gov.tr/poyrazlar-golu",
+        "https://ekotaban.tarimorman.gov.tr/alan/412",
+        "https://sakarya.csb.gov.tr/poyrazlar-golu-dogal-sit-nitelikli-dogal-koruma-alani-tescili-duyuru-474105",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "sarkoy-merkez-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "decision": "ready_for_pr",
+      "reason": "Kamusal kıyı bağlamı; plaj/liman/iskele dışı. Günlük kota nedeniyle HOLD.",
+      "sources": [
+        "https://www.tekirdag.gov.tr/deniz-turizmi",
+        "https://www.sarkoy.gov.tr/ruzgar-sorfu",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/69/Ticari-Amacli-Su-Urunleri-Ve-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Yayimlanmistir",
+        "https://www.tekirdag.bel.tr/haber/51288",
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "nextResearch": "3 Kasım PR/CI ve production exact SHA sonra iki yeni sayfa index, üç gerçek terfi teslimi teyit et; 4 Kasım temiz main baseline ve 2/4 ortak kota. Işıklar konumu ve Poyrazlar koruma olta kıyısı araştırılacak."
+}
