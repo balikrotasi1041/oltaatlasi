@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-04",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "unfulfilledPriorDates": [
+    {
+      "date": "2026-11-01",
+      "newRoutesVerified": 0,
+      "promotionVerified": 0,
+      "reason": "1 Kasım için main üzerinde doğrulanmış teslim yok; geriye dönük sayılmadı."
+    }
+  ],
+  "newRouteQueue": [
+    {
+      "name": "Uçmakdere Açık Kıyısı",
+      "province": "Tekirdağ",
+      "district": "Şarköy",
+      "slug": "tekirdag-sarkoy-ucmakdere-acik-kiyi",
+      "distanceKmFromIstanbulCenter": 135.308,
+      "decision": "ready_for_pr",
+      "reason": "Resmî Şarköy türleri, akademik Uçmakdere olta faaliyeti ve belediye kıyı erişimi; yüzme alanı dışlandı.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://tekirdag.bel.tr/arsiv/13639",
+        "https://www.tekirdag.bel.tr/haber/51437",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.tekirdag.bel.tr/haber/51288"
+      ]
+    },
+    {
+      "name": "Gaziköy Açık Kıyısı",
+      "province": "Tekirdağ",
+      "district": "Şarköy",
+      "slug": "tekirdag-sarkoy-gazikoy-acik-kiyi",
+      "distanceKmFromIstanbulCenter": 140.968,
+      "decision": "ready_for_pr",
+      "reason": "Resmî Şarköy türleri, akademik Gaziköy faaliyeti ve belediye ayrı kıyı/yol kaydı.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://tekirdag.bel.tr/arsiv/13639",
+        "https://www.tekirdag.bel.tr/haber/51437",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Işıklar Göleti",
+      "province": "Sakarya",
+      "decision": "location_pending",
+      "reason": "Su kütlesi merkezi mahalle merkeziyle karıştırılmamalı; doğrulanmış su pini eksik."
+    },
+    {
+      "name": "Gürsu Ericek Göleti",
+      "province": "Bursa",
+      "decision": "species_pending",
+      "reason": "Rota-özel tür kaydı eksik."
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ankara-500km-sakarya-sekiharman-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "ready_for_pr",
+      "reason": "4 Kasım 2026 gerçek D→C terfisi: resmî suya özgü sazan salımı, 6/2, 2026/26 ve Sakarya 2026 içsu dönemi incelendi. Suya genel amatör avcılık duyurulmuş olsa da güncel kamusal kıyı girişi ve işletme/özel mülk sınırı doğrulanmadı; rota HOLD kalır.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=237",
+        "https://sakarya.tarimorman.gov.tr/Haber/274/Ilimiz-Goletlerinde-Baliklandirma-Calismalari",
+        "https://sakarya.tarimorman.gov.tr/Haber/20/Baliklandirma-Faaliyetleri-Devam-Etmektedir",
+        "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-huseyinli-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "ready_for_pr",
+      "reason": "4 Kasım 2026 gerçek D→C terfisi: resmî suya özgü sazan salımı, 6/2, 2026/26 ve Sakarya 2026 içsu dönemi incelendi. Suya genel amatör avcılık duyurulmuş olsa da güncel kamusal kıyı girişi ve işletme/özel mülk sınırı doğrulanmadı; rota HOLD kalır.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Haber/20/Baliklandirma-Faaliyetleri-Devam-Etmektedir",
+        "https://sakarya.tarimorman.gov.tr/Haber/176/2020-Yili-Baliklandirma-Calismasi",
+        "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "hoskoy-kamusal-kiyi",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "decision": "ready_for_pr",
+      "reason": "4 Kasım 2026 gerçek C→C+ terfisi: Kaymakamlık Hoşköy su kimliği/ilçe türleri, İl Kültür sportif olta/tür ve akademik kıyı incelemesi; 6/2 ve 2026/26. Barınak operasyon alanı dışlanır.",
+      "sources": [
+        "https://www.tekirdag.gov.tr/deniz-turizmi",
+        "https://tekirdag.tarimorman.gov.tr/Duyuru/348/Tekirdag-Sarkoy-Hoskoy-Balikci-Barinagi-Kiralama-Ilanidir",
+        "https://www.sarkoy.gov.tr/ruzgar-sorfu",
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "existingReleaseQueue": [
+    {
+      "slug": "ankara-500km-sakarya-okcular-goleti",
+      "decision": "ready_for_pr",
+      "reason": "Önceki gün C+/HOLD; 4 Kasım çekirdek yeniden incelemesi ve ortak kota."
+    },
+    {
+      "slug": "sarkoy-merkez-sahili",
+      "decision": "ready_for_pr",
+      "reason": "Önceki gün C+/HOLD; 4 Kasım çekirdek yeniden incelemesi ve ortak kota."
+    }
+  ]
+}

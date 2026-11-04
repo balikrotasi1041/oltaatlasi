@@ -38,6 +38,8 @@ import { growthRoutes20261102 } from "./meralar-growth-2026-11-02";
 import { applyDailyAvlakQuality20261102 } from "./meralar-daily-avlak-quality-2026-11-02";
 import { growthRoutes20261103 } from "./meralar-growth-2026-11-03";
 import { applyDailyAvlakQuality20261103 } from "./meralar-daily-avlak-quality-2026-11-03";
+import { growthRoutes20261104 } from "./meralar-growth-2026-11-04";
+import { applyDailyAvlakQuality20261104 } from "./meralar-daily-avlak-quality-2026-11-04";
 export * from "./meralar-tumu-core";
 import type { Mera } from "./meralar";
 import type { EnrichedMera, ConfidenceProfile, ResearchSource } from "./meralar-tumu-core";
@@ -352,6 +354,11 @@ for (const route of growthRoutes20261103) {
   routeMap.set(route.slug, route);
 }
 applyDailyAvlakQuality20261103(routeMap);
+for (const route of growthRoutes20261104) {
+  if (routeMap.has(route.slug)) throw new Error(`4 Kasım yeni rota mevcut slug ile çakışıyor: ${route.slug}`);
+  routeMap.set(route.slug, route);
+}
+applyDailyAvlakQuality20261104(routeMap);
 export const meralar:EnrichedMera[]=[...routeMap.values()];
 const repeatedActiveSlugs=[...new Set(meralar.map((m)=>m.slug).filter((slug,index,all)=>all.indexOf(slug)!==index))];
 if(repeatedActiveSlugs.length)throw new Error(`Aktif rota veri kümesinde yinelenen slug var: ${repeatedActiveSlugs.join(", ")}`);

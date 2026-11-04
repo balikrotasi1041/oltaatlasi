@@ -16,6 +16,7 @@ import { promoted20261030 } from "../src/data/meralar-daily-avlak-quality-2026-1
 import { promoted20261031 } from "../src/data/meralar-daily-avlak-quality-2026-10-31.ts";
 import { promoted20261102 } from "../src/data/meralar-daily-avlak-quality-2026-11-02.ts";
 import { promoted20261103 } from "../src/data/meralar-daily-avlak-quality-2026-11-03.ts";
+import { promoted20261104 } from "../src/data/meralar-daily-avlak-quality-2026-11-04.ts";
 
 const errors=[];
 const prefix="ankara-500km-";
@@ -44,7 +45,8 @@ const promotionDates=new Map([
   ...promoted20261030.map((slug)=>[slug,"2026-10-30"]),
   ...promoted20261031.map((slug)=>[slug,"2026-10-31"]),
   ...promoted20261102.map((slug)=>[slug,"2026-11-02"]),
-  ...promoted20261103.map((slug)=>[slug,"2026-11-03"])
+  ...promoted20261103.map((slug)=>[slug,"2026-11-03"]),
+  ...promoted20261104.map((slug)=>[slug,"2026-11-04"])
 ]);
 
 if(expectedProvinces.length!==58)errors.push(`Kapsam il sayısı 58 yerine ${expectedProvinces.length}.`);
@@ -72,7 +74,7 @@ for(const route of newRoutes){
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.slug))errors.push(`${route.slug}: canonical slug biçimi geçersiz.`);
   if(route.publishedAt!=="2026-08-17")errors.push(`${route.slug}: ilk yayın tarihi paket tarihiyle uyuşmuyor.`);
   if(promotionDate){
-    if(route.updatedAt!==promotionDate||route.researchedAt!==promotionDate)errors.push(`${route.slug}: kanıt yükseltme tarihi ${promotionDate} değil.`);
+    if(route.updatedAt<promotionDate||route.researchedAt<promotionDate)errors.push(`${route.slug}: kanıt yükseltme tarihi ${promotionDate} öncesine döndü.`);
     if(route.confidence!=="C"||route.confidenceProfile?.overall!=="C")errors.push(`${route.slug}: kanıt yükseltmesi Güven C olarak işlenmemiş.`);
     const legalLevel=route.confidenceProfile?.legal.level;
     const accessLevel=route.confidenceProfile?.access.level;

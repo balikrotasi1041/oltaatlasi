@@ -1,0 +1,158 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-04",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-04.json",
+  "baselineMainSha": "e39d964dfc196d503df0298c373bd77579feffad",
+  "startingLiveSha": "e39d964dfc196d503df0298c373bd77579feffad",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 175,
+  "istanbulExhaustedEvidence": "25–29 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk ile çakıştı; Selvi Burnu, Aşiyan, Kabataş ve Şile/Ağva liman dışı kıyılarında güncel kamusal av erişimi veya rota-özel tür kanıtı eksik. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; Marmara kıyısında yakından uzağa araştırma sürer.",
+  "indexReleaseCap": 4,
+  "newRouteSlugs": [
+    "tekirdag-sarkoy-ucmakdere-acik-kiyi",
+    "tekirdag-sarkoy-gazikoy-acik-kiyi"
+  ],
+  "promotionSlugs": [
+    "ankara-500km-sakarya-sekiharman-goleti",
+    "ankara-500km-sakarya-huseyinli-goleti",
+    "hoskoy-kamusal-kiyi"
+  ],
+  "indexReleaseSlugs": [
+    "tekirdag-sarkoy-ucmakdere-acik-kiyi",
+    "tekirdag-sarkoy-gazikoy-acik-kiyi",
+    "ankara-500km-sakarya-okcular-goleti",
+    "sarkoy-merkez-sahili"
+  ],
+  "maintenanceOnlySlugs": [
+    "ankara-500km-sakarya-okcular-goleti",
+    "sarkoy-merkez-sahili"
+  ],
+  "eligibleReviewedSlugs": [
+    "ankara-500km-sakarya-sekiharman-goleti",
+    "ankara-500km-sakarya-huseyinli-goleti",
+    "hoskoy-kamusal-kiyi"
+  ],
+  "decisions": [
+    {
+      "slug": "tekirdag-sarkoy-ucmakdere-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 135.308,
+      "identityAndSpecies": "Resmî Şarköy türleri, akademik Uçmakdere olta faaliyeti ve belediye kıyı erişimi; yüzme alanı dışlandı.",
+      "access": "Uçmakdere adıyla kamusal kıyı şeridi; Uçmakdere halk plajı erişimi",
+      "law": "6/2 amatör avcılık, 2026/26 değişikliği ve ilgili yerel/işaretli yüzme alanı kuralları.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://tekirdag.bel.tr/arsiv/13639",
+        "https://www.tekirdag.bel.tr/haber/51437",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.tekirdag.bel.tr/haber/51288"
+      ]
+    },
+    {
+      "slug": "tekirdag-sarkoy-gazikoy-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 140.968,
+      "identityAndSpecies": "Resmî Şarköy türleri, akademik Gaziköy faaliyeti ve belediye ayrı kıyı/yol kaydı.",
+      "access": "Gaziköy adıyla kamusal kıyı şeridi; 2026 Gaziköy bağlantı yolu",
+      "law": "6/2 amatör avcılık, 2026/26 değişikliği ve ilgili yerel/işaretli yüzme alanı kuralları.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://tekirdag.bel.tr/arsiv/13639",
+        "https://www.tekirdag.bel.tr/haber/51437",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-sekiharman-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 121.98,
+      "identityAndSpecies": "Sekiharman Göleti adı ve genel konumu OpenStreetMap su varlığı kaydı, bağımsız Google Maps ad araması ve resmî idari sınır katmanıyla birlikte incelendi. Google Maps ve kullanıcı katkıları yalnız ikincil kanıt olarak sınıflandırıldı; tür, kıyı erişimi ve güncel av izni resmî gerçek gibi sunulmadı.",
+      "access": "Genel amatör balıkçılık bağlamı",
+      "law": "6/2 amatör avcılık, 2026/26 değişikliği ve ilgili yerel/işaretli yüzme alanı kuralları.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=237",
+        "https://sakarya.tarimorman.gov.tr/Haber/274/Ilimiz-Goletlerinde-Baliklandirma-Calismalari",
+        "https://sakarya.tarimorman.gov.tr/Haber/20/Baliklandirma-Faaliyetleri-Devam-Etmektedir",
+        "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-huseyinli-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 104.233,
+      "identityAndSpecies": "Hüseyinli Göleti adı ve genel konumu OpenStreetMap su varlığı kaydı, bağımsız Google Maps ad araması ve resmî idari sınır katmanıyla birlikte incelendi. Google Maps ve kullanıcı katkıları yalnız ikincil kanıt olarak sınıflandırıldı; tür, kıyı erişimi ve güncel av izni resmî gerçek gibi sunulmadı.",
+      "access": "Genel amatör balıkçılık bağlamı",
+      "law": "6/2 amatör avcılık, 2026/26 değişikliği ve ilgili yerel/işaretli yüzme alanı kuralları.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Haber/20/Baliklandirma-Faaliyetleri-Devam-Etmektedir",
+        "https://sakarya.tarimorman.gov.tr/Haber/176/2020-Yili-Baliklandirma-Calismasi",
+        "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "hoskoy-kamusal-kiyi",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 145.445,
+      "identityAndSpecies": "4 Kasım 2026 gerçek C→C+ terfisi: Kaymakamlık Hoşköy su kimliği/ilçe türleri, İl Kültür sportif olta/tür ve akademik kıyı incelemesi; 6/2 ve 2026/26. Barınak operasyon alanı dışlanır.",
+      "access": "Şarköy kıyısında sportif olta",
+      "law": "6/2 amatör avcılık, 2026/26 değişikliği ve ilgili yerel/işaretli yüzme alanı kuralları.",
+      "sources": [
+        "https://www.tekirdag.gov.tr/deniz-turizmi",
+        "https://tekirdag.tarimorman.gov.tr/Duyuru/348/Tekirdag-Sarkoy-Hoskoy-Balikci-Barinagi-Kiralama-Ilanidir",
+        "https://www.sarkoy.gov.tr/ruzgar-sorfu",
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://dergi.kmu.edu.tr/userfiles/file/haziran2012/53-60.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-04.json",
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending",
+    "mergedMainSha": null,
+    "liveSha": null,
+    "pr": null,
+    "productionRunId": null,
+    "checks": {
+      "newPages200": false,
+      "canonical": false,
+      "robotsIndexFollow": false,
+      "sitemap": false,
+      "promotionPages200": false,
+      "promotionPagesNoindex": false
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/tekirdag-sarkoy-ucmakdere-acik-kiyi/",
+      "https://oltaatlasi.com/meralar/tekirdag-sarkoy-gazikoy-acik-kiyi/"
+    ],
+    "indexReleases": 0,
+    "verifiedAt": null
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}
