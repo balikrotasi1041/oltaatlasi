@@ -17,6 +17,7 @@ import { promoted20261031 } from "../src/data/meralar-daily-avlak-quality-2026-1
 import { promoted20261102 } from "../src/data/meralar-daily-avlak-quality-2026-11-02.ts";
 import { promoted20261103 } from "../src/data/meralar-daily-avlak-quality-2026-11-03.ts";
 import { promoted20261104 } from "../src/data/meralar-daily-avlak-quality-2026-11-04.ts";
+import { promoted20261105 } from "../src/data/meralar-daily-avlak-quality-2026-11-05.ts";
 
 const errors=[];
 const prefix="ankara-500km-";
@@ -46,7 +47,8 @@ const promotionDates=new Map([
   ...promoted20261031.map((slug)=>[slug,"2026-10-31"]),
   ...promoted20261102.map((slug)=>[slug,"2026-11-02"]),
   ...promoted20261103.map((slug)=>[slug,"2026-11-03"]),
-  ...promoted20261104.map((slug)=>[slug,"2026-11-04"])
+  ...promoted20261104.map((slug)=>[slug,"2026-11-04"]),
+  ...promoted20261105.map((slug)=>[slug,"2026-11-05"])
 ]);
 
 if(expectedProvinces.length!==58)errors.push(`Kapsam il sayısı 58 yerine ${expectedProvinces.length}.`);
