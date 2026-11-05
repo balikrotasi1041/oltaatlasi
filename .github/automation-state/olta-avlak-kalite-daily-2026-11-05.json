@@ -1,0 +1,146 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-05",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-05.json",
+  "baselineMainSha": "19eb24a9d09d926140322abbdea4b8f1b6e201b5",
+  "startingLiveSha": "19eb24a9d09d926140322abbdea4b8f1b6e201b5",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 175,
+  "istanbulExhaustedEvidence": "25–29 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk ile çakıştı; Selvi Burnu, Aşiyan, Kabataş ve Şile/Ağva liman dışı kıyılarında güncel kamusal av erişimi veya rota-özel tür kanıtı eksik. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; Marmara kıyısında yakından uzağa araştırma sürer.",
+  "indexReleaseCap": 4,
+  "newRouteSlugs": [
+    "tekirdag-marmaraereglisi-yeniciftlik-acik-kiyi",
+    "tekirdag-marmaraereglisi-sultankoy-acik-kiyi"
+  ],
+  "promotionSlugs": [
+    "ankara-500km-sakarya-hasanfaki-goleti",
+    "ankara-500km-kirklareli-evciler-goleti",
+    "ankara-500km-kirklareli-cavuskoy-goleti"
+  ],
+  "indexReleaseSlugs": [
+    "tekirdag-marmaraereglisi-yeniciftlik-acik-kiyi",
+    "tekirdag-marmaraereglisi-sultankoy-acik-kiyi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ankara-500km-sakarya-hasanfaki-goleti",
+    "ankara-500km-kirklareli-evciler-goleti",
+    "ankara-500km-kirklareli-cavuskoy-goleti"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-05.json",
+  "decisions": [
+    {
+      "slug": "tekirdag-marmaraereglisi-yeniciftlik-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 90.907,
+      "identityAndSpecies": "Belediye Yeniçiftlik Sahil mahallesini ayrı kamusal kıyı olarak kaydeder; İl Kültür Marmaraereğlisi kıyısında istavrit/kefal/karagöz ve sportif oltayı bildirir.",
+      "access": "Belediyece adıyla belgelenen kamusal mahalle sahili; işaretli yüzme, özel tesis ve tekne alanı dışı.",
+      "law": "6/2 amatör avcılık, 2026/26 değişikliği ve yerel işaretli yüzme/plaj kuralları.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://www.marmaraereglisi.bel.tr/haber-1588-marmaraereglisi_belediyesi_2026_nisan_ayi_olagan_meclis_toplantisi_gerceklestirildi.html",
+        "https://www.tekirdag.bel.tr/haber/47989",
+        "https://www.tekirdag.bel.tr/birim_haber_detay/48477",
+        "https://www.haritatr.com/yeniciftlik-sahil-haritasi-ed95",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "tekirdag-marmaraereglisi-sultankoy-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 83.201,
+      "identityAndSpecies": "Belediye Sultanköy sahilini Yeniçiftlik ve merkezden ayrı kaydeder; İl Kültür Marmaraereğlisi kıyısında istavrit/kefal/karagöz ve sportif oltayı bildirir.",
+      "access": "Belediyece adıyla belgelenen kamusal mahalle sahili; işaretli yüzme, özel tesis ve tekne alanı dışı.",
+      "law": "6/2 amatör avcılık, 2026/26 değişikliği ve yerel işaretli yüzme/plaj kuralları.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://www.marmaraereglisi.bel.tr/haber-1588-marmaraereglisi_belediyesi_2026_nisan_ayi_olagan_meclis_toplantisi_gerceklestirildi.html",
+        "https://www.tekirdag.bel.tr/haber/47989",
+        "https://www.tekirdag.bel.tr/birim_haber_detay/48477",
+        "https://www.haritamap.com/lokasyon/sultankoy-plaji-2000",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-hasanfaki-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 130.826,
+      "identityAndSpecies": "Söğütlü/Hasanfakı adıyla 2016 sazan salımı",
+      "access": "Güncel kamusal kıyı girişi ve işletme sınırı doğrulanmadı; HOLD.",
+      "law": "6/2, 2026/26 ve il içsu kapalı dönemi incelendi.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Haber/65/Su-Kaynaklarinin-Baliklandirma-Projesi",
+        "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kirklareli-evciler-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 141.328,
+      "identityAndSpecies": "Pınarhisar/Evciler 2022 sazan balıklandırması başlangıcı",
+      "access": "Güncel kamusal kıyı girişi ve işletme sınırı doğrulanmadı; HOLD.",
+      "law": "6/2, 2026/26 ve il içsu kapalı dönemi incelendi.",
+      "sources": [
+        "https://kirklareli.tarimorman.gov.tr/Haber/2168/Baliklandirma-Faaliyetleri-Basladi",
+        "https://kirklareli.tarimorman.gov.tr/Duyuru/706/Ic-Sularda-Av-Yasaklari-Basliyor",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kirklareli-cavuskoy-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 159.833,
+      "identityAndSpecies": "Babaeski/Çavuşköy 2020 sazan salımı; Vize adaşı ayrı",
+      "access": "Güncel kamusal kıyı girişi ve işletme sınırı doğrulanmadı; HOLD.",
+      "law": "6/2, 2026/26 ve il içsu kapalı dönemi incelendi.",
+      "sources": [
+        "https://kirklareli.tarimorman.gov.tr/Haber/1360/Babaeski-Ilcemiz-Goletleri-Baliklandirildi",
+        "https://kirklareli.tarimorman.gov.tr/Haber/2168/Baliklandirma-Faaliyetleri-Basladi",
+        "https://kirklareli.tarimorman.gov.tr/Duyuru/706/Ic-Sularda-Av-Yasaklari-Basliyor",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending",
+    "mergedMainSha": null,
+    "liveSha": null,
+    "pr": null,
+    "productionRunId": null,
+    "checks": {
+      "newPages200": false,
+      "canonical": false,
+      "robotsIndexFollow": false,
+      "sitemap": false,
+      "promotionPages200": false,
+      "promotionPagesNoindex": false
+    },
+    "newRouteUrls": [],
+    "indexReleases": 0,
+    "verifiedAt": null
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}

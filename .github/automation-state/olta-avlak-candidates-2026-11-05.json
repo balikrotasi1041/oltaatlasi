@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-05",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "unfulfilledPriorDates": [
+    {
+      "date": "2026-11-01",
+      "newRoutesVerified": 0,
+      "promotionVerified": 0,
+      "reason": "1 Kasım için main üzerinde doğrulanmış teslim yok; geriye dönük sayılmadı."
+    }
+  ],
+  "newRouteQueue": [
+    {
+      "name": "Yeniçiftlik Açık Kıyısı",
+      "province": "Tekirdağ",
+      "district": "Marmaraereğlisi",
+      "slug": "tekirdag-marmaraereglisi-yeniciftlik-acik-kiyi",
+      "distanceKmFromIstanbulCenter": 90.907,
+      "decision": "ready_for_pr",
+      "reason": "Belediye Yeniçiftlik Sahil mahallesini ayrı kamusal kıyı olarak kaydeder; İl Kültür Marmaraereğlisi kıyısında istavrit/kefal/karagöz ve sportif oltayı bildirir.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://www.marmaraereglisi.bel.tr/haber-1588-marmaraereglisi_belediyesi_2026_nisan_ayi_olagan_meclis_toplantisi_gerceklestirildi.html",
+        "https://www.tekirdag.bel.tr/haber/47989",
+        "https://www.tekirdag.bel.tr/birim_haber_detay/48477",
+        "https://www.haritatr.com/yeniciftlik-sahil-haritasi-ed95",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Sultanköy Açık Kıyısı",
+      "province": "Tekirdağ",
+      "district": "Marmaraereğlisi",
+      "slug": "tekirdag-marmaraereglisi-sultankoy-acik-kiyi",
+      "distanceKmFromIstanbulCenter": 83.201,
+      "decision": "ready_for_pr",
+      "reason": "Belediye Sultanköy sahilini Yeniçiftlik ve merkezden ayrı kaydeder; İl Kültür Marmaraereğlisi kıyısında istavrit/kefal/karagöz ve sportif oltayı bildirir.",
+      "sources": [
+        "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
+        "https://www.marmaraereglisi.bel.tr/haber-1588-marmaraereglisi_belediyesi_2026_nisan_ayi_olagan_meclis_toplantisi_gerceklestirildi.html",
+        "https://www.tekirdag.bel.tr/haber/47989",
+        "https://www.tekirdag.bel.tr/birim_haber_detay/48477",
+        "https://www.haritamap.com/lokasyon/sultankoy-plaji-2000",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Müezzinler Göleti",
+      "province": "Sakarya",
+      "decision": "duplicate_identity_pending",
+      "reason": "Müezzinler Gölü ile mevcut Okçular/Reisler Göleti aynı su olabilir; ad/kıyı ayrımı ve su pini doğrulanmadan yeni sayfa açılmadı.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Haber/176/2020-Yili-Baliklandirma-Calismasi"
+      ]
+    },
+    {
+      "name": "Kulaklı Göleti",
+      "province": "Sakarya",
+      "decision": "water_pin_pending",
+      "reason": "Akademik su kimliği ve 2020 sazan salımı var; bulunan 41.0185/30.3325 üçüncü taraf pini OSM su geometrisiyle uyuşmuyor. Doğru su pini ve güncel kıyı erişimi doğrulanmadan sayfa açılmadı.",
+      "sources": [
+        "https://acikerisim.sakarya.edu.tr/bitstream/handle/20.500.12619/93333/T03647.pdf?isAllowed=y&sequence=1",
+        "https://sakarya.tarimorman.gov.tr/Haber/176/2020-Yili-Baliklandirma-Calismasi"
+      ]
+    },
+    {
+      "name": "Vize Sergen Göleti",
+      "province": "Kırklareli",
+      "decision": "species_pending",
+      "reason": "Belediye sportif oltayı doğrular, fakat gölete özgü güvenilir tür kaydı ve 2026 onarım alanı sınırı eksik.",
+      "sources": [
+        "https://vize.bel.tr/sayfa/turizm"
+      ]
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ankara-500km-sakarya-hasanfaki-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "promoted_pr_pending",
+      "reason": "Söğütlü/Hasanfakı adıyla 2016 sazan salımı; güncel kıyı erişimi eksik olduğundan HOLD.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Haber/65/Su-Kaynaklarinin-Baliklandirma-Projesi",
+        "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kirklareli-evciler-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "promoted_pr_pending",
+      "reason": "Pınarhisar/Evciler 2022 sazan balıklandırması başlangıcı; güncel kıyı erişimi eksik olduğundan HOLD.",
+      "sources": [
+        "https://kirklareli.tarimorman.gov.tr/Haber/2168/Baliklandirma-Faaliyetleri-Basladi",
+        "https://kirklareli.tarimorman.gov.tr/Duyuru/706/Ic-Sularda-Av-Yasaklari-Basliyor",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kirklareli-cavuskoy-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "promoted_pr_pending",
+      "reason": "Babaeski/Çavuşköy 2020 sazan salımı; Vize adaşı ayrı; güncel kıyı erişimi eksik olduğundan HOLD.",
+      "sources": [
+        "https://kirklareli.tarimorman.gov.tr/Haber/1360/Babaeski-Ilcemiz-Goletleri-Baliklandirildi",
+        "https://kirklareli.tarimorman.gov.tr/Duyuru/706/Ic-Sularda-Av-Yasaklari-Basliyor",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "existingReleaseQueue": []
+}
