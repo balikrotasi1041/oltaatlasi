@@ -119,25 +119,28 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
+    "productionStatus": "success",
+    "mergedMainSha": "896f7a40477fc193bb80c17801b49fe4201cafa0",
+    "liveSha": "896f7a40477fc193bb80c17801b49fe4201cafa0",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/200",
+    "productionRunId": 42065245141,
     "checks": {
-      "newPages200": false,
-      "canonical": false,
-      "robotsIndexFollow": false,
-      "sitemap": false,
-      "promotionPages200": false,
-      "promotionPagesNoindex": false
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
     },
-    "newRouteUrls": [],
-    "indexReleases": 0,
-    "verifiedAt": null
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/tekirdag-marmaraereglisi-yeniciftlik-acik-kiyi/",
+      "https://oltaatlasi.com/meralar/tekirdag-marmaraereglisi-sultankoy-acik-kiyi/"
+    ],
+    "indexReleases": 2,
+    "verifiedAt": "2026-11-05T16:34:05Z"
   },
   "shortfall": {
     "newReason": null,

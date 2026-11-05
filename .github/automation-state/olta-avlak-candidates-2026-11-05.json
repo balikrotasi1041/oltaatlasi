@@ -22,7 +22,7 @@
       "district": "Marmaraereğlisi",
       "slug": "tekirdag-marmaraereglisi-yeniciftlik-acik-kiyi",
       "distanceKmFromIstanbulCenter": 90.907,
-      "decision": "ready_for_pr",
+      "decision": "published_live_verified",
       "reason": "Belediye Yeniçiftlik Sahil mahallesini ayrı kamusal kıyı olarak kaydeder; İl Kültür Marmaraereğlisi kıyısında istavrit/kefal/karagöz ve sportif oltayı bildirir.",
       "sources": [
         "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
@@ -40,7 +40,7 @@
       "district": "Marmaraereğlisi",
       "slug": "tekirdag-marmaraereglisi-sultankoy-acik-kiyi",
       "distanceKmFromIstanbulCenter": 83.201,
-      "decision": "ready_for_pr",
+      "decision": "published_live_verified",
       "reason": "Belediye Sultanköy sahilini Yeniçiftlik ve merkezden ayrı kaydeder; İl Kültür Marmaraereğlisi kıyısında istavrit/kefal/karagöz ve sportif oltayı bildirir.",
       "sources": [
         "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
@@ -86,7 +86,7 @@
       "slug": "ankara-500km-sakarya-hasanfaki-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "promoted_pr_pending",
+      "decision": "promoted_live_verified",
       "reason": "Söğütlü/Hasanfakı adıyla 2016 sazan salımı; güncel kıyı erişimi eksik olduğundan HOLD.",
       "sources": [
         "https://sakarya.tarimorman.gov.tr/Haber/65/Su-Kaynaklarinin-Baliklandirma-Projesi",
@@ -99,7 +99,7 @@
       "slug": "ankara-500km-kirklareli-evciler-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "promoted_pr_pending",
+      "decision": "promoted_live_verified",
       "reason": "Pınarhisar/Evciler 2022 sazan balıklandırması başlangıcı; güncel kıyı erişimi eksik olduğundan HOLD.",
       "sources": [
         "https://kirklareli.tarimorman.gov.tr/Haber/2168/Baliklandirma-Faaliyetleri-Basladi",
@@ -112,7 +112,7 @@
       "slug": "ankara-500km-kirklareli-cavuskoy-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "promoted_pr_pending",
+      "decision": "promoted_live_verified",
       "reason": "Babaeski/Çavuşköy 2020 sazan salımı; Vize adaşı ayrı; güncel kıyı erişimi eksik olduğundan HOLD.",
       "sources": [
         "https://kirklareli.tarimorman.gov.tr/Haber/1360/Babaeski-Ilcemiz-Goletleri-Baliklandirildi",
