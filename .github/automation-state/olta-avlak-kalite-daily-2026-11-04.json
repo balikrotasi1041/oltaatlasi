@@ -128,28 +128,28 @@
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-04.json",
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
-    "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
+    "verified": true,
+    "newRoutesPublished": 2,
+    "existingRoutesReleased": 2,
+    "productionStatus": "success",
+    "mergedMainSha": "e581b897c32810e6aa109d2636bafb72a798a3ec",
+    "liveSha": "e581b897c32810e6aa109d2636bafb72a798a3ec",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/198",
+    "productionRunId": 42061187584,
     "checks": {
-      "newPages200": false,
-      "canonical": false,
-      "robotsIndexFollow": false,
-      "sitemap": false,
-      "promotionPages200": false,
-      "promotionPagesNoindex": false
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
     },
     "newRouteUrls": [
       "https://oltaatlasi.com/meralar/tekirdag-sarkoy-ucmakdere-acik-kiyi/",
       "https://oltaatlasi.com/meralar/tekirdag-sarkoy-gazikoy-acik-kiyi/"
     ],
-    "indexReleases": 0,
-    "verifiedAt": null
+    "indexReleases": 4,
+    "verifiedAt": "2026-11-05T16:09:29.451041Z"
   },
   "shortfall": {
     "newReason": null,
