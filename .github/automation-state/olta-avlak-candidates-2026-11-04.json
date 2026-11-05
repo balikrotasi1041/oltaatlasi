@@ -22,7 +22,7 @@
       "district": "Şarköy",
       "slug": "tekirdag-sarkoy-ucmakdere-acik-kiyi",
       "distanceKmFromIstanbulCenter": 135.308,
-      "decision": "ready_for_pr",
+      "decision": "published_live_verified",
       "reason": "Resmî Şarköy türleri, akademik Uçmakdere olta faaliyeti ve belediye kıyı erişimi; yüzme alanı dışlandı.",
       "sources": [
         "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
@@ -40,7 +40,7 @@
       "district": "Şarköy",
       "slug": "tekirdag-sarkoy-gazikoy-acik-kiyi",
       "distanceKmFromIstanbulCenter": 140.968,
-      "decision": "ready_for_pr",
+      "decision": "published_live_verified",
       "reason": "Resmî Şarköy türleri, akademik Gaziköy faaliyeti ve belediye ayrı kıyı/yol kaydı.",
       "sources": [
         "https://tekirdag.ktb.gov.tr/TR-75792/sportif-olta-balikciligi.html",
@@ -69,7 +69,7 @@
       "slug": "ankara-500km-sakarya-sekiharman-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "ready_for_pr",
+      "decision": "promoted_live_verified",
       "reason": "4 Kasım 2026 gerçek D→C terfisi: resmî suya özgü sazan salımı, 6/2, 2026/26 ve Sakarya 2026 içsu dönemi incelendi. Suya genel amatör avcılık duyurulmuş olsa da güncel kamusal kıyı girişi ve işletme/özel mülk sınırı doğrulanmadı; rota HOLD kalır.",
       "sources": [
         "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=237",
@@ -84,7 +84,7 @@
       "slug": "ankara-500km-sakarya-huseyinli-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "ready_for_pr",
+      "decision": "promoted_live_verified",
       "reason": "4 Kasım 2026 gerçek D→C terfisi: resmî suya özgü sazan salımı, 6/2, 2026/26 ve Sakarya 2026 içsu dönemi incelendi. Suya genel amatör avcılık duyurulmuş olsa da güncel kamusal kıyı girişi ve işletme/özel mülk sınırı doğrulanmadı; rota HOLD kalır.",
       "sources": [
         "https://sakarya.tarimorman.gov.tr/Haber/20/Baliklandirma-Faaliyetleri-Devam-Etmektedir",
@@ -98,7 +98,7 @@
       "slug": "hoskoy-kamusal-kiyi",
       "baselineGrade": "C",
       "finalGrade": "C+",
-      "decision": "ready_for_pr",
+      "decision": "promoted_live_verified",
       "reason": "4 Kasım 2026 gerçek C→C+ terfisi: Kaymakamlık Hoşköy su kimliği/ilçe türleri, İl Kültür sportif olta/tür ve akademik kıyı incelemesi; 6/2 ve 2026/26. Barınak operasyon alanı dışlanır.",
       "sources": [
         "https://www.tekirdag.gov.tr/deniz-turizmi",
@@ -114,12 +114,12 @@
   "existingReleaseQueue": [
     {
       "slug": "ankara-500km-sakarya-okcular-goleti",
-      "decision": "ready_for_pr",
+      "decision": "released_live_verified",
       "reason": "Önceki gün C+/HOLD; 4 Kasım çekirdek yeniden incelemesi ve ortak kota."
     },
     {
       "slug": "sarkoy-merkez-sahili",
-      "decision": "ready_for_pr",
+      "decision": "released_live_verified",
       "reason": "Önceki gün C+/HOLD; 4 Kasım çekirdek yeniden incelemesi ve ortak kota."
     }
   ]
