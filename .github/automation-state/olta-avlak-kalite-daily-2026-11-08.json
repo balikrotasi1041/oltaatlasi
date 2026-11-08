@@ -140,15 +140,28 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
-    "checks": {}
+    "productionStatus": "success",
+    "mergedMainSha": "e44273e176ffcf1a485be91e39c81829359d5c72",
+    "liveSha": "e44273e176ffcf1a485be91e39c81829359d5c72",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/202",
+    "productionRunId": 42454100504,
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/kocaeli-kandira-kefken-pembe-kayalar-acik-kiyi/",
+      "https://oltaatlasi.com/meralar/kocaeli-kandira-kefken-yesil-koy-acik-kiyi/"
+    ],
+    "indexReleases": 2,
+    "verifiedAt": "2026-11-08T06:20:04Z"
   },
   "shortfall": {
     "newReason": null,

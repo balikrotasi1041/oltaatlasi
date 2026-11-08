@@ -34,7 +34,7 @@
       "district": "Kandıra",
       "slug": "kocaeli-kandira-kefken-pembe-kayalar-acik-kiyi",
       "distanceKmFromIstanbulCenter": 106.334,
-      "decision": "prepared_pending_ci_live",
+      "decision": "published_live_verified",
       "reason": "Pembe Kayalar belediye/kültür kayıtlarında ayrı kıyı; Haziran 2026 yerinde haberde istavrit.",
       "sources": [
         "https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html",
@@ -53,7 +53,7 @@
       "district": "Kandıra",
       "slug": "kocaeli-kandira-kefken-yesil-koy-acik-kiyi",
       "distanceKmFromIstanbulCenter": 106.542,
-      "decision": "prepared_pending_ci_live",
+      "decision": "published_live_verified",
       "reason": "Yeşil Koy Büyükşehir kaydında ayrı koy; gezi rehberi koya özgü kefal ve olta kaydeder.",
       "sources": [
         "https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html",
@@ -90,7 +90,7 @@
       "slug": "ankara-500km-sakarya-aslanlar-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "prepared_pending_ci_live",
+      "decision": "promoted_live_verified",
       "reason": "İmamlar-Aslanlar aynı su, resmî 2016 yavru sazan salımı ve akademik kıyı koordinatı.",
       "sources": [
         "https://www.openstreetmap.org/way/143678278",
@@ -109,7 +109,7 @@
       "slug": "ankara-500km-kirklareli-karacaoglan-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "prepared_pending_ci_live",
+      "decision": "promoted_live_verified",
       "reason": "Babaeski Karacaoğlan için 2020 resmî yavru sazan salımı; 2022 ilçe ayrımlı liste.",
       "sources": [
         "https://www.openstreetmap.org/way/144061961",
@@ -127,7 +127,7 @@
       "slug": "ankara-500km-duzce-camlipinar",
       "baselineGrade": "C",
       "finalGrade": "C+",
-      "decision": "prepared_pending_ci_live",
+      "decision": "promoted_live_verified",
       "reason": "Kaynaşlı Çamlıpınar için resmî sazan salımı; Valilik olta uygunluğu ve Belediye mesire kimliği.",
       "sources": [
         "https://www.openstreetmap.org/way/230486614",
