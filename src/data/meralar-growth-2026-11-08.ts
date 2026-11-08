@@ -16,7 +16,7 @@ const law: ResearchSource = { label: "Tarım ve Orman Bakanlığı – 6/2 amat�
 const amendment: ResearchSource = { label: "Tarım ve Orman Bakanlığı – 2026/26 değişikliği", url: "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf", note: "16 Eylül 2026 değişikliği ana 6/2 metniyle birlikte değerlendirildi." };
 
 const common = {
-  province: "Kocaeli", district: "Kandıra", updatedAt: date, publishedAt: date, researchedAt: date,
+  province: "Kocaeli", district: "Kandıra", region: "Karadeniz kıyısı", updatedAt: date, publishedAt: date, researchedAt: date,
   confidence: "C" as const, qualityGrade: "C+" as const, indexing: "index" as const,
   methods: ["Kıyı oltası", "Hafif spin"], baits: ["Suni çapari", "Küçük silikon yem"],
   seasonalNotes: ["Denizde türlerin güncel boy/adet sınırları 6/2'den kontrol edilir.", "1 Nisan–15 Kasım şamandıralı yüzme alanlarında olta açılmaz; yerel kıyı uyarısı gününde kontrol edilir."],
@@ -42,6 +42,7 @@ export const growthPembeKayalarRoute20261108: EnrichedMera = {
 
 export const growthYesilKoyRoute20261108: EnrichedMera = {
   ...base, ...common, slug: "kocaeli-kandira-kefken-yesil-koy-acik-kiyi", name: "Yeşil Koy Açık Kıyısı", zone: "Yeşil Koy'un koruma/işletme ve işaretli yüzme alanı dışındaki güvenli kamusal kıyısı", lat: 41.184, lng: 30.228249,
+  methods: ["Şamandıralı kıyı oltası"], baits: ["Ekmek", "Boru kurdu"],
   summary: "Büyükşehir Yeşil Koy'u Pembe Kayalar'dan ayrı adlandırır; Kefken gezi rehberi koy için kefal ve kıyı oltasını bildirir. Pin koyun genel girişidir; yüzme ve tehlikeli kayalık bölümü av alanı değildir.", fish: ["Kefal"],
   cautions: ["1 Nisan–15 Kasım şamandıralı yüzme alanında olta açma; insanlara doğru atış yapma.", "Koydaki dik/ıslak kayalar ve Karadeniz dalgasından uzak dur.", "İşletme, kamp, yangın ve koruma levhalarına uy; izinli kıyı bulunmazsa avlanma."],
   verification: "8 Kasım 2026: Büyükşehir Yeşil Koy'u ayrı ziyaret noktası sayar, Enuygun burada kefal ve olta bildirir, harita konumu ve iki patika yaklaşımı incelendi. 6/2, 2026/26 ve Kandıra 2026 kıyı/yüzme tedbirleri değerlendirildi; yüzme sahası ve yasaklı geçiş dışlandı.",
