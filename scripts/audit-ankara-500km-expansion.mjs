@@ -70,7 +70,7 @@ const olderExact=new Set(olderRoutes.map((route)=>`${route.province}|${normalize
 const olderIdentity=new Set(olderRoutes.map((route)=>`${route.province}|${identity(route)}`).filter((value)=>!value.endsWith("|")));
 for(const route of newRoutes){
   const text=JSON.stringify(route);
-  const promotionDate=promotionDates.get(route.slug);
+  const promotionDate=promotionDates.get(route.slug) || (route.confidence==="C" && route.qualityAssessment?.model==="expanded-v2" && route.qualityAssessment.reviewedAt>="2026-10-23" ? route.qualityAssessment.reviewedAt : undefined);
   if(olderExact.has(`${route.province}|${normalize(route.name)}`))errors.push(`${route.slug}: mevcut rota adıyla birebir çakışıyor.`);
   if(olderIdentity.has(`${route.province}|${identity(route)}`))errors.push(`${route.slug}: mevcut su kimliğiyle olası tekrar.`);
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.slug))errors.push(`${route.slug}: canonical slug biçimi geçersiz.`);

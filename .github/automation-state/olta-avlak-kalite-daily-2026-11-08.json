@@ -1,0 +1,157 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-08",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-08.json",
+  "baselineMainSha": "ab9c2278933d54a4c84770dcb9c0c5ffd6cedca5",
+  "startingLiveSha": "ab9c2278933d54a4c84770dcb9c0c5ffd6cedca5",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 175,
+  "istanbulExhaustedEvidence": "25–29 Ekim İstanbul kapsam taramasında Nakkaştepe mevcut Kuzguncuk ile çakıştı; Selvi Burnu, Aşiyan, Kabataş ve Şile/Ağva liman dışı kıyılarında güncel kamusal av erişimi veya rota-özel tür kanıtı eksik. Yeni kanıt gelirse İstanbul kuyruğu yeniden açılır; Marmara kıyısında yakından uzağa araştırma sürer.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "kocaeli-kandira-kefken-pembe-kayalar-acik-kiyi",
+    "kocaeli-kandira-kefken-yesil-koy-acik-kiyi"
+  ],
+  "promotionSlugs": [
+    "ankara-500km-sakarya-aslanlar-goleti",
+    "ankara-500km-kirklareli-karacaoglan-goleti",
+    "ankara-500km-duzce-camlipinar"
+  ],
+  "indexReleaseSlugs": [
+    "kocaeli-kandira-kefken-pembe-kayalar-acik-kiyi",
+    "kocaeli-kandira-kefken-yesil-koy-acik-kiyi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ankara-500km-sakarya-aslanlar-goleti",
+    "ankara-500km-kirklareli-karacaoglan-goleti",
+    "ankara-500km-duzce-camlipinar"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-08.json",
+  "decisions": [
+    {
+      "slug": "kocaeli-kandira-kefken-pembe-kayalar-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 106.334,
+      "identityAndSpecies": "Pembe Kayalar belediye/kültür kayıtlarında ayrı kıyı; Haziran 2026 yerinde haberde istavrit.",
+      "access": "Turistik ziyaret alanı; kapatılmış yan koy girişi ve yüksek falez dışı güvenli kamusal kıyı gerekir.",
+      "law": "6/2, 2026/26, 2026 Kandıra yüksek kayalık ve yüzme tedbirleri; sit alanı korunur.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html",
+        "https://kandira.bel.tr/icerik/dogal-guzellikler",
+        "https://www.kulturportali.gov.tr/turkiye/kocaeli/kulturenvanteri/kefken-pembe-kayalar-arkeolojik-sit-alani",
+        "https://medyabar.com/haber/28213175/pembe-kayaliklarda-istavrit-bereketi",
+        "https://neredenegezilir.blogspot.com/2014/12/pembe-kayalar.html",
+        "https://www.mavikocaeli.com.tr/amp/kandirada-sahil-ve-kayaliklara-yeni-yasaklar-getirildi/246597/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "kocaeli-kandira-kefken-yesil-koy-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 106.542,
+      "identityAndSpecies": "Yeşil Koy Büyükşehir kaydında ayrı koy; gezi rehberi koya özgü kefal ve olta kaydeder.",
+      "access": "Kovanağzı/Pembe Kayalar patika yaklaşımı; yüzme ve kapalı/özel bölüm dışındaki güvenli kıyı.",
+      "law": "6/2, 2026/26 ve Kandıra 2026 yüzme/kıyı güvenliği kararları.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/buyuleyici-guzellikler.html",
+        "https://www.enuygun.com/ucak-bileti/kefken-sehir-rehberi/",
+        "https://www.bizevdeyokuz.com/kefken-gezilecek-yerler/",
+        "https://altunayhotel.com/kefken",
+        "https://www.mavikocaeli.com.tr/amp/kandirada-sahil-ve-kayaliklara-yeni-yasaklar-getirildi/246597/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-aslanlar-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 117.921,
+      "identityAndSpecies": "İmamlar-Aslanlar aynı su, resmî 2016 yavru sazan salımı ve akademik kıyı koordinatı.",
+      "access": "Güncel kamusal kıyı girişi ve sulama/özel mülk sınırı eksik; HOLD.",
+      "law": "6/2, 2026/26 ve Sakarya 2026 içsu kapalı dönemi.",
+      "sources": [
+        "https://www.openstreetmap.org/way/143678278",
+        "https://www.google.com/maps/search/?api=1&query=Aslanlar%20G%C3%B6leti%2C%20S%C3%B6%C4%9F%C3%BCtl%C3%BC%2C%20Sakarya%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://sakarya.tarimorman.gov.tr/Haber/65/Su-Kaynaklarinin-Baliklandirma-Projesi",
+        "https://sakarya.bel.tr/tr/Haber/binlerce-donum-tarim-arazisi-suyla-bulusuyor/11641",
+        "https://acikerisim.sakarya.edu.tr/bitstream/handle/20.500.12619/102437/T11222.pdf?isAllowed=y&sequence=1",
+        "https://sakarya.tarimorman.gov.tr/Haber/326/Ic-Sularda-Av-Yasagi-Basliyor-_15-Mart-15-Haziran-2026_",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kirklareli-karacaoglan-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 168.228,
+      "identityAndSpecies": "Babaeski Karacaoğlan için 2020 resmî yavru sazan salımı; 2022 ilçe ayrımlı liste.",
+      "access": "Güncel kamusal kıyı girişi ve sulama/özel mülk sınırı eksik; HOLD.",
+      "law": "6/2, 2026/26 ve Kırklareli içsu kapalı dönem bağlamı.",
+      "sources": [
+        "https://www.openstreetmap.org/way/144061961",
+        "https://www.google.com/maps/search/?api=1&query=Karacao%C4%9Flan%20G%C3%B6leti%2C%20Babaeski%2C%20K%C4%B1rklareli%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://kirklareli.tarimorman.gov.tr/Haber/1360/Babaeski-Ilcemiz-Goletleri-Baliklandirildi",
+        "https://kirklareli.tarimorman.gov.tr/Haber/2168/Baliklandirma-Faaliyetleri-Basladi",
+        "https://kirklareli.tarimorman.gov.tr/Duyuru/706/Ic-Sularda-Av-Yasaklari-Basliyor",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-duzce-camlipinar",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 204.72,
+      "identityAndSpecies": "Kaynaşlı Çamlıpınar için resmî sazan salımı; Valilik olta uygunluğu ve Belediye mesire kimliği.",
+      "access": "Valilik genel günübirlik olta erişimini destekler; mikro kıyı ve levha yerinde seçilir.",
+      "law": "6/2, 2026/26 ve güncel Düzce yerel duyuru/levha kontrolü.",
+      "sources": [
+        "https://www.openstreetmap.org/way/230486614",
+        "https://www.google.com/maps/search/?api=1&query=%C3%87aml%C4%B1p%C4%B1nar%2C%20Kayna%C5%9Fl%C4%B1%2C%20D%C3%BCzce%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://duzce.tarimorman.gov.tr/Haber/1019/Ilimizde-35-Bin-Yavru-Sazan-Gol_goletle-Bulustu",
+        "https://duzce.tarimorman.gov.tr/Haber/960/",
+        "https://www.tarimorman.gov.tr/BSGM/Menu/95/Amator-Balikcilik",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+        "https://duzce.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1196",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/duzce_-cdr2023-20241108082014.pdf",
+        "https://www.kaynasli.bel.tr/kaynasli/turizm/camlipinar-goleti/",
+        "https://duzce.tarimorman.gov.tr/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "productionStatus": "pending",
+    "mergedMainSha": null,
+    "liveSha": null,
+    "pr": null,
+    "productionRunId": null,
+    "checks": {}
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}
