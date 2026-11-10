@@ -140,14 +140,28 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "indexReleases": 0
+    "productionStatus": "success",
+    "mergedMainSha": "bb79752b6387203e88f08501a8d3f02b1417cc34",
+    "liveSha": "bb79752b6387203e88f08501a8d3f02b1417cc34",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/204",
+    "productionRunId": 42869983706,
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/tekirdag-suleymanpasa-kumbag-acik-kiyi/",
+      "https://oltaatlasi.com/meralar/tekirdag-suleymanpasa-rumeli-iskelesi/"
+    ],
+    "indexReleases": 2,
+    "verifiedAt": "2026-11-10T18:00:46Z"
   },
   "shortfall": {
     "newReason": null,
