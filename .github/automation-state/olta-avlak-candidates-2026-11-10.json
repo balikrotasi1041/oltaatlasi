@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-10",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "newRouteQueue": [
+    {
+      "name": "Kumbağ Açık Kıyısı",
+      "slug": "tekirdag-suleymanpasa-kumbag-acik-kiyi",
+      "distanceKmFromIstanbulCenter": 128.417,
+      "decision": "proposed_pending_ci_and_live_verification",
+      "sources": [
+        "https://tekirdag.bel.tr/haber/51409",
+        "https://mavibayrak.org.tr/turkiye/plaj.aspx?plaj_refno=2165",
+        "https://rastgele.pro/mera/kumbag/",
+        "https://tekirdag.tarimorman.gov.tr/Belgeler/Faaliyet%20Raporlar%C4%B1/2025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Rumeli İskelesi Kamusal Olta Kesimi",
+      "slug": "tekirdag-suleymanpasa-rumeli-iskelesi",
+      "distanceKmFromIstanbulCenter": 122.739,
+      "decision": "proposed_pending_ci_and_live_verification",
+      "sources": [
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/suleymanpasa-rumeli-iskelesi-5662",
+        "https://tekirdagyenihaber.com/2026/09/20/suleymanpasa-rumeli-iskelesinde-oltaya-dev-vatoz-takildi/",
+        "https://www.baliksevdam.com/konu/tekirdag-marmara-ereglisi-yeniciftlik-sultankoy-silivri-balik-durumu.4216/page-197",
+        "https://www.openstreetmap.org/way/1132922237",
+        "https://tekirdag.tarimorman.gov.tr/Belgeler/Faaliyet%20Raporlar%C4%B1/2025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Değirmenaltı Halk Plajı",
+      "decision": "water_quality_and_access_review_pending",
+      "reason": "2025 akademik yüzme suyu çalışması kalite bozulması kaydediyor; güvenli olta/yiyecek tüketimi değerlendirilmeden C+ sayfa yok.",
+      "sources": [
+        "https://dergipark.org.tr/tr/download/article-file/4653659"
+      ]
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ankara-500km-kocaeli-namazgah-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "proposed_pending_ci_and_live_verification",
+      "sources": [
+        "https://www.openstreetmap.org/relation/14874768",
+        "https://www.google.com/maps/search/?api=1&query=Namazgah%20Baraj%20G%C3%B6l%C3%BC%2C%20Kand%C4%B1ra%2C%20Kocaeli%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://www.wikidata.org/wiki/Q106727732",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://www.isu.gov.tr/content/kandira-namazgah-baraj-golu-ve-havzasi-ozel-hukumleri",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-kirklareli-sofuhalil-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "proposed_pending_ci_and_live_verification",
+      "sources": [
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://api.gbif.org/v1/occurrence/search?taxonKey=204&geoDistance=41.4796854%2C27.1968997%2C12km&country=TR&hasCoordinate=true&hasGeospatialIssue=false&occurrenceStatus=PRESENT&limit=300",
+        "https://www.openstreetmap.org/way/144061954",
+        "https://www.openstreetmap.org/search?query=K%C4%B1rklareli%20hotel%20T%C3%BCrkiye",
+        "https://turkiyebarajlar.com/envanter",
+        "https://dsi.gov.tr/Sayfa/Detay/2186",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Degisiklik-Yapilmasina-Dair-Teblig-Yayimlanmistir",
+        "https://kirklareli.tarimorman.gov.tr/Haber/2168/Baliklandirma-Faaliyetleri-Basladi",
+        "https://www.dsi.gov.tr/Sayfa/Detay/739",
+        "https://kulturportali.gov.tr/turkiye/kirklareli/TurizmAktiviteleri/sportif-olta-balikciligi414366",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-tahtali-goleti",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "decision": "proposed_pending_ci_and_live_verification",
+      "sources": [
+        "https://www.openstreetmap.org/way/184257243",
+        "https://www.google.com/maps/search/?api=1&query=Tahtal%C4%B1%20G%C3%B6leti%2C%20Derince%2C%20Kocaeli%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://www.wikidata.org/wiki/Q34929634",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://derince.gov.tr/derince-tahtali-goleti",
+        "https://www.derince.bel.tr/haber/1/6138/istilaci-baliklar-bertaraf-edildi",
+        "https://www.basiskele.gov.tr/kocaeli-ili-orman-yanginlari-ile-mucadele-kurul-kararlari",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/tahtali-goleti-ve-mesire-alani-1526",
+        "https://www.kocaelihakimiyet.com/amp/haber/27947109/kocaelide-15-mayis-1-kasim-tarihleri-arasinda-ormanlara-giris-yasaklandi"
+      ]
+    }
+  ],
+  "existingReleaseQueue": [
+    {
+      "slug": "ankara-500km-kocaeli-tahtali-goleti",
+      "grade": "C+",
+      "decision": "daily_index_cap_reserved_for_new_routes",
+      "reason": "Kanıtlı terfi HOLD; sonraki uygun günde erişim ve yerel levha yeniden incelenebilir."
+    }
+  ]
+}
