@@ -12,7 +12,7 @@
       "name": "Kumbağ Açık Kıyısı",
       "slug": "tekirdag-suleymanpasa-kumbag-acik-kiyi",
       "distanceKmFromIstanbulCenter": 128.417,
-      "decision": "proposed_pending_ci_and_live_verification",
+      "decision": "published_live_verified",
       "sources": [
         "https://tekirdag.bel.tr/haber/51409",
         "https://mavibayrak.org.tr/turkiye/plaj.aspx?plaj_refno=2165",
@@ -26,7 +26,7 @@
       "name": "Rumeli İskelesi Kamusal Olta Kesimi",
       "slug": "tekirdag-suleymanpasa-rumeli-iskelesi",
       "distanceKmFromIstanbulCenter": 122.739,
-      "decision": "proposed_pending_ci_and_live_verification",
+      "decision": "published_live_verified",
       "sources": [
         "https://okuldisiogrenme.eba.gov.tr/mekan-detay/suleymanpasa-rumeli-iskelesi-5662",
         "https://tekirdagyenihaber.com/2026/09/20/suleymanpasa-rumeli-iskelesinde-oltaya-dev-vatoz-takildi/",
@@ -51,7 +51,7 @@
       "slug": "ankara-500km-kocaeli-namazgah-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "proposed_pending_ci_and_live_verification",
+      "decision": "promoted_live_verified_hold",
       "sources": [
         "https://www.openstreetmap.org/relation/14874768",
         "https://www.google.com/maps/search/?api=1&query=Namazgah%20Baraj%20G%C3%B6l%C3%BC%2C%20Kand%C4%B1ra%2C%20Kocaeli%2C%20T%C3%BCrkiye",
@@ -68,7 +68,7 @@
       "slug": "ulusal-kirklareli-sofuhalil-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "proposed_pending_ci_and_live_verification",
+      "decision": "promoted_live_verified_hold",
       "sources": [
         "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
         "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
@@ -89,7 +89,7 @@
       "slug": "ankara-500km-kocaeli-tahtali-goleti",
       "baselineGrade": "C",
       "finalGrade": "C+",
-      "decision": "proposed_pending_ci_and_live_verification",
+      "decision": "promoted_live_verified_hold",
       "sources": [
         "https://www.openstreetmap.org/way/184257243",
         "https://www.google.com/maps/search/?api=1&query=Tahtal%C4%B1%20G%C3%B6leti%2C%20Derince%2C%20Kocaeli%2C%20T%C3%BCrkiye",
