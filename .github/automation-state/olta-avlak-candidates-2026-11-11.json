@@ -12,7 +12,7 @@
       "name": "Çamlıkoy Kastro Karadeniz Kıyısı",
       "slug": "tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi",
       "distanceKmFromIstanbulCenter": 94.442,
-      "decision": "source_review_complete_pending_live",
+      "decision": "published_live_verified",
       "sources": [
         "https://bolge1.tarimorman.gov.tr/Belgeler/menu-dosyalar/Korunan%20Alanlar/Tabiat%20Parklar%C4%B1/tekirdag/caml%C4%B1koy_tp/%C3%87aml%C4%B1koy-tp.pdf",
         "https://acikerisim.kastamonu.edu.tr/server/api/core/bitstreams/b1116bea-c1b4-48f5-b838-1d4ad8b7b23f/content",
@@ -24,7 +24,7 @@
       "name": "Kıyıköy Açık Karadeniz Kıyısı",
       "slug": "kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi",
       "distanceKmFromIstanbulCenter": 101.049,
-      "decision": "source_review_complete_pending_live",
+      "decision": "published_live_verified",
       "sources": [
         "https://vize.bel.tr/tarihi-merkezler/detay/kiyikoy/5",
         "https://kirklareli.ktb.gov.tr/tr-64329/yoresel-mutfak-kulturu.html",
@@ -40,7 +40,7 @@
       "slug": "ulusal-istanbul-sazlidere-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "grade_promoted_pending_live_hold",
+      "decision": "promoted_live_verified_hold",
       "reason": "Tür kanıtı gelişti; amatör av ve kamusal kıyı erişimi doğrulanmadığından noindex.",
       "sources": [
         "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
@@ -60,7 +60,7 @@
       "slug": "ulusal-istanbul-darlik-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "grade_promoted_pending_live_hold",
+      "decision": "promoted_live_verified_hold",
       "reason": "Tür kanıtı gelişti; amatör av ve kamusal kıyı erişimi doğrulanmadığından noindex.",
       "sources": [
         "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
@@ -80,7 +80,7 @@
       "slug": "ankara-500km-sakarya-taskisigi-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "decision": "grade_promoted_pending_live_hold",
+      "decision": "promoted_live_verified_hold",
       "reason": "Tür kanıtı gelişti; amatör av ve kamusal kıyı erişimi doğrulanmadığından noindex.",
       "sources": [
         "https://www.openstreetmap.org/relation/17947537",
