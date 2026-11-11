@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-11",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 175,
+  "currentRadiusKm": 175,
+  "phase": "Türkiye",
+  "newRouteQueue": [
+    {
+      "name": "Çamlıkoy Kastro Karadeniz Kıyısı",
+      "slug": "tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi",
+      "distanceKmFromIstanbulCenter": 94.442,
+      "decision": "source_review_complete_pending_live",
+      "sources": [
+        "https://bolge1.tarimorman.gov.tr/Belgeler/menu-dosyalar/Korunan%20Alanlar/Tabiat%20Parklar%C4%B1/tekirdag/caml%C4%B1koy_tp/%C3%87aml%C4%B1koy-tp.pdf",
+        "https://acikerisim.kastamonu.edu.tr/server/api/core/bitstreams/b1116bea-c1b4-48f5-b838-1d4ad8b7b23f/content",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "name": "Kıyıköy Açık Karadeniz Kıyısı",
+      "slug": "kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi",
+      "distanceKmFromIstanbulCenter": 101.049,
+      "decision": "source_review_complete_pending_live",
+      "sources": [
+        "https://vize.bel.tr/tarihi-merkezler/detay/kiyikoy/5",
+        "https://kirklareli.ktb.gov.tr/tr-64329/yoresel-mutfak-kulturu.html",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/k-rklarel-_-cdr-2024-20250915132236.pdf",
+        "https://kirklareli.tarimorman.gov.tr/Duyuru/789/Kirklareli-Ili-Vize-Ilcesi-Kiyikoy-Balikci-Barinagi-Kiralama-Ihalesi-Duyurusu",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ulusal-istanbul-sazlidere-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "grade_promoted_pending_live_hold",
+      "reason": "Tür kanıtı gelişti; amatör av ve kamusal kıyı erişimi doğrulanmadığından noindex.",
+      "sources": [
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://api.gbif.org/v1/occurrence/search?taxonKey=204&geoDistance=41.132941%2C28.6839397%2C12km&country=TR&hasCoordinate=true&hasGeospatialIssue=false&occurrenceStatus=PRESENT&limit=300",
+        "https://www.openstreetmap.org/relation/2920346",
+        "https://www.openstreetmap.org/search?query=%C4%B0stanbul%20hotel%20T%C3%BCrkiye",
+        "https://turkiyebarajlar.com/envanter",
+        "https://dsi.gov.tr/Sayfa/Detay/2186",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Degisiklik-Yapilmasina-Dair-Teblig-Yayimlanmistir",
+        "https://istanbul.tarimorman.gov.tr/Haber/3144/Istanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-istanbul-darlik-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "grade_promoted_pending_live_hold",
+      "reason": "Tür kanıtı gelişti; amatör av ve kamusal kıyı erişimi doğrulanmadığından noindex.",
+      "sources": [
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://api.gbif.org/v1/occurrence/search?taxonKey=204&geoDistance=41.0841193%2C29.5990187%2C12km&country=TR&hasCoordinate=true&hasGeospatialIssue=false&occurrenceStatus=PRESENT&limit=300",
+        "https://www.openstreetmap.org/relation/2173850",
+        "https://www.openstreetmap.org/search?query=%C4%B0stanbul%20hotel%20T%C3%BCrkiye",
+        "https://turkiyebarajlar.com/envanter",
+        "https://dsi.gov.tr/Sayfa/Detay/2186",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-Degisiklik-Yapilmasina-Dair-Teblig-Yayimlanmistir",
+        "https://istanbul.tarimorman.gov.tr/Haber/3144/Istanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-sakarya-taskisigi-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "decision": "grade_promoted_pending_live_hold",
+      "reason": "Tür kanıtı gelişti; amatör av ve kamusal kıyı erişimi doğrulanmadığından noindex.",
+      "sources": [
+        "https://www.openstreetmap.org/relation/17947537",
+        "https://www.google.com/maps/search/?api=1&query=Ta%C5%9Fk%C4%B1s%C4%B1%C4%9F%C4%B1%20G%C3%B6l%C3%BC%2C%20Adapazar%C4%B1%2C%20Sakarya%2C%20T%C3%BCrkiye",
+        "https://cbs1.tarimorman.gov.tr/server/rest/services/TATUS/MapServer/13",
+        "https://www.tarimorman.gov.tr/Konular/Su-Urunleri/Su-Urunleri-Avciligi",
+        "https://www.wikidata.org/wiki/Q19612665",
+        "https://dergipark.org.tr/tr/pub/actaquatr/article/1451579",
+        "https://dergipark.org.tr/tr/pub/ijfaa/article/1525379",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "existingReleaseQueue": [
+    {
+      "slug": "ankara-500km-kocaeli-tahtali-goleti",
+      "grade": "C+",
+      "decision": "deferred_pending_fresh_local_review",
+      "reason": "10 Kasım C+ HOLD; 11 Kasım için güncel yerel erişim ve levha yeniden doğrulanmadı."
+    }
+  ]
+}
