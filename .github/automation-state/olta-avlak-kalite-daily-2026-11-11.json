@@ -20,9 +20,14 @@
   ],
   "indexReleaseSlugs": [
     "tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi",
-    "kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi"
+    "kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi",
+    "ankara-500km-kocaeli-tahtali-goleti",
+    "ankara-500km-duzce-camlipinar"
   ],
-  "maintenanceOnlySlugs": [],
+  "maintenanceOnlySlugs": [
+    "ankara-500km-kocaeli-tahtali-goleti",
+    "ankara-500km-duzce-camlipinar"
+  ],
   "eligibleReviewedSlugs": [
     "ulusal-istanbul-sazlidere-baraj-golu",
     "ulusal-istanbul-darlik-baraj-golu",
@@ -130,9 +135,58 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ]
+    },
+    {
+      "slug": "ankara-500km-kocaeli-tahtali-goleti",
+      "baselineGrade": "C+",
+      "finalGrade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 78.1,
+      "identityAndSpecies": "Derince Kaymakamlığı gölet kimliği, sazan ve amatör olta; İl Tarım 2025 yavru sazan salımı.",
+      "access": "MEB kamusal mesire ve olta kullanımı; MEB adres alanı pin olarak kullanılmadı; güncel levha/işletme sınırı geçerli.",
+      "law": "6/2 ve 2026/26; 2026 orman tedbirinin genel süresi sona erdi, güncel yerel levha geçerli.",
+      "sources": [
+        "https://derince.gov.tr/derince-tahtali-goleti",
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/tahtali-goleti-ve-mesire-alani-1526",
+        "https://kocaeli.tarimorman.gov.tr/Belgeler/pdf_dosyalar_/Kocaeli%20%C4%B0l%20Tar%C4%B1m%20ve%20Orman%20M%C3%BCd%C3%BCrl%C3%BC%C4%9F%C3%BC%202025%20Y%C4%B1l%C4%B1%20Faaliyet%20Raporu.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-duzce-camlipinar",
+      "baselineGrade": "C+",
+      "finalGrade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 204.7,
+      "identityAndSpecies": "Kaynaşlı Belediyesi Çamlıpınar/Dipsizgöl su kimliği; İl Tarım 2024 gölete özgü sazan salımı.",
+      "access": "Düzce 2023 ve 2024 il çevre raporları günübirlik olta kullanımını kaydeder; güncel mesire levhası geçerli.",
+      "law": "6/2 ve 2026/26 içsu kuralları; güncel mesire/yerel ilan koşulları geçerli.",
+      "sources": [
+        "https://www.kaynasli.bel.tr/kaynasli/turizm/camlipinar-goleti/",
+        "https://duzce.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1196",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/duzce_-cdr-2024-20251003120222.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     }
   ],
   "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0,
+    "productionStatus": "pending",
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi/",
+      "https://oltaatlasi.com/meralar/kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi/"
+    ]
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  },
+  "priorPublication": {
     "verified": true,
     "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
@@ -156,9 +210,5 @@
     ],
     "indexReleases": 2,
     "verifiedAt": "2026-11-11T17:46:04Z"
-  },
-  "shortfall": {
-    "newReason": null,
-    "promotionReason": null
   }
 }
