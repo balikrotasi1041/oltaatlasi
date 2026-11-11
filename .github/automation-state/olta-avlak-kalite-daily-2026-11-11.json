@@ -133,18 +133,29 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "newRoutesPublished": 2,
     "existingRoutesReleased": 0,
-    "productionStatus": "pending",
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "productionRunId": null,
-    "checks": {},
-    "newRouteUrls": [],
-    "indexReleases": 0,
-    "verifiedAt": null
+    "productionStatus": "success",
+    "mergedMainSha": "813c1f0a1112c4699a1f1352c01c57c7bfbd61d9",
+    "liveSha": "813c1f0a1112c4699a1f1352c01c57c7bfbd61d9",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/206",
+    "ciRunId": 43070590248,
+    "productionRunId": 43070804837,
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi/",
+      "https://oltaatlasi.com/meralar/kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi/"
+    ],
+    "indexReleases": 2,
+    "verifiedAt": "2026-11-11T17:46:04Z"
   },
   "shortfall": {
     "newReason": null,
