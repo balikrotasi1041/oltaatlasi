@@ -172,15 +172,37 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
-    "existingRoutesReleased": 0,
-    "indexReleases": 0,
-    "productionStatus": "pending",
+    "verified": true,
+    "newRoutesPublished": 2,
+    "existingRoutesReleased": 2,
+    "indexReleases": 4,
+    "productionStatus": "success",
+    "mergedMainSha": "9a612aed9cb1344b7c04f198d75075774b174299",
+    "liveSha": "9a612aed9cb1344b7c04f198d75075774b174299",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/208",
+    "ciRunId": 43084461013,
+    "productionRunId": 43084752680,
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true,
+      "releasedExistingPages200": true,
+      "releasedExistingCanonical": true,
+      "releasedExistingRobotsIndexFollow": true,
+      "releasedExistingSitemap": true
+    },
     "newRouteUrls": [
       "https://oltaatlasi.com/meralar/tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi/",
       "https://oltaatlasi.com/meralar/kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi/"
-    ]
+    ],
+    "existingReleasedUrls": [
+      "https://oltaatlasi.com/meralar/ankara-500km-kocaeli-tahtali-goleti/",
+      "https://oltaatlasi.com/meralar/ankara-500km-duzce-camlipinar/"
+    ],
+    "verifiedAt": "2026-11-11T19:14:12.499Z"
   },
   "shortfall": {
     "newReason": null,
