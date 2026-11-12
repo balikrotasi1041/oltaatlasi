@@ -1,0 +1,141 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-12",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-12.json",
+  "baselineMainSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+  "startingLiveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 250,
+  "istanbulExhaustedEvidence": "25–29 Ekim İstanbul taramasında Nakkaştepe/Kuzguncuk çakıştı; Selvi Burnu, Aşiyan, Kabataş ve Şile/Ağva kıyılarında güncel kamusal olta erişimi veya rota-özel tür kanıtı eksik kaldı. 11 Kasım yeni İstanbul kanıtı bulunmadı; yakın Karadeniz kıyısına genişleme sürdü. İstanbul kuyruğu yeni kanıtla yeniden açılır. 12 Kasım daha yakın alternatiflerde baraj erişimi ve kıyı türü eksikleri kaydedildi. Bursa DOSTUM ve Burhaniye Pelitköy kanıtı doğrulandı.",
+  "indexReleaseCap": 4,
+  "newRouteSlugs": [
+    "bursa-inegol-yenicekoy-goleti",
+    "balikesir-burhaniye-pelitkoy-kiyisi"
+  ],
+  "promotionSlugs": [
+    "ankara-500km-usak-yelegen-goleti",
+    "ankara-500km-cankiri-gumerdigin-goleti",
+    "ulusal-nevsehir-kumtepe-baraj-golu-nevsehir"
+  ],
+  "indexReleaseSlugs": [
+    "bursa-inegol-yenicekoy-goleti",
+    "balikesir-burhaniye-pelitkoy-kiyisi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ankara-500km-usak-yelegen-goleti",
+    "ankara-500km-cankiri-gumerdigin-goleti",
+    "ulusal-nevsehir-kumtepe-baraj-golu-nevsehir"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-12.json",
+  "decisions": [
+    {
+      "slug": "bursa-inegol-yenicekoy-goleti",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 107.432,
+      "identityAndSpecies": "Genç Gazete – Yeniceköy Göleti sazan salımı",
+      "access": "Merkezin işletmecisi yanındaki yapay gölde amatör olta kullanımını tanımlıyor.",
+      "law": "6/2 ve 2026/26. Sazan için Bursa'da 15 Mart–15 Haziran kapalı dönemi geçerlidir. Olta için yalnızca tesisin ayırdığı açık kıyıyı kullanın.",
+      "sources": [
+        "https://www.gencgazete.net/290-kilogram-balik-salindi",
+        "https://www.dostum.org.tr/tr/sporlar/balikcilik",
+        "https://www.inegol.bel.tr/inegol/ilcemizi-taniyalim",
+        "https://rota.bursa.com.tr/mekanlar/inegol-doga-sporlari-turizm-merkezi-dostum-766",
+        "https://www.bilecikhaber.com.tr/devasa-sazanlar-hayrete-dusurdu-364720h.htm",
+        "https://www.bursa.bel.tr/haber/yenicekoyde-buyuk-donusum-29022",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "balikesir-burhaniye-pelitkoy-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 247.184,
+      "identityAndSpecies": "Samsun Gazetesi – Pelitköy zargana avı saha haberi",
+      "access": "Belediye Bağlarburnu ve Gadana'daki kamusal kıyı bandını ve balık tutma kullanımını tanımlıyor.",
+      "law": "6/2 ve 2026/26. 1 Nisan–15 Kasım arasında şamandıralarla işaretli yüzme alanında amatör av yasaktır. Güncel levha ve özel tesis sınırlarına uyun.",
+      "sources": [
+        "https://www.samsungazetesi.com/burhaniyede-balikcilar-zargana-sezonunu-acti",
+        "https://burhaniye.bel.tr/Guncel/Haberler_Detay.aspx?ID=6027",
+        "https://www.burhaniye.bel.tr/Burhaniye/Kesfet_Detay.aspx?ID=16",
+        "https://dergipark.org.tr/tr/pub/baunsobed/article/580638",
+        "https://www.mavibayrak.org.tr/turkiye/plaj.aspx?plaj_refno=1796",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-usak-yelegen-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 300.39,
+      "identityAndSpecies": "İlçe Tarım 2016 yılında Yeleğen Göleti'ne 20 bin sazan bırakıldığını kaydediyor.",
+      "access": "Ajansın sportif olta çalışması Eşme Yeleğen Göleti'ni adıyla listeler.",
+      "law": "6/2 ve 2026/26. Yalnız açık ve kamusal kıyı yaklaşımını kullanın. Sulama yapıları, levhalı alanlar ve özel tarım parselleri dışarıda kalır.",
+      "sources": [
+        "https://esme.gov.tr/ilce-tarim-mudurlugu",
+        "https://depo.zafer.gov.tr/depo/documents/Zafer_Dergi/68b1d177-3c3b-4577-aea4-aec0f1bf1c60.pdf",
+        "https://dokuman.zafer.gov.tr/uiassets/filemanagement/B%C4%B0LG%C4%B0BANKASI/usak/usak-afyon-su-urunleri-kapasitesinin-belirlenmesi.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.openstreetmap.org/way/453459995",
+        "https://www.google.com/maps/search/?api=1&query=Yele%C4%9Fen%20G%C3%B6leti%2C%20E%C5%9Fme%2C%20U%C5%9Fak%2C%20T%C3%BCrkiye"
+      ]
+    },
+    {
+      "slug": "ankara-500km-cankiri-gumerdigin-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 364.48,
+      "identityAndSpecies": "İl Tarım 2018 sazan yavrusu salımı yapılan sular arasında Gümerdiğin Göleti'ni sayıyor.",
+      "access": "Rapor Gümerdiğin'i, Şabanözü'nde amatör olta ve mesire için de kullanılan sulama göletlerinden biri olarak gösterir.",
+      "law": "6/2 ve 2026/26. Açık kuru kıyıya izinli yollardan yaklaşın. Dolum kanalı, sulama gövdesi ve bakım sahasına girmeyin.",
+      "sources": [
+        "https://cankiri.tarimorman.gov.tr/Haber/474/Gol-Ve-Goletlere-102-000-Adet-Yavru-Balik-Birakildi",
+        "https://cankiri.tarimorman.gov.tr/Belgeler/KutuMenu/2014y%C4%B1l%C4%B1%C3%A7al%C4%B1%C5%9Fmakitab%C4%B1.pdf",
+        "https://sabanozu.bel.tr/2024-yili-faaliyet-raporu/",
+        "https://sabanozu.bel.tr/2025-yili-faaliyet-raporu/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.openstreetmap.org/way/81239687",
+        "https://www.google.com/maps/search/?api=1&query=G%C3%BCmerdi%C4%9Fin%20G%C3%B6leti%2C%20%C5%9Eaban%C3%B6z%C3%BC%2C%20%C3%87ank%C4%B1r%C4%B1%2C%20T%C3%BCrkiye"
+      ]
+    },
+    {
+      "slug": "ulusal-nevsehir-kumtepe-baraj-golu-nevsehir",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 534.054,
+      "identityAndSpecies": "İl Tarım 2023 yılında Hacıbektaş Kumtepe Göleti'ne üç bin sazan yavrusu bırakıldığını kaydediyor.",
+      "access": "Saha araştırması Kumtepe Göleti'ni sportif olta kullanılan sular arasında kaydeder.",
+      "law": "6/2 ve 2026/26. Yalnızca açık ve kamusal kıyıda olta kullanın. Sulama yapıları ve özel tarla girişlerine ilişkin levhalara uyun.",
+      "sources": [
+        "https://nevsehir.tarimorman.gov.tr/Haber/947/Nevsehirde-Baraj-Ve-Goletlere-Yavru-Balik-Birakildi",
+        "https://dergipark.org.tr/tr/download/article-file/1429062",
+        "https://www.hacibektas.bel.tr/web/her-sey-sevmek-ve-inanmakla-baslar-126/",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/nevseh-r_-cdr2023-20241107090826.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "newRoutesPublished": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0,
+    "productionStatus": "pending"
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}

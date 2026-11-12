@@ -12,7 +12,7 @@ const amendment: ResearchSource = {
   note: "6/2 ile birlikte uygulanan güncel değişiklik."
 };
 
-type Review = {
+export type CPlusReview = {
   slug: string;
   district: string;
   name?: string;
@@ -30,7 +30,7 @@ const kastamonuReport = "https://kastamonu.tarimorman.gov.tr/Belgeler/Calisma_Ra
 const apaGovernor = "https://cumra.gov.tr/apa-baraji";
 const allebenCulture = "https://www.kulturportali.gov.tr/turkiye/gaziantep/TurizmAktiviteleri/olta-balikciligi--alleben-goleti--baliklar--firat-nehri--gaziantep-rumkalesi--islahiye--rumkale-";
 
-export const extraCPlusReviews: Review[] = [
+export const extraCPlusReviews: CPlusReview[] = [
   {
     slug: "ulusal-nevsehir-damsa-baraj-golu",
     district: "Ürgüp",
@@ -166,10 +166,14 @@ export const extraCPlusReviews: Review[] = [
 ];
 
 export function applyExtraCPlus20261111(routes: Map<string, EnrichedMera>): void {
-  for (const review of extraCPlusReviews) {
+  applyCPlusReviews(routes, extraCPlusReviews, date);
+}
+
+export function applyCPlusReviews(routes: Map<string, EnrichedMera>, reviews: CPlusReview[], reviewedAt: string): void {
+  for (const review of reviews) {
     const old = routes.get(review.slug);
     if (!old || old.confidence !== "D" || (old.qualityGrade && old.qualityGrade !== "D")) {
-      throw new Error(`11 Kasım D sınıfı başlangıç kaydı değişti: ${review.slug}`);
+      throw new Error(`${reviewedAt} D sınıfı başlangıç kaydı değişti: ${review.slug}`);
     }
     const name = review.name ?? old.name;
     const [lat, lng] = review.coordinates ?? [old.lat, old.lng];
@@ -194,12 +198,12 @@ export function applyExtraCPlus20261111(routes: Map<string, EnrichedMera>): void
       confidence: "C",
       qualityGrade: "C+",
       indexing: "hold",
-      updatedAt: date,
-      researchedAt: date,
+      updatedAt: reviewedAt,
+      researchedAt: reviewedAt,
       researchStatus: "Kaynaklı araştırma",
       researchSummary: `${summary} ${currentLaw}`,
       summary,
-      verification: `11 Kasım 2026: D→C+. Su kimliği, sazan kaydı, erişim ve yürürlükteki kurallar yeniden incelendi. ${currentLaw}`,
+      verification: `${reviewedAt}: D→C+. Su kimliği, sazan kaydı, erişim ve yürürlükteki kurallar yeniden incelendi. ${currentLaw}`,
       fish: ["Sazan"],
       fishEvidence: [{
         name: "Sazan",
@@ -232,7 +236,7 @@ export function applyExtraCPlus20261111(routes: Map<string, EnrichedMera>): void
       sources,
       qualityAssessment: {
         model: "expanded-v2",
-        reviewedAt: date,
+        reviewedAt,
         identityVerified: true,
         speciesRouteSpecific: true,
         currentLawResolved: true,
@@ -245,7 +249,7 @@ export function applyExtraCPlus20261111(routes: Map<string, EnrichedMera>): void
       confidenceProfile: {
         model: "evidence-v1",
         overall: "C",
-        reviewedAt: date,
+        reviewedAt,
         identity: { level: "strong", label: name, note: "Kaynaklar aynı su kütlesini tanımlıyor." },
         species: { level: "strong", label: review.fish.label, note: review.fish.basis },
         legal: { level: "strong", label: "6/2 ve 2026/26", note: review.localRule },
