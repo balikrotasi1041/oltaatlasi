@@ -433,7 +433,22 @@
       "ankara-500km-ankara-kizilca-goleti"
     ],
     "publication": {
-      "verified": false
+      "verified": true,
+      "publicationDate": "2026-11-12",
+      "promotedLive": 10,
+      "mergedMainSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210",
+      "ciRunId": 43218137959,
+      "productionRunId": 43218413589,
+      "checks": {
+        "pages200": true,
+        "cPlus": true,
+        "canonical": true,
+        "noindexFollow": true,
+        "excludedFromSitemap": true
+      },
+      "verifiedAt": "2026-11-12T12:35:14.674Z"
     }
   }
 }

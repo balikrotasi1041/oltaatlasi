@@ -110,8 +110,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ulusal-nevsehir-doyduk-baraj-golu",
@@ -129,8 +131,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ulusal-konya-apa-baraj-golu",
@@ -147,8 +151,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ankara-500km-izmir-golcuk",
@@ -166,8 +172,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ankara-500km-gaziantep-alleben-goleti",
@@ -184,8 +192,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ankara-500km-elazig-hazar-golu",
@@ -202,8 +212,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ulusal-kastamonu-bezirgan-baraj-golu",
@@ -221,8 +233,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ankara-500km-kastamonu-beyler-baraj-golu",
@@ -239,8 +253,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ulusal-usak-karaagac-baraj-golu-usak",
@@ -258,8 +274,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     },
     {
       "slug": "ankara-500km-ankara-kizilca-goleti",
@@ -277,8 +295,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold",
-      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu."
+      "decision": "promoted_live_verified_hold",
+      "reason": "C+ çekirdek koşulları karşılandı. Ortak günlük indeks kotası dolu.",
+      "liveSha": "f87cc5fbf92d7eefad322cf8e136f3c1998fb053",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/210"
     }
   ],
   "existingReleaseQueue": [
