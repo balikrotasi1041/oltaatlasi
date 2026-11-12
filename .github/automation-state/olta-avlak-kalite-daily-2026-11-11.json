@@ -16,7 +16,17 @@
   "promotionSlugs": [
     "ulusal-istanbul-sazlidere-baraj-golu",
     "ulusal-istanbul-darlik-baraj-golu",
-    "ankara-500km-sakarya-taskisigi-golu"
+    "ankara-500km-sakarya-taskisigi-golu",
+    "ulusal-nevsehir-damsa-baraj-golu",
+    "ulusal-nevsehir-doyduk-baraj-golu",
+    "ulusal-konya-apa-baraj-golu",
+    "ankara-500km-izmir-golcuk",
+    "ankara-500km-gaziantep-alleben-goleti",
+    "ankara-500km-elazig-hazar-golu",
+    "ulusal-kastamonu-bezirgan-baraj-golu",
+    "ankara-500km-kastamonu-beyler-baraj-golu",
+    "ulusal-usak-karaagac-baraj-golu-usak",
+    "ankara-500km-ankara-kizilca-goleti"
   ],
   "indexReleaseSlugs": [
     "tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi",
@@ -31,7 +41,17 @@
   "eligibleReviewedSlugs": [
     "ulusal-istanbul-sazlidere-baraj-golu",
     "ulusal-istanbul-darlik-baraj-golu",
-    "ankara-500km-sakarya-taskisigi-golu"
+    "ankara-500km-sakarya-taskisigi-golu",
+    "ulusal-nevsehir-damsa-baraj-golu",
+    "ulusal-nevsehir-doyduk-baraj-golu",
+    "ulusal-konya-apa-baraj-golu",
+    "ankara-500km-izmir-golcuk",
+    "ankara-500km-gaziantep-alleben-goleti",
+    "ankara-500km-elazig-hazar-golu",
+    "ulusal-kastamonu-bezirgan-baraj-golu",
+    "ankara-500km-kastamonu-beyler-baraj-golu",
+    "ulusal-usak-karaagac-baraj-golu-usak",
+    "ankara-500km-ankara-kizilca-goleti"
   ],
   "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-11.json",
   "decisions": [
@@ -169,6 +189,172 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ]
+    },
+    {
+      "slug": "ulusal-nevsehir-damsa-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 576.917,
+      "identityAndSpecies": "İl Tarım, Damsa Barajı'na sazan yavrusu bırakıldığını kaydediyor.",
+      "access": "Mustafapaşa yönündeki belediye mesire alanı genel ziyaret yaklaşımını sağlar. Çitle ayrılan piknik kıyısı atış yeri olarak kullanılmamalıdır.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Barajın DSİ güvenlik sahası ve mesire çiti dışında, olta kullanımına açık kıyı kesimlerinde kalın.",
+      "sources": [
+        "https://nevsehir.tarimorman.gov.tr/Haber/983/%E2%80%8BNevsehir-Damsa-Barajina-Yavru-Balik-Birakildi",
+        "https://urgup.bel.tr/tr/sosyal-tesis/damsa-baraji-mesire-alani",
+        "https://nevsehir.tarimorman.gov.tr/Haber/947/Nevsehirde-Baraj-Ve-Goletlere-Yavru-Balik-Birakildi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-nevsehir-doyduk-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 529.764,
+      "identityAndSpecies": "2023 duyurusu Doyduk Barajı'nı 120 bin sazan yavrusu bırakılan su olarak kaydediyor.",
+      "access": "Kaymakamlık Doyduk Barajı'nı köyün yanındaki ziyaret alanı olarak tanımlıyor.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Amatör oltayı köy tarafındaki açık ve izinli kıyıyla sınırlayın. DSİ güvenlik sınırına ve tarla girişlerine uyun.",
+      "sources": [
+        "https://nevsehir.tarimorman.gov.tr/Haber/947/Nevsehirde-Baraj-Ve-Goletlere-Yavru-Balik-Birakildi",
+        "https://www.kozakli.gov.tr/kozaklinin-koyleri---doyduk",
+        "https://dergipark.org.tr/tr/download/article-file/1429062",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-konya-apa-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 506.353,
+      "identityAndSpecies": "Çumra Kaymakamlığı Apa Barajı'nda sazan tutulduğunu ve gölde amatör olta kullanıldığını belirtiyor.",
+      "access": "Baraj çevresindeki piknik kesimleri genel kamusal yaklaşımı sağlar. Kaymakamlık aynı kıyıdaki kurum tesislerini de ayrı olarak tanımlar.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. DSİ ve üniversite tesislerinin sınırları ile baraj güvenlik sahası dışında, olta kullanımına açık kıyıda kalın.",
+      "sources": [
+        "https://cumra.gov.tr/apa-baraji",
+        "https://www.cumra.bel.tr/Icerik/ilcemiz%26.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-izmir-golcuk",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 310.263,
+      "identityAndSpecies": "Ege Üniversitesi çalışması Ödemiş Gölcük Gölü'nde sazanı (Cyprinus carpio) kaydediyor.",
+      "access": "Belediye Gölcük Gölü'nü amatör olta kullanılan bir su olarak, yerleşim çevresini de ziyaret alanı olarak tanımlar.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Yalnızca göl kıyısında olta kullanımına açık kamusal kesimleri kullanın. Koruma levhaları ve mülk sınırları geçerlidir.",
+      "sources": [
+        "https://dergipark.org.tr/tr/download/article-file/57415",
+        "https://odemis.bel.tr/sayfa/genel-bilgiler",
+        "https://ekotaban.tarimorman.gov.tr/alan/5483",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-gaziantep-alleben-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 838.406,
+      "identityAndSpecies": "Kültür ve Turizm Bakanlığı, Sarısalkım yakınındaki Alleben Göleti'nde sazanı ve kıyıdan amatör oltayı kaydediyor.",
+      "access": "Gölet çevresindeki rekreasyon alanı genel ziyaret yaklaşımı sağlar.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Oltayı ziyaret alanındaki açık ve izinli kıyıyla sınırlayın. İşletme, etkinlik veya su yapısı için ayrılan kesimlere girmeyin.",
+      "sources": [
+        "https://www.kulturportali.gov.tr/turkiye/gaziantep/TurizmAktiviteleri/olta-balikciligi--alleben-goleti--baliklar--firat-nehri--gaziantep-rumkalesi--islahiye--rumkale-",
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/alleben-goleti-rekreasyon-alani-10200",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-elazig-hazar-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 933.786,
+      "identityAndSpecies": "İl Tarım, Ekim 2026'da Sivrice Hazar Gölü'ne 30 bin sazan yavrusu bırakıldığını kaydediyor.",
+      "access": "İl Tarım ve DSİ komisyonu Hazar Gölü için dört amatör avlanma alanı belirlemiştir. Belge kıyı sınırlarını ve koordinatları gösterir.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Sadece İl Tarımın Sivrice Hazar Gölü belgesindeki dört amatör avlanma kesiminden birinin güncel sınır ve levhalarına göre olta atın.",
+      "sources": [
+        "https://elazig.tarimorman.gov.tr/Haber/1934/Hazarda-Sazan-Kupasi-Odul-Toreniyle-Tamamlandi",
+        "https://elazig.tarimorman.gov.tr/Lists/KutuMenu/Attachments/17/Amat%C3%B6r%20Avc%C4%B1l%C4%B1k%20Alanlar%C4%B1.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-kastamonu-bezirgan-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 372.948,
+      "identityAndSpecies": "İl Tarım raporu Daday Bezirgan Göleti'ne 30 bin sazan yavrusu bırakıldığını kaydediyor.",
+      "access": "DKMP, Daday'daki Bezirgan Göleti'ni sportif olta kullanımı olan sular arasında listeliyor.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Köy tarafında olta kullanımına açık, kamuya erişilebilir kıyıyı kullanın. Sulama tesisi ve kapatılmış kesimler dışarıda kalır.",
+      "sources": [
+        "https://kastamonu.tarimorman.gov.tr/Belgeler/Calisma_Raporu/2025%20Y%C4%B1l%C4%B1%20Kastamonu%20%C4%B0l%20Faaliyet%20Raporu.pdf",
+        "https://bolge10.tarimorman.gov.tr/BelgelerArsiv/KASTAMONU%20ILI%20DOGA%20TURIZMI%20MASTER%20PLANI.pdf",
+        "https://bolge23.dsi.gov.tr/Sayfa/Detay/1235",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kastamonu-beyler-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 409.185,
+      "identityAndSpecies": "Kaymakamlık Beyler Barajı'nda sazanı, amatör olta kullanımını ve kıyıdaki piknik kesimlerini tanımlıyor.",
+      "access": "Beyler, Fakılar ve Karayazıcılar çevresinde halka açık piknik yaklaşımı tarif ediliyor.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Olta kullanımına açık kuru kıyıda kalın. DSİ güvenlik alanına girmeyin ve varsa yetiştiricilik kafeslerine 100 metreden fazla mesafe bırakın.",
+      "sources": [
+        "https://www.devrekani.gov.tr/beyler-baraji-2",
+        "https://kastamonu.tarimorman.gov.tr/Belgeler/Calisma_Raporu/2025%20Y%C4%B1l%C4%B1%20Kastamonu%20%C4%B0l%20Faaliyet%20Raporu.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-usak-karaagac-baraj-golu-usak",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 263.446,
+      "identityAndSpecies": "Saha formu Karaağaç Göleti'nde sazanı kaydediyor ve su kütlesinin koordinatını veriyor.",
+      "access": "Valilik Yeşil Karaağaç'taki sulama göletine asfalt yoldan ulaşıldığını ve gölette olta ile balık tutulabildiğini belirtiyor.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Güncel orman parkı kararlarına ve giriş levhalarına uyun. Oltayı açık kıyıyla sınırlayın.",
+      "sources": [
+        "https://dokuman.zafer.gov.tr/uiassets/filemanagement/B%C4%B0LG%C4%B0BANKASI/usak/usak-afyon-su-urunleri-kapasitesinin-belirlenmesi.pdf",
+        "https://usak.gov.tr/mesire-yerleri",
+        "https://ogrenci.usak.edu.tr/etkinlik/8572",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-ankara-kizilca-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 345.989,
+      "identityAndSpecies": "Ankara Büyükşehir Belediyesi atlası Çubuk Kızılca Göleti'nde pullu sazanı kaydediyor.",
+      "access": "Belediye 2026 tarihli kıyı ziyareti duyurusunda göleti vatandaşların balık tuttuğu ve piknik yaptığı alan olarak tanımlıyor.",
+      "law": "Yürürlükteki 6/2 ve 2026/26. Oltayı kamuya açık kuru kıyıyla sınırlayın. Sulama kanalı, işletme sahası ve özel tarla girişlerine girmeyin.",
+      "sources": [
+        "https://s.ankara.bel.tr/files/2024/02/22/856f8c1a4b9ea4e6531331103fc36d08.pdf",
+        "https://www.cubuk.bel.tr/universiteli-dagcilar-kizilca-goletinde-cevre-temizligi-yapti/",
+        "https://www.ankara.bel.tr/haberler/kuruma-riski-altindaki-kizilca-goleti-yeniden-suya-kavustu-18207",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     }
   ],
   "publication": {
@@ -232,5 +418,22 @@
     ],
     "indexReleases": 2,
     "verifiedAt": "2026-11-11T17:46:04Z"
+  },
+  "additionalPromotions": {
+    "slugs": [
+      "ulusal-nevsehir-damsa-baraj-golu",
+      "ulusal-nevsehir-doyduk-baraj-golu",
+      "ulusal-konya-apa-baraj-golu",
+      "ankara-500km-izmir-golcuk",
+      "ankara-500km-gaziantep-alleben-goleti",
+      "ankara-500km-elazig-hazar-golu",
+      "ulusal-kastamonu-bezirgan-baraj-golu",
+      "ankara-500km-kastamonu-beyler-baraj-golu",
+      "ulusal-usak-karaagac-baraj-golu-usak",
+      "ankara-500km-ankara-kizilca-goleti"
+    ],
+    "publication": {
+      "verified": false
+    }
   }
 }
