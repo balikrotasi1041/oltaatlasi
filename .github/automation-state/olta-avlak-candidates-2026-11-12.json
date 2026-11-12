@@ -28,7 +28,10 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Yeniceköy Göleti",
-      "decision": "cplus_pending_live"
+      "decision": "published_live_verified",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/211",
+      "liveSha": "67b3de77c9811bda76f5709fb45e0d3dc443341d",
+      "liveUrl": "https://oltaatlasi.com/meralar/bursa-inegol-yenicekoy-goleti/"
     },
     {
       "slug": "balikesir-burhaniye-pelitkoy-kiyisi",
@@ -49,7 +52,10 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Pelitköy Açık Kıyısı",
-      "decision": "cplus_pending_live"
+      "decision": "published_live_verified",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/211",
+      "liveSha": "67b3de77c9811bda76f5709fb45e0d3dc443341d",
+      "liveUrl": "https://oltaatlasi.com/meralar/balikesir-burhaniye-pelitkoy-kiyisi/"
     },
     {
       "name": "Yazır Göleti",
@@ -89,7 +95,10 @@
         "https://www.openstreetmap.org/way/453459995",
         "https://www.google.com/maps/search/?api=1&query=Yele%C4%9Fen%20G%C3%B6leti%2C%20E%C5%9Fme%2C%20U%C5%9Fak%2C%20T%C3%BCrkiye"
       ],
-      "decision": "promoted_pending_live_hold"
+      "decision": "promoted_live_verified_hold",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/211",
+      "liveSha": "67b3de77c9811bda76f5709fb45e0d3dc443341d",
+      "liveUrl": "https://oltaatlasi.com/meralar/ankara-500km-usak-yelegen-goleti/"
     },
     {
       "slug": "ankara-500km-cankiri-gumerdigin-goleti",
@@ -110,7 +119,10 @@
         "https://www.openstreetmap.org/way/81239687",
         "https://www.google.com/maps/search/?api=1&query=G%C3%BCmerdi%C4%9Fin%20G%C3%B6leti%2C%20%C5%9Eaban%C3%B6z%C3%BC%2C%20%C3%87ank%C4%B1r%C4%B1%2C%20T%C3%BCrkiye"
       ],
-      "decision": "promoted_pending_live_hold"
+      "decision": "promoted_live_verified_hold",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/211",
+      "liveSha": "67b3de77c9811bda76f5709fb45e0d3dc443341d",
+      "liveUrl": "https://oltaatlasi.com/meralar/ankara-500km-cankiri-gumerdigin-goleti/"
     },
     {
       "slug": "ulusal-nevsehir-kumtepe-baraj-golu-nevsehir",
@@ -129,7 +141,10 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "decision": "promoted_pending_live_hold"
+      "decision": "promoted_live_verified_hold",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/211",
+      "liveSha": "67b3de77c9811bda76f5709fb45e0d3dc443341d",
+      "liveUrl": "https://oltaatlasi.com/meralar/ulusal-nevsehir-kumtepe-baraj-golu-nevsehir/"
     }
   ],
   "existingReleaseQueue": [
