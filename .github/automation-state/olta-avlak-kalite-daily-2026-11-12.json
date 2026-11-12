@@ -128,11 +128,36 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "newRoutesPublished": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 2,
+    "actualConfidencePromotions": 3,
     "existingRoutesReleased": 0,
-    "indexReleases": 0,
-    "productionStatus": "pending"
+    "indexReleases": 2,
+    "mergedMainSha": "67b3de77c9811bda76f5709fb45e0d3dc443341d",
+    "liveSha": "67b3de77c9811bda76f5709fb45e0d3dc443341d",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/211",
+    "ciRunId": 43219537819,
+    "productionRunId": 43219757291,
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true,
+      "promotionPagesExcludedFromSitemap": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/bursa-inegol-yenicekoy-goleti/",
+      "https://oltaatlasi.com/meralar/balikesir-burhaniye-pelitkoy-kiyisi/"
+    ],
+    "promotionUrls": [
+      "https://oltaatlasi.com/meralar/ankara-500km-usak-yelegen-goleti/",
+      "https://oltaatlasi.com/meralar/ankara-500km-cankiri-gumerdigin-goleti/",
+      "https://oltaatlasi.com/meralar/ulusal-nevsehir-kumtepe-baraj-golu-nevsehir/"
+    ],
+    "verifiedAt": "2026-11-12T12:41:03.911Z"
   },
   "shortfall": {
     "newReason": null,
