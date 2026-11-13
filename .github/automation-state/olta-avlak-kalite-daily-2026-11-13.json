@@ -1,0 +1,156 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-13",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-13.json",
+  "baselineMainSha": "17d832a8a17f80c087250ce24a24e806a1a04a9d",
+  "startingLiveSha": "17d832a8a17f80c087250ce24a24e806a1a04a9d",
+  "scopePhase": "İstanbul",
+  "searchRadiusKm": 75,
+  "previousCumulativeSearchRadiusKm": 250,
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "istanbul-sile-kabakoz-deresi-koy-kiyisi",
+    "istanbul-sile-agva-goksu-deresi-yakuplu-kiyisi"
+  ],
+  "promotionSlugs": [
+    "ankara-500km-bilecik-zemzemiye-goleti",
+    "bilecik-yenipazar-baraj-goleti",
+    "ulusal-usak-karaagac-baraj-golu-usak"
+  ],
+  "indexReleaseSlugs": [
+    "istanbul-sile-kabakoz-deresi-koy-kiyisi",
+    "istanbul-sile-agva-goksu-deresi-yakuplu-kiyisi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ankara-500km-bilecik-zemzemiye-goleti",
+    "bilecik-yenipazar-baraj-goleti",
+    "ulusal-usak-karaagac-baraj-golu-usak"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-13.json",
+  "decisions": [
+    {
+      "slug": "istanbul-sile-kabakoz-deresi-koy-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 61.556,
+      "identityAndSpecies": "İstanbul 34-022 ve Özuluğ–Saç 77/78 istasyonları aynı dereyi doğrular. 2016 örneğinde tatlısu kefali var.",
+      "access": "Kabakoz Köy Parkı ve İETT durağı kamusal köy yaklaşımıdır. Köprü ve taşkın sahası kapsam dışı.",
+      "law": "6/2 ve 2026/26 ekleri kontrol edildi. Tatlısu kefali en az 20 cm. Orman içi kesimlerde 15 Mart–15 Haziran yasağı var.",
+      "sources": [
+        "https://dergipark.org.tr/en/pub/tjbc/article/528668",
+        "https://yesil.istanbul/haber_ibb-den-sile-ye-14-yepyeni-park",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/istanbul-ilcdr-2023-20241230081046.pdf",
+        "https://iett.istanbul/RouteDetail?hkod=139A",
+        "https://sile.bel.tr/uploads/cm/8x/cm8x6noir001i07o378tx9t34/cm8x6noir001i07o378tx9t34.pdf",
+        "https://www.openstreetmap.org/way/184281540",
+        "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-sile-agva-goksu-deresi-yakuplu-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 73.558,
+      "identityAndSpecies": "Özuluğ–Saç 62 numaralı istasyonda sazanı kaydetti. Yakuplu pini aynı su üzerinde ve arıtma tesisinin membasında.",
+      "access": "İBB Yakuplu Çeşmeli Parkı ve Yakuplu Caddesi kamusal genel yaklaşım. Kıyıdaki özel iskele, tekne hattı ve tesisler kapsam dışı.",
+      "law": "6/2 ve 2026/26 ekleri kontrol edildi. Sazan 15 Mart–15 Haziran kapalı, 40 cm ve 5 adet sınırı geçerli.",
+      "sources": [
+        "https://dergipark.org.tr/en/pub/tjbc/article/528668",
+        "https://yesil.istanbul/haber_ibb-den-sile-ye-14-yepyeni-park",
+        "https://sile.bel.tr/tr/dogal-guzellikler/",
+        "https://www.openstreetmap.org/way/875085177",
+        "https://www.openstreetmap.org/way/1240951243",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/istanbul-ilcdr-2023-20241230081046.pdf",
+        "https://sile.bel.tr/tr/haber/silede-saganak-yagis-seferberligi/",
+        "https://tarim.ibb.istanbul/img/155442992025__3064691425N.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-bilecik-zemzemiye-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 166.929,
+      "identityAndSpecies": "İl Tarımın 2018 Zemzemiye sazan salımı. Tek su ve mevcut kayıt doğrulandı.",
+      "access": "Düzce Üniversitesi saha çalışması ve Ağustos 2026 yerel kayıt gölet kıyısında amatör olta ve genel erişimi destekler.",
+      "law": "6/2 ve 2026/26. Bilecik 2026/2 kararı olta amacıyla da suya girişi yasaklar. Kuru kıyı ve DSİ güvenlik sınırı uygulanır.",
+      "sources": [
+        "https://bilecik.tarimorman.gov.tr/Haber/677/",
+        "https://eskisehirdenhaberler.com/haber/balik-tutmaya-gittiler-goelet-kiyisini-temizlediler-coepleri-tek-tek-topladilar",
+        "https://acikerisim.duzce.edu.tr/server/api/core/bitstreams/a964ab29-0e52-418e-993e-419708110bce/content",
+        "https://bilecik.tarimorman.gov.tr/Lists/Duyuru/Attachments/685/Ek-1.pdf",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=681",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.openstreetmap.org/way/122780755",
+        "https://www.google.com/maps/search/?api=1&query=Zemzemiye%20G%C3%B6leti%2C%20S%C3%B6%C4%9F%C3%BCt%2C%20Bilecik%2C%20T%C3%BCrkiye"
+      ]
+    },
+    {
+      "slug": "bilecik-yenipazar-baraj-goleti",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 161.591,
+      "identityAndSpecies": "İl Tarımın Yenipazar/Süzmen Göleti 2019 sazan salımı. Mevcut kayıt ve su adı doğrulandı.",
+      "access": "Düzce Üniversitesi saha çalışması ile Eylül 2026 tarihli gözlem, genel kuru kıyı ve toprak yol yaklaşımını gösterir.",
+      "law": "6/2 ve 2026/26. Bilecik 2026/2 gereği suya girilmez. DSİ güvenlik ve çalışma alanı dışarıda kalır.",
+      "sources": [
+        "https://www.bilecik.gov.tr/yenipazar-baraj-goleti",
+        "https://bilecik.tarimorman.gov.tr/Haber/812/Ilimizdeki-10-Golete-Eszamanli-Olarak-64-Bin-Adet-Balik-Birakildi",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9dd361f8-0534-4fe1-96ce-d6e05897a59d&TermSetId=8959c25a-943f-4356-a302-d1ffcbba1757&UrlSuffix=572%2F6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_teblig-No-2024_21_de-Degisiklik-Yapilmasina-Dair-Teblig-_teblig-No-2025_12_",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=2b419d1d-daf6-47f8-ad4a-2f2672877cd9&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=812%2FIlimizdeki-10-Golete-Eszamanli-Olarak-64-Bin-Adet-Balik-Birakildi",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+        "https://www.rotasenin.com/suzmen-goleti-yenipazar",
+        "https://acikerisim.duzce.edu.tr/server/api/core/bitstreams/a964ab29-0e52-418e-993e-419708110bce/content",
+        "https://bilecik.tarimorman.gov.tr/Lists/Duyuru/Attachments/685/Ek-1.pdf",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=681"
+      ]
+    },
+    {
+      "slug": "ulusal-usak-karaagac-baraj-golu-usak",
+      "baselineGrade": "C+",
+      "finalGrade": "B",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 263.446,
+      "identityAndSpecies": "Yüksel–Atalay 2009 örneklemesi ile Zafer Kalkınma Ajansı envanteri bağımsız. Sazan, kadife ve turna kayıtlı.",
+      "access": "Uşak Valiliği ve MEB Yeşil Karaağaç mesire yaklaşımını doğrular. Ekim 2026 tarihli yerel saha kaydı kıyı kullanımını destekler.",
+      "law": "6/2 ve 2026/26. Uşak İl Tarım duyurularına göre sazan ve kadife 15 Mart–15 Haziran, turna 15 Aralık–31 Mart kapalı.",
+      "sources": [
+        "https://dokuman.zafer.gov.tr/uiassets/filemanagement/B%C4%B0LG%C4%B0BANKASI/usak/usak-afyon-su-urunleri-kapasitesinin-belirlenmesi.pdf",
+        "https://usak.gov.tr/mesire-yerleri",
+        "https://ogrenci.usak.edu.tr/etkinlik/8572",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://dergipark.org.tr/tr/pub/nwsaecolife/article/211810",
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/karaagac-goleti-1795",
+        "https://www.usakhabergazetesi.com.tr/usaklilarin-rotasi-karaagac-goletinde-sonbahar-molasi",
+        "https://usak.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=483",
+        "https://usak.tarimorman.gov.tr/Duyuru/462/Ilimizde-Su-Urunleri-Avciligi-Ve-Satis-Yasaklari"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "productionStatus": "pending",
+    "newRoutesPublished": 0,
+    "actualConfidencePromotions": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}
