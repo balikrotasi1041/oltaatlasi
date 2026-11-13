@@ -31,8 +31,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Kabakoz Deresi Köy Kıyısı",
-      "decision": "ready_pending_production",
-      "liveUrl": null
+      "decision": "published_live_verified",
+      "liveUrl": "https://oltaatlasi.com/meralar/istanbul-sile-kabakoz-deresi-koy-kiyisi/",
+      "liveSha": "6ce82e50c2cf479daee07512247db21fe2d8078d",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/213",
+      "verifiedAt": "2026-11-13T16:11:28.809450+00:00"
     },
     {
       "slug": "istanbul-sile-agva-goksu-deresi-yakuplu-kiyisi",
@@ -56,8 +59,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Ağva Göksu Deresi Yakuplu Kıyısı",
-      "decision": "ready_pending_production",
-      "liveUrl": null
+      "decision": "published_live_verified",
+      "liveUrl": "https://oltaatlasi.com/meralar/istanbul-sile-agva-goksu-deresi-yakuplu-kiyisi/",
+      "liveSha": "6ce82e50c2cf479daee07512247db21fe2d8078d",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/213",
+      "verifiedAt": "2026-11-13T16:11:28.809450+00:00"
     },
     {
       "name": "Çakıl Göleti",
@@ -131,7 +137,11 @@
         "https://www.google.com/maps/search/?api=1&query=Zemzemiye%20G%C3%B6leti%2C%20S%C3%B6%C4%9F%C3%BCt%2C%20Bilecik%2C%20T%C3%BCrkiye"
       ],
       "name": "Zemzemiye Göleti",
-      "decision": "promotion_pending_production"
+      "decision": "promoted_live_hold",
+      "liveUrl": "https://oltaatlasi.com/meralar/ankara-500km-bilecik-zemzemiye-goleti/",
+      "liveSha": "6ce82e50c2cf479daee07512247db21fe2d8078d",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/213",
+      "verifiedAt": "2026-11-13T16:11:28.809450+00:00"
     },
     {
       "slug": "bilecik-yenipazar-baraj-goleti",
@@ -157,7 +167,11 @@
         "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=681"
       ],
       "name": "Yenipazar Baraj Göleti",
-      "decision": "promotion_pending_production"
+      "decision": "promoted_live_hold",
+      "liveUrl": "https://oltaatlasi.com/meralar/bilecik-yenipazar-baraj-goleti/",
+      "liveSha": "6ce82e50c2cf479daee07512247db21fe2d8078d",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/213",
+      "verifiedAt": "2026-11-13T16:11:28.809450+00:00"
     },
     {
       "slug": "ulusal-usak-karaagac-baraj-golu-usak",
@@ -181,7 +195,11 @@
         "https://usak.tarimorman.gov.tr/Duyuru/462/Ilimizde-Su-Urunleri-Avciligi-Ve-Satis-Yasaklari"
       ],
       "name": "Karaağaç Göleti",
-      "decision": "promotion_pending_production"
+      "decision": "promoted_live_hold",
+      "liveUrl": "https://oltaatlasi.com/meralar/ulusal-usak-karaagac-baraj-golu-usak/",
+      "liveSha": "6ce82e50c2cf479daee07512247db21fe2d8078d",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/213",
+      "verifiedAt": "2026-11-13T16:11:28.809450+00:00"
     }
   ],
   "existingReleaseQueue": [

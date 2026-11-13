@@ -142,12 +142,43 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
-    "actualConfidencePromotions": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 2,
+    "actualConfidencePromotions": 3,
     "existingRoutesReleased": 0,
-    "indexReleases": 0
+    "indexReleases": 2,
+    "mergedMainSha": "6ce82e50c2cf479daee07512247db21fe2d8078d",
+    "liveSha": "6ce82e50c2cf479daee07512247db21fe2d8078d",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/213",
+    "ciRunId": 43457567191,
+    "productionRunId": 43459467181,
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true,
+      "promotionPagesExcludedFromSitemap": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/istanbul-sile-kabakoz-deresi-koy-kiyisi/",
+      "https://oltaatlasi.com/meralar/istanbul-sile-agva-goksu-deresi-yakuplu-kiyisi/"
+    ],
+    "promotionUrls": [
+      "https://oltaatlasi.com/meralar/ankara-500km-bilecik-zemzemiye-goleti/",
+      "https://oltaatlasi.com/meralar/bilecik-yenipazar-baraj-goleti/",
+      "https://oltaatlasi.com/meralar/ulusal-usak-karaagac-baraj-golu-usak/"
+    ],
+    "verifiedAt": "2026-11-13T16:11:28.809450+00:00",
+    "deploymentRecovery": {
+      "failedProductionRunId": 43457907514,
+      "cause": "Cloudflare deploy hook supplied a non-full-SHA environment value; stamp-release stopped the build.",
+      "fixPr": "https://github.com/balikrotasi1041/oltaatlasi/pull/214",
+      "fixCiRunId": 43459251501,
+      "resolution": "Resolve the actual Git checkout SHA, reject conflicting full SHA values, keep exact live SHA verification; six release-marker regression tests pass."
+    }
   },
   "shortfall": {
     "newReason": null,
