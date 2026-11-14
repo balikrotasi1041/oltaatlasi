@@ -1,0 +1,132 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-14",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-14.json",
+  "baselineMainSha": "335310a311d74f7ca42eabdb4866211876152ced",
+  "startingLiveSha": "335310a311d74f7ca42eabdb4866211876152ced",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 134,
+  "previousCumulativeSearchRadiusKm": 250,
+  "istanbulExhaustedEvidence": "13 Kasım İstanbul içsularında iki yeni sayfa yayımlandı. Çakıl, Dilburnu ve Türknil adaylarının kayıtlı erişim/koruma eksikleri sürüyor; Selvi Burnu askerî kapsamda ve yakın kıyıların mevcut slugları tekrar kullanılamaz. Önceki 250 km tarama geçmişi korunarak bu koşuda 127–134 km Karadeniz yerleşim kıyıları incelendi. İstanbul tamamen tükendi iddiası yok; bekleyen adaylar yeni kanıtla yeniden açılır.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "kirklareli-demirkoy-igneada-merkez-deniz-kiyisi",
+    "kirklareli-demirkoy-begendik-acik-deniz-kiyisi"
+  ],
+  "promotionSlugs": [
+    "ulusal-canakkale-bakacak-baraj-golu",
+    "ulusal-canakkale-atikhisar-baraj-golu",
+    "ankara-500km-canakkale-asagiokcular-goleti"
+  ],
+  "indexReleaseSlugs": [
+    "kirklareli-demirkoy-igneada-merkez-deniz-kiyisi",
+    "kirklareli-demirkoy-begendik-acik-deniz-kiyisi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ulusal-canakkale-bakacak-baraj-golu",
+    "ulusal-canakkale-atikhisar-baraj-golu",
+    "ankara-500km-canakkale-asagiokcular-goleti"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-14.json",
+  "decisions": [
+    {
+      "slug": "kirklareli-demirkoy-igneada-merkez-deniz-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 127.152,
+      "identityAndSpecies": "Belirli kıyı noktasına ait yakalama sayısı veya güncel stok tahmini değildir.",
+      "access": "Belde merkezindeki ziyaretçi sahili ve kıyı hizmetleri resmî turizm kaynağında tanımlanır. Mert ve Erikli gölleri, longozlar, dere ağızları ve Limanköy barınağı bu rotaya dahil değildir. Dalga kıyıyı aşıyorsa yaklaşmayın; suya girmeden, kuru zeminde kalın.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir.",
+      "sources": [
+        "https://kirklareli.ktb.gov.tr/tr-64329/yoresel-mutfak-kulturu.html",
+        "https://www.kulturportali.gov.tr/turkiye/kirklareli/gezilecekyer/karadeniz-sahili-gneada",
+        "https://commons.wikimedia.org/wiki/File:%C4%B0%C4%9Fneada_Plaj%C4%B1..._-_panoramio.jpg",
+        "https://bolge1.tarimorman.gov.tr/Menu/44/Milli-Parklar",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "kirklareli-demirkoy-begendik-acik-deniz-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 133.277,
+      "identityAndSpecies": "Belirli kıyı noktasına ait yakalama sayısı veya güncel stok tahmini değildir.",
+      "access": "Beğendik sahili ve karayoluyla ulaşımı ayrı olarak tanımlanır. Rezve/Mutludere ağzı, kuzeydeki sınır ve askerî bariyer ile güneydeki barınak kapsam dışındadır. Kıyı hızla derinleşir; suya girmeyin ve dalga altında kalan kesimde avlanmayın.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir.",
+      "sources": [
+        "https://kirklareli.ktb.gov.tr/tr-64329/yoresel-mutfak-kulturu.html",
+        "https://www.kulturportali.gov.tr/turkiye/kirklareli/gezilecekyer/karadeniz-sahili-kastros",
+        "https://www.openstreetmap.org/way/235740001",
+        "https://trakyanet.com/turizm/mesireyerleri/plajlar?icerik=51-igneada-begendik-plaji",
+        "https://www.kirklareli.gov.tr/begendik-sahil-guvenlik-komutanligi-tesisleri-valimiz-sayin-birol-ekicinin-katildigi-torenle-dualarla-hizmete-girdi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-canakkale-bakacak-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 190.973,
+      "identityAndSpecies": "Şartnamenin 15. maddesi Bakacak Barajında sazan için yıllık 12.000 kg avlanabilir stok tahmini verir. Bu ticari tahmin amatör av izni veya günlük av tahmini değildir.",
+      "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://canakkale.tarimorman.gov.tr/Lists/Duyuru/Attachments/383/Teknik%20%C5%9Eartname%20-%20Bakacak%20Baraj%20G%C3%B6l%C3%BC.pdf",
+        "https://www.openstreetmap.org/relation/1951548",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-canakkale-atikhisar-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 230.634,
+      "identityAndSpecies": "Atikhisar Barajına 348 bin yavru sazan bırakıldığı doğrudan kaydedilir. Yavru salımı bugünkü yetişkin stok veya av verimi değildir.",
+      "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://canakkale.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=869",
+        "https://www.openstreetmap.org/relation/2934116",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-canakkale-asagiokcular-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 238.789,
+      "identityAndSpecies": "Aşağıokçular Göletine 2014 yılında 6.000 sazan yavrusu bırakıldığı kaydedilir. Tarihsel tür kanıtıdır; güncel stok bilinmiyor.",
+      "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://canakkale.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=dee008dd-101b-4eba-8ab0-bfd0c4e8bbce&TermSetId=e35e8db2-d9e0-4b72-b389-27d5b4665130&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=40",
+        "https://www.openstreetmap.org/way/144075377",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "productionStatus": "pending",
+    "newRoutesPublished": 0,
+    "actualConfidencePromotions": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  }
+}
