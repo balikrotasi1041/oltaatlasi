@@ -72,7 +72,7 @@
       "slug": "ulusal-canakkale-bakacak-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 190.973,
       "identityAndSpecies": "Şartnamenin 15. maddesi Bakacak Barajında sazan için yıllık 12.000 kg avlanabilir stok tahmini verir. Bu ticari tahmin amatör av izni veya günlük av tahmini değildir.",
       "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
@@ -88,7 +88,7 @@
       "slug": "ulusal-canakkale-atikhisar-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 230.634,
       "identityAndSpecies": "Atikhisar Barajına 348 bin yavru sazan bırakıldığı doğrudan kaydedilir. Yavru salımı bugünkü yetişkin stok veya av verimi değildir.",
       "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
@@ -104,7 +104,7 @@
       "slug": "ankara-500km-canakkale-asagiokcular-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 238.789,
       "identityAndSpecies": "Aşağıokçular Göletine 2014 yılında 6.000 sazan yavrusu bırakıldığı kaydedilir. Tarihsel tür kanıtıdır; güncel stok bilinmiyor.",
       "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
@@ -118,12 +118,36 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
-    "actualConfidencePromotions": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 2,
+    "actualConfidencePromotions": 3,
     "existingRoutesReleased": 0,
-    "indexReleases": 0
+    "indexReleases": 2,
+    "mergedMainSha": "3f1b40ea8441a6db72bbc1db366e79cace6e9658",
+    "liveSha": "3f1b40ea8441a6db72bbc1db366e79cace6e9658",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/216",
+    "ciRunId": 43608814202,
+    "productionRunId": 43611205090,
+    "verifiedAt": "2026-11-14T15:40:38.936371+00:00",
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "robotsIndexFollow": true,
+      "sitemap": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true,
+      "promotionPagesExcludedFromSitemap": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/kirklareli-demirkoy-igneada-merkez-deniz-kiyisi/",
+      "https://oltaatlasi.com/meralar/kirklareli-demirkoy-begendik-acik-deniz-kiyisi/"
+    ],
+    "promotionUrls": [
+      "https://oltaatlasi.com/meralar/ulusal-canakkale-bakacak-baraj-golu/",
+      "https://oltaatlasi.com/meralar/ulusal-canakkale-atikhisar-baraj-golu/",
+      "https://oltaatlasi.com/meralar/ankara-500km-canakkale-asagiokcular-goleti/"
+    ]
   },
   "shortfall": {
     "newReason": null,
