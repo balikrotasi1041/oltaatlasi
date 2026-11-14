@@ -1,0 +1,409 @@
+{
+  "date": "2026-11-14",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 250,
+  "currentRadiusKm": 250,
+  "dailyNewResearchRadiusKm": 134,
+  "phase": "Türkiye",
+  "coverage": "13 Kasım İstanbul içsularında iki yeni sayfa yayımlandı. Çakıl, Dilburnu ve Türknil adaylarının kayıtlı erişim/koruma eksikleri sürüyor; Selvi Burnu askerî kapsamda ve yakın kıyıların mevcut slugları tekrar kullanılamaz. Önceki 250 km tarama geçmişi korunarak bu koşuda 127–134 km Karadeniz yerleşim kıyıları incelendi. İstanbul tamamen tükendi iddiası yok; bekleyen adaylar yeni kanıtla yeniden açılır.",
+  "newRouteQueue": [
+    {
+      "slug": "kirklareli-demirkoy-igneada-merkez-deniz-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 127.152,
+      "identityAndSpecies": "Belirli kıyı noktasına ait yakalama sayısı veya güncel stok tahmini değildir.",
+      "access": "Belde merkezindeki ziyaretçi sahili ve kıyı hizmetleri resmî turizm kaynağında tanımlanır. Mert ve Erikli gölleri, longozlar, dere ağızları ve Limanköy barınağı bu rotaya dahil değildir. Dalga kıyıyı aşıyorsa yaklaşmayın; suya girmeden, kuru zeminde kalın.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir.",
+      "sources": [
+        "https://kirklareli.ktb.gov.tr/tr-64329/yoresel-mutfak-kulturu.html",
+        "https://www.kulturportali.gov.tr/turkiye/kirklareli/gezilecekyer/karadeniz-sahili-gneada",
+        "https://commons.wikimedia.org/wiki/File:%C4%B0%C4%9Fneada_Plaj%C4%B1..._-_panoramio.jpg",
+        "https://bolge1.tarimorman.gov.tr/Menu/44/Milli-Parklar",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ],
+      "name": "İğneada Merkez Deniz Kıyısı",
+      "decision": "ready_pending_publication"
+    },
+    {
+      "slug": "kirklareli-demirkoy-begendik-acik-deniz-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 133.277,
+      "identityAndSpecies": "Belirli kıyı noktasına ait yakalama sayısı veya güncel stok tahmini değildir.",
+      "access": "Beğendik sahili ve karayoluyla ulaşımı ayrı olarak tanımlanır. Rezve/Mutludere ağzı, kuzeydeki sınır ve askerî bariyer ile güneydeki barınak kapsam dışındadır. Kıyı hızla derinleşir; suya girmeyin ve dalga altında kalan kesimde avlanmayın.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir.",
+      "sources": [
+        "https://kirklareli.ktb.gov.tr/tr-64329/yoresel-mutfak-kulturu.html",
+        "https://www.kulturportali.gov.tr/turkiye/kirklareli/gezilecekyer/karadeniz-sahili-kastros",
+        "https://www.openstreetmap.org/way/235740001",
+        "https://trakyanet.com/turizm/mesireyerleri/plajlar?icerik=51-igneada-begendik-plaji",
+        "https://www.kirklareli.gov.tr/begendik-sahil-guvenlik-komutanligi-tesisleri-valimiz-sayin-birol-ekicinin-katildigi-torenle-dualarla-hizmete-girdi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ],
+      "name": "Beğendik Açık Deniz Kıyısı",
+      "decision": "ready_pending_publication"
+    },
+    {
+      "name": "Çakıl Göleti",
+      "distanceKmFromIstanbulCenter": 44.978,
+      "decision": "public_access_pending",
+      "reason": "Rota-özel örnekleme ve 2026 sazan salımı var. Sulama göleti çevresindeki yakın patikanın kamusal kuru kıyıya açıldığı doğrulanmadı.",
+      "sources": [
+        "https://dergipark.org.tr/en/pub/tjbc/article/528668",
+        "https://istanbul.tarimorman.gov.tr/Haber/3144/Istanbulda-Baliklandirma-Calismalari-Suruyor-16-Su-Kaynagina-922-Bin-Sazan-Yavrusu-Birakildi"
+      ]
+    },
+    {
+      "name": "Büyükada Dilburnu",
+      "decision": "protected_access_pending",
+      "reason": "Koy özelinde tür verisi var. Korunan alan işletmesi içindeki olağan amatör kıyı erişimi belirsiz.",
+      "sources": [
+        "https://dergipark.org.tr/tr/download/article-file/884257",
+        "https://ekotaban.tarimorman.gov.tr/alan/391"
+      ]
+    },
+    {
+      "name": "Beykoz Selvi Burnu",
+      "decision": "excluded_legal",
+      "reason": "6/2 askeri bölge kısıtı nedeniyle değerlendirme dışında."
+    },
+    {
+      "name": "Şile Türknil Nehri Kumbaba",
+      "decision": "access_and_water_quality_pending",
+      "reason": "Akademik tatlısu kefali kaydı var. Kamusal kuru kıyının taşkın ve tesis hatlarına göre sınırı doğrulanacak.",
+      "sources": [
+        "https://dergipark.org.tr/en/pub/tjbc/article/528668",
+        "https://sile.bel.tr/tr/haber/kumbaba-sali-yeniden-hizmette/"
+      ]
+    },
+    {
+      "name": "Kabatepe açık kıyısı",
+      "decision": "access_closed",
+      "reason": "Kabatepe Orman Kampı ana ziyaretçi yaklaşımı 2027 sezonuna dek düzenleme nedeniyle kapalı.",
+      "sources": [
+        "https://www.canakkaletarihialan.gov.tr/en/news/178-kabatepe-orman-kampi-altyapi-cevre-duzenleme-ve-ihya-calismalari"
+      ]
+    },
+    {
+      "name": "Kandıra Cebeci ve Kumcağız",
+      "decision": "already_in_inventory",
+      "reason": "2026 olta yarışmasının iki plajı mevcut katalogdaki rotalarla eşleşiyor.",
+      "sources": [
+        "https://www.kocaeli.bel.tr/haber/kandirada-oltaya-41-santimetrelik-eskina-takildi-52330.html"
+      ]
+    },
+    {
+      "name": "Lapseki merkez kıyısı",
+      "decision": "species_scope_pending",
+      "reason": "İl ölçekli amatör anketi ve açık deniz ticari kayıtları belirli merkez kıyısında tür doğrulamasını tamamlamadı."
+    },
+    {
+      "name": "Akçay Kordon",
+      "decision": "species_scope_pending",
+      "reason": "Edremit 2024 av araçları araştırmasında Akçay tekne ve ağ kayıtları var; kordon kıyı oltasına aktarılmadı."
+    }
+  ],
+  "existingPromotionQueue": [
+    {
+      "slug": "ulusal-canakkale-bakacak-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 190.973,
+      "identityAndSpecies": "Şartnamenin 15. maddesi Bakacak Barajında sazan için yıllık 12.000 kg avlanabilir stok tahmini verir. Bu ticari tahmin amatör av izni veya günlük av tahmini değildir.",
+      "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://canakkale.tarimorman.gov.tr/Lists/Duyuru/Attachments/383/Teknik%20%C5%9Eartname%20-%20Bakacak%20Baraj%20G%C3%B6l%C3%BC.pdf",
+        "https://www.openstreetmap.org/relation/1951548",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ],
+      "name": "Bakacak Baraj Gölü",
+      "decision": "C_hold_public_access_and_local_law_pending"
+    },
+    {
+      "slug": "ulusal-canakkale-atikhisar-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 230.634,
+      "identityAndSpecies": "Atikhisar Barajına 348 bin yavru sazan bırakıldığı doğrudan kaydedilir. Yavru salımı bugünkü yetişkin stok veya av verimi değildir.",
+      "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://canakkale.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=869",
+        "https://www.openstreetmap.org/relation/2934116",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ],
+      "name": "Atikhisar Baraj Gölü",
+      "decision": "C_hold_public_access_and_local_law_pending"
+    },
+    {
+      "slug": "ankara-500km-canakkale-asagiokcular-goleti",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 238.789,
+      "identityAndSpecies": "Aşağıokçular Göletine 2014 yılında 6.000 sazan yavrusu bırakıldığı kaydedilir. Tarihsel tür kanıtıdır; güncel stok bilinmiyor.",
+      "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://canakkale.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=dee008dd-101b-4eba-8ab0-bfd0c4e8bbce&TermSetId=e35e8db2-d9e0-4b72-b389-27d5b4665130&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=40",
+        "https://www.openstreetmap.org/way/144075377",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ],
+      "name": "Aşağıokçular Göleti",
+      "decision": "C_hold_public_access_and_local_law_pending"
+    }
+  ],
+  "existingReleaseQueue": [
+    {
+      "slug": "ulusal-nevsehir-damsa-baraj-golu",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 576.917,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://nevsehir.tarimorman.gov.tr/Haber/983/%E2%80%8BNevsehir-Damsa-Barajina-Yavru-Balik-Birakildi",
+        "https://urgup.bel.tr/tr/sosyal-tesis/damsa-baraji-mesire-alani",
+        "https://nevsehir.tarimorman.gov.tr/Haber/947/Nevsehirde-Baraj-Ve-Goletlere-Yavru-Balik-Birakildi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-nevsehir-doyduk-baraj-golu",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 529.764,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://nevsehir.tarimorman.gov.tr/Haber/947/Nevsehirde-Baraj-Ve-Goletlere-Yavru-Balik-Birakildi",
+        "https://www.kozakli.gov.tr/kozaklinin-koyleri---doyduk",
+        "https://dergipark.org.tr/tr/download/article-file/1429062",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-konya-apa-baraj-golu",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 506.353,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://cumra.gov.tr/apa-baraji",
+        "https://www.cumra.bel.tr/Icerik/ilcemiz%26.html",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-izmir-golcuk",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 310.263,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://dergipark.org.tr/tr/download/article-file/57415",
+        "https://odemis.bel.tr/sayfa/genel-bilgiler",
+        "https://ekotaban.tarimorman.gov.tr/alan/5483",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-gaziantep-alleben-goleti",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 838.406,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://www.kulturportali.gov.tr/turkiye/gaziantep/TurizmAktiviteleri/olta-balikciligi--alleben-goleti--baliklar--firat-nehri--gaziantep-rumkalesi--islahiye--rumkale-",
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/alleben-goleti-rekreasyon-alani-10200",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-elazig-hazar-golu",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 933.786,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://elazig.tarimorman.gov.tr/Haber/1934/Hazarda-Sazan-Kupasi-Odul-Toreniyle-Tamamlandi",
+        "https://elazig.tarimorman.gov.tr/Lists/KutuMenu/Attachments/17/Amat%C3%B6r%20Avc%C4%B1l%C4%B1k%20Alanlar%C4%B1.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-kastamonu-bezirgan-baraj-golu",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 372.948,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://kastamonu.tarimorman.gov.tr/Belgeler/Calisma_Raporu/2025%20Y%C4%B1l%C4%B1%20Kastamonu%20%C4%B0l%20Faaliyet%20Raporu.pdf",
+        "https://bolge10.tarimorman.gov.tr/BelgelerArsiv/KASTAMONU%20ILI%20DOGA%20TURIZMI%20MASTER%20PLANI.pdf",
+        "https://bolge23.dsi.gov.tr/Sayfa/Detay/1235",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-kastamonu-beyler-baraj-golu",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 409.185,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://www.devrekani.gov.tr/beyler-baraji-2",
+        "https://kastamonu.tarimorman.gov.tr/Belgeler/Calisma_Raporu/2025%20Y%C4%B1l%C4%B1%20Kastamonu%20%C4%B0l%20Faaliyet%20Raporu.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-ankara-kizilca-goleti",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 345.989,
+      "decision": "deferred_daily_quota",
+      "reason": "11 Kasım 4/4 ortak indeks kotası dolu. Bir sonraki uygun salımda erişim ve mevzuatı yeniden kontrol et.",
+      "sources": [
+        "https://s.ankara.bel.tr/files/2024/02/22/856f8c1a4b9ea4e6531331103fc36d08.pdf",
+        "https://www.cubuk.bel.tr/universiteli-dagcilar-kizilca-goletinde-cevre-temizligi-yapti/",
+        "https://www.ankara.bel.tr/haberler/kuruma-riski-altindaki-kizilca-goleti-yeniden-suya-kavustu-18207",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-usak-yelegen-goleti",
+      "grade": "C+",
+      "decision": "deferred_release_review",
+      "reason": "HOLD. Ayrı indeks salım incelemesi yapılacak.",
+      "sources": [
+        "https://esme.gov.tr/ilce-tarim-mudurlugu",
+        "https://depo.zafer.gov.tr/depo/documents/Zafer_Dergi/68b1d177-3c3b-4577-aea4-aec0f1bf1c60.pdf",
+        "https://dokuman.zafer.gov.tr/uiassets/filemanagement/B%C4%B0LG%C4%B0BANKASI/usak/usak-afyon-su-urunleri-kapasitesinin-belirlenmesi.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.openstreetmap.org/way/453459995",
+        "https://www.google.com/maps/search/?api=1&query=Yele%C4%9Fen%20G%C3%B6leti%2C%20E%C5%9Fme%2C%20U%C5%9Fak%2C%20T%C3%BCrkiye"
+      ]
+    },
+    {
+      "slug": "ankara-500km-cankiri-gumerdigin-goleti",
+      "grade": "C+",
+      "decision": "deferred_release_review",
+      "reason": "HOLD. Ayrı indeks salım incelemesi yapılacak.",
+      "sources": [
+        "https://cankiri.tarimorman.gov.tr/Haber/474/Gol-Ve-Goletlere-102-000-Adet-Yavru-Balik-Birakildi",
+        "https://cankiri.tarimorman.gov.tr/Belgeler/KutuMenu/2014y%C4%B1l%C4%B1%C3%A7al%C4%B1%C5%9Fmakitab%C4%B1.pdf",
+        "https://sabanozu.bel.tr/2024-yili-faaliyet-raporu/",
+        "https://sabanozu.bel.tr/2025-yili-faaliyet-raporu/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.openstreetmap.org/way/81239687",
+        "https://www.google.com/maps/search/?api=1&query=G%C3%BCmerdi%C4%9Fin%20G%C3%B6leti%2C%20%C5%9Eaban%C3%B6z%C3%BC%2C%20%C3%87ank%C4%B1r%C4%B1%2C%20T%C3%BCrkiye"
+      ]
+    },
+    {
+      "slug": "ulusal-nevsehir-kumtepe-baraj-golu-nevsehir",
+      "grade": "C+",
+      "decision": "deferred_release_review",
+      "reason": "HOLD. Ayrı indeks salım incelemesi yapılacak.",
+      "sources": [
+        "https://nevsehir.tarimorman.gov.tr/Haber/947/Nevsehirde-Baraj-Ve-Goletlere-Yavru-Balik-Birakildi",
+        "https://dergipark.org.tr/tr/download/article-file/1429062",
+        "https://www.hacibektas.bel.tr/web/her-sey-sevmek-ve-inanmakla-baslar-126/",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/nevseh-r_-cdr2023-20241107090826.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-bilecik-zemzemiye-goleti",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 166.929,
+      "decision": "deferred_daily_quota",
+      "reason": "13 Kasım ortak indeks kotasında iki yeni avlağa öncelik verildi. Salım gününde güncel erişim ve mevzuatı tekrar denetle.",
+      "sources": [
+        "https://bilecik.tarimorman.gov.tr/Haber/677/",
+        "https://eskisehirdenhaberler.com/haber/balik-tutmaya-gittiler-goelet-kiyisini-temizlediler-coepleri-tek-tek-topladilar",
+        "https://acikerisim.duzce.edu.tr/server/api/core/bitstreams/a964ab29-0e52-418e-993e-419708110bce/content",
+        "https://bilecik.tarimorman.gov.tr/Lists/Duyuru/Attachments/685/Ek-1.pdf",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=681",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://www.openstreetmap.org/way/122780755",
+        "https://www.google.com/maps/search/?api=1&query=Zemzemiye%20G%C3%B6leti%2C%20S%C3%B6%C4%9F%C3%BCt%2C%20Bilecik%2C%20T%C3%BCrkiye"
+      ]
+    },
+    {
+      "slug": "bilecik-yenipazar-baraj-goleti",
+      "grade": "C+",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 161.591,
+      "decision": "deferred_daily_quota",
+      "reason": "13 Kasım ortak indeks kotasında iki yeni avlağa öncelik verildi. Salım gününde güncel erişim ve mevzuatı tekrar denetle.",
+      "sources": [
+        "https://www.bilecik.gov.tr/yenipazar-baraj-goleti",
+        "https://bilecik.tarimorman.gov.tr/Haber/812/Ilimizdeki-10-Golete-Eszamanli-Olarak-64-Bin-Adet-Balik-Birakildi",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=bfedb6a9-3737-4630-9ded-fdd8dea63bb7&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=681",
+        "https://yalova.tarimorman.gov.tr/Duyuru/513/6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_no-2024_21_",
+        "https://sanliurfa.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=9dd361f8-0534-4fe1-96ce-d6e05897a59d&TermSetId=8959c25a-943f-4356-a302-d1ffcbba1757&UrlSuffix=572%2F6_2-Numarali-Amator-Amacli-Su-Urunleri-Avciliginin-Duzenlenmesi-Hakkinda-Teblig-_teblig-No-2024_21_de-Degisiklik-Yapilmasina-Dair-Teblig-_teblig-No-2025_12_",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?TermId=2b419d1d-daf6-47f8-ad4a-2f2672877cd9&TermSetId=361bc057-1a1c-4f3c-bf20-50cb6f081a93&TermStoreId=368e785b-af33-487d-a98d-c11d5495130b&UrlSuffix=812%2FIlimizdeki-10-Golete-Eszamanli-Olarak-64-Bin-Adet-Balik-Birakildi",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/267/",
+        "https://www.rotasenin.com/suzmen-goleti-yenipazar",
+        "https://acikerisim.duzce.edu.tr/server/api/core/bitstreams/a964ab29-0e52-418e-993e-419708110bce/content",
+        "https://bilecik.tarimorman.gov.tr/Lists/Duyuru/Attachments/685/Ek-1.pdf",
+        "https://bilecik.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=681"
+      ]
+    },
+    {
+      "slug": "ulusal-usak-karaagac-baraj-golu-usak",
+      "grade": "B",
+      "previousIndexing": "hold",
+      "distanceKmFromIstanbulCenter": 263.446,
+      "decision": "deferred_daily_quota",
+      "reason": "13 Kasım ortak indeks kotasında iki yeni avlağa öncelik verildi. Salım gününde güncel erişim ve mevzuatı tekrar denetle.",
+      "sources": [
+        "https://dokuman.zafer.gov.tr/uiassets/filemanagement/B%C4%B0LG%C4%B0BANKASI/usak/usak-afyon-su-urunleri-kapasitesinin-belirlenmesi.pdf",
+        "https://usak.gov.tr/mesire-yerleri",
+        "https://ogrenci.usak.edu.tr/etkinlik/8572",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
+        "https://dergipark.org.tr/tr/pub/nwsaecolife/article/211810",
+        "https://okuldisiogrenme.eba.gov.tr/mekan-detay/karaagac-goleti-1795",
+        "https://www.usakhabergazetesi.com.tr/usaklilarin-rotasi-karaagac-goletinde-sonbahar-molasi",
+        "https://usak.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=483",
+        "https://usak.tarimorman.gov.tr/Duyuru/462/Ilimizde-Su-Urunleri-Avciligi-Ve-Satis-Yasaklari"
+      ]
+    }
+  ]
+}

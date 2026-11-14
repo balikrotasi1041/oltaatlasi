@@ -23,3 +23,7 @@ URL sayısı bağımsızlık değildir. Aynı olayı aktaran valilik, belediye, 
 - Bir ana eksik karar önceliğini gösterir; başka eksikler varsa ayrı yazılır. Tek eksik varmış izlenimi yaratılmaz.
 
 `expanded-quality-policy.mjs` yeni salımlarda eksik değerlendirmeyi reddeder. Bu, mevcut tüm eski C sayfalarının geriye dönük C+ olarak onaylandığı anlamına gelmez; eski kayıtlar ayrıca denetlenmelidir. Kaynak doğruluğu ve bağımsızlığı editoryal sorumluluktur; boolean alanlar tek başına kanıt üretmez.
+
+## C araştırma düzeyi ile indeks salımının ayrımı
+
+Mevcut D kaydında su kimliği ve suya özgü tür kanıtı doğrulandığında, genel mevzuat incelenmiş olsa da kamusal erişim veya yerel uygunluk eksik kalabilir. Böyle bir gerçek kanıt artışı C/HOLD olarak kaydedilir; açık eksikler yazılır ve noindex korunur. Bu kayıt C+ ya da indeks salımına hazır sayılmaz. Toplu kayıt denetimi bu dar durumda erişimi doğrulanmış göstermeyi, ilgisiz Google Maps bağlantısı veya konaklama metni eklemeyi zorunlu tutmaz. Kaynaklı tür, güçlü kimlik/tür profili, açık risk kaydı ve HOLD koşulları birlikte test edilir; indeks salımının çekirdek kontrolleri aynen sürer.

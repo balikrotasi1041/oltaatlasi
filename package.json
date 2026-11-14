@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "validate:routes": "node scripts/validate-route-data.mjs",
     "validate:duplicates": "node --import tsx scripts/detect-route-duplicates.mjs",
-    "validate:ankara-500km": "node --import tsx scripts/audit-ankara-500km-expansion.mjs",
+    "validate:ankara-500km": "node --test scripts/test-partial-c-hold-policy.mjs && node --import tsx scripts/audit-ankara-500km-expansion.mjs",
     "validate:admin-data-flow": "node scripts/validate-admin-data-flow.mjs",
     "validate:confidence": "node --import tsx scripts/audit-confidence-debt.mjs",
     "validate:security": "node scripts/validate-security-posture.mjs",
