@@ -28,7 +28,9 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "İğneada Merkez Deniz Kıyısı",
-      "decision": "ready_pending_publication"
+      "decision": "published_index_verified",
+      "publicationSha": "3f1b40ea8441a6db72bbc1db366e79cace6e9658",
+      "verifiedAt": "2026-11-14T15:40:38.936371+00:00"
     },
     {
       "slug": "kirklareli-demirkoy-begendik-acik-deniz-kiyisi",
@@ -49,7 +51,9 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Beğendik Açık Deniz Kıyısı",
-      "decision": "ready_pending_publication"
+      "decision": "published_index_verified",
+      "publicationSha": "3f1b40ea8441a6db72bbc1db366e79cace6e9658",
+      "verifiedAt": "2026-11-14T15:40:38.936371+00:00"
     },
     {
       "name": "Çakıl Göleti",
@@ -116,7 +120,7 @@
       "slug": "ulusal-canakkale-bakacak-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 190.973,
       "identityAndSpecies": "Şartnamenin 15. maddesi Bakacak Barajında sazan için yıllık 12.000 kg avlanabilir stok tahmini verir. Bu ticari tahmin amatör av izni veya günlük av tahmini değildir.",
       "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
@@ -128,13 +132,15 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Bakacak Baraj Gölü",
-      "decision": "C_hold_public_access_and_local_law_pending"
+      "decision": "C_hold_public_access_and_local_law_pending",
+      "publicationSha": "3f1b40ea8441a6db72bbc1db366e79cace6e9658",
+      "verifiedAt": "2026-11-14T15:40:38.936371+00:00"
     },
     {
       "slug": "ulusal-canakkale-atikhisar-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 230.634,
       "identityAndSpecies": "Atikhisar Barajına 348 bin yavru sazan bırakıldığı doğrudan kaydedilir. Yavru salımı bugünkü yetişkin stok veya av verimi değildir.",
       "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
@@ -146,13 +152,15 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Atikhisar Baraj Gölü",
-      "decision": "C_hold_public_access_and_local_law_pending"
+      "decision": "C_hold_public_access_and_local_law_pending",
+      "publicationSha": "3f1b40ea8441a6db72bbc1db366e79cace6e9658",
+      "verifiedAt": "2026-11-14T15:40:38.936371+00:00"
     },
     {
       "slug": "ankara-500km-canakkale-asagiokcular-goleti",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 238.789,
       "identityAndSpecies": "Aşağıokçular Göletine 2014 yılında 6.000 sazan yavrusu bırakıldığı kaydedilir. Tarihsel tür kanıtıdır; güncel stok bilinmiyor.",
       "access": "Adlandırılmış genel su konumu Kamusal kıyı girişi veya av izni değildir.",
@@ -164,7 +172,9 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Aşağıokçular Göleti",
-      "decision": "C_hold_public_access_and_local_law_pending"
+      "decision": "C_hold_public_access_and_local_law_pending",
+      "publicationSha": "3f1b40ea8441a6db72bbc1db366e79cace6e9658",
+      "verifiedAt": "2026-11-14T15:40:38.936371+00:00"
     }
   ],
   "existingReleaseQueue": [
