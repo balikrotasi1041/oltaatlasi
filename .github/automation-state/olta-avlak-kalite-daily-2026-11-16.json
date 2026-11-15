@@ -1,0 +1,181 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-16",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-16.json",
+  "baselineMainSha": "3f306302d74d0ef684610b8b8450d6541d5c7d86",
+  "startingLiveSha": "3f306302d74d0ef684610b8b8450d6541d5c7d86",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 78,
+  "previousCumulativeSearchRadiusKm": 250,
+  "istanbulExhaustedEvidence": "İstanbul Çakıl, Dilburnu ve Türknil erişim/koruma araştırmaları açık; Selvi Burnu askerî kapsamda. Önceden taranmış 250 km korunuyor. Bu koşuda yakın Bursa kıyılarında 59–78 km aralığında farklı yerleşimler yeniden tarandı; ad, koordinat ve kıyı kapsamı mevcut veriyle karşılaştırıldı. İstanbul tamamen tükendi iddiası yok.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "bursa-gemlik-kumla-acik-sahil",
+    "bursa-mudanya-egerce-acik-kiyi",
+    "bursa-gemlik-narli-acik-kiyi",
+    "bursa-gemlik-kumsaz-acik-sahil"
+  ],
+  "promotionSlugs": [
+    "ulusal-balikesir-saribeyler-baraj-golu",
+    "ulusal-canakkale-bayramic-baraj-golu",
+    "ulusal-canakkale-gokceada-baraj-golu"
+  ],
+  "indexReleaseSlugs": [
+    "bursa-gemlik-kumla-acik-sahil",
+    "bursa-mudanya-egerce-acik-kiyi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ulusal-balikesir-saribeyler-baraj-golu",
+    "ulusal-canakkale-bayramic-baraj-golu",
+    "ulusal-canakkale-gokceada-baraj-golu"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-16.json",
+  "decisions": [
+    {
+      "slug": "bursa-gemlik-kumla-acik-sahil",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 60.635,
+      "identityAndSpecies": "19 Kasım 2016 Kumla avını anlatan katılımcı istavrit yakaladığını bildirir. Tarihli bireysel av raporudur; resmî stok araştırması veya güncel av garantisi değildir.",
+      "access": "Kumla kıyısındaki yürüyüş yollarının halkın kullanımına hazırlandığını kaydeder. Yosunlu kıyı yüzeyleri kaygandır. Körfezde tekne trafiğine, yürüyüşçülere ve yüzücülere yakın atış yapmayın; dalga yaya bandına ulaşıyorsa kıyıdan çekilin.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir. Amatör avın satışı yasaktır; güncel miktar ve takım hükümleri de uygulanır.",
+      "sources": [
+        "https://www.balikavi.net/konu/19-11-2016-gemlik-bursa-yemli-sarikanat-istavrit-avim.64539/",
+        "https://gemlik.bel.tr/tr/gemlik-belediyesinden-kapsamli-sahil-temizligi-operasyonu?n=10313",
+        "https://www.openstreetmap.org/node/11290795474",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "bursa-mudanya-egerce-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 77.376,
+      "identityAndSpecies": "17 Eylül 2008 tarihli egerce1978/Halil paylaşımı Eğerce için istavrit kaydeder. Tarihsel yerel gözlemdir; güncel bolluk veya bütün kıyı kesimleri için yakalama garantisi sayılmaz.",
+      "access": "5 Eylül 2016 belediye kaydı sahilde tamamlanan yürüyüş yolu ve kamusal plaj düzenini tanımlar; bugünkü tesis hizmet saatlerini doğrulamaz. Açık kıyıda rüzgâr ve dalga hızla artabilir. Suya girerek mesafe kazanmayın. Kum şırlanı/midye toplama bu olta rotasına dahil değildir; yerel yasak denetimi kaydı vardır.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir. Amatör avın satışı yasaktır; güncel miktar ve takım hükümleri de uygulanır.",
+      "sources": [
+        "https://www.balikavi.net/konu/bursa-avlak-bolgeleri.16362/",
+        "https://www.bursa.bel.tr/haber/egerceye-buyuksehir-eli-degdi",
+        "https://www.haritamap.com/lokasyon/egerce-halk-plaji-2194",
+        "https://bursa.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=1489",
+        "https://www.gotobursa.com.tr/tr/mekan/egerce-halk-plaji-1123/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "bursa-gemlik-narli-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 58.817,
+      "identityAndSpecies": "26 Mayıs 2012 tarihli Öner paylaşımı Narlı kıyısından istavrit yakaladığını bildirir. Tekne avı anlatımı ayrı tutuldu. Gemlik Narlı kaydıdır; Erdek veya Edremit Narlı değildir.",
+      "access": "Fırtına sonrası Narlı kıyısı temizlenip vatandaşların kullanımına hazırlandığı kaydedilir; aynı zamanda dalganın yola ulaşabildiğini belgeler. Belediye, fırtınada deniz suyunun yola kadar çıktığını kaydeder. Kuru dönüş yolu kalmıyorsa yaklaşmayın; liman ağzına ve tekne rotasına olta atmayın.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir. Amatör avın satışı yasaktır; güncel miktar ve takım hükümleri de uygulanır.",
+      "sources": [
+        "https://www.balikavi.net/konu/narli-fistikli-armutlu-yardim.47582/",
+        "https://gemlik.bel.tr/tr/dalgalar-cekildi-temizlik-basladi?n=14703",
+        "https://www.openstreetmap.org/node/1498888381",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "bursa-gemlik-kumsaz-acik-sahil",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 69.686,
+      "identityAndSpecies": "2 Kasım 2007 tarihli Atos/Bülent kıyı anlatımı Kumsaz ve Gemsaz için istavrit dahil türleri adlandırır. Paylaşım tarihsel kişisel deneyimdir; bu sayfa yalnız Kumsaz kıyısını kapsar, bugünkü stok ölçümü değildir.",
+      "access": "Kumsaz kamuya açık sahil alanında çadır, ateş ve kapalı alanlara araç girişi denetimlerini tanımlar. Çadır kurma, ateş yakma ve kıyıya araçla girme kısıtlarına uyun. Kumsalın temiz görünmesi güncel su veya balık tüketim güvenliği kanıtı değildir; kötü koku veya görünür kirlilikte avlanmayın.",
+      "law": "6/2 ve 2026/26 geçerlidir. İstavrit en az 12 cm olmalıdır. 1 Nisan–15 Kasım arasında şamandıralı yüzme alanında avlanmak yasaktır; kıyı levhaları ve liman güvenlik sınırları ayrıca geçerlidir. Amatör avın satışı yasaktır; güncel miktar ve takım hükümleri de uygulanır.",
+      "sources": [
+        "https://www.balikavi.net/konu/bursa-avlak-bolgeleri.16362/",
+        "https://gemlik.bel.tr/tr/gemlik-sahillerinde-siki-denetim?n=17818",
+        "https://www.haritamap.com/lokasyon/kumsaz-plaji-2200",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-balikesir-saribeyler-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": "noindex",
+      "distanceKmFromIstanbulCenter": 211.154,
+      "identityAndSpecies": "324. satır: Savaştepe Sarıbeyler rezervuarında aynalı ve pullu sazan balıklandırması kaydedilir. Tarihsel salım kaydıdır; güncel stok, serbest kıyı girişi veya amatör av izni değildir.",
+      "access": "Adlandırılmış su varlığı; genel konum Giriş veya amatör av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2015-harital%C4%B1-istatistik-b%C3%BClteni.pdf",
+        "https://www.openstreetmap.org/way/85409950",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-canakkale-bayramic-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": "noindex",
+      "distanceKmFromIstanbulCenter": 235.449,
+      "identityAndSpecies": "327. satır: Çanakkale Bayramiç rezervuarında aynalı ve pullu sazan balıklandırması kaydedilir. Tarihsel salım kaydıdır; güncel stok, serbest kıyı girişi veya amatör av izni değildir.",
+      "access": "Adlandırılmış su varlığı; genel konum Giriş veya amatör av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2015-harital%C4%B1-istatistik-b%C3%BClteni.pdf",
+        "https://www.openstreetmap.org/relation/2935407",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-canakkale-gokceada-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": "noindex",
+      "distanceKmFromIstanbulCenter": 279.584,
+      "identityAndSpecies": "322. satır: Çanakkale Gökçeada rezervuarında aynalı ve pullu sazan balıklandırması kaydedilir. Tarihsel salım kaydıdır; güncel stok, serbest kıyı girişi veya amatör av izni değildir.",
+      "access": "Adlandırılmış su varlığı; genel konum Giriş veya amatör av izni değildir.",
+      "law": "Kamusal kuru kıyı girişi, güncel işletme/koruma sınırları ve yerel avlanma uygunluğu tamamlanmadı. Bu nedenle kayıt HOLD/noindex kalır; C+ veya yayıma hazır sayılmaz.",
+      "sources": [
+        "https://cdniys.tarimorman.gov.tr/api/File/GetFile/425/KonuIcerik/769/1117/DosyaGaleri/2015-harital%C4%B1-istatistik-b%C3%BClteni.pdf",
+        "https://www.openstreetmap.org/way/221940242",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "productionStatus": "pending",
+    "newRoutesPublished": 0,
+    "actualConfidencePromotions": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0
+  },
+  "shortfall": {
+    "newReason": null,
+    "promotionReason": null
+  },
+  "backlogAllocation": {
+    "fromDate": "2026-11-15",
+    "newRouteSlugs": [
+      "bursa-gemlik-kumla-acik-sahil",
+      "bursa-mudanya-egerce-acik-kiyi"
+    ],
+    "currentDateNewRouteSlugs": [
+      "bursa-gemlik-narli-acik-kiyi",
+      "bursa-gemlik-kumsaz-acik-sahil"
+    ],
+    "status": "pending_live_verification",
+    "unresolvedPriorDayPromotions": 3
+  },
+  "existingPromotionResearchRadiusKm": 280
+}

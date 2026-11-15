@@ -76,11 +76,17 @@ export function validateDailyAvlakQuality(ledger, baseline, routes) {
     }
     fail(decision?.baselineGrade !== (baseline.routes[slug] ? grade(baseline.routes[slug]) : null) || decision?.finalGrade !== grade(route), `${slug}: önce/sonra sınıf kaydı uyuşmuyor.`);
   }
-  const publishedNew = actualNew.filter(slug => indexable(current.get(slug))).length;
+  // A live C+ HOLD page is a new page, but does not spend an index release.
+  const publishedNew = actualNew.length;
   const releasedExisting = actualReleases.filter(slug => !!baseline.routes[slug]).length;
   if (ledger.publication?.verified) {
     fail(!ledger.publication.liveSha || ledger.publication.liveSha !== ledger.publication.mergedMainSha, 'Canlı/main tam SHA eşleşmeli.');
     fail(ledger.publication.newRoutesPublished !== publishedNew || ledger.publication.existingRoutesReleased !== releasedExisting, 'Canlı teslim sayaçları gerçek yayınlarla eşleşmeli.');
+    for (const slug of actualNew.filter(slug => !indexable(current.get(slug)))) {
+      const proof = ledger.publication.pages?.find(page => page.slug === slug);
+      fail(!proof || proof.status !== 200 || proof.canonical !== `https://oltaatlasi.com/meralar/${slug}/` || proof.indexing !== 'noindex' || proof.inSitemap !== false || proof.liveSha !== ledger.publication.liveSha,
+        `${slug}: yeni HOLD sayfası için canlı 200/canonical/noindex/sitemap ve SHA kanıtı gerekli.`);
+    }
   } else fail((ledger.publication?.newRoutesPublished || 0) > 0 || (ledger.publication?.existingRoutesReleased || 0) > 0, 'Canlı doğrulama olmadan teslim sayılmaz.');
   return errors;
 }

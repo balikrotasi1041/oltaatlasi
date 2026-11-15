@@ -24,4 +24,26 @@ check((l, b) => { b.routeCount += 1; }, 'Baseline rota sayısı');
 if (ledger.newRouteSlugs.length) check((l) => { l.newRouteSlugs = []; }, 'gerçek baseline farkıyla');
 if (ledger.promotionSlugs.length) check((l) => { l.promotionSlugs = []; }, 'baseline farkıyla');
 if (ledger.indexReleaseSlugs.length) check((l) => { l.indexReleaseSlugs = []; }, 'baseline farkıyla');
+// Verified new pages and index releases must stay separate when the quota is full.
+const heldNew = ledger.newRouteSlugs.filter(slug => meralar.find(r => r.slug === slug)?.indexing === 'hold');
+if (heldNew.length) {
+  const verified = structuredClone(ledger);
+  const sha = 'a'.repeat(40);
+  verified.publication = {
+    verified: true, liveSha: sha, mergedMainSha: sha,
+    newRoutesPublished: ledger.newRouteSlugs.length,
+    existingRoutesReleased: ledger.indexReleaseSlugs.filter(slug => baseline.routes[slug]).length,
+    pages: heldNew.map(slug => ({ slug, status: 200,
+      canonical: `https://oltaatlasi.com/meralar/${slug}/`, indexing: 'noindex', inSitemap: false, liveSha: sha }))
+  };
+  assert.deepEqual(validateDailyAvlakQuality(verified, baseline, meralar), []);
+  for (const change of [p => { p.pages = []; }, p => { p.pages[0].status = 404; },
+    p => { p.pages[0].inSitemap = true; }, p => { p.pages[0].liveSha = 'wrong'; },
+    p => { p.pages[0].indexing = 'index'; }, p => { p.pages[0].canonical = 'https://example.org/'; }]) {
+    const bad = structuredClone(verified); change(bad.publication);
+    assert(validateDailyAvlakQuality(bad, baseline, meralar).some(e => e.includes('HOLD sayfası')));
+  }
+  verified.publication.newRoutesPublished -= heldNew.length;
+  assert(validateDailyAvlakQuality(verified, baseline, meralar).some(e => e.includes('teslim sayaçları')));
+}
 console.log('Günlük avlak/kalite politika regresyonları geçti.');
