@@ -28,3 +28,9 @@ Yeni kıyı araştırması İstanbul sabit merkezine 59–78 km aralığındadı
 Tam build; veri şeması, mükerrerlik, içerik, indeks/sitemap/canonical politikaları ve günlük program regresyonlarını içererek geçti. Canlı noindex yeni sayfaların günlük yeni sayfa sayacında sayılabilmesi için HTTP 200, doğru canonical, noindex, sitemap dışında olma ve aynı yayın SHA’sı zorunlu kılındı. Bu kayıtlar indeks salımı sayacına dahil edilmez. Eksik veya çelişkili canlı kanıtı reddeden testler eklendi.
 
 Yayın sonucu günlük ledger’ın `publication` alanında sonradan kaydedilecektir. PR öncesi bu rapor bir canlı teslim kanıtı değildir.
+
+## Canlı teslim doğrulandı
+
+PR [#218](https://github.com/balikrotasi1041/oltaatlasi/pull/218) başarılı CI sonrası squash birleştirildi. Production çalışması 43769197040 başarılıdır. Canlı sürüm `e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65` ile tam eşleşti. Doğrulama zamanı: 2026-11-15T22:26:58.750584+00:00.
+
+Dört yeni ve üç terfi sayfası HTTP 200; canonical adresleri doğru. Kumla/Eğerce index,follow ve sitemap içinde; Narlı/Kumsaz ile üç baraj noindex,follow ve sitemap dışında doğrulandı. Günlük sayaçlar: 4 yeni sayfa, 3 gerçek terfi, 2/2 ortak indeks salımı. Google indekslenmesi iddia edilmez. 15 Kasım iki yeni sayfa açığı bugün teslim edildi; 15 Kasım üç terfi açığı korunuyor.

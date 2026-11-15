@@ -27,8 +27,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Kumla Açık Sahil",
-      "decision": "ready_pending_publication",
-      "plannedIndexing": "index"
+      "decision": "published_index_verified",
+      "plannedIndexing": "index",
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00",
+      "publicationDate": "2026-11-16"
     },
     {
       "slug": "bursa-mudanya-egerce-acik-kiyi",
@@ -49,8 +52,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Eğerce Açık Kıyısı",
-      "decision": "ready_pending_publication",
-      "plannedIndexing": "index"
+      "decision": "published_index_verified",
+      "plannedIndexing": "index",
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00",
+      "publicationDate": "2026-11-16"
     },
     {
       "slug": "bursa-gemlik-narli-acik-kiyi",
@@ -69,8 +75,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Gemlik Narlı Açık Kıyısı",
-      "decision": "ready_pending_publication",
-      "plannedIndexing": "hold"
+      "decision": "published_noindex_daily_quota",
+      "plannedIndexing": "hold",
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00",
+      "publicationDate": "2026-11-16"
     },
     {
       "slug": "bursa-gemlik-kumsaz-acik-sahil",
@@ -89,8 +98,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Kumsaz Açık Sahil",
-      "decision": "ready_pending_publication",
-      "plannedIndexing": "hold"
+      "decision": "published_noindex_daily_quota",
+      "plannedIndexing": "hold",
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00",
+      "publicationDate": "2026-11-16"
     },
     {
       "slug": "kirklareli-demirkoy-igneada-merkez-deniz-kiyisi",
@@ -212,7 +224,7 @@
       "slug": "ulusal-balikesir-saribeyler-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 211.154,
       "identityAndSpecies": "324. satır: Savaştepe Sarıbeyler rezervuarında aynalı ve pullu sazan balıklandırması kaydedilir. Tarihsel salım kaydıdır; güncel stok, serbest kıyı girişi veya amatör av izni değildir.",
       "access": "Adlandırılmış su varlığı; genel konum Giriş veya amatör av izni değildir.",
@@ -224,13 +236,15 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Sarıbeyler Baraj Gölü",
-      "decision": "C_hold_public_access_and_local_law_pending"
+      "decision": "C_hold_public_access_and_local_law_pending",
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00"
     },
     {
       "slug": "ulusal-canakkale-bayramic-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 235.449,
       "identityAndSpecies": "327. satır: Çanakkale Bayramiç rezervuarında aynalı ve pullu sazan balıklandırması kaydedilir. Tarihsel salım kaydıdır; güncel stok, serbest kıyı girişi veya amatör av izni değildir.",
       "access": "Adlandırılmış su varlığı; genel konum Giriş veya amatör av izni değildir.",
@@ -242,13 +256,15 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Bayramiç Baraj Gölü",
-      "decision": "C_hold_public_access_and_local_law_pending"
+      "decision": "C_hold_public_access_and_local_law_pending",
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00"
     },
     {
       "slug": "ulusal-canakkale-gokceada-baraj-golu",
       "baselineGrade": "D",
       "finalGrade": "C",
-      "previousIndexing": null,
+      "previousIndexing": "noindex",
       "distanceKmFromIstanbulCenter": 279.584,
       "identityAndSpecies": "322. satır: Çanakkale Gökçeada rezervuarında aynalı ve pullu sazan balıklandırması kaydedilir. Tarihsel salım kaydıdır; güncel stok, serbest kıyı girişi veya amatör av izni değildir.",
       "access": "Adlandırılmış su varlığı; genel konum Giriş veya amatör av izni değildir.",
@@ -260,7 +276,9 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Gökçeada Baraj Gölü",
-      "decision": "C_hold_public_access_and_local_law_pending"
+      "decision": "C_hold_public_access_and_local_law_pending",
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00"
     },
     {
       "slug": "ulusal-canakkale-bakacak-baraj-golu",
@@ -330,14 +348,16 @@
       "previousIndexing": "hold",
       "distanceKmFromIstanbulCenter": 69.686,
       "decision": "deferred_daily_quota",
-      "reason": "16 Kasım ortak indeks kotası 2/2 planlandı. Canlı noindex yayımı sonrası ilk uygun günde çekirdek kanıtları yeniden incele.",
+      "reason": "16 Kasım ortak indeks kotası 2/2 kullanıldı. C+ sayfa canlı noindex doğrulandı; ilk uygun salım gününde çekirdek kanıtları yeniden incele.",
       "sources": [
         "https://www.balikavi.net/konu/bursa-avlak-bolgeleri.16362/",
         "https://gemlik.bel.tr/tr/gemlik-sahillerinde-siki-denetim?n=17818",
         "https://www.haritamap.com/lokasyon/kumsaz-plaji-2200",
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00"
     },
     {
       "slug": "bursa-gemlik-narli-acik-kiyi",
@@ -345,14 +365,16 @@
       "previousIndexing": "hold",
       "distanceKmFromIstanbulCenter": 58.817,
       "decision": "deferred_daily_quota",
-      "reason": "16 Kasım ortak indeks kotası 2/2 planlandı. Canlı noindex yayımı sonrası ilk uygun günde çekirdek kanıtları yeniden incele.",
+      "reason": "16 Kasım ortak indeks kotası 2/2 kullanıldı. C+ sayfa canlı noindex doğrulandı; ilk uygun salım gününde çekirdek kanıtları yeniden incele.",
       "sources": [
         "https://www.balikavi.net/konu/narli-fistikli-armutlu-yardim.47582/",
         "https://gemlik.bel.tr/tr/dalgalar-cekildi-temizlik-basladi?n=14703",
         "https://www.openstreetmap.org/node/1498888381",
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
-      ]
+      ],
+      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+      "verifiedAt": "2026-11-15T22:26:58.750584+00:00"
     },
     {
       "slug": "ulusal-nevsehir-damsa-baraj-golu",
