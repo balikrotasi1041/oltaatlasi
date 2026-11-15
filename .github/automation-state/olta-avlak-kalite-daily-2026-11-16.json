@@ -153,12 +153,117 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
-    "actualConfidencePromotions": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 4,
+    "actualConfidencePromotions": 3,
     "existingRoutesReleased": 0,
-    "indexReleases": 0
+    "indexReleases": 2,
+    "mergedMainSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+    "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/218",
+    "ciRunId": 43769080241,
+    "productionRunId": 43769197040,
+    "verifiedAt": "2026-11-15T22:26:58.750584+00:00",
+    "pages": [
+      {
+        "slug": "bursa-gemlik-kumla-acik-sahil",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/bursa-gemlik-kumla-acik-sahil/",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-gemlik-kumla-acik-sahil/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "sitemap": true,
+        "indexing": "index",
+        "inSitemap": true,
+        "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65"
+      },
+      {
+        "slug": "bursa-mudanya-egerce-acik-kiyi",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/bursa-mudanya-egerce-acik-kiyi/",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-mudanya-egerce-acik-kiyi/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "sitemap": true,
+        "indexing": "index",
+        "inSitemap": true,
+        "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65"
+      },
+      {
+        "slug": "bursa-gemlik-narli-acik-kiyi",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/bursa-gemlik-narli-acik-kiyi/",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-gemlik-narli-acik-kiyi/",
+        "robots": "noindex,follow",
+        "sitemap": false,
+        "indexing": "noindex",
+        "inSitemap": false,
+        "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65"
+      },
+      {
+        "slug": "bursa-gemlik-kumsaz-acik-sahil",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/bursa-gemlik-kumsaz-acik-sahil/",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-gemlik-kumsaz-acik-sahil/",
+        "robots": "noindex,follow",
+        "sitemap": false,
+        "indexing": "noindex",
+        "inSitemap": false,
+        "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65"
+      },
+      {
+        "slug": "ulusal-balikesir-saribeyler-baraj-golu",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/ulusal-balikesir-saribeyler-baraj-golu/",
+        "canonical": "https://oltaatlasi.com/meralar/ulusal-balikesir-saribeyler-baraj-golu/",
+        "robots": "noindex,follow",
+        "sitemap": false,
+        "indexing": "noindex",
+        "inSitemap": false,
+        "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65"
+      },
+      {
+        "slug": "ulusal-canakkale-bayramic-baraj-golu",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/ulusal-canakkale-bayramic-baraj-golu/",
+        "canonical": "https://oltaatlasi.com/meralar/ulusal-canakkale-bayramic-baraj-golu/",
+        "robots": "noindex,follow",
+        "sitemap": false,
+        "indexing": "noindex",
+        "inSitemap": false,
+        "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65"
+      },
+      {
+        "slug": "ulusal-canakkale-gokceada-baraj-golu",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/ulusal-canakkale-gokceada-baraj-golu/",
+        "canonical": "https://oltaatlasi.com/meralar/ulusal-canakkale-gokceada-baraj-golu/",
+        "robots": "noindex,follow",
+        "sitemap": false,
+        "indexing": "noindex",
+        "inSitemap": false,
+        "liveSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65"
+      }
+    ],
+    "checks": {
+      "newPages200": true,
+      "canonical": true,
+      "indexReleasePagesIndexFollow": true,
+      "quotaHeldNewPagesNoindex": true,
+      "sitemapMatchesIndexing": true,
+      "promotionPages200": true,
+      "promotionPagesNoindex": true
+    },
+    "newRouteUrls": [
+      "https://oltaatlasi.com/meralar/bursa-gemlik-kumla-acik-sahil/",
+      "https://oltaatlasi.com/meralar/bursa-mudanya-egerce-acik-kiyi/",
+      "https://oltaatlasi.com/meralar/bursa-gemlik-narli-acik-kiyi/",
+      "https://oltaatlasi.com/meralar/bursa-gemlik-kumsaz-acik-sahil/"
+    ],
+    "promotionUrls": [
+      "https://oltaatlasi.com/meralar/ulusal-balikesir-saribeyler-baraj-golu/",
+      "https://oltaatlasi.com/meralar/ulusal-canakkale-bayramic-baraj-golu/",
+      "https://oltaatlasi.com/meralar/ulusal-canakkale-gokceada-baraj-golu/"
+    ]
   },
   "shortfall": {
     "newReason": null,
@@ -174,8 +279,10 @@
       "bursa-gemlik-narli-acik-kiyi",
       "bursa-gemlik-kumsaz-acik-sahil"
     ],
-    "status": "pending_live_verification",
-    "unresolvedPriorDayPromotions": 3
+    "status": "new_route_backlog_delivered_prior_promotions_open",
+    "unresolvedPriorDayPromotions": 3,
+    "deliveredOn": "2026-11-16",
+    "priorDayPromotionsReason": "15 Kasım terfi teslimi yok; 16 Kasım üç terfi yalnız bugüne sayıldı. Geçmiş açık hedef korunuyor."
   },
   "existingPromotionResearchRadiusKm": 280
 }
