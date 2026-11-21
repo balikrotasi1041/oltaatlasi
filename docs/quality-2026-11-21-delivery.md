@@ -21,4 +21,6 @@ Tarihsel kişisel av anlatımları güncel bolluk veya stok ölçümü olarak su
 
 ## Yayın durumu
 
-Bu bölüm PR öncesi hazırlık kaydıdır. Build, kalite kontrolleri, deploy provası, PR/CI, squash merge, production exact SHA ve canlı sayfa/canonical/robots/sitemap denetimleri tamamlanmadan günlük teslim sayaçları sıfırdır.
+PR #223 kalite kontrolünden geçti ve squash merge edildi. Production workflow `44935029409` başarılıdır; canlı `/__deploy/version.txt` işareti `3570c50a9042fa1ca27ee84ebdd7ebc237eef332` olarak exact main SHA ile eşleşmiştir. İki yeni sayfa HTTP 200, doğru canonical, `index,follow` ve sitemap üyeliğiyle; Çınarcık mevcut indeks durumunu koruyarak; Uluabat ve Mustafakemalpaşa Çayı ise HTTP 200, doğru canonical, `noindex,follow` ve sitemap dışında canlı doğrulanmıştır.
+
+Günlük teslim: 2 yeni C+, 3 gerçek güven terfisi, 2/2 ortak indeks salımı. Google'ın gerçekten indekslemesi iddia edilmez; yalnız teknik indekslenebilirlik doğrulanmıştır.
