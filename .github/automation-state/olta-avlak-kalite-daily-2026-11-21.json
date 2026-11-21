@@ -117,17 +117,24 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
-    "actualConfidencePromotions": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 2,
+    "actualConfidencePromotions": 3,
     "existingRoutesReleased": 0,
-    "indexReleases": 0,
-    "mergedMainSha": null,
-    "liveSha": null,
-    "pr": null,
-    "ciRunId": null,
-    "productionRunId": null,
-    "pages": []
+    "indexReleases": 2,
+    "mergedMainSha": "3570c50a9042fa1ca27ee84ebdd7ebc237eef332",
+    "liveSha": "3570c50a9042fa1ca27ee84ebdd7ebc237eef332",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/223",
+    "ciRunId": 44934844301,
+    "productionRunId": 44935029409,
+    "verifiedAt": "2026-11-21T21:23:00+03:00",
+    "pages": [
+      { "slug": "bursa-gemlik-gemsaz-acik-halk-plaji", "status": 200, "robots": "index,follow", "canonical": "https://oltaatlasi.com/meralar/bursa-gemlik-gemsaz-acik-halk-plaji/", "inSitemap": true },
+      { "slug": "bursa-mudanya-altintas-acik-halk-plaji", "status": 200, "robots": "index,follow", "canonical": "https://oltaatlasi.com/meralar/bursa-mudanya-altintas-acik-halk-plaji/", "inSitemap": true },
+      { "slug": "cinarcik-sahili", "status": 200, "robots": "index,follow", "canonical": "https://oltaatlasi.com/meralar/cinarcik-sahili/", "inSitemap": true },
+      { "slug": "ankara-500km-bursa-uluabat-golu", "status": 200, "robots": "noindex,follow", "canonical": "https://oltaatlasi.com/meralar/ankara-500km-bursa-uluabat-golu/", "inSitemap": false },
+      { "slug": "ankara-500km-bursa-mustafakemalpasa-cayi", "status": 200, "robots": "noindex,follow", "canonical": "https://oltaatlasi.com/meralar/ankara-500km-bursa-mustafakemalpasa-cayi/", "inSitemap": false }
+    ]
   }
 }
