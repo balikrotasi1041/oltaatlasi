@@ -1,0 +1,133 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-21",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-21.json",
+  "baselineMainSha": "2c8493cfeec7dc8a8a4b35a219bcd9eae491d0ab",
+  "startingLiveSha": "2c8493cfeec7dc8a8a4b35a219bcd9eae491d0ab",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 250,
+  "istanbulExhaustedEvidence": "İstanbul Çakıl, Dilburnu ve Türknil erişim/koruma araştırmaları açık tutuldu; İstanbul tamamen tükendi iddiası yok. Önceden taranmış 250 km yarıçap korunarak İstanbul merkezine 66,545 km Gemsaz ve 72,462 km Altıntaş adayları ad, slug, koordinat ve kıyı kapsamıyla mevcut veri setinden ayrıştırıldı.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "bursa-gemlik-gemsaz-acik-halk-plaji",
+    "bursa-mudanya-altintas-acik-halk-plaji"
+  ],
+  "promotionSlugs": [
+    "cinarcik-sahili",
+    "ankara-500km-bursa-uluabat-golu",
+    "ankara-500km-bursa-mustafakemalpasa-cayi"
+  ],
+  "indexReleaseSlugs": [
+    "bursa-gemlik-gemsaz-acik-halk-plaji",
+    "bursa-mudanya-altintas-acik-halk-plaji"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "cinarcik-sahili",
+    "ankara-500km-bursa-uluabat-golu",
+    "ankara-500km-bursa-mustafakemalpasa-cayi"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-21.json",
+  "decisions": [
+    {
+      "slug": "bursa-gemlik-gemsaz-acik-halk-plaji",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 66.545,
+      "identityAndSpecies": "23 Ağustos 2010 tarihli birinci el anlatım Gemsaz kıyısında kırmızı kurtla mırmır yakalandığını bildirir. Tarihsel kişisel deneyimdir; bugünkü stok veya yakalama garantisi değildir.",
+      "access": "Gemlik Belediyesi Gemsaz'ı kamuya açık ortak sahil alanı olarak tanımlar; çadır, ateş ve trafiğe kapalı alana araç girişi denetlenir.",
+      "law": "6/2 ve 2026/26 geçerlidir. İşaretli yüzme alanı, iskele, kayıkhane ve özel tesisler kapsam dışıdır; yerel tabela ve geçici kapatmalar uygulanır.",
+      "sources": [
+        "https://www.balikavi.net/konu/gemsaz-da-iri-mimir-ve-ispendek.35092/",
+        "https://www.gemlik.bel.tr/tr/gemlik-sahillerinde-siki-denetim?n=17818",
+        "https://dergipark.org.tr/tr/download/article-file/4653659",
+        "https://www.bursa.bel.tr/haber/plajlar-yaza-hazir-hale-getiriliyor",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "bursa-mudanya-altintas-acik-halk-plaji",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 72.462,
+      "identityAndSpecies": "12 Eylül 2008 tarihli yerel anlatım Altıntaş kıyısındaki taşlık kesimden gece yemli dip oltasıyla beş mırmır yakalandığını bildirir. Tarihsel kişisel deneyimdir; bugünkü stok veya yakalama garantisi değildir.",
+      "access": "Bursa Büyükşehir Belediyesi 16 Nisan 2026 duyurusunda Altıntaş Halk Plajını güncel bakım kapsamındaki kamusal kıyılar arasında sayar.",
+      "law": "6/2, 2026/26 ve Mudanya 2026 yerel kararı geçerlidir. Belirlenmiş yüzme alanında av ve olta bulundurulmaz; yalnız sınır dışındaki kuru açık kıyı kapsanır.",
+      "sources": [
+        "https://www.balikavi.net/konu/bursada-avlak-yerleri.10699/",
+        "https://www.bursa.bel.tr/haber/plajlar-yaza-hazir-hale-getiriliyor",
+        "https://www.mudanya.gov.tr/2026-yili-mudanya-ilce-bogulma-olaylarini-onleme-komisyonu-kararlari",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "cinarcik-sahili",
+      "baselineGrade": "C",
+      "finalGrade": "C+",
+      "previousIndexing": "index",
+      "distanceKmFromIstanbulCenter": 42.532,
+      "identityAndSpecies": "11 Haziran 2010 tarihli anlatım Çınarcık Taşliman/Kocadere hattında kıyıdan sabah-akşam istavrit bildirir; güncel bolluk garantisi değildir.",
+      "access": "Çınarcık Belediyesi Cumhuriyet Meydanı–Koru arasında yaklaşık 5 km kamusal sahil yürüyüş yolunu doğrular. Yüzme alanı, iskele ve özel tesisler kapsam dışıdır.",
+      "law": "6/2 ve 2026/26 geçerlidir. Yüzme alanları, iskele/mendirek ve geçici kapatma levhaları dışında kuru kıyıda kalınır.",
+      "sources": [
+        "https://www.balikavi.net/konu/yalova-cinarcik-kiyidan-balik-avi.33550/",
+        "https://cinarcik.bel.tr/cinarcik/turizm",
+        "https://cinarcik.bel.tr/guncel/projeler/koru-sahil-yolu-projesi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-bursa-uluabat-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": "noindex",
+      "distanceKmFromIstanbulCenter": 98.867,
+      "identityAndSpecies": "Berber ve arkadaşlarının 2021 hakemli araştırması Uluabat Gölü'nden Cyprinus carpio örnekler; güncel bolluk veya kıyı av izni değildir.",
+      "access": "Kamusal kıyı girişi, Ramsar/işletme sınırları ve yerel amatör av uygunluğu doğrulanmadı; genel su geometrisi av izni değildir.",
+      "law": "6/2 genel çerçevesi bilinir; koruma/işletme sınırları, yerel kararlar ve güncel su güvenliği açık olduğundan C/HOLD kalır.",
+      "sources": [
+        "https://dergipark.org.tr/tr/pub/limnofish/article/821628",
+        "https://www.openstreetmap.org/relation/1273044",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ankara-500km-bursa-mustafakemalpasa-cayi",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "previousIndexing": "noindex",
+      "distanceKmFromIstanbulCenter": 139.162,
+      "identityAndSpecies": "Aydoğdu ve Selver'in 2006 hakemli çalışması Mustafakemalpaşa Deresi'nden Alburnus alburnus örnekler; güncel bolluk veya av izni değildir.",
+      "access": "Mikro kıyı, kamusal geçiş, güncel kirlilik ve yerel amatör av uygunluğu doğrulanmadı; genel akarsu geometrisi av izni değildir.",
+      "law": "6/2 genel çerçevesi bilinir; yerel karar, su kalitesi ve güvenli erişim açık olduğundan C/HOLD kalır.",
+      "sources": [
+        "https://turkiyeparazitolderg.org/pdf/c1dc3a38-51db-436b-af33-1bc7522029b3/articles/22725/TPD-30-69.pdf",
+        "https://dergipark.org.tr/en/pub/biodicon/article/761897",
+        "https://www.openstreetmap.org/relation/1272911",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "productionStatus": "pending",
+    "newRoutesPublished": 0,
+    "actualConfidencePromotions": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0,
+    "mergedMainSha": null,
+    "liveSha": null,
+    "pr": null,
+    "ciRunId": null,
+    "productionRunId": null,
+    "pages": []
+  }
+}
