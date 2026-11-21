@@ -164,12 +164,99 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
-    "actualConfidencePromotions": 0,
-    "existingRoutesReleased": 0,
-    "indexReleases": 0
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 2,
+    "actualConfidencePromotions": 3,
+    "existingRoutesReleased": 2,
+    "indexReleases": 4,
+    "mergedMainSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+    "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/221",
+    "ciRunId": 44580279924,
+    "productionRunId": 44580596645,
+    "deployedAt": "2026-11-19T17:47:57Z",
+    "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+    "pages": [
+      {
+        "slug": "yalova-armutlu-fistikli-acik-sahil",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/yalova-armutlu-fistikli-acik-sahil/",
+        "canonical": "https://oltaatlasi.com/meralar/yalova-armutlu-fistikli-acik-sahil/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "inSitemap": true,
+        "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6"
+      },
+      {
+        "slug": "duzce-akcakoca-cayagzi-acik-deniz-kiyisi",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/duzce-akcakoca-cayagzi-acik-deniz-kiyisi/",
+        "canonical": "https://oltaatlasi.com/meralar/duzce-akcakoca-cayagzi-acik-deniz-kiyisi/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "inSitemap": true,
+        "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6"
+      },
+      {
+        "slug": "guzelyali-mudanya-sahili",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/guzelyali-mudanya-sahili/",
+        "canonical": "https://oltaatlasi.com/meralar/guzelyali-mudanya-sahili/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "inSitemap": true,
+        "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6"
+      },
+      {
+        "slug": "ankara-500km-bursa-demirtas-baraj-golu",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/ankara-500km-bursa-demirtas-baraj-golu/",
+        "canonical": "https://oltaatlasi.com/meralar/ankara-500km-bursa-demirtas-baraj-golu/",
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "inSitemap": false,
+        "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6"
+      },
+      {
+        "slug": "ankara-500km-bursa-hasanaga-baraj-golu",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/ankara-500km-bursa-hasanaga-baraj-golu/",
+        "canonical": "https://oltaatlasi.com/meralar/ankara-500km-bursa-hasanaga-baraj-golu/",
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "inSitemap": false,
+        "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6"
+      },
+      {
+        "slug": "bursa-gemlik-narli-acik-kiyi",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/bursa-gemlik-narli-acik-kiyi/",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-gemlik-narli-acik-kiyi/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "inSitemap": true,
+        "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6"
+      },
+      {
+        "slug": "bursa-gemlik-kumsaz-acik-sahil",
+        "status": 200,
+        "url": "https://oltaatlasi.com/meralar/bursa-gemlik-kumsaz-acik-sahil/",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-gemlik-kumsaz-acik-sahil/",
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "inSitemap": true,
+        "liveSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6"
+      }
+    ],
+    "verificationRecordedOn": "2026-11-21",
+    "checks": {
+      "pages200": true,
+      "canonical": true,
+      "robots": true,
+      "sitemapMatchesIndexing": true,
+      "exactMainSha": true
+    }
   },
   "shortfall": {
     "newReason": null,

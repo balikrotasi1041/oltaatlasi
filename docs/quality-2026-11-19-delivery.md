@@ -30,3 +30,11 @@ Tam build, şema, mükerrerlik, içerik, kalite, günlük sayaç, canonical/robo
 Bu rapor PR öncesi hazırlık kaydıdır. Canlı doğrulama tamamlanana kadar günlük başarı sayaçları sıfırdır. PR, production SHA ve sayfa kanıtları doğrulama sonrasında publication alanına eklenecektir.
 
 Mudanya 18 Ağustos 2026 tarihli 2026/01 kararının yedi sayfalık taraması görsel olarak okundu: sayfa 1 Güzelyalı/Burgaz yüzme bölgeleri; sayfa 3 madde 13 yüzme alanlarında av ve takım bulundurma yasağı. 2026/26 değişikliğinin 2. sayfası görsel olarak okundu; istavrit (karagöz) 13 cm → 12 cm değişikliği doğrulandı.
+
+## Canlı teslim ve gecikmiş kayıt
+
+PR [#221](https://github.com/balikrotasi1041/oltaatlasi/pull/221), başarılı Quality check #44580279924 sonrası squash birleştirildi. Production #44580596645, 19 Kasım 17:47:57 UTC tarihinde başarılı oldu. Canlı ve main SHA `46d7bc69d4ec9e0733fb0789f976296662140ab6`.
+
+21 Kasım tarihli canlı kontrolde yedi sayfa HTTP 200 ve doğru canonical ile doğrulandı. Fıstıklı, Çayağzı, Güzelyalı, Narlı ve Kumsaz index,follow ve sitemap içinde; Demirtaş ve Hasanağa noindex,follow ve sitemap dışında. robots.txt taramayı engellemiyor. Bu geç doğrulama 21 Kasım yeni sayfa veya yeni indeks salımı olarak sayılmaz.
+
+19 Kasım teslimi: 2 yeni C+ sayfa, 3 gerçek terfi, 2 mevcut HOLD salımı ve 4/4 ortak indeks kullanımı. Google'ın gerçekten indekslemesi iddia edilmez. 20–21 Kasım için henüz main üzerinde yeni içerik teslimi bulunmuyor; önceki açık günler korunuyor.

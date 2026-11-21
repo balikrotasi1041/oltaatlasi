@@ -28,8 +28,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Fıstıklı Açık Sahil",
-      "decision": "ready_pending_publication",
-      "plannedIndexing": "index"
+      "decision": "published_index_verified",
+      "plannedIndexing": "index",
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "duzce-akcakoca-cayagzi-acik-deniz-kiyisi",
@@ -49,8 +52,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Çayağzı Açık Deniz Kıyısı",
-      "decision": "ready_pending_publication",
-      "plannedIndexing": "index"
+      "decision": "published_index_verified",
+      "plannedIndexing": "index",
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "bursa-gemlik-kumla-acik-sahil",
@@ -117,11 +123,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Gemlik Narlı Açık Kıyısı",
-      "decision": "published_noindex_daily_quota",
+      "decision": "published_index_verified",
       "plannedIndexing": "hold",
-      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
-      "verifiedAt": "2026-11-15T22:26:58.750584+00:00",
-      "publicationDate": "2026-11-16"
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "bursa-gemlik-kumsaz-acik-sahil",
@@ -140,11 +146,11 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Kumsaz Açık Sahil",
-      "decision": "published_noindex_daily_quota",
+      "decision": "published_index_verified",
       "plannedIndexing": "hold",
-      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
-      "verifiedAt": "2026-11-15T22:26:58.750584+00:00",
-      "publicationDate": "2026-11-16"
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "kirklareli-demirkoy-igneada-merkez-deniz-kiyisi",
@@ -287,7 +293,10 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Güzelyalı Mudanya Sahili",
-      "decision": "promotion_pending_publication"
+      "decision": "promotion_live_verified",
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "ankara-500km-bursa-demirtas-baraj-golu",
@@ -305,7 +314,10 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Demirtaş Baraj Gölü",
-      "decision": "promotion_pending_publication"
+      "decision": "promotion_live_verified",
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "ankara-500km-bursa-hasanaga-baraj-golu",
@@ -323,7 +335,10 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "name": "Hasanağa Baraj Gölü",
-      "decision": "promotion_pending_publication"
+      "decision": "promotion_live_verified",
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "ulusal-balikesir-saribeyler-baraj-golu",
@@ -452,8 +467,8 @@
       "grade": "C+",
       "previousIndexing": "hold",
       "distanceKmFromIstanbulCenter": 69.686,
-      "decision": "release_pending_publication",
-      "reason": "19 Kasım çekirdek kanıtları yeniden incelendi; iki yeni sayfa sonrası ortak 4/4 kota kapsamında salım planlandı.",
+      "decision": "released_index_verified",
+      "reason": "19 Kasım salımı 21 Kasım canlı denetiminde doğrulandı.",
       "sources": [
         "https://www.balikavi.net/konu/bursa-avlak-bolgeleri.16362/",
         "https://gemlik.bel.tr/tr/gemlik-sahillerinde-siki-denetim?n=17818",
@@ -461,16 +476,17 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
-      "verifiedAt": "2026-11-15T22:26:58.750584+00:00"
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "bursa-gemlik-narli-acik-kiyi",
       "grade": "C+",
       "previousIndexing": "hold",
       "distanceKmFromIstanbulCenter": 58.817,
-      "decision": "release_pending_publication",
-      "reason": "19 Kasım çekirdek kanıtları yeniden incelendi; iki yeni sayfa sonrası ortak 4/4 kota kapsamında salım planlandı.",
+      "decision": "released_index_verified",
+      "reason": "19 Kasım salımı 21 Kasım canlı denetiminde doğrulandı.",
       "sources": [
         "https://www.balikavi.net/konu/narli-fistikli-armutlu-yardim.47582/",
         "https://gemlik.bel.tr/tr/dalgalar-cekildi-temizlik-basladi?n=14703",
@@ -478,8 +494,9 @@
         "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
-      "publicationSha": "e1f4c3a91ca3f66354adabfe3d1cdef3f5629a65",
-      "verifiedAt": "2026-11-15T22:26:58.750584+00:00"
+      "publicationSha": "46d7bc69d4ec9e0733fb0789f976296662140ab6",
+      "verifiedAt": "2026-11-21T17:59:31.840890+00:00",
+      "publicationDate": "2026-11-19"
     },
     {
       "slug": "ulusal-nevsehir-damsa-baraj-golu",
@@ -739,5 +756,14 @@
       "promotionsMissing": 3,
       "reason": "origin/main üzerinde doğrulanmış teslim kaydı yok"
     }
-  ]
+  ],
+  "deliveryAudit": {
+    "asOf": "2026-11-21",
+    "lastContentDeliveryDate": "2026-11-19",
+    "missingVerifiedDeliveryDates": [
+      "2026-11-20",
+      "2026-11-21"
+    ],
+    "note": "19 Kasım teslimleri yeniden sayılmaz. 20 ve 21 Kasım için main üzerinde yeni sayfa/terfi teslimi yok; bu denetim günlük içerik teslimi değildir."
+  }
 }
