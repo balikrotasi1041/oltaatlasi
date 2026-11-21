@@ -18,6 +18,15 @@ const check = (mutate, message) => {
 };
 check((l) => { l.indexReleaseCap = l.indexReleaseCap === 4 ? 2 : 4; }, 'ortak indeks kotası yanlış');
 check((l) => { l.baselineMainSha = 'wrong'; }, 'main SHA');
+// Prospective 17 November rule: never allow four new pages, while preserving historical ledgers.
+if (ledger.newRouteSlugs.length > 2) {
+  const futureLedger = structuredClone(ledger), futureBaseline = structuredClone(baseline);
+  futureLedger.date = '2026-11-17';
+  futureBaseline.date = '2026-11-17';
+  assert(validateDailyAvlakQuality(futureLedger, futureBaseline, meralar)
+    .some(error => error.includes('yeni avlak üst sınırı 2')), 'Günlük iki yeni avlak sınırı uygulanmalı.');
+}
+
 check((l) => { l.publication = { verified: true, liveSha: 'wrong', mergedMainSha: 'main', newRoutesPublished: 0, existingRoutesReleased: 0 }; }, 'tam SHA');
 check((l) => { l.newRouteSlugs = l.newRouteSlugs.slice(0, 1); l.shortfall = {}; }, 'eksik nedeni');
 check((l, b) => { b.routeCount += 1; }, 'Baseline rota sayısı');

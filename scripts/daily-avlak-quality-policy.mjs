@@ -38,6 +38,8 @@ export function validateDailyAvlakQuality(ledger, baseline, routes) {
     if (Array.isArray(ledger[field])) fail(new Set(ledger[field]).size !== ledger[field].length, `${field} çift sayıldı.`);
   }
   if (fields.some(field => !Array.isArray(ledger[field]))) return errors;
+  // New production limit applies prospectively; historical ledgers remain auditable.
+  fail(ledger.date >= '2026-11-17' && actualNew.length > 2, 'Günlük toplam yeni avlak üst sınırı 2 aşıldı.');
   fail(!same(actualNew, ledger.newRouteSlugs), 'Yeni avlak listesi gerçek baseline farkıyla uyuşmuyor.');
   fail(!same(actualPromotions, ledger.promotionSlugs), 'Gerçek sınıf terfisi listesi baseline farkıyla uyuşmuyor.');
   fail(!same(actualReleases, ledger.indexReleaseSlugs), 'İndeks salımı listesi baseline farkıyla uyuşmuyor.');
