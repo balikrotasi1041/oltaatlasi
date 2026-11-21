@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-21",
+  "center": { "lat": 41.0082, "lng": 28.9784 },
+  "previousRadiusKm": 250,
+  "currentRadiusKm": 250,
+  "dailyNewResearchRadiusKm": 72.462,
+  "phase": "Türkiye",
+  "coverage": "Önceki 250 km İstanbul merkezli kapsam korundu. Gemsaz ve Altıntaş ad, slug, koordinat ve su/kıyı kapsamıyla mevcut veri setinden ayrıştırıldı. İstanbul Çakıl, Dilburnu ve Türknil kanıt bekleyen kuyruğu korunur; İstanbul tamamen tükendi iddiası yoktur.",
+  "newRouteQueue": [
+    { "name": "Gemsaz Açık Halk Plajı", "slug": "bursa-gemlik-gemsaz-acik-halk-plaji", "distanceKmFromIstanbulCenter": 66.545, "decision": "ready_for_publication", "plannedIndexing": "index", "grade": "C+", "sources": ["https://www.balikavi.net/konu/gemsaz-da-iri-mimir-ve-ispendek.35092/", "https://www.gemlik.bel.tr/tr/gemlik-sahillerinde-siki-denetim?n=17818", "https://dergipark.org.tr/tr/download/article-file/4653659"] },
+    { "name": "Altıntaş Açık Halk Plajı", "slug": "bursa-mudanya-altintas-acik-halk-plaji", "distanceKmFromIstanbulCenter": 72.462, "decision": "ready_for_publication", "plannedIndexing": "index", "grade": "C+", "sources": ["https://www.balikavi.net/konu/bursada-avlak-yerleri.10699/", "https://www.bursa.bel.tr/haber/plajlar-yaza-hazir-hale-getiriliyor", "https://www.mudanya.gov.tr/2026-yili-mudanya-ilce-bogulma-olaylarini-onleme-komisyonu-kararlari"] },
+    { "name": "Çakıl Göleti", "decision": "public_access_pending", "reason": "Rota-özel örnekleme ve balıklandırma kaydı var; kamusal kuru kıyı girişi doğrulanmadı." },
+    { "name": "Büyükada Dilburnu", "decision": "protected_access_pending", "reason": "Koy özelinde tür verisi var; korunan alan içindeki olağan amatör kıyı erişimi belirsiz." },
+    { "name": "Beykoz Selvi Burnu", "decision": "excluded", "reason": "Askerî/güvenlik kapsamı nedeniyle genel avlak sayfası adayı değildir." }
+  ],
+  "promotionQueue": [
+    { "slug": "cinarcik-sahili", "before": "C", "after": "C+", "decision": "promote", "indexing": "index" },
+    { "slug": "ankara-500km-bursa-uluabat-golu", "before": "D", "after": "C", "decision": "promote_hold", "indexing": "hold" },
+    { "slug": "ankara-500km-bursa-mustafakemalpasa-cayi", "before": "D", "after": "C", "decision": "promote_hold", "indexing": "hold" }
+  ]
+}
