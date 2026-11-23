@@ -20,6 +20,11 @@ export const applyDailyQuality20260908Stage2=(routeMap:Map<string,EnrichedMera>)
     url:"https://www.anadoluosb.org.tr/neden-anadoluosb/",
     note:"Anadolu OSB'nin Temelli Sanayi Havzasında, Malıköy/Sincan/Ankara adresinde bulunduğunu ve bünyesinde doğal gölet ile rekreasyon alanları olduğunu kurumun kendi kaydıyla doğrular."
   };
+  const officialPond:ResearchSource={
+    label:"Anadolu OSB - Anadolu Göleti",
+    url:"https://www.anadoluosb.org.tr/anadolu-goleti/",
+    note:"Göletin OSB içindeki kimliğini, sazan varlığını ve balık tutma etkinliklerini belgeler. Etkinlik dışı giriş veya av izni belirtmez."
+  };
   const officialFishing:ResearchSource={
     label:"Anadolu OSB - 7. Sportif Sazan Balığı Yakalama Yarışması",
     url:"https://www.anadoluosb.org.tr/7-geneksel-sportif-sazan-baligi-yakalama-yarismasi/",
@@ -35,7 +40,7 @@ export const applyDailyQuality20260908Stage2=(routeMap:Map<string,EnrichedMera>)
     url:"https://www.ankara.bel.tr/tr/haberler/300-bisikletci-kale-de-dalgalanan-bayragi-anadolu-osb-ye-tasidi-14827",
     note:"Anadolu OSB Göletinde ASOF hakemliğinde Sportif Sazan Balığı Yakalama Yarışması yapıldığını belediye kaydıyla bağımsız olarak destekler."
   };
-  const sources=[...new Map([...(previous.sources||[]),officialIdentity,officialFishing,currentSpecies,municipalSupport,teblig].filter((s)=>s?.url).map((s)=>[s.url,s])).values()];
+  const sources=[...new Map([...(previous.sources||[]),officialIdentity,officialPond,officialFishing,currentSpecies,municipalSupport,teblig].filter((s)=>s?.url).map((s)=>[s.url,s])).values()];
   const risk="Gölet organize sanayi bölgesi sınırları içindedir; etkinlik günündeki kontrollü erişim sürekli kamusal giriş hakkı anlamına gelmez. OSB güvenlik/işletme kuralları, etkinlik dışı erişim, özel/teknik alan sınırları ve saha tabelaları hareket günü ayrıca doğrulanmalıdır.";
 
   routeMap.set(slug,{
@@ -46,7 +51,7 @@ export const applyDailyQuality20260908Stage2=(routeMap:Map<string,EnrichedMera>)
     confidence:"C",
     locationPrecision:"Genel bölge",
     navigationVerified:false,
-    summary:"Anadolu OSB Yağmursuyu Göleti, Sincan/Malıköy-Temelli bağlamı kurumun kendi kaynaklarıyla; sportif olta kullanımı ve sazan/havuz balığı varlığı ise OSB, belediye ve ASOF kayıtlarıyla rota özelinde çaprazlandığı için Güven C düzeyindedir. Etkinlik kayıtları sürekli giriş veya av garantisi değildir.",
+    summary:"Anadolu OSB Göleti, Ankara Sincan’da Malıköy–Temelli bölgesindedir. Sportif olta etkinliği ve sazan ile havuz balığı kayıtlıdır; etkinlik dışında giriş ve olta izni doğrulanmış değildir. Gitmeden önce OSB yönetiminden teyit alın.",
     longIntro:[
       "Anadolu OSB Yağmursuyu Göleti, rota kimliği, ilçe/genel konum, rekreasyon bağlamı ve balık türleri birbirinden bağımsız kurumsal kaynaklarla desteklendiği için Güven C düzeyine çıkarılmıştır.",
       "Bu seviye OSB içindeki gölete her gün ve her noktadan girilebildiği anlamına gelmez. Organize sanayi bölgesi güvenlik ve işletme kuralları, etkinlik dışı erişim koşulları, 6/2 Tebliğ ve sahadaki güncel tabelalar hareket günü birlikte kontrol edilmelidir."
