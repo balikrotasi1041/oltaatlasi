@@ -1,0 +1,11 @@
+{
+  "program": "istanbul-centered-growth-v1",
+  "date": "2026-11-23",
+  "timezone": "Europe/Istanbul",
+  "mainSha": "4dd23b94b6944bf491fc1f3c0baf82c21d7c7547",
+  "routeCount": 1511,
+  "snapshotRouteCount": 1511,
+  "routeSlugsSha256": "7e1f1e75b2168d901584e93f23df290419b5b73d34fb4dc816eadc2a9a24d815",
+  "routeStatesSha256": "cd6f28f9213c86c1d380005fb55d60aa85dc16d2607d28c02394c62fa69ae5cf",
+  "compact": true
+}

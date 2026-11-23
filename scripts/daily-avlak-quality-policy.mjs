@@ -22,22 +22,36 @@ export function validateDailyAvlakQuality(ledger, baseline, routes) {
   const fail = (condition, message) => { if (condition) errors.push(message); };
   fail(ledger.program !== 'istanbul-radius-quality-v2', 'Güncel program kimliği geçersiz.');
   fail(ledger.date !== baseline.date || ledger.baselineMainSha !== baseline.mainSha, 'Gün/baseline main SHA uyuşmuyor.');
-  fail(baseline.routeCount !== Object.keys(baseline.routes).length, 'Baseline rota sayısı uyuşmuyor.');
-  fail(hash(Object.keys(baseline.routes).sort().join('\n')) !== baseline.routeSlugsSha256, 'Baseline slug özeti uyuşmuyor.');
-  const baselineStates = Object.entries(baseline.routes).map(([slug, route]) => state({ slug, ...route })).sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
-  fail(hash(JSON.stringify(baselineStates)) !== baseline.routeStatesSha256, 'Baseline durum özeti uyuşmuyor.');
+  const compactBaseline = baseline.compact === true;
+  const baselineRoutes = baseline.routes || {};
+  if (!compactBaseline) {
+    fail(baseline.routeCount !== Object.keys(baselineRoutes).length, 'Baseline rota sayısı uyuşmuyor.');
+    fail(hash(Object.keys(baselineRoutes).sort().join('\n')) !== baseline.routeSlugsSha256, 'Baseline slug özeti uyuşmuyor.');
+    const baselineStates = Object.entries(baselineRoutes).map(([slug, route]) => state({ slug, ...route })).sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
+    fail(hash(JSON.stringify(baselineStates)) !== baseline.routeStatesSha256, 'Baseline durum özeti uyuşmuyor.');
+  }
   const current = new Map(routes.map(route => [route.slug, route]));
   fail(current.size !== routes.length, 'Çift slug bulundu.');
-  const actualNew = routes.filter(route => !baseline.routes[route.slug]).map(route => route.slug);
-  const actualPromotions = routes.filter(route => baseline.routes[route.slug] && rank[grade(route)] > rank[grade(baseline.routes[route.slug])]).map(route => route.slug);
-  const actualReleases = routes.filter(route => indexable(route) && !indexable(baseline.routes[route.slug])).map(route => route.slug);
-  const changedOld = routes.filter(route => baseline.routes[route.slug] && JSON.stringify(state(route)) !== JSON.stringify(state({ slug: route.slug, ...baseline.routes[route.slug] }))).map(route => route.slug);
   const fields = ['newRouteSlugs', 'promotionSlugs', 'indexReleaseSlugs', 'maintenanceOnlySlugs', 'eligibleReviewedSlugs'];
   for (const field of fields) {
     fail(!Array.isArray(ledger[field]), `${field} listesi gerekli.`);
     if (Array.isArray(ledger[field])) fail(new Set(ledger[field]).size !== ledger[field].length, `${field} çift sayıldı.`);
   }
   if (fields.some(field => !Array.isArray(ledger[field]))) return errors;
+  if (compactBaseline) {
+    const declaredNew = new Set(ledger.newRouteSlugs);
+    const preserved = routes.filter(route => !declaredNew.has(route.slug));
+    const preservedStates = preserved.map(state).sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
+    fail(baseline.routeCount !== baseline.snapshotRouteCount, 'Baseline rota sayısı uyuşmuyor.');
+    fail(routes.length !== baseline.routeCount + ledger.newRouteSlugs.length, 'Kompakt baseline için gerçek baseline farkıyla rota sayısı uyuşmuyor.');
+    fail(hash(preserved.map(route => route.slug).sort().join('\n')) !== baseline.routeSlugsSha256, 'Kompakt baseline slug özeti uyuşmuyor.');
+    fail(hash(JSON.stringify(preservedStates)) !== baseline.routeStatesSha256, 'Kompakt baseline durum özeti uyuşmuyor.');
+    fail(ledger.promotionSlugs.length > 0 || ledger.maintenanceOnlySlugs.length > 0, 'Kompakt baseline mevcut rota değişikliği veya terfisi için kullanılamaz.');
+  }
+  const actualNew = compactBaseline ? ledger.newRouteSlugs.filter(slug => current.has(slug)) : routes.filter(route => !baselineRoutes[route.slug]).map(route => route.slug);
+  const actualPromotions = compactBaseline ? [] : routes.filter(route => baselineRoutes[route.slug] && rank[grade(route)] > rank[grade(baselineRoutes[route.slug])]).map(route => route.slug);
+  const actualReleases = compactBaseline ? routes.filter(route => ledger.newRouteSlugs.includes(route.slug) && indexable(route)).map(route => route.slug) : routes.filter(route => indexable(route) && !indexable(baselineRoutes[route.slug])).map(route => route.slug);
+  const changedOld = compactBaseline ? [] : routes.filter(route => baselineRoutes[route.slug] && JSON.stringify(state(route)) !== JSON.stringify(state({ slug: route.slug, ...baselineRoutes[route.slug] }))).map(route => route.slug);
   fail(!same(actualNew, ledger.newRouteSlugs), 'Yeni avlak listesi gerçek baseline farkıyla uyuşmuyor.');
   fail(!same(actualPromotions, ledger.promotionSlugs), 'Gerçek sınıf terfisi listesi baseline farkıyla uyuşmuyor.');
   fail(!same(actualReleases, ledger.indexReleaseSlugs), 'İndeks salımı listesi baseline farkıyla uyuşmuyor.');
@@ -59,7 +73,7 @@ export function validateDailyAvlakQuality(ledger, baseline, routes) {
     errors.push(...validateExpandedQuality(route, { requireAssessment: true }));
   }
   for (const slug of ledger.promotionSlugs) {
-    const route = current.get(slug), before = baseline.routes[slug];
+    const route = current.get(slug), before = baselineRoutes[slug];
     if (!route || !before) { errors.push(`${slug}: terfi için mevcut baseline kaydı gerekli.`); continue; }
     fail(route.qualityAssessment?.reviewedAt !== ledger.date, `${slug}: terfi günü kanıt incelemesi gerekli.`);
     if (['C+', 'B', 'A'].includes(grade(route))) errors.push(...validateExpandedQuality(route, { requireAssessment: true }));
@@ -74,11 +88,11 @@ export function validateDailyAvlakQuality(ledger, baseline, routes) {
       fail(Math.abs(decision.distanceKmFromIstanbulCenter - distanceKm(route)) > 1, `${slug}: İstanbul merkezine mesafe uyuşmuyor.`);
       fail(ledger.newRouteSlugs.includes(slug) && distanceKm(route) > ledger.searchRadiusKm + 1, `${slug}: tarama yarıçapı dışında.`);
     }
-    fail(decision?.baselineGrade !== (baseline.routes[slug] ? grade(baseline.routes[slug]) : null) || decision?.finalGrade !== grade(route), `${slug}: önce/sonra sınıf kaydı uyuşmuyor.`);
+    fail(decision?.baselineGrade !== (baselineRoutes[slug] ? grade(baselineRoutes[slug]) : null) || decision?.finalGrade !== grade(route), `${slug}: önce/sonra sınıf kaydı uyuşmuyor.`);
   }
   // A live C+ HOLD page is a new page, but does not spend an index release.
   const publishedNew = actualNew.length;
-  const releasedExisting = actualReleases.filter(slug => !!baseline.routes[slug]).length;
+  const releasedExisting = actualReleases.filter(slug => !!baselineRoutes[slug]).length;
   if (ledger.publication?.verified) {
     fail(!ledger.publication.liveSha || ledger.publication.liveSha !== ledger.publication.mergedMainSha, 'Canlı/main tam SHA eşleşmeli.');
     fail(ledger.publication.newRoutesPublished !== publishedNew || ledger.publication.existingRoutesReleased !== releasedExisting, 'Canlı teslim sayaçları gerçek yayınlarla eşleşmeli.');

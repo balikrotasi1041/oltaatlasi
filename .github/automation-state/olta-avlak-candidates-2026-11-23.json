@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-23",
+  "center": { "lat": 41.0082, "lng": 28.9784 },
+  "previousRadiusKm": 250,
+  "currentRadiusKm": 250,
+  "dailyNewResearchRadiusKm": 77.478,
+  "phase": "Türkiye",
+  "coverage": "İstanbul merkezli sıralama korunur. İstanbul'daki kanıt bekleyen adaylar açık tutulur; İstanbul'un tamamen tükendiği iddia edilmez. Tirilye ve Eşkel, mevcut veri setindeki ad, slug, koordinat ve kıyı kapsamına göre mükerrer değildir.",
+  "newRouteQueue": [
+    { "name": "Tirilye Açık Sahil Yürüyüş Hattı", "slug": "bursa-mudanya-tirilye-acik-sahil-yuruyus-hatti", "distanceKmFromIstanbulCenter": 70.137, "decision": "ready_for_publication", "plannedIndexing": "index", "grade": "C+", "sources": ["https://mudanya.bel.tr/tr/yerler/nostalji-sokaklar/trilye-yat-limani", "https://www.balikavi.net/konu/trilye-kiyiya-istavrit-ile-zargana-geldimi.48020/"] },
+    { "name": "Eşkel Açık Kuru Kıyısı", "slug": "bursa-mudanya-eskel-acik-kuru-kiyi", "distanceKmFromIstanbulCenter": 77.478, "decision": "ready_for_publication", "plannedIndexing": "index", "grade": "C+", "sources": ["https://mavibayrak.org.tr/turkiye/plaj.aspx?plaj_refno=2188", "https://www.balikavi.net/konu/kayikla-balik-avi-bursa-mudanya-eskel-sahili.49231/"] },
+    { "name": "Çakıl Göleti", "decision": "public_access_pending", "reason": "Rota-özel örnekleme ve balıklandırma kaydı var; kamusal kuru kıyı girişi doğrulanmadı." },
+    { "name": "Büyükada Dilburnu", "decision": "protected_access_pending", "reason": "Koy özelinde tür verisi var; korunan alan içindeki olağan amatör kıyı erişimi belirsiz." }
+  ],
+  "promotionQueue": [
+    { "decision": "no_promotion", "reason": "Bugün incelenen mevcut kayıtlar için sınıfı bir üst kademeye taşıyacak yeni bağımsız kanıt tamamlanmadı; kanıtsız terfi yapılmadı." }
+  ],
+  "publication": { "verified": false }
+}
