@@ -52,6 +52,8 @@ export function validateDailyAvlakQuality(ledger, baseline, routes) {
   const actualPromotions = compactBaseline ? [] : routes.filter(route => baselineRoutes[route.slug] && rank[grade(route)] > rank[grade(baselineRoutes[route.slug])]).map(route => route.slug);
   const actualReleases = compactBaseline ? routes.filter(route => ledger.newRouteSlugs.includes(route.slug) && indexable(route)).map(route => route.slug) : routes.filter(route => indexable(route) && !indexable(baselineRoutes[route.slug])).map(route => route.slug);
   const changedOld = compactBaseline ? [] : routes.filter(route => baselineRoutes[route.slug] && JSON.stringify(state(route)) !== JSON.stringify(state({ slug: route.slug, ...baselineRoutes[route.slug] }))).map(route => route.slug);
+  // New production limit applies prospectively; historical ledgers remain auditable.
+  fail(ledger.date >= '2026-11-17' && actualNew.length > 2, 'Günlük toplam yeni avlak üst sınırı 2 aşıldı.');
   fail(!same(actualNew, ledger.newRouteSlugs), 'Yeni avlak listesi gerçek baseline farkıyla uyuşmuyor.');
   fail(!same(actualPromotions, ledger.promotionSlugs), 'Gerçek sınıf terfisi listesi baseline farkıyla uyuşmuyor.');
   fail(!same(actualReleases, ledger.indexReleaseSlugs), 'İndeks salımı listesi baseline farkıyla uyuşmuyor.');

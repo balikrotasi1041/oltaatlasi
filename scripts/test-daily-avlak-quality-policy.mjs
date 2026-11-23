@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync } from 'node:fs';
 import { meralar } from '../src/data/meralar-tumu.ts';
+import { growthRoutes20261123 } from '../src/data/meralar-growth-2026-11-23.ts';
 import { validateDailyAvlakQuality } from './daily-avlak-quality-policy.mjs';
 
 const directory = '.github/automation-state';
@@ -18,6 +20,43 @@ const check = (mutate, message) => {
 };
 check((l) => { l.indexReleaseCap = l.indexReleaseCap === 4 ? 2 : 4; }, 'ortak indeks kotası yanlış');
 check((l) => { l.baselineMainSha = 'wrong'; }, 'main SHA');
+// Use the dedicated two-page 23 November fixture so this regression cannot silently skip.
+const capFile = 'olta-avlak-kalite-daily-2026-11-23.json';
+const capFixture = JSON.parse(readFileSync(`${directory}/${capFile}`, 'utf8'));
+const capBaseline = JSON.parse(readFileSync(capFixture.baselineFile, 'utf8'));
+const fixtures = capFixture.newRouteSlugs.map(slug => structuredClone(growthRoutes20261123.find(route => route.slug === slug)));
+assert.equal(fixtures.length, 2);
+const capError = 'Günlük toplam yeni avlak üst sınırı 2 aşıldı.';
+const testCap = (compact, date, routeCount) => {
+  const l = structuredClone(capFixture);
+  const old = {
+    slug: 'fixture-existing', confidence: 'D', qualityGrade: null, indexing: 'hold'
+  };
+  const hash = value => createHash('sha256').update(value).digest('hex');
+  const b = {
+    ...capBaseline, date, compact, routeCount: 1, snapshotRouteCount: 1,
+    routeSlugsSha256: hash(old.slug),
+    routeStatesSha256: hash(JSON.stringify([[old.slug, old.confidence, old.qualityGrade, old.indexing]]))
+  };
+  if (!compact) b.routes = { [old.slug]: old };
+  const newRoutes = structuredClone(fixtures);
+  if (routeCount > 2) newRoutes.push({
+    ...structuredClone(newRoutes[0]), slug: 'fixture-third-new-avlak', indexing: 'hold'
+  });
+  newRoutes.forEach(route => { route.qualityAssessment.reviewedAt = date; });
+  l.date = date;
+  l.newRouteSlugs = newRoutes.map(route => route.slug);
+  if (routeCount > 2) l.decisions.push({ ...l.decisions[0], slug: newRoutes[2].slug });
+  l.publication = { verified: false, newRoutesPublished: 0, existingRoutesReleased: 0 };
+  assert.deepEqual(validateDailyAvlakQuality(l, b, [old, ...newRoutes]),
+    date >= '2026-11-17' && routeCount > 2 ? [capError] : []);
+};
+for (const compact of [false, true]) {
+  testCap(compact, '2026-11-23', 2);
+  testCap(compact, '2026-11-23', 3);
+  testCap(compact, '2026-11-16', 3);
+}
+
 check((l) => { l.publication = { verified: true, liveSha: 'wrong', mergedMainSha: 'main', newRoutesPublished: 0, existingRoutesReleased: 0 }; }, 'tam SHA');
 check((l) => { l.newRouteSlugs = l.newRouteSlugs.slice(0, 1); l.shortfall = {}; }, 'eksik nedeni');
 check((l, b) => { b.routeCount += 1; }, 'Baseline rota sayısı');
