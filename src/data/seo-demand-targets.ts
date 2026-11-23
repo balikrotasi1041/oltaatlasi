@@ -10,6 +10,18 @@ export type SeoDemandTarget = {
 // Bu liste indeks politikasını değiştirmez; yalnız zaten talep hedefi olan URL'lerin
 // arama niyeti, snippet metni ve mevcut iç bağlantı önceliğini koruyarak iyileştirir.
 export const seoDemandTargets: Record<string, SeoDemandTarget> = {
+  "/meralar/ankara-500km-ankara-anadolu-goleti/": {
+    title: "Anadolu OSB Göleti: Konum ve Giriş Bilgisi",
+    description: "Anadolu OSB Göleti, Malıköy/Sincan’dadır. Sazan ve havuz balığı kaydı vardır; etkinlik dışında giriş ve olta izni doğrulanmış değildir.",
+    priority: 1,
+    intent: "konum",
+  },
+  "/meralar/kirklareli-kayali-baraji/": {
+    title: "Kayalı Barajı (Kayalıköy) Yol Tarifi ve Balık Avı",
+    description: "Kırklareli Kayalı (Kayalıköy) Barajı: Kayalı köyü yönünden genel yaklaşım, sazan kaydı ve henüz doğrulanmamış son kıyı girişi.",
+    priority: 0.9,
+    intent: "konum",
+  },
   "/meralar/sarimsakli-baraji-genel-amator-kiyi/": {
     title: "Sarımsaklı Barajı Yol Tarifi, Konum ve Balık Avı",
     description: "Sarımsaklı Barajı yol tarifi ve balık avı planı: genel konum, kamusal kıyı yaklaşımı, raporlanan balık türleri, erişim, kıyı riskleri ve güncel içsu kuralları.",
@@ -30,7 +42,7 @@ export const seoDemandTargets: Record<string, SeoDemandTarget> = {
   },
   "/meralar/bilecik-kizildamlar-baraj-goleti/": {
     title: "Kızıldamlar Barajı Yol Tarifi, Konum ve Balık Avı",
-    description: "Bilecik Kızıldamlar Barajı yol tarifi ve balık avı planı: genel konum, raporlanan türler, son yaklaşım, kıyı riskleri ve güncel içsu kuralları.",
+    description: "Bilecik Kızıldamlar Barajı yol tarifi: Kızıldamlar köyü yönünden genel yaklaşım, maden yolları ve sazan kaydı. Son kıyı girişi teyitli değil.",
     priority: 0.9,
     intent: "konum",
   },
