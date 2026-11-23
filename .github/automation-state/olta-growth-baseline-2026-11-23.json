@@ -1,0 +1,4841 @@
+Warning: truncated output (original token count: 66146)
+Total output lines: 10588
+
+{
+  "program": "istanbul-centered-growth-v1",
+  "date": "2026-11-23",
+  "timezone": "Europe/Istanbul",
+  "mainSha": "4dd23b94b6944bf491fc1f3c0baf82c21d7c7547",
+  "routeCount": 1511,
+  "routeSlugsSha256": "7e1f1e75b2168d901584e93f23df290419b5b73d34fb4dc816eadc2a9a24d815",
+  "routeStatesSha256": "cd6f28f9213c86c1d380005fb55d60aa85dc16d2607d28c02394c62fa69ae5cf",
+  "routes": {
+    "izmit-korfezi-sahil-bandi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.759,
+      "lng": 29.925
+    },
+    "karamursel-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 40.691,
+      "lng": 29.616
+    },
+    "eskihisar-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 40.769,
+      "lng": 29.425
+    },
+    "bayramoglu-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.791,
+      "lng": 29.353
+    },
+    "kerpe-kiyilari": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.169,
+      "lng": 30.193
+    },
+    "kefken-cebeci-kiyilari": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.174,
+      "lng": 30.236
+    },
+    "ketenciler-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.695,
+      "lng": 30.155
+    },
+    "galata-koprusu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.021912,
+      "lng": 28.974689
+    },
+    "ataturk-unkapani-koprusu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.022995,
+      "lng": 28.962433
+    },
+    "sarayburnu-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.01627,
+      "lng": 28.98554
+    },
+    "yenikapi-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.00475,
+      "lng": 28.95256
+    },
+    "bakirkoy-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.9704,
+      "lng": 28.8742
+    },
+    "buyukcekmece-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.018,
+      "lng": 28.582
+    },
+    "silivri-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0736,
+      "lng": 28.246
+    },
+    "tarabya-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.1382,
+      "lng": 29.0506
+    },
+    "istinye-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1137,
+      "lng": 29.0614
+    },
+    "rumeli-kavagi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1818,
+      "lng": 29.0746
+    },
+    "uskudar-salacak-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0108,
+      "lng": 29.015
+    },
+    "kadikoy-moda-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.981,
+      "lng": 29.025
+    },
+    "bostanci-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.953,
+      "lng": 29.094
+    },
+    "kartal-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8928,
+      "lng": 29.1875
+    },
+    "anadolu-kavagi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.1744,
+      "lng": 29.088
+    },
+    "sarkoy-merkez-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.614,
+      "lng": 27.113
+    },
+    "hoskoy-kamusal-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 40.748,
+      "lng": 27.283
+    },
+    "akcakoca-cuhalli-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.092,
+      "lng": 31.108
+    },
+    "cinarcik-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.6418,
+      "lng": 29.1235
+    },
+    "karasu-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1095,
+      "lng": 30.6905
+    },
+    "guzelyali-mudanya-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.3535,
+      "lng": 28.9185
+    },
+    "emirgan-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.1052,
+      "lng": 29.0557
+    },
+    "bebek-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.0766,
+      "lng": 29.0449
+    },
+    "arnavutkoy-besiktas-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.067,
+      "lng": 29.0432
+    },
+    "ortakoy-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.0478,
+      "lng": 29.0269
+    },
+    "kurukcesme-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0589,
+      "lng": 29.0362
+    },
+    "pasabahce-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1177,
+      "lng": 29.0942
+    },
+    "kanlica-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1006,
+      "lng": 29.0655
+    },
+    "kucuksu-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.0794,
+      "lng": 29.0645
+    },
+    "beylerbeyi-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.0425,
+      "lng": 29.0405
+    },
+    "tuzla-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 40.8171,
+      "lng": 29.3003
+    },
+    "degirmendere-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 40.7206,
+      "lng": 29.7792
+    },
+    "halidere-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7187,
+      "lng": 29.8336
+    },
+    "ulasli-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7055,
+      "lng": 29.8734
+    },
+    "hereke-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7865,
+      "lng": 29.6155
+    },
+    "yalova-merkez-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.655,
+      "lng": 29.277
+    },
+    "armutlu-merkez-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.5192,
+      "lng": 28.8287
+    },
+    "mudanya-mutareke-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.3777,
+      "lng": 28.8837
+    },
+    "gemlik-manastir-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.4307,
+      "lng": 29.1545
+    },
+    "kocaali-merkez-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0535,
+      "lng": 30.8515
+    },
+    "tavsancil-balik-tutma-iskeleleri": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7729,
+      "lng": 29.5678
+    },
+    "altinova-kamusal-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6968,
+      "lng": 29.5095
+    },
+    "diliskelesi-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7624,
+      "lng": 29.5357
+    },
+    "beykoz-merkez-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1342,
+      "lng": 29.0904
+    },
+    "cubuklu-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1085,
+      "lng": 29.0805
+    },
+    "anadolu-hisari-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0824,
+      "lng": 29.0664
+    },
+    "tutunciftlik-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7556,
+      "lng": 29.7901
+    },
+    "derince-harikalar-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 40.7486,
+      "lng": 29.806
+    },
+    "cengelkoy-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0534,
+      "lng": 29.0522
+    },
+    "hirfanli-baraji-kale-mevki-bala": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2547,
+      "lng": 33.5165
+    },
+    "inkumu-kamusal-sahil-bandi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.6667,
+      "lng": 32.2211
+    },
+    "cakirli-iznik-golu-piknik-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.5005,
+      "lng": 29.4515
+    },
+    "sariyar-baraji-softabogazi-amator-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.085,
+      "lng": 31.6578
+    },
+    "koyunbaba-baraji-demirci-oyumigde-amator-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.3256,
+      "lng": 33.2577
+    },
+    "yamula-baraji-resmi-amator-balikcilik-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9093,
+      "lng": 35.3034
+    },
+    "bahcelik-baraji-resmi-amator-balikcilik-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.6863,
+      "lng": 36.2973
+    },
+    "bayramhacili-baraji-amator-balikcilik-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.81,
+      "lng": 35.02
+    },
+    "sarimsakli-baraji-genel-amator-kiyi": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.8855,
+      "lng": 35.7455
+    },
+    "gumusoren-baraji-genel-amator-kiyi": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2326,
+      "lng": 35.6912
+    },
+    "akkoy-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 38.3252,
+      "lng": 35.0192
+    },
+    "kovali-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 38.165,
+      "lng": 35.1475
+    },
+    "agcasar-baraji-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 38.1707,
+      "lng": 35.3924
+    },
+    "pasali-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 38.595,
+      "lng": 36.2271
+    },
+    "darili-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 39.1179,
+      "lng": 35.5185
+    },
+    "zincidere-goleti-mesire-genel-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 38.6286,
+      "lng": 35.5928
+    },
+    "seyhli-goleti-genel-amator-kiyi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.1085,
+      "lng": 35.6537
+    },
+    "caddebostan-kamusal-sahil-hatti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.9622,
+      "lng": 29.0622
+    },
+    "maltepe-orhangazi-sehir-parki-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.9309,
+      "lng": 29.1158
+    },
+    "pendik-sahil-parki-kamusal-kiyi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8782,
+      "lng": 29.2387
+    },
+    "darica-sehit-gokhan-huseyinoglu-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7705,
+      "lng": 29.3865
+    },
+    "darica-balyanoz-koyu-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7901,
+      "lng": 29.3468
+    },
+    "basiskele-kamusal-sahil-hatti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7165,
+      "lng": 29.9365
+    },
+    "kizilbayir-hirfanli-baraji-bala": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2066,
+      "lng": 33.5174
+    },
+    "kucukburun-hirfanli-baraji-bala": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1987,
+      "lng": 33.4751
+    },
+    "gecitli-hirfanli-baraji-sereflikochisar": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1593,
+      "lng": 33.6304
+    },
+    "gulhuyuk-hirfanli-baraji-sereflikochisar": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1701,
+      "lng": 33.5723
+    },
+    "kacarli-hirfanli-baraji-sereflikochisar": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1601,
+      "lng": 33.5143
+    },
+    "kizilocak-hirfanli-baraji-evren": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0557,
+      "lng": 33.792
+    },
+    "boztepe-hirfanli-baraji-evren": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0608,
+      "lng": 33.831
+    },
+    "ilgin-hirfanli-baraji-evren": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0399,
+      "lng": 33.8627
+    },
+    "bozyazi-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.0831,
+      "lng": 31.6686
+    },
+    "esmedere-koyunbaba-baraji-cubuk": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.3214,
+      "lng": 33.2745
+    },
+    "bozyazi-koy-onu-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.07344,
+      "lng": 31.6686
+    },
+    "akyar-kafasi-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.04505,
+      "lng": 31.65356
+    },
+    "usakbuku-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.00647,
+      "lng": 31.69842
+    },
+    "buyukyer-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.00668,
+      "lng": 31.64903
+    },
+    "kumbet-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.04099,
+      "lng": 31.524
+    },
+    "laklak-kiri-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.02823,
+      "lng": 31.4581
+    },
+    "kayikbasi-sariyar-baraji-nallihan": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.03292,
+      "lng": 31.44602
+    },
+    "kandilli-sahili": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 41.0749,
+      "lng": 29.0586
+    },
+    "eskisehir-gokpinar-baraj-golu-amator": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.125,
+      "lng": 31.779
+    },
+    "keskin-75-yil-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8635,
+      "lng": 30.3945
+    },
+    "oglakci-goleti-sivrihisar": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.5728,
+      "lng": 31.7025
+    },
+    "cukurhisar-goleti-eskisehir": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8405,
+      "lng": 30.2925
+    },
+    "yarimca-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.76905,
+      "lng": 29.74054
+    },
+    "kirazliyali-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7762,
+      "lng": 29.70267
+    },
+    "ulusal-adana-catalan-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.2636119,
+      "lng": 35.3588192
+    },
+    "ulusal-adana-kozan-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5201309,
+      "lng": 35.8454972
+    },
+    "ulusal-adana-nergizlik-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.3065541,
+      "lng": 35.0456375
+    },
+    "ulusal-adana-seyhan-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0574661,
+      "lng": 35.3050604
+    },
+    "ulusal-adiyaman-camgazi-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7001716,
+      "lng": 38.1547359
+    },
+    "ulusal-adiyaman-cat-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.0868721,
+      "lng": 38.2994193
+    },
+    "ulusal-adiyaman-gozebasi-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.8167596,
+      "lng": 38.4016642
+    },
+    "ulusal-adiyaman-hasancik-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.778778,
+      "lng": 38.4461242
+    },
+    "ulusal-adiyaman-incesu-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-afyonkarahisar-akdegirmen-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.8187932,
+      "lng": 30.1919579
+    },
+    "ulusal-afyonkarahisar-bayat-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-afyonkarahisar-erkmen-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-afyonkarahisar-karacaoren-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.4923703,
+      "lng": 30.2954626
+    },
+    "ulusal-afyonkarahisar-kayabelen-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-agri-patnos-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2837091,
+      "lng": 42.8953643
+    },
+    "ulusal-agri-yazici-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.7964295,
+      "lng": 43.1784761
+    },
+    "ulusal-agri-baskoy-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-agri-balik-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.7810091,
+      "lng": 43.5661286
+    },
+    "ulusal-agri-murat-nehri-agri-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-aksaray-balci-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-aksaray-bozkir-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7625678,
+      "lng": 34.0800624
+    },
+    "ulusal-aksaray-ciftevi-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.835697,
+      "lng": 34.023772
+    },
+    "ulusal-aksaray-esmekaya-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3035772,
+      "lng": 33.4346776
+    },
+    "ulusal-aksaray-guzelyurt-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-amasya-ayvali-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-amasya-bayirli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-amasya-citli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-amasya-destek-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-amasya-dogantepe-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-ankara-akyar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6032566,
+      "lng": 32.5847234
+    },
+    "ulusal-ankara-asartepe-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.145811,
+      "lng": 32.3957994
+    },
+    "ulusal-ankara-camlidere-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.4121062,
+      "lng": 32.3444172
+    },
+    "ulusal-ankara-hirfanli-baraj-golu-ankara-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1447265,
+      "lng": 33.6730055
+    },
+    "ulusal-ankara-kesikkopru-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.3347342,
+      "lng": 33.4643462
+    },
+    "ulusal-antalya-alakir-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.4362543,
+      "lng": 30.2491243
+    },
+    "ulusal-antalya-caybogazi-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.5227331,
+      "lng": 29.6791292
+    },
+    "ulusal-antalya-dim-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.5601135,
+      "lng": 32.2130702
+    },
+    "ulusal-antalya-oymapinar-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.9275158,
+      "lng": 31.5515456
+    },
+    "ulusal-antalya-korkuteli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0806474,
+      "lng": 30.1548282
+    },
+    "ulusal-ardahan-beyler-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-ardahan-cildir-golu-ardahan-kiyisi": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0193871,
+      "lng": 43.2636391
+    },
+    "ulusal-ardahan-aktas-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1177,
+      "lng": 42.8056
+    },
+    "ulusal-ardahan-kura-nehri-ardahan-hatti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.115883,
+      "lng": 42.700961
+    },
+    "ulusal-ardahan-posof-cayi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.55964,
+      "lng": 42.82825
+    },
+    "ulusal-artvin-borcka-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.2614112,
+      "lng": 41.7775754
+    },
+    "ulusal-artvin-deriner-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0861137,
+      "lng": 41.8197876
+    },
+    "ulusal-artvin-muratli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.4670671,
+      "lng": 41.7140019
+    },
+    "ulusal-artvin-yusufeli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8009297,
+      "lng": 41.5330504
+    },
+    "ulusal-artvin-coruh-nehri-artvin-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-aydin-kemer-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5288293,
+      "lng": 28.5612848
+    },
+    "ulusal-aydin-yaylakavak-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5781676,
+      "lng": 27.7995774
+    },
+    "ulusal-aydin-akcaova-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-aydin-catak-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-aydin-topcam-baraj-golu-aydin": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 37.7091624,
+      "lng": 28.01669
+    },
+    "ulusal-balikesir-camkoy-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.4632617,
+      "lng": 28.1654316
+    },
+    "ulusal-balikesir-caygoren-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2511007,
+      "lng": 28.2352132
+    },
+    "ulusal-balikesir-ikizcetepeler-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-balikesir-madra-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2438878,
+      "lng": 26.8862029
+    },
+    "ulusal-balikesir-saribeyler-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 39.4204539,
+      "lng": 27.6141406
+    },
+    "ulusal-bartin-kirazlikopru-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.827788,
+      "lng": 32.7498304
+    },
+    "ulusal-bartin-bartin-irmagi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.5962881,
+      "lng": 32.3290341
+    },
+    "ulusal-bartin-ulus-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.6462094,
+      "lng": 32.7053272
+    },
+    "ulusal-bartin-kurucasile-sahili": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bartin-amasra-sahili": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-batman-ceffan-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-batman-kirkat-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-batman-batman-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2257303,
+      "lng": 41.1158922
+    },
+    "ulusal-batman-ilisu-baraj-golu-batman-kiyisi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7454432,
+      "lng": 41.6536025
+    },
+    "ulusal-batman-batman-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9735327,
+      "lng": 41.1303682
+    },
+    "ulusal-bayburt-demirozu-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.1072661,
+      "lng": 39.8928414
+    },
+    "ulusal-bayburt-coruh-nehri-bayburt-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bayburt-masat-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.1715257,
+      "lng": 40.4087835
+    },
+    "ulusal-bayburt-lori-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bayburt-kop-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bilecik-borcak-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.0395627,
+      "lng": 30.2077358
+    },
+    "ulusal-bilecik-gunyurdu-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.0366178,
+      "lng": 29.8455588
+    },
+    "ulusal-bilecik-kizildamlar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.0398997,
+      "lng": 30.126667
+    },
+    "ulusal-bilecik-sakarya-nehri-bilecik-hatti": {
+      "confidence": "D",
+      "qualityGrade": "D",
+      "indexing": "hold",
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bingol-gayt-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0329297,
+      "lng": 40.3255261
+    },
+    "ulusal-bingol-ozluce-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 39.1967295,
+      "lng": 40.255407
+    },
+    "ulusal-bingol-gulbahar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9232319,
+      "lng": 40.6933793
+    },
+    "ulusal-bingol-kigi-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.4046758,
+      "lng": 40.2968527
+    },
+    "ulusal-bingol-murat-nehri-bingol-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bitlis-nemrut-krater-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.5713701,
+      "lng": 42.2754679
+    },
+    "ulusal-bitlis-nazik-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.8701169,
+      "lng": 42.2951194
+    },
+    "ulusal-bitlis-aygir-golu-bitlis": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.8370664,
+      "lng": 42.8224361
+    },
+    "ulusal-bitlis-arin-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.8115566,
+      "lng": 42.9863065
+    },
+    "ulusal-bitlis-van-golu-tatvan-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.5178904,
+      "lng": 42.294636
+    },
+    "ulusal-bolu-caykoy-baraj-golu-bolu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.272107,
+      "lng": 30.759465
+    },
+    "ulusal-bolu-golkoy-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7012418,
+      "lng": 31.5264046
+    },
+    "ulusal-bolu-abant-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6052225,
+      "lng": 31.2799396
+    },
+    "ulusal-bolu-golcuk-golu-bolu": {
+      "confidence": "D",
+      "qualityGrade": "D",
+      "indexing": "hold",
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-burdur-bademli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4360513,
+      "lng": 29.9050634
+    },
+    "ulusal-burdur-belenli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.2840687,
+      "lng": 29.9775456
+    },
+    "ulusal-burdur-belkaya-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.2883505,
+      "lng": 29.6053438
+    },
+    "ulusal-burdur-cavdar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-burdur-karacaoren-1-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.3689379,
+      "lng": 30.8294
+    },
+    "ulusal-bursa-akalan-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": "D",
+      "indexing": "hold",
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bursa-babasultan-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.1349429,
+      "lng": 29.3798949
+    },
+    "ulusal-bursa-bogazkoy-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.1549646,
+      "lng": 29.5100108
+    },
+    "ulusal-bursa-burcun-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": "D",
+      "indexing": "hold",
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-bursa-buyukorhan-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 39.783128,
+      "lng": 28.9227203
+    },
+    "ulusal-canakkale-atikhisar-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.0983239,
+      "lng": 26.5250716
+    },
+    "ulusal-canakkale-bakacak-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.1676454,
+      "lng": 27.0060984
+    },
+    "ulusal-canakkale-bayramic-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 39.8130602,
+      "lng": 26.6825998
+    },
+    "ulusal-canakkale-gokceada-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.1737494,
+      "lng": 25.8547127
+    },
+    "ulusal-canakkale-gonen-baraj-golu-canakkale": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.915956,
+      "lng": 27.4009536
+    },
+    "ulusal-cankiri-demircioren-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-cankiri-dumanli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-cankiri-gurgenlik-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-cankiri-karadere-baraj-golu-cankiri": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-corum-aksu-baraj-golu-corum": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-corum-bozdogan-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-corum-ecvi-yenikisla-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-corum-geven-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-corum-geykoca-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-denizli-adiguzel-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2027888,
+      "lng": 29.220607
+    },
+    "ulusal-denizli-buldan-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.1440859,
+      "lng": 28.8473556
+    },
+    "ulusal-denizli-gokpinar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.786676,
+      "lng": 29.1305213
+    },
+    "ulusal-denizli-tavas-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-denizli-isikli-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2338199,
+      "lng": 29.9009362
+    },
+    "ulusal-diyarbakir-batman-baraj-golu-diyarbakir-kiyisi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2257303,
+      "lng": 41.1158922
+    },
+    "ulusal-diyarbakir-devegecidi-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.0585711,
+      "lng": 39.9865272
+    },
+    "ulusal-diyarbakir-dicle-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3281619,
+      "lng": 40.2059856
+    },
+    "ulusal-diyarbakir-goksu-baraj-golu-diyarbakir": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.6603578,
+      "lng": 40.4508368
+    },
+    "ulusal-diyarbakir-karakaya-baraj-golu-diyarbakir-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2258096,
+      "lng": 39.1348903
+    },
+    "ulusal-duzce-hasanlar-baraj-golu-duzce": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.9241582,
+      "lng": 31.2934033
+    },
+    "ulusal-duzce-efteni-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7601823,
+      "lng": 31.0433029
+    },
+    "ulusal-duzce-buyuk-melen-cayi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.9834729,
+      "lng": 31.0052168
+    },
+    "ulusal-duzce-kucuk-melen-cayi": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-duzce-akcakoca-sahili": {
+      "confidence": "D",
+      "qualityGrade": "D",
+      "indexing": "hold",
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-edirne-altinyazi-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0529044,
+      "lng": 26.5920921
+    },
+    "ulusal-edirne-basagil-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-edirne-beykonak-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-edirne-bulbuldere-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-edirne-cavuskoy-baraj-golu-edirne": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6884501,
+      "lng": 26.2073433
+    },
+    "ulusal-elazig-cip-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.6716752,
+      "lng": 39.0627213
+    },
+    "ulusal-elazig-kalecik-baraj-golu-elazig": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9581721,
+      "lng": 40.0676146
+    },
+    "ulusal-elazig-keban-baraj-golu-elazig-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9064621,
+      "lng": 38.9200407
+    },
+    "ulusal-elazig-isiktepe-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.4432493,
+      "lng": 39.5193096
+    },
+    "ulusal-elazig-tadim-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.573625,
+      "lng": 39.1632621
+    },
+    "ulusal-erzincan-erzincan-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8042748,
+      "lng": 39.2950469
+    },
+    "ulusal-erzincan-tercan-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.7320429,
+      "lng": 40.4443989
+    },
+    "ulusal-erzincan-karasu-nehri-erzincan-hatti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.68,
+      "lng": 39.72
+    },
+    "ulusal-erzincan-firat-nehri-kemaliye-hatti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.26,
+      "lng": 38.5
+    },
+    "ulusal-erzincan-mercan-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-erzurum-demirdoven-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.0490223,
+      "lng": 41.7311514
+    },
+    "ulusal-erzurum-kapikaya-baraj-golu-erzurum": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-erzurum-koycegiz-baraj-golu-erzurum": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-erzurum-kuzgun-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.2138171,
+      "lng": 41.0516739
+    },
+    "ulusal-erzurum-olur-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-eskisehir-catoren-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.3022912,
+      "lng": 30.5786849
+    },
+    "ulusal-eskisehir-gokcekaya-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.0599108,
+      "lng": 31.2845959
+    },
+    "ulusal-eskisehir-kunduzlar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.3487035,
+      "lng": 30.556446
+    },
+    "ulusal-eskisehir-musaozu-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": null,
+      "lat": 39.6972716,
+      "lng": 30.3222931
+    },
+    "ulusal-eskisehir-porsuk-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.6237783,
+      "lng": 30.1706776
+    },
+    "ulusal-gaziantep-birecik-baraj-golu-gaziantep-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.2508584,
+      "lng": 37.8479968
+    },
+    "ulusal-gaziantep-dumluca-baraj-golu-gaziantep": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-gaziantep-hancagiz-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.9558924,
+      "lng": 37.8803766
+    },
+    "ulusal-gaziantep-kayacik-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8284879,
+      "lng": 37.559968
+    },
+    "ulusal-gaziantep-tahtakopru-baraj-golu-gaziantep": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8963106,
+      "lng": 36.7023063
+    },
+    "ulusal-giresun-ingolu-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-giresun-toplukonak-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.3898607,
+      "lng": 38.5710223
+    },
+    "ulusal-giresun-aksu-deresi-giresun": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8856815,
+      "lng": 38.4159909
+    },
+    "ulusal-giresun-harsit-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-giresun-giresun-sahili": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-gumushane-koruluk-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.2443757,
+      "lng": 39.1200304
+    },
+    "ulusal-gumushane-kurtun-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6622783,
+      "lng": 39.139014
+    },
+    "ulusal-gumushane-kizlarkalesi-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-gumushane-kose-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.2427118,
+      "lng": 39.6267593
+    },
+    "ulusal-gumushane-torul-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6008857,
+      "lng": 39.3024833
+    },
+    "ulusal-hakkari-dilimli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.6401566,
+      "lng": 44.3777849
+    },
+    "ulusal-hakkari-zap-suyu-hakkari-hatti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-hakkari-semdinli-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-hakkari-nehil-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-hakkari-sat-golleri": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-hatay-yarseli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.1686311,
+      "lng": 36.3242888
+    },
+    "ulusal-hatay-yayladag-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 35.9452877,
+      "lng": 36.0603854
+    },
+    "ulusal-hatay-karamanli-baraj-golu-hatay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-hatay-asi-nehri-hatay-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-hatay-arsuz-sahili": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-igdir-aras-nehri-tuzluca-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-igdir-aras-nehri-karakoyunlu-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-igdir-aras-nehri-aralik-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.9719843,
+      "lng": 44.4615347
+    },
+    "ulusal-igdir-karasu-cayi-igdir": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-igdir-bulakbasi-sulak-alani": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-isparta-atabey-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9475987,
+      "lng": 30.6119982
+    },
+    "ulusal-isparta-bagarasi-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-isparta-barla-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-isparta-dedecam-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-isparta-hisarardi-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-istanbul-alibey-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1303321,
+      "lng": 28.9010269
+    },
+    "ulusal-istanbul-buyukcekmece-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0647707,
+      "lng": 28.5580524
+    },
+    "ulusal-istanbul-darlik-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.0841193,
+      "lng": 29.5990187
+    },
+    "ulusal-istanbul-omerli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0230301,
+      "lng": 29.4032513
+    },
+    "ulusal-istanbul-sazlidere-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.132941,
+      "lng": 28.6839397
+    },
+    "ulusal-izmir-alacati-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2824945,
+      "lng": 26.4060716
+    },
+    "ulusal-izmir-balcova-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3683588,
+      "lng": 27.0454124
+    },
+    "ulusal-izmir-guzelhisar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7951707,
+      "lng": 27.1191983
+    },
+    "ulusal-izmir-kestel-baraj-golu-izmir": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1491894,
+      "lng": 27.2050334
+    },
+    "ulusal-izmir-seferihisar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2178601,
+      "lng": 26.8822904
+    },
+    "ulusal-kahramanmaras-kartalkaya-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4863139,
+      "lng": 37.2678482
+    },
+    "ulusal-kahramanmaras-menzelet-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.754375,
+      "lng": 36.9356328
+    },
+    "ulusal-kahramanmaras-sir-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5696989,
+      "lng": 36.82233
+    },
+    "ulusal-kahramanmaras-adatepe-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.0866423,
+      "lng": 36.7180603
+    },
+    "ulusal-kahramanmaras-kilavuzlu-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.6438857,
+      "lng": 36.8044486
+    },
+    "ulusal-karabuk-kadikoy-baraj-golu-karabuk": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-karabuk-bostancilar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-karabuk-ortakcilar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-karabuk-filyos-cayi-karabuk-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.230596,
+      "lng": 32.2197157
+    },
+    "ulusal-karabuk-arac-cayi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-karaman-ayranci-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.3292986,
+      "lng": 33.7293683
+    },
+    "ulusal-karaman-delicay-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.129585,
+      "lng": 33.1700311
+    },
+    "ulusal-karaman-dokuzyol-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-karaman-godet-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0961448,
+      "lng": 33.3065986
+    },
+    "ulusal-karaman-ibrala-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.1965757,
+      "lng": 33.4081952
+    },
+    "ulusal-kars-arpacay-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.595458,
+      "lng": 43.6876921
+    },
+    "ulusal-kars-bayburt-baraj-golu-kars": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.5365604,
+      "lng": 42.8092692
+    },
+    "ulusal-kars-cildir-golu-kars-kiyisi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0193871,
+      "lng": 43.2636391
+    },
+    "ulusal-kars-kars-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6200737,
+      "lng": 43.1012987
+    },
+    "ulusal-kars-aras-nehri-kagizman-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kastamonu-bezirgan-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 41.3840296,
+      "lng": 33.4082234
+    },
+    "ulusal-kastamonu-cigdem-baraj-golu-kastamonu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.583617,
+      "lng": 33.870807
+    },
+    "ulusal-kastamonu-germectepe-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.4469721,
+      "lng": 33.6318603
+    },
+    "ulusal-kastamonu-kabalar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kastamonu-karacomak-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.302364,
+      "lng": 33.7415386
+    },
+    "ulusal-kayseri-agcasar-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.1712328,
+      "lng": 35.391407
+    },
+    "ulusal-kayseri-akkoy-baraj-golu-kayseri": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3179542,
+      "lng": 35.0289691
+    },
+    "ulusal-kayseri-bahcelik-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.6758468,
+      "lng": 36.2917239
+    },
+    "ulusal-kayseri-sarimsakli-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.883568,
+      "lng": 35.7496395
+    },
+    "ulusal-kayseri-sarioglan-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0201577,
+      "lng": 36.0905913
+    },
+    "ulusal-kirikkale-kapulukaya-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.6455964,
+      "lng": 33.4887725
+    },
+    "ulusal-kirikkale-ahili-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kirikkale-danaci-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kirikkale-kizilirmak-yahsihan-hatti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.84558,
+      "lng": 33.44711
+    },
+    "ulusal-kirklareli-armagan-baraj-golu": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.904439,
+      "lng": 27.4258803
+    },
+    "ulusal-kirklareli-kayali-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kirklareli-ahmetbey-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kirklareli-saricaali-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kirklareli-sofuhalil-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.4796854,
+      "lng": 27.1968997
+    },
+    "ulusal-kirsehir-cogun-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.3342354,
+      "lng": 34.1067045
+    },
+    "ulusal-kirsehir-karaova-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.5471426,
+      "lng": 33.9245425
+    },
+    "ulusal-kirsehir-kultepe-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kirsehir-siddikli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1522705,
+      "lng": 33.9117899
+    },
+    "ulusal-kirsehir-hirfanli-baraj-golu-kirsehir-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.1447265,
+      "lng": 33.6730055
+    },
+    "ulusal-kilis-balikli-baraj-golu-kilis": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kilis-seve-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.7477081,
+      "lng": 37.2459649
+    },
+    "ulusal-kilis-afrin-cayi-kilis-hatti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ulusal-kilis-sabun-suyu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "la…36146 tokens truncated…iye-cicekli-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.572079,
+      "lng": 36.0227289
+    },
+    "ankara-500km-osmaniye-halepli-dere": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.3516889,
+      "lng": 36.2175385
+    },
+    "ankara-500km-osmaniye-orucbey-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4462146,
+      "lng": 36.2368484
+    },
+    "ankara-500km-osmaniye-sarinc-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.3087635,
+      "lng": 36.2302711
+    },
+    "ankara-500km-aydin-bafa-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5152559,
+      "lng": 27.4531003
+    },
+    "ankara-500km-aydin-buyuk-menderes": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.8694134,
+      "lng": 28.6661796
+    },
+    "ankara-500km-aydin-saricay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.6382701,
+      "lng": 27.593313
+    },
+    "ankara-500km-aydin-ikizdere-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.906515,
+      "lng": 27.7521743
+    },
+    "ankara-500km-aydin-akcay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.786001,
+      "lng": 28.3143216
+    },
+    "ankara-500km-aydin-mericler-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5335197,
+      "lng": 27.7220893
+    },
+    "ankara-500km-aydin-dandalaz-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7858351,
+      "lng": 28.6453284
+    },
+    "ankara-500km-aydin-eskicine-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5280909,
+      "lng": 28.0802825
+    },
+    "ankara-500km-aydin-hidirbeyli-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9057861,
+      "lng": 27.5986194
+    },
+    "ankara-500km-aydin-kavsit-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.6614887,
+      "lng": 28.1298816
+    },
+    "ankara-500km-aydin-seferler-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.478202,
+      "lng": 27.9532879
+    },
+    "ankara-500km-aydin-senkoy-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5472058,
+      "lng": 27.7812829
+    },
+    "ankara-500km-aydin-azap-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5904114,
+      "lng": 27.4481565
+    },
+    "ankara-500km-aydin-cariklar-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9373894,
+      "lng": 27.6751116
+    },
+    "ankara-500km-aydin-yagsilar-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.531444,
+      "lng": 27.7596616
+    },
+    "ankara-500km-malatya-surgu-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9441609,
+      "lng": 37.8242537
+    },
+    "ankara-500km-malatya-tohma-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.6356526,
+      "lng": 37.6853695
+    },
+    "ankara-500km-malatya-beylerderesi-baraj-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3268528,
+      "lng": 38.2111456
+    },
+    "ankara-500km-malatya-ayvalitohma-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.624663,
+      "lng": 37.6392958
+    },
+    "ankara-500km-malatya-baliklitohma-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.8115476,
+      "lng": 37.6614462
+    },
+    "ankara-500km-malatya-hasar-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7432143,
+      "lng": 38.1743013
+    },
+    "ankara-500km-malatya-kara-dere": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.8407016,
+      "lng": 37.853044
+    },
+    "ankara-500km-malatya-kesikkopru-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.799951,
+      "lng": 37.9427274
+    },
+    "ankara-500km-malatya-kurucay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.6549469,
+      "lng": 38.1698997
+    },
+    "ankara-500km-malatya-maryap-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3902084,
+      "lng": 38.3786411
+    },
+    "ankara-500km-malatya-orduzu-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3574724,
+      "lng": 38.375928
+    },
+    "ankara-500km-malatya-sultansuyu-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2968393,
+      "lng": 38.0375213
+    },
+    "ankara-500km-malatya-isakoy-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7324363,
+      "lng": 38.3364722
+    },
+    "ankara-500km-malatya-kaldirim-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.399382,
+      "lng": 38.3936094
+    },
+    "ankara-500km-malatya-firat": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7680474,
+      "lng": 38.6098873
+    },
+    "ankara-500km-izmir-tahtali-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.1315168,
+      "lng": 27.0982058
+    },
+    "ankara-500km-izmir-gebekirse-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9865349,
+      "lng": 27.304376
+    },
+    "ankara-500km-izmir-alacati-kutlu-aktas-baraji": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2921575,
+      "lng": 26.4150792
+    },
+    "ankara-500km-izmir-bakircay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0607193,
+      "lng": 27.3331106
+    },
+    "ankara-500km-izmir-kucuk-menderes": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.1399332,
+      "lng": 27.7451855
+    },
+    "ankara-500km-izmir-madra-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2664825,
+      "lng": 26.9899911
+    },
+    "ankara-500km-izmir-urkmez-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.0987257,
+      "lng": 26.9579153
+    },
+    "ankara-500km-izmir-meles-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.3788427,
+      "lng": 27.1533299
+    },
+    "ankara-500km-izmir-yortanli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2362934,
+      "lng": 27.3088677
+    },
+    "ankara-500km-izmir-catal-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9920789,
+      "lng": 27.3192987
+    },
+    "ankara-500km-izmir-golcuk": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 38.3155895,
+      "lng": 28.027622
+    },
+    "ankara-500km-izmir-karagol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.5576006,
+      "lng": 27.2174573
+    },
+    "ankara-500km-izmir-ahirkuyu-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.4632058,
+      "lng": 27.0985237
+    },
+    "ankara-500km-izmir-dalyan-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9405838,
+      "lng": 26.9559904
+    },
+    "ankara-500km-izmir-arikbasi-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.2105172,
+      "lng": 27.4746668
+    },
+    "ankara-500km-mugla-azmak-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0539893,
+      "lng": 28.3372994
+    },
+    "ankara-500km-mugla-esen-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.6033551,
+      "lng": 29.4757844
+    },
+    "ankara-500km-mugla-adnan-menderes-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4813196,
+      "lng": 28.1562376
+    },
+    "ankara-500km-mugla-akkopru-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.908205,
+      "lng": 28.9393871
+    },
+    "ankara-500km-mugla-akgedik-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.2948025,
+      "lng": 28.2183607
+    },
+    "ankara-500km-mugla-saricay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.3284127,
+      "lng": 27.8317423
+    },
+    "ankara-500km-mugla-kocagol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.685332,
+      "lng": 28.8247706
+    },
+    "ankara-500km-mugla-derince-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4529523,
+      "lng": 27.6468534
+    },
+    "ankara-500km-mugla-namnam-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.9516526,
+      "lng": 28.5894624
+    },
+    "ankara-500km-mugla-yuvarlak": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.9286879,
+      "lng": 28.7485494
+    },
+    "ankara-500km-mugla-bayir-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.2890204,
+      "lng": 28.2633377
+    },
+    "ankara-500km-mugla-boranda-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.6469323,
+      "lng": 29.7178958
+    },
+    "ankara-500km-mugla-cukur-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4902062,
+      "lng": 27.7148527
+    },
+    "ankara-500km-mugla-ikiz-gol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.5797194,
+      "lng": 29.5815458
+    },
+    "ankara-500km-mugla-kartal-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0969425,
+      "lng": 28.8509969
+    },
+    "ankara-500km-hatay-karasu-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.7143754,
+      "lng": 36.4810817
+    },
+    "ankara-500km-hatay-buyuk-karacay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.1196002,
+      "lng": 36.058803
+    },
+    "ankara-500km-hatay-golbasi-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.5033608,
+      "lng": 36.489252
+    },
+    "ankara-500km-hatay-gorentas-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 35.9134824,
+      "lng": 36.166881
+    },
+    "ankara-500km-hatay-reyhanli-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.3482781,
+      "lng": 36.5741475
+    },
+    "ankara-500km-hatay-yaylica-karamanli-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.171735,
+      "lng": 36.0294138
+    },
+    "ankara-500km-hatay-afrin-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.3235952,
+      "lng": 36.2534604
+    },
+    "ankara-500km-hatay-beyazcay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.1115962,
+      "lng": 36.2681307
+    },
+    "ankara-500km-hatay-delicay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8592943,
+      "lng": 36.2043664
+    },
+    "ankara-500km-hatay-gokpinar-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 35.9161636,
+      "lng": 36.0662913
+    },
+    "ankara-500km-hatay-hanna-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.1945368,
+      "lng": 36.1384469
+    },
+    "ankara-500km-hatay-kureysi-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 35.9271969,
+      "lng": 36.0563537
+    },
+    "ankara-500km-hatay-kucuk-karacay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.1260192,
+      "lng": 36.0854339
+    },
+    "ankara-500km-hatay-el-fellit-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.1762209,
+      "lng": 36.160544
+    },
+    "ankara-500km-hatay-phyrminos-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.183446,
+      "lng": 36.1672208
+    },
+    "ankara-500km-tekirdag-ergene": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.277326,
+      "lng": 27.1389851
+    },
+    "ankara-500km-tekirdag-kocadere": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6919054,
+      "lng": 27.063151
+    },
+    "ankara-500km-tekirdag-cokal-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 40.7175586,
+      "lng": 27.0324502
+    },
+    "ankara-500km-tekirdag-kadikoy-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8145409,
+      "lng": 26.7989907
+    },
+    "ankara-500km-tekirdag-naipkoy-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8691479,
+      "lng": 27.3936744
+    },
+    "ankara-500km-tekirdag-kazak-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.3519408,
+      "lng": 28.0044633
+    },
+    "ankara-500km-tekirdag-buzagi-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.3445384,
+      "lng": 27.8940024
+    },
+    "ankara-500km-tekirdag-cay-dere": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.743904,
+      "lng": 27.0932683
+    },
+    "ankara-500km-tekirdag-cinaralti-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0724368,
+      "lng": 26.9022535
+    },
+    "ankara-500km-tekirdag-hanoglu-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.1797385,
+      "lng": 27.3743119
+    },
+    "ankara-500km-tekirdag-ikiz-goller-1-gol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.3635939,
+      "lng": 28.0538293
+    },
+    "ankara-500km-tekirdag-inanli-100-yil-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1668554,
+      "lng": 27.4629429
+    },
+    "ankara-500km-tekirdag-karacahalil-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.7948395,
+      "lng": 26.9431774
+    },
+    "ankara-500km-tekirdag-karamehmet-baraji": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.2867981,
+      "lng": 27.8184391
+    },
+    "ankara-500km-tekirdag-karayahsi-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.1954008,
+      "lng": 27.2684607
+    },
+    "ankara-500km-kirklareli-bulanik-dere": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.8368333,
+      "lng": 27.846006
+    },
+    "ankara-500km-kirklareli-mutludere-rezve-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.9353581,
+      "lng": 27.7906106
+    },
+    "ankara-500km-kirklareli-kazandere-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.6168933,
+      "lng": 28.0428869
+    },
+    "ankara-500km-kirklareli-ergene": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.3584661,
+      "lng": 27.163247
+    },
+    "ankara-500km-kirklareli-mert-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.8634016,
+      "lng": 27.968089
+    },
+    "ankara-500km-kirklareli-ahmetbey-belediyesi-sulama-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.4777707,
+      "lng": 27.6189431
+    },
+    "ankara-500km-kirklareli-akandere-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.4568946,
+      "lng": 27.2809415
+    },
+    "ankara-500km-kirklareli-ayvali-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.4487204,
+      "lng": 27.3135851
+    },
+    "ankara-500km-kirklareli-birinci-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.5152661,
+      "lng": 27.5960625
+    },
+    "ankara-500km-kirklareli-celaliye-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.5652705,
+      "lng": 27.3485246
+    },
+    "ankara-500km-kirklareli-cavuskoy-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.5326498,
+      "lng": 27.1977239
+    },
+    "ankara-500km-kirklareli-emirali-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.4515236,
+      "lng": 27.5475475
+    },
+    "ankara-500km-kirklareli-evciler-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.7446554,
+      "lng": 27.5978755
+    },
+    "ankara-500km-kirklareli-karacaoglan-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "hold",
+      "lat": 41.5433352,
+      "lng": 27.0953998
+    },
+    "ankara-500km-kirklareli-kavakdere-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.6178217,
+      "lng": 27.2844829
+    },
+    "ankara-500km-giresun-kilickaya-baraji-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.1934832,
+      "lng": 38.2997778
+    },
+    "ankara-500km-giresun-kocak-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.1349221,
+      "lng": 38.6345038
+    },
+    "ankara-500km-giresun-yaglidere-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8973354,
+      "lng": 38.6590234
+    },
+    "ankara-500km-giresun-batlama-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.8947857,
+      "lng": 38.348402
+    },
+    "ankara-500km-giresun-aladerecam-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.6256415,
+      "lng": 38.7978724
+    },
+    "ankara-500km-giresun-tamdere-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.5397543,
+      "lng": 38.3548104
+    },
+    "ankara-500km-giresun-catal-gol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.2831445,
+      "lng": 38.4560103
+    },
+    "ankara-500km-giresun-donencay-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.246984,
+      "lng": 38.6009241
+    },
+    "ankara-500km-giresun-fevzi-cakmak-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.2984542,
+      "lng": 38.91118
+    },
+    "ankara-500km-giresun-karagol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.5175931,
+      "lng": 38.1771889
+    },
+    "ankara-500km-giresun-turpcu-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.3176612,
+      "lng": 38.5776348
+    },
+    "ankara-500km-giresun-avutmus-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.2651989,
+      "lng": 38.4155846
+    },
+    "ankara-500km-giresun-cavuslu-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 41.0045879,
+      "lng": 39.0960145
+    },
+    "ankara-500km-giresun-cobanli-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.0971297,
+      "lng": 38.7878546
+    },
+    "ankara-500km-giresun-comlekci-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.978495,
+      "lng": 38.9460515
+    },
+    "ankara-500km-gaziantep-karkamis-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.9625668,
+      "lng": 37.9702761
+    },
+    "ankara-500km-gaziantep-doganpinar-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8668301,
+      "lng": 37.5935714
+    },
+    "ankara-500km-gaziantep-sacir-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8484331,
+      "lng": 37.7140744
+    },
+    "ankara-500km-gaziantep-burc-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0631018,
+      "lng": 37.1687233
+    },
+    "ankara-500km-gaziantep-haciarslan-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0259834,
+      "lng": 37.0936426
+    },
+    "ankara-500km-gaziantep-karasu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4170677,
+      "lng": 37.9250326
+    },
+    "ankara-500km-gaziantep-zulfikar-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0971863,
+      "lng": 37.1754043
+    },
+    "ankara-500km-gaziantep-hamidiye-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0969226,
+      "lng": 36.8965678
+    },
+    "ankara-500km-gaziantep-kuzoluk-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0608922,
+      "lng": 36.8916363
+    },
+    "ankara-500km-gaziantep-firat": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.9633771,
+      "lng": 37.9652469
+    },
+    "ankara-500km-gaziantep-alleben-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.0624622,
+      "lng": 37.3591509
+    },
+    "ankara-500km-gaziantep-alleben-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 37.0744575,
+      "lng": 37.2680079
+    },
+    "ankara-500km-gaziantep-aynifar-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.7922106,
+      "lng": 37.6115992
+    },
+    "ankara-500km-gaziantep-ardil-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.4567574,
+      "lng": 37.6141084
+    },
+    "ankara-500km-gaziantep-sabun-suyu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.9964393,
+      "lng": 36.8809131
+    },
+    "ankara-500km-canakkale-biga-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.1270777,
+      "lng": 27.1249581
+    },
+    "ankara-500km-canakkale-karamenderes-nehri": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8909988,
+      "lng": 26.5432817
+    },
+    "ankara-500km-canakkale-tuzla-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.5945781,
+      "lng": 26.3809634
+    },
+    "ankara-500km-canakkale-ayitdere-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.3461716,
+      "lng": 27.064149
+    },
+    "ankara-500km-canakkale-bayramdere-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.3329607,
+      "lng": 26.8214333
+    },
+    "ankara-500km-canakkale-tasoluk-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.1764373,
+      "lng": 27.3725384
+    },
+    "ankara-500km-canakkale-kalkim-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8036451,
+      "lng": 27.1898582
+    },
+    "ankara-500km-canakkale-umurbey-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.2534602,
+      "lng": 26.6944971
+    },
+    "ankara-500km-canakkale-sirinkoy-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.1155493,
+      "lng": 25.772777
+    },
+    "ankara-500km-canakkale-ahiler-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8611339,
+      "lng": 27.2778902
+    },
+    "ankara-500km-canakkale-akcakecili-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.7244842,
+      "lng": 26.2056676
+    },
+    "ankara-500km-canakkale-alemsah-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.6884417,
+      "lng": 26.2130368
+    },
+    "ankara-500km-canakkale-asagiokcular-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 40.0426067,
+      "lng": 26.4547217
+    },
+    "ankara-500km-canakkale-ayazma-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.7711793,
+      "lng": 26.7974747
+    },
+    "ankara-500km-canakkale-calkoy-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.9872024,
+      "lng": 27.1350313
+    },
+    "ankara-500km-adiyaman-ataturk-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.800606,
+      "lng": 38.7532257
+    },
+    "ankara-500km-adiyaman-goksu-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.6656649,
+      "lng": 37.7377658
+    },
+    "ankara-500km-adiyaman-sayoren-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5078865,
+      "lng": 38.1523404
+    },
+    "ankara-500km-adiyaman-ardil-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5004856,
+      "lng": 37.6100486
+    },
+    "ankara-500km-adiyaman-cendere-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.921988,
+      "lng": 38.5922987
+    },
+    "ankara-500km-adiyaman-degirmen-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.5103532,
+      "lng": 38.1009605
+    },
+    "ankara-500km-adiyaman-kahtacay": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.9241659,
+      "lng": 38.6389269
+    },
+    "ankara-500km-adiyaman-cataltepe-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7452974,
+      "lng": 38.5862966
+    },
+    "ankara-500km-adiyaman-mulk-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7295365,
+      "lng": 38.609011
+    },
+    "ankara-500km-adiyaman-karahuyuk-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7338502,
+      "lng": 38.3946253
+    },
+    "ankara-500km-adiyaman-menzil-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7781751,
+      "lng": 38.761108
+    },
+    "ankara-500km-adiyaman-sirimtas-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.0398751,
+      "lng": 38.5438639
+    },
+    "ankara-500km-adiyaman-azapli-gol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7514349,
+      "lng": 37.5566972
+    },
+    "ankara-500km-adiyaman-inekli-gol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7019387,
+      "lng": 37.501835
+    },
+    "ankara-500km-adiyaman-kinik-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.7971131,
+      "lng": 38.4299532
+    },
+    "ankara-500km-erzincan-bagistas-1-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.4837814,
+      "lng": 38.5702573
+    },
+    "ankara-500km-erzincan-tuzla-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.755083,
+      "lng": 40.3295524
+    },
+    "ankara-500km-erzincan-besgoze-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.6666673,
+      "lng": 40.4330109
+    },
+    "ankara-500km-erzincan-balikli-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8486457,
+      "lng": 39.8989705
+    },
+    "ankara-500km-erzincan-kadigolu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.2643465,
+      "lng": 38.4958304
+    },
+    "ankara-500km-erzincan-kalkanci-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8765026,
+      "lng": 38.8088908
+    },
+    "ankara-500km-erzincan-turnacayiri-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.8615578,
+      "lng": 39.7150504
+    },
+    "ankara-500km-erzincan-ardos-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.6644616,
+      "lng": 39.300731
+    },
+    "ankara-500km-erzincan-cennetpinar-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.9212505,
+      "lng": 39.9600062
+    },
+    "ankara-500km-erzincan-koc-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.4791886,
+      "lng": 39.2947056
+    },
+    "ankara-500km-erzincan-polat-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.5290407,
+      "lng": 38.6277
+    },
+    "ankara-500km-erzincan-ardicli-gol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.6303586,
+      "lng": 39.499449
+    },
+    "ankara-500km-erzincan-aygir-agu-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.7592104,
+      "lng": 39.8260996
+    },
+    "ankara-500km-erzincan-eksisu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.731995,
+      "lng": 39.6164444
+    },
+    "ankara-500km-erzincan-gelensi-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.6178331,
+      "lng": 39.5565232
+    },
+    "ankara-500km-kilis-konak-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.7791129,
+      "lng": 37.2245747
+    },
+    "ankara-500km-kilis-ucpinar-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8638395,
+      "lng": 36.9333807
+    },
+    "ankara-500km-kilis-aslan-suyu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8000215,
+      "lng": 37.0799571
+    },
+    "ankara-500km-kilis-domuz-dami": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 36.8659403,
+      "lng": 37.1902935
+    },
+    "ankara-500km-elazig-karakaya-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.4956345,
+      "lng": 38.7120378
+    },
+    "ankara-500km-elazig-hazar-golu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 38.4850796,
+      "lng": 39.4042992
+    },
+    "ankara-500km-elazig-suluklu-gol": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9184042,
+      "lng": 38.576033
+    },
+    "ankara-500km-elazig-seyrantepe-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0525389,
+      "lng": 39.8781436
+    },
+    "ankara-500km-elazig-firat-nehri": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7766111,
+      "lng": 38.636671
+    },
+    "ankara-500km-elazig-hamzabey-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.6598951,
+      "lng": 39.9707456
+    },
+    "ankara-500km-elazig-kepektasi-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.6657539,
+      "lng": 38.9708708
+    },
+    "ankara-500km-elazig-murat-nehri": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7631035,
+      "lng": 39.2699679
+    },
+    "ankara-500km-elazig-peri-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.0626129,
+      "lng": 39.9155942
+    },
+    "ankara-500km-elazig-dicle-nehri": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.465371,
+      "lng": 40.257414
+    },
+    "ankara-500km-elazig-kozluk-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9517936,
+      "lng": 38.6782157
+    },
+    "ankara-500km-elazig-kuscu-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.887342,
+      "lng": 39.9306508
+    },
+    "ankara-500km-elazig-merivan-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.5089398,
+      "lng": 40.2134283
+    },
+    "ankara-500km-elazig-hosruk-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.458952,
+      "lng": 39.4778211
+    },
+    "ankara-500km-elazig-gul-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9604018,
+      "lng": 40.0435083
+    },
+    "ankara-500km-kirikkale-ceritmuminli-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kirikkale-delice-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.9868321,
+      "lng": 34.3916415
+    },
+    "ankara-500km-kirikkale-coruhozu-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kirikkale-okun-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kirikkale-balaban-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kirikkale-sarilioz-cayi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-karabuk-konari-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-aksaray-kutuklu-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-aksaray-kalebalta-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-aksaray-balci-kepir-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-bilecik-akcay-baraji": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-bilecik-rizapasa-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-karaman-basyayla-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-karaman-yukaricaglar-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-karaman-esentepe-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-karaman-sarivadi-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-sapkanli-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-demirciler-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-uzunlu-goleti": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-balik-suyu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-sogutludere-yapay-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-bakircan-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-karadere": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-hasanke-deresi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-oruclu-seve-baraji-dogu-kiyisi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-yukari-afrin-baraj-golu": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "ankara-500km-kilis-kupluce-seve-baraji-kuzey-kiyisi": {
+      "confidence": "D",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": null,
+      "lng": null
+    },
+    "kars-digor-sirinkoy-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.428085,
+      "lng": 43.270737
+    },
+    "siirt-kurtalan-ekinli-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.005562,
+      "lng": 41.478245
+    },
+    "osmaniye-duzici-karacaoren-baraj-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.212679,
+      "lng": 36.435224
+    },
+    "tunceli-uzuncayir-kanoglu-resmi-amator-kiyisi": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.9896,
+      "lng": 39.50903
+    },
+    "tunceli-keban-7-goktepe-temurtaht-resmi-amator-kiyisi": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.966381,
+      "lng": 39.597515
+    },
+    "elazig-karakocan-ozluce-demirtas-resmi-amator-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.16551,
+      "lng": 40.15418
+    },
+    "sivas-golova-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 40.045,
+      "lng": 38.6225
+    },
+    "siirt-kurtalan-yayikli-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.99436,
+      "lng": 41.60154
+    },
+    "siirt-kurtalan-cayirli-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.93369,
+      "lng": 41.57555
+    },
+    "diyarbakir-ergani-ergani-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.26472,
+      "lng": 39.68667
+    },
+    "eskisehir-beylikova-kizilcaoren-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.63287,
+      "lng": 31.36453
+    },
+    "eskisehir-gunyuzu-gunyuzu-1-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.37929,
+      "lng": 31.81662
+    },
+    "eskisehir-gunyuzu-mercan-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.423843,
+      "lng": 31.830064
+    },
+    "eskisehir-mihaliccik-ahurkoy-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.77333,
+      "lng": 31.55984
+    },
+    "eskisehir-sivrihisar-bahcecik-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.4197,
+      "lng": 31.34179
+    },
+    "mugla-ula-ula-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.123986,
+      "lng": 28.375705
+    },
+    "kutahya-merkez-eskiyuregil-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.663799,
+      "lng": 29.882999
+    },
+    "balikesir-altieylul-bayat-sehit-aydin-nazillioglu-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 39.43871,
+      "lng": 27.90293
+    },
+    "mardin-derik-dumluca-baraj-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.42306,
+      "lng": 40.13611
+    },
+    "sirnak-idil-dirsekli-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 37.33371,
+      "lng": 41.84935
+    },
+    "mus-malazgirt-kaz-golu": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 39.33674,
+      "lng": 42.3228
+    },
+    "burdur-tefenni-cayli-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 37.207516,
+      "lng": 29.814226
+    },
+    "burdur-karamanli-karamanli-baraj-golu": {
+      "confidence": "C",
+      "qualityGrade": "C",
+      "indexing": "hold",
+      "lat": 37.39521,
+      "lng": 29.83686
+    },
+    "mus-korkut-korkut-sulama-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": null,
+      "lat": 38.7443,
+      "lng": 41.8057
+    },
+    "manisa-kula-kula-goleti": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 38.50719,
+      "lng": 28.60362
+    },
+    "edirne-havsa-osmanli-koyu-goleti": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.582795490906,
+      "lng": 26.852530227397
+    },
+    "istanbul-silivri-cayirdere-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.268532,
+      "lng": 28.154325
+    },
+    "istanbul-silivri-sayalar-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.30889,
+      "lng": 28.17917
+    },
+    "istanbul-silivri-degirmenkoy-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.16804,
+      "lng": 28.019095
+    },
+    "istanbul-silivri-kucuksinekli-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.22917,
+      "lng": 28.19158
+    },
+    "istanbul-silivri-gumusyaka-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.060047,
+      "lng": 28.034336
+    },
+    "kocaeli-korfez-atalar-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 40.77213,
+      "lng": 29.72883
+    },
+    "kocaeli-kandira-seyrek-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.13575,
+      "lng": 30.09792
+    },
+    "kocaeli-kandira-bagirganli-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.13407,
+      "lng": 30.01986
+    },
+    "kocaeli-kandira-kumcagiz-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.16304,
+      "lng": 30.22654
+    },
+    "kocaeli-izmit-cagirgan-goleti": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 40.90723,
+      "lng": 29.96139
+    },
+    "istanbul-fatih-balat-sair-nedim-parki-sahili": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.0329,
+      "lng": 28.9466
+    },
+    "istanbul-beyoglu-haskoy-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 41.0431,
+      "lng": 28.9494
+    },
+    "istanbul-avcilar-avcilar-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.9765125,
+      "lng": 28.747378
+    },
+    "ankara-kalecik-koyunbaba-mahallesi-amator-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 40.323142,
+      "lng": 33.304042
+    },
+    "ankara-kalecik-koyunbaba-karahaci-amator-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 40.338017,
+      "lng": 33.290617
+    },
+    "ankara-kalecik-koyunbaba-karamusa-amator-alani": {
+      "confidence": "B",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 40.332517,
+      "lng": 33.266392
+    },
+    "izmir-narlidere-sahilevleri-kiyi-bandi": {
+      "confidence": "C",
+      "qualityGrade": null,
+      "indexing": "index",
+      "lat": 38.3928,
+      "lng": 27.0046
+    },
+    "istanbul-uskudar-kuzguncuk-kiyi-kesimi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0354,
+      "lng": 29.0297
+    },
+    "istanbul-uskudar-semsipasa-cami-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0259,
+      "lng": 29.013
+    },
+    "ankara-gudul-sorgun-goleti-tabiat-parki-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 40.3353,
+      "lng": 32.2163
+    },
+    "ankara-etimesgut-goksu-parki-susuz-goleti-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 39.9903,
+      "lng": 32.6483
+    },
+    "izmir-karaburun-mordogan-merkez-kiyi-yolu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 38.518,
+      "lng": 26.6273
+    },
+    "izmir-karaburun-merkez-iskele-sahil-yuruyus": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 38.6489,
+      "lng": 26.5165
+    },
+    "istanbul-asiyan-onu-balik-tutma-iskeleleri": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 41.0812,
+      "lng": 29.0544
+    },
+    "istanbul-kefelikoy-sahil-parki": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.1535,
+      "lng": 29.0374
+    },
+    "kocaeli-esme-sapanca-golu-kamusal-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 40.7065,
+      "lng": 30.0785
+    },
+    "kocaeli-babali-acik-karadeniz-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.1836,
+      "lng": 30.3291
+    },
+    "sakarya-kucukbogaz-golu-karasu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.083,
+      "lng": 30.7455
+    },
+    "sakarya-buyuk-akgol-golkent": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "hold",
+      "lat": 41.0472,
+      "lng": 30.5653
+    },
+    "istanbul-beyoglu-findikli-parki-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0318152,
+      "lng": 28.9907573
+    },
+    "istanbul-uskudar-pasalimani-parki-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0322562,
+      "lng": 29.022802
+    },
+    "istanbul-uskudar-vanikoy-parki-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0682874,
+      "lng": 29.0572697
+    },
+    "istanbul-kartal-dragos-sahili-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.904076,
+      "lng": 29.14115
+    },
+    "istanbul-sariyer-kirecburnu-haydar-aliyev-parki-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.148865,
+      "lng": 29.045399
+    },
+    "istanbul-beylikduzu-gurpinar-sahil-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.9811,
+      "lng": 28.5992
+    },
+    "istanbul-uskudar-kuleli-sahili-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0589,
+      "lng": 29.053
+    },
+    "istanbul-sariyer-rumelihisari-hisaronu-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0847,
+      "lng": 29.057
+    },
+    "istanbul-avcilar-ambarli-ulusal-egemenlik-parki-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.9716564,
+      "lng": 28.7143712
+    },
+    "istanbul-beyoglu-karakoy-sahil-parki-halic-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0237,
+      "lng": 28.9694
+    },
+    "istanbul-fatih-eminonu-halic-acik-sahil-seridi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.0224,
+      "lng": 28.965
+    },
+    "istanbul-tuzla-itu-yani-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.81616,
+      "lng": 29.29628
+    },
+    "sakarya-karasu-yenimahalle-deniz-agzi-olta-alani": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.12508,
+      "lng": 30.64901
+    },
+    "kocaeli-kandira-uzunkum-acik-olta-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.2016,
+      "lng": 30.2833
+    },
+    "kocaeli-kandira-kumcagiz-deresi-kurtyeri-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.1614315,
+      "lng": 30.228854
+    },
+    "bursa-kestel-golbasi-goleti-kamusal-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.21844,
+      "lng": 29.32645
+    },
+    "bursa-nilufer-dagyenice-goleti-kamusal-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.12997,
+      "lng": 28.94027
+    },
+    "bursa-keles-gokoz-goleti-maremsah-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 39.94969,
+      "lng": 29.21318
+    },
+    "bursa-gemlik-kursunlu-rekreasyon-iskeleleri": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.367196,
+      "lng": 29.062763
+    },
+    "balikesir-erdek-ocaklar-kayalik-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.45007,
+      "lng": 27.749723
+    },
+    "balikesir-erdek-narli-acik-kayalik-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.473318,
+      "lng": 27.689697
+    },
+    "balikesir-erdek-turankoy-acik-kayalik-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.5040632,
+      "lng": 27.7817463
+    },
+    "balikesir-erdek-ilhankoy-acik-kayalik-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.5055212,
+      "lng": 27.6954969
+    },
+    "balikesir-erdek-merkez-acik-sahil-yuruyus-yolu": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.3967,
+      "lng": 27.7915
+    },
+    "balikesir-bandirma-merkez-acik-sahil-bandi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.3564923,
+      "lng": 27.9684764
+    },
+    "tekirdag-marmaraereglisi-acik-kiyi-seridi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.9693702,
+      "lng": 27.9550008
+    },
+    "balikesir-marmara-adasi-merkez-acik-kiyi-bandi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.583,
+      "lng": 27.559
+    },
+    "sakarya-adapazari-salmanli-goleti-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.9028,
+      "lng": 30.2975
+    },
+    "tekirdag-sarkoy-murefte-acik-kiyi-bandi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.6687106,
+      "lng": 27.2430903
+    },
+    "tekirdag-sarkoy-ucmakdere-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.8042,
+      "lng": 27.3911
+    },
+    "tekirdag-sarkoy-gazikoy-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.75517,
+      "lng": 27.33532
+    },
+    "tekirdag-marmaraereglisi-yeniciftlik-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.969837,
+      "lng": 27.896502
+    },
+    "tekirdag-marmaraereglisi-sultankoy-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.013561,
+      "lng": 27.986824
+    },
+    "kocaeli-kandira-kefken-pembe-kayalar-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.185441,
+      "lng": 30.225382
+    },
+    "kocaeli-kandira-kefken-yesil-koy-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.184,
+      "lng": 30.228249
+    },
+    "tekirdag-suleymanpasa-kumbag-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.8662,
+      "lng": 27.4612
+    },
+    "tekirdag-suleymanpasa-rumeli-iskelesi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.97397,
+      "lng": 27.51671
+    },
+    "tekirdag-saray-camlikoy-kastro-karadeniz-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.58505,
+      "lng": 28.14864
+    },
+    "kirklareli-vize-kiyikoy-acik-karadeniz-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.6329,
+      "lng": 28.0996
+    },
+    "bursa-inegol-yenicekoy-goleti": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.1018948,
+      "lng": 29.4190493
+    },
+    "balikesir-burhaniye-pelitkoy-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 39.4748079616,
+      "lng": 26.8696869061
+    },
+    "istanbul-sile-kabakoz-deresi-koy-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.143849,
+      "lng": 29.690371
+    },
+    "istanbul-sile-agva-goksu-deresi-yakuplu-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.1318965,
+      "lng": 29.8403838
+    },
+    "kirklareli-demirkoy-igneada-merkez-deniz-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.878732,
+      "lng": 27.989216
+    },
+    "kirklareli-demirkoy-begendik-acik-deniz-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.97384,
+      "lng": 28.03045
+    },
+    "bursa-gemlik-kumla-acik-sahil": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.4703101,
+      "lng": 29.0966398
+    },
+    "bursa-mudanya-egerce-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.364361,
+      "lng": 28.630264
+    },
+    "bursa-gemlik-narli-acik-kiyi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.480808,
+      "lng": 29.031963
+    },
+    "bursa-gemlik-kumsaz-acik-sahil": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.385376,
+      "lng": 29.070217
+    },
+    "yalova-armutlu-fistikli-acik-sahil": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.4872543,
+      "lng": 28.8771047
+    },
+    "duzce-akcakoca-cayagzi-acik-deniz-kiyisi": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 41.097,
+      "lng": 31.2088205
+    },
+    "bursa-gemlik-gemsaz-acik-halk-plaji": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.416962,
+      "lng": 29.100608
+    },
+    "bursa-mudanya-altintas-acik-halk-plaji": {
+      "confidence": "C",
+      "qualityGrade": "C+",
+      "indexing": "index",
+      "lat": 40.356554,
+      "lng": 28.971953
+    }
+  }
+}
