@@ -1,0 +1,73 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-23",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-23.json",
+  "baselineMainSha": "4dd23b94b6944bf491fc1f3c0baf82c21d7c7547",
+  "startingLiveSha": "4dd23b94b6944bf491fc1f3c0baf82c21d7c7547",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 250,
+  "istanbulExhaustedEvidence": "İstanbul merkezli kuş uçuşu sıralama ve önceki 250 km kapsamı korunmuştur; İstanbul'un tamamen tükendiği ileri sürülmez. Bugün Tirilye ve Eşkel, mevcut kayıtlarla ad, slug, koordinat ve kıyı kapsamı bakımından ayrıştırılmış iki farklı aday olarak araştırıldı.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "bursa-mudanya-tirilye-acik-sahil-yuruyus-hatti",
+    "bursa-mudanya-eskel-acik-kuru-kiyi"
+  ],
+  "promotionSlugs": [],
+  "indexReleaseSlugs": [
+    "bursa-mudanya-tirilye-acik-sahil-yuruyus-hatti",
+    "bursa-mudanya-eskel-acik-kuru-kiyi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-23.json",
+  "shortfall": {
+    "promotionReason": "Bugünkü incelemede mevcut kayıtlara ilişkin üç ayrı, sınıfı yükseltecek yeni ve yeterli kanıt tamamlanmadı; kota doldurmak için terfi üretilmedi."
+  },
+  "decisions": [
+    {
+      "slug": "bursa-mudanya-tirilye-acik-sahil-yuruyus-hatti",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 70.137,
+      "identityAndSpecies": "Mudanya Belediyesi Tirilye sahilinin yürüyüş hattı, liman ve plaj kullanımlarını ayırır. Tarihli rota-özel kıyı anlatımı zargana, kefal ve ispari bildirir; güncel stok veya yakalama garantisi değildir.",
+      "access": "Belediye kayıtları Tirilye sahilinin kamusal yürüyüş/plaj bağlamını doğrular. Sayfa liman, iskele, işaretli yüzme alanı ve işletme önleri dışındaki kuru açık kıyı cebini kapsar; güncel tabela önceliklidir.",
+      "law": "6/2 ve 2026/26 hükümleri uygulanır; deniz trafiği, yüzme alanı, geçici kapatma ve yerel güvenlik uyarıları dışında kalınır.",
+      "sources": [
+        "https://mudanya.bel.tr/assets/document/kent-rehberi-tr.pdf",
+        "https://mudanya.bel.tr/tr/yerler/nostalji-sokaklar/trilye-yat-limani",
+        "https://www.balikavi.net/konu/trilye-kiyiya-istavrit-ile-zargana-geldimi.48020/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "bursa-mudanya-eskel-acik-kuru-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 77.478,
+      "identityAndSpecies": "TÜRÇEV Eşkel Halk Plajını Bursa Büyükşehir Belediyesi sorumluluğunda kamuya açık plaj olarak kaydeder. Tarihli rota-özel anlatım istavrit, mezgit, zargana ve kefal bildirir; güncel stok veya yakalama garantisi değildir.",
+      "access": "Kamuya açık plaj kaydı kamusal kıyı kimliğini destekler; sayfa işaretli yüzme/cankurtaran/tesis kesimini değil, güvenli kuru açık kıyı yaklaşımını kapsar. Sel sonrası yol ve kıyı koşulu hareket günü tekrar kontrol edilir.",
+      "law": "6/2 ve 2026/26 hükümleri uygulanır; yüzme alanı, plaj tesisi, geçici kapatma ve yerel güvenlik işaretleri dışında kalınır.",
+      "sources": [
+        "https://mudanya.bel.tr/assets/document/kent-rehberi-tr.pdf",
+        "https://mavibayrak.org.tr/turkiye/plaj.aspx?plaj_refno=2188",
+        "https://www.bursa.bel.tr/haber/baskan-vekili-biba-esencede-planlamaya-hiz-verilecek",
+        "https://www.balikavi.net/konu/kayikla-balik-avi-bursa-mudanya-eskel-sahili.49231/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false,
+    "productionStatus": "pending",
+    "newRoutesPublished": 0,
+    "actualConfidencePromotions": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0,
+    "pages": []
+  }
+}
