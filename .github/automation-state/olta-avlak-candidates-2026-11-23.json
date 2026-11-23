@@ -15,5 +15,11 @@
   "promotionQueue": [
     { "decision": "no_promotion", "reason": "Bugün incelenen mevcut kayıtlar için sınıfı bir üst kademeye taşıyacak yeni bağımsız kanıt tamamlanmadı; kanıtsız terfi yapılmadı." }
   ],
-  "publication": { "verified": false }
+  "publication": {
+    "verified": true,
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/225",
+    "mergedMainSha": "a554cfd4a547c3275e128905d1c505c17feaba62",
+    "liveSha": "a554cfd4a547c3275e128905d1c505c17feaba62",
+    "productionRunId": 45217604259
+  }
 }

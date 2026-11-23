@@ -15,4 +15,4 @@ Bugün kanıta dayalı bir sınıf terfisi yapılmadı. İncelenen mevcut kayıt
 
 ## İndeks kotası ve yayın durumu
 
-İki yeni C+ sayfa pazar gününün 2/2 ortak indeks kotasına ayrıldı. Yerel test, build, deploy provası, PR, CI, merge ve canlı doğrulama tamamlanana kadar bu kayıt teslim sayılmaz; Google indekslenmesi ayrıca garanti edilmez.
+İki yeni C+ sayfa pazar gününün 2/2 ortak indeks kotasını kullandı. PR #225 kalite kontrolünden geçti ve squash merge edildi. Production workflow `45217604259` başarılıdır; canlı `/__deploy/version.txt` işareti `a554cfd4a547c3275e128905d1c505c17feaba62` exact main SHA ile eşleşti. İki rota HTTP 200, doğru canonical, `index,follow` ve sitemap üyeliğiyle doğrulandı. Google'ın gerçekten indekslemesi ayrıca garanti edilmez.

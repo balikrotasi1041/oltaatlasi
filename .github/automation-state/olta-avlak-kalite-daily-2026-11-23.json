@@ -62,12 +62,35 @@
     }
   ],
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 2,
     "actualConfidencePromotions": 0,
     "existingRoutesReleased": 0,
-    "indexReleases": 0,
-    "pages": []
+    "indexReleases": 2,
+    "mergedMainSha": "a554cfd4a547c3275e128905d1c505c17feaba62",
+    "liveSha": "a554cfd4a547c3275e128905d1c505c17feaba62",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/225",
+    "ciRunId": 45217206645,
+    "productionRunId": 45217604259,
+    "verifiedAt": "2026-11-23T19:36:00+03:00",
+    "pages": [
+      {
+        "slug": "bursa-mudanya-tirilye-acik-sahil-yuruyus-hatti",
+        "status": 200,
+        "robots": "index,follow",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-mudanya-tirilye-acik-sahil-yuruyus-hatti/",
+        "inSitemap": true,
+        "liveSha": "a554cfd4a547c3275e128905d1c505c17feaba62"
+      },
+      {
+        "slug": "bursa-mudanya-eskel-acik-kuru-kiyi",
+        "status": 200,
+        "robots": "index,follow",
+        "canonical": "https://oltaatlasi.com/meralar/bursa-mudanya-eskel-acik-kuru-kiyi/",
+        "inSitemap": true,
+        "liveSha": "a554cfd4a547c3275e128905d1c505c17feaba62"
+      }
+    ]
   }
 }
