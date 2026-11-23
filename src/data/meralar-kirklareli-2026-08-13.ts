@@ -23,7 +23,7 @@ export const kirklareliYeni20260813:Mera[]=[
  sources:[sportif,baliklandirma,teblig]
 },
 {
- ...ortak("kirklareli-kayali-baraji"),slug:"kirklareli-kayali-baraji",name:"Kayalı Barajı (Kayalıköy Barajı)",district:"Merkez",province:"Kırklareli",waterType:"Baraj",lat:41.7886,lng:27.1356,vehicleAccess:"Orta",navigationVerified:false,
+ ...ortak("kirklareli-kayali-baraji"),slug:"kirklareli-kayali-baraji",name:"Kayalı Barajı (Kayalıköy Barajı)",district:"Merkez",province:"Kırklareli",waterType:"Baraj",lat:41.7886,lng:27.1356,vehicleAccess:"Orta",
  summary:"Kayalı Barajı, Kayalıköy Barajı adıyla da bilinir. Kırklareli merkezden Kayalı köyü yönü genel yaklaşım referansıdır; son kıyı girişi doğrulanmış değildir. Sazan balıklandırması resmî kayıtlarda yer alır.",
  amenities:["Kayalı köyü genel yaklaşım referansı","Kırklareli merkezde temel hizmetler","Gecelik plan için Kırklareli merkezde ruhsatlı konaklama seçenekleri"],
  cautions:["Yasadışı ağ avcılığına karşı resmî denetim yapılan bir su olduğundan ağ ve ticari çalışma izine yaklaşılmamalı","Baraj gövdesi ve teknik tesisler rota dışıdır","Geniş rezervuarda rüzgâr ve su kotu kıyı erişimini hızla değiştirebilir"],
