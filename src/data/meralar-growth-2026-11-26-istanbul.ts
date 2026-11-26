@@ -1,10 +1,10 @@
 import type { EnrichedMera, ResearchSource } from "./meralar-tumu-core";
 
-const date = "2026-11-26";
+const date = "2026-11-27";
 const law: ResearchSource = {
   label: "Tarım ve Orman Bakanlığı — 6/2 amatör avcılık tebliği",
   url: "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
-  note: "İstanbul Boğazı trafik ayrım düzenindeki av yasağı ile deniz avındaki tür, boy, dönem ve takım hükümlerinin dayanağıdır."
+  note: "Deniz amatör avcılığındaki tür, boy, dönem ve takım hükümlerinin dayanağıdır."
 };
 const amendment2025: ResearchSource = {
   label: "Tarım ve Orman Bakanlığı — 2025/12 amatör avcılık değişikliği",
@@ -14,7 +14,7 @@ const amendment2025: ResearchSource = {
 const amendment2026: ResearchSource = {
   label: "Tarım ve Orman Bakanlığı — 2026/26 amatör avcılık değişikliği",
   url: "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf",
-  note: "6/2 tebliğini değiştiren 16 Eylül 2026 düzenlemesidir."
+  note: "İstanbul Boğazı trafik ayırım şeridinde su ürünleri avcılığını yasaklayan hükmü ekler."
 };
 const nakkastepeGuide: ResearchSource = {
   label: "İBB — İstanbul Olta Balıkçılığı Rehberi, Nakkaştepe Sahil Parkı",
