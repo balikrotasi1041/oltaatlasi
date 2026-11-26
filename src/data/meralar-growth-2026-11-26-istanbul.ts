@@ -51,6 +51,36 @@ const burunbahceMap: ResearchSource = {
   url: "https://yandex.com.tr/maps/org/burunbahce_sahil/174600688734/",
   note: "Burunbahçe kıyısındaki park referansını konumlandırır."
 };
+const semizkumEvent: ResearchSource = {
+  label: "Silivri Belediyesi — 2026 Semizkumlar kıyı oltası yarışması",
+  url: "https://www.silivri.bel.tr/haber/7-istanbul-surf-casting-balik-yakalama-yarismasi-silivri-de-gerceklestirildi/2137",
+  note: "Marmara kıyısındaki ayrı Semizkumlar mevkiinde sportif kıyı oltası kullanımını belgeler."
+};
+const semizkumMeeting: ResearchSource = {
+  label: "Silivri Belediyesi — Semizkumlar yarışma programı",
+  url: "https://www.silivri.bel.tr/haber/7-istanbul-uluslararasi-balik-tutma-yarismasi-silivri-de-gerceklestirilecek/2128",
+  note: "2026 yarışmasının toplanma adresini Semizkumlar Mocamp olarak verir."
+};
+const semizkumCatch: ResearchSource = {
+  label: "Semizkumlar — 2025 yarışma katılımcısının kıyı avı kaydı",
+  url: "https://www.youtube.com/watch?v=i0C587ahH80",
+  note: "Yarışma katılımcısının açıklaması 2025 Semizkumlar kıyı avında lapin ve ispari yakalandığını bildirir."
+};
+const semizkumPublic: ResearchSource = {
+  label: "İBB Destek Hizmetleri — Semizkum halk plajı",
+  url: "https://destekhizmetleri.ibb.istanbul/hizmetler/plajlar/",
+  note: "Silivri Semizkum Plajı'nı belediyenin hizmet verdiği kamusal kıyılar arasında listeler."
+};
+const semizkumMap: ResearchSource = {
+  label: "DergiPark — İstanbul yüzme suyu örnekleme noktaları",
+  url: "https://dergipark.org.tr/tr/download/article-file/4653659",
+  note: "Semizkum Çadır ve Kamp Yeri için kıyı referansı 41.071680, 28.161011. Örnekleme pini erişim veya olta izni belgesi değildir."
+};
+const semizkumSwimmingZones: ResearchSource = {
+  label: "Silivri TV — 2026 yüzme alanı listesi",
+  url: "https://silivri.tv.tr/haber/silivri-de-denize-girilebilecek-alanlar-aciklandi",
+  note: "İstanbul Valiliği kararına göre Semizkum Çadır Yerleri Mevkii ve Başkent 4 Sitesi Önü yüzme alanları arasındadır."
+};
 
 export const growthRoutes20261126Istanbul: EnrichedMera[] = [
   {
@@ -147,6 +177,72 @@ export const growthRoutes20261126Istanbul: EnrichedMera[] = [
       legal: { level: "strong", label: "6/2 ve değişiklikleri", note: "Boğaz trafik düzeni ve deniz avına ilişkin hükümler uygulanır." },
       access: { level: "partial", label: "Kamusal park kıyısı", note: "İşletmeler ve plaj dışındaki park yolu güncel tabelaya bağlıdır." },
       field: { level: "unverified", label: "Kıyı kullanımına dair yeni saha teyidi yok", note: "Harita pini park referansıdır." }
+    }
+  },
+  {
+    slug: "istanbul-silivri-semizkumlar-acik-kiyi",
+    name: "Semizkumlar Açık Kıyısı",
+    province: "İstanbul", district: "Silivri", region: "Marmara", waterType: "Deniz",
+    zone: "Silivri merkezinin batısında, Semizkumlar'ın Çadır Yerleri mevkiindeki Marmara kıyısının kamusal ve av yasağı uygulanmayan kesimleri. Tesis ve site girişleri kapsam dışıdır.",
+    lat: 41.07168, lng: 28.161011, locationPrecision: "Genel bölge",
+    summary: "Semizkumlar, Silivri ilçe merkezinin batısındaki açık Marmara kıyısıdır. Belediye burada 2026 kıyı oltası yarışmasını belgeler. Bir katılımcı 2025 yarışmasındaki ispari avını bildirmiştir. Yüzme alanı sınırları ve yaya güvenliği olta kurulabilecek kesimi belirler.",
+    fish: ["İspari"],
+    methods: ["Güvenli atış açıklığında kıyıdan yemli dip oltası"],
+    baits: ["Deniz kurdu"],
+    camping: "Kontrol edilmeli", vehicleAccess: "Kontrol edilmeli",
+    amenities: ["Kamusal kıyı erişimi"],
+    cautions: [
+      "6/2 Tebliği uyarınca 1 Nisan–15 Kasım arasında kıyıdan en fazla 200 metre uzaklıktaki şamandıralı yüzme alanlarının içinde avlanmayın.",
+      "Yüzücü, yaya veya kıyı tesisi yakınında güvenli atış açıklığı yoksa olta açmayın. Yerel tabelalara ve geçici kapatmalara uyun.",
+      "Rüzgâr ve kıyıya vuran dalga arttığında sudan uzaklaşın. Tesis veya site girişini kıyıya geçiş olarak kullanmayın."
+    ],
+    verification: "27 Kasım 2026: Silivri Belediyesi yarışma kayıtları, yarışmacının 2025 tür bildirimi, İBB plaj kaydı, yüzme alanı listesi ve 6/2 düzenlemeleri incelendi.",
+    updatedAt: date, publishedAt: date, researchedAt: date,
+    confidence: "C", qualityGrade: "C+", indexing: "hold",
+    image: "/images/meralar/ulusal/istanbul-silivri-semizkumlar-acik-kiyi.svg",
+    socialImage: "/images/meralar/ulusal/istanbul-silivri-semizkumlar-acik-kiyi.svg",
+    navigationNote: "Harita pini Çadır Yerleri mevkiinin kıyı referansıdır. Kamusal kıyıya halka açık yoldan yaklaşın. Kamp tesisi girişini ve işaretli yüzme alanlarını av noktası olarak kullanmayın.",
+    shoreProfile: "Semizkumlar açık Marmara cephesinde kumluk bir kıyıdır. Dalga ve rüzgârın yanı sıra plaj kullanımı da atış alanını daraltır. Yüzme alanı şamandıralarının konumu sezonda değişebilir.",
+    transport: "Silivri merkezinin batısındaki Semizkumlar Mahallesi'nden halka açık sahil erişimini kullanın. Harita işareti araç parkı veya ücretli tesis girişi göstermez.",
+    crowdNote: "Kıyı kalabalıksa takımı kapalı tutun. Atış yönünde ve kamışın gerisinde boşluk bırakın.",
+    longIntro: [
+      "Semizkumlar'ın Çadır Yerleri mevkii, Silivri merkez ve liman kıyılarından ayrı bir Marmara sahilidir. Silivri Belediyesi, 2026 surf casting yarışmasının bu sahilde düzenlendiğini ve toplanma yerinin Mocamp olduğunu kaydeder.",
+      "2025 yarışmasının bir katılımcısı aynı sahilde ispari yakalandığını bildirir. Tarihli yarışma kaydı türün bu kıyıdaki varlığına örnektir. Av günü verimini veya özel bir alana girme yetkisini göstermez."
+    ],
+    planningNotes: [
+      "Halka açık yaklaşımı seçin ve kamp tesisi sınırlarını geçmeyin. Koordinat kıyıyı bulmak için genel bir referanstır.",
+      "Çadır Yerleri ve Başkent 4 çevresinde yüzme alanları bulunur. Sahadaki şamandıraları ve levhaları kontrol edin. Yüzücüler varken olta kullanmayın."
+    ],
+    seasonalNotes: [
+      "1 Nisan–15 Kasım arasında 6/2'nin kıyıdaki şamandıralı yüzme alanı yasağı geçerlidir. Tür, takım, miktar ve boy hükümlerini av gününde kontrol edin."
+    ],
+    sources: [semizkumEvent, semizkumMeeting, semizkumCatch, semizkumPublic, semizkumMap, semizkumSwimmingZones, law, amendment2025, amendment2026],
+    researchStatus: "27 Kasım 2026 C+ kıyı araştırması",
+    researchSummary: "Semizkumlar yarışma kayıtları, tarihli ispari bildirimi, belediyenin kamusal kıyı kaydı ve yüzme alanı hükümleri eşleştirildi.",
+    fishEvidence: [{
+      name: "İspari", scientificName: "Diplodus annularis",
+      evidenceLevel: "Tarih ve yer içeren yarışmacı bildirimi", sourceLabel: semizkumCatch.label,
+      sourceUrl: semizkumCatch.url, note: "2025 Semizkumlar kıyı oltası yarışmasında bildirilen tür."
+    }],
+    accessEvidence: [{
+      label: semizkumPublic.label, value: "Semizkum'daki kamusal kıyı erişimi",
+      sourceUrl: semizkumPublic.url, note: "İBB halk plajı listesi kamusal yaklaşımı doğrular. İşaretli yüzme alanları ve kamp tesisi ayrı kullanımlardır."
+    }],
+    accommodationOptions: [],
+    navigationVerified: false,
+    qualityAssessment: {
+      model: "expanded-v2", reviewedAt: date, identityVerified: true, speciesRouteSpecific: true,
+      currentLawResolved: true, safePublicAccessVerified: true,
+      independentStrongFamilies: ["Silivri Belediyesi Semizkumlar kıyı oltası kayıtları"],
+      localContentVerified: true, fieldOrEquivalentVerified: false, unresolvedRisks: []
+    },
+    confidenceProfile: {
+      model: "evidence-v1", overall: "C", reviewedAt: date,
+      identity: { level: "strong", label: "Belediye yarışma adresi ve akademik kıyı pini", note: "Semizkumlar, Silivri merkez kıyısından ayrı kaydedilir." },
+      species: { level: "strong", label: "2025 yarışmacı bildirimi", note: "İspari Semizkumlar kıyısından bildirildi." },
+      legal: { level: "strong", label: "6/2 deniz amatör avı ve yüzme alanı hükümleri", note: "Dönem, şamandıralı alan ve sahadaki işaretler gözetilir." },
+      access: { level: "partial", label: "İBB kamusal plaj kaydı", note: "Kamusal yaklaşımı gösterir. Özel tesis girişi ve atış mikro noktası tarif edilmez." },
+      field: { level: "unverified", label: "Yeni saha teyidi yok", note: "Kıyı referansı genel bölgeyi gösterir." }
     }
   }
 ];

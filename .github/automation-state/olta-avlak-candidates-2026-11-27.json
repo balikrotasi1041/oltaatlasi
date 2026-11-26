@@ -6,9 +6,9 @@
   },
   "previousRadiusKm": 250,
   "currentRadiusKm": 250,
-  "dailyNewResearchRadiusKm": 116.859,
+  "dailyNewResearchRadiusKm": 202.672,
   "phase": "Türkiye",
-  "coverage": "Üsküdar ve Beykoz kıyı parkları en yakın doğrulanmış adaylar. Sakarya Kaynarca açık göleti tek sayfalık telafi adayı. Adaylar ad, koordinat, su ve güzergâh düzeyinde karşılaştırıldı.",
+  "coverage": "İstanbul merkezli 250 km kapsamı. Adaylar ad, koordinat, su ve güzergâh düzeyinde karşılaştırıldı.",
   "newRouteQueue": [
     {
       "slug": "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
@@ -63,6 +63,104 @@
         "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
       ],
       "liveVerified": true
+    },
+    {
+      "slug": "istanbul-sariyer-buyukdere-fener-yakini-acik-kiyi",
+      "name": "Büyükdere Fener Yakını Açık Kıyısı",
+      "distanceKmFromIstanbulCenter": 18.081,
+      "plannedIndexing": "hold",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://webdosya.csb.gov.tr/db/cygm/icerikler/istanbul-dcep-2025-2029-20250324133942.pdf",
+        "https://acikerisim.bartin.edu.tr/bitstream/handle/11772/6434/%C5%9Eule%20Y%C4%B1ld%C4%B1z%20%C3%96m%C3%BCr.pdf?isAllowed=y&sequence=1",
+        "https://istanbul.tarimorman.gov.tr/Haber/1450/Sariyer-Sahil-Seridinde-Tarabya-Buyukdere-Tarabya-Istinye-Baltalimani-Emirgan-Olmak-Uzere-Toplam-3-Bolgede-Amator-Ve-Sportif-Olta-Balikciligi-Yapanlara-Yonelik-Denetim-Yapilmistir",
+        "https://dergipark.org.tr/tr/download/article-file/710896",
+        "https://www.sinangenim.com/tr/medya/kose-yazilari/lufer-uzerine-437/",
+        "https://sariyeraktuel.com/haber/sariyer-sahilinde-karanlik-tehlike-ne-korkuluk-var-ne-lamba-5226",
+        "https://www.openstreetmap.org/node/27607731",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-buyukcekmece-sinanoba-marina24-onu-park-kiyisi",
+      "name": "Sinanoba Marina 24 Önü Park Kıyısı",
+      "distanceKmFromIstanbulCenter": 36.203,
+      "plannedIndexing": "hold",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://depremzemin.ibb.istanbul/uploads/prefix-buyukcekmece-tsunami-666af15179435.pdf",
+        "https://www.openstreetmap.org/way/1514952188",
+        "https://www.openstreetmap.org/way/1086495907",
+        "https://www.openstreetmap.org/way/1514952193",
+        "https://www.youtube.com/watch?v=xVdkI5ONAps",
+        "https://www.aa.com.tr/tr/gundem/istanbulda-95-nokta-yuzme-alani-olarak-belirlendi/3952780",
+        "https://www.istesob.org.tr/wp-content/uploads/2020/06/169-Nolu-Genelge-22-06-2020-Genelge-2020-1-Yaz-Mevsimi-Kurallari-Hakkinda.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-silivri-semizkumlar-acik-kiyi",
+      "name": "Semizkumlar Açık Kıyısı",
+      "distanceKmFromIstanbulCenter": 68.916,
+      "plannedIndexing": "hold",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://www.silivri.bel.tr/haber/7-istanbul-surf-casting-balik-yakalama-yarismasi-silivri-de-gerceklestirildi/2137",
+        "https://www.silivri.bel.tr/haber/7-istanbul-uluslararasi-balik-tutma-yarismasi-silivri-de-gerceklestirilecek/2128",
+        "https://www.youtube.com/watch?v=i0C587ahH80",
+        "https://destekhizmetleri.ibb.istanbul/hizmetler/plajlar/",
+        "https://dergipark.org.tr/tr/download/article-file/4653659",
+        "https://silivri.tv.tr/haber/silivri-de-denize-girilebilecek-alanlar-aciklandi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-silivri-gumusyaka-acik-kiyi",
+      "name": "Gümüşyaka Açık Kıyısı",
+      "distanceKmFromIstanbulCenter": 77.866,
+      "plannedIndexing": "hold",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://www.silivri.bel.tr/haber/gumusyaka_gece_pazari_yenileniyor_sosyal_tesis_ve_plaj_alani_geliyor/1075",
+        "https://www.silivri.bel.tr/haber/baskan_balcioglu_gumusyaka_gece_pazarini_ziyaret_etti/1996",
+        "https://www.silivri.bel.tr/haber/silivri-sahillerinde-kamu-alanlarina-yonelik-denetimler-suruyor/2090",
+        "https://silivri360.com/mekan/gumusyaka-gece-pazari-gumusyaka/",
+        "https://www.anadoluajansi.gov.tr/tr/gundem/istanbulda-95-nokta-yuzme-alani-olarak-belirlendi/3952780",
+        "https://www.istesob.org.tr/wp-content/uploads/2020/06/169-Nolu-Genelge-22-06-2020-Genelge-2020-1-Yaz-Mevsimi-Kurallari-Hakkinda.pdf",
+        "https://www.balikavi.net/konu/15-07-2007-gumusyaka-av-raporu.11937/",
+        "https://www.youtube.com/watch?v=zsAezpkd7mc",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm?sfnsn=scwspwa",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "edirne-merkez-tayakadin-koyu-goleti",
+      "name": "Tayakadın Köyü Göleti",
+      "distanceKmFromIstanbulCenter": 202.672,
+      "plannedIndexing": "hold",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://edirne.tarimorman.gov.tr/Haber/732/Su-Kaynaklarimizi-Baliklandiriyoruz",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/2019_ed-rne_cevre_durum_raporu-20201221092740.pdf",
+        "https://bolge11.dsi.gov.tr/Sayfa/Detay/1084",
+        "https://www.openstreetmap.org/way/896165470",
+        "https://edirne.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=702",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://www.resmigazete.gov.tr/eskiler/2025/04/20250416-4.htm",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     }
   ],
   "promotionQueue": [
@@ -110,9 +208,7 @@
     }
   ],
   "publication": {
-    "verified": true,
-    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/229",
-    "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b",
-    "verifiedAt": "2026-11-27T00:13:56+03:00"
+    "verified": false,
+    "lastVerifiedSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
   }
 }
