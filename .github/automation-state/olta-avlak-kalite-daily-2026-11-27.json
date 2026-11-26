@@ -153,15 +153,89 @@
         "slug": "sakarya-kaynarca-kulakli-goleti"
       }
     ],
-    "note": "Bir sayfa yalnız bir günlük hedefe mahsup edilir. Yayın doğrulanana kadar açık kapanmaz. Telafi kayıtları eski tarihte yayınlanmış gibi sayılmaz."
+    "note": "Bir sayfa yalnız bir günlük hedefe mahsup edilir. Yayın doğrulanana kadar açık kapanmaz. Telafi kayıtları eski tarihte yayınlanmış gibi sayılmaz.",
+    "completedCatchup": [
+      {
+        "forDate": "2026-11-24",
+        "slug": "sakarya-kaynarca-kulakli-goleti",
+        "verifiedAt": "2026-11-27T00:13:56+03:00",
+        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      }
+    ],
+    "newPagesOutstandingAfterPublication": {
+      "2026-11-24": 1,
+      "2026-11-25": 2,
+      "2026-11-26": 2
+    }
   },
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
-    "actualConfidencePromotions": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "newRoutesPublished": 3,
+    "actualConfidencePromotions": 3,
     "existingRoutesReleased": 0,
-    "indexReleases": 0,
-    "pages": []
+    "indexReleases": 2,
+    "mergedMainSha": "81102bb25ad0bbfaed895143033dd39552ab345b",
+    "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/229",
+    "ciRunId": 45896143835,
+    "productionRunId": 45896331546,
+    "verifiedAt": "2026-11-27T00:13:56+03:00",
+    "pages": [
+      {
+        "slug": "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+        "status": 200,
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi/",
+        "inSitemap": true,
+        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      },
+      {
+        "slug": "istanbul-beykoz-burunbahce-parki-acik-kiyi",
+        "status": 200,
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-beykoz-burunbahce-parki-acik-kiyi/",
+        "inSitemap": true,
+        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      },
+      {
+        "slug": "sakarya-kaynarca-kulakli-goleti",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/sakarya-kaynarca-kulakli-goleti/",
+        "inSitemap": false,
+        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      },
+      {
+        "slug": "ulusal-istanbul-alibey-baraj-golu",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-alibey-baraj-golu/",
+        "inSitemap": false,
+        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      },
+      {
+        "slug": "ankara-500km-istanbul-kucukcekmece-golu",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/ankara-500km-istanbul-kucukcekmece-golu/",
+        "inSitemap": false,
+        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      },
+      {
+        "slug": "ulusal-istanbul-buyukcekmece-golu",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-buyukcekmece-golu/",
+        "inSitemap": false,
+        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      }
+    ]
   }
 }
