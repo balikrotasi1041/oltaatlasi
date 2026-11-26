@@ -7,12 +7,17 @@
   "startingLiveSha": "9286f4cee83e77445b7536deac338e914439f073",
   "scopePhase": "Türkiye",
   "searchRadiusKm": 250,
-  "istanbulExhaustedEvidence": "Önceki 250 km kapsamı korunur. İstanbul içinde iki ayrı kıyı parkı doğrulandı. Üçüncü sayfa için araştırma mevcut Marmara kapsamındaki Sakarya'ya uzandı. İstanbul aday havuzu tükenmiş sayılmadı.",
+  "istanbulExhaustedEvidence": "Önceki 250 km kapsamı korunur. İstanbul, Sakarya ve mevcut Marmara/Trakya kapsamındaki kanıtlı rotalar incelendi. İstanbul aday havuzu tükenmiş sayılmadı.",
   "indexReleaseCap": 2,
   "newRouteSlugs": [
     "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
     "istanbul-beykoz-burunbahce-parki-acik-kiyi",
-    "sakarya-kaynarca-kulakli-goleti"
+    "sakarya-kaynarca-kulakli-goleti",
+    "istanbul-sariyer-buyukdere-fener-yakini-acik-kiyi",
+    "istanbul-buyukcekmece-sinanoba-marina24-onu-park-kiyisi",
+    "istanbul-silivri-semizkumlar-acik-kiyi",
+    "istanbul-silivri-gumusyaka-acik-kiyi",
+    "edirne-merkez-tayakadin-koyu-goleti"
   ],
   "promotionSlugs": [
     "ulusal-istanbul-alibey-baraj-golu",
@@ -135,6 +140,114 @@
         "https://rize.tarimorman.gov.tr/Duyuru/361/"
       ],
       "previousIndexing": "noindex"
+    },
+    {
+      "slug": "istanbul-sariyer-buyukdere-fener-yakini-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 18.081,
+      "identityAndSpecies": "Büyükdere Koyu, İstanbul Boğazı'nın Avrupa kıyısındadır. İl Tarım ve Orman Müdürlüğünün denetimi Büyükdere'yi içeren kıyı hattında olta kullanıldığını belgeler. Burada tarif edilen kıyı fenerin güneybatısındaki kamusal yaklaşımla sınırlıdır. Üsküdar Üniversitesi Etkileşim dergisindeki tarihsel çalışma lüferi özellikle Büyükdere Koyu'nda kaydeder. Bu kaynak koyda tür geçmişini destekler. Güncel av verimi veya mevsimsel bolluk göstermez.",
+      "access": "Piyasa Caddesi üzerindeki Büyükdere Mahallesi durağı yakınındaki kamusal yürüyüş hattını kullanın. Koordinat fenerin güneybatısındaki kıyı referansıdır. Dar ve korumasız geçişlerden atış yapılmaz.",
+      "law": "Boğaz trafik ayrım şeridi, yerel levhalar, iskele ve operasyon alanları gözetilir.",
+      "sources": [
+        "https://webdosya.csb.gov.tr/db/cygm/icerikler/istanbul-dcep-2025-2029-20250324133942.pdf",
+        "https://acikerisim.bartin.edu.tr/bitstream/handle/11772/6434/%C5%9Eule%20Y%C4%B1ld%C4%B1z%20%C3%96m%C3%BCr.pdf?isAllowed=y&sequence=1",
+        "https://istanbul.tarimorman.gov.tr/Haber/1450/Sariyer-Sahil-Seridinde-Tarabya-Buyukdere-Tarabya-Istinye-Baltalimani-Emirgan-Olmak-Uzere-Toplam-3-Bolgede-Amator-Ve-Sportif-Olta-Balikciligi-Yapanlara-Yonelik-Denetim-Yapilmistir",
+        "https://dergipark.org.tr/tr/download/article-file/710896",
+        "https://www.sinangenim.com/tr/medya/kose-yazilari/lufer-uzerine-437/",
+        "https://sariyeraktuel.com/haber/sariyer-sahilinde-karanlik-tehlike-ne-korkuluk-var-ne-lamba-5226",
+        "https://www.openstreetmap.org/node/27607731",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-buyukcekmece-sinanoba-marina24-onu-park-kiyisi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 36.203,
+      "identityAndSpecies": "İBB'nin ilçe kıyı raporu Mimarsinan Liman Sokağı ile Sinanoba Burnu arasında parklar ve kamusal yürüyüş hatları tarif eder. Bu sayfa Sinanoba'da Marina 24 konutlarının deniz tarafındaki kısa park cephesini kapsar. 31 Temmuz 2026 tarihli olta kaydında Sinanoba Marina 24 kıyısında hafif takımla mırmır yakalandığı bildirilir. Türün bu kıyıda kaydedilmiş olması her ziyarette av alınacağı anlamına gelmez.",
+      "access": "Sinanoba sahil parkının kamusal yaya bağlantısından ilerleyin. Koordinat kıyıya yakın yaya yolunu gösterir. Marina 24 site girişi, özel sosyal alan ve iskele kapsam dışında kalır.",
+      "law": "Deniz amatör avı, yerel levhalar ve belirlenmiş yüzme alanı sınırlarına tabidir.",
+      "sources": [
+        "https://depremzemin.ibb.istanbul/uploads/prefix-buyukcekmece-tsunami-666af15179435.pdf",
+        "https://www.openstreetmap.org/way/1514952188",
+        "https://www.openstreetmap.org/way/1086495907",
+        "https://www.openstreetmap.org/way/1514952193",
+        "https://www.youtube.com/watch?v=xVdkI5ONAps",
+        "https://www.aa.com.tr/tr/gundem/istanbulda-95-nokta-yuzme-alani-olarak-belirlendi/3952780",
+        "https://www.istesob.org.tr/wp-content/uploads/2020/06/169-Nolu-Genelge-22-06-2020-Genelge-2020-1-Yaz-Mevsimi-Kurallari-Hakkinda.pdf",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-silivri-semizkumlar-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 68.916,
+      "identityAndSpecies": "Semizkumlar'ın Çadır Yerleri mevkii, Silivri merkez ve liman kıyılarından ayrı bir Marmara sahilidir. Silivri Belediyesi, 2026 surf casting yarışmasının bu sahilde düzenlendiğini ve toplanma yerinin Mocamp olduğunu kaydeder. 2025 yarışmasının bir katılımcısı aynı sahilde ispari yakalandığını bildirir. Tarihli yarışma kaydı türün bu kıyıdaki varlığına örnektir. Av günü verimini veya özel bir alana girme yetkisini göstermez.",
+      "access": "Harita pini Çadır Yerleri mevkiinin kıyı referansıdır. Kamusal kıyıya halka açık yoldan yaklaşın. Kamp tesisi girişini ve işaretli yüzme alanlarını av noktası olarak kullanmayın.",
+      "law": "Dönem, şamandıralı alan ve sahadaki işaretler gözetilir.",
+      "sources": [
+        "https://www.silivri.bel.tr/haber/7-istanbul-surf-casting-balik-yakalama-yarismasi-silivri-de-gerceklestirildi/2137",
+        "https://www.silivri.bel.tr/haber/7-istanbul-uluslararasi-balik-tutma-yarismasi-silivri-de-gerceklestirilecek/2128",
+        "https://www.youtube.com/watch?v=i0C587ahH80",
+        "https://destekhizmetleri.ibb.istanbul/hizmetler/plajlar/",
+        "https://dergipark.org.tr/tr/download/article-file/4653659",
+        "https://silivri.tv.tr/haber/silivri-de-denize-girilebilecek-alanlar-aciklandi",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-silivri-gumusyaka-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 77.866,
+      "identityAndSpecies": "Silivri Belediyesi Gece Pazarı çevresindeki sahil düzenlemesini ve yenilenen pazarın 2026'da kamusal kullanımını belgeler. Buradaki rota Gümüşyaka Mahallesi'nin deniz kıyısını kapsar. Gümüşyaka Göleti ayrı bir içsudur. Temmuz 2007 tarihli Silivri Gümüşyaka av raporunda yemli dip oltasıyla mırmır yakalandığı bildirilir. Bu kayıttaki iskele erişimi günümüz için doğrulanmış değildir. Tür kaydı sahil bandına aittir ve bugünkü av verimini göstermez.",
+      "access": "Kamusal Sahilyolu Caddesi yaklaşımını izleyin. Harita pini Gece Pazarı'nı kıyı referansı olarak gösterir. Güvenli ve izinli kıyı açıklığını güncel saha işaretlerine göre belirleyin.",
+      "law": "Çadır Yeri yüzme alanı, 6/2 ve güncel yerel işaretler birlikte dikkate alınır.",
+      "sources": [
+        "https://www.silivri.bel.tr/haber/gumusyaka_gece_pazari_yenileniyor_sosyal_tesis_ve_plaj_alani_geliyor/1075",
+        "https://www.silivri.bel.tr/haber/baskan_balcioglu_gumusyaka_gece_pazarini_ziyaret_etti/1996",
+        "https://www.silivri.bel.tr/haber/silivri-sahillerinde-kamu-alanlarina-yonelik-denetimler-suruyor/2090",
+        "https://silivri360.com/mekan/gumusyaka-gece-pazari-gumusyaka/",
+        "https://www.anadoluajansi.gov.tr/tr/gundem/istanbulda-95-nokta-yuzme-alani-olarak-belirlendi/3952780",
+        "https://www.istesob.org.tr/wp-content/uploads/2020/06/169-Nolu-Genelge-22-06-2020-Genelge-2020-1-Yaz-Mevsimi-Kurallari-Hakkinda.pdf",
+        "https://www.balikavi.net/konu/15-07-2007-gumusyaka-av-raporu.11937/",
+        "https://www.youtube.com/watch?v=zsAezpkd7mc",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm?sfnsn=scwspwa",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "edirne-merkez-tayakadin-koyu-goleti",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 202.672,
+      "identityAndSpecies": "İl Tarım ve Orman Müdürlüğü, Tayakadın Köyü Göleti'nde Ağustos 2026'da köyden katılımcılarla yapılan balıklandırmada 5.000 yavru sazanın bırakıldığını açıkladı. Kıyıdaki etkinlik, günlük veya sürekli kıyı erişim izni vermez. Edirne İl Çevre Durum Raporu göleti yüzey suyu izleme noktası olarak konumlandırır. Bu koordinatı göleti bulmak için kullanın; set, savak ve işaretli işletme sahaları av planına girmemelidir.",
+      "access": "Harita pini resmî yüzey suyu izleme noktasını gösterir. Tayakadın Köyü'nden açık yaklaşım yolunu izleyin; kamusal olduğundan emin olmadığınız kıyı geçişini kullanmayın.",
+      "law": "Edirne içsu hükümleri ve yerel saha sınırlamaları geçerlidir.",
+      "sources": [
+        "https://edirne.tarimorman.gov.tr/Haber/732/Su-Kaynaklarimizi-Baliklandiriyoruz",
+        "https://webdosya.csb.gov.tr/db/ced/icerikler/2019_ed-rne_cevre_durum_raporu-20201221092740.pdf",
+        "https://bolge11.dsi.gov.tr/Sayfa/Detay/1084",
+        "https://www.openstreetmap.org/way/896165470",
+        "https://edirne.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=702",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://www.resmigazete.gov.tr/eskiler/2025/04/20250416-4.htm",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
     }
   ],
   "catchup": {
@@ -151,6 +264,26 @@
       {
         "forDate": "2026-11-24",
         "slug": "sakarya-kaynarca-kulakli-goleti"
+      },
+      {
+        "forDate": "2026-11-24",
+        "slug": "istanbul-sariyer-buyukdere-fener-yakini-acik-kiyi"
+      },
+      {
+        "forDate": "2026-11-25",
+        "slug": "istanbul-buyukcekmece-sinanoba-marina24-onu-park-kiyisi"
+      },
+      {
+        "forDate": "2026-11-25",
+        "slug": "istanbul-silivri-semizkumlar-acik-kiyi"
+      },
+      {
+        "forDate": "2026-11-26",
+        "slug": "istanbul-silivri-gumusyaka-acik-kiyi"
+      },
+      {
+        "forDate": "2026-11-26",
+        "slug": "edirne-merkez-tayakadin-koyu-goleti"
       }
     ],
     "note": "Bir sayfa yalnız bir günlük hedefe mahsup edilir. Yayın doğrulanana kadar açık kapanmaz. Telafi kayıtları eski tarihte yayınlanmış gibi sayılmaz.",
@@ -169,73 +302,84 @@
     }
   },
   "publication": {
-    "verified": true,
-    "productionStatus": "success",
-    "newRoutesPublished": 3,
-    "actualConfidencePromotions": 3,
+    "verified": false,
+    "productionStatus": "pending",
+    "newRoutesPublished": 0,
+    "actualConfidencePromotions": 0,
     "existingRoutesReleased": 0,
-    "indexReleases": 2,
-    "mergedMainSha": "81102bb25ad0bbfaed895143033dd39552ab345b",
-    "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b",
-    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/229",
-    "ciRunId": 45896143835,
-    "productionRunId": 45896331546,
-    "verifiedAt": "2026-11-27T00:13:56+03:00",
-    "pages": [
-      {
-        "slug": "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
-        "status": 200,
-        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
-        "indexing": "index",
-        "canonical": "https://oltaatlasi.com/meralar/istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi/",
-        "inSitemap": true,
-        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
-      },
-      {
-        "slug": "istanbul-beykoz-burunbahce-parki-acik-kiyi",
-        "status": 200,
-        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
-        "indexing": "index",
-        "canonical": "https://oltaatlasi.com/meralar/istanbul-beykoz-burunbahce-parki-acik-kiyi/",
-        "inSitemap": true,
-        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
-      },
-      {
-        "slug": "sakarya-kaynarca-kulakli-goleti",
-        "status": 200,
-        "robots": "noindex,follow",
-        "indexing": "noindex",
-        "canonical": "https://oltaatlasi.com/meralar/sakarya-kaynarca-kulakli-goleti/",
-        "inSitemap": false,
-        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
-      },
-      {
-        "slug": "ulusal-istanbul-alibey-baraj-golu",
-        "status": 200,
-        "robots": "noindex,follow",
-        "indexing": "noindex",
-        "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-alibey-baraj-golu/",
-        "inSitemap": false,
-        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
-      },
-      {
-        "slug": "ankara-500km-istanbul-kucukcekmece-golu",
-        "status": 200,
-        "robots": "noindex,follow",
-        "indexing": "noindex",
-        "canonical": "https://oltaatlasi.com/meralar/ankara-500km-istanbul-kucukcekmece-golu/",
-        "inSitemap": false,
-        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
-      },
-      {
-        "slug": "ulusal-istanbul-buyukcekmece-golu",
-        "status": 200,
-        "robots": "noindex,follow",
-        "indexing": "noindex",
-        "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-buyukcekmece-golu/",
-        "inSitemap": false,
-        "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
-      }
-    ]
-  }
+    "indexReleases": 0,
+    "pages": []
+  },
+  "publicationHistory": [
+    {
+      "verified": true,
+      "productionStatus": "success",
+      "newRoutesPublished": 3,
+      "actualConfidencePromotions": 3,
+      "existingRoutesReleased": 0,
+      "indexReleases": 2,
+      "mergedMainSha": "81102bb25ad0bbfaed895143033dd39552ab345b",
+      "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b",
+      "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/229",
+      "ciRunId": 45896143835,
+      "productionRunId": 45896331546,
+      "verifiedAt": "2026-11-27T00:13:56+03:00",
+      "pages": [
+        {
+          "slug": "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+          "status": 200,
+          "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+          "indexing": "index",
+          "canonical": "https://oltaatlasi.com/meralar/istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi/",
+          "inSitemap": true,
+          "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+        },
+        {
+          "slug": "istanbul-beykoz-burunbahce-parki-acik-kiyi",
+          "status": 200,
+          "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+          "indexing": "index",
+          "canonical": "https://oltaatlasi.com/meralar/istanbul-beykoz-burunbahce-parki-acik-kiyi/",
+          "inSitemap": true,
+          "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+        },
+        {
+          "slug": "sakarya-kaynarca-kulakli-goleti",
+          "status": 200,
+          "robots": "noindex,follow",
+          "indexing": "noindex",
+          "canonical": "https://oltaatlasi.com/meralar/sakarya-kaynarca-kulakli-goleti/",
+          "inSitemap": false,
+          "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+        },
+        {
+          "slug": "ulusal-istanbul-alibey-baraj-golu",
+          "status": 200,
+          "robots": "noindex,follow",
+          "indexing": "noindex",
+          "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-alibey-baraj-golu/",
+          "inSitemap": false,
+          "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+        },
+        {
+          "slug": "ankara-500km-istanbul-kucukcekmece-golu",
+          "status": 200,
+          "robots": "noindex,follow",
+          "indexing": "noindex",
+          "canonical": "https://oltaatlasi.com/meralar/ankara-500km-istanbul-kucukcekmece-golu/",
+          "inSitemap": false,
+          "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+        },
+        {
+          "slug": "ulusal-istanbul-buyukcekmece-golu",
+          "status": 200,
+          "robots": "noindex,follow",
+          "indexing": "noindex",
+          "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-buyukcekmece-golu/",
+          "inSitemap": false,
+          "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+        }
+      ]
+    }
+  ]
 }
