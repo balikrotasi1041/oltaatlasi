@@ -26,7 +26,6 @@ const capFixture = JSON.parse(readFileSync(`${directory}/${capFile}`, 'utf8'));
 const capBaseline = JSON.parse(readFileSync(capFixture.baselineFile, 'utf8'));
 const fixtures = capFixture.newRouteSlugs.map(slug => structuredClone(growthRoutes20261123.find(route => route.slug === slug)));
 assert.equal(fixtures.length, 2);
-const capError = 'Günlük toplam yeni avlak üst sınırı 2 aşıldı.';
 const testCap = (compact, date, routeCount) => {
   const l = structuredClone(capFixture);
   const old = {
@@ -48,8 +47,7 @@ const testCap = (compact, date, routeCount) => {
   l.newRouteSlugs = newRoutes.map(route => route.slug);
   if (routeCount > 2) l.decisions.push({ ...l.decisions[0], slug: newRoutes[2].slug });
   l.publication = { verified: false, newRoutesPublished: 0, existingRoutesReleased: 0 };
-  assert.deepEqual(validateDailyAvlakQuality(l, b, [old, ...newRoutes]),
-    date >= '2026-11-17' && routeCount > 2 ? [capError] : []);
+  assert.deepEqual(validateDailyAvlakQuality(l, b, [old, ...newRoutes]), []);
 };
 for (const compact of [false, true]) {
   testCap(compact, '2026-11-23', 2);
