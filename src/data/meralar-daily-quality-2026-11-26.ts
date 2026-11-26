@@ -125,7 +125,7 @@ export function applyDailyAvlakQuality20261126(routes: Map<string, EnrichedMera>
       navigationNote: "Harita pini su kütlesinin genel konumudur. Kıyıya giriş veya olta noktası önerilmez.",
       navigationVerified: false,
       transport: "Su kütlesi haritada genel konumuyla gösterilir. Olta için ulaşım ve kıyıya giriş tarifi verilmez.",
-      shoreProfile: review.access,
+      shoreProfile: `${review.access} Haritadaki genel su pini, kıyıdan erişim veya avlanma noktası olarak kullanılmamalıdır.`,
       longIntro: [review.identityAndSpecies, review.law],
       cautions: [review.risk, review.access, "Güncel resmî duyurulara ve sahadaki kısıtlara uyun."],
       planningNotes: [review.law, review.access],
