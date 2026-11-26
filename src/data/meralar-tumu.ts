@@ -4,6 +4,10 @@ import { growthRoutes20261123 } from "./meralar-growth-2026-11-23";
 import { applyDailyAvlakQuality20261126 } from "./meralar-daily-quality-2026-11-26";
 import { growthRoutes20261126Istanbul } from "./meralar-growth-2026-11-26-istanbul";
 import { growthRoutes20261126Inland } from "./meralar-growth-2026-11-26-inland";
+import { sinanobaCatchupRoute20261127 } from "./meralar-growth-2026-11-27-sinanoba";
+import { gumusyakaCatchupRoute20261127 } from "./meralar-growth-2026-11-27-gumusyaka";
+import { tayakadinCatchupRoute20261127 } from "./meralar-growth-2026-11-27-tayakadin";
+import { buyukdereCatchupRoute20261127 } from "./meralar-growth-2026-11-27-buyukdere";
 import { growthRoutes20261119 } from "./meralar-growth-2026-11-19";
 import { applyDailyAvlakQuality20261119 } from "./meralar-daily-quality-2026-11-19";
 import { growthRoutes20261116 } from "./meralar-growth-2026-11-16";
@@ -442,7 +446,14 @@ for (const route of growthRoutes20261123) {
  routeMap.set(route.slug,route);
 }
 applyDailyAvlakQuality20261126(routeMap);
-for (const route of [...growthRoutes20261126Istanbul, ...growthRoutes20261126Inland]) {
+for (const route of [
+ ...growthRoutes20261126Istanbul,
+ ...growthRoutes20261126Inland,
+ buyukdereCatchupRoute20261127,
+ sinanobaCatchupRoute20261127,
+ gumusyakaCatchupRoute20261127,
+ tayakadinCatchupRoute20261127,
+]) {
  if (routeMap.has(route.slug)) throw new Error(`Yeni rota çakışması: ${route.slug}`);
  routeMap.set(route.slug, route);
 }
