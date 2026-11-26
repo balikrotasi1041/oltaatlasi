@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-27",
+  "center": {
+    "lat": 41.0082,
+    "lng": 28.9784
+  },
+  "previousRadiusKm": 250,
+  "currentRadiusKm": 250,
+  "dailyNewResearchRadiusKm": 116.859,
+  "phase": "Türkiye",
+  "coverage": "Üsküdar ve Beykoz kıyı parkları en yakın doğrulanmış adaylar. Sakarya Kaynarca açık göleti tek sayfalık telafi adayı. Adaylar ad, koordinat, su ve güzergâh düzeyinde karşılaştırıldı.",
+  "newRouteQueue": [
+    {
+      "slug": "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+      "name": "Nakkaştepe Sahil Parkı Açık Kıyısı",
+      "distanceKmFromIstanbulCenter": 5.718,
+      "plannedIndexing": "index",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://webdosya.csb.gov.tr/db/cygm/icerikler/istanbul-dcep-2025-2029-20250324133942.pdf",
+        "https://yandex.com.tr/maps/org/nakkastepe_sahil/2607957926/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-beykoz-burunbahce-parki-acik-kiyi",
+      "name": "Burunbahçe Parkı Açık Kıyısı",
+      "distanceKmFromIstanbulCenter": 14.987,
+      "plannedIndexing": "index",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://istanbul.tarimorman.gov.tr/Haber/2568/Beykoz-Ilcesinde-Amator-Balikcilara-Yonelik-Denetim-Yapildi",
+        "https://beykoz.bel.tr/haberler/bogazda-en-cok-baligi-tutan-altini-alacak",
+        "https://www.beykozolay.com/2026/11/18/beykoz-burunbahcede-palamut-akini-kovalar-doldu/",
+        "https://yandex.com.tr/maps/org/burunbahce_sahil/174600688734/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "sakarya-kaynarca-kulakli-goleti",
+      "name": "Kulaklı Göleti",
+      "distanceKmFromIstanbulCenter": 116.859,
+      "plannedIndexing": "hold",
+      "grade": "C+",
+      "decision": "publication_pending",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=199",
+        "https://sakarya.tarimorman.gov.tr/Haber/274/",
+        "https://rehber.sakarya.bel.tr/harita/kent/goletler/41.083706,30.368297/kulakli",
+        "https://www.youtube.com/watch?v=Y4XNY_HVGco",
+        "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=326",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://www.resmigazete.gov.tr/eskiler/2025/04/20250416-4.htm",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    }
+  ],
+  "promotionQueue": [
+    {
+      "slug": "ulusal-istanbul-alibey-baraj-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "decision": "promotion_pending",
+      "sources": [
+        "https://istanbul.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=3144",
+        "https://www.iski.gov.tr/web/assets/SayfalarDocs/Alibey%20Baraj%C4%B1%20Havza%20Koruma%20Plan%C4%B1%20Tasla%C4%9F%C4%B1.pdf",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://rize.tarimorman.gov.tr/Duyuru/361/"
+      ]
+    },
+    {
+      "slug": "ankara-500km-istanbul-kucukcekmece-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "decision": "promotion_pending",
+      "sources": [
+        "https://avesis.istanbul.edu.tr/publication/details/ae8313c8-8d85-481b-bb37-535472cbc912/current-fish-community-structure-of-an-anthropogenically-pressured-system-the-case-of-the-kucukcekmece-lagoon-nw-turkiye",
+        "https://link.springer.com/article/10.1007/s00027-026-01295-2",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://rize.tarimorman.gov.tr/Duyuru/361/"
+      ]
+    },
+    {
+      "slug": "ulusal-istanbul-buyukcekmece-golu",
+      "before": "D",
+      "after": "C",
+      "indexing": "hold",
+      "decision": "promotion_pending",
+      "sources": [
+        "https://link.springer.com/article/10.1007/s00027-026-01295-2",
+        "https://cdn.iski.istanbul/uploads/Bueyuek_Cekmece_Baraj_Goelue_Havza_Koruma_Plani_Oezel_Huekuemler_03b22746fa.pdf",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://rize.tarimorman.gov.tr/Duyuru/361/"
+      ]
+    }
+  ],
+  "publication": {
+    "verified": false
+  }
+}

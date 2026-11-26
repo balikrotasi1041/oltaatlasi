@@ -1,0 +1,167 @@
+{
+  "program": "istanbul-radius-quality-v2",
+  "date": "2026-11-27",
+  "timezone": "Europe/Istanbul",
+  "baselineFile": ".github/automation-state/olta-growth-baseline-2026-11-27.json",
+  "baselineMainSha": "9286f4cee83e77445b7536deac338e914439f073",
+  "startingLiveSha": "9286f4cee83e77445b7536deac338e914439f073",
+  "scopePhase": "Türkiye",
+  "searchRadiusKm": 250,
+  "istanbulExhaustedEvidence": "Önceki 250 km kapsamı korunur. İstanbul içinde iki ayrı kıyı parkı doğrulandı. Üçüncü sayfa için araştırma mevcut Marmara kapsamındaki Sakarya'ya uzandı. İstanbul aday havuzu tükenmiş sayılmadı.",
+  "indexReleaseCap": 2,
+  "newRouteSlugs": [
+    "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+    "istanbul-beykoz-burunbahce-parki-acik-kiyi",
+    "sakarya-kaynarca-kulakli-goleti"
+  ],
+  "promotionSlugs": [
+    "ulusal-istanbul-alibey-baraj-golu",
+    "ankara-500km-istanbul-kucukcekmece-golu",
+    "ulusal-istanbul-buyukcekmece-golu"
+  ],
+  "indexReleaseSlugs": [
+    "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+    "istanbul-beykoz-burunbahce-parki-acik-kiyi"
+  ],
+  "maintenanceOnlySlugs": [],
+  "eligibleReviewedSlugs": [
+    "ulusal-istanbul-alibey-baraj-golu",
+    "ankara-500km-istanbul-kucukcekmece-golu",
+    "ulusal-istanbul-buyukcekmece-golu"
+  ],
+  "candidateQueue": ".github/automation-state/olta-avlak-candidates-2026-11-27.json",
+  "decisions": [
+    {
+      "slug": "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 5.718,
+      "identityAndSpecies": "Nakkaştepe Sahil Parkı, İBB'nin İstanbul Olta Balıkçılığı Rehberi'nde Kuzguncuk'tan ayrı bir avlak adıyla listelenir. Parkın sınırı ile komşu sahil ve iskele kullanımlarını ayırmak için tarif yalnız park cephesine odaklanır. Kefal ve istavrit park adına bağlı belediye kaydında yer alır. Kaynak tarihsel olduğundan anlık balık hareketi hakkında bilgi vermez.",
+      "access": "Nakkaştepe Sahil olarak işaretlenen deniz seviyesindeki parkı bulun. Koordinat parkı gösterir. İç kesimdeki millet bahçesi ve Kuzguncuk iskelesi rota dışındadır.",
+      "law": "İstanbul Boğazı trafik ayrım düzeninde ve iskele çevresindeki manevra alanlarında avlanmayın. Yürüyüş yolunda güvenli atış koridoru yoksa takım açmayın. Parktaki güncel tabela ve geçici kapatmaları gözetin. 6/2 ve 2026/26 geçerlidir.",
+      "sources": [
+        "https://tarim.ibb.istanbul/img/1015194102017__5808679461a.pdf",
+        "https://webdosya.csb.gov.tr/db/cygm/icerikler/istanbul-dcep-2025-2029-20250324133942.pdf",
+        "https://yandex.com.tr/maps/org/nakkastepe_sahil/2607957926/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "istanbul-beykoz-burunbahce-parki-acik-kiyi",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 14.987,
+      "identityAndSpecies": "İstanbul İl Tarım ve Orman Müdürlüğünün 2024 denetim kaydında Burunbahçe, Paşabahçe ve Çubuklu'dan ayrı bir amatör avcılık noktası olarak geçer. Beykoz Belediyesi de olta etkinliğinin yerini Burunbahçe Sahili olarak belirtir. 15 Kasım 2026 tarihli kıyı gözlemi palamut avını belgeler. Belediye yarışma duyurusundaki hedef türlerle kıyıda gözlenen türü ayırdık ve bu sayfada palamutu listeledik.",
+      "access": "Burunbahçe Sahil park referansına kamusal yürüyüş hattından yaklaşın. Koordinat park kıyısının genel konumudur. Sosyal tesis, plaj ve iskele girişleri rota dışındadır.",
+      "law": "Boğaz trafik ayrım düzeninde ve iskele manevra alanında avlanmayın. İşletme, plaj ve kısıtlı alan girişleri kapsam dışıdır. Güncel tabelalar ile görevli yönlendirmelerine uyun. 6/2 ve 2026/26 geçerlidir.",
+      "sources": [
+        "https://istanbul.tarimorman.gov.tr/Haber/2568/Beykoz-Ilcesinde-Amator-Balikcilara-Yonelik-Denetim-Yapildi",
+        "https://beykoz.bel.tr/haberler/bogazda-en-cok-baligi-tutan-altini-alacak",
+        "https://www.beykozolay.com/2026/11/18/beykoz-burunbahcede-palamut-akini-kovalar-doldu/",
+        "https://yandex.com.tr/maps/org/burunbahce_sahil/174600688734/",
+        "https://yalova.tarimorman.gov.tr/Sayfalar/Detay.aspx?Liste=Duyuru&OgeId=513",
+        "https://www.tarimorman.gov.tr/HHGM/Haber/142/",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "sakarya-kaynarca-kulakli-goleti",
+      "baselineGrade": null,
+      "finalGrade": "C+",
+      "previousIndexing": null,
+      "distanceKmFromIstanbulCenter": 116.859,
+      "identityAndSpecies": "Sakarya İl Tarım ve Orman Müdürlüğü 2021 balıklandırmasında Kulaklı Göleti'ne sazan yavrusu bırakıldığını kaydeder. 2023 duyurusu Kulaklı'yı yeniden programda sayar ve balıklandırılan göletlerde amatör avcılığın geçerli olduğunu belirtir. Kent Rehberi pini göletin yerini gösterir. Gölet adıyla yayımlanan 2020 kıyı olta kaydı, geçmişteki kullanıma örnektir. Bugünkü su seviyesi, kıyı geçişleri ve stok durumu koşullara bağlıdır.",
+      "access": "Belediye pini sulama göletini gösterir. Kulaklı Mahallesi yönünden yaklaşın ve açık, kamusal kıyıya ulaşan geçişi tabelalara göre seçin.",
+      "law": "Set, su alma yapısı, savak ve işletme alanlarından uzak durun. Bariyerli ya da uyarı levhası bulunan kesimlere girmeyin. 6/2 ve 2026/26 geçerlidir.",
+      "sources": [
+        "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=199",
+        "https://sakarya.tarimorman.gov.tr/Haber/274/",
+        "https://rehber.sakarya.bel.tr/harita/kent/goletler/41.083706,30.368297/kulakli",
+        "https://www.youtube.com/watch?v=Y4XNY_HVGco",
+        "https://sakarya.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=326",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://www.resmigazete.gov.tr/eskiler/2025/04/20250416-4.htm",
+        "https://rize.tarimorman.gov.tr/Lists/Duyuru/Attachments/361/20260916-5.pdf"
+      ]
+    },
+    {
+      "slug": "ulusal-istanbul-alibey-baraj-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "distanceKmFromIstanbulCenter": 15.05,
+      "identityAndSpecies": "İstanbul İl Tarım ve Orman Müdürlüğü, 27 Ağustos 2026'da Alibey Baraj Gölü'ne 300 bin sazan yavrusu bırakıldığını kaydediyor. Salım, yetişkin stok yoğunluğunu veya av verimini göstermez.",
+      "access": "İçme suyu havzasında kamuya açık ve avlanmaya uygun belirli bir kıyı doğrulanmadı.",
+      "law": "Ulusal 6/2 Tebliği ve 2026/26 değişikliği geçerlidir. Alibey havza metni taslak olarak yayımlanmıştır. Kıyıya özgü yürürlükteki havza ve işletme şartları ayrıca doğrulanmalıdır.",
+      "sources": [
+        "https://istanbul.tarimorman.gov.tr/Sayfalar/GormeEngellilerDetay.aspx?Liste=Haber&OgeId=3144",
+        "https://www.iski.gov.tr/web/assets/SayfalarDocs/Alibey%20Baraj%C4%B1%20Havza%20Koruma%20Plan%C4%B1%20Tasla%C4%9F%C4%B1.pdf",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://rize.tarimorman.gov.tr/Duyuru/361/"
+      ],
+      "previousIndexing": "noindex"
+    },
+    {
+      "slug": "ankara-500km-istanbul-kucukcekmece-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "distanceKmFromIstanbulCenter": 19.53,
+      "identityAndSpecies": "Saç ve çalışma arkadaşlarının 2026 makalesinde Küçükçekmece Lagünü'nde yapılan 2023–2024 örneklemesinde gümüş balığı ve has kefal kaydedildi. Lagün Marmara'ya bağlı, acı su karakterinde bir su kütlesidir.",
+      "access": "Lagün kıyısında olta için hukuka uygun, kamusal ve güvenli bir kıyı noktası doğrulanmadı.",
+      "law": "6/2 Tebliği ve 2026/26 değişikliği ulusal çerçeveyi belirler. Bu lagünde geçerli yerel av koşulları ve kıyı erişimi ayrıca teyit edilmelidir.",
+      "sources": [
+        "https://avesis.istanbul.edu.tr/publication/details/ae8313c8-8d85-481b-bb37-535472cbc912/current-fish-community-structure-of-an-anthropogenically-pressured-system-the-case-of-the-kucukcekmece-lagoon-nw-turkiye",
+        "https://link.springer.com/article/10.1007/s00027-026-01295-2",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://rize.tarimorman.gov.tr/Duyuru/361/"
+      ],
+      "previousIndexing": "noindex"
+    },
+    {
+      "slug": "ulusal-istanbul-buyukcekmece-golu",
+      "baselineGrade": "D",
+      "finalGrade": "C",
+      "distanceKmFromIstanbulCenter": 35.81,
+      "identityAndSpecies": "Saç ve çalışma arkadaşları 2024'te Büyükçekmece içme suyu rezervuarında Atherina pontica türü gümüş balığını örnekledi. Rezervuar, Büyükçekmece'nin Marmara kıyısındaki koyundan ayrı bir su kütlesidir.",
+      "access": "Koruma planı kapsamındaki kıyılarda olta için kamuya açık, güvenli ve hukuka uygun giriş noktası doğrulanmadı.",
+      "law": "İSKİ'de yayımlanan Büyükçekmece Baraj Gölü Havza Koruma Planı madde 47, su alma yapısına 300 metreden yakın mesafede olta balıkçılığına izin vermez ve göl içi su ürünleri avcılığı ile ilgili ek hükümler içerir. 300 metre sınırının dışında bulunmak tek başına av izni sağlamaz.",
+      "sources": [
+        "https://link.springer.com/article/10.1007/s00027-026-01295-2",
+        "https://cdn.iski.istanbul/uploads/Bueyuek_Cekmece_Baraj_Goelue_Havza_Koruma_Plani_Oezel_Huekuemler_03b22746fa.pdf",
+        "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
+        "https://rize.tarimorman.gov.tr/Duyuru/361/"
+      ],
+      "previousIndexing": "noindex"
+    }
+  ],
+  "catchup": {
+    "newPagesOutstandingAtStart": {
+      "2026-11-24": 2,
+      "2026-11-25": 2,
+      "2026-11-26": 2
+    },
+    "dailyTargetSlugs": [
+      "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+      "istanbul-beykoz-burunbahce-parki-acik-kiyi"
+    ],
+    "plannedCatchup": [
+      {
+        "forDate": "2026-11-24",
+        "slug": "sakarya-kaynarca-kulakli-goleti"
+      }
+    ],
+    "note": "Bir sayfa yalnız bir günlük hedefe mahsup edilir. Yayın doğrulanana kadar açık kapanmaz. Telafi kayıtları eski tarihte yayınlanmış gibi sayılmaz."
+  },
+  "publication": {
+    "verified": false,
+    "productionStatus": "pending",
+    "newRoutesPublished": 0,
+    "actualConfidencePromotions": 0,
+    "existingRoutesReleased": 0,
+    "indexReleases": 0,
+    "pages": []
+  }
+}
