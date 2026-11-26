@@ -1,6 +1,6 @@
 import type { EnrichedMera, ResearchSource } from "./meralar-tumu-core";
 
-const date = "2026-11-26";
+const date = "2026-11-27";
 const regulation: ResearchSource = {
   label: "Resmî Gazete — 6/2 Numaralı Amatör Su Ürünleri Avcılığı Tebliği",
   url: "https://www.resmigazete.gov.tr/eskiler/2024/08/20240811-4.htm",
@@ -106,7 +106,7 @@ export function applyDailyAvlakQuality20261126(routes: Map<string, EnrichedMera>
   for (const review of reviews) {
     const old = routes.get(review.slug);
     if (old?.confidence !== "D" || (old.qualityGrade && old.qualityGrade !== "D")) {
-      throw new Error(`26 Kasım D başlangıç kaydı uyuşmuyor: ${review.slug}`);
+      throw new Error(`27 Kasım D başlangıç kaydı uyuşmuyor: ${review.slug}`);
     }
     const additions = [review.speciesSource, review.contextSource, regulation, amendment];
     const sources = [...new Map([...(old.sources ?? []), ...additions].map(source => [source.url, source])).values()];
