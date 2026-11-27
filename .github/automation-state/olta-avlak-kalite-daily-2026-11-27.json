@@ -293,22 +293,169 @@
         "slug": "sakarya-kaynarca-kulakli-goleti",
         "verifiedAt": "2026-11-27T00:13:56+03:00",
         "liveSha": "81102bb25ad0bbfaed895143033dd39552ab345b"
+      },
+      {
+        "forDate": "2026-11-24",
+        "slug": "istanbul-sariyer-buyukdere-fener-yakini-acik-kiyi",
+        "verifiedAt": "2026-11-27T09:16:34+03:00",
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb"
+      },
+      {
+        "forDate": "2026-11-25",
+        "slug": "istanbul-buyukcekmece-sinanoba-marina24-onu-park-kiyisi",
+        "verifiedAt": "2026-11-27T09:16:34+03:00",
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb"
+      },
+      {
+        "forDate": "2026-11-25",
+        "slug": "istanbul-silivri-semizkumlar-acik-kiyi",
+        "verifiedAt": "2026-11-27T09:16:34+03:00",
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb"
+      },
+      {
+        "forDate": "2026-11-26",
+        "slug": "istanbul-silivri-gumusyaka-acik-kiyi",
+        "verifiedAt": "2026-11-27T09:16:34+03:00",
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb"
+      },
+      {
+        "forDate": "2026-11-26",
+        "slug": "edirne-merkez-tayakadin-koyu-goleti",
+        "verifiedAt": "2026-11-27T09:16:34+03:00",
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb"
       }
     ],
     "newPagesOutstandingAfterPublication": {
-      "2026-11-24": 1,
-      "2026-11-25": 2,
-      "2026-11-26": 2
+      "2026-11-24": 0,
+      "2026-11-25": 0,
+      "2026-11-26": 0
     }
   },
   "publication": {
-    "verified": false,
-    "productionStatus": "pending",
-    "newRoutesPublished": 0,
-    "actualConfidencePromotions": 0,
+    "verified": true,
+    "productionStatus": "success",
+    "mergedMainSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+    "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+    "pr": "https://github.com/balikrotasi1041/oltaatlasi/pull/231",
+    "ciRunId": 45897697938,
+    "productionRunId": 45897876027,
+    "newRoutesPublished": 8,
+    "actualConfidencePromotions": 3,
     "existingRoutesReleased": 0,
-    "indexReleases": 0,
-    "pages": []
+    "indexReleases": 2,
+    "verifiedAt": "2026-11-27T09:16:34+03:00",
+    "pages": [
+      {
+        "slug": "istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi",
+        "status": 200,
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-uskudar-nakkastepe-sahil-parki-acik-kiyi/",
+        "inSitemap": true,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "istanbul-beykoz-burunbahce-parki-acik-kiyi",
+        "status": 200,
+        "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "indexing": "index",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-beykoz-burunbahce-parki-acik-kiyi/",
+        "inSitemap": true,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "sakarya-kaynarca-kulakli-goleti",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/sakarya-kaynarca-kulakli-goleti/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "istanbul-sariyer-buyukdere-fener-yakini-acik-kiyi",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-sariyer-buyukdere-fener-yakini-acik-kiyi/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "istanbul-buyukcekmece-sinanoba-marina24-onu-park-kiyisi",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-buyukcekmece-sinanoba-marina24-onu-park-kiyisi/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "istanbul-silivri-semizkumlar-acik-kiyi",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-silivri-semizkumlar-acik-kiyi/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "istanbul-silivri-gumusyaka-acik-kiyi",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/istanbul-silivri-gumusyaka-acik-kiyi/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "edirne-merkez-tayakadin-koyu-goleti",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/edirne-merkez-tayakadin-koyu-goleti/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C+"
+      },
+      {
+        "slug": "ulusal-istanbul-alibey-baraj-golu",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-alibey-baraj-golu/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C"
+      },
+      {
+        "slug": "ankara-500km-istanbul-kucukcekmece-golu",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/ankara-500km-istanbul-kucukcekmece-golu/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C"
+      },
+      {
+        "slug": "ulusal-istanbul-buyukcekmece-golu",
+        "status": 200,
+        "robots": "noindex,follow",
+        "indexing": "noindex",
+        "canonical": "https://oltaatlasi.com/meralar/ulusal-istanbul-buyukcekmece-golu/",
+        "inSitemap": false,
+        "liveSha": "842868c8d0eed4e0207dafc85a4df53e0af080fb",
+        "qualityGrade": "C"
+      }
+    ]
   },
   "publicationHistory": [
     {
