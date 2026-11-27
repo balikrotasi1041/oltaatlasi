@@ -38,21 +38,38 @@ const testCap = (compact, date, routeCount) => {
     routeStatesSha256: hash(JSON.stringify([[old.slug, old.confidence, old.qualityGrade, old.indexing]]))
   };
   if (!compact) b.routes = { [old.slug]: old };
-  const newRoutes = structuredClone(fixtures);
+  const newRoutes = structuredClone(fixtures.slice(0, routeCount));
   if (routeCount > 2) newRoutes.push({
     ...structuredClone(newRoutes[0]), slug: 'fixture-third-new-avlak', indexing: 'hold'
   });
   newRoutes.forEach(route => { route.qualityAssessment.reviewedAt = date; });
   l.date = date;
   l.newRouteSlugs = newRoutes.map(route => route.slug);
+  l.shortfall.newReason = 'Kalan adaylar için kanıt yetersiz.';
+  l.indexReleaseSlugs = newRoutes.filter(route => route.indexing !== 'hold').map(route => route.slug);
+  l.indexReleaseCap = [3, 4].includes(new Date(`${date}T00:00:00Z`).getUTCDay()) ? 4 : 2;
   if (routeCount > 2) l.decisions.push({ ...l.decisions[0], slug: newRoutes[2].slug });
   l.publication = { verified: false, newRoutesPublished: 0, existingRoutesReleased: 0 };
-  assert.deepEqual(validateDailyAvlakQuality(l, b, [old, ...newRoutes]), []);
+  const expected = date >= '2026-11-17' && routeCount > 2
+    ? ['Günlük en fazla iki yeni avlak sınırı aşıldı (HOLD dahil).'] : [];
+  assert.deepEqual(validateDailyAvlakQuality(l, b, [old, ...newRoutes]), expected);
 };
 for (const compact of [false, true]) {
-  testCap(compact, '2026-11-23', 2);
-  testCap(compact, '2026-11-23', 3);
+  // Cumulative same-day runs share one baseline: the follow-up PR's third
+  // route is rejected even if its new page is HOLD.
+  for (const count of [0, 1, 2, 3]) testCap(compact, '2026-11-23', count);
+  testCap(compact, '2026-11-27', 3);
   testCap(compact, '2026-11-16', 3);
+}
+
+// A different batch on the historical date must not inherit its exception.
+if (ledger.date === '2026-11-27' && ledger.newRouteSlugs.length === 8) {
+  check((l, b, routes) => {
+    const slug = l.newRouteSlugs[0];
+    const replacement = 'fixture-altered-historical-avlak';
+    l.newRouteSlugs[0] = replacement;
+    routes.find(route => route.slug === slug).slug = replacement;
+  }, 'Günlük en fazla iki yeni avlak sınırı');
 }
 
 check((l) => { l.publication = { verified: true, liveSha: 'wrong', mergedMainSha: 'main', newRoutesPublished: 0, existingRoutesReleased: 0 }; }, 'tam SHA');
