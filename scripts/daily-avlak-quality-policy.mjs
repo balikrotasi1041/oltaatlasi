@@ -52,7 +52,14 @@ export function validateDailyAvlakQuality(ledger, baseline, routes) {
   const actualPromotions = compactBaseline ? [] : routes.filter(route => baselineRoutes[route.slug] && rank[grade(route)] > rank[grade(baselineRoutes[route.slug])]).map(route => route.slug);
   const actualReleases = compactBaseline ? routes.filter(route => ledger.newRouteSlugs.includes(route.slug) && indexable(route)).map(route => route.slug) : routes.filter(route => indexable(route) && !indexable(baselineRoutes[route.slug])).map(route => route.slug);
   const changedOld = compactBaseline ? [] : routes.filter(route => baselineRoutes[route.slug] && JSON.stringify(state(route)) !== JSON.stringify(state({ slug: route.slug, ...baselineRoutes[route.slug] }))).map(route => route.slug);
-  // New production limit applies prospectively; historical ledgers remain auditable.
+  // The eight routes already published on 27 November are an audit record, not transferable quota.
+  // Only this exact original baseline and slug set can be rebuilt without rewriting history.
+  const historicalBatch = ledger.date === '2026-11-27'
+    && baseline.mainSha === '9286f4cee83e77445b7536deac338e914439f073'
+    && actualNew.length === 8
+    && hash(sorted(actualNew).join('\n')) === 'c678e7341383da7500ecc537862bd92a5d0576eaad2e2b6dc75428a75954bbf1';
+  fail(ledger.date >= '2026-11-17' && actualNew.length > 2 && !historicalBatch,
+    'Günlük en fazla iki yeni avlak sınırı aşıldı (HOLD dahil).');
   fail(!same(actualNew, ledger.newRouteSlugs), 'Yeni avlak listesi gerçek baseline farkıyla uyuşmuyor.');
   fail(!same(actualPromotions, ledger.promotionSlugs), 'Gerçek sınıf terfisi listesi baseline farkıyla uyuşmuyor.');
   fail(!same(actualReleases, ledger.indexReleaseSlugs), 'İndeks salımı listesi baseline farkıyla uyuşmuyor.');
